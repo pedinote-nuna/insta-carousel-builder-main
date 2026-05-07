@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>소아과언니 견본 · 팔레트 B · Outro (출처 박스 포함)</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    /* 팔레트 B — Medical Teal */
+    --bg:#F8F8F5;
+    --text:#0E1B2C;
+    --accent:#2C6E63;
+    --secondary:#6B7B8C;
+    --box-tint:#EFEFEC;
+  }
+  body{
+    width:1080px; height:1350px;
+    background:var(--bg);
+    font-family:'Pretendard Variable','Pretendard',-apple-system,sans-serif;
+    color:var(--text);
+    overflow:hidden;
+    position:relative;
+  }
+  .accent-bar{
+    position:absolute; left:0; top:0;
+    width:14px; height:100%;
+    background:var(--accent);
+  }
+  .top-label{
+    position:absolute; left:80px; top:160px;
+    font-size:24px; font-weight:900;
+    letter-spacing:0.16em;
+    color:var(--accent);
+  }
+  .headline{
+    position:absolute; left:80px; top:240px;
+    max-width:920px;
+    font-size:104px; font-weight:900;
+    line-height:1.1;
+    letter-spacing:-0.02em;
+  }
+  .headline .accent{ color:var(--accent); }
+
+  .sources-box{
+    position:absolute; left:80px; top:560px;
+    width:920px;
+    background:var(--box-tint);
+    border:1px solid rgba(107,123,140,0.45);
+    border-radius:12px;
+    padding:28px 32px;
+  }
+  .sources-box .label{
+    font-size:18px; font-weight:700;
+    letter-spacing:0.12em;
+    color:var(--secondary);
+    margin-bottom:14px;
+  }
+  .sources-box .body{
+    font-size:22px; font-weight:500;
+    color:var(--text);
+    line-height:1.55;
+  }
+
+  .app-pitch{
+    position:absolute; left:80px; top:830px;
+    font-size:28px; font-weight:500;
+    color:var(--secondary);
+    max-width:920px;
+  }
+  .app-pitch strong{
+    color:var(--text); font-weight:900;
+  }
+
+  .handle-line{
+    position:absolute; left:80px; top:940px;
+    display:flex; align-items:baseline; gap:24px;
+  }
+  .handle{
+    font-size:42px; font-weight:900;
+    color:var(--text);
+    letter-spacing:-0.01em;
+  }
+  .handle-sub{
+    font-size:22px; font-weight:700;
+    color:var(--accent);
+    letter-spacing:-0.01em;
+  }
+
+  .cta{
+    position:absolute; left:80px; bottom:148px;
+    font-size:28px; font-weight:500;
+    color:var(--secondary);
+  }
+  .footer{
+    position:absolute; left:80px; right:80px; bottom:48px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:22px; font-weight:500;
+    color:var(--secondary);
+  }
+  .footer .badge::before{
+    content:"✓"; color:var(--accent); margin-right:8px; font-weight:900;
+  }
+</style>
+</head>
+<body data-claim-ids="">
+  <div class="accent-bar"></div>
+
+  <div class="top-label">SAVE &amp; SHARE</div>
+
+  <div class="headline">
+    <div>접종 전후</div>
+    <div><span class="accent">꺼내보세요.</span></div>
+  </div>
+
+  <div class="sources-box">
+    <div class="label">출처</div>
+    <div class="body">
+      질병관리청 표준예방접종지침 · AAP Red Book — Report of the Committee on Infectious Diseases · WHO Immunization Safety
+    </div>
+  </div>
+
+  <div class="app-pitch">접종 일정·발열 기록은 <strong>소아과수첩 앱</strong>에서.</div>
+
+  <div class="handle-line">
+    <span class="handle">@soagwa_unnie</span>
+    <span class="handle-sub">팔로우 = 예방접종 시기 알림</span>
+  </div>
+
+  <div class="cta">도움됐다면 ❤️ + 저장 + 공유</div>
+
+  <div class="footer">
+    <span class="badge">소아청소년과 전문의 검수</span>
+    <span>09 / 09</span>
+  </div>
+</body>
+</html>

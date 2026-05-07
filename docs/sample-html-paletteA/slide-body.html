@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>소아과언니 견본 · 팔레트 A · Body</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    /* 팔레트 A — Editorial Coral */
+    --bg:#FAFAF7;
+    --text:#1A1F36;
+    --accent:#C44536;
+    --secondary:#5B7C99;
+  }
+  body{
+    width:1080px; height:1350px;
+    background:var(--bg);
+    font-family:'Pretendard Variable','Pretendard',-apple-system,sans-serif;
+    color:var(--text);
+    overflow:hidden;
+    position:relative;
+  }
+  .accent-bar{
+    position:absolute; left:0; top:0;
+    width:14px; height:100%;
+    background:var(--accent);
+  }
+  .label{
+    position:absolute; left:80px; top:120px;
+    font-size:24px; font-weight:900;
+    letter-spacing:0.12em;
+    color:var(--accent);
+  }
+  .headline{
+    position:absolute; left:80px; top:200px;
+    max-width:920px;
+    font-size:108px; font-weight:900;
+    line-height:1.08;
+    letter-spacing:-0.02em;
+  }
+  .headline .accent{ color:var(--accent); }
+
+  /* 시각 요소: 두 막대 비교 (출생 vs 현재) */
+  .visual{
+    position:absolute; left:80px; top:720px;
+    width:920px;
+  }
+  .bar-row{
+    display:flex; align-items:center;
+    margin-bottom:36px;
+  }
+  .bar-label{
+    width:140px;
+    font-size:28px; font-weight:700;
+    color:var(--text);
+  }
+  .bar-track{
+    flex:1; height:48px;
+    background:rgba(91,124,153,0.15);
+    border-radius:6px;
+    position:relative;
+  }
+  .bar-fill{
+    height:100%; border-radius:6px;
+    display:flex; align-items:center; justify-content:flex-end;
+    padding-right:18px;
+    font-size:24px; font-weight:900;
+    color:#fff;
+  }
+  .bar-fill.birth{ width:42%; background:var(--text); }
+  .bar-fill.now{ width:84%; background:var(--accent); }
+
+  .caption{
+    position:absolute; left:80px; bottom:148px;
+    font-size:30px; font-weight:400;
+    color:var(--secondary);
+    max-width:920px;
+    letter-spacing:-0.01em;
+  }
+  .footer{
+    position:absolute; left:80px; right:80px; bottom:48px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:22px; font-weight:500;
+    color:var(--secondary);
+  }
+  .footer .badge::before{
+    content:"✓"; color:var(--accent); margin-right:8px; font-weight:900;
+  }
+</style>
+</head>
+<body data-claim-ids="">
+  <div class="accent-bar"></div>
+  <div class="label">신호 04</div>
+
+  <div class="headline">
+    <div>출생 체중의</div>
+    <div><span class="accent">2배</span></div>
+    <div>가까이 됐어요.</div>
+  </div>
+
+  <div class="visual">
+    <div class="bar-row">
+      <div class="bar-label">출생</div>
+      <div class="bar-track"><div class="bar-fill birth">3.3kg</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">현재</div>
+      <div class="bar-track"><div class="bar-fill now">6.6kg</div></div>
+    </div>
+  </div>
+
+  <div class="caption">보통 만 6개월 무렵 도달하는 기준입니다.</div>
+
+  <div class="footer">
+    <span class="badge">소아청소년과 전문의 검수</span>
+    <span>05 / 09</span>
+  </div>
+</body>
+</html>

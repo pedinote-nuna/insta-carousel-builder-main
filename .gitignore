@@ -1,0 +1,18 @@
+node_modules/
+.env
+.env.*.local
+output/
+!output/.keep
+*.log
+.DS_Store
+Thumbs.db
+.claude/settings.local.json
+.venv/
+__pycache__/
+*.pyc
+
+# 보안·프라이버시
+knowledge/banned-words.json
+.tmp-prompt.txt
+*.swp
+output/*/_webfetch-log.md

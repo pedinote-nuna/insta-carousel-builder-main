@@ -1,0 +1,29 @@
+{
+  "name": "insta-carousel-builder",
+  "version": "0.2.0",
+  "description": "Claude Code 하네스로 돌아가는 인스타 캐러셀 자동 제작 도구. 듀얼 엔진(나노바나나 Gemini API + HTML/Puppeteer).",
+  "type": "module",
+  "scripts": {
+    "quality-check": "node scripts/quality-check.js",
+    "generate:nanobanana": "python scripts/nanobanana-gen.py",
+    "generate:html": "node scripts/html-carousel-gen.js"
+  },
+  "dependencies": {
+    "puppeteer": "^23.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "instagram",
+    "carousel",
+    "gemini",
+    "nano-banana",
+    "puppeteer",
+    "html-to-image",
+    "korean",
+    "ainow"
+  ]
+}

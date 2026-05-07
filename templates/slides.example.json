@@ -1,0 +1,71 @@
+{
+  "_comment": "소아과언니 카드뉴스 9장 견본 (팔레트 A — Editorial Coral, 일상 케어). 본인 주제에 맞게 slides[].prompt 와 claim_ids 를 수정하세요. common_style 과 common_palette 는 brand-facts.md 디자인 DNA — 그대로 두는 걸 권장. 슬라이드 9 출처 박스는 의무.",
+  "topic": "weaning-readiness",
+  "topic_kr": "이유식 시작 신호",
+  "palette": "A",
+  "common_style": "Instagram carousel slide design, 4:5 aspect ratio (1080x1350 px). Magazine editorial style, premium light minimalist for parenting/medical content. Layout: left-aligned, magazine-style, 14px vertical accent bar at left edge, generous whitespace (60%+ empty area), Pretendard Korean typography (900 headline / 700 sub / 400 body). Headline rule: only the LAST word in accent color, others in primary text color. Bottom fixed footer: trust badge \"✓ 소아청소년과 전문의 검수\" + slide indicator like \"03 / 09\". Tone: 전문의의 신뢰 + 동네 언니의 친근함 (calm, trustworthy, warm). NO emoji except ✓ and ❤️. NO stock-photo people, NO doctor-in-white-coat clichés.",
+  "common_palette": {
+    "_palette_name": "A — Editorial Coral",
+    "_use_for": "일상 케어·영양·성장발달·소아심장 일반 교육·앱 활용",
+    "bg": "#FAFAF7",
+    "text": "#1A1F36",
+    "accent": "#C44536",
+    "secondary": "#5B7C99"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "role": "Cover",
+      "claim_ids": [],
+      "prompt": "COVER SLIDE for soagwa_unnie carousel \"이유식 시작 신호\". 1080x1350 px, light magazine editorial style. Background: #FAFAF7. Left edge: 14px vertical accent bar in #C44536. Top-left small label uppercase: \"@SOAGWA_UNNIE · 부모님 가이드\". Lower-left bold Korean headline 3 lines (Pretendard 900): \"우리 아이\" (text #1A1F36), \"이유식 시작\" (text #1A1F36), \"5가지 신호.\" (last word \"신호\" in accent #C44536). Subline gray #5B7C99: \"4~6개월 사이, 놓치지 마세요.\". Bottom fixed footer: \"✓ 소아청소년과 전문의 검수\" (left) + \"01 / 09\" (right) in #5B7C99. Generous whitespace at top 50%."
+    },
+    {
+      "n": 2,
+      "role": "신호 01 — 목 가누기",
+      "claim_ids": [],
+      "prompt": "BODY SLIDE 02 for \"이유식 시작 신호\". 1080x1350 px, background #FAFAF7. Left 14px accent bar #C44536. Top-left small uppercase label: \"신호 01\" (#C44536). Korean headline (Pretendard 900): \"혼자\" (text), \"머리를\" (text), \"가눠요.\" (last word in accent). One visual element only — minimal line illustration of upright baby head silhouette in #1A1F36 lines on right side. Caption gray: \"받쳐주지 않아도 안정적으로 머리 유지.\" Bottom footer trust badge + \"02 / 09\". Magazine breathing room."
+    },
+    {
+      "n": 3,
+      "role": "신호 02 — 음식 관심",
+      "claim_ids": [],
+      "prompt": "BODY SLIDE 03. Background #FAFAF7. Left bar #C44536. Label \"신호 02\". Korean headline: \"음식을\" \"빤히\" \"쳐다봐요.\" (last in accent). Visual: simple icon row of three small dishes (line art, #1A1F36). Caption gray: \"부모 식사 보며 입을 오물거리거나 손 뻗음.\" Footer + \"03 / 09\"."
+    },
+    {
+      "n": 4,
+      "role": "신호 03 — 혀 내밀기 반사 감소",
+      "claim_ids": [],
+      "prompt": "BODY SLIDE 04. Background #FAFAF7. Label \"신호 03\". Korean headline: \"혀로\" \"음식을\" \"안 밀어내요.\" (last word \"밀어내요\" in accent #C44536). Visual: simple before/after diagram — two small spoon icons, left labeled \"X\" (gray) right labeled \"O\" (accent). Caption gray: \"혀 내밀기 반사가 약해지는 시기 — 보통 4~6개월.\" Footer + \"04 / 09\"."
+    },
+    {
+      "n": 5,
+      "role": "신호 04 — 체중 2배",
+      "claim_ids": [],
+      "prompt": "BODY SLIDE 05. Background #FAFAF7. Label \"신호 04\". Korean headline: \"출생 체중의\" \"2배\" \"가까이 됐어요.\" (last word in accent). Visual: two stacked horizontal bars — \"출생\" 40% width (#1A1F36) and \"현재\" 80% width (accent #C44536). Caption gray: \"보통 만 6개월 무렵 도달.\" Footer + \"05 / 09\"."
+    },
+    {
+      "n": 6,
+      "role": "신호 05 — 앉기",
+      "claim_ids": [],
+      "prompt": "BODY SLIDE 06. Background #FAFAF7. Label \"신호 05\". Korean headline: \"받쳐주면\" \"앉을 수\" \"있어요.\" (last in accent). Visual: minimal seated baby silhouette on small chair (line art). Caption gray: \"음식을 안전하게 삼키려면 상체 안정이 필요.\" Footer + \"06 / 09\"."
+    },
+    {
+      "n": 7,
+      "role": "주의 — 너무 이르면",
+      "claim_ids": [],
+      "prompt": "BODY SLIDE 07. Background #FAFAF7. Label \"주의\" in accent. Korean headline: \"4개월 전\" \"너무\" \"이릅니다.\" (last in accent). Visual: small circular caution icon (line art, accent stroke). Caption gray: \"소화·면역 미성숙 — 알레르기·과체중 위험 ↑.\" Footer + \"07 / 09\"."
+    },
+    {
+      "n": 8,
+      "role": "정리 체크리스트",
+      "claim_ids": [],
+      "prompt": "BODY SLIDE 08 — checklist recap. Background #FAFAF7. Label \"체크\". Korean headline: \"한눈에 보는\" \"5가지.\" (last in accent). Visual: vertical 5-row checklist (✓ icons in accent #C44536) — 목 가누기 / 음식 관심 / 혀 반사 ↓ / 체중 2배 / 받쳐 앉기. Caption gray: \"3개 이상이면 시작 시점.\" Footer + \"08 / 09\"."
+    },
+    {
+      "n": 9,
+      "role": "Outro",
+      "claim_ids": [],
+      "prompt": "OUTRO SLIDE with SOURCE BOX. Background #FAFAF7. Left bar #C44536. Top label uppercase: \"SAVE & SHARE\" (#C44536). Korean headline (Pretendard 900): \"오늘\" \"확인하고\" \"저장하세요.\" (last in accent). Below headline: SOURCE BOX with light border (#5B7C99 1px) — small label \"출처\" (#5B7C99) + body text \"AAP Complementary Feeding Guidance · 대한소아청소년과학회 영양위원회\" (#1A1F36, Pretendard 400). App pitch in gray: \"아이 식사·성장 기록은 소아과수첩 앱.\" Handle line bold: \"@soagwa_unnie\" (#1A1F36) + small accent: \"팔로우 = 매주 새 가이드\" (#C44536). CTA gray: \"도움됐다면 ❤️ + 저장 + 공유.\" Bottom footer trust badge + \"09 / 09\"."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "_comment": "소아과언니 첫 production 토픽 — '열나는 아이, 옷 벗기지 마세요'. 팔레트 B (Medical Teal, 응급 카테고리) · 패턴 A (통념 깨기 + 메커니즘 + 올바른 대처 4 + 응급 신호). 모든 본문 슬라이드는 sources.json claims 와 1:1 매핑.",
+  "topic": "fever-clothing",
+  "topic_kr": "열나는 아이, 옷 벗기지 마세요",
+  "palette": "B",
+  "common_style": "Instagram carousel slide design, 4:5 aspect ratio (1080x1350 px). Magazine editorial style, calm clinical light minimalist for pediatric emergency content. Layout: left-aligned, magazine-style, 14px vertical accent bar at left edge in #2C6E63, generous whitespace (60%+ empty area), Pretendard Korean typography (900 headline / 700 sub / 400 body). Headline rule: only the LAST word in accent color #2C6E63, others in primary text color #0E1B2C. Bottom fixed footer: trust badge \"✓ 소아청소년과 전문의 검수\" in #6B7B8C + slide indicator like \"03 / 09\" in #6B7B8C. Tone: 전문의의 신뢰 + 동네 언니의 친근함 (calm, trustworthy, restrained — palette B is for higher-stakes emergency topics). NO emoji except ✓ and ❤️. NO stock-photo people, NO doctor-in-white-coat clichés, NO red-flag fear-mongering imagery (no scary thermometer close-ups with red numbers).",
+  "common_palette": {
+    "_palette_name": "B — Medical Teal",
+    "_use_for": "예방접종·응급·약물 안전·위험 신호·질환관리",
+    "bg": "#F8F8F5",
+    "text": "#0E1B2C",
+    "accent": "#2C6E63",
+    "secondary": "#6B7B8C"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "role": "Cover",
+      "claim_ids": [],
+      "prompt": "COVER SLIDE for soagwa_unnie carousel \"열나는 아이, 옷 벗기지 마세요\". 1080x1350 px, light medical magazine style. Background: #F8F8F5. Left edge: 14px vertical accent bar #2C6E63. Top-left small uppercase label (Pretendard 700, #2C6E63): \"@SOAGWA_UNNIE · 응급 가이드 · No.01\". Lower-left bold Korean headline 3 lines (Pretendard 900, ~108px): \"열나는 아이\" (text #0E1B2C), \"옷 벗기지\" (text #0E1B2C), \"마세요.\" (last word \"마세요\" in accent #2C6E63). Subline (Pretendard 400, #6B7B8C, ~36px): \"체온이 오히려 더 오를 수 있어요.\" Visual element: a single thin minimalist line-art icon at upper-right area — folded baby blanket outline (no full illustration), accent stroke #2C6E63 1.5px, very small (~120px). Top 50% empty for breathing room, generous whitespace, magazine breathing room, left-aligned. Bottom footer: \"✓ 소아청소년과 전문의 검수\" + \"01 / 09\" in #6B7B8C. Use exact Korean spelling \"열나는\" \"옷 벗기지\" \"마세요\"."
+    },
+    {
+      "n": 2,
+      "role": "통념",
+      "claim_ids": ["S02-C1"],
+      "prompt": "BODY SLIDE 02 — Common Misconception. 1080x1350 px. Background #F8F8F5. Left 14px accent bar #2C6E63. Top-left uppercase label (Pretendard 700, #2C6E63): \"흔한 오해 · MYTH\". Korean headline (Pretendard 900, ~88px): \"옷 벗기면\" (text #0E1B2C), \"시원해진다는\" (text #0E1B2C), \"오해.\" (last word \"오해\" in accent #2C6E63). Visual element: a single horizontal comparison bar — left side gray label \"❌ 옷 다 벗기기\" (#6B7B8C box outline 1.5px), right side gray label \"❌ 두껍게 감싸기\" (#6B7B8C box outline 1.5px), with a thin teal connector showing \"둘 다 권장 X\" (#2C6E63) in the middle. Caption (Pretendard 400, #6B7B8C, ~32px) below visual: \"NICE 가이드라인은 발열 아동을 옷을 적게 입히거나 과하게 감싸는 것 모두 권장하지 않습니다.\" Generous whitespace, left-aligned, magazine feel. Bottom footer: \"✓ 소아청소년과 전문의 검수\" + \"02 / 09\" in #6B7B8C. Use exact Korean spelling \"오해\" \"권장\"."
+    },
+    {
+      "n": 3,
+      "role": "메커니즘",
+      "claim_ids": ["S03-C1", "S03-C2"],
+      "prompt": "BODY SLIDE 03 — Mechanism (the medical truth). 1080x1350 px. Background #F8F8F5. Left 14px accent bar #2C6E63. Top-left uppercase label (Pretendard 700, #2C6E63): \"의학적 진실 · WHY\". Korean headline (Pretendard 900, ~84px): \"갑자기 벗기면\" (text #0E1B2C), \"체온이 더\" (text #0E1B2C), \"올라가요.\" (last word \"올라가요\" in accent #2C6E63). Visual element: a vertical 3-step flow diagram (each step a small rounded rectangle outline #2C6E63 1.5px with short Korean label inside, connected by thin downward arrows #6B7B8C): step 1 \"갑작스런 냉각\" → step 2 \"오한·근육 떨림\" → step 3 \"심부체온 ↑ 상승\". Below diagram, caption (Pretendard 400, #6B7B8C, ~30px) two short lines: \"근육이 떨면서 열을 더 만들어요.\" / \"발열 처치의 1차 목표는 체온을 정상으로 낮추는 것이 아니라 아이의 편안함을 개선하는 것입니다.\" Generous whitespace, left-aligned. Bottom footer: \"✓ 소아청소년과 전문의 검수\" + \"03 / 09\" in #6B7B8C."
+    },
+    {
+      "n": 4,
+      "role": "대처 1",
+      "claim_ids": ["S04-C1"],
+      "prompt": "BODY SLIDE 04 — Right Response 01: Room environment. 1080x1350 px. Background #F8F8F5. Left 14px accent bar #2C6E63. Top-left uppercase label (Pretendard 700, #2C6E63): \"올바른 대처 01\". Korean headline (Pretendard 900, ~88px): \"실내는 쾌적,\" (text #0E1B2C), \"옷은 한\" (text #0E1B2C), \"겹.\" (last word \"겹\" in accent #2C6E63). Visual element: a clean two-row icon row at center — row A shows a small house outline icon (#2C6E63 1.5px) with text \"22~24°C\" (Pretendard 700, #0E1B2C, ~44px) next to it; row B shows a small folded shirt outline icon (#2C6E63 1.5px) with text \"얇은 옷 한 겹 + 얇은 이불\" (#0E1B2C, ~38px). Below, caption (Pretendard 400, #6B7B8C, ~30px): \"떨면 한 겹 더, 땀나면 한 겹 빼기 — 너무 적게도 너무 많이도 안 돼요.\" Generous whitespace, left-aligned, magazine feel. Bottom footer: \"✓ 소아청소년과 전문의 검수\" + \"04 / 09\" in #6B7B8C. Use exact Korean spelling \"실내\" \"한 겹\"."
+    },
+    {
+      "n": 5,
+      "role": "대처 2",
+      "claim_ids": ["S05-C1", "S05-C2"],
+      "prompt": "BODY SLIDE 05 — Right Response 02: Cold/alcohol/sponging caution. 1080x1350 px. Background #F8F8F5. Left 14px accent bar #2C6E63. Top-left uppercase label (Pretendard 700, #2C6E63): \"올바른 대처 02\". Korean headline (Pretendard 900, ~88px): \"찬물·알코올은\" (text #0E1B2C), \"절대\" (text #0E1B2C), \"금지.\" (last word \"금지\" in accent #2C6E63). Visual element: a vertical 3-row do-not checklist — each row has a small thin × mark icon (#6B7B8C 1.5px) on the left and Korean text on the right (Pretendard 700, #0E1B2C, ~40px): row 1 \"찬물 마사지\", row 2 \"알코올로 닦기\", row 3 \"미온수 스폰지 (NICE 비권장)\". The third row label \"NICE 비권장\" rendered in small accent #2C6E63 (Pretendard 400, ~26px) as a tag next to the row. Below, caption (Pretendard 400, #6B7B8C, ~28px, 2 lines): \"떨림과 불편을 유발해 오히려 체온이 오를 수 있어요.\" / \"해열제 후 답답해 할 때만 미지근한 물로 가볍게.\" Generous whitespace, left-aligned. Bottom footer: \"✓ 소아청소년과 전문의 검수\" + \"05 / 09\" in #6B7B8C. Use exact Korean spelling \"알코올\" \"미온수\" \"비권장\"."
+    },
+    {
+      "n": 6,
+      "role": "대처 3",
+      "claim_ids": ["S06-C1"],
+      "prompt": "BODY SLIDE 06 — Right Response 03: Hydration. 1080x1350 px. Background #F8F8F5. Left 14px accent bar #2C6E63. Top-left uppercase label (Pretendard 700, #2C6E63): \"올바른 대처 03\". Korean headline (Pretendard 900, ~88px): \"가장 중요한 건\" (text #0E1B2C), \"수분\" (text #0E1B2C), \"공급.\" (last word \"공급\" in accent #2C6E63). Visual element: a horizontal icon row of 4 small thin line-art glyphs (#2C6E63 1.5px stroke), each ~80px, evenly spaced: bottle (모유·분유) / cup (물) / pouch (전해질 음료) / drop. Below the icon row, a short 2-item dehydration check list (Pretendard 700, #0E1B2C, ~36px) with small teal check marks: \"✓ 소변 횟수 줄지 않는지\" / \"✓ 입술·혀가 마르지 않는지\". Below, caption (Pretendard 400, #6B7B8C, ~30px): \"한 번에 많이 X — 자주 조금씩 권장.\" Generous whitespace, left-aligned. Bottom footer: \"✓ 소아청소년과 전문의 검수\" + \"06 / 09\" in #6B7B8C. Use exact Korean spelling \"수분\" \"공급\" \"전해질\"."
+    },
+    {
+      "n": 7,
+      "role": "대처 4",
+      "claim_ids": ["S07-C1", "S07-C2", "S07-C3"],
+      "prompt": "BODY SLIDE 07 — Right Response 04: Antipyretic dosing by weight. 1080x1350 px. Background #F8F8F5. Left 14px accent bar #2C6E63. Top-left uppercase label (Pretendard 700, #2C6E63): \"올바른 대처 04\". Korean headline (Pretendard 900, ~84px): \"해열제는\" (text #0E1B2C), \"체중\" (text #0E1B2C), \"기준.\" (last word \"기준\" in accent #2C6E63). Visual element: a clean compact 2-column dosing table (thin #6B7B8C 1px borders, white-tint cells), 3 rows: header row in accent (#2C6E63 background, #F8F8F5 text, Pretendard 700) — \"성분 / 용량 · 간격\". Row 1 — left cell \"아세트아미노펜\" (#0E1B2C, Pretendard 700, ~36px), right cell \"10~15 mg/kg · 4~6시간\" (#0E1B2C, ~32px). Row 2 — left \"이부프로펜 (6개월↑)\" (#0E1B2C, ~36px), right \"5~10 mg/kg · 6~8시간\" (#0E1B2C, ~32px). Below table, a small accent-bordered note box (#2C6E63 1px outline, ~12px padding) with text (Pretendard 700, #0E1B2C, ~28px): \"두 약 교차·병용은 일상적으로 권장 X.\" Caption (Pretendard 400, #6B7B8C, ~26px) below: \"체중을 곱하면 정확한 1회 용량.\" Generous whitespace, left-aligned. Bottom footer: \"✓ 소아청소년과 전문의 검수\" + \"07 / 09\" in #6B7B8C. Use exact Korean spelling \"아세트아미노펜\" \"이부프로펜\" \"체중\" \"교차\" \"병용\"."
+    },
+    {
+      "n": 8,
+      "role": "응급 신호",
+      "claim_ids": ["S08-C1", "S08-C2", "S08-C3"],
+      "prompt": "BODY SLIDE 08 — Emergency Red Flags. 1080x1350 px. Background #F8F8F5. Left 14px accent bar #2C6E63. Top-left uppercase label (Pretendard 700, #2C6E63): \"즉시 병원 · RED FLAGS\". Korean headline (Pretendard 900, ~88px): \"하나라도\" (text #0E1B2C), \"해당하면\" (text #0E1B2C), \"119.\" (last word \"119\" in accent #2C6E63). Visual element: a vertical short red-flag checklist — 5 rows, each row prefixed with a small accent-color filled square dot (#2C6E63, ~14px) and Korean text (Pretendard 700, #0E1B2C, ~36px): row 1 \"3개월 미만 · 38°C 이상 발열\", row 2 \"5분 이상 지속되는 경련\", row 3 \"의식 저하 · 축 늘어짐\", row 4 \"눌러도 사라지지 않는 점상 발진\", row 5 \"호흡곤란 · 가쁜 숨\". A thin accent border (#2C6E63 1px) frames the entire checklist box to visually distinguish this red-flag slide. Below, caption (Pretendard 400, #6B7B8C, ~28px): \"단순 열성경련은 6~60개월에 흔하지만, 5분 이상이면 즉시 의료 평가.\" Generous whitespace, left-aligned. Bottom footer: \"✓ 소아청소년과 전문의 검수\" + \"08 / 09\" in #6B7B8C. Use exact Korean spelling \"경련\" \"의식\" \"점상 발진\" \"호흡곤란\"."
+    },
+    {
+      "n": 9,
+      "role": "Outro",
+      "claim_ids": [],
+      "prompt": "OUTRO SLIDE with SOURCE BOX (mandatory). 1080x1350 px. Background #F8F8F5. Left 14px accent bar #2C6E63. Top-left uppercase label (Pretendard 700, #2C6E63): \"SAVE & SHARE\". Korean headline (Pretendard 900, ~92px): \"열날 때\" (text #0E1B2C), \"꺼내\" (text #0E1B2C), \"보세요.\" (last word \"보세요\" in accent #2C6E63). Below headline: SOURCE BOX with thin border (#6B7B8C 1px) and slightly darker background tint (#EFEFEC), ~24px padding — small uppercase label \"출처\" (#6B7B8C, Pretendard 700, ~24px) on top, then body text (Pretendard 400, #0E1B2C, ~26px, line-height 1.6, may wrap to 2-3 lines): \"AAP Clinical Practice Guideline (2011, reaffirmed) · NICE NG143 (2021) · Nelson Textbook of Pediatrics 21st ed · 대한소아청소년과학회\". Below source box, app pitch (Pretendard 400, #6B7B8C, ~30px): \"발열 기록 · 체중별 해열제 용량 자동 계산 → 소아과수첩 앱 (Google Play).\" Below app pitch, handle line bold (Pretendard 700, #0E1B2C, ~40px): \"@soagwa_unnie\" + small accent line below (Pretendard 400, #2C6E63, ~28px): \"팔로우 = 응급 가이드 알림.\" Bottom CTA (Pretendard 700, #0E1B2C, ~32px): \"도움됐다면 ❤️ + 저장 + 공유.\" Generous whitespace, left-aligned, magazine feel. Bottom footer: \"✓ 소아청소년과 전문의 검수\" + \"09 / 09\" in #6B7B8C. Use exact Korean spelling \"열날 때\" \"꺼내\" \"보세요\" \"소아과수첩\" \"저장\" \"공유\"."
+    }
+  ]
+}

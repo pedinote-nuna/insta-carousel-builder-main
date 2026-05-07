@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>소아과언니 견본 · 팔레트 B · Body (정상 vs 위험)</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    /* 팔레트 B — Medical Teal */
+    --bg:#F8F8F5;
+    --text:#0E1B2C;
+    --accent:#2C6E63;
+    --secondary:#6B7B8C;
+  }
+  body{
+    width:1080px; height:1350px;
+    background:var(--bg);
+    font-family:'Pretendard Variable','Pretendard',-apple-system,sans-serif;
+    color:var(--text);
+    overflow:hidden;
+    position:relative;
+  }
+  .accent-bar{
+    position:absolute; left:0; top:0;
+    width:14px; height:100%;
+    background:var(--accent);
+  }
+  .label{
+    position:absolute; left:80px; top:120px;
+    font-size:24px; font-weight:900;
+    letter-spacing:0.16em;
+    color:var(--accent);
+  }
+  .headline{
+    position:absolute; left:80px; top:200px;
+    max-width:920px;
+    font-size:104px; font-weight:900;
+    line-height:1.08;
+    letter-spacing:-0.02em;
+  }
+  .headline .accent{ color:var(--accent); }
+
+  /* 시각 요소: 좌우 비교 카드 (정상 vs 위험) */
+  .compare{
+    position:absolute; left:80px; top:740px;
+    width:920px;
+    display:flex; gap:32px;
+  }
+  .card{
+    flex:1;
+    border-radius:14px;
+    padding:28px 28px 32px;
+    min-height:260px;
+  }
+  .card .card-label{
+    font-size:22px; font-weight:900;
+    letter-spacing:0.16em;
+    margin-bottom:18px;
+  }
+  .card ul{
+    list-style:none;
+    font-size:22px; font-weight:500;
+    line-height:1.6;
+  }
+  .card ul li{
+    padding-left:18px;
+    position:relative;
+  }
+  .card ul li::before{
+    content:"·";
+    position:absolute; left:0; top:-2px;
+    font-size:32px; line-height:1;
+    font-weight:900;
+  }
+
+  .card.normal{
+    background:#fff;
+    border:2px solid rgba(107,123,140,0.45);
+    color:var(--text);
+  }
+  .card.normal .card-label{ color:var(--secondary); }
+  .card.normal ul li::before{ color:var(--secondary); }
+
+  .card.risk{
+    background:var(--accent);
+    color:#F8F8F5;
+  }
+  .card.risk .card-label{ color:#F8F8F5; opacity:0.85; }
+  .card.risk ul li::before{ color:#F8F8F5; }
+
+  .caption{
+    position:absolute; left:80px; bottom:148px;
+    font-size:30px; font-weight:400;
+    color:var(--secondary);
+    max-width:920px;
+    letter-spacing:-0.01em;
+    line-height:1.4;
+  }
+  .footer{
+    position:absolute; left:80px; right:80px; bottom:48px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:22px; font-weight:500;
+    color:var(--secondary);
+  }
+  .footer .badge::before{
+    content:"✓"; color:var(--accent); margin-right:8px; font-weight:900;
+  }
+</style>
+</head>
+<body data-claim-ids="">
+  <div class="accent-bar"></div>
+  <div class="label">한눈에 비교</div>
+
+  <div class="headline">
+    <div>이 안이면</div>
+    <div>정상,</div>
+    <div>넘으면 <span class="accent">위험.</span></div>
+  </div>
+
+  <div class="compare">
+    <div class="card normal">
+      <div class="card-label">정상</div>
+      <ul>
+        <li>미열 24~48시간</li>
+        <li>접종 부위 부어오름</li>
+        <li>짧은 보챔</li>
+      </ul>
+    </div>
+    <div class="card risk">
+      <div class="card-label">위험</div>
+      <ul>
+        <li>고열 39°C 지속</li>
+        <li>호흡 곤란·천명음</li>
+        <li>전신 발진</li>
+        <li>의식 저하·경련</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="caption">각 슬라이드에서 자세히 알려드려요.</div>
+
+  <div class="footer">
+    <span class="badge">소아청소년과 전문의 검수</span>
+    <span>02 / 09</span>
+  </div>
+</body>
+</html>

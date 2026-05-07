@@ -1,0 +1,105 @@
+{
+  "_comment": "sources.json 견본 (1개 슬라이드분, 4 claims). 6단계에서 첫 토픽 만들 때 참고용.",
+  "_schema_ref": "knowledge/patterns/sources-schema.md",
+
+  "topic": "fever-clothing",
+  "topic_kr": "열나는 아이, 옷 벗기지 마세요",
+  "palette": "B",
+  "category": "응급",
+  "created_at": "2026-05-08",
+  "researcher": "carousel-researcher",
+
+  "claims": [
+    {
+      "claim_id": "S03-C1",
+      "slide_number": 3,
+      "claim_text": "발열은 시상하부의 체온 설정점이 감염·염증 반응으로 상향 조절되어 발생하는 방어 반응이며, 신체는 새 설정점에 도달하기 위해 떨림과 혈관 수축으로 열을 만든다.",
+      "applicable_age": "전 연령",
+      "source_tier": 1,
+      "source_type": "guideline",
+      "source_citation": "Sullivan JE, Farrar HC; AAP Committee on Drugs. Fever and Antipyretic Use in Children. Pediatrics. 2011;127(3):580-587 (reaffirmed)",
+      "source_url": "https://publications.aap.org/pediatrics/article/127/3/e20103852/65016/Fever-and-Antipyretic-Use-in-Children",
+      "publication_date": "2011-03",
+      "last_accessed_at": "2026-05-08",
+      "page_or_section": "Pathophysiology of Fever",
+      "verified_by": "researcher",
+      "verified_at": "2026-05-08",
+      "writer_used": null,
+      "reviewer_pass": null,
+      "reviewer_note": null
+    },
+    {
+      "claim_id": "S03-C2",
+      "slide_number": 3,
+      "claim_text": "체온 설정점보다 환경온이 낮을 때 떨림(shivering)으로 열 생산이 늘어 체온이 더 상승할 수 있다.",
+      "applicable_age": "전 연령",
+      "source_tier": 1,
+      "source_type": "textbook",
+      "source_citation": "Nelson Textbook of Pediatrics, 21st ed. Chapter 201: Fever. Elsevier; 2019",
+      "source_url": null,
+      "publication_date": "2019-04",
+      "last_accessed_at": "2026-05-08",
+      "page_or_section": "Chapter 201, Fever — Pathogenesis",
+      "verified_by": "researcher",
+      "verified_at": "2026-05-08",
+      "writer_used": null,
+      "reviewer_pass": null,
+      "reviewer_note": null
+    },
+    {
+      "claim_id": "S03-C3",
+      "slide_number": 3,
+      "claim_text": "옷을 강하게 벗기거나 차가운 물로 닦으면 오한·떨림을 유발해 해열에 역효과가 날 수 있다.",
+      "applicable_age": "전 연령",
+      "source_tier": 1,
+      "source_type": "uptodate",
+      "source_citation": "Ward MA. Fever in infants and children: Pathophysiology and management. UpToDate. Wolters Kluwer",
+      "source_url": "https://www.uptodate.com/contents/fever-in-infants-and-children-pathophysiology-and-management",
+      "publication_date": "2024-09",
+      "last_accessed_at": "2026-05-08",
+      "page_or_section": "External cooling — adverse effects",
+      "verified_by": "researcher",
+      "verified_at": "2026-05-08",
+      "writer_used": null,
+      "reviewer_pass": null,
+      "reviewer_note": null
+    },
+    {
+      "claim_id": "S03-C4",
+      "slide_number": 3,
+      "claim_text": "발열 관리의 1차 목표는 체온 정상화가 아니라 아이의 불편감 개선이다.",
+      "applicable_age": "전 연령",
+      "source_tier": 1,
+      "source_type": "guideline",
+      "source_citation": "Sullivan JE, Farrar HC; AAP Committee on Drugs. Fever and Antipyretic Use in Children. Pediatrics. 2011;127(3):580-587 (reaffirmed)",
+      "source_url": "https://publications.aap.org/pediatrics/article/127/3/e20103852/65016/Fever-and-Antipyretic-Use-in-Children",
+      "publication_date": "2011-03",
+      "last_accessed_at": "2026-05-08",
+      "page_or_section": "Goals of Fever Management",
+      "verified_by": "researcher",
+      "verified_at": "2026-05-08",
+      "writer_used": null,
+      "reviewer_pass": null,
+      "reviewer_note": null
+    }
+  ],
+
+  "summary": {
+    "total_claims": 4,
+    "tier_1_count": 4,
+    "tier_2_count": 0,
+    "claims_by_slide": {
+      "1": 0, "2": 0, "3": 4, "4": 0, "5": 0,
+      "6": 0, "7": 0, "8": 0, "9": 0
+    }
+  },
+
+  "verification": {
+    "all_claims_have_sources": null,
+    "all_sources_tier_1_or_2": null,
+    "no_orphan_claims_in_body": null,
+    "reviewer_pass": null,
+    "reviewer_notes": null,
+    "reviewed_at": null
+  }
+}

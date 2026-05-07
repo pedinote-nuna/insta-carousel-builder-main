@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.uptodate.com)",
+      "WebSearch",
+      "WebFetch(domain:www.pediatrics.or.kr)",
+      "WebFetch(domain:www.nice.org.uk)",
+      "WebFetch(domain:www.ncbi.nlm.nih.gov)",
+      "Bash(node /Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/scripts/quality-check.js --dir /Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/fever-clothing)",
+      "Bash(echo \"EXIT: $?\")"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/hook-post-write.js"
+          }
+        ]
+      }
+    ]
+  }
+}
