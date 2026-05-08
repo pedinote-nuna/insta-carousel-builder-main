@@ -1,8 +1,13 @@
 node_modules/
 .env
 .env.*.local
-output/
+output/*
 !output/.keep
+# production 산출물은 예외로 추적 (9장 PNG + sources.json)
+# _history/, *-rerun*/ 같은 백업·재생성 임시 폴더는 계속 ignore
+!output/colic-5s/
+output/colic-5s/_history/
+output/colic-5s/*-rerun*/
 *.log
 .DS_Store
 Thumbs.db

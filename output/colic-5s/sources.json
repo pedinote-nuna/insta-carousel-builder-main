@@ -1,0 +1,241 @@
+{
+  "topic": "colic-5s",
+  "topic_kr": "5S로 영아 산통 달래기",
+  "palette": "handwritten-notebook",
+  "compiled_at": "2026-05-08",
+  "claims": [
+    {
+      "claim_id": "C01",
+      "slide_n": 1,
+      "claim_text": "5S Method 창시자 Dr. Harvey Karp가 The Happiest Baby on the Block (2002)에서 제시한 영아 산통(infantile colic) 달래기의 검증된 방법이다.",
+      "source": {
+        "tier": 1,
+        "type": "book",
+        "title": "The Happiest Baby on the Block",
+        "authors": ["Karp, Harvey"],
+        "publisher": "Bantam Books",
+        "publication_date": "2002",
+        "applicable_age": "0-4 months",
+        "url": "",
+        "last_accessed_at": "2026-05-08"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C02",
+      "slide_n": 2,
+      "claim_text": "영아 산통은 Wessel 의 'Rule of Three' (하루 3시간 이상, 주 3일 이상, 3주 이상 연속) 로 정의된다.",
+      "source": {
+        "tier": 2,
+        "type": "journal",
+        "title": "Paroxysmal fussing in infancy, sometimes called colic",
+        "authors": ["Wessel, M.A.", "Cobb, J.C.", "Jackson, E.B.", "Harris, G.S.", "Detwiler, A.C."],
+        "publication": "Pediatrics",
+        "volume": "14(5)",
+        "publication_date": "1954",
+        "applicable_age": "0-3 months",
+        "url": "",
+        "last_accessed_at": "2026-05-08"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C03",
+      "slide_n": 2,
+      "claim_text": "영아 산통은 보통 6주경 정점에 도달하고 3~6개월 사이에 자연 소실되며, 영아의 약 10~40% 가 경험한다.",
+      "source": {
+        "tier": 1,
+        "type": "textbook",
+        "title": "Nelson Textbook of Pediatrics — Infantile Colic chapter",
+        "authors": ["Kliegman, R.M. et al. (eds.)"],
+        "publisher": "Elsevier",
+        "publication_date": "2020 (21st ed.)",
+        "applicable_age": "0-6 months",
+        "url": "",
+        "last_accessed_at": "2026-05-08"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C04",
+      "slide_n": 3,
+      "claim_text": "Swaddling(속싸개)은 영아의 모로 반사를 억제하고 자궁 환경을 재현하여 진정 효과를 준다.",
+      "source": {
+        "tier": 2,
+        "type": "systematic_review",
+        "title": "Swaddling: A Systematic Review",
+        "authors": ["Van Sleuwen, B.E.", "Engelberts, A.C.", "Boere-Boonekamp, M.M.", "Kuis, W.", "Schulpen, T.W.J.", "L'Hoir, M.P."],
+        "publication": "Pediatrics",
+        "volume": "120(4)",
+        "pages": "e1097-e1106",
+        "pmid": "17908730",
+        "publication_date": "2007",
+        "applicable_age": "0-3 months",
+        "url": "",
+        "last_accessed_at": "2026-05-08"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C05",
+      "slide_n": 4,
+      "claim_text": "옆/배 자세는 깨어 있는 동안 달래는 데에만 사용해야 하며, 잠자리에서는 반드시 등을 대고 재워야 한다.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "SIDS and Other Sleep-Related Infant Deaths: Updated 2016 Recommendations for a Safe Infant Sleeping Environment",
+        "authors": ["AAP Task Force on Sudden Infant Death Syndrome"],
+        "publication": "Pediatrics",
+        "volume": "138(5)",
+        "publication_date": "2016",
+        "applicable_age": "0-12 months",
+        "url": "",
+        "last_accessed_at": "2026-05-08"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C06",
+      "slide_n": 4,
+      "claim_text": "Side(옆으로 안기) 자세는 5S Method 의 한 단계로 부모가 안고 있을 때만 적용한다.",
+      "source": {
+        "tier": 1,
+        "type": "book",
+        "title": "The Happiest Baby on the Block",
+        "authors": ["Karp, Harvey"],
+        "publisher": "Bantam Books",
+        "publication_date": "2002",
+        "applicable_age": "0-4 months",
+        "url": "",
+        "last_accessed_at": "2026-05-08"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C07",
+      "slide_n": 5,
+      "claim_text": "백색소음(Shush)은 자궁 안 혈류 소리 약 85dB 를 재현하여 진정 효과를 주며, 진공청소기·드라이기 등도 활용 가능하다.",
+      "source": {
+        "tier": 1,
+        "type": "book",
+        "title": "The Happiest Baby on the Block",
+        "authors": ["Karp, Harvey"],
+        "publisher": "Bantam Books",
+        "publication_date": "2002",
+        "applicable_age": "0-4 months",
+        "url": "",
+        "last_accessed_at": "2026-05-08"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C08",
+      "slide_n": 6,
+      "claim_text": "Swing(흔들기)은 머리와 목을 지지한 상태에서 약 1인치(2.5cm) 미만의 작은 진동만 적용한다.",
+      "source": {
+        "tier": 1,
+        "type": "book",
+        "title": "The Happiest Baby on the Block",
+        "authors": ["Karp, Harvey"],
+        "publisher": "Bantam Books",
+        "publication_date": "2002",
+        "applicable_age": "0-4 months",
+        "url": "",
+        "last_accessed_at": "2026-05-08"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C09",
+      "slide_n": 6,
+      "claim_text": "큰 폭으로 흔드는 것은 Shaken Baby Syndrome (학대성 두부 외상) 위험을 초래하므로 절대 금지한다.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Abusive Head Trauma in Infants and Children",
+        "authors": ["AAP Section on Child Abuse and Neglect"],
+        "publication": "Pediatrics",
+        "publication_date": "2020",
+        "applicable_age": "0-24 months",
+        "url": "",
+        "last_accessed_at": "2026-05-08"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C10",
+      "slide_n": 7,
+      "claim_text": "Suck(빨기 반사) 활용 — 공갈젖꼭지·손가락·수유 등을 통해 영아의 진정 효과를 얻을 수 있다.",
+      "source": {
+        "tier": 1,
+        "type": "book",
+        "title": "The Happiest Baby on the Block",
+        "authors": ["Karp, Harvey"],
+        "publisher": "Bantam Books",
+        "publication_date": "2002",
+        "applicable_age": "0-4 months",
+        "url": "",
+        "last_accessed_at": "2026-05-08"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C11",
+      "slide_n": 8,
+      "claim_text": "5S 단계는 동시에 적용해야 효과가 극대화되며, 단일 단계만 적용 시 효과가 제한된다.",
+      "source": {
+        "tier": 1,
+        "type": "book",
+        "title": "The Happiest Baby on the Block",
+        "authors": ["Karp, Harvey"],
+        "publisher": "Bantam Books",
+        "publication_date": "2002",
+        "applicable_age": "0-4 months",
+        "url": "",
+        "last_accessed_at": "2026-05-08"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C12",
+      "slide_n": 8,
+      "claim_text": "다음 신호 중 하나라도 있으면 즉시 진료가 필요하다: 3개월 미만 38°C 이상 발열, 30분 이상 진정 안 됨, 식욕 저하·구토·탈수, 평소와 다른 울음 소리.",
+      "source": {
+        "tier": 2,
+        "type": "review",
+        "title": "Infantile Colic: Recognition and Treatment",
+        "authors": ["Johnson, J.D.", "Cocker, K.", "Chang, E."],
+        "publication": "American Family Physician (AAFP)",
+        "volume": "92(7)",
+        "pages": "577-582",
+        "publication_date": "2015",
+        "applicable_age": "0-6 months",
+        "url": "",
+        "last_accessed_at": "2026-05-08"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    }
+  ],
+  "verification": {
+    "tier_1_count": 9,
+    "tier_2_count": 3,
+    "total_claims": 12,
+    "all_claims_have_publication_date": true,
+    "all_claims_have_applicable_age": true,
+    "writer_used_count": 12,
+    "reviewer_pass_count": null,
+    "notes": "Tier 1 (학회 가이드라인 + 교과서 + Karp 원전) 9건 + Tier 2 (peer-reviewed 논문/리뷰) 3건. Tier 3 이하 출처 0건. URL 미기재 항목 다수 — 학술 DB 인용 형식, 검색 가능. slide-09 출처 박스: AAP Safe Sleep(2016), Karp(2002), Van Sleuwen et al. Pediatrics 120(4) 2007, Nelson Textbook of Pediatrics 21st ed. 2020."
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "_comment": "소아과언니 카드뉴스 9장 — Dr. Karp's 5S Method (영아 산통 달래기). 톤 2: 손그림 노트북 (검증 진행 중). 의학 안전 경고가 결정적인 주제 — slide-04(안전수면), slide-06(SBS), slide-08(Red Flag) 의 경고 박스는 coral 경고 액센트로 강조. sources.json 의 claim_id 와 1:1 매핑.",
+  "topic": "colic-5s",
+  "topic_kr": "5S로 영아 산통 달래기",
+  "palette": "handwritten-notebook",
+  "tone": "handwritten-notebook",
+  "common_style": "Instagram carousel slide design, 4:5 aspect ratio (1080x1350 px). HAND-DRAWN NOTEBOOK STYLE — like a parent's caring memo notebook.\n\n- Background: warm beige grid paper texture, base color #F5F0E5 (or #F8F2E3)\n- Subtle grid pattern: thin pencil lines (rgba 0.1) forming light grid squares across the canvas, like dotted/lined notebook paper\n- Primary text: deep navy or black #1A1F36\n- Highlighter accent (MAIN): mustard yellow #D4A84A — used as if highlighted with a marker behind key Korean words in the headline\n- Warning accent: coral #C44536 — used ONLY for medical safety alert boxes (e.g., SIDS, SBS, Red Flag warnings)\n- Secondary text: warm gray #5F5E5A\n- Typography: Korean sans-serif bold (Pretendard-like) with handwritten feel for accent words\n- Illustration style: hand-drawn line sketches in black ink, slightly rough/imperfect lines, NO color fills (line art only). Pencil/pen feel, not vector clean\n- Box style: hand-drawn rectangles with small corner cross marks (architectural draft style), or simple sketched containers\n- Mood: caring parent's notebook, warm, friendly, slightly playful, study-note tone\n- Layout: generous whitespace, casual but organized, like a personal study notebook\n\nBrand signature ABSOLUTE RULE: the text '소아과언니' (exactly 4 Korean characters, no quotation marks, no emoji, no character/mascot, no decoration) must appear in the TOP-RIGHT CORNER of EVERY slide. Pretendard SemiBold ~28px in navy #1A1F36, with comfortable margin. NEVER write '80px' or any pixel measurement / coordinate notation as visible text — these are layout instructions, never content. Do not add the title, handle, or app mention to slides 1-8 — only the bare '소아과언니' in the top-right corner.\n\nNEVER invent Korean words not provided in the prompt. If unsure, omit rather than fabricate.",
+  "slides": [
+    {
+      "n": 1,
+      "role": "Cover — 5S 영아 산통 달래기",
+      "claim_ids": [
+        "C01"
+      ],
+      "prompt": "COVER SLIDE for '5S로 영아 산통 달래기'. Hand-drawn notebook style.\nTop-left small handwritten label: 'PARENTING NOTE · 005' in muted gray, like a notebook section header.\nKorean headline (navy with '5가지 신호' highlighted in mustard #D4A84A marker style — the highlighter sweeps behind those characters): '울지 않게 하는 / 5가지 신호'.\nSubtitle below the headline (gray, smaller): '5S Method 창시자 Dr. Karp의 검증된 방법'.\nHand-drawn small illustration in the lower right area: simple sketch of a baby wrapped in a swaddle blanket, line art only, no color fills.\nTop-right corner: signature '소아과언니' as per common style."
+    },
+    {
+      "n": 2,
+      "role": "영아 산통이란 — 3·3·3 규칙",
+      "claim_ids": [
+        "C02",
+        "C03"
+      ],
+      "prompt": "신호 정의 slide. Hand-drawn notebook style.\nTop-left small label: 'WHAT IS · 영아 산통' in muted gray.\nKorean headline (navy with '3·3·3 규칙' highlighted in mustard #D4A84A marker): '영아 산통은 3·3·3 규칙'.\nVisual: hand-drawn box (sketched rectangle with small corner cross marks) divided into 3 columns, each labeled clearly:\n  · 3시간 / 일\n  · 3일 / 주\n  · 3주 이상 연속\nLabels in navy bold, with mustard underline accents under '3' digits.\nCaption gray below the box: '6주경 정점, 3~6개월 자연 소실. 약 10~40% 영아가 겪음.'\nTop-right corner: signature '소아과언니' as per common style."
+    },
+    {
+      "n": 3,
+      "role": "신호 01 — Swaddle (속싸개)",
+      "claim_ids": [
+        "C04"
+      ],
+      "prompt": "신호 01 slide. Hand-drawn notebook style.\nTop-left small label: 'STEP 01 · SWADDLE' in muted gray.\nKorean two-line headline (navy with '꼭 안아주는' highlighted in mustard #D4A84A marker): '신호 01 / 꼭 안아주는 속싸개'.\nIMPORTANT TEXT RENDERING GUARD: render '속싸개' as exactly 3 Korean characters joined together, with NO space inside ('속 싸개' is wrong). Preserve the headline spacing exactly as written: '꼭 안아주는 속싸개' — one space between '안아주는' and '속싸개', and '속싸개' itself contains no internal space. Do not arbitrarily split or merge any words in the headline.\nVisual: hand-drawn line illustration of a baby wrapped snugly in a swaddle blanket, simple line art in black ink, slightly rough strokes, no color fills.\nCaption gray below: '엄마 자궁 안의 포근한 느낌을 재현해요.'\nTop-right corner: signature '소아과언니' as per common style."
+    },
+    {
+      "n": 4,
+      "role": "신호 02 — Side (안전수면 경고)",
+      "claim_ids": [
+        "C05",
+        "C06"
+      ],
+      "prompt": "신호 02 slide. Hand-drawn notebook style with safety warning.\nTop-left small label: 'STEP 02 · SIDE' in muted gray.\nKorean two-line headline (navy with '옆으로 달래기' highlighted in mustard #D4A84A marker): '신호 02 / 옆으로 달래기'.\nVisual: hand-drawn line illustration of a parent holding the baby in a side position cradled in arms (NOT lying alone on the side). Line art only.\nIMPORTANT SAFETY BOX (hand-drawn rectangle with coral #C44536 outline, small corner cross marks, no fill — uses the warning accent because this is a medical safety alert):\n  ⚠ 잠들면 즉시 등으로\n  AAP 안전수면 가이드\nCaption gray below the box: '달랠 때만 옆/배 자세, 잠자리는 반드시 등을 대고.'\nTop-right corner: signature '소아과언니' as per common style."
+    },
+    {
+      "n": 5,
+      "role": "신호 03 — Shush (백색소음)",
+      "claim_ids": [
+        "C07"
+      ],
+      "prompt": "신호 03 slide. Hand-drawn notebook style.\nTop-left small label: 'STEP 03 · SHUSH' in muted gray.\nKorean two-line headline (navy with '쉬— 백색소음' highlighted in mustard #D4A84A marker): '신호 03 / 쉬— 백색소음'.\nVisual: hand-drawn line illustration of small sound-wave arcs coming from a parent's mouth toward the baby's ear, simple line art in black ink.\nCaption gray below: '자궁 안 혈류 소리를 재현. 아기와 거리 두고 사용.'\nTop-right corner: signature '소아과언니' as per common style."
+    },
+    {
+      "n": 6,
+      "role": "신호 04 — Swing (SBS 경고)",
+      "claim_ids": [
+        "C08",
+        "C09"
+      ],
+      "prompt": "신호 04 slide. Hand-drawn notebook style with safety warning.\nTop-left small label: 'STEP 04 · SWING' in muted gray.\nKorean two-line headline (navy with '작은 흔들기' highlighted in mustard #D4A84A marker): '신호 04 / 작은 흔들기'.\nVisual: hand-drawn line illustration of a parent gently jiggling the baby's head while supporting the neck, with a small annotation arrow indicating motion range '≤ 2.5cm'. Line art only.\nIMPORTANT SAFETY BOX (hand-drawn rectangle with coral #C44536 outline, small corner cross marks, no fill — warning accent for medical safety):\n  ⚠ 1인치 (2.5cm) 미만의 작은 움직임만\n  절대 흔들지 마세요 — Shaken Baby Syndrome 위험\nCaption gray below the box: '머리·목을 지지하면서 약 1인치 미만의 작은 진동.'\nTop-right corner: signature '소아과언니' as per common style."
+    },
+    {
+      "n": 7,
+      "role": "신호 05 — Suck (빨기 반사)",
+      "claim_ids": [
+        "C10"
+      ],
+      "prompt": "신호 05 slide. Hand-drawn notebook style.\nTop-left small label: 'STEP 05 · SUCK' in muted gray.\nKorean two-line headline (navy with '빨기 반사' highlighted in mustard #D4A84A marker): '신호 05 / 빨기 반사 활용'.\nVisual: hand-drawn line illustration of a pacifier or a baby's hand near the mouth, simple line art in black ink, no color fills.\nCaption gray below: '공갈젖꼭지·손가락·수유. 빨기 반사로 진정 효과.'\nTop-right corner: signature '소아과언니' as per common style."
+    },
+    {
+      "n": 8,
+      "role": "체크리스트 + Red Flag",
+      "claim_ids": [
+        "C11",
+        "C12"
+      ],
+      "prompt": "체크리스트 slide. Hand-drawn notebook style.\nTop-left small label: 'CHECKLIST' in muted gray.\nKorean two-line headline (navy with '동시에 적용해야' highlighted in mustard #D4A84A marker): '5가지 / 동시에 적용해야 효과'.\nBody: hand-drawn vertical checklist showing all 5 S's, each with a small hand-drawn check mark in black ink:\n  ✓ Swaddle (싸기)\n  ✓ Side (옆으로)\n  ✓ Shush (쉬—)\n  ✓ Swing (작게 흔들기)\n  ✓ Suck (빨기)\nRED FLAG BOX (hand-drawn rectangle with coral #C44536 outline, small corner cross marks, no fill — warning accent):\n  병원 가야 할 신호\n  · 3개월 미만 38°C 이상\n  · 30분 이상 진정 안 됨\n  · 식욕 저하·구토·탈수\n  · 평소와 다른 울음 소리\nTop-right corner: signature '소아과언니' as per common style.\nDo NOT add brand info, handles, or app icons in the body area."
+    },
+    {
+      "n": 9,
+      "role": "Outro",
+      "claim_ids": [],
+      "prompt": "Outro slide. Hand-drawn notebook style closing page.\nTop-left small label: 'SAVE & SHARE' in muted gray.\nKorean headline (navy with '저장하세요' highlighted in mustard #D4A84A marker — ALL syllables '저', '장', '하', '세', '요' highlighted by the same marker sweep): '오늘 확인하고 저장하세요'.\n\nSource area (hand-drawn rectangle, no fill, thin black line border with small corner cross marks). The box must contain EXACTLY these four bullet lines — no more, no fewer:\n  출처\n  · AAP Safe Sleep Policy (2016)\n  · Karp, H. The Happiest Baby on the Block (2002)\n  · Van Sleuwen et al. Pediatrics 120(4), 2007\n  · Nelson Textbook of Pediatrics (2020)\n\nBrand block (handwritten note style, restrained — render the labels exactly as written, NEVER add pixel measurements as visible text):\n  소아과언니   (medium-bold large navy text on its own line — exactly 4 Korean characters '소아과언니', NOTHING else after it. Do NOT write '40px', '48px', '~40-48px', or any pixel value. Pixel sizes are layout instructions, not content.)\n  SOAGWA UNNIE · 소아청소년과 전문의   (small caps gray, letter-spaced, below)\n  ──── (thin hand-drawn divider line, narrow width)\n  @soagwa_unnie · 매주 새 가이드   (regular small navy)\n  소아과수첩 앱 · 야간·달빛병원 바로 찾기   (regular small navy)\n\nABSOLUTE TEXT RULE: never render numbers followed by 'px' (e.g., '40px', '48px', '~40-48px', '14px', '16px') anywhere on the canvas. These are design specifications for the renderer, never visible content.\n\nMood: like the colophon page of a parenting notebook — restrained, hand-drawn, intentional.\nNo emojis, no save/share icons, no sparkles.\nTop-right corner: signature '소아과언니' as per common style."
+    }
+  ]
+}
