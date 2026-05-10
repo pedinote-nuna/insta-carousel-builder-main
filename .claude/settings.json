@@ -7,7 +7,19 @@
       "WebFetch(domain:www.nice.org.uk)",
       "WebFetch(domain:www.ncbi.nlm.nih.gov)",
       "Bash(node /Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/scripts/quality-check.js --dir /Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/fever-clothing)",
-      "Bash(echo \"EXIT: $?\")"
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(git commit -m ' *)",
+      "Bash(brew install *)",
+      "Bash(python3.11 --version)",
+      "WebFetch(domain:www.cdc.gov)",
+      "WebFetch(domain:www.aap.org)",
+      "WebFetch(domain:health.kdca.go.kr)",
+      "Read(//Library/Fonts/**)",
+      "Bash(python3 -c \"from PIL import Image, ImageDraw, ImageFont; print\\('Pillow already installed', Image.__version__ if hasattr\\(Image, '__version__'\\) else 'OK'\\)\")",
+      "Read(//System/Library/Fonts/Supplemental/**)",
+      "Read(//System/Library/Fonts/**)",
+      "Bash(pip3 install *)",
+      "Bash(python3 -c \"from PIL import Image, ImageDraw, ImageFont; print\\('Pillow OK'\\)\")"
     ]
   },
   "hooks": {

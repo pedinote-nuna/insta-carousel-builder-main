@@ -1,71 +1,63 @@
 {
-  "_comment": "소아과언니 카드뉴스 9장 견본 (팔레트 A — Editorial Coral, 일상 케어). 본인 주제에 맞게 slides[].prompt 와 claim_ids 를 수정하세요. common_style 과 common_palette 는 brand-facts.md 디자인 DNA — 그대로 두는 걸 권장. 슬라이드 9 출처 박스는 의무.",
+  "_comment": "소아과언니 카드뉴스 9장 견본 (팔레트 A — Editorial Coral, 일상 케어). 시리즈 일관성은 톤·컬러·폰트·시그니처 텍스트로만 만든다. 좌표·픽셀 룰·후처리 없음 — 모델 자율성 최대화. 슬라이드 9 출처 박스는 의무.",
   "topic": "weaning-readiness",
   "topic_kr": "이유식 시작 신호",
   "palette": "A",
-  "common_style": "Instagram carousel slide design, 4:5 aspect ratio (1080x1350 px). Magazine editorial style, premium light minimalist for parenting/medical content. Layout: left-aligned, magazine-style, 14px vertical accent bar at left edge, generous whitespace (60%+ empty area), Pretendard Korean typography (900 headline / 700 sub / 400 body). Headline rule: only the LAST word in accent color, others in primary text color. Bottom fixed footer: trust badge \"✓ 소아청소년과 전문의 검수\" + slide indicator like \"03 / 09\". Tone: 전문의의 신뢰 + 동네 언니의 친근함 (calm, trustworthy, warm). NO emoji except ✓ and ❤️. NO stock-photo people, NO doctor-in-white-coat clichés.",
-  "common_palette": {
-    "_palette_name": "A — Editorial Coral",
-    "_use_for": "일상 케어·영양·성장발달·소아심장 일반 교육·앱 활용",
-    "bg": "#FAFAF7",
-    "text": "#1A1F36",
-    "accent": "#C44536",
-    "secondary": "#5B7C99"
-  },
+  "common_style": "Instagram carousel slide design, 4:5 aspect ratio (1080x1350 px). Magazine editorial style, light minimalist, premium feel for parenting/medical content.\n\n- Background: clean white or warm off-white\n- Primary text: deep navy #1A1F36\n- Primary accent: coral #C44536 (last word of headline, key emphasis)\n- Warning accent: mustard #B8860B (caution slides only, sparingly)\n- Secondary text: muted gray\n- Typography: Korean sans-serif (Pretendard-like), bold headlines, generous whitespace, left-aligned\n- Mood: trustworthy pediatrician + friendly neighborhood expert\n- Brand signature ABSOLUTE RULE: the text '소아과언니' (exactly 4 Korean characters, no quotation marks, no emoji, no character/mascot, no smiley face, no dot/star/sparkle decoration) must appear in the TOP-RIGHT CORNER of EVERY slide including the outro. Render it at 28px Pretendard SemiBold in navy #1A1F36, positioned in the top-right corner with a comfortable margin from the top edge and the right edge. Do NOT write '80px' or any pixel measurement / coordinate notation as visible text on the canvas — these are layout instructions, never content. Do not add the title, handle, or app mention to slides 1-8 — only the bare '소아과언니' text in the top-right corner.\n- NEVER render position specifications, pixel values, or coordinate notation (e.g., '80px', 'x=100', 'top:50') as visible text anywhere on the canvas. These are instructions for layout, not content to display.\n- The final slide (slide 9) adds the title '소아청소년과 전문의', the handle '@soagwa_unnie', and the app mention '소아과수첩 앱' inside the body editorial area (the top-right '소아과언니' signature stays the same).\n- Layout, illustrations, and visual elements: free creative interpretation\n- Korean integrity: never invent Korean words. If unsure, omit rather than fabricate.",
   "slides": [
     {
       "n": 1,
       "role": "Cover",
       "claim_ids": [],
-      "prompt": "COVER SLIDE for soagwa_unnie carousel \"이유식 시작 신호\". 1080x1350 px, light magazine editorial style. Background: #FAFAF7. Left edge: 14px vertical accent bar in #C44536. Top-left small label uppercase: \"@SOAGWA_UNNIE · 부모님 가이드\". Lower-left bold Korean headline 3 lines (Pretendard 900): \"우리 아이\" (text #1A1F36), \"이유식 시작\" (text #1A1F36), \"5가지 신호.\" (last word \"신호\" in accent #C44536). Subline gray #5B7C99: \"4~6개월 사이, 놓치지 마세요.\". Bottom fixed footer: \"✓ 소아청소년과 전문의 검수\" (left) + \"01 / 09\" (right) in #5B7C99. Generous whitespace at top 50%."
+      "prompt": "COVER SLIDE for '우리 아이 이유식 시작 5가지 신호'.\nTop-right corner signature: '소아과언니' text only — exactly 4 Korean characters, Pretendard SemiBold ~28px, navy #1A1F36. NO character icon, NO emoji, NO smiley face, NO mascot, NO dot or sparkle decoration of any kind next to the signature. Just the 4-character text.\n\nMain composition (left side): bold Korean three-line headline (navy, with the last phrase '5가지 신호' in coral): '우리 아이 / 이유식 시작 / 5가지 신호.'\nSubtitle below the headline (gray, smaller): '4~6개월 사이, 놓치지 마세요.'\n\nRight side composition: photo-realistic still life of an empty baby feeding bowl with a wooden spoon, soft natural lighting, cream/beige tones. Generous whitespace overall."
     },
     {
       "n": 2,
       "role": "신호 01 — 목 가누기",
       "claim_ids": [],
-      "prompt": "BODY SLIDE 02 for \"이유식 시작 신호\". 1080x1350 px, background #FAFAF7. Left 14px accent bar #C44536. Top-left small uppercase label: \"신호 01\" (#C44536). Korean headline (Pretendard 900): \"혼자\" (text), \"머리를\" (text), \"가눠요.\" (last word in accent). One visual element only — minimal line illustration of upright baby head silhouette in #1A1F36 lines on right side. Caption gray: \"받쳐주지 않아도 안정적으로 머리 유지.\" Bottom footer trust badge + \"02 / 09\". Magazine breathing room."
+      "prompt": "신호 01 slide. Top-left small label '신호 01' in coral (small, like a tag).\nKorean headline (navy with '가눠요' in coral): '혼자 머리를 가눠요'.\nCaption gray below the headline: '받쳐주지 않아도 안정적으로 머리 유지.'\nVisual: simple line illustration of a baby on tummy holding head up. Soft coral accent line nearby.\nNote: Do not place text labels on or near the headline. Keep the headline area clean — only headline + caption. No quotation marks around the headline."
     },
     {
       "n": 3,
       "role": "신호 02 — 음식 관심",
       "claim_ids": [],
-      "prompt": "BODY SLIDE 03. Background #FAFAF7. Left bar #C44536. Label \"신호 02\". Korean headline: \"음식을\" \"빤히\" \"쳐다봐요.\" (last in accent). Visual: simple icon row of three small dishes (line art, #1A1F36). Caption gray: \"부모 식사 보며 입을 오물거리거나 손 뻗음.\" Footer + \"03 / 09\"."
+      "prompt": "Body slide '신호 02'. Korean headline (navy with '쳐다봐요' in coral): '음식을 빤히 쳐다봐요.' Caption gray: '부모 식사 보며 입을 오물거리거나 손 뻗음.' Visual: simple editorial illustration suggesting a baby's curiosity about food. Brand '소아과언니' small somewhere natural."
     },
     {
       "n": 4,
       "role": "신호 03 — 혀 내밀기 반사 감소",
       "claim_ids": [],
-      "prompt": "BODY SLIDE 04. Background #FAFAF7. Label \"신호 03\". Korean headline: \"혀로\" \"음식을\" \"안 밀어내요.\" (last word \"밀어내요\" in accent #C44536). Visual: simple before/after diagram — two small spoon icons, left labeled \"X\" (gray) right labeled \"O\" (accent). Caption gray: \"혀 내밀기 반사가 약해지는 시기 — 보통 4~6개월.\" Footer + \"04 / 09\"."
+      "prompt": "Body slide '신호 03'. Korean headline (navy with '밀어내요' in coral): '혀로 음식을 안 밀어내요.' Caption gray: '혀 내밀기 반사가 약해지는 시기 — 보통 4~6개월.' Visual: simple illustration suggesting tongue-thrust reflex fading (e.g., spoon and baby mouth, before/after, etc — your choice). Brand '소아과언니' small somewhere natural."
     },
     {
       "n": 5,
       "role": "신호 04 — 체중 2배",
       "claim_ids": [],
-      "prompt": "BODY SLIDE 05. Background #FAFAF7. Label \"신호 04\". Korean headline: \"출생 체중의\" \"2배\" \"가까이 됐어요.\" (last word in accent). Visual: two stacked horizontal bars — \"출생\" 40% width (#1A1F36) and \"현재\" 80% width (accent #C44536). Caption gray: \"보통 만 6개월 무렵 도달.\" Footer + \"05 / 09\"."
+      "prompt": "신호 04 slide. Top-left small label '신호 04' in muted gray (consistent with slides 02, 03, 04, 06).\nKorean headline (navy with '됐어요' in coral): '출생 체중의 2배 가까이 됐어요.'\nIMPORTANT: The headline must NOT be wrapped in quotation marks. Render it as plain bold text without any decorative quotes ' or \".\nCaption gray below the headline: '보통 만 6개월 무렵 도달.'\nVisual: balance scale or weight comparison diagram with two bars (birth weight smaller, current ~2x larger). Navy and coral blocks.\nTop-right corner: signature '소아과언니' as per common style."
     },
     {
       "n": 6,
       "role": "신호 05 — 앉기",
       "claim_ids": [],
-      "prompt": "BODY SLIDE 06. Background #FAFAF7. Label \"신호 05\". Korean headline: \"받쳐주면\" \"앉을 수\" \"있어요.\" (last in accent). Visual: minimal seated baby silhouette on small chair (line art). Caption gray: \"음식을 안전하게 삼키려면 상체 안정이 필요.\" Footer + \"06 / 09\"."
+      "prompt": "신호 05 slide. Top-left small label '신호 05' in muted gray.\nKorean headline (navy with '있어요' in coral): '받쳐주면 앉을 수 있어요'.\nIMPORTANT: The headline is exactly '받쳐주면 앉을 수 있어요' — a single sentence. Do NOT duplicate '앉을 수' or '있을 수' or any word. Render the sentence exactly once.\nCaption gray below the headline: '음식을 안전하게 삼키려면 상체 안정이 필요.'\nVisual: simple line illustration of an infant sitting supported (with adult hand from behind or a small chair), coral accent on the bib.\nTop-right corner: signature '소아과언니' as per common style. Do NOT write any pixel values, '80px', or position labels as visible text anywhere on the canvas."
     },
     {
       "n": 7,
       "role": "주의 — 너무 이르면",
       "claim_ids": [],
-      "prompt": "BODY SLIDE 07. Background #FAFAF7. Label \"주의\" in accent. Korean headline: \"4개월 전\" \"너무\" \"이릅니다.\" (last in accent). Visual: small circular caution icon (line art, accent stroke). Caption gray: \"소화·면역 미성숙 — 알레르기·과체중 위험 ↑.\" Footer + \"07 / 09\"."
+      "prompt": "Caution slide '주의'. Korean headline (navy with '이릅니다' in mustard #B8860B): '4개월 전 너무 이릅니다.' Caption gray: '소화·면역 미성숙 — 알레르기·과체중 위험 ↑.' Use warning mustard accent (NOT coral) for the final word and the '주의' label, since this is a stop/risk slide. Visual: simple caution mark, hourglass, or restrained warning icon (your choice). Brand '소아과언니' small somewhere natural."
     },
     {
       "n": 8,
       "role": "정리 체크리스트",
       "claim_ids": [],
-      "prompt": "BODY SLIDE 08 — checklist recap. Background #FAFAF7. Label \"체크\". Korean headline: \"한눈에 보는\" \"5가지.\" (last in accent). Visual: vertical 5-row checklist (✓ icons in accent #C44536) — 목 가누기 / 음식 관심 / 혀 반사 ↓ / 체중 2배 / 받쳐 앉기. Caption gray: \"3개 이상이면 시작 시점.\" Footer + \"08 / 09\"."
+      "prompt": "체크리스트 slide. Top-left small label '체크' in coral.\nKorean two-line headline:\n  Line 1 (navy): '한눈에 보는'\n  Line 2 (navy with '5가지' in coral): '이유식 신호 5가지.'\nThis makes the topic explicit (이유식 신호) instead of an ambiguous '한눈에 보는 5가지'.\nSub-caption gray below the headline: '3개 이상이면 시작 시점.'\nBody: vertical list of 5 items, each with a small minimalist checkmark icon (16~20px, NOT large) in coral, followed by short Korean text in navy SemiBold:\n  ✓ 목 가누기\n  ✓ 음식 관심\n  ✓ 혀 반사 ↓\n  ✓ 체중 2배\n  ✓ 받쳐 앉기\nMagazine editorial style — generous whitespace between items, small refined checkmarks, navy semibold text.\nDo NOT add brand info, handles, app icons, or any CTA in the body area. The brand signature appears only in the top-right corner per common style."
     },
     {
       "n": 9,
       "role": "Outro",
       "claim_ids": [],
-      "prompt": "OUTRO SLIDE with SOURCE BOX. Background #FAFAF7. Left bar #C44536. Top label uppercase: \"SAVE & SHARE\" (#C44536). Korean headline (Pretendard 900): \"오늘\" \"확인하고\" \"저장하세요.\" (last in accent). Below headline: SOURCE BOX with light border (#5B7C99 1px) — small label \"출처\" (#5B7C99) + body text \"AAP Complementary Feeding Guidance · 대한소아청소년과학회 영양위원회\" (#1A1F36, Pretendard 400). App pitch in gray: \"아이 식사·성장 기록은 소아과수첩 앱.\" Handle line bold: \"@soagwa_unnie\" (#1A1F36) + small accent: \"팔로우 = 매주 새 가이드\" (#C44536). CTA gray: \"도움됐다면 ❤️ + 저장 + 공유.\" Bottom footer trust badge + \"09 / 09\"."
+      "prompt": "Outro slide. Magazine editorial closing page (colophon) style. Refined typography, generous whitespace, clear hierarchy. NO emojis, NO decorations, NO sparkles, NO save/share icons, NO hearts.\n\nTop section:\n- Korean headline (navy with the last word '저장하세요' in coral — ALL syllables '저', '장', '하', '세', '요' must be the SAME coral color, no syllable left in navy): '오늘 확인하고 저장하세요.'\n- Source box below the headline: minimal style with a thin underline or thin 1px border. Label '출처' (exactly once) followed by: 'AAP Complementary Feeding Guidance · 대한소아청소년과학회 영양위원회'\n\nBottom section — refined editorial signature block (NOT block-like, NOT business-card-like, NOT framed):\n\nLine 1 (medium bold, ~40-48px navy): 소아과언니\nLine 2 (small caps gray, letter-spaced, ~14px): SOAGWA UNNIE · 소아청소년과 전문의\n\nThin horizontal divider line (gray, 1px, narrow width — not full width)\n\nLine 3 (regular, ~16px navy): @soagwa_unnie\nLine 4 (small gray, ~13px): 매주 새 가이드\n\nSmall vertical gap\n\nLine 5 (regular, ~16px navy): 소아과수첩\nLine 6 (small gray, ~13px): 아이 식사·성장 기록 앱\n\nMood: like the colophon / credit page of a printed magazine — restrained, sophisticated, intentional whitespace. The '소아과언니' top-right corner signature (~28px) remains as standard from common_style."
     }
   ]
 }

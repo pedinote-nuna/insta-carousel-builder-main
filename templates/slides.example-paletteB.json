@@ -1,71 +1,63 @@
 {
-  "_comment": "소아과언니 카드뉴스 9장 견본 (팔레트 B — Medical Teal, 예방접종/위험 신호). 패턴 B 'Normal vs Risk' demonstrate: 정상 2 + 위험 4 + 즉시 119 1. 6단계 production 토픽(fever-clothing)과 의도적으로 다른 주제. 슬라이드 9 출처 박스는 의무.",
+  "_comment": "소아과언니 카드뉴스 9장 견본 (팔레트 B — Medical Teal, 예방접종/위험 신호). 패턴 B 'Normal vs Risk' demonstrate: 정상 2 + 위험 4 + 즉시 119 1. 시리즈 일관성은 톤·컬러·폰트·시그니처 텍스트로만 만든다. 좌표·픽셀 룰·후처리 없음 — 모델 자율성 최대화. 슬라이드 9 출처 박스는 의무.",
   "topic": "vaccine-side-effects",
   "topic_kr": "예방접종 부작용 vs 위험 신호",
   "palette": "B",
-  "common_style": "Instagram carousel slide design, 4:5 aspect ratio (1080x1350 px). Magazine editorial style, calm clinical light minimalist for vaccine/immunization pediatric content. Layout: left-aligned, magazine-style, 14px vertical accent bar at left edge, generous whitespace (60%+ empty area), Pretendard Korean typography (900 headline / 700 sub / 400 body). Headline rule: only the LAST word in accent color, others in primary text color. Bottom fixed footer: trust badge \"✓ 소아청소년과 전문의 검수\" + slide indicator like \"03 / 09\". Tone: 전문의의 신뢰 + 동네 언니의 친근함 (calm, trustworthy, restrained — palette B is for higher-stakes topics). NO emoji except ✓ and ❤️. NO stock-photo people, NO doctor-in-white-coat clichés.",
-  "common_palette": {
-    "_palette_name": "B — Medical Teal",
-    "_use_for": "예방접종·응급·약물 안전·위험 신호·질환관리",
-    "bg": "#F8F8F5",
-    "text": "#0E1B2C",
-    "accent": "#2C6E63",
-    "secondary": "#6B7B8C"
-  },
+  "common_style": "Instagram carousel slide design, 4:5 aspect ratio (1080x1350 px). Magazine editorial style, light minimalist, calm clinical for vaccine/immunization pediatric content.\n\n- Background: clean white or warm off-white\n- Primary text: deep navy #0E1B2C\n- Primary accent: medical teal #2C6E63 (last word of headline, key emphasis)\n- Warning accent: mustard #B8860B (severe risk slides only, sparingly)\n- Secondary text: muted gray #6B7B8C\n- Typography: Korean sans-serif (Pretendard-like), bold headlines, generous whitespace, left-aligned\n- Mood: trustworthy pediatrician + restrained clinical (palette B is for higher-stakes topics)\n- Each slide must include the brand name '소아과언니' somewhere naturally (small, non-intrusive, in a position that fits the composition)\n- The final slide adds the title '소아청소년과 전문의', the handle '@soagwa_unnie', and the app mention '소아과수첩 앱'\n- Layout, illustrations, and visual elements: free creative interpretation\n- Korean integrity: never invent Korean words. If unsure, omit rather than fabricate.",
   "slides": [
     {
       "n": 1,
       "role": "Cover — 정상 vs 위험 프레이밍",
       "claim_ids": [],
-      "prompt": "COVER SLIDE for soagwa_unnie carousel \"예방접종 부작용 vs 위험 신호\". 1080x1350 px, light medical magazine style. Background: #F8F8F5. Left edge: 14px vertical accent bar #2C6E63. Top-left small uppercase label: \"@SOAGWA_UNNIE · 예방접종 가이드\". Lower-left bold Korean headline 3 lines (Pretendard 900): \"예방접종 후\" (text #0E1B2C), \"정상 vs\" (text), \"위험할까.\" (last word \"위험할까\" in accent #2C6E63). Subline gray #6B7B8C: \"미열·발적·보챔, 어디까지가 정상일까요.\". Bottom footer: \"✓ 소아청소년과 전문의 검수\" + \"01 / 09\" in #6B7B8C. Top 50% empty for breathing room. Use exact Korean spelling \"예방접종\" \"정상\" \"위험\"."
+      "prompt": "Cover slide for '예방접종 부작용 vs 위험 신호' carousel. Korean headline (navy with last word '위험할까' in teal): '예방접종 후 정상 vs 위험할까.' Subline gray: '미열·발적·보챔, 어디까지가 정상일까요.' Brand '소아과언니' and title '소아청소년과 전문의' subtle small placement somewhere natural."
     },
     {
       "n": 2,
       "role": "프레이밍 — 정상 vs 위험 한눈 비교",
       "claim_ids": [],
-      "prompt": "BODY SLIDE 02 — Frame. 1080x1350 px. Background #F8F8F5. Left 14px bar #2C6E63. Top-left label uppercase: \"한눈에 비교\" (#2C6E63). Korean headline (Pretendard 900): \"이 안이면\" \"정상,\" \"넘으면 위험.\" (last word \"위험\" in accent #2C6E63). Visual: two side-by-side cards horizontally — left card with secondary border (#6B7B8C 2px) labeled \"정상\" with bullet list (미열·접종 부위 부어오름·짧은 보챔), right card with accent fill (#2C6E63 background, #F8F8F5 text) labeled \"위험\" with bullet list (고열 지속·호흡 곤란·전신 발진·의식 저하). Caption gray: \"각 슬라이드에서 자세히 알려드려요.\" Footer + \"02 / 09\"."
+      "prompt": "Body slide 'Frame'. Korean headline (navy with last word '위험' in teal): '이 안이면 정상, 넘으면 위험.' Visual: editorial side-by-side comparison — '정상' card (calm, secondary border) listing 미열·접종 부위 부어오름·짧은 보챔 vs '위험' card (teal-emphasized) listing 고열 지속·호흡 곤란·전신 발진·의식 저하. Caption gray: '각 슬라이드에서 자세히 알려드려요.' Brand '소아과언니' and title '소아청소년과 전문의' small somewhere natural."
     },
     {
       "n": 3,
       "role": "정상 01 — 미열 24~48시간",
       "claim_ids": [],
-      "prompt": "BODY SLIDE 03 — Normal 01. Background #F8F8F5. Left bar #2C6E63. Label \"정상 01\". Korean headline: \"37.5~38.5°C\" \"24~48시간 이내\" \"미열.\" (last word \"미열\" in accent). Visual: thermometer icon line-art with the safe range \"37.5~38.5\" highlighted in secondary color band, accent only on the upper bound marker. Caption gray: \"수분 충분히, 평소 옷차림 그대로 — 보통 자연 호전.\" Use exact Korean spelling \"미열\" \"수분\". Footer + \"03 / 09\"."
+      "prompt": "Body slide '정상 01'. Korean headline (navy with last word '미열' in teal): '37.5~38.5°C 24~48시간 이내 미열.' Caption gray: '수분 충분히, 평소 옷차림 그대로 — 보통 자연 호전.' Visual: thermometer or simple range indicator (your editorial choice). Brand '소아과언니' small somewhere natural."
     },
     {
       "n": 4,
       "role": "정상 02 — 접종 부위 반응",
       "claim_ids": [],
-      "prompt": "BODY SLIDE 04 — Normal 02. Background #F8F8F5. Left bar #2C6E63. Label \"정상 02\". Korean headline: \"접종 부위\" \"24~72시간\" \"부어오름.\" (last word in accent). Visual: simple arm cross-section line illustration with a circular swelling indicator (size 3~5cm), accent stroke on the swelling outline. Caption gray: \"가벼운 발적·통증 정상 — 차가운 수건 잠깐만 OK.\" Footer + \"04 / 09\"."
+      "prompt": "Body slide '정상 02'. Korean headline (navy with last word '부어오름' in teal): '접종 부위 24~72시간 부어오름.' Caption gray: '가벼운 발적·통증 정상 — 차가운 수건 잠깐만 OK.' Visual: simple arm/swelling diagram or restrained editorial illustration (your choice). Brand '소아과언니' small somewhere natural."
     },
     {
       "n": 5,
       "role": "위험 01 — 고열 지속",
       "claim_ids": [],
-      "prompt": "BODY SLIDE 05 — Risk 01. Background #F8F8F5. Left bar #2C6E63. Label \"위험 01\" in accent. Korean headline: \"39°C 이상\" \"또는 48시간 이상\" \"지속.\" (last word \"지속\" in accent). Visual: thermometer icon with the danger zone (≥39) filled accent #2C6E63, plus a small clock icon showing \"48h+\" in accent. Caption gray: \"해열제로 떨어지지 않으면 즉시 진료.\" Use exact Korean spelling \"고열\" \"지속\" \"해열제\". Footer + \"05 / 09\"."
+      "prompt": "Body slide '위험 01'. Korean headline (navy with last word '지속' in teal): '39°C 이상 또는 48시간 이상 지속.' Caption gray: '해열제로 떨어지지 않으면 즉시 진료.' Visual: thermometer with danger zone or clock-thermometer combination (your editorial choice). Brand '소아과언니' small somewhere natural."
     },
     {
       "n": 6,
       "role": "위험 02 — 호흡 곤란",
       "claim_ids": [],
-      "prompt": "BODY SLIDE 06 — Risk 02. Background #F8F8F5. Left bar #2C6E63. Label \"위험 02\" in accent. Korean headline: \"숨소리\" \"이상하거나\" \"가빠요.\" (last word \"가빠요\" in accent). Visual: minimal lung outline icon with concentric pulse rings, accent stroke on the rings indicating respiratory distress. Caption gray: \"천명음·코 벌렁임·갈비뼈 함몰 — 즉시 119.\" Use exact Korean spelling \"천명음\" \"갈비뼈 함몰\". Footer + \"06 / 09\"."
+      "prompt": "Body slide '위험 02'. Korean headline (navy with last word '가빠요' in teal): '숨소리 이상하거나 가빠요.' Caption gray: '천명음·코 벌렁임·갈비뼈 함몰 — 즉시 119.' Visual: simple lung/breath indicator (your editorial choice). Brand '소아과언니' small somewhere natural."
     },
     {
       "n": 7,
       "role": "위험 03 — 전신 발진",
       "claim_ids": [],
-      "prompt": "BODY SLIDE 07 — Risk 03. Background #F8F8F5. Left bar #2C6E63. Label \"위험 03\" in accent. Korean headline: \"전신으로\" \"퍼지는\" \"발진.\" (last word \"발진\" in accent). Visual: simple body silhouette outline with scattered small dots spreading from neck downward, dot color in accent #2C6E63. Caption gray: \"두드러기·입술 부음 동반 시 아나필락시스 의심 — 즉시 119.\" Use exact Korean spelling \"발진\" \"두드러기\" \"아나필락시스\". Footer + \"07 / 09\"."
+      "prompt": "Body slide '위험 03'. Korean headline (navy with last word '발진' in teal): '전신으로 퍼지는 발진.' Caption gray: '두드러기·입술 부음 동반 시 아나필락시스 의심 — 즉시 119.' Visual: simple body silhouette with spreading dots, or editorial allergy indicator (your choice). Brand '소아과언니' small somewhere natural."
     },
     {
       "n": 8,
       "role": "위험 04 — 의식 저하·축처짐",
       "claim_ids": [],
-      "prompt": "BODY SLIDE 08 — Risk 04. Background #F8F8F5. Left bar #2C6E63. Label \"위험 04\" in accent. Korean headline: \"눈 못 맞추고\" \"늘어지거나\" \"경련.\" (last word \"경련\" in accent). Visual: vertical short checklist of 3 red-flag rows with small accent-color icons — \"의식 저하\" / \"심한 축처짐\" / \"경련\". Add a thin accent border (#2C6E63 1px) around the entire content area to visually distinguish this red-flag slide. Caption gray #6B7B8C: \"하나라도 해당하면 망설이지 말고 119.\" Use exact Korean spelling \"의식\" \"경련\" \"축처짐\". Footer + \"08 / 09\"."
+      "prompt": "Body slide '위험 04'. Korean headline (navy with last word '경련' in teal): '눈 못 맞추고 늘어지거나 경련.' Caption gray: '하나라도 해당하면 망설이지 말고 119.' Visual: short red-flag checklist of '의식 저하 / 심한 축처짐 / 경련' or editorial alert composition (your choice). Use mustard #B8860B sparingly if you want to add a single emergency emphasis. Brand '소아과언니' small somewhere natural."
     },
     {
       "n": 9,
-      "role": "Outro — 출처 박스 의무",
+      "role": "Outro",
       "claim_ids": [],
-      "prompt": "OUTRO SLIDE with SOURCE BOX (mandatory). Background #F8F8F5. Left bar #2C6E63. Top label uppercase: \"SAVE & SHARE\" (#2C6E63). Korean headline (Pretendard 900): \"접종 전후\" \"꺼내보세요.\" (last in accent). Below headline: SOURCE BOX with thin border (#6B7B8C 1px) and slightly darker background tint (#EFEFEC) — small label \"출처\" (#6B7B8C) + body line (Pretendard 400, #0E1B2C): \"질병관리청 표준예방접종지침 · AAP Red Book — Report of the Committee on Infectious Diseases · WHO Immunization Safety\". App pitch in gray: \"접종 일정·발열 기록은 소아과수첩 앱.\" Handle line bold: \"@soagwa_unnie\" (#0E1B2C) + small accent: \"팔로우 = 예방접종 시기 알림\" (#2C6E63). CTA gray: \"도움됐다면 ❤️ + 저장 + 공유.\" Bottom footer trust badge + \"09 / 09\"."
+      "prompt": "Outro slide. Korean headline (navy with last word '꺼내보세요' in teal): '접종 전후 꺼내보세요.'\n\nSource box (clean editorial style, exactly ONE '출처' label):\n- Label: '출처'\n- Text: '질병관리청 표준예방접종지침 · AAP Red Book · WHO Immunization Safety'\n\nCTA section (all required, layout is yours to decide):\n- Brand: '소아과언니' (large, prominent)\n- Title: '소아청소년과 전문의'\n- Handle: '@soagwa_unnie' with '팔로우 = 예방접종 시기 알림' invitation\n- App: '접종 일정·발열 기록은 소아과수첩 앱'\n- Action: '도움됐다면 ❤️ + 저장 + 공유.'\n\nLayout: vertically stacked editorial, generous whitespace, free creative interpretation."
     }
   ]
 }

@@ -53,27 +53,47 @@
 
 이 레포는 **두 가지 이미지 생성 엔진**을 지원합니다. 운영자 의도에 따라 자동 판단:
 
-| 엔진 | 트리거 키워드 | 스크립트 | 서브에이전트 |
+| 엔진 | 사용 영역 | 스크립트 | 서브에이전트 |
 |:---|:---|:---|:---|
-| 🍌 **나노바나나** | "AI 이미지", "빠르게", "다양한 시안" | `scripts/nanobanana-gen.py` | `carousel-prompt-writer` (JSON) |
-| 🎨 **HTML/Puppeteer** | "정확하게", "한 글자 수정", "0원" | `scripts/html-carousel-gen.js` | `carousel-html-writer` (HTML) |
+| 🍌 **나노바나나** (기본 메인) | 일상 케어·영양·성장발달·앱 활용 등 일반 교육 주제 | `scripts/nanobanana-gen.py` | `carousel-prompt-writer` (JSON) |
+| 🎨 **HTML/Puppeteer** (정확성 트랙) | **응급·약물 용량·예방접종 시기** 등 한 글자 오류가 의료 위험을 초래하는 주제 한정 | `scripts/html-carousel-gen.js` | `carousel-html-writer` (HTML) |
 
-**자동 판단 안 될 때 — 운영자에게 1줄 질문**:
-> "🍌 나노바나나(빠른 실험) vs 🎨 HTML(정확/0원) 중 어느 엔진?"
+**운영자가 명시 안 하면 기본값**: 🍌 **나노바나나** (본방 메인).
+- 부모 친화적 일러스트 자동 생성 + 디자인 다양성으로 인스타 알고리즘에 유리.
+- 단, 본문에 **수치(체온·체중당 mg/kg)·약물명·예방접종 시기·응급 신호** 가 포함되면 → HTML 트랙으로 명시 전환.
 
-**운영자가 명시 안 하면 기본값**: 🎨 HTML/Puppeteer.
-- 의료 정보의 정확성이 핵심 자산이고, 한글 오타·수치 오류가 절대 안 되기 때문.
+**자동 판단 애매할 때 — 운영자에게 1줄 질문**:
+> "🍌 나노바나나(시각 다양성) vs 🎨 HTML(수치 정확) 중 어느 엔진?"
 
 ### 엔진별 Phase 3 분기
 
 ```
-Phase 3a (나노바나나):
+Phase 3a (나노바나나, 본방 production):
   python scripts/nanobanana-gen.py --topic <키워드> --slides templates/slides.<topic>.json
+  # → 인스타 업로드용 최종본: output/<키워드>/slide-01~09.png
 
 Phase 3b (HTML):
   # 1. carousel-html-writer 가 output/<topic>/slides/slide-01~09.html 작성
   # 2. node scripts/html-carousel-gen.js --topic <keyword>
 ```
+
+### 본방 production 방침 — 가벼운 일관성 모델
+나노바나나 트랙은 **모델 자율성을 보장**하여 일러스트를 풍성하게 만들고,
+시리즈 일관성은 **톤·컬러·폰트·시그니처 텍스트** 4가지로 형성한다:
+
+1. **톤**: 모던 의학 에디토리얼
+2. **컬러**: 팔레트 A(coral) 또는 B(teal) 중 하나, 주의 머스타드 #B8860B 공통
+3. **폰트**: Pretendard 같은 한글 sans-serif, 헤드라인 마지막 단어 액센트
+4. **시그니처**: "소아과언니" 한글 매 슬라이드 작게 노출,
+   slide-9 에 `@soagwa_unnie` + 소아청소년과 전문의 + 소아과수첩 앱 + 출처 박스
+
+좌측 14px 액센트 바·하단 footer·페이지 번호 같은 strict 시각 룰과
+후처리 스크립트(`scripts/post-process-overlay.py`)는 **폐기**.
+좌표·픽셀 단위 강제 룰이 모델 자율성을 침해해 일러스트를 단조롭게
+만든다는 결론(2026-05-08 옵션 C 검증 4회차).
+
+폐기된 후처리 스크립트는 `scripts/_deprecated/` 에 보존 (참조용).
+HTML 트랙은 영향 없음 — 응급·약물·예방접종 등 정확성이 결정적인 주제 한정.
 
 ---
 
@@ -101,7 +121,7 @@ Phase 3b (HTML):
 > "이 정보를 잘못 적용하면 아이 건강에 즉각적 위험이 있는가?"
 > YES → B / NO → A / 애매 → A(기본값)
 
-**공통**: 1080×1350, Pretendard 폰트(900/700/400), 좌측 정렬, 좌측 14px 액센트 바, 하단 "✓ 소아청소년과 전문의 검수" 배지 + "01 / 09" 인디케이터.
+**공통**: 1080×1350, Pretendard 같은 한글 sans-serif, 좌측 정렬, 잡지 에디토리얼 톤, 헤드라인 마지막 단어를 액센트 컬러로 강조. 시리즈 일관성은 **톤·컬러·폰트·시그니처 텍스트("소아과언니" 한글 매 슬라이드 노출)** 로 형성 — 좌측 액센트 바·하단 footer·페이지 번호 같은 strict 시각 룰은 사용하지 않음 (모델 자율성 보장).
 
 ---
 

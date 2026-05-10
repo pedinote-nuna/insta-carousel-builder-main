@@ -108,11 +108,20 @@ node scripts/html-carousel-gen.js --topic <topic_slug>
 python scripts/nanobanana-gen.py --topic <topic_slug> --slides templates/slides.<topic>.json
 ```
 
-- Gemini 3.0 Pro Image 9장 생성
-- 약 4분, 비용 약 500~1000원
+- Gemini 3.0 Pro Image 9장 생성 (약 4분, 약 500~1000원)
+- 출력: `output/<topic>/slide-01.png ~ slide-09.png`
+- 시리즈 일관성은 **톤·컬러·폰트·시그니처 텍스트** 로 자연스럽게 형성됨
+  (좌측 액센트 바·하단 footer 같은 strict 시각 룰 없음 — 모델 자율성 최대화)
+- 매 슬라이드에 "소아과언니" 한글 작게 노출, slide-9 에 핸들·앱·출처 박스
 - 실패한 슬라이드만 재실행
 
-→ `output/<topic>/slide-01.png ~ slide-09.png` 생성됨.
+→ 인스타 업로드용 최종본은 `output/<topic>/slide-01.png ~ slide-09.png`.
+
+> 참고: 이전에 사용하던 후처리 시리즈 요소 덧씌우기 스크립트
+> (`scripts/post-process-overlay.py`)는 폐기되어 `scripts/_deprecated/`
+> 로 이동되었습니다. strict 시각 일관성은 모델 자율성을 침해해
+> 일러스트를 단조롭게 만든다는 결론에 따라, 톤·컬러·폰트·시그니처
+> 텍스트 기반의 가벼운 일관성 모델로 전환되었습니다.
 
 ---
 
