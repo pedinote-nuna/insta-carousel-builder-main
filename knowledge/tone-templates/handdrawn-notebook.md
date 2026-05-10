@@ -11,6 +11,7 @@
 
 ## COVER 패턴 (slide n:1)
 Hand-drawn notebook style.
+Grid-pattern beige background #F5F0E5 with subtle square grid lines.
 Top-left small handwritten label: 'PARENTING NOTE · [번호]' in muted gray.
 Korean headline (navy with '[핵심 단어]' highlighted in mustard #D4A84A marker style): '[헤드라인 첫 줄] / [헤드라인 둘째 줄]'.
 Subtitle below (gray, smaller): '[부제]'.
@@ -19,6 +20,7 @@ Top-right corner: 소아과언니 (4 characters only, no quotes).
 
 ## BODY 패턴 (slide n:2-8)
 Hand-drawn notebook style.
+Grid-pattern beige background #F5F0E5 with subtle square grid lines.
 Top-left small label: '[STEP 번호 · 영문명]' in muted gray.
 Korean headline (navy with '[강조 단어]' highlighted in mustard marker): '[헤드라인]'.
 IMPORTANT: render Korean words exactly as written, no arbitrary splitting.

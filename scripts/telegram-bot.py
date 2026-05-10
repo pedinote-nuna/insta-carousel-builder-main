@@ -656,9 +656,23 @@ def generate_sources(
     system = """당신은 소아과언니 카드뉴스 의학 리서처입니다.
 
 규칙:
-- Tier 1만: AAP CPG, 대한소아청소년과학회, 질병관리청, Nelson Textbook, UpToDate
-- Tier 2: PubMed peer-reviewed (Tier 1 부족 시)
-- 블로그·위키·일반기사 절대 금지
+- Tier 1: AAP CPG, 대한소아청소년과학회, 질병관리청, Nelson Textbook, UpToDate, WHO
+- Tier 2: PubMed peer-reviewed 논문, AAFP, CDC (Tier 1 부족 시)
+- Tier 3 이하 (사용 금지): 일반 병원 의학정보 사이트, 블로그, 위키, 뉴스기사
+  - 예시: 서울대학교병원 의학정보, 서울아산병원 건강정보, 네이버 건강, 헬스조선 등
+  - 한국 출처는 반드시 대한소아청소년과학회 또는 질병관리청만 Tier 1 허용
+  - 그 외 한국 출처는 모두 Tier 3 이하로 분류하고 사용 금지
+- StatPearls, MedScape, MedlinePlus, eMedicine 등 reference compilation 사이트:
+  내용 신뢰 가능하지만 정식 출처 아님 → Tier 2 분류
+- 학술지 논문 (NEJM, JAMA, Lancet, BMJ 등 peer-reviewed 저널):
+  항상 Tier 2 분류 (아무리 유명해도 Tier 1 아님)
+- url 필드 규칙: 반드시 출처 publisher 정식 URL만 허용
+  · AAP 논문 → publications.aap.org 또는 pubmed.ncbi.nlm.nih.gov
+  · Nelson Textbook → clinicalkey.com 또는 elsevier.com
+  · 질병관리청 → kdca.go.kr
+  · 대한소아청소년과학회 → pediatrics.or.kr
+  · WHO → who.int
+  · secondary mirror (Medscape, MedlinePlus, emedicine 등) URL 사용 금지
 - 출처 없는 사실 포함 금지
 
 sources.json 형식으로만 응답. JSON 외 텍스트 금지.
