@@ -76,12 +76,17 @@ TOPIC_SELECTION_MD = REPO_ROOT / "knowledge" / "topic-selection.md"
 GEN_TIMEOUT_SEC = 300
 SLIDE_COUNT = 9
 DONE_PREVIEW = 10
-ANTHROPIC_MODEL = "claude-sonnet-4-20250514"
+ANTHROPIC_MODEL = "claude-sonnet-4-5-20250929"
 
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s — %(message)s",
 )
+# 봇 토큰이 URL 에 포함된 채로 INFO 로그에 찍히는 것 방지
+logging.getLogger("httpx").setLevel(logging.WARNING)
+logging.getLogger("httpcore").setLevel(logging.WARNING)
+logging.getLogger("telegram").setLevel(logging.WARNING)
+logging.getLogger("telegram.ext").setLevel(logging.WARNING)
 log = logging.getLogger("soagwa-bot")
 
 
