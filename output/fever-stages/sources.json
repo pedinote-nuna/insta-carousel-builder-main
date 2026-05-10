@@ -1,0 +1,215 @@
+{
+  "topic": "fever-stages",
+  "topic_kr": "영아 발열 단계별 대처",
+  "palette": "clean-infographic",
+  "compiled_at": "2026-05-10",
+  "claims": [
+    {
+      "claim_id": "C01",
+      "slide_n": 2,
+      "claim_text": "영아 체온 측정 gold standard는 직장체온이다. 겨드랑이 체온은 전자체온계 기준 직장체온보다 평균 0.5°C 이상 낮게 측정될 수 있어 발열을 놓칠 위험이 있다.",
+      "source": {
+        "tier": 1,
+        "type": "textbook",
+        "title": "Nelson Textbook of Pediatrics — Fever chapter",
+        "authors": ["Kliegman, R.M. et al. (eds.)"],
+        "publisher": "Elsevier",
+        "publication_date": "2020 (21st ed.)",
+        "applicable_age": "0-12 months",
+        "url": "",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C02",
+      "slide_n": 2,
+      "claim_text": "이마(측두동맥) 체온계는 영아에서 오차가 크고 신뢰도가 낮아 AAP는 3세 미만 영아에게 직장체온 측정을 권장한다.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Fever and Antipyretic Use in Children",
+        "authors": ["Sullivan, J.E.", "Farrar, H.C.", "AAP Section on Clinical Pharmacology and Therapeutics"],
+        "publication": "Pediatrics",
+        "volume": "127(3)",
+        "pages": "580-587",
+        "pmid": "21357332",
+        "publication_date": "2011",
+        "applicable_age": "0-36 months",
+        "url": "https://publications.aap.org/pediatrics/article/127/3/e20103852/65016",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C03",
+      "slide_n": 3,
+      "claim_text": "생후 0-7일 신생아: 38°C 이상 발열 시 즉각 응급실. 해열제 투여 없이 바로 이동. 생후 8-60일 영아: 38°C 이상 발열 시 즉시 응급 평가 필요 (AAP 2021 CPG 기준).",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Evaluation and Management of Well-Appearing Febrile Infants 8 to 60 Days Old",
+        "authors": ["Pantell, R.H.", "Roberts, K.B.", "Adams, W.G.", "et al.", "AAP"],
+        "publication": "Pediatrics",
+        "volume": "148(2)",
+        "pmid": "34281996",
+        "publication_date": "2021",
+        "applicable_age": "0-60 days",
+        "url": "https://publications.aap.org/pediatrics/article/148/2/e2021052228/179783",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C04",
+      "slide_n": 3,
+      "claim_text": "생후 3-6개월 영아: 38°C 이상 발열 시 당일 진료 필요. 생후 6개월 이상: 38.5°C 미만이고 상태가 양호하면 가정 관찰 가능.",
+      "source": {
+        "tier": 1,
+        "type": "textbook",
+        "title": "Nelson Textbook of Pediatrics — Fever chapter",
+        "authors": ["Kliegman, R.M. et al. (eds.)"],
+        "publisher": "Elsevier",
+        "publication_date": "2020 (21st ed.)",
+        "applicable_age": "3-12 months",
+        "url": "",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C05",
+      "slide_n": 4,
+      "claim_text": "즉시 응급실 신호: ① 생후 60일 이하 38°C 이상 ② 어떤 연령이든 40°C 이상 ③ 열성경련 발생 ④ 의식 저하·반응 없음 ⑤ 호흡 곤란 ⑥ 피부에 붉은 점(점상출혈).",
+      "source": {
+        "tier": 1,
+        "type": "textbook",
+        "title": "Nelson Textbook of Pediatrics — Fever chapter",
+        "authors": ["Kliegman, R.M. et al. (eds.)"],
+        "publisher": "Elsevier",
+        "publication_date": "2020 (21st ed.)",
+        "applicable_age": "0-12 months",
+        "url": "",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C06",
+      "slide_n": 5,
+      "claim_text": "해열제 사용 목적은 체온 정상화가 아닌 아이의 불편함 해소다. 38°C 이상이면서 아이가 힘들어 보일 때 사용을 고려한다. 잘 놀고 잘 먹으면 38°C 이상이어도 반드시 먹일 필요는 없다.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Fever and Antipyretic Use in Children",
+        "authors": ["Sullivan, J.E.", "Farrar, H.C.", "AAP Section on Clinical Pharmacology and Therapeutics"],
+        "publication": "Pediatrics",
+        "volume": "127(3)",
+        "pages": "580-587",
+        "pmid": "21357332",
+        "publication_date": "2011",
+        "applicable_age": "2 months and older",
+        "url": "https://publications.aap.org/pediatrics/article/127/3/e20103852/65016",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C07",
+      "slide_n": 6,
+      "claim_text": "아세트아미노펜(타이레놀): 생후 2개월 이상, 10-15mg/kg, 4-6시간 간격. 이부프로펜(부루펜): 생후 6개월 이상, 5-10mg/kg, 6-8시간 간격.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Fever and Antipyretic Use in Children",
+        "authors": ["Sullivan, J.E.", "Farrar, H.C.", "AAP Section on Clinical Pharmacology and Therapeutics"],
+        "publication": "Pediatrics",
+        "volume": "127(3)",
+        "pages": "580-587",
+        "pmid": "21357332",
+        "publication_date": "2011",
+        "applicable_age": "2 months and older",
+        "url": "https://publications.aap.org/pediatrics/article/127/3/e20103852/65016",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C08",
+      "slide_n": 6,
+      "claim_text": "생후 6개월 미만에게 이부프로펜(부루펜)은 절대 금지. 생후 2개월 미만에게는 해열제를 임의 투여하지 않고 즉시 응급실로 이동한다.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Fever and Antipyretic Use in Children",
+        "authors": ["Sullivan, J.E.", "Farrar, H.C.", "AAP Section on Clinical Pharmacology and Therapeutics"],
+        "publication": "Pediatrics",
+        "volume": "127(3)",
+        "pages": "580-587",
+        "pmid": "21357332",
+        "publication_date": "2011",
+        "applicable_age": "0-6 months",
+        "url": "https://publications.aap.org/pediatrics/article/127/3/e20103852/65016",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C09",
+      "slide_n": 7,
+      "claim_text": "해야 할 것: 수분 충분히 섭취, 얇은 옷 한 겹. 하지 말 것: 알코올로 몸 닦기(흡수 위험), 얼음찜질(혈관 수축으로 오히려 해로움), 이불로 꽁꽁 싸기(열 발산 방해).",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Fever and Antipyretic Use in Children",
+        "authors": ["Sullivan, J.E.", "Farrar, H.C.", "AAP Section on Clinical Pharmacology and Therapeutics"],
+        "publication": "Pediatrics",
+        "volume": "127(3)",
+        "pages": "580-587",
+        "pmid": "21357332",
+        "publication_date": "2011",
+        "applicable_age": "0-12 months",
+        "url": "https://publications.aap.org/pediatrics/article/127/3/e20103852/65016",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C10",
+      "slide_n": 8,
+      "claim_text": "재진료 필요 신호: ① 해열제 복용 후에도 열이 안 내림 ② 48시간 이상 발열 지속 ③ 열이 내렸다 다시 오름 ④ 수유 거부 또는 소변이 줄어듦 ⑤ 전반적으로 더 나빠 보임.",
+      "source": {
+        "tier": 1,
+        "type": "textbook",
+        "title": "Nelson Textbook of Pediatrics — Fever chapter",
+        "authors": ["Kliegman, R.M. et al. (eds.)"],
+        "publisher": "Elsevier",
+        "publication_date": "2020 (21st ed.)",
+        "applicable_age": "0-12 months",
+        "url": "",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    }
+  ],
+  "verification": {
+    "tier_1_count": 10,
+    "tier_2_count": 0,
+    "total_claims": 10,
+    "all_claims_have_publication_date": true,
+    "all_claims_have_applicable_age": true,
+    "writer_used_count": 10,
+    "reviewer_pass_count": null,
+    "notes": "핵심 출처: AAP CPG 2021 (Pediatrics 148(2), PMID 34281996), AAP Antipyretics 2011 (Pediatrics 127(3), PMID 21357332), Nelson Textbook 21st ed. Tier 3 이하 0건. C06: AAP는 엄격한 온도 기준 없음, comfort 중심 — 38.5°C는 임상 관행 기준으로 표기."
+  }
+}

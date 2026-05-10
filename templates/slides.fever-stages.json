@@ -1,0 +1,62 @@
+{
+  "topic": "fever-stages",
+  "topic_kr": "영아 발열 단계별 대처",
+  "palette": "clean-infographic",
+  "output_dir": "output/fever-stages",
+  "image_size": "1080x1350",
+  "image_orientation": "portrait",
+  "design_principles_v2": [
+    "텍스트 크기 전반 약 20% 축소",
+    "카드 내부 padding 넉넉히",
+    "각 슬라이드에 관련 일러스트/아이콘 1개 이상 크게",
+    "슬라이드 외곽 margin 상하좌우 충분히",
+    "텍스트만 가득 찬 구성 금지"
+  ],
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: '소아과언니' Pretendard SemiBold navy #1A1F36 only, no decoration. Top-left small gray: 'PARENTING NOTE · 007'. Top section: leave large breathing whitespace before the headline. Upper-center headline two lines, sized COMPACT (about 20% smaller than a typical cover headline): '열이 났어요' navy, '지금 뭐 해야 하나요?' with '지금 뭐 해야' navy and '하나요?' underlined in teal #2C6E63. Below headline with comfortable spacing: small subtitle '영아 발열 단계별 대처 · AAP 가이드라인 기준' in gray. Center-to-lower area: a LARGE minimalist thermometer line illustration in teal, prominently placed and occupying meaningful visual area as the focal element. Generous bottom whitespace. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "temperature-measurement",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: '소아과언니' navy. Top-left small label gray: '체온 측정'. Headline compact (about 20% smaller): '측정 부위에 따라 다르게 나와요' navy, '다르게 나와요' teal #2C6E63 underline. Three stacked cards each light gray #F0F4F8 rounded with REDUCED height and GENEROUS internal padding (text-to-edge breathing room), with comfortable VERTICAL SPACING between cards. Card 1 — left side: prominently sized baby-bottom silhouette line icon, center: '직장(항문)' navy bold compact, right: '가장 정확 ✓' teal bold compact badge. Card 2 — left side: prominently sized armpit/body line icon, center: '겨드랑이' navy bold compact, right: '실제보다 낮게 나올 수 있어요' coral #C44536 small. Card 3 — left side: prominently sized forehead/ear scanner line icon, center: '이마·귀' navy bold compact, right: '오차 커서 영아에 비권장' coral small. Bottom (with generous top margin from cards): coral note compact: '3개월 미만은 직장체온이 가장 정확 — 겨드랑이는 보조적으로만'. No pixel values as text on card."
+    },
+    {
+      "n": 3,
+      "role": "age-risk-threshold",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: '소아과언니' navy. Top-left small gray: '연령별 기준'. Headline compact: '나이에 따라 위험도가 달라요' navy. Three stacked cards with REDUCED text size (about 20% smaller) and GENEROUS internal padding, comfortable VERTICAL SPACING between cards. Each card has a small AGE ICON at top-left of the card (line art appropriate to the age group). Card 1 — coral #C44536 background, white text and white-outline icon: small NEWBORN silhouette icon, tag '생후 0-60일', medium-bold '38°C 이상', subtitle '→ 즉시 응급실', smaller '해열제 먹이지 말고 바로 가세요'. Card 2 — light amber background #FFF3E0, navy text: small INFANT silhouette icon, tag '생후 3-6개월', medium-bold '38°C 이상', subtitle '→ 당일 소아과 진료', smaller '상태 보며 당일 내 방문'. Card 3 — light teal background #E8F4F2, navy text: small TODDLER silhouette icon, tag '생후 6개월 이상', medium-bold '38.5°C 미만', subtitle '+ 상태 양호 → 가정 관찰', smaller '잘 놀고 잘 먹으면 지켜볼 수 있어요'. No pixel values as text on card."
+    },
+    {
+      "n": 4,
+      "role": "emergency-signs",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: '소아과언니' navy. Top-left small gray: 'EMERGENCY'. Top-center area: a LARGE minimalist line illustration of an ambulance or emergency warning symbol in coral #C44536, prominently sized as the visual anchor. Below the icon, compact headline: '지금 당장 응급실로 가세요' navy, '응급실로' coral underline. Large coral outlined rounded box with VERY GENEROUS internal padding containing six numbered items, coral number + navy compact text (about 20% smaller), with INCREASED LINE SPACING. 1 생후 60일 이하 + 38°C 이상. 2 어떤 나이든 40°C 이상. 3 열성경련이 일어났을 때. 4 의식이 없거나 반응이 없음. 5 숨쉬기 힘들어 보임. 6 피부에 붉은 점(점상출혈). No pixel values as text on card."
+    },
+    {
+      "n": 5,
+      "role": "antipyretic-timing",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: '소아과언니' navy. Top-left small gray: '해열제 사용'. Headline compact: '체온보다 아이 상태가 중요해요' navy, '아이 상태' teal #2C6E63 underline. Below headline: a MEDIUM-LARGE line illustration of a thermometer beside a child's face/silhouette in teal — a single calm focal illustration. Two stacked cards REDUCED height with GENEROUS internal padding. Card 1 teal outline — header teal compact '이럴 때 해열제 사용': body navy compact '38°C 이상이면서 + 힘들어하고 칭얼댈 때'. Card 2 gray outline — header gray compact '이럴 때는 기다려도 돼요': body navy compact '38°C 이상이어도 + 잘 놀고 잘 먹는다면'. Bottom (with margin above): coral warning note compact: '생후 2개월 미만은 해열제 금지 → 즉시 응급실'. No pixel values as text on card."
+    },
+    {
+      "n": 6,
+      "role": "antipyretic-types",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: '소아과언니' navy. Top-left small gray: '해열제 종류'. Headline compact: '타이레놀 vs 부루펜' navy. Two side-by-side cards, equal width, REDUCED height with GENEROUS internal padding, all text about 20% more compact than typical. Left card: teal #2C6E63 header bar with white text '타이레놀'; body light gray; AT THE TOP-CENTER of the card body, a CLEARLY VISIBLE medicine bottle line illustration in teal; then text rows: '아세트아미노펜' small gray, '생후 2개월 이상' navy bold compact, '10-15 mg/kg' teal bold (prominent but balanced size), '4-6시간 간격' navy small. Right card: navy header bar with white text '부루펜'; body light gray; AT THE TOP-CENTER, a CLEARLY VISIBLE pill/tablet line illustration in navy; then '이부프로펜' small gray, '생후 6개월 이상' navy bold compact, '5-10 mg/kg' navy bold (prominent but balanced size), '6-8시간 간격' navy small. Below both cards with generous vertical spacing: coral rounded warning box with internal padding and compact text: '⚠️ 6개월 미만 부루펜 절대 금지 · 2개월 미만 해열제 금지 → 즉시 응급실'. No pixel values as text on card."
+    },
+    {
+      "n": 7,
+      "role": "home-care",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: '소아과언니' navy. Top-left small gray: '가정 관리'. Headline compact: '집에서 할 것과 하지 말 것' navy. Two column layout, equal width, REDUCED height with GENEROUS internal padding. LEFT column — teal header compact '해야 할 것 ✓'. Three rows, each row a small line illustration ICON on the left + compact navy text on the right, with COMFORTABLE VERTICAL SPACING between rows: water-bottle icon · '수분 충분히 먹이기' / thin-clothing icon · '얇은 옷 한 겹으로' / thermometer icon · '실내 적정 온도 유지'. RIGHT column — coral header compact '하지 말 것 ✗'. Three rows, each with a small line illustration ICON WITH AN X overlay on the left + compact navy text on the right: alcohol-bottle-with-X icon · '알코올로 몸 닦기' / ice-pack-with-X icon · '얼음찜질' / heavy-blanket-with-X icon · '이불로 꽁꽁 싸기'. Below columns (with margin above): small gray note 'AAP Pediatrics 2011 기준'. No pixel values as text on card."
+    },
+    {
+      "n": 8,
+      "role": "revisit-signs",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: '소아과언니' navy. Top-left small gray: 'CHECK'. Headline compact: '이럴 때는 다시 병원으로' navy, '다시 병원으로' teal #2C6E63 underline. Beneath the headline at the right side: a PROMINENTLY VISIBLE line illustration of a hospital cross or stethoscope in teal, sized as a clear focal element. Five numbered items, each row: large teal number on the left + compact navy text (about 20% smaller) on the right, with VERY GENEROUS LINE SPACING. 1 해열제 먹여도 열이 안 내림. 2 48시간 이상 열이 계속됨. 3 열이 내렸다가 다시 오름. 4 수유 거부 또는 소변이 줄어듦. 5 전반적으로 더 나빠 보임. Generous bottom whitespace, then coral note compact: '걱정될 때는 주저하지 말고 진료받으세요'. No pixel values as text on card."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin all sides. Top-right small: '소아과언니' navy. Top-center small gray: 'SAVE & SHARE'. Large center headline compact: '오늘 확인하고 저장하세요' navy, '저장하세요' teal #2C6E63 underline. Below headline with comfortable spacing: source box light gray #F0F4F8 rounded with GENEROUS internal padding, left-aligned. Inside box: small navy bold '출처'. Three lines small gray with comfortable line spacing: '· AAP CPG. Pediatrics 148(2), 2021 (PMID 34281996)' / '· AAP Antipyretics. Pediatrics 127(3), 2011 (PMID 21357332)' / '· Nelson Textbook of Pediatrics, 21st ed. 2020'. Generous vertical spacing, then thin horizontal divider. Center: large '소아과언니' navy bold. Small gray below: 'SOAGWA UNNIE · 소아청소년과 전문의'. Generous vertical spacing, then thin horizontal divider. Small navy '@soagwa_unnie · 매주 새 가이드'. Small teal '소아과수첩 앱 · 체중별 해열제 용량 바로 계산'. No pixel values as text on card. No quotes on card."
+    }
+  ]
+}

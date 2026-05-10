@@ -8,6 +8,9 @@ output/*
 !output/colic-5s/
 output/colic-5s/_history/
 output/colic-5s/*-rerun*/
+!output/fever-stages/
+output/fever-stages/_history/
+output/fever-stages/*-rerun*/
 *.log
 .DS_Store
 Thumbs.db
