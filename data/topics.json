@@ -1,0 +1,21 @@
+{
+  "this_week": [],
+  "pending": [],
+  "done": [
+    {
+      "slug": "colic-5s",
+      "title_kr": "5S로 영아 산통 달래기",
+      "done_at": "2026-05-08"
+    },
+    {
+      "slug": "fever-stages",
+      "title_kr": "영아 발열 단계별 대처",
+      "done_at": "2026-05-10"
+    },
+    {
+      "slug": "sleep-duration",
+      "title_kr": "연령별 수면 권장 시간",
+      "done_at": "2026-05-10"
+    }
+  ]
+}
