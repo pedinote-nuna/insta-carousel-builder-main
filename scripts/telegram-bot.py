@@ -415,6 +415,62 @@ async def begin_new_with_duplicate_check(update: Update, slug: str) -> None:
     await trigger_generation(update, slug)
 
 
+# ---------------------------------------------------------------- intent router
+
+
+async def intent_router(text: str) -> dict:
+    """자연어 입력을 Claude API 로 분석해서 의도 + 파라미터 반환."""
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    if not api_key or Anthropic is None:
+        return {"intent": "unknown", "params": {}}
+    try:
+        return await asyncio.to_thread(_intent_router_sync, text, api_key)
+    except Exception as e:  # noqa: BLE001
+        log.exception("intent_router 실패: %s", e)
+        return {"intent": "unknown", "params": {}}
+
+
+def _intent_router_sync(text: str, api_key: str) -> dict:
+    client = Anthropic(api_key=api_key)
+    response = client.messages.create(
+        model=ANTHROPIC_MODEL,
+        max_tokens=200,
+        system="""소아과언니 카드뉴스 봇의 의도 분류기.
+사용자 입력을 분석해서 JSON으로만 반환. 다른 텍스트 금지.
+
+의도 목록:
+- topics: 주제 추천 요청 ("주제 추천해줘", "이번 주 주제", "뭐 만들까" 등)
+- make: 카드뉴스 생성 ("X 만들어줘", "N번 만들어", "X 카드뉴스 해줘" 등)
+- queue: 보류 목록 조회 ("보류 목록", "나중에 쓸 것", "큐 보여줘" 등)
+- done: 완료 목록 조회 ("완료된 거", "다 만든 것", "발행한 것" 등)
+- status: 현재 상태 ("지금 뭐 해", "진행 중인 거", "상태 확인" 등)
+- select: 추천 목록에서 번호 선택 ("1번", "1 3 5", "첫 번째" 등)
+- queue_move: 보류에서 이번 주로 이동 ("3번 이번 주로", "큐 3 올려줘" 등)
+- delete: 보류에서 삭제 ("2번 없애줘", "삭제 1" 등)
+- retry: 재추천 요청 ("다시", "다른 거", "다시 추천해줘" 등)
+- confirm: 확인/진행 ("응", "좋아", "예", "ㅇㅇ", "ok", "진행해" 등)
+- cancel: 취소 ("아니", "취소", "됐어", "ㄴㄴ" 등)
+- unknown: 위 중 어느 것도 아님
+
+JSON 형식:
+{"intent": "make", "params": {"topic_kr": "차멀미 예방법"}}
+{"intent": "select", "params": {"numbers": [1, 3, 5]}}
+{"intent": "queue_move", "params": {"numbers": [3]}}
+{"intent": "delete", "params": {"numbers": [2]}}
+{"intent": "topics", "params": {}}
+{"intent": "unknown", "params": {}}
+""",
+        messages=[{"role": "user", "content": text}],
+    )
+    raw = _collect_text(response).strip()
+    raw = re.sub(r"^```(?:json)?\s*", "", raw)
+    raw = re.sub(r"\s*```$", "", raw)
+    try:
+        return json.loads(raw)
+    except Exception:  # noqa: BLE001
+        return {"intent": "unknown", "params": {}}
+
+
 # ---------------------------------------------------------------- handle_text
 
 
@@ -423,101 +479,106 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
     if not text:
         return
 
-    # 1) 중복 확인 대기
+    # duplicate confirm/cancel 대기 중이면 기존 로직
     if session.get("duplicate_slug"):
-        slug = session["duplicate_slug"]
-        if text.lower() in ("예", "yes", "y", "ok"):
+        if text.lower() in ("예", "yes", "y", "응", "ㅇ", "ㅇㅇ", "ok", "진행"):
+            slug = session["duplicate_slug"]
             session["duplicate_slug"] = None
             await trigger_generation(update, slug)
-            return
-        if text.lower() in ("아니오", "아니요", "no", "n", "취소"):
+        else:
             session["duplicate_slug"] = None
-            await update.message.reply_text("❌ 취소했습니다.")
-            return
-        await update.message.reply_text(
-            f"❓ '{slug}' 중복 확인 대기 중. '예' 또는 '아니오'로 답해주세요."
-        )
+            await update.message.reply_text("❌ 취소됐어요.")
         return
 
-    # 2) "다시" 키워드
-    if text in ("다시", "재추천", "refresh"):
-        session["recommendation"] = None
+    # Claude API 로 자연어 의도 분류
+    intent_data = await intent_router(text)
+    intent = intent_data.get("intent", "unknown")
+    params = intent_data.get("params", {})
+
+    if intent == "topics":
         await cmd_topics(update, context)
-        return
 
-    # 3) "큐 N N..."
-    if text.startswith("큐 ") or text == "큐":
-        nums = [int(m) for m in _NUM_RE.findall(text)]
-        await move_pending_to_week(update, nums)
-        return
-
-    # 4) "삭제 N N..."
-    if text.startswith("삭제 ") or text == "삭제":
-        nums = [int(m) for m in _NUM_RE.findall(text)]
-        await delete_from_pending(update, nums)
-        return
-
-    # 자연어 만들기 — "N번 만들어" / "X 만들어줘"
-    if "만들어" in text:
-        m = re.search(r"(\d+)\s*번(?:째)?\s*만들어", text)
-        if m:
-            n = int(m.group(1))
-            week = load_topics().get("this_week", [])
-            if 1 <= n <= len(week):
-                item = week[n - 1]
-                await auto_pipeline(
-                    update,
-                    item.get("title_kr") or item.get("slug"),
-                    item.get("slug"),
-                )
-            else:
+    elif intent == "make":
+        topic_kr = params.get("topic_kr", "")
+        if not topic_kr:
+            await update.message.reply_text("💡 어떤 주제로 만들까요?")
+            return
+        data = load_topics()
+        matched = next(
+            (
+                t
+                for t in data.get("this_week", [])
+                if topic_kr in t.get("title_kr", "")
+            ),
+            None,
+        )
+        if matched:
+            slug = matched["slug"]
+        else:
+            await update.message.reply_text(f"🔤 '{topic_kr}' 영문 슬러그 생성 중...")
+            slug = await korean_to_slug(topic_kr)
+            if not slug:
                 await update.message.reply_text(
-                    f"❌ 이번 주 항목에 {n}번이 없습니다 (총 {len(week)}개)."
+                    f"❌ '{topic_kr}' 슬러그 변환 실패."
                 )
-            return
-        topic_part = re.split(
-            r"\s*(?:카드뉴스)?\s*만들어\s*(?:줘|주세요)?\.?\s*$", text, maxsplit=1
-        )[0].strip()
-        topic_part = re.sub(r"[을를]\s*$", "", topic_part).strip()
-        if topic_part:
-            week = load_topics().get("this_week", [])
-            match = None
-            for item in week:
-                t = item.get("title_kr", "")
-                if t and (topic_part in t or t in topic_part):
-                    match = item
-                    break
-            if match:
-                await auto_pipeline(update, match["title_kr"], match["slug"])
-            else:
-                await update.message.reply_text(
-                    f"🔤 '{topic_part}' 영문 슬러그 생성 중..."
-                )
-                slug = await korean_to_slug(topic_part)
-                if slug:
-                    await auto_pipeline(update, topic_part, slug)
-                else:
-                    await update.message.reply_text(
-                        f"❌ '{topic_part}' 슬러그 변환 실패. /topics 로 등록 후 시도하세요."
-                    )
-            return
+                return
+        await auto_pipeline(update, topic_kr, slug)
 
-    # 5) recommendation 활성 시 숫자 입력 → 선택
-    if session.get("recommendation"):
-        nums = [int(m) for m in _NUM_RE.findall(text)]
-        if nums:
-            await apply_recommendation_selection(update, nums)
-            return
+    elif intent == "select":
+        numbers = params.get("numbers", [])
+        if numbers and session.get("recommendation"):
+            await apply_recommendation_selection(update, numbers)
+        else:
+            await update.message.reply_text("💡 먼저 /topics 로 주제를 추천받으세요.")
 
-    # 6) 슬러그 추출
-    slug = extract_topic_slug(text)
-    if slug and template_path(slug).exists():
-        await begin_new_with_duplicate_check(update, slug)
-        return
+    elif intent == "queue":
+        await cmd_queue(update, context)
 
-    await update.message.reply_text(
-        "💡 사용법은 /start. 슬러그가 있다면 /new <slug>."
-    )
+    elif intent == "done":
+        await cmd_done(update, context)
+
+    elif intent == "status":
+        await cmd_status(update, context)
+
+    elif intent == "queue_move":
+        numbers = params.get("numbers", [])
+        if numbers:
+            await move_pending_to_week(update, numbers)
+        else:
+            await update.message.reply_text("💡 번호를 알려주세요. 예: '3번 이번 주로'")
+
+    elif intent == "delete":
+        numbers = params.get("numbers", [])
+        if numbers:
+            await delete_from_pending(update, numbers)
+        else:
+            await update.message.reply_text("💡 번호를 알려주세요. 예: '2번 삭제'")
+
+    elif intent == "retry":
+        if session.get("recommendation"):
+            session["recommendation"] = None
+            await cmd_topics(update, context)
+        else:
+            await update.message.reply_text("💡 먼저 /topics 로 주제를 추천받으세요.")
+
+    elif intent == "confirm":
+        await update.message.reply_text(
+            "💡 무엇을 진행할까요? 주제 이름이나 번호를 알려주세요."
+        )
+
+    elif intent == "cancel":
+        session["recommendation"] = None
+        await update.message.reply_text("✅ 취소됐어요.")
+
+    else:
+        await update.message.reply_text(
+            "💡 이렇게 말씀해보세요:\n"
+            "  • '주제 추천해줘'\n"
+            "  • '차멀미 예방법 만들어줘'\n"
+            "  • '1번 만들어'\n"
+            "  • '보류 목록 보여줘'\n"
+            "  • '완료된 거 뭐야'"
+        )
 
 
 # ---------------------------------------------------------------- recommendation selection
