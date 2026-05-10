@@ -14,6 +14,9 @@ output/fever-stages/*-rerun*/
 !output/febrile-seizure/
 output/febrile-seizure/_history/
 output/febrile-seizure/*-rerun*/
+!output/weaning-timing/
+output/weaning-timing/_history/
+output/weaning-timing/*-rerun*/
 *.log
 .DS_Store
 Thumbs.db

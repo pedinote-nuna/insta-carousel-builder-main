@@ -1,0 +1,55 @@
+{
+  "topic": "weaning-timing",
+  "topic_kr": "이유식 시작 시기와 방법",
+  "palette": "character-illustration",
+  "output_dir": "output/weaning-timing",
+  "image_size": "1080x1350",
+  "image_orientation": "portrait",
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 in warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 009. Center: large warm brown bold headline 이유식, two lines, 언제 시작할까요? with 언제 below and 시작할까요? with teal green #2C7A5C underline. Below headline: small gray subtitle 월령별 이유식 가이드 · AAP 권장 기준. Bottom center: large cute illustration of chubby baby sitting up with big smile, wearing bib, holding spoon, looking at bowl of food with sparkle eyes. Warm cozy colors. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "when-to-start",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown, no quotes. Top-left small label: 시작 시기. Large warm brown headline: 생후 6개월부터 시작해요 with 6개월 in teal green #2C7A5C bold large. Center illustration: cute timeline with baby characters at different ages. At 4개월 marker: small baby icon with X red cross and caption 너무 일러요. At 6개월 marker: happy baby icon with big green checkmark and caption 딱 좋아요!. Simple pastel timeline connecting them. Bottom warm note box: 4개월 이전 시작은 소화기관 미숙으로 권장하지 않아요. No pixel text."
+    },
+    {
+      "n": 3,
+      "role": "readiness-signs",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown, no quotes. Top-left label: 준비 신호. Headline: 이런 신호가 보이면 준비 완료! with 준비 완료 in teal green. Four cards in 2x2 grid, each light cream #FFF0E0 rounded with cute baby illustration inside. Card 1: baby sitting up illustration + 혼자 앉을 수 있어요. Card 2: baby holding head up + 목을 가눌 수 있어요. Card 3: baby opening mouth at spoon + 음식 보면 입을 벌려요. Card 4: baby swallowing + 혀로 밀어내지 않아요. Each card small teal checkmark. Pastel warm colors throughout. No pixel text."
+    },
+    {
+      "n": 4,
+      "role": "first-foods",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown, no quotes. Top-left label: 첫 이유식. Headline: 처음엔 이런 음식으로 시작해요 with 이런 음식 teal underline. Three large food illustration cards stacked, each cream rounded. Card 1: cute rice porridge bowl illustration + 철분 강화 쌀미음 — 부드럽게 시작. Card 2: cute mashed meat illustration + 으깬 고기·두부 — 철분·아연 보충. Card 3: mashed vegetable illustration + 으깬 채소·과일 — 다양한 맛 경험. Bottom warm note: 채소→과일 순서? 근거 없어요. 다양하게 골고루! teal text. No pixel text."
+    },
+    {
+      "n": 5,
+      "role": "allergen-introduction",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown, no quotes. Top-left label: 알레르기 식품. Headline: 알레르기 식품, 일찍 줄수록 좋아요 with 일찍 줄수록 teal. Center: cute illustration of happy baby surrounded by food icons (egg, peanut, fish, milk). Six small food cards in 2x3 grid each with cute food illustration and label: 달걀 / 땅콩 / 생선 / 새우 / 밀 / 두유. Bottom teal note box: 이유식 시작(생후 6개월)과 함께 조기 도입 권장 — AAP 2019. Small warm brown note: ⚠️ 통땅콩은 질식 위험 — 반드시 퓨레에 섞어서 / 아토피·달걀 알레르기 있으면 소아과 먼저 상담. No pixel text."
+    },
+    {
+      "n": 6,
+      "role": "forbidden-foods",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown, no quotes. Top-left red label: 12개월 전 금지. Headline: 돌 전에는 절대 안 돼요 with 절대 안 돼요 coral #E05C3A. Four forbidden food cards in 2x2 grid, each with cute food illustration crossed out in red. Card 1: honey jar with red X + 꿀 — 보툴리눔 위험. Card 2: milk glass with red X + 우유 — 철분 부족·신장 부담. Card 3: juice glass with red X + 과일주스 — 당분 과다. Card 4: salt and sugar with red X + 소금·설탕. Warm background maintained. No pixel text."
+    },
+    {
+      "n": 7,
+      "role": "how-to-introduce",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown, no quotes. Top-left label: 도입 방법. Headline: 새 음식, 이렇게 도입하세요 with 이렇게 teal. Center: cute illustration of parent feeding baby. Two key rule cards stacked. Card 1 teal outline: calendar icon + 3-5일 간격으로 한 가지씩 — 알레르기 반응 관찰. Card 2 warm orange outline: retry icon + 거부해도 10-15회 반복 — 대부분 결국 받아들여요. Bottom warm note: 억지로 먹이지 마세요. 즐거운 식사 경험이 중요해요. No pixel text."
+    },
+    {
+      "n": 8,
+      "role": "continue-breastfeeding",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown, no quotes. Top-left label: 수유 지속. Headline: 이유식 시작해도 모유·분유는 계속! with 계속 teal large. Center: warm illustration of mother breastfeeding while baby also has food nearby. Two info cards. Card 1: 이유식 + 모유·분유 함께 — 보완식품은 수유를 대체하지 않아요. Card 2: AAP 권장 — 생후 2년 이상 모유수유 지속. Bottom warm teal note: 이유식은 수유의 대체가 아닌 보완이에요. No pixel text."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline. Source box cream #FFF0E0 rounded: small warm brown 출처. Three lines small gray: · AAP HealthyChildren.org, Starting Solid Foods (2023) / · CDC, When What and How to Introduce Solid Foods (2026) / · Nelson Textbook of Pediatrics, 21st ed. 2020. Divider warm brown line. Center: large 소아과언니 warm brown bold. Small gray SOAGWA UNNIE · 소아청소년과 전문의. Divider. Small warm brown @soagwa_unnie · 매주 새 가이드. Small teal 소아과수첩 앱 · 성장 기록으로 이유식 시기 체크. No pixel text. No quotes on card."
+    }
+  ]
+}

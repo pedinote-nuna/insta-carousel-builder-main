@@ -1,0 +1,146 @@
+{
+  "topic": "weaning-timing",
+  "topic_kr": "이유식 시작 시기와 방법",
+  "palette": "character-illustration",
+  "compiled_at": "2026-05-10",
+  "claims": [
+    {
+      "claim_id": "C01",
+      "slide_n": 2,
+      "claim_text": "AAP는 생후 약 6개월에 이유식(보완식품) 시작을 권장한다. 4개월 이전 시작은 위장관·운동 발달 미숙으로 권장하지 않는다.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "When, What, and How to Introduce Solid Foods",
+        "authors": ["CDC", "AAP"],
+        "publication": "CDC / AAP HealthyChildren.org",
+        "publication_date": "2026",
+        "applicable_age": "0-6 months",
+        "url": "https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/when-what-and-how-to-introduce-solid-foods.html",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C02",
+      "slide_n": 3,
+      "claim_text": "이유식 준비 신호 4가지: ① 도움 없이 또는 약간의 도움으로 앉을 수 있음 ② 머리와 목을 스스로 지탱 ③ 음식을 보면 입을 벌림 ④ 음식을 혀로 밀어내지 않고 삼킴.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Starting Solid Foods",
+        "authors": ["AAP"],
+        "publication": "HealthyChildren.org",
+        "publication_date": "2023",
+        "applicable_age": "4-6 months",
+        "url": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C03",
+      "slide_n": 4,
+      "claim_text": "이유식 시작 첫 식품으로 철분·아연이 풍부한 식품(철분 강화 쌀미음, 으깬 고기, 두부)을 권장한다. 특정 식품 순서(채소→과일 등)는 근거 없음.",
+      "source": {
+        "tier": 1,
+        "type": "textbook",
+        "title": "Nelson Textbook of Pediatrics — Infant Nutrition chapter",
+        "authors": ["Kliegman, R.M. et al. (eds.)"],
+        "publisher": "Elsevier",
+        "publication_date": "2020 (21st ed.)",
+        "applicable_age": "4-8 months",
+        "url": "",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C04",
+      "slide_n": 5,
+      "claim_text": "알레르기 유발 식품(땅콩, 달걀, 생선, 유제품 등)은 이유식 시작(생후 약 6개월)과 함께 조기 도입을 권장한다. 지연 도입은 오히려 알레르기 위험을 높일 수 있다. AAP 2019 임상 보고서 기준. 단, 통땅콩은 질식 위험으로 금지하며 퓨레에 섞은 묽은 땅콩버터 형태로 제공한다. 심한 아토피나 달걀 알레르기 고위험군은 소아과 전문의 평가 후 도입한다.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "The Effects of Early Nutritional Interventions on the Development of Atopic Disease in Infants and Children: The Role of Maternal Dietary Restriction, Breastfeeding, Hydrolyzed Formulas, and Timing of Introduction of Allergenic Complementary Foods",
+        "authors": ["Greer, F.R.", "Sicherer, S.H.", "Burks, A.W.", "AAP Committee on Nutrition", "AAP Section on Allergy and Immunology"],
+        "publication": "Pediatrics",
+        "volume": "143(4)",
+        "pmid": "30886111",
+        "publication_date": "2019",
+        "applicable_age": "4-12 months",
+        "url": "https://publications.aap.org/pediatrics/article/143/4/e20190281/76908",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C05",
+      "slide_n": 6,
+      "claim_text": "12개월 미만 절대 금지 식품: 꿀(보툴리눔 독소), 우유(철분 부족·신장 부담), 과일주스(당분 과다), 소금·설탕 첨가 식품.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Starting Solid Foods",
+        "authors": ["AAP"],
+        "publication": "HealthyChildren.org",
+        "publication_date": "2023",
+        "applicable_age": "0-12 months",
+        "url": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C06",
+      "slide_n": 7,
+      "claim_text": "새 식품은 3-5일 간격으로 한 가지씩 도입하여 알레르기 반응을 관찰한다. 거부해도 10-15회 반복 제공하면 수용하는 경우가 많다.",
+      "source": {
+        "tier": 1,
+        "type": "textbook",
+        "title": "Nelson Textbook of Pediatrics — Infant Nutrition chapter",
+        "authors": ["Kliegman, R.M. et al. (eds.)"],
+        "publisher": "Elsevier",
+        "publication_date": "2020 (21st ed.)",
+        "applicable_age": "6-12 months",
+        "url": "",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C07",
+      "slide_n": 8,
+      "claim_text": "이유식 시작 후에도 모유 또는 분유를 계속 먹인다. AAP는 생후 2년 이상 모유수유 지속을 권장한다.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Starting Solid Foods",
+        "authors": ["AAP"],
+        "publication": "HealthyChildren.org",
+        "publication_date": "2023",
+        "applicable_age": "6-24 months",
+        "url": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    }
+  ],
+  "verification": {
+    "tier_1_count": 7,
+    "tier_2_count": 0,
+    "total_claims": 7,
+    "all_claims_have_publication_date": true,
+    "all_claims_have_applicable_age": true,
+    "writer_used_count": 7,
+    "reviewer_pass_count": null,
+    "notes": "핵심 출처: AAP HealthyChildren.org (2023), CDC (2026), Nelson Textbook 21st ed. Tier 3 이하 0건."
+  }
+}
