@@ -57,3 +57,6 @@
 ## 검증 완료 카드뉴스
 - example (이유식 시작하기) — 2026-05-08
   output/example/slide-01~09.png
+- car-sickness-prevention (차멀미 예방법) — 2026-05-10
+  output/car-sickness-prevention/slide-01~09.png
+  templates/slides.car-sickness-prevention.json

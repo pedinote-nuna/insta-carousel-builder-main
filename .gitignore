@@ -17,6 +17,9 @@ output/febrile-seizure/*-rerun*/
 !output/weaning-timing/
 output/weaning-timing/_history/
 output/weaning-timing/*-rerun*/
+!output/car-sickness-prevention/
+output/car-sickness-prevention/_history/
+output/car-sickness-prevention/*-rerun*/
 *.log
 .DS_Store
 Thumbs.db

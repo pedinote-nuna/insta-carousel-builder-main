@@ -189,6 +189,29 @@ def is_authorized(update: Update, allowed_chat_id: Optional[str]) -> bool:
     return str(update.effective_chat.id) == str(allowed_chat_id)
 
 
+def _collect_text(msg) -> str:
+    """anthropic Message 의 모든 텍스트 블록 결합."""
+    parts = []
+    for block in msg.content:
+        if hasattr(block, "text") and block.text:
+            parts.append(block.text)
+    return "\n".join(parts)
+
+
+def _parse_json_object(raw: str) -> Optional[dict]:
+    """raw 텍스트에서 JSON object 추출·파싱. 실패 시 None."""
+    raw = raw.strip()
+    raw = re.sub(r"^```(?:json)?\s*", "", raw)
+    raw = re.sub(r"\s*```$", "", raw)
+    m = re.search(r"\{[\s\S]*\}", raw)
+    if not m:
+        return None
+    try:
+        return json.loads(m.group(0))
+    except json.JSONDecodeError:
+        return None
+
+
 # ---------------------------------------------------------------- /start /status
 
 
@@ -434,6 +457,51 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         await delete_from_pending(update, nums)
         return
 
+    # 자연어 만들기 — "N번 만들어" / "X 만들어줘"
+    if "만들어" in text:
+        m = re.search(r"(\d+)\s*번(?:째)?\s*만들어", text)
+        if m:
+            n = int(m.group(1))
+            week = load_topics().get("this_week", [])
+            if 1 <= n <= len(week):
+                item = week[n - 1]
+                await auto_pipeline(
+                    update,
+                    item.get("title_kr") or item.get("slug"),
+                    item.get("slug"),
+                )
+            else:
+                await update.message.reply_text(
+                    f"❌ 이번 주 항목에 {n}번이 없습니다 (총 {len(week)}개)."
+                )
+            return
+        topic_part = re.split(
+            r"\s*(?:카드뉴스)?\s*만들어\s*(?:줘|주세요)?\.?\s*$", text, maxsplit=1
+        )[0].strip()
+        topic_part = re.sub(r"[을를]\s*$", "", topic_part).strip()
+        if topic_part:
+            week = load_topics().get("this_week", [])
+            match = None
+            for item in week:
+                t = item.get("title_kr", "")
+                if t and (topic_part in t or t in topic_part):
+                    match = item
+                    break
+            if match:
+                await auto_pipeline(update, match["title_kr"], match["slug"])
+            else:
+                await update.message.reply_text(
+                    f"🔤 '{topic_part}' 영문 슬러그 생성 중..."
+                )
+                slug = await korean_to_slug(topic_part)
+                if slug:
+                    await auto_pipeline(update, topic_part, slug)
+                else:
+                    await update.message.reply_text(
+                        f"❌ '{topic_part}' 슬러그 변환 실패. /topics 로 등록 후 시도하세요."
+                    )
+            return
+
     # 5) recommendation 활성 시 숫자 입력 → 선택
     if session.get("recommendation"):
         nums = [int(m) for m in _NUM_RE.findall(text)]
@@ -546,6 +614,305 @@ async def delete_from_pending(update: Update, nums: list[int]) -> None:
     await update.message.reply_text(text)
 
 
+# ---------------------------------------------------------------- auto pipeline
+
+
+async def korean_to_slug(topic_kr: str) -> Optional[str]:
+    """한국어 토픽을 영문 케밥-케이스 슬러그로 변환 (Claude API)."""
+    if Anthropic is None:
+        return None
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    if not api_key:
+        return None
+    try:
+        return await asyncio.to_thread(_korean_to_slug_sync, topic_kr, api_key)
+    except Exception as e:  # noqa: BLE001
+        log.exception("korean_to_slug 실패: %s", e)
+        return None
+
+
+def _korean_to_slug_sync(topic_kr: str, api_key: str) -> Optional[str]:
+    client = Anthropic(api_key=api_key)
+    msg = client.messages.create(
+        model=ANTHROPIC_MODEL,
+        max_tokens=200,
+        system=(
+            "한국어 토픽을 영문 소문자 케밥-케이스 슬러그로 변환하세요. "
+            "슬러그만 출력. 다른 텍스트·따옴표·설명 금지. "
+            "예: '차멀미 예방법' → car-sickness, '아이 수면 시간' → sleep-duration"
+        ),
+        messages=[{"role": "user", "content": topic_kr}],
+    )
+    raw = _collect_text(msg).strip()
+    m = re.search(r"[a-z][a-z0-9-]+", raw)
+    return m.group(0) if m else None
+
+
+def generate_sources(
+    topic_kr: str, slug: str, today: str, api_key: str
+) -> Optional[dict]:
+    """Claude API + web_search 로 sources.json 초안 생성."""
+    client = Anthropic(api_key=api_key)
+    system = """당신은 소아과언니 카드뉴스 의학 리서처입니다.
+
+규칙:
+- Tier 1만: AAP CPG, 대한소아청소년과학회, 질병관리청, Nelson Textbook, UpToDate
+- Tier 2: PubMed peer-reviewed (Tier 1 부족 시)
+- 블로그·위키·일반기사 절대 금지
+- 출처 없는 사실 포함 금지
+
+sources.json 형식으로만 응답. JSON 외 텍스트 금지.
+형식:
+{
+  "topic": "<slug>",
+  "topic_kr": "<한국어 제목>",
+  "palette": "A 또는 B",
+  "compiled_at": "<오늘 날짜>",
+  "claims": [
+    {
+      "claim_id": "C01",
+      "slide_n": 2,
+      "claim_text": "...",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "...",
+        "authors": ["..."],
+        "publication": "...",
+        "publication_date": "...",
+        "applicable_age": "...",
+        "url": "...",
+        "last_accessed_at": "<오늘 날짜>"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    }
+  ],
+  "verification": {
+    "tier_1_count": 0,
+    "tier_2_count": 0,
+    "total_claims": 0,
+    "notes": ""
+  }
+}
+
+팔레트 결정: "잘못 적용 시 즉각적 위험?" YES→B / NO→A"""
+    user = f"""토픽: {topic_kr}
+슬러그: {slug}
+오늘 날짜: {today}
+
+이 토픽으로 인스타 카드뉴스 9장 sources.json을 작성해줘.
+슬라이드 구성:
+- slide 1: 커버 (claim 없음)
+- slide 2-8: 본문 (각 슬라이드당 1-2개 claim)
+- slide 9: 아우트로 (claim 없음)
+
+웹 검색으로 최신 가이드라인 확인 후 작성."""
+    msg = client.messages.create(
+        model=ANTHROPIC_MODEL,
+        max_tokens=8000,
+        system=system,
+        tools=[{"type": "web_search_20250305", "name": "web_search"}],
+        messages=[{"role": "user", "content": user}],
+    )
+    return _parse_json_object(_collect_text(msg))
+
+
+def verify_sources(sources: dict, topic_kr: str, api_key: str) -> dict:
+    """Claude API + web_search 로 sources.json 자동 검증·수정."""
+    client = Anthropic(api_key=api_key)
+    system = """당신은 소아청소년과 전문의 수준의 의학 검증자입니다.
+
+각 claim을 원전과 대조하여:
+1. 수치 정확성 확인 (온도·용량·연령 기준)
+2. 표현의 과장·단순화 여부
+3. 출처와 claim_text 일치 여부
+오류 발견 시 자동 수정.
+
+검증 완료된 sources.json을 JSON으로만 반환. JSON 외 텍스트 금지.
+reviewer_pass 필드는 건드리지 말 것."""
+    user = (
+        "다음 sources.json을 검증하고 오류가 있으면 수정해서 반환해줘.\n"
+        "웹 검색으로 각 claim의 출처 원전 확인.\n\n"
+        + json.dumps(sources, ensure_ascii=False)
+    )
+    msg = client.messages.create(
+        model=ANTHROPIC_MODEL,
+        max_tokens=8000,
+        system=system,
+        tools=[{"type": "web_search_20250305", "name": "web_search"}],
+        messages=[{"role": "user", "content": user}],
+    )
+    parsed = _parse_json_object(_collect_text(msg))
+    return parsed if parsed else sources
+
+
+def generate_template(
+    sources: dict, topic_kr: str, slug: str, api_key: str
+) -> Optional[dict]:
+    """톤 가이드 + sources 기반으로 9장 슬라이드 템플릿 생성."""
+    client = Anthropic(api_key=api_key)
+    palette = sources.get("palette", "A")
+
+    tone_dir = REPO_ROOT / "knowledge" / "tone"
+    tone_path = tone_dir / "editorial-modern.md"  # 팔레트 A·B 둘 다 정의
+    if tone_path.exists():
+        tone_content = tone_path.read_text(encoding="utf-8")
+    else:
+        files = sorted(tone_dir.glob("*.md"))
+        tone_content = files[0].read_text(encoding="utf-8") if files else ""
+
+    system = """당신은 소아과언니 카드뉴스 슬라이드 프롬프트 작성자입니다.
+
+규칙:
+- sources.json에 없는 사실 절대 사용 금지
+- 9장 모두 Portrait 1080x1350
+- 시그니쳐 "소아과언니" — 우상단, 따옴표 없이 4글자만
+- 숫자+px 텍스트 카드에 표시 금지
+- 각 슬라이드 일러스트/아이콘 1개 이상
+
+반드시 아래 정확한 JSON 스키마로만 응답. JSON 외 텍스트 금지.
+다른 스키마 절대 사용 금지.
+
+{
+  "topic": "<영문 슬러그>",
+  "topic_kr": "<한국어 제목>",
+  "palette": "A 또는 B",
+  "output_dir": "output/<영문 슬러그>",
+  "image_size": "1080x1350",
+  "image_orientation": "portrait",
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. [영문 프롬프트 전문]"
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. [영문 프롬프트 전문]"
+    }
+    ...9개까지
+  ]
+}
+
+필수 규칙:
+- slides 배열의 각 항목은 반드시 n, role, prompt 3개 키만 사용
+- n은 1~9 정수
+- prompt는 반드시 영문으로 작성
+- prompt 첫 단어는 반드시 "Portrait"
+- 시그니쳐: Top-right 소아과언니 (따옴표 없이 4글자만)
+- 숫자+px 텍스트 카드에 표시 금지"""
+    user = f"""토픽: {topic_kr}
+슬러그: {slug}
+팔레트: {palette}
+톤 가이드:
+{tone_content}
+
+sources.json:
+{json.dumps(sources, ensure_ascii=False)}
+
+위 내용으로 9장 슬라이드 프롬프트 JSON 작성해줘.
+
+---
+좋은 prompt 예시 (이 품질로 작성해줘):
+
+slide n:1 cover 예시:
+"Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Top-left small gray: PARENTING NOTE · 010. Left side upper area: very large bold Korean headline two lines — first line [토픽 관련 명사] in deep navy, second line [핵심 단어] in coral #C44536. Below headline: small muted gray subtitle [부제] · AAP 권장 기준. Right side center-bottom: large clean editorial illustration related to topic, line art style in coral and teal, minimal clean strokes. Bottom area: thin coral horizontal accent line. No pixel values as text on card. No quotes on card."
+
+slide n:3-8 body 예시:
+"Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: [섹션명]. Large bold headline: [앞부분] navy, [마지막 핵심 단어] coral #C44536. Center: clean editorial illustration related to content, line art coral/navy minimal. Below: [카드 or 리스트 구조]. Bottom thin coral divider. No pixel text on card. No quotes on card."
+
+slide n:9 outro 예시:
+"Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 with thin coral underline. Source box light gray #F0F0EE rounded: 출처 [4개 출처 목록]. Horizontal thin navy divider. Center: 소아과언니 navy bold large — NO quotes NO decoration. Small gray SOAGWA UNNIE · 소아청소년과 전문의. Horizontal divider. @soagwa_unnie · 매주 새 가이드 navy. [앱 CTA] coral. No pixel text. No quotes anywhere."
+---"""
+    msg = client.messages.create(
+        model=ANTHROPIC_MODEL,
+        max_tokens=8000,
+        system=system,
+        messages=[{"role": "user", "content": user}],
+    )
+    return _parse_json_object(_collect_text(msg))
+
+
+async def auto_pipeline(update: Update, topic_kr: str, slug: str) -> None:
+    """자동 파이프라인: sources → verify → template → image."""
+    if Anthropic is None:
+        await update.message.reply_text("❌ anthropic 패키지 미설치.")
+        return
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    if not api_key:
+        await update.message.reply_text("❌ ANTHROPIC_API_KEY 가 비어있습니다.")
+        return
+
+    today = datetime.now().strftime("%Y-%m-%d")
+    await update.message.reply_text(
+        f"🚀 자동 파이프라인 시작 — '{topic_kr}' (slug: {slug})"
+    )
+
+    # STEP 1: sources.json 생성
+    await update.message.reply_text("⏳ 의학 출처 리서치 중...")
+    try:
+        sources = await asyncio.to_thread(
+            generate_sources, topic_kr, slug, today, api_key
+        )
+    except Exception as e:  # noqa: BLE001
+        log.exception("generate_sources 실패")
+        await update.message.reply_text(f"❌ 리서치 실패: {e}")
+        return
+    if not sources:
+        await update.message.reply_text("❌ 리서치 응답을 파싱하지 못했습니다.")
+        return
+
+    # STEP 2: 의학 검증
+    await update.message.reply_text("🔍 의학 내용 자동 검증 중...")
+    try:
+        verified_sources = await asyncio.to_thread(
+            verify_sources, sources, topic_kr, api_key
+        )
+    except Exception as e:  # noqa: BLE001
+        log.exception("verify_sources 실패")
+        await update.message.reply_text(
+            f"⚠️ 검증 실패, 미검증 sources 로 진행: {e}"
+        )
+        verified_sources = sources
+
+    sources_path = OUTPUT_DIR / slug / "sources.json"
+    sources_path.parent.mkdir(parents=True, exist_ok=True)
+    sources_path.write_text(
+        json.dumps(verified_sources, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    n_claims = len(verified_sources.get("claims", []))
+    await update.message.reply_text(f"✓ sources.json 저장 ({n_claims}개 claim)")
+
+    # STEP 3: template 생성
+    await update.message.reply_text("🎨 슬라이드 구성 중...")
+    try:
+        template = await asyncio.to_thread(
+            generate_template, verified_sources, topic_kr, slug, api_key
+        )
+    except Exception as e:  # noqa: BLE001
+        log.exception("generate_template 실패")
+        await update.message.reply_text(f"❌ 템플릿 생성 실패: {e}")
+        return
+    if not template:
+        await update.message.reply_text("❌ 템플릿 응답을 파싱하지 못했습니다.")
+        return
+
+    tpl_path = TEMPLATES_DIR / f"slides.{slug}.json"
+    tpl_path.write_text(
+        json.dumps(template, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    n_slides = len(template.get("slides", []))
+    await update.message.reply_text(f"✓ 템플릿 저장 ({n_slides}장 슬라이드)")
+
+    # STEP 4: 이미지 생성
+    await update.message.reply_text("🖼️ 이미지 생성 중... (약 4분)")
+    await trigger_generation_direct(update, slug)
+
+
 # ---------------------------------------------------------------- generator pipeline
 
 
@@ -656,6 +1023,64 @@ async def send_slides(update: Update, slug: str) -> None:
             continue
         with png.open("rb") as f:
             await update.message.reply_photo(photo=f, caption=f"{slug} · {i:02d}/09")
+
+
+async def trigger_generation_direct(update: Update, slug: str) -> None:
+    """auto_pipeline 전용 — 템플릿 존재 체크 생략 (방금 생성한 직후)."""
+    if _task_lock.locked():
+        await update.message.reply_text(
+            f"⏳ 이미 다른 작업 진행 중입니다 ({current_task['topic']}). /status 로 확인하세요."
+        )
+        return
+
+    async with _task_lock:
+        current_task.update(
+            topic=slug, started_at=time.time(), status="running", error=None
+        )
+        await update.message.chat.send_action(ChatAction.TYPING)
+
+        try:
+            ok, log_tail = await run_generator(slug)
+        except asyncio.TimeoutError:
+            current_task["status"] = "failed"
+            current_task["error"] = "timeout"
+            await update.message.reply_text(
+                f"❌ 생성 타임아웃 ({GEN_TIMEOUT_SEC}초)."
+            )
+            current_task["status"] = "idle"
+            return
+        except Exception as e:  # noqa: BLE001
+            current_task["status"] = "failed"
+            current_task["error"] = str(e)
+            log.exception("generator 실패")
+            await update.message.reply_text(f"❌ 생성 실패: {e}")
+            current_task["status"] = "idle"
+            return
+
+        if not ok:
+            current_task["status"] = "failed"
+            await update.message.reply_text(
+                f"❌ 생성 실패. 마지막 로그:\n```\n{log_tail}\n```",
+                parse_mode="Markdown",
+            )
+            current_task["status"] = "idle"
+            return
+
+        current_task["status"] = "sending"
+        await update.message.reply_text(
+            f"✅ 완료! output/{slug}/ 에 저장됐어요. 9장 전송합니다."
+        )
+        await send_slides(update, slug)
+
+        try:
+            title = title_for_slug(slug)
+            add_done(slug, title)
+            await update.message.reply_text(f"📌 '{slug}' 완료 목록에 기록됐어요.")
+        except Exception as e:  # noqa: BLE001
+            log.exception("add_done 실패")
+            await update.message.reply_text(f"⚠️ done 기록 실패: {e}")
+
+        current_task["status"] = "idle"
 
 
 # ---------------------------------------------------------------- bootstrap

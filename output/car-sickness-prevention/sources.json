@@ -1,0 +1,296 @@
+{
+  "topic": "car-sickness-prevention",
+  "topic_kr": "차멀미 예방법",
+  "palette": "A",
+  "compiled_at": "2026-05-10",
+  "claims": [
+    {
+      "claim_id": "C01",
+      "slide_n": 2,
+      "claim_text": "차멀미는 뇌가 눈, 귀의 전정기관, 근육의 감각기관에서 받는 신호가 서로 일치하지 않을 때 발생합니다",
+      "source": {
+        "tier": 1,
+        "type": "clinical_reference",
+        "title": "Car Sickness - HealthyChildren.org",
+        "authors": [
+          "American Academy of Pediatrics"
+        ],
+        "publication": "HealthyChildren.org",
+        "publication_date": "2025-12-23",
+        "applicable_age": "All pediatric ages",
+        "url": "https://www.healthychildren.org/English/health-issues/conditions/head-neck-nervous-system/Pages/Car-Sickness.aspx",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C02",
+      "slide_n": 2,
+      "claim_text": "2세에서 12세 사이 어린이가 멀미에 가장 취약합니다",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Motion Sickness - CDC Travelers' Health",
+        "authors": [
+          "Centers for Disease Control and Prevention"
+        ],
+        "publication": "CDC Travelers' Health",
+        "publication_date": "2022-01-28",
+        "applicable_age": "2-12 years",
+        "url": "https://wwwnc.cdc.gov/travel/page/motion-sickness",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C03",
+      "slide_n": 3,
+      "claim_text": "12세 미만 어린이는 뒷좌석 중앙에 앉히고, 앞 창문을 보도록 격려하세요",
+      "source": {
+        "tier": 1,
+        "type": "clinical_reference",
+        "title": "Motion Sickness Symptom Viewer - HealthyChildren.org",
+        "authors": [
+          "American Academy of Pediatrics"
+        ],
+        "publication": "HealthyChildren.org",
+        "publication_date": "2023",
+        "applicable_age": "Under 12 years",
+        "url": "https://www.healthychildren.org/English/tips-tools/symptom-checker/Pages/symptomviewer.aspx?symptom=Motion+Sickness",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C04",
+      "slide_n": 3,
+      "claim_text": "차 안에서 책이나 영상을 보지 않도록 하세요",
+      "source": {
+        "tier": 1,
+        "type": "clinical_reference",
+        "title": "Car Sickness - HealthyChildren.org",
+        "authors": [
+          "American Academy of Pediatrics"
+        ],
+        "publication": "HealthyChildren.org",
+        "publication_date": "2025-12-23",
+        "applicable_age": "All pediatric ages",
+        "url": "https://www.healthychildren.org/English/health-issues/conditions/head-neck-nervous-system/Pages/Car-Sickness.aspx",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C05",
+      "slide_n": 4,
+      "claim_text": "출발 전 3시간 이내에 먹지 않았다면 가벼운 간식을 주세요",
+      "source": {
+        "tier": 1,
+        "type": "clinical_reference",
+        "title": "Car Sickness - HealthyChildren.org",
+        "authors": [
+          "American Academy of Pediatrics"
+        ],
+        "publication": "HealthyChildren.org",
+        "publication_date": "2025-12-23",
+        "applicable_age": "All pediatric ages",
+        "url": "https://www.healthychildren.org/English/health-issues/conditions/head-neck-nervous-system/Pages/Car-Sickness.aspx",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C06",
+      "slide_n": 4,
+      "claim_text": "배가 완전히 비어있거나 너무 가득 차 있으면 멀미가 유발될 수 있습니다",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Prevention and Treatment of Motion Sickness",
+        "authors": [
+          "American Academy of Family Physicians"
+        ],
+        "publication": "American Family Physician",
+        "publication_date": "2014-07-01",
+        "applicable_age": "All ages",
+        "url": "https://www.aafp.org/pubs/afp/issues/2014/0701/p41.html",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C07",
+      "slide_n": 5,
+      "claim_text": "창문을 조금 열어 신선한 공기를 마시게 하세요",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Prevention and Treatment of Motion Sickness",
+        "authors": [
+          "American Academy of Family Physicians"
+        ],
+        "publication": "American Family Physician",
+        "publication_date": "2014-07-01",
+        "applicable_age": "All ages",
+        "url": "https://www.aafp.org/pubs/afp/issues/2014/0701/p41.html",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C08",
+      "slide_n": 5,
+      "claim_text": "자주 휴게소에 들러 아이가 밖으로 나가 걷게 하세요",
+      "source": {
+        "tier": 1,
+        "type": "clinical_reference",
+        "title": "Car Sickness - HealthyChildren.org",
+        "authors": [
+          "American Academy of Pediatrics"
+        ],
+        "publication": "HealthyChildren.org",
+        "publication_date": "2025-12-23",
+        "applicable_age": "All pediatric ages",
+        "url": "https://www.healthychildren.org/English/health-issues/conditions/head-neck-nervous-system/Pages/Car-Sickness.aspx",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C09",
+      "slide_n": 6,
+      "claim_text": "멀미약은 증상이 시작된 후보다 예방 목적으로 미리 복용해야 효과적입니다",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Prevention and Treatment of Motion Sickness",
+        "authors": [
+          "American Academy of Family Physicians"
+        ],
+        "publication": "American Family Physician",
+        "publication_date": "2014-07-01",
+        "applicable_age": "All ages",
+        "url": "https://www.aafp.org/pubs/afp/issues/2014/0701/p41.html",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C10",
+      "slide_n": 6,
+      "claim_text": "6-12세 어린이는 디멘히드리네이트(드라마민) 25-50mg을 출발 30분-1시간 전에 복용할 수 있습니다",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Prevention and Treatment of Motion Sickness",
+        "authors": [
+          "American Academy of Family Physicians"
+        ],
+        "publication": "American Family Physician",
+        "volume": "90(1)",
+        "pages": "41-46",
+        "publication_date": "2014-07-01",
+        "applicable_age": "6-12 years",
+        "url": "https://www.aafp.org/pubs/afp/issues/2014/0701/p41.html",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C11",
+      "slide_n": 7,
+      "claim_text": "2세 미만 어린이는 멀미를 거의 경험하지 않습니다",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Motion Sickness - CDC Travelers' Health",
+        "authors": [
+          "Centers for Disease Control and Prevention"
+        ],
+        "publication": "CDC Travelers' Health",
+        "publication_date": "2022-01-28",
+        "applicable_age": "Under 2 years",
+        "url": "https://wwwnc.cdc.gov/travel/page/motion-sickness",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C12",
+      "slide_n": 7,
+      "claim_text": "스코폴라민 패치는 어린이에게 환각, 정신 혼란 등 위험한 부작용을 일으킬 수 있어 피해야 합니다",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "FDA Drug Safety Communication - Scopolamine Transdermal Hyperthermia Risk",
+        "authors": [
+          "U.S. Food and Drug Administration"
+        ],
+        "publication": "FDA Drug Safety Communication",
+        "publication_date": "2025-06-18",
+        "applicable_age": "Pediatric",
+        "url": "https://www.fda.gov/media/187121/download",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C13",
+      "slide_n": 8,
+      "claim_text": "멀미가 시작되면 차를 세우고 아이를 눕혀 눈을 감게 하세요",
+      "source": {
+        "tier": 1,
+        "type": "clinical_reference",
+        "title": "Car Sickness - HealthyChildren.org",
+        "authors": [
+          "American Academy of Pediatrics"
+        ],
+        "publication": "HealthyChildren.org",
+        "publication_date": "2025-12-23",
+        "applicable_age": "All pediatric ages",
+        "url": "https://www.healthychildren.org/English/health-issues/conditions/head-neck-nervous-system/Pages/Car-Sickness.aspx",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C14",
+      "slide_n": 8,
+      "claim_text": "이마에 찬 수건을 올려주면 증상 완화에 도움이 됩니다",
+      "source": {
+        "tier": 1,
+        "type": "clinical_reference",
+        "title": "Car Sickness - HealthyChildren.org",
+        "authors": [
+          "American Academy of Pediatrics"
+        ],
+        "publication": "HealthyChildren.org",
+        "publication_date": "2025-12-23",
+        "applicable_age": "All pediatric ages",
+        "url": "https://www.healthychildren.org/English/health-issues/conditions/head-neck-nervous-system/Pages/Car-Sickness.aspx",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": false,
+      "reviewer_pass": null
+    }
+  ],
+  "verification": {
+    "tier_1_count": 14,
+    "tier_2_count": 0,
+    "total_claims": 14,
+    "notes": "모든 claim이 AAP HealthyChildren.org, AAFP, CDC, FDA 등 Tier 1 출처에서 확보되었습니다. C02의 연령 범위를 CDC 원전에 맞춰 2-12세로 수정했고, C10의 용량과 복용 시간을 약물 데이터베이스 원전에 맞춰 정정했습니다. C12는 FDA 최신 안전성 경고를 반영했습니다."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "topic": "car-sickness-prevention",
+  "topic_kr": "차멀미 예방법",
+  "palette": "A",
+  "output_dir": "output/car-sickness-prevention",
+  "image_size": "1080x1350",
+  "image_orientation": "portrait",
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Top-left small gray: PARENTING NOTE · 010. Left side upper area: very large bold Korean headline two lines — first line 아이 차멀미 in deep navy #1A1F36, second line 예방법 with 예방법 in coral #C44536. Below headline: small muted gray subtitle 출발 전 꼭 알아야 할 것들 · AAP 권장 기준. Right side center-bottom: large clean editorial illustration of cute child sitting in car seat looking out window at passing scenery, line art style in coral and teal, minimal clean strokes. Bottom area: thin coral horizontal accent line. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy, no quotes. Top-left small gray label: 차멀미란. Large bold headline: 뇌가 헷갈려서 navy, 생겨요 in coral #C44536. Center: clean editorial diagram showing three icons connected by arrows to brain icon — left icon: eye (눈), bottom icon: ear with waves (전정기관), right icon: muscle lines (근육감각). Each icon connected by dotted line to central brain. Below diagram: two info cards side by side light gray #F0F0EE rounded. Left card: '2-12세' coral large bold, subtitle '가장 취약한 연령'. Right card: simple wave icon, subtitle '감각 신호 불일치 시 발생'. Clean sans-serif typography, generous whitespace. No pixel text."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy, no quotes. Top-left small coral label: 예방법 01. Large bold headline: 자리와 시선이 navy, 중요해요 coral #C44536. Center-right: clean editorial illustration of car interior seen from behind, child sitting in back center seat looking forward through windshield, simple line art coral/navy. Left side three numbered items with coral numbers + navy text, generous line spacing: 1 — 뒷좌석 중앙에 앉히기 (12세 미만). 2 — 앞 창문 보도록 격려하기. 3 — 책·영상 보지 않기. Bottom thin coral divider line. No pixel text."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy, no quotes. Top-left small coral label: 예방법 02. Large bold headline: 출발 전 navy, 식사 조절 coral #C44536. Center: large clean editorial illustration of crackers and light snack items, minimal line art style in coral. Below illustration: two comparison cards side by side. Left card light gray rounded: checkmark icon teal, '출발 전 가벼운 간식', small text '3시간 내 공복이면'. Right card light gray rounded: X icon coral, '과식 또는 완전 공복', small text '멀미 유발 가능'. Bottom small gray text: AAP HealthyChildren.org 기준. No pixel text."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 따옴표 없이 4글자만. Top-left small coral label: 예방법 03. Large bold headline: 환기와 navy, 휴식 coral #C44536. Two large stacked cards each with generous padding. Top card light gray #F0F0EE rounded: left side wind/air wave icon coral, right side text '창문 조금 열기' navy bold + '신선한 공기 마시게 하기' gray small. Bottom card light gray rounded: left side walking person icon coral, right side '자주 휴게소 정차' navy bold + '아이가 밖에서 걷게 하기' gray small. Generous whitespace between cards. No pixel text."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 따옴표 없이 4글자만. Top-left small coral label: 멀미약. Large bold headline: 미리 먹어야 navy, 효과 있어요 coral #C44536. Center: clean illustration of medicine pill and clock showing 30min-1hr, minimal line art coral. Below: one large info card light gray #F0F0EE rounded, generous padding. Inside card: top label '6-12세 권장 용량' coral small bold. Large text: 디멘히드리네이트 navy bold. Below: 25-50mg coral large bold. Below: 출발 30분-1시간 전 gray. Bottom of card: small coral note '증상 시작 후보다 예방 목적 복용이 효과적'. Bottom small gray: AAFP American Family Physician 2014 기준. No pixel text."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy, no quotes. Top-left small coral label: 주의사항. Large bold headline: 이것만은 navy, 주의하세요 coral #C44536. Two stacked warning cards. Top card: left side baby/toddler icon, right side '2세 미만' navy bold + '멀미를 거의 경험하지 않아요' gray + '멀미약 불필요' coral small. Bottom card coral outline: warning icon, '스코폴라민 패치 금지' coral bold + '어린이에게 환각·정신혼란 부작용 위험' navy + 'FDA 안전성 경고 2025' gray small. Generous padding in each card. No pixel text."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy, no quotes. Top-left small coral label: 멀미 시작 시. Large bold headline: 멀미가 시작되면 navy, 이렇게 coral #C44536. Right side: clean editorial illustration of child lying down in back seat eyes closed, simple line art coral/navy style. Left side two numbered action items with coral large numbers + navy text, generous line spacing. 1 — 차를 세우고 아이를 눕혀 눈 감기. 2 — 이마에 찬 수건 올려주기. Bottom thin coral divider. Bottom small gray: AAP HealthyChildren.org 기준. No pixel text."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 with thin coral underline. Source box light gray #F0F0EE rounded generous padding: left-aligned small navy bold '출처'. Four lines small gray: · AAP HealthyChildren.org, Car Sickness (2025) / · CDC Travelers Health, Motion Sickness (2022) / · AAFP American Family Physician, Motion Sickness (2014) / · FDA Drug Safety Communication (2025). Horizontal thin navy divider line. Center below divider: 소아과언니 navy bold large — NO quotes NO decoration. Small gray SOAGWA UNNIE · 소아청소년과 전문의 center. Horizontal thin gray divider. Two lines center small: @soagwa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 진료 메모 남기기 coral. No pixel text on card. No quotes anywhere on card."
+    }
+  ]
+}
