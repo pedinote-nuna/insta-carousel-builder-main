@@ -1,0 +1,62 @@
+{
+  "topic": "febrile-seizure",
+  "topic_kr": "열성경련 대처법",
+  "palette": "emergency-alert",
+  "output_dir": "output/febrile-seizure",
+  "image_size": "1080x1350",
+  "image_orientation": "portrait",
+  "design_principles_v2": [
+    "텍스트 크기 약 25% 축소",
+    "각 슬라이드에 관련 일러스트/아이콘 1개 이상 크게",
+    "슬라이드 외곽 margin 상하좌우 충분히",
+    "텍스트만 가득 찬 구성 절대 금지",
+    "'소아과언니' 우상단 4글자만, 따옴표·픽셀값 텍스트 금지"
+  ],
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin on all four sides. Top: bold red #E63946 stripe across full width with COMPACT white text '열성경련 긴급 가이드'. Below stripe top-right: '소아과언니' white Pretendard SemiBold small, no decoration. Upper-center headline area, COMPACT (about 25% smaller than a typical cover headline): '아이가 경련해요' white bold, second line '지금 당장 어떻게 해야 하나요?' with the key emphasis '지금 당장' rendered in bright red #E63946. Small white subtitle below the headline with comfortable spacing: '열성경련 대처 · AAP 가이드라인 기준'. Center-to-lower area: a LARGE prominent line illustration of a child lying sideways in recovery position (white outline on the dark background), occupying significant visual area as the focal element. Bottom-left small gray text: 'PARENTING NOTE · 008'. Generous bottom whitespace. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "what-is-febrile-seizure",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin all sides. Top-right: '소아과언니' white small. Top-left small white label: '열성경련이란'. Top-center area below the label: a MEDIUM-LARGE line illustration of a child silhouette with subtle motion lines suggesting seizure tremor (white outline on dark background, restrained), as a clear focal element. COMPACT headline below the icon (about 25% smaller): '소아의 2-5%가 경험해요' white, '2-5%' rendered in bright red #E63946 bold. Two cards side by side, REDUCED height with GENEROUS internal padding. Left card top: a small CLOCK ICON in white outline, label '단순 열성경련' red bold COMPACT, body white COMPACT '15분 미만 / 24시간 1회 / 전신성'. Right card top: a small WARNING TRIANGLE ICON in red, label '복잡 열성경련' red bold COMPACT, body white COMPACT '15분 이상 / 반복 / 국소성'. Bottom (with generous top margin) mint #2EC4B6 note COMPACT: '대부분 1-2분 내 자연 소실 — 뇌손상 일으키지 않아요'. No pixel values as text on card."
+    },
+    {
+      "n": 3,
+      "role": "dont-do",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin all sides. Top-right: '소아과언니' white. Top-left red label COMPACT: '절대 하지 마세요 ❌'. COMPACT headline (about 25% smaller): '경련 중 이것만은 절대 금지' white, '절대 금지' in red #E63946. Five rows stacked vertically, each row: a SMALL LINE ILLUSTRATION ICON on the left (line art in white outline with a red ❌ overlay) + COMPACT white text on the right, with GENEROUS vertical spacing between rows. Row 1: finger-pointing-to-mouth icon ❌, text '입에 손가락·물건 넣기'. Row 2: restraining-hands icon ❌, text '억지로 붙잡거나 흔들기'. Row 3: water-cup icon ❌, text '물이나 약 먹이기'. Row 4: medicine-bottle icon ❌, text '해열제 억지로 투여'. Row 5: CPR-hands icon ❌, text '심폐소생술 (숨 쉬고 있을 때)'. Red outlined warning border around all rows with comfortable internal padding. No pixel values as text on card."
+    },
+    {
+      "n": 4,
+      "role": "do-this",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin all sides. Top-right: '소아과언니' white. Top-left mint label COMPACT: '지금 당장 하세요 ✓'. COMPACT headline (about 25% smaller): '경련 중 해야 할 것' white, '해야 할 것' in mint #2EC4B6. Five rows stacked, each row: a SMALL LINE ILLUSTRATION ICON on the left (line art with a mint ✓ overlay) + COMPACT white text on the right, GENEROUS vertical spacing. Row 1: child-lying-sideways icon ✓, text '바닥에 옆으로 눕히기'. Row 2: hands-clearing-objects icon ✓, text '주변 위험물 치우기'. Row 3: stopwatch icon ✓, text '시간 재기 (몇 분인지)'. Row 4: loose-clothing icon ✓, text '옷 느슨하게 하기'. Row 5: smartphone-recording icon ✓, text '경련 모습 동영상 촬영'. Mint outlined box around all rows with comfortable internal padding. No pixel values as text on card."
+    },
+    {
+      "n": 5,
+      "role": "call-119",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin all sides. Top-right: '소아과언니' white. Full-width bright red #E63946 header bar with COMPACT white bold text '지금 바로 119'. Below header bar: a LARGE prominent line illustration of an ambulance with siren OR a clear emergency icon with the digits as a graphic element (white outline on dark, with subtle red glow accent), occupying meaningful visual area as the focal element. COMPACT headline below the illustration: '이럴 때는 즉시 119' white. Five numbered items stacked, each row: medium-sized red number on the left + COMPACT white text on the right (about 25% smaller than typical), VERY GENEROUS vertical spacing between rows for easy reading. 1 5분 이상 경련이 계속될 때. 2 경련 후 의식이 돌아오지 않을 때. 3 호흡이 어려워 보일 때. 4 24시간 내 2회 이상 반복될 때. 5 생후 6개월 미만 영아일 때. Red rounded border around all rows with comfortable internal padding. Subtle red glow effect around the border. No pixel values as text on card."
+    },
+    {
+      "n": 6,
+      "role": "after-seizure",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin all sides. Top-right: '소아과언니' white. Top-left small white label: '경련 후 대처'. Top-center area: a MEDIUM-LARGE line illustration of a pediatric clinic building with a small cross sign, OR a kindly doctor/stethoscope silhouette (white outline on dark, with a mint accent on the cross/stethoscope), as a clear focal element. COMPACT headline below the icon (about 25% smaller): '경련이 멈췄어요, 이제는?' white. Two stacked cards REDUCED height with GENEROUS internal padding. Card 1 mint #2EC4B6 border: '5분 미만이었다면' mint label COMPACT, body white COMPACT '당일 소아과 진료 / 처음이라면 원인 파악 필요'. Card 2 red #E63946 border: '5분 이상이었거나 의심되면' red label COMPACT, body white COMPACT '119 또는 응급실 / 경련 영상 있으면 꼭 보여주세요'. Bottom (with generous top margin) small white: '경련 직후 아이가 졸리거나 처지는 것은 정상입니다'. No pixel values as text on card."
+    },
+    {
+      "n": 7,
+      "role": "reassurance",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin all sides. Top-right: '소아과언니' white. Top-left mint label COMPACT: '부모님께'. COMPACT headline (about 25% smaller): '무서웠겠지만, 알아두세요' white. Three reassurance cards stacked, each REDUCED height with GENEROUS internal padding and a mint left border accent. Each card has a PROMINENTLY VISIBLE line art icon on the left side. Card 1: a BRAIN-WITH-RED-STRIKETHROUGH icon on left (brain outline in white with a diagonal red slash overlay), body COMPACT white on right '단순 열성경련은 지능·발달·학습에 영향 없어요'. Card 2: a BRAIN-OUTLINE icon on left in mint with subtle check mark or low-percentage indicator, body COMPACT white on right '뇌전증 발생률 1-2% — 일반 소아(0.5%)보다 약간 높지만 매우 낮아요'. Card 3: an AMBER RECURRING-ARROW icon on left (curved arrow looping back), body COMPACT white on right '30% 재발하지만 대부분 단순 경련이에요'. Bottom (with generous top margin) mint note COMPACT: '해열제로 재발을 막을 수 없어요 — AAP 공식 입장'. No pixel values as text on card."
+    },
+    {
+      "n": 8,
+      "role": "checklist",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin all sides. Top-right: '소아과언니' white. Top-left label: 'CHECKLIST'. Top-center area: a MEDIUM-LARGE line illustration of a clipboard with notes and a pen, OR a doctor consultation memo pad (white outline on dark with mint accent on the cross/pen), as a clear focal element. COMPACT headline below the icon (about 25% smaller): '경련 후 소아과에서 말할 것' white. Checklist box red outline with GENEROUS internal padding. Items as rows, each row: a white checkbox square on the left + COMPACT white text on the right (about 25% smaller), VERY GENEROUS vertical spacing between rows. □ 경련 시작 시각과 지속 시간. □ 경련 모습 (전신? 한쪽만?). □ 경련 전 체온. □ 의식 회복까지 걸린 시간. □ 오늘 먹은 약. □ 최근 감염 증상. Bottom (with generous top margin) mint note COMPACT: '동영상 촬영했다면 꼭 보여주세요'. No pixel values as text on card."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. VERY GENEROUS outer margin all sides. Top-right: '소아과언니' white small. Top-center small gray: 'SAVE & SHARE'. Large center headline COMPACT: '오늘 확인하고 저장하세요' white, '저장하세요' mint #2EC4B6 underline. Below headline with comfortable spacing: source box dark card #1A2B3C rounded with GENEROUS internal padding, left-aligned. Inside box: small white bold '출처'. Two lines small gray with comfortable line spacing: '· AAP CPG. Pediatrics 121(6), 2008 (PMID 18519501)' / '· Nelson Textbook of Pediatrics, 21st ed. 2020'. Generous vertical spacing, then thin white horizontal divider. Center: large '소아과언니' white bold. Small gray below: 'SOAGWA UNNIE · 소아청소년과 전문의'. Generous vertical spacing, then thin divider. Small white '@soagwa_unnie · 매주 새 가이드'. Small mint '소아과수첩 앱 · 야간·달빛병원 바로 찾기'. No pixel values as text on card. No quotes on card."
+    }
+  ]
+}

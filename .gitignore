@@ -11,6 +11,9 @@ output/colic-5s/*-rerun*/
 !output/fever-stages/
 output/fever-stages/_history/
 output/fever-stages/*-rerun*/
+!output/febrile-seizure/
+output/febrile-seizure/_history/
+output/febrile-seizure/*-rerun*/
 *.log
 .DS_Store
 Thumbs.db

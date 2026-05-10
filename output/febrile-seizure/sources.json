@@ -1,0 +1,195 @@
+{
+  "topic": "febrile-seizure",
+  "topic_kr": "열성경련 대처법",
+  "palette": "emergency-alert",
+  "compiled_at": "2026-05-10",
+  "claims": [
+    {
+      "claim_id": "C01",
+      "slide_n": 2,
+      "claim_text": "열성경련은 생후 6-60개월 소아의 2-5%에서 발생하는 가장 흔한 소아 경련 질환이다. 대부분 1-2분 내 자연 소실되며 뇌손상을 일으키지 않는다.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Febrile Seizures: Clinical Practice Guideline for the Long-term Management of the Child With Simple Febrile Seizures",
+        "authors": ["Subcommittee on Febrile Seizures", "AAP"],
+        "publication": "Pediatrics",
+        "volume": "121(6)",
+        "pages": "1281-1286",
+        "pmid": "18519501",
+        "publication_date": "2008",
+        "applicable_age": "6-60 months",
+        "url": "https://publications.aap.org/pediatrics/article/121/6/1281/72767",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C02",
+      "slide_n": 2,
+      "claim_text": "단순 열성경련: 15분 미만, 24시간 내 1회, 전신성. 복잡 열성경련: 15분 이상 또는 24시간 내 2회 이상 또는 국소성.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Febrile Seizures: Clinical Practice Guideline for the Long-term Management of the Child With Simple Febrile Seizures",
+        "authors": ["Subcommittee on Febrile Seizures", "AAP"],
+        "publication": "Pediatrics",
+        "volume": "121(6)",
+        "pages": "1281-1286",
+        "pmid": "18519501",
+        "publication_date": "2008",
+        "applicable_age": "6-60 months",
+        "url": "https://publications.aap.org/pediatrics/article/121/6/1281/72767",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C03",
+      "slide_n": 3,
+      "claim_text": "경련 중 절대 하지 말 것: ① 입에 손가락·물건 넣기 ② 억지로 붙잡기 ③ 물 먹이기 ④ 해열제 먹이기 ⑤ 심폐소생술 시도 (호흡하고 있을 때).",
+      "source": {
+        "tier": 1,
+        "type": "textbook",
+        "title": "Nelson Textbook of Pediatrics — Febrile Seizures chapter",
+        "authors": ["Kliegman, R.M. et al. (eds.)"],
+        "publisher": "Elsevier",
+        "publication_date": "2020 (21st ed.)",
+        "applicable_age": "6-60 months",
+        "url": "",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C04",
+      "slide_n": 4,
+      "claim_text": "경련 중 해야 할 것: ① 아이를 바닥에 옆으로 눕히기 ② 주변 위험물 치우기 ③ 시간 재기 ④ 옷 느슨하게 하기 ⑤ 경련 모습 동영상 촬영 (가능하면).",
+      "source": {
+        "tier": 1,
+        "type": "textbook",
+        "title": "Nelson Textbook of Pediatrics — Febrile Seizures chapter",
+        "authors": ["Kliegman, R.M. et al. (eds.)"],
+        "publisher": "Elsevier",
+        "publication_date": "2020 (21st ed.)",
+        "applicable_age": "6-60 months",
+        "url": "",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C05",
+      "slide_n": 5,
+      "claim_text": "즉시 119 신호: ① 5분 이상 경련 지속 ② 경련 후 의식이 돌아오지 않음 ③ 호흡 곤란 ④ 24시간 내 2회 이상 반복 ⑤ 생후 6개월 미만.",
+      "source": {
+        "tier": 1,
+        "type": "textbook",
+        "title": "Nelson Textbook of Pediatrics — Febrile Seizures chapter",
+        "authors": ["Kliegman, R.M. et al. (eds.)"],
+        "publisher": "Elsevier",
+        "publication_date": "2020 (21st ed.)",
+        "applicable_age": "6-60 months",
+        "url": "",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C06",
+      "slide_n": 6,
+      "claim_text": "5분 미만 단순 열성경련 후: 경련이 멈추면 당일 소아과 진료. 아이가 처음 경험한 경우 원인 파악 필요.",
+      "source": {
+        "tier": 1,
+        "type": "textbook",
+        "title": "Nelson Textbook of Pediatrics — Febrile Seizures chapter",
+        "authors": ["Kliegman, R.M. et al. (eds.)"],
+        "publisher": "Elsevier",
+        "publication_date": "2020 (21st ed.)",
+        "applicable_age": "6-60 months",
+        "url": "",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C07",
+      "slide_n": 7,
+      "claim_text": "단순 열성경련 후 뇌전증 발생 위험은 약 1-2%로, 열성경련이 없는 소아(약 0.5%)보다 약간 높지만 여전히 매우 낮은 수준이다. 단순 열성경련은 지능·발달·학습에 영향을 주지 않는다.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Febrile Seizures: Clinical Practice Guideline for the Long-term Management of the Child With Simple Febrile Seizures",
+        "authors": ["Subcommittee on Febrile Seizures", "AAP"],
+        "publication": "Pediatrics",
+        "volume": "121(6)",
+        "pages": "1281-1286",
+        "pmid": "18519501",
+        "publication_date": "2008",
+        "applicable_age": "6-60 months",
+        "url": "https://publications.aap.org/pediatrics/article/121/6/1281/72767",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C08",
+      "slide_n": 7,
+      "claim_text": "재발률은 약 30%. 12개월 미만은 최대 50%. 재발해도 대부분 단순 열성경련이며 심각한 결과로 이어지지 않는다.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Febrile Seizures: Clinical Practice Guideline for the Long-term Management of the Child With Simple Febrile Seizures",
+        "authors": ["Subcommittee on Febrile Seizures", "AAP"],
+        "publication": "Pediatrics",
+        "volume": "121(6)",
+        "pages": "1281-1286",
+        "pmid": "18519501",
+        "publication_date": "2008",
+        "applicable_age": "6-60 months",
+        "url": "https://publications.aap.org/pediatrics/article/121/6/1281/72767",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    },
+    {
+      "claim_id": "C09",
+      "slide_n": 8,
+      "claim_text": "해열제는 열성경련 재발을 예방하지 못한다. AAP는 단순 열성경련에 항경련제 예방 투여를 권장하지 않는다.",
+      "source": {
+        "tier": 1,
+        "type": "guideline",
+        "title": "Febrile Seizures: Clinical Practice Guideline for the Long-term Management of the Child With Simple Febrile Seizures",
+        "authors": ["Subcommittee on Febrile Seizures", "AAP"],
+        "publication": "Pediatrics",
+        "volume": "121(6)",
+        "pages": "1281-1286",
+        "pmid": "18519501",
+        "publication_date": "2008",
+        "applicable_age": "6-60 months",
+        "url": "https://publications.aap.org/pediatrics/article/121/6/1281/72767",
+        "last_accessed_at": "2026-05-10"
+      },
+      "writer_used": true,
+      "reviewer_pass": null
+    }
+  ],
+  "verification": {
+    "tier_1_count": 9,
+    "tier_2_count": 0,
+    "total_claims": 9,
+    "all_claims_have_publication_date": true,
+    "all_claims_have_applicable_age": true,
+    "writer_used_count": 9,
+    "reviewer_pass_count": null,
+    "notes": "핵심 출처: AAP CPG 2008 (Pediatrics 121(6), PMID 18519501), Nelson Textbook 21st ed. Tier 3 이하 0건."
+  }
+}
