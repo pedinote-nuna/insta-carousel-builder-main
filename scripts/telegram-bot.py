@@ -747,20 +747,37 @@ reviewer_pass 필드는 건드리지 말 것."""
     return parsed if parsed else sources
 
 
-def generate_template(
+async def generate_template(
     sources: dict, topic_kr: str, slug: str, api_key: str
+) -> tuple[Optional[dict], str]:
+    """톤 자동 선택 + sources 기반으로 9장 슬라이드 템플릿 생성. (template, tone_name) 반환."""
+    tone_name = await select_tone(topic_kr, slug)
+    tone_path = REPO_ROOT / "knowledge" / "tone" / f"{tone_name}.md"
+    tone_content = tone_path.read_text(encoding="utf-8") if tone_path.exists() else ""
+
+    template = await asyncio.to_thread(
+        _generate_template_sync, sources, topic_kr, slug, tone_name, tone_content, api_key
+    )
+    return template, tone_name
+
+
+def _generate_template_sync(
+    sources: dict,
+    topic_kr: str,
+    slug: str,
+    tone_name: str,
+    tone_content: str,
+    api_key: str,
 ) -> Optional[dict]:
-    """톤 가이드 + sources 기반으로 9장 슬라이드 템플릿 생성."""
     client = Anthropic(api_key=api_key)
     palette = sources.get("palette", "A")
 
-    tone_dir = REPO_ROOT / "knowledge" / "tone"
-    tone_path = tone_dir / "editorial-modern.md"  # 팔레트 A·B 둘 다 정의
-    if tone_path.exists():
-        tone_content = tone_path.read_text(encoding="utf-8")
-    else:
-        files = sorted(tone_dir.glob("*.md"))
-        tone_content = files[0].read_text(encoding="utf-8") if files else ""
+    tone_template_path = REPO_ROOT / "knowledge" / "tone-templates" / f"{tone_name}.md"
+    tone_template = (
+        tone_template_path.read_text(encoding="utf-8")
+        if tone_template_path.exists()
+        else ""
+    )
 
     system = """당신은 소아과언니 카드뉴스 슬라이드 프롬프트 작성자입니다.
 
@@ -806,13 +823,14 @@ def generate_template(
     user = f"""토픽: {topic_kr}
 슬러그: {slug}
 팔레트: {palette}
+선택된 톤: {tone_name}
 톤 가이드:
 {tone_content}
 
 sources.json:
 {json.dumps(sources, ensure_ascii=False)}
 
-위 내용으로 9장 슬라이드 프롬프트 JSON 작성해줘.
+위 톤 스타일로 9장 슬라이드 프롬프트 JSON 작성해줘.
 
 ---
 좋은 prompt 예시 (이 품질로 작성해줘):
@@ -825,7 +843,10 @@ slide n:3-8 body 예시:
 
 slide n:9 outro 예시:
 "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 with thin coral underline. Source box light gray #F0F0EE rounded: 출처 [4개 출처 목록]. Horizontal thin navy divider. Center: 소아과언니 navy bold large — NO quotes NO decoration. Small gray SOAGWA UNNIE · 소아청소년과 전문의. Horizontal divider. @soagwa_unnie · 매주 새 가이드 navy. [앱 CTA] coral. No pixel text. No quotes anywhere."
----"""
+---
+
+검증된 prompt 패턴 (반드시 이 패턴 따를 것):
+{tone_template}"""
     msg = client.messages.create(
         model=ANTHROPIC_MODEL,
         max_tokens=8000,
@@ -886,11 +907,10 @@ async def auto_pipeline(update: Update, topic_kr: str, slug: str) -> None:
     n_claims = len(verified_sources.get("claims", []))
     await update.message.reply_text(f"✓ sources.json 저장 ({n_claims}개 claim)")
 
-    # STEP 3: template 생성
-    await update.message.reply_text("🎨 슬라이드 구성 중...")
+    # STEP 3: template 생성 (톤 자동 선택 포함)
     try:
-        template = await asyncio.to_thread(
-            generate_template, verified_sources, topic_kr, slug, api_key
+        template, tone_name = await generate_template(
+            verified_sources, topic_kr, slug, api_key
         )
     except Exception as e:  # noqa: BLE001
         log.exception("generate_template 실패")
@@ -899,6 +919,7 @@ async def auto_pipeline(update: Update, topic_kr: str, slug: str) -> None:
     if not template:
         await update.message.reply_text("❌ 템플릿 응답을 파싱하지 못했습니다.")
         return
+    await update.message.reply_text(f"🎨 슬라이드 구성 중... (톤: {tone_name})")
 
     tpl_path = TEMPLATES_DIR / f"slides.{slug}.json"
     tpl_path.write_text(
@@ -911,6 +932,108 @@ async def auto_pipeline(update: Update, topic_kr: str, slug: str) -> None:
     # STEP 4: 이미지 생성
     await update.message.reply_text("🖼️ 이미지 생성 중... (약 4분)")
     await trigger_generation_direct(update, slug)
+
+
+# ---------------------------------------------------------------- tone selection
+
+
+def load_tone_history() -> dict:
+    path = REPO_ROOT / "data" / "tone_history.json"
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
+    return {"recent": []}
+
+
+def save_tone_history(data: dict) -> None:
+    path = REPO_ROOT / "data" / "tone_history.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+
+
+VALID_TONES = [
+    "editorial-modern",
+    "handdrawn-notebook",
+    "clean-infographic",
+    "emergency-alert",
+    "character-illustration",
+]
+
+TONE_GUIDE = """
+5가지 톤과 어울리는 토픽 유형:
+1. editorial-modern — 일반 케어·예방법·여행·생활건강·약물 안전
+2. handdrawn-notebook — 영아 돌봄·수유·산통·야간 육아·따뜻한 주제
+3. clean-infographic — 수치·기준·비교표·예방접종·성장 백분위
+4. emergency-alert — 응급 대처·경련·아나필락시스·즉시 신호 판단
+5. character-illustration — 이유식·발달·성장·영양·귀여운 영아 주제
+
+규칙:
+- 토픽 특성 보고 가장 자연스럽게 어울리는 톤 선택
+- 딱 하나에만 묶이지 않고 유연하게 판단
+- 최근 사용 톤 피해서 다양성 유지
+"""
+
+
+async def select_tone(topic_kr: str, slug: str) -> str:
+    """토픽에 맞는 톤을 Claude API 로 선택 + 최근 이력으로 다양성 유지."""
+    history = load_tone_history()
+    recent_tones = history.get("recent", [])
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    if not api_key or Anthropic is None:
+        for t in VALID_TONES:
+            if t not in recent_tones[-3:]:
+                tone_name = t
+                break
+        else:
+            tone_name = VALID_TONES[0]
+    else:
+        try:
+            tone_name = await asyncio.to_thread(
+                _select_tone_sync, topic_kr, slug, recent_tones, api_key
+            )
+        except Exception as e:  # noqa: BLE001
+            log.exception("select_tone API 실패: %s", e)
+            tone_name = next(
+                (t for t in VALID_TONES if t not in recent_tones[-3:]),
+                VALID_TONES[0],
+            )
+
+    if tone_name not in VALID_TONES:
+        tone_name = next(
+            (t for t in VALID_TONES if t not in recent_tones[-3:]), VALID_TONES[0]
+        )
+
+    recent_tones.append(tone_name)
+    history["recent"] = recent_tones[-5:]
+    save_tone_history(history)
+    return tone_name
+
+
+def _select_tone_sync(
+    topic_kr: str, slug: str, recent_tones: list, api_key: str
+) -> str:
+    client = Anthropic(api_key=api_key)
+    recent_str = ", ".join(recent_tones[-3:]) if recent_tones else "없음"
+    response = client.messages.create(
+        model=ANTHROPIC_MODEL,
+        max_tokens=50,
+        system="소아과언니 카드뉴스 디자인 디렉터. 톤 파일명만 반환. 다른 텍스트 금지.",
+        messages=[
+            {
+                "role": "user",
+                "content": (
+                    f"토픽: {topic_kr}\n"
+                    f"슬러그: {slug}\n"
+                    f"최근 사용 톤(피할 것): {recent_str}\n\n"
+                    f"{TONE_GUIDE}\n\n가장 어울리는 톤 파일명만 반환:"
+                ),
+            }
+        ],
+    )
+    raw = _collect_text(response).strip().lower()
+    m = re.search(r"[a-z][a-z0-9-]+", raw)
+    return m.group(0) if m else ""
 
 
 # ---------------------------------------------------------------- generator pipeline
