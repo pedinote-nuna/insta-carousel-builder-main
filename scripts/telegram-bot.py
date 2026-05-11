@@ -584,6 +584,15 @@ def _intent_router_sync(text: str, api_key: str) -> dict:
 의도 목록:
 - topics: 주제 추천 요청 ("주제 추천해줘", "이번 주 주제", "뭐 만들까" 등)
 - make: 카드뉴스 생성 ("X 만들어줘", "N번 만들어", "X 카드뉴스 해줘" 등)
+  → 톤 키워드가 함께 언급되면 params.tone 에 톤 파일명을 채움
+  → 톤 키워드 매핑:
+    · 에디토리얼/모던 → editorial-modern
+    · 손그림/노트북/따뜻한 → handdrawn-notebook
+    · 클린/인포그래픽/데이터 → clean-infographic
+    · 경고/긴급/응급/빨간 → emergency-alert
+    · 캐릭터/일러스트/귀여운/파스텔 → character-illustration
+  → 톤 언급 없으면 tone: "" (빈 문자열)
+  → select 에서도 톤이 함께 언급되면 params.tone 동일 매핑 적용
 - queue: 보류 목록 조회 ("보류 목록", "나중에 쓸 것", "큐 보여줘" 등)
 - done: 완료 목록 조회 ("완료된 거", "다 만든 것", "발행한 것" 등)
 - status: 현재 상태 ("지금 뭐 해", "진행 중인 거", "상태 확인" 등)
@@ -620,11 +629,17 @@ def _intent_router_sync(text: str, api_key: str) -> dict:
 - unknown: 위 중 어느 것도 아님
 
 JSON 형식:
-{"intent": "make", "params": {"topic_kr": "차멀미 예방법"}}
+{"intent": "make", "params": {"topic_kr": "차멀미 예방법", "tone": ""}}
+{"intent": "make", "params": {"topic_kr": "수족구병", "tone": "character-illustration"}}
 {"intent": "select", "params": {"numbers": [1, 3, 5]}}
 {"intent": "queue_move", "params": {"numbers": [3]}}
 {"intent": "delete", "params": {"numbers": [2]}}
 {"intent": "topics", "params": {}}
+
+톤 추출 예시:
+"수족구병 캐릭터스타일로 해줘" → {"intent": "make", "params": {"topic_kr": "수족구병", "tone": "character-illustration"}}
+"열성경련 경고톤으로 만들어줘" → {"intent": "make", "params": {"topic_kr": "열성경련", "tone": "emergency-alert"}}
+"1번 손그림으로 만들어줘" → {"intent": "select", "params": {"numbers": [1], "tone": "handdrawn-notebook"}}
 {"intent": "feedback_regen", "params": {"slide_n": 4, "feedback": "너무 어려워"}}
 {"intent": "verify_slide", "params": {"slide_n": 8}}
 {"intent": "edit_slide", "params": {"slide_n": 3, "instruction": "38도 아니고 38.5도야"}}
@@ -695,7 +710,8 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
                     f"❌ '{topic_kr}' 슬러그 변환 실패."
                 )
                 return
-        await auto_pipeline(update, topic_kr, slug)
+        forced_tone = params.get("tone", "")
+        await auto_pipeline(update, topic_kr, slug, forced_tone=forced_tone)
 
     elif intent == "select":
         numbers = params.get("numbers", [])
@@ -716,7 +732,8 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
                 slug = topic.get("slug", "")
                 if not slug:
                     slug = await korean_to_slug(topic_kr)
-                await auto_pipeline(update, topic_kr, slug)
+                forced_tone = params.get("tone", "")
+                await auto_pipeline(update, topic_kr, slug, forced_tone=forced_tone)
             else:
                 await update.message.reply_text(
                     f"💡 이번 주 확정된 주제가 {len(this_week)}개예요.\n"
@@ -1083,10 +1100,14 @@ reviewer_pass 필드는 건드리지 말 것."""
 
 
 async def generate_template(
-    sources: dict, topic_kr: str, slug: str, api_key: str
+    sources: dict, topic_kr: str, slug: str, api_key: str, forced_tone: str = ""
 ) -> tuple[Optional[dict], str]:
     """톤 자동 선택 + sources 기반으로 9장 슬라이드 템플릿 생성. (template, tone_name) 반환."""
-    tone_name = await select_tone(topic_kr, slug)
+    if forced_tone:
+        tone_name = forced_tone
+        # tone_history는 업데이트하지 않음 (강제 지정이므로)
+    else:
+        tone_name = await select_tone(topic_kr, slug)
     tone_path = REPO_ROOT / "knowledge" / "tone" / f"{tone_name}.md"
     tone_content = tone_path.read_text(encoding="utf-8") if tone_path.exists() else ""
 
@@ -1191,7 +1212,9 @@ slide n:9 outro 예시:
     return _parse_json_object(_collect_text(msg))
 
 
-async def auto_pipeline(update: Update, topic_kr: str, slug: str) -> None:
+async def auto_pipeline(
+    update: Update, topic_kr: str, slug: str, forced_tone: str = ""
+) -> None:
     """자동 파이프라인: sources → verify → template → image."""
     if Anthropic is None:
         await update.message.reply_text("❌ anthropic 패키지 미설치.")
@@ -1245,7 +1268,7 @@ async def auto_pipeline(update: Update, topic_kr: str, slug: str) -> None:
     # STEP 3: template 생성 (톤 자동 선택 포함)
     try:
         template, tone_name = await generate_template(
-            verified_sources, topic_kr, slug, api_key
+            verified_sources, topic_kr, slug, api_key, forced_tone=forced_tone
         )
     except Exception as e:  # noqa: BLE001
         log.exception("generate_template 실패")
