@@ -62,6 +62,7 @@ def main():
     ap.add_argument("--slides", default=str(DEFAULT_SLIDES_JSON), help="slides.json 경로")
     ap.add_argument("--model", default="gemini-3-pro-image-preview", help="Gemini 이미지 모델 ID")
     ap.add_argument("--dry-run", action="store_true", help="API 호출 없이 프롬프트만 출력")
+    ap.add_argument("--slide-n", type=int, default=None, help="해당 번호 슬라이드 1장만 재생성")
     args = ap.parse_args()
 
     try:
@@ -81,6 +82,12 @@ def main():
     data = json.loads(slides_path.read_text(encoding="utf-8"))
     common_style = data.get("common_style", "")
     slides = data.get("slides", [])
+
+    if args.slide_n is not None:
+        slides = [s for s in slides if s.get("n") == args.slide_n]
+        if not slides:
+            print(f"[ERROR] slide-{args.slide_n:02d} not found in {slides_path}")
+            sys.exit(1)
 
     out_dir = REPO_ROOT / "output" / args.topic
     out_dir.mkdir(parents=True, exist_ok=True)

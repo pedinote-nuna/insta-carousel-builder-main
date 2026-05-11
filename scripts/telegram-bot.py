@@ -217,19 +217,18 @@ def _parse_json_object(raw: str) -> Optional[dict]:
 
 async def cmd_start(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
     text = (
-        "👶 소아과언니 카드뉴스 봇\n\n"
-        "📋 주제 관리\n"
-        "  /topics      — 주 7개 추천 (Claude API)\n"
-        "  /queue       — 보류 목록\n"
-        "  /done        — 완료 목록 (최근 10개)\n\n"
-        "🎨 생성\n"
-        "  /new <슬러그>  — 9장 생성\n"
-        "  /status        — 진행 상황\n\n"
-        "💬 자유 입력\n"
-        "  '1 3 5'        — 추천 후 번호 선택\n"
-        "  '다시'         — 추천 다시\n"
-        "  '큐 1'         — 보류 → 이번 주\n"
-        "  '삭제 2'       — 보류 삭제\n"
+        "👶 소아과언니 카드뉴스 봇\n"
+        "\n"
+        "💬 자연어로 말씀해주세요:\n"
+        "  • '주제 추천해줘' — 이번 주 주제 7개 추천\n"
+        "  • '1번 만들어' — 추천 목록에서 선택해서 생성\n"
+        "  • '수족구병 만들어줘' — 바로 생성\n"
+        "  • '보류 목록 보여줘' — 나중에 쓸 주제 확인\n"
+        "  • '완료된 거 뭐야' — 발행 완료 목록\n"
+        "  • '다시' — 주제 다시 추천\n"
+        "\n"
+        "📌 슬래시 커맨드도 사용 가능:\n"
+        "  /topics /queue /done /status"
     )
     await update.message.reply_text(text)
 
@@ -450,6 +449,22 @@ def _intent_router_sync(text: str, api_key: str) -> dict:
 - retry: 재추천 요청 ("다시", "다른 거", "다시 추천해줘" 등)
 - confirm: 확인/진행 ("응", "좋아", "예", "ㅇㅇ", "ok", "진행해" 등)
 - cancel: 취소 ("아니", "취소", "됐어", "ㄴㄴ" 등)
+- feedback_regen: 특정 슬라이드 재생성 요청
+  ("4장 내용 너무 어려워", "3번 다시 만들어줘",
+   "slide-05 수정해줘", "5번 슬라이드 바꿔줘" 등)
+  → params: {"slide_n": 4, "feedback": "너무 어려워"}
+- verify_slide: 의학 내용 확인 질문
+  ("8번 내용 맞아?", "3장 의학적으로 정확해?",
+   "이 내용 근거 있어?" 등)
+  → params: {"slide_n": 8}
+- edit_slide: 구체적 수정 지시
+  ("3번 슬라이드 38도 아니고 38.5도야",
+   "5장에 부루펜 6개월 이상이라고 추가해줘" 등)
+  → params: {"slide_n": 3, "instruction": "38도 아니고 38.5도야"}
+- general_question: 현재 토픽 관련 일반 질문
+  ("차멀미약 몇 살부터 먹여?",
+   "이 내용 부모들한테 어떻게 설명하면 좋아?" 등)
+  → params: {"question": "질문 내용"}
 - unknown: 위 중 어느 것도 아님
 
 JSON 형식:
@@ -458,6 +473,10 @@ JSON 형식:
 {"intent": "queue_move", "params": {"numbers": [3]}}
 {"intent": "delete", "params": {"numbers": [2]}}
 {"intent": "topics", "params": {}}
+{"intent": "feedback_regen", "params": {"slide_n": 4, "feedback": "너무 어려워"}}
+{"intent": "verify_slide", "params": {"slide_n": 8}}
+{"intent": "edit_slide", "params": {"slide_n": 3, "instruction": "38도 아니고 38.5도야"}}
+{"intent": "general_question", "params": {"question": "차멀미약 몇 살부터?"}}
 {"intent": "unknown", "params": {}}
 """,
         messages=[{"role": "user", "content": text}],
@@ -526,10 +545,29 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
 
     elif intent == "select":
         numbers = params.get("numbers", [])
-        if numbers and session.get("recommendation"):
+        if not numbers:
+            await update.message.reply_text("💡 번호를 알려주세요. 예) '1번 만들어'")
+            return
+        if session.get("recommendation"):
+            # 추천 목록에서 선택
             await apply_recommendation_selection(update, numbers)
         else:
-            await update.message.reply_text("💡 먼저 /topics 로 주제를 추천받으세요.")
+            # this_week에서 선택해서 바로 생성
+            data = load_topics()
+            this_week = data.get("this_week", [])
+            idx = numbers[0] - 1
+            if 0 <= idx < len(this_week):
+                topic = this_week[idx]
+                topic_kr = topic.get("title_kr", "")
+                slug = topic.get("slug", "")
+                if not slug:
+                    slug = await korean_to_slug(topic_kr)
+                await auto_pipeline(update, topic_kr, slug)
+            else:
+                await update.message.reply_text(
+                    f"💡 이번 주 확정된 주제가 {len(this_week)}개예요.\n"
+                    f"1-{len(this_week)} 사이 번호를 말씀해주세요."
+                )
 
     elif intent == "queue":
         await cmd_queue(update, context)
@@ -569,6 +607,44 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
     elif intent == "cancel":
         session["recommendation"] = None
         await update.message.reply_text("✅ 취소됐어요.")
+
+    elif intent == "feedback_regen":
+        slide_n = params.get("slide_n")
+        feedback = params.get("feedback", "더 쉽게 설명해줘")
+        last = session.get("last_topic")
+        if not last:
+            await update.message.reply_text(
+                "💡 먼저 카드뉴스를 만들어주세요."
+            )
+            return
+        await regen_single_slide(update, last, slide_n, feedback)
+
+    elif intent == "verify_slide":
+        slide_n = params.get("slide_n")
+        last = session.get("last_topic")
+        if not last:
+            await update.message.reply_text(
+                "💡 먼저 카드뉴스를 만들어주세요."
+            )
+            return
+        await verify_single_slide(update, last, slide_n)
+
+    elif intent == "edit_slide":
+        slide_n = params.get("slide_n")
+        instruction = params.get("instruction", "")
+        last = session.get("last_topic")
+        if not last or not instruction:
+            await update.message.reply_text(
+                "💡 수정 내용을 구체적으로 알려주세요.\n"
+                "예) '3번 슬라이드 38도 아니고 38.5도야'"
+            )
+            return
+        await regen_single_slide(update, last, slide_n, instruction)
+
+    elif intent == "general_question":
+        question = params.get("question", "")
+        last = session.get("last_topic")
+        await answer_general_question(update, last, question)
 
     else:
         await update.message.reply_text(
@@ -629,7 +705,8 @@ async def apply_recommendation_selection(update: Update, nums: list[int]) -> Non
         lines.append("")
         lines.append(f"📥 보류 이동: {', '.join(str(n) for n in leftover_idx)}번")
     lines.append("")
-    lines.append("/new <slug> 로 생성 시작하세요!")
+    lines.append("만들고 싶은 번호를 말씀해주세요!")
+    lines.append("예) '1번 만들어' 또는 '여행 비상약 만들어줘'")
     await update.message.reply_text("\n".join(lines))
 
 
@@ -1007,6 +1084,221 @@ async def auto_pipeline(update: Update, topic_kr: str, slug: str) -> None:
     # STEP 4: 이미지 생성
     await update.message.reply_text("🖼️ 이미지 생성 중... (약 4분)")
     await trigger_generation_direct(update, slug)
+
+    # 세션에 현재 토픽 저장 (피드백·검증·질문 대화용)
+    session["last_topic"] = {
+        "slug": slug,
+        "topic_kr": topic_kr,
+        "sources_path": str(REPO_ROOT / "output" / slug / "sources.json"),
+        "template_path": str(TEMPLATES_DIR / f"slides.{slug}.json"),
+        "output_dir": str(OUTPUT_DIR / slug),
+    }
+
+
+# ---------------------------------------------------------------- per-slide feedback / verify / Q&A
+
+
+async def regen_single_slide(
+    update, last_topic: dict, slide_n: int, instruction: str
+):
+    """특정 슬라이드만 재생성해서 전송."""
+    slug = last_topic["slug"]
+    topic_kr = last_topic["topic_kr"]
+    template_path_str = last_topic["template_path"]
+    output_dir = last_topic["output_dir"]
+
+    await update.message.reply_text(
+        f"🔄 slide-{slide_n:02d} 재생성 중...\n피드백: {instruction}"
+    )
+
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+
+    def _regen_sync():
+        import json as _json
+        client = Anthropic(api_key=api_key)
+
+        # 기존 template 읽기
+        with open(template_path_str) as f:
+            template = _json.load(f)
+
+        # 해당 슬라이드 찾기
+        slide = next(
+            (s for s in template.get("slides", []) if s.get("n") == slide_n),
+            None,
+        )
+        if not slide:
+            return None, "슬라이드를 찾을 수 없어요."
+
+        # sources.json 읽기
+        sources_path = last_topic["sources_path"]
+        sources_content = ""
+        if Path(sources_path).exists():
+            with open(sources_path) as f:
+                sources_content = _json.dumps(
+                    _json.load(f), ensure_ascii=False
+                )
+
+        # 새 prompt 생성
+        response = client.messages.create(
+            model="claude-sonnet-4-5-20250929",
+            max_tokens=2000,
+            system="""소아과언니 카드뉴스 슬라이드 프롬프트 수정자.
+기존 prompt를 피드백에 맞게 수정해서 반환.
+수정된 prompt 텍스트만 반환. 다른 텍스트 금지.
+규칙:
+- Portrait 1080x1350 유지
+- 소아과언니 우상단 시그니쳐 유지 (따옴표 없이)
+- 톤과 컬러 시스템 유지
+- sources.json에 없는 새 사실 추가 금지
+- 픽셀값 텍스트 금지""",
+            messages=[{
+                "role": "user",
+                "content": f"""
+토픽: {topic_kr}
+슬라이드: {slide_n}번
+피드백/수정 지시: {instruction}
+
+기존 prompt:
+{slide['prompt']}
+
+sources.json:
+{sources_content[:2000]}
+
+위 피드백을 반영해서 수정된 prompt만 반환해줘.
+""",
+            }],
+        )
+
+        new_prompt = response.content[0].text.strip()
+
+        # template 업데이트
+        slide["prompt"] = new_prompt
+        with open(template_path_str, "w") as f:
+            _json.dump(template, f, ensure_ascii=False, indent=2)
+
+        return new_prompt, None
+
+    new_prompt, error = await asyncio.to_thread(_regen_sync)
+    if error:
+        await update.message.reply_text(f"❌ {error}")
+        return
+
+    # 해당 슬라이드만 나노바나나로 재생성
+    cmd = [
+        sys.executable,
+        str(NANO_GEN),
+        "--topic", slug,
+        "--slides", template_path_str,
+        "--slide-n", str(slide_n),
+    ]
+
+    proc = await asyncio.create_subprocess_exec(
+        *cmd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.STDOUT,
+        cwd=str(REPO_ROOT),
+    )
+    await asyncio.wait_for(proc.communicate(), timeout=120)
+
+    # 해당 슬라이드 PNG 전송
+    png = Path(output_dir) / f"slide-{slide_n:02d}.png"
+    if png.exists():
+        with png.open("rb") as f:
+            await update.message.reply_photo(
+                photo=f,
+                caption=f"✅ slide-{slide_n:02d} 재생성 완료",
+            )
+    else:
+        await update.message.reply_text("❌ 재생성 실패. 로그 확인해주세요.")
+
+
+async def verify_single_slide(update, last_topic: dict, slide_n: int):
+    """해당 슬라이드의 의학 내용을 sources.json으로 확인해서 답변."""
+
+    def _verify_sync():
+        import json as _json
+        api_key = os.getenv("ANTHROPIC_API_KEY")
+        client = Anthropic(api_key=api_key)
+
+        sources_path = last_topic["sources_path"]
+        if not Path(sources_path).exists():
+            return "sources.json을 찾을 수 없어요."
+
+        with open(sources_path) as f:
+            sources = _json.load(f)
+
+        # 해당 슬라이드 claims 추출
+        slide_claims = [
+            c for c in sources.get("claims", [])
+            if c.get("slide_n") == slide_n
+        ]
+
+        if not slide_claims:
+            return f"slide-{slide_n:02d}에 연결된 출처 정보가 없어요."
+
+        claims_text = _json.dumps(slide_claims, ensure_ascii=False, indent=2)
+
+        response = client.messages.create(
+            model="claude-sonnet-4-5-20250929",
+            max_tokens=500,
+            system="""소아청소년과 전문의 수준의 의학 검증자.
+sources.json의 claim을 바탕으로 슬라이드 내용의 정확성을 확인.
+한국어로 간결하게 답변. 2-3문장 이내.""",
+            messages=[{
+                "role": "user",
+                "content": f"""
+slide-{slide_n}번의 출처 정보:
+{claims_text}
+
+이 슬라이드의 의학 내용이 정확한지 확인해줘.
+출처와 함께 간결하게 답변해줘.
+""",
+            }],
+        )
+        return response.content[0].text.strip()
+
+    await update.message.reply_text(f"🔍 slide-{slide_n:02d} 의학 내용 확인 중...")
+    answer = await asyncio.to_thread(_verify_sync)
+    await update.message.reply_text(f"📋 slide-{slide_n:02d} 검증 결과:\n\n{answer}")
+
+
+async def answer_general_question(
+    update, last_topic: Optional[dict], question: str
+):
+    """현재 토픽 컨텍스트로 일반 질문에 답변."""
+
+    def _answer_sync():
+        import json as _json
+        api_key = os.getenv("ANTHROPIC_API_KEY")
+        client = Anthropic(api_key=api_key)
+
+        context = ""
+        if last_topic and Path(last_topic["sources_path"]).exists():
+            with open(last_topic["sources_path"]) as f:
+                sources = _json.load(f)
+            context = f"현재 작업 중인 카드뉴스: {last_topic['topic_kr']}\n"
+            context += (
+                "출처: "
+                + _json.dumps(
+                    sources.get("claims", [])[:3], ensure_ascii=False
+                )
+            )
+
+        response = client.messages.create(
+            model="claude-sonnet-4-5-20250929",
+            max_tokens=500,
+            system="""소아청소년과 전문의 관점에서 답변.
+의학적으로 정확하고 부모가 이해하기 쉽게.
+한국어로 간결하게 3-5문장 이내.""",
+            messages=[{
+                "role": "user",
+                "content": f"{context}\n\n질문: {question}",
+            }],
+        )
+        return response.content[0].text.strip()
+
+    answer = await asyncio.to_thread(_answer_sync)
+    await update.message.reply_text(f"💡 {answer}")
 
 
 # ---------------------------------------------------------------- tone selection
