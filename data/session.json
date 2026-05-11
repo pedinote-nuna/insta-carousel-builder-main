@@ -1,0 +1,9 @@
+{
+  "last_topic": {
+    "slug": "travel-emergency-kit",
+    "topic_kr": "여행 응급키트",
+    "sources_path": "output/travel-emergency-kit/sources.json",
+    "template_path": "templates/slides.travel-emergency-kit.json",
+    "output_dir": "output/travel-emergency-kit"
+  }
+}

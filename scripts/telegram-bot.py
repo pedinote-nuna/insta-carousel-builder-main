@@ -71,6 +71,7 @@ TEMPLATES_DIR = REPO_ROOT / "templates"
 OUTPUT_DIR = REPO_ROOT / "output"
 DATA_DIR = REPO_ROOT / "data"
 TOPICS_JSON = DATA_DIR / "topics.json"
+SESSION_FILE = REPO_ROOT / "data" / "session.json"
 TOPIC_SELECTION_MD = REPO_ROOT / "knowledge" / "topic-selection.md"
 
 GEN_TIMEOUT_SEC = 300
@@ -158,10 +159,21 @@ current_task: dict = {
 }
 _task_lock = asyncio.Lock()
 
-session: dict = {
-    "recommendation": None,    # /topics 후 번호 선택 대기 (List[dict]) 또는 None
-    "duplicate_slug": None,    # /new 중복 확인 대기 (str) 또는 None
-}
+def _load_session() -> dict:
+    if SESSION_FILE.exists():
+        try:
+            return json.loads(SESSION_FILE.read_text())
+        except Exception:
+            pass
+    return {}
+
+
+def _save_session():
+    SESSION_FILE.parent.mkdir(parents=True, exist_ok=True)
+    SESSION_FILE.write_text(json.dumps(session, ensure_ascii=False, indent=2))
+
+
+session: dict = _load_session()
 
 
 # ---------------------------------------------------------------- helpers
@@ -465,6 +477,10 @@ def _intent_router_sync(text: str, api_key: str) -> dict:
   ("차멀미약 몇 살부터 먹여?",
    "이 내용 부모들한테 어떻게 설명하면 좋아?" 등)
   → params: {"question": "질문 내용"}
+- context_reference: 이미 만든 카드뉴스를 언급
+  ("travel-emergency-kit 말이야", "아까 만든 거 말이야",
+   "방금 그거", "그 카드뉴스" 등)
+  → params: {"slug": "travel-emergency-kit"}
 - unknown: 위 중 어느 것도 아님
 
 JSON 형식:
@@ -477,6 +493,7 @@ JSON 형식:
 {"intent": "verify_slide", "params": {"slide_n": 8}}
 {"intent": "edit_slide", "params": {"slide_n": 3, "instruction": "38도 아니고 38.5도야"}}
 {"intent": "general_question", "params": {"question": "차멀미약 몇 살부터?"}}
+{"intent": "context_reference", "params": {"slug": "travel-emergency-kit"}}
 {"intent": "unknown", "params": {}}
 """,
         messages=[{"role": "user", "content": text}],
@@ -645,6 +662,20 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         question = params.get("question", "")
         last = session.get("last_topic")
         await answer_general_question(update, last, question)
+
+    elif intent == "context_reference":
+        slug = params.get("slug", "")
+        last = session.get("last_topic")
+        if last and (not slug or slug in last.get("slug", "")):
+            await update.message.reply_text(
+                f"📌 '{last['topic_kr']}' 카드뉴스를 말씀하시는 거죠?\n"
+                f"수정이나 질문이 있으시면 말씀해주세요!\n"
+                f"예) '4번 슬라이드 다시 만들어줘' / '8번 내용 맞아?'"
+            )
+        else:
+            await update.message.reply_text(
+                "💡 어떤 카드뉴스를 말씀하시는지 알려주세요."
+            )
 
     else:
         await update.message.reply_text(
@@ -1093,6 +1124,8 @@ async def auto_pipeline(update: Update, topic_kr: str, slug: str) -> None:
         "template_path": str(TEMPLATES_DIR / f"slides.{slug}.json"),
         "output_dir": str(OUTPUT_DIR / slug),
     }
+    _save_session()
+    print(f"[DEBUG] session 파일 저장됨: {slug}", flush=True)
 
 
 # ---------------------------------------------------------------- per-slide feedback / verify / Q&A
