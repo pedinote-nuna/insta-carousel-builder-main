@@ -319,7 +319,14 @@ def call_anthropic_for_topics(api_key: str) -> list[dict]:
     system = (
         "당신은 소아과언니 카드뉴스 주제를 6필터로 선정하는 어시스턴트입니다.\n"
         "아래 정책을 그대로 적용하세요.\n\n"
-        f"=== 정책 (knowledge/topic-selection.md) ===\n{selection_md}\n=== 정책 끝 ==="
+        f"=== 정책 (knowledge/topic-selection.md) ===\n{selection_md}\n=== 정책 끝 ===\n\n"
+        "각 추천 주제에 가장 어울리는 톤도 함께 추천해줘.\n"
+        "톤은 다음 5개 중 하나:\n"
+        "- editorial-modern (일반 케어·예방법·생활건강)\n"
+        "- handdrawn-notebook (영아 돌봄·수유·산통)\n"
+        "- clean-infographic (수치·기준·비교표)\n"
+        "- emergency-alert (응급·경련·즉시 신호)\n"
+        "- character-illustration (이유식·발달·성장)"
     )
     user = (
         f"오늘은 {today} ({this_month}월)입니다.\n"
@@ -331,7 +338,8 @@ def call_anthropic_for_topics(api_key: str) -> list[dict]:
         '"title_kr": "한국어 제목", '
         '"category": "카테고리 (예: 응급·약물 안전, 일상 케어 등)", '
         '"palette": "A 또는 B", '
-        '"reason": "추천 이유 한 줄"}]'
+        '"reason": "추천 이유 한 줄", '
+        '"recommended_tone": "editorial-modern"}]'
     )
 
     msg = client.messages.create(
@@ -360,12 +368,130 @@ def parse_recommendations(raw: str) -> list[dict]:
     return [item for item in parsed if isinstance(item, dict) and "slug" in item]
 
 
+TONE_DISPLAY = {
+    "editorial-modern": "에디토리얼 모던",
+    "handdrawn-notebook": "손그림 노트북",
+    "clean-infographic": "클린 인포그래픽",
+    "emergency-alert": "경고·긴급",
+    "character-illustration": "캐릭터 일러스트",
+}
+
+TONE_NORMALIZE = {
+    "에디토리얼": "editorial-modern",
+    "모던": "editorial-modern",
+    "손그림": "handdrawn-notebook",
+    "노트북": "handdrawn-notebook",
+    "클린": "clean-infographic",
+    "인포그래픽": "clean-infographic",
+    "경고": "emergency-alert",
+    "긴급": "emergency-alert",
+    "응급": "emergency-alert",
+    "캐릭터": "character-illustration",
+    "일러스트": "character-illustration",
+}
+
+
+async def cmd_topics_by_tone(
+    update: Update,
+    context: ContextTypes.DEFAULT_TYPE,
+    tone_name: str,
+):
+    """특정 톤에 맞는 주제 7개 추천."""
+    # 톤 이름 정규화 (자연어 → 파일명)
+    for key, val in TONE_NORMALIZE.items():
+        if key in tone_name:
+            tone_name = val
+            break
+
+    tone_display = TONE_DISPLAY.get(tone_name, tone_name)
+    await update.message.reply_text(
+        f"🎨 {tone_display} 톤에 어울리는 주제 추천 중..."
+    )
+
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    done = done_slugs()
+
+    def _sync():
+        client = Anthropic(api_key=api_key)
+
+        tone_path = REPO_ROOT / "knowledge" / "tone" / f"{tone_name}.md"
+        tone_content = tone_path.read_text(encoding="utf-8") if tone_path.exists() else ""
+
+        selection_path = REPO_ROOT / "knowledge" / "topic-selection.md"
+        selection_content = (
+            selection_path.read_text(encoding="utf-8")
+            if selection_path.exists()
+            else ""
+        )
+
+        today = datetime.now()
+        month = today.month
+
+        response = client.messages.create(
+            model=ANTHROPIC_MODEL,
+            max_tokens=2000,
+            system=f"""소아과언니 카드뉴스 주제 추천자.
+{selection_content}
+
+JSON 배열로만 응답. 다른 텍스트 금지.
+형식: [{{"slug": "영문-슬러그", "title_kr": "한국어 제목", "category": "카테고리", "palette": "A또는B", "reason": "추천 이유 1줄", "recommended_tone": "{tone_name}"}}]
+""",
+            messages=[{
+                "role": "user",
+                "content": f"""
+현재 월: {month}월
+선택된 톤: {tone_name}
+톤 특성:
+{tone_content[:500]}
+
+이 톤에 가장 잘 어울리는 소아과 카드뉴스 주제 7개 추천.
+done 목록(제외): {sorted(done)}
+조건:
+- {tone_name} 톤의 시각적 특성과 잘 맞는 주제
+- 6필터 통과 가능한 주제
+- 이번 달({month}월) 시의성 반영
+JSON으로만 응답.
+""",
+            }],
+        )
+        raw = _collect_text(response)
+        return parse_recommendations(raw)
+
+    recs = await asyncio.to_thread(_sync)
+    if not recs:
+        await update.message.reply_text("❌ 추천 실패. 다시 시도해주세요.")
+        return
+
+    # recommended_tone 누락 시 선택된 톤으로 채워넣기
+    for r in recs:
+        if not r.get("recommended_tone"):
+            r["recommended_tone"] = tone_name
+
+    # 세션에 저장
+    session["recommendation"] = recs
+    _save_session()
+
+    # 포맷 출력
+    lines = [f"🎨 {tone_display} 톤 주제 추천 7개\n"]
+    for i, r in enumerate(recs[:7], 1):
+        lines.append(
+            f"{i}. {r.get('title_kr','')}\n"
+            f"   🎨 {tone_display} | {r.get('category','')}\n"
+            f"   💡 {r.get('reason','')}"
+        )
+    lines.append("\n👉 원하는 번호를 입력하세요 (예: 1 3 5)")
+    lines.append("🔄 마음에 안 들면 '다시' 입력")
+
+    await update.message.reply_text("\n".join(lines))
+
+
 def format_recommendations(recs: list[dict]) -> str:
     lines = ["📋 이번 주 주제 추천 7개", ""]
     for i, r in enumerate(recs, 1):
-        lines.append(
-            f"{i}. {r.get('title_kr','?')} ({r.get('category','?')} / {r.get('palette','?')})"
-        )
+        tone_key = r.get("recommended_tone", "")
+        tone_display = TONE_DISPLAY.get(tone_key, tone_key or "?")
+        lines.append(f"{i}. {r.get('title_kr','?')}")
+        lines.append(f"   🎨 {tone_display} | {r.get('category','?')}")
         if r.get("reason"):
             lines.append(f"   💡 {r['reason']}")
     lines.append("")
@@ -487,6 +613,10 @@ def _intent_router_sync(text: str, api_key: str) -> dict:
   ("travel-emergency-kit 말이야", "아까 만든 거 말이야",
    "방금 그거", "그 카드뉴스" 등)
   → params: {"slug": "travel-emergency-kit"}
+- topics_by_tone: 특정 톤으로 주제 추천 요청
+  ("손그림 톤으로 추천해줘", "캐릭터 스타일 주제 뭐 있어",
+   "에디토리얼 모던으로 해줘", "클린 인포그래픽 주제 추천" 등)
+  → params: {"tone": "handdrawn-notebook"}
 - unknown: 위 중 어느 것도 아님
 
 JSON 형식:
@@ -500,6 +630,7 @@ JSON 형식:
 {"intent": "edit_slide", "params": {"slide_n": 3, "instruction": "38도 아니고 38.5도야"}}
 {"intent": "general_question", "params": {"question": "차멀미약 몇 살부터?"}}
 {"intent": "context_reference", "params": {"slug": "travel-emergency-kit"}}
+{"intent": "topics_by_tone", "params": {"tone": "handdrawn-notebook"}}
 {"intent": "unknown", "params": {}}
 """,
         messages=[{"role": "user", "content": text}],
@@ -681,6 +812,21 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         else:
             await update.message.reply_text(
                 "💡 어떤 카드뉴스를 말씀하시는지 알려주세요."
+            )
+
+    elif intent == "topics_by_tone":
+        tone = params.get("tone", "")
+        if tone:
+            await cmd_topics_by_tone(update, context, tone)
+        else:
+            await update.message.reply_text(
+                "🎨 어떤 스타일로 추천해드릴까요?\n\n"
+                "1️⃣ 에디토리얼 모던 — 일반 케어·예방법\n"
+                "2️⃣ 손그림 노트북 — 영아 돌봄·따뜻한 주제\n"
+                "3️⃣ 클린 인포그래픽 — 수치·기준·비교\n"
+                "4️⃣ 경고·긴급 — 응급·즉시 판단\n"
+                "5️⃣ 캐릭터 일러스트 — 이유식·발달·성장\n\n"
+                "예) '손그림 톤으로 추천해줘'"
             )
 
     else:
