@@ -79,6 +79,12 @@ SLIDE_COUNT = 9
 DONE_PREVIEW = 10
 ANTHROPIC_MODEL = "claude-sonnet-4-5-20250929"
 
+APP_LINKS = """📲 소아과수첩 앱 다운로드
+- Android: https://play.google.com/store/apps/details?id=com.pedinote.app
+- iOS: https://apps.apple.com/kr/app/소아과수첩-해열제-성장기록-육아/id6758393052"""
+
+BLOG_URL = "https://blog.naver.com/soagwa_unnie"
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s — %(message)s",
@@ -1126,6 +1132,108 @@ async def auto_pipeline(update: Update, topic_kr: str, slug: str) -> None:
     }
     _save_session()
     print(f"[DEBUG] session 파일 저장됨: {slug}", flush=True)
+
+    # 캡션 생성 + 저장
+    try:
+        caption = await asyncio.to_thread(
+            generate_caption, topic_kr, slug,
+            json.loads(Path(session["last_topic"]["sources_path"]).read_text())
+            if Path(session["last_topic"]["sources_path"]).exists() else {}
+        )
+        caption_path = OUTPUT_DIR / slug / "caption.txt"
+        caption_path.write_text(caption, encoding="utf-8")
+        # 텔레그램으로 캡션 전송
+        await update.message.reply_text(
+            f"📝 인스타 캡션:\n\n{caption}",
+        )
+    except Exception as e:
+        await update.message.reply_text(f"⚠️ 캡션 생성 실패: {e}")
+
+
+# ---------------------------------------------------------------- caption generator
+
+
+def generate_caption(topic_kr: str, slug: str, sources: dict) -> str:
+    """Claude API로 인스타 캡션 생성 후 파일 저장."""
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    client = Anthropic(api_key=api_key)
+
+    claims = sources.get("claims", [])
+    key_points = [c["claim_text"] for c in claims[:5]]
+    key_points_text = "\n".join(f"- {p}" for p in key_points)
+
+    # 앱 CTA 매칭
+    app_cta_map = {
+        "해열제": "💊 해열제 용량이 헷갈리면?\n소아과수첩 앱 → 해열제 계산기",
+        "발열": "💊 해열제 용량이 헷갈리면?\n소아과수첩 앱 → 해열제 계산기",
+        "응급": "🏥 야간에 아이가 아프면?\n소아과수첩 앱 → 야간·달빛병원 바로 찾기",
+        "야간": "🏥 야간에 아이가 아프면?\n소아과수첩 앱 → 야간·달빛병원 바로 찾기",
+        "경련": "🏥 응급 상황에서는?\n소아과수첩 앱 → 야간·달빛병원 바로 찾기",
+        "성장": "📈 우리 아이 잘 크고 있나요?\n소아과수첩 앱 → 성장 기록",
+        "이유식": "📈 이유식 시기 체크하고 싶다면?\n소아과수첩 앱 → 성장 기록",
+        "발달": "📈 발달이정표 궁금하다면?\n소아과수첩 앱 → 성장 기록",
+        "약": "📷 약봉투 사진으로 복약 기록\n소아과수첩 앱 → 약봉투 스캔",
+        "처방": "📷 처방약 기록해두세요\n소아과수첩 앱 → 약봉투 스캔",
+        "진료": "📝 진료 전 질문 미리 메모\n소아과수첩 앱 → 진료 메모",
+        "여행": "📝 여행 전 소아과 상담 메모\n소아과수첩 앱 → 진료 메모",
+    }
+    app_cta = "📝 진료 전 질문은 미리 메모해두세요\n소아과수첩 앱 → 진료 메모"
+    for keyword, cta in app_cta_map.items():
+        if keyword in topic_kr:
+            app_cta = cta
+            break
+
+    response = client.messages.create(
+        model="claude-sonnet-4-5-20250929",
+        max_tokens=1000,
+        system="""소아과언니 인스타그램 캡션 작성자.
+
+브랜드 룰:
+- 작성자: 소아청소년과 전문의 (소아과 전문의 ❌)
+- 독자 호칭: 부모님들 (엄마들/여러분 ❌)
+- 톤: 따뜻하고 전문적, 부모 공감에서 시작
+- 실명/병원/지역 노출 금지
+- 이모지 적절히 사용
+- 길이: 200-300자 본문 + 해시태그
+
+캡션 구조:
+1. 공감 첫 줄 (부모님 상황 공감)
+2. 핵심 내용 2-3줄
+3. 저장 권유
+4. [앱 CTA는 별도로 추가됨]
+5. 해시태그 10개
+   - 필수: #소아과언니 #소아청소년과전문의
+   - 토픽 관련 5-6개
+   - 육아 일반 2-3개
+
+본문만 작성. 앱 링크/블로그 링크는 포함하지 말 것 (별도 추가됨).
+""",
+        messages=[{
+            "role": "user",
+            "content": f"""
+토픽: {topic_kr}
+핵심 내용:
+{key_points_text}
+
+위 내용으로 인스타 캡션 작성해줘.
+""",
+        }],
+    )
+
+    body = response.content[0].text.strip()
+
+    # 최종 캡션 조합
+    caption = f"""{body}
+
+─────────────────
+{app_cta}
+
+{APP_LINKS}
+
+🔍 더 많은 소아과 정보
+{BLOG_URL}"""
+
+    return caption
 
 
 # ---------------------------------------------------------------- per-slide feedback / verify / Q&A
