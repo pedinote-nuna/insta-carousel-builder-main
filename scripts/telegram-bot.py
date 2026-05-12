@@ -1133,7 +1133,10 @@ reviewer_pass 필드는 건드리지 말 것."""
         messages=[{"role": "user", "content": user}],
     )
     parsed = _parse_json_object(_collect_text(msg))
-    return parsed if parsed else sources
+    result = parsed if parsed else sources
+    if isinstance(result, list):
+        result = {"claims": result}
+    return result
 
 
 async def generate_template(
