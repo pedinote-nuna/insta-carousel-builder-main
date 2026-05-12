@@ -724,22 +724,24 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
             await update.message.reply_text("💡 번호를 알려주세요.")
             return
         if session.get("recommendation"):
-            # 추천 목록 확정 → this_week 이동
-            await apply_recommendation_selection(update, numbers)
-            # 확정 후 첫 번째 선택 항목 바로 생성 (톤 지정 있으면)
+            # 톤 지정 + 단일 번호 → 추천 항목에서 직접 꺼내 바로 생성
             if forced_tone and len(numbers) == 1:
-                data = load_topics()
-                this_week = data.get("this_week", [])
-                # 방금 추가된 항목 찾기 (마지막 추가된 것)
-                if this_week:
-                    topic = this_week[-1]
+                recs = session.get("recommendation", [])
+                idx = numbers[0] - 1
+                if 0 <= idx < len(recs):
+                    topic = recs[idx]
                     topic_kr = topic.get("title_kr", "")
                     slug = topic.get("slug", "")
                     if not slug:
                         slug = await korean_to_slug(topic_kr)
+                    # this_week에도 저장
+                    await apply_recommendation_selection(update, numbers)
                     await auto_pipeline(
                         update, topic_kr, slug, forced_tone=forced_tone
                     )
+                    return
+            # 톤 없거나 여러 번호 → 확정만
+            await apply_recommendation_selection(update, numbers)
         else:
             # this_week에서 직접 선택
             data = load_topics()
@@ -1102,8 +1104,11 @@ sources.json 형식으로만 응답. JSON 외 텍스트 금지.
     return parsed
 
 
-def verify_sources(sources: dict, topic_kr: str, api_key: str) -> dict:
+def verify_sources(sources, topic_kr: str, api_key: str) -> dict:
     """Claude API + web_search 로 sources.json 자동 검증·수정."""
+    # sources가 list로 들어오는 경우 처리
+    if isinstance(sources, list):
+        sources = {"claims": sources}
     client = Anthropic(api_key=api_key)
     system = """당신은 소아청소년과 전문의 수준의 의학 검증자입니다.
 
