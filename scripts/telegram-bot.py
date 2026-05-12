@@ -1108,7 +1108,10 @@ sources.json 형식으로만 응답. JSON 외 텍스트 금지.
             f"[DEBUG] generate_sources 파싱 실패. raw 응답: {raw[:500]}",
             flush=True,
         )
-    return parsed
+    result = parsed if parsed else None
+    if isinstance(result, list):
+        result = {"claims": result}
+    return result
 
 
 def verify_sources(sources, topic_kr: str, api_key: str) -> dict:
@@ -1256,7 +1259,10 @@ slide n:9 outro 예시:
         system=system,
         messages=[{"role": "user", "content": user}],
     )
-    return _parse_json_object(_collect_text(msg))
+    result = _parse_json_object(_collect_text(msg))
+    if isinstance(result, list):
+        result = {"slides": result}
+    return result
 
 
 async def auto_pipeline(
@@ -1351,10 +1357,16 @@ async def auto_pipeline(
 
     # 캡션 생성 + 저장
     try:
+        sources_path_p = Path(session["last_topic"]["sources_path"])
+        sources_data = (
+            json.loads(sources_path_p.read_text())
+            if sources_path_p.exists()
+            else {}
+        )
+        if isinstance(sources_data, list):
+            sources_data = {"claims": sources_data}
         caption = await asyncio.to_thread(
-            generate_caption, topic_kr, slug,
-            json.loads(Path(session["last_topic"]["sources_path"]).read_text())
-            if Path(session["last_topic"]["sources_path"]).exists() else {}
+            generate_caption, topic_kr, slug, sources_data
         )
         caption_path = OUTPUT_DIR / slug / "caption.txt"
         caption_path.write_text(caption, encoding="utf-8")
