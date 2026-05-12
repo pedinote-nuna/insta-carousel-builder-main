@@ -310,6 +310,7 @@ async def cmd_topics(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
         return
 
     session["recommendation"] = recommendations
+    _save_session()
     await update.message.reply_text(format_recommendations(recommendations))
 
 
@@ -723,6 +724,12 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         if not numbers:
             await update.message.reply_text("💡 번호를 알려주세요.")
             return
+        print(
+            f"[DEBUG] recommendation in session: "
+            f"{bool(session.get('recommendation'))}, "
+            f"len={len(session.get('recommendation') or [])}",
+            flush=True,
+        )
         if session.get("recommendation"):
             # 톤 지정 + 단일 번호 → 추천 항목에서 직접 꺼내 바로 생성
             if forced_tone and len(numbers) == 1:
