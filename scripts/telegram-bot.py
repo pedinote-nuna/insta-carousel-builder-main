@@ -216,18 +216,22 @@ def _collect_text(msg) -> str:
     return "\n".join(parts)
 
 
-def _parse_json_object(raw: str) -> Optional[dict]:
-    """raw 텍스트에서 JSON object 추출·파싱. 실패 시 None."""
-    raw = raw.strip()
-    raw = re.sub(r"^```(?:json)?\s*", "", raw)
-    raw = re.sub(r"\s*```$", "", raw)
-    m = re.search(r"\{[\s\S]*\}", raw)
-    if not m:
+def _parse_json_object(raw: str):
+    """raw 응답에서 JSON 배열 또는 객체 추출."""
+    if not raw:
         return None
-    try:
-        return json.loads(m.group(0))
-    except json.JSONDecodeError:
-        return None
+    # 1차: Markdown fence 제거
+    text = re.sub(r"```(?:json)?", "", raw).strip().rstrip("`").strip()
+    # 2차: 첫 { 또는 [ 부터 마지막 } 또는 ] 까지 추출
+    for start_char, end_char in [("[", "]"), ("{", "}")]:
+        start = text.find(start_char)
+        end = text.rfind(end_char)
+        if start != -1 and end != -1 and end > start:
+            try:
+                return json.loads(text[start:end + 1])
+            except Exception:
+                continue
+    return None
 
 
 # ---------------------------------------------------------------- /start /status
@@ -715,25 +719,46 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
 
     elif intent == "select":
         numbers = params.get("numbers", [])
+        forced_tone = params.get("tone", "")
         if not numbers:
-            await update.message.reply_text("💡 번호를 알려주세요. 예) '1번 만들어'")
+            await update.message.reply_text("💡 번호를 알려주세요.")
             return
         if session.get("recommendation"):
-            # 추천 목록에서 선택
+            # 추천 목록 확정 → this_week 이동
             await apply_recommendation_selection(update, numbers)
+            # 확정 후 첫 번째 선택 항목 바로 생성 (톤 지정 있으면)
+            if forced_tone and len(numbers) == 1:
+                data = load_topics()
+                this_week = data.get("this_week", [])
+                # 방금 추가된 항목 찾기 (마지막 추가된 것)
+                if this_week:
+                    topic = this_week[-1]
+                    topic_kr = topic.get("title_kr", "")
+                    slug = topic.get("slug", "")
+                    if not slug:
+                        slug = await korean_to_slug(topic_kr)
+                    await auto_pipeline(
+                        update, topic_kr, slug, forced_tone=forced_tone
+                    )
         else:
-            # this_week에서 선택해서 바로 생성
+            # this_week에서 직접 선택
             data = load_topics()
             this_week = data.get("this_week", [])
             idx = numbers[0] - 1
+            print(
+                f"[DEBUG] this_week 선택 — idx={idx}, "
+                f"목록={[t.get('title_kr') for t in this_week]}",
+                flush=True,
+            )
             if 0 <= idx < len(this_week):
                 topic = this_week[idx]
                 topic_kr = topic.get("title_kr", "")
                 slug = topic.get("slug", "")
                 if not slug:
                     slug = await korean_to_slug(topic_kr)
-                forced_tone = params.get("tone", "")
-                await auto_pipeline(update, topic_kr, slug, forced_tone=forced_tone)
+                await auto_pipeline(
+                    update, topic_kr, slug, forced_tone=forced_tone
+                )
             else:
                 await update.message.reply_text(
                     f"💡 이번 주 확정된 주제가 {len(this_week)}개예요.\n"
@@ -1067,7 +1092,14 @@ sources.json 형식으로만 응답. JSON 외 텍스트 금지.
         tools=[{"type": "web_search_20250305", "name": "web_search"}],
         messages=[{"role": "user", "content": user}],
     )
-    return _parse_json_object(_collect_text(msg))
+    raw = _collect_text(msg)
+    parsed = _parse_json_object(raw)
+    if parsed is None:
+        print(
+            f"[DEBUG] generate_sources 파싱 실패. raw 응답: {raw[:500]}",
+            flush=True,
+        )
+    return parsed
 
 
 def verify_sources(sources: dict, topic_kr: str, api_key: str) -> dict:
