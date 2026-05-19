@@ -16,7 +16,7 @@
 
 커맨드:
     /start          — 사용법 안내
-    /topics         — Claude API 로 이번 주 주제 7개 추천
+    /topics         — Claude API 로 이번 주 주제 10개 추천
     /queue          — 보류 주제 목록
     /done           — 완료 주제 목록 (최근 10개)
     /new <slug>     — 카드뉴스 9장 생성
@@ -242,7 +242,7 @@ async def cmd_start(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
         "👶 소아과언니 카드뉴스 봇\n"
         "\n"
         "💬 자연어로 말씀해주세요:\n"
-        "  • '주제 추천해줘' — 이번 주 주제 7개 추천\n"
+        "  • '주제 추천해줘' — 이번 주 주제 10개 추천\n"
         "  • '1번 만들어' — 추천 목록에서 선택해서 생성\n"
         "  • '수족구병 만들어줘' — 바로 생성\n"
         "  • '보류 목록 보여줘' — 나중에 쓸 주제 확인\n"
@@ -325,6 +325,24 @@ def call_anthropic_for_topics(api_key: str) -> list[dict]:
         "당신은 소아과언니 카드뉴스 주제를 6필터로 선정하는 어시스턴트입니다.\n"
         "아래 정책을 그대로 적용하세요.\n\n"
         f"=== 정책 (knowledge/topic-selection.md) ===\n{selection_md}\n=== 정책 끝 ===\n\n"
+        "반드시 아래 카테고리 구성으로 정확히 10개 추천:\n"
+        "- 일상 케어·영양·생활건강: 2개\n"
+        "- 성장발달: 2개\n"
+        "- 질환관리: 2개\n"
+        "- 응급·약물 안전: 2개\n"
+        "- 소아심장: 1개\n"
+        "- 예방접종: 1개\n"
+        "총 10개. 카테고리 누락 금지. 순서는 카테고리 섞어서.\n\n"
+        "카테고리 균형 필수 (7개 중):\n"
+        "- 감염질환·바이러스 (수족구, 독감, RSV, 노로, 마이코플라스마 등): 1-2개 반드시 포함\n"
+        "- 일상 케어·영양·생활건강: 1-2개\n"
+        "- 성장발달: 1개\n"
+        "- 응급·약물 안전: 1개\n"
+        "- 예방접종: 1개\n"
+        "- 소아심장: 0-1개\n\n"
+        "시의성에만 치우치지 말 것.\n"
+        "매번 다양한 카테고리에서 골고루 추천할 것.\n"
+        "감염질환·바이러스 주제는 시즌과 무관하게 항상 후보에 포함.\n\n"
         "각 추천 주제에 가장 어울리는 톤도 함께 추천해줘.\n"
         "톤은 다음 5개 중 하나:\n"
         "- editorial-modern (일반 케어·예방법·생활건강)\n"
@@ -335,7 +353,7 @@ def call_anthropic_for_topics(api_key: str) -> list[dict]:
     )
     user = (
         f"오늘은 {today} ({this_month}월)입니다.\n"
-        f"이번 달 캘린더와 6필터를 적용해서 카드뉴스 주제 7개를 추천해주세요.\n"
+        f"이번 달 캘린더와 6필터를 적용해서 카드뉴스 주제 10개를 추천해주세요.\n"
         f"이미 완료된 다음 슬러그는 제외하세요: {done if done else '없음'}\n\n"
         "JSON 배열로만 응답하세요. 다른 텍스트, 설명, 마크다운은 절대 포함하지 마세요.\n"
         "각 항목 형식:\n"
@@ -401,7 +419,7 @@ async def cmd_topics_by_tone(
     context: ContextTypes.DEFAULT_TYPE,
     tone_name: str,
 ):
-    """특정 톤에 맞는 주제 7개 추천."""
+    """특정 톤에 맞는 주제 10개 추천."""
     # 톤 이름 정규화 (자연어 → 파일명)
     for key, val in TONE_NORMALIZE.items():
         if key in tone_name:
@@ -449,7 +467,7 @@ JSON 배열로만 응답. 다른 텍스트 금지.
 톤 특성:
 {tone_content[:500]}
 
-이 톤에 가장 잘 어울리는 소아과 카드뉴스 주제 7개 추천.
+이 톤에 가장 잘 어울리는 소아과 카드뉴스 주제 10개 추천.
 done 목록(제외): {sorted(done)}
 조건:
 - {tone_name} 톤의 시각적 특성과 잘 맞는 주제
@@ -477,8 +495,8 @@ JSON으로만 응답.
     _save_session()
 
     # 포맷 출력
-    lines = [f"🎨 {tone_display} 톤 주제 추천 7개\n"]
-    for i, r in enumerate(recs[:7], 1):
+    lines = [f"🎨 {tone_display} 톤 주제 추천 10개\n"]
+    for i, r in enumerate(recs[:10], 1):
         lines.append(
             f"{i}. {r.get('title_kr','')}\n"
             f"   🎨 {tone_display} | {r.get('category','')}\n"
@@ -490,9 +508,86 @@ JSON으로만 응답.
     await update.message.reply_text("\n".join(lines))
 
 
+async def cmd_keyword_topics(
+    update: Update,
+    context: ContextTypes.DEFAULT_TYPE,
+    keyword: str
+):
+    """특정 키워드/질환 관련 주제 7개 추천."""
+    await update.message.reply_text(
+        f"🔍 '{keyword}' 관련 주제 추천 중..."
+    )
+
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    done = done_slugs()
+
+    def _sync():
+        client = Anthropic(api_key=api_key)
+
+        selection_path = REPO_ROOT / "knowledge" / "topic-selection.md"
+        selection_content = selection_path.read_text() if selection_path.exists() else ""
+
+        response = client.messages.create(
+            model="claude-sonnet-4-5-20250929",
+            max_tokens=2000,
+            system=f"""소아과언니 카드뉴스 주제 추천자.
+{selection_content}
+
+JSON 배열로만 응답. 다른 텍스트 금지.
+형식: [{{"slug": "영문-슬러그", "title_kr": "한국어 제목", "category": "카테고리", "palette": "A또는B", "reason": "추천 이유 1줄", "recommended_tone": "톤이름"}}]
+""",
+            messages=[{
+                "role": "user",
+                "content": f"""
+키워드: {keyword}
+done 목록(제외): {list(done)}
+
+'{keyword}' 와 직접 관련된 소아과 카드뉴스 주제 7개 추천.
+예시:
+- 수족구 → 수족구병 증상과 격리 기준, 수족구 입안 물집 대처법, 수족구 vs 헤르판지나 구별법 등
+- 단순 날씨/시의성 주제 말고 이 키워드에 집중한 주제로
+JSON으로만 응답.
+"""
+            }]
+        )
+        raw = _collect_text(response)
+        return _parse_json_object(raw)
+
+    recs = await asyncio.to_thread(_sync)
+    if not recs or not isinstance(recs, list):
+        await update.message.reply_text("❌ 추천 실패. 다시 시도해주세요.")
+        return
+
+    # 세션 저장
+    session["recommendation"] = recs
+    _save_session()
+
+    tone_display_map = {
+        "editorial-modern": "에디토리얼 모던",
+        "handdrawn-notebook": "손그림 노트북",
+        "clean-infographic": "클린 인포그래픽",
+        "emergency-alert": "경고·긴급",
+        "character-illustration": "캐릭터 일러스트",
+    }
+
+    lines = [f"🔍 '{keyword}' 관련 주제 추천 7개\n"]
+    for i, r in enumerate(recs[:7], 1):
+        tone = r.get("recommended_tone", "editorial-modern")
+        tone_disp = tone_display_map.get(tone, tone)
+        lines.append(
+            f"{i}. {r.get('title_kr','')}\n"
+            f"   🎨 {tone_disp} | {r.get('category','')}\n"
+            f"   💡 {r.get('reason','')}"
+        )
+    lines.append("\n👉 원하는 번호를 입력하세요 (예: 1 3 5)")
+    lines.append("🔄 마음에 안 들면 '다시' 입력")
+
+    await update.message.reply_text("\n".join(lines))
+
+
 def format_recommendations(recs: list[dict]) -> str:
-    lines = ["📋 이번 주 주제 추천 7개", ""]
-    for i, r in enumerate(recs, 1):
+    lines = ["📋 이번 주 주제 추천 10개", ""]
+    for i, r in enumerate(recs[:10], 1):
         tone_key = r.get("recommended_tone", "")
         tone_display = TONE_DISPLAY.get(tone_key, tone_key or "?")
         lines.append(f"{i}. {r.get('title_kr','?')}")
@@ -631,6 +726,10 @@ def _intent_router_sync(text: str, api_key: str) -> dict:
   ("손그림 톤으로 추천해줘", "캐릭터 스타일 주제 뭐 있어",
    "에디토리얼 모던으로 해줘", "클린 인포그래픽 주제 추천" 등)
   → params: {"tone": "handdrawn-notebook"}
+- keyword_topics: 특정 키워드/질환 관련 주제 추천 요청
+  ("수족구 관련 주제 추천해줘", "RSV로 뭔가 만들어봐",
+   "독감 관련 뭐 있어?" 등)
+  → params: {"keyword": "수족구"}
 - unknown: 위 중 어느 것도 아님
 
 JSON 형식:
@@ -651,6 +750,7 @@ JSON 형식:
 {"intent": "general_question", "params": {"question": "차멀미약 몇 살부터?"}}
 {"intent": "context_reference", "params": {"slug": "travel-emergency-kit"}}
 {"intent": "topics_by_tone", "params": {"tone": "handdrawn-notebook"}}
+{"intent": "keyword_topics", "params": {"keyword": "수족구"}}
 {"intent": "unknown", "params": {}}
 """,
         messages=[{"role": "user", "content": text}],
@@ -879,6 +979,13 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
                 "5️⃣ 캐릭터 일러스트 — 이유식·발달·성장\n\n"
                 "예) '손그림 톤으로 추천해줘'"
             )
+
+    elif intent == "keyword_topics":
+        keyword = params.get("keyword", "")
+        if keyword:
+            await cmd_keyword_topics(update, context, keyword)
+        else:
+            await update.message.reply_text("💡 어떤 키워드로 찾을까요?")
 
     else:
         await update.message.reply_text(
