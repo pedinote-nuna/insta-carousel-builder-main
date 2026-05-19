@@ -41,9 +41,9 @@ Source box cream #FFF0E0 rounded.
 · [출처 3]
 Warm brown divider line.
 소아과언니 warm brown bold large center (NO quotes).
-SOAGWA UNNIE · 소아청소년과 전문의 gray.
+DR.SOA UNNIE · 소아청소년과 전문의 gray.
 Divider.
-@soagwa_unnie · 매주 새 가이드 warm brown.
+@dr.soa_unnie · 매주 새 가이드 warm brown.
 소아과수첩 앱 · [CTA] teal.
 No pixel text. No quotes.
 Cute character illustrations around brand block (doctor/baby/food icons).

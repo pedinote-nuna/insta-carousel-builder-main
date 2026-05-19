@@ -56,8 +56,8 @@ Source box dark #1A2B3C rounded GENEROUS padding.
 · [출처 2]
 Thin white divider.
 소아과언니 white bold large center (NO quotes).
-SOAGWA UNNIE · 소아청소년과 전문의 gray.
+DR.SOA UNNIE · 소아청소년과 전문의 gray.
 Thin divider.
-@soagwa_unnie · 매주 새 가이드 white.
+@dr.soa_unnie · 매주 새 가이드 white.
 소아과수첩 앱 · [CTA] mint.
 No pixel values. No quotes.

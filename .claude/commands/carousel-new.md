@@ -71,7 +71,7 @@ argument-hint: <주제/키워드>
 > - 팔레트는 brief.json 의 `palette` 필드(A 또는 B)에 따라 CSS `:root` 변수 분기
 > - 각 본문 슬라이드 `<body data-claim-ids="...">` 어트리뷰트로 sources.json 매핑
 > - claim_text 의 의학적 사실은 100% 보존, 표현만 부모 친화적으로 풀기
-> - 슬라이드 9 출처 박스 의무 + 소아과수첩 앱 CTA + `@soagwa_unnie`
+> - 슬라이드 9 출처 박스 의무 + 소아과수첩 앱 CTA + `@dr.soa_unnie`
 > - 사용한 claim 의 `writer_used: true` 마킹
 > - 새 사실 주장 만들지 말 것 (sources.json 에 없으면 본문 금지)
 
@@ -85,7 +85,7 @@ argument-hint: <주제/키워드>
 > - common_palette 는 brief.json palette 필드에 따라 A 또는 B
 > - 각 슬라이드 `claim_ids` 필드로 sources.json 매핑
 > - Cover + Outro 한글 spelling 강조 명시
-> - 슬라이드 9 출처 박스 + 소아과수첩 앱 CTA + `@soagwa_unnie`
+> - 슬라이드 9 출처 박스 + 소아과수첩 앱 CTA + `@dr.soa_unnie`
 > - 사용한 claim 의 `writer_used: true` 마킹
 
 ---

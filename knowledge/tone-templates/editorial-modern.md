@@ -56,8 +56,8 @@ Source box light gray #F0F0EE rounded generous padding.
 · [출처 4]
 Horizontal thin navy divider.
 소아과언니 navy bold large center — NO quotes, NO decoration.
-SOAGWA UNNIE · 소아청소년과 전문의 gray small.
+DR.SOA UNNIE · 소아청소년과 전문의 gray small.
 Thin gray divider.
-@soagwa_unnie · 매주 새 가이드 navy.
+@dr.soa_unnie · 매주 새 가이드 navy.
 소아과수첩 앱 · [CTA] coral.
 No pixel text. No quotes anywhere.

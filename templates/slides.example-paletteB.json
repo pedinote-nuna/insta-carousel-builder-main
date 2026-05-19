@@ -3,7 +3,7 @@
   "topic": "vaccine-side-effects",
   "topic_kr": "예방접종 부작용 vs 위험 신호",
   "palette": "B",
-  "common_style": "Instagram carousel slide design, 4:5 aspect ratio (1080x1350 px). Magazine editorial style, light minimalist, calm clinical for vaccine/immunization pediatric content.\n\n- Background: clean white or warm off-white\n- Primary text: deep navy #0E1B2C\n- Primary accent: medical teal #2C6E63 (last word of headline, key emphasis)\n- Warning accent: mustard #B8860B (severe risk slides only, sparingly)\n- Secondary text: muted gray #6B7B8C\n- Typography: Korean sans-serif (Pretendard-like), bold headlines, generous whitespace, left-aligned\n- Mood: trustworthy pediatrician + restrained clinical (palette B is for higher-stakes topics)\n- Each slide must include the brand name '소아과언니' somewhere naturally (small, non-intrusive, in a position that fits the composition)\n- The final slide adds the title '소아청소년과 전문의', the handle '@soagwa_unnie', and the app mention '소아과수첩 앱'\n- Layout, illustrations, and visual elements: free creative interpretation\n- Korean integrity: never invent Korean words. If unsure, omit rather than fabricate.",
+  "common_style": "Instagram carousel slide design, 4:5 aspect ratio (1080x1350 px). Magazine editorial style, light minimalist, calm clinical for vaccine/immunization pediatric content.\n\n- Background: clean white or warm off-white\n- Primary text: deep navy #0E1B2C\n- Primary accent: medical teal #2C6E63 (last word of headline, key emphasis)\n- Warning accent: mustard #B8860B (severe risk slides only, sparingly)\n- Secondary text: muted gray #6B7B8C\n- Typography: Korean sans-serif (Pretendard-like), bold headlines, generous whitespace, left-aligned\n- Mood: trustworthy pediatrician + restrained clinical (palette B is for higher-stakes topics)\n- Each slide must include the brand name '소아과언니' somewhere naturally (small, non-intrusive, in a position that fits the composition)\n- The final slide adds the title '소아청소년과 전문의', the handle '@dr.soa_unnie', and the app mention '소아과수첩 앱'\n- Layout, illustrations, and visual elements: free creative interpretation\n- Korean integrity: never invent Korean words. If unsure, omit rather than fabricate.",
   "slides": [
     {
       "n": 1,
@@ -57,7 +57,7 @@
       "n": 9,
       "role": "Outro",
       "claim_ids": [],
-      "prompt": "Outro slide. Korean headline (navy with last word '꺼내보세요' in teal): '접종 전후 꺼내보세요.'\n\nSource box (clean editorial style, exactly ONE '출처' label):\n- Label: '출처'\n- Text: '질병관리청 표준예방접종지침 · AAP Red Book · WHO Immunization Safety'\n\nCTA section (all required, layout is yours to decide):\n- Brand: '소아과언니' (large, prominent)\n- Title: '소아청소년과 전문의'\n- Handle: '@soagwa_unnie' with '팔로우 = 예방접종 시기 알림' invitation\n- App: '접종 일정·발열 기록은 소아과수첩 앱'\n- Action: '도움됐다면 ❤️ + 저장 + 공유.'\n\nLayout: vertically stacked editorial, generous whitespace, free creative interpretation."
+      "prompt": "Outro slide. Korean headline (navy with last word '꺼내보세요' in teal): '접종 전후 꺼내보세요.'\n\nSource box (clean editorial style, exactly ONE '출처' label):\n- Label: '출처'\n- Text: '질병관리청 표준예방접종지침 · AAP Red Book · WHO Immunization Safety'\n\nCTA section (all required, layout is yours to decide):\n- Brand: '소아과언니' (large, prominent)\n- Title: '소아청소년과 전문의'\n- Handle: '@dr.soa_unnie' with '팔로우 = 예방접종 시기 알림' invitation\n- App: '접종 일정·발열 기록은 소아과수첩 앱'\n- Action: '도움됐다면 ❤️ + 저장 + 공유.'\n\nLayout: vertically stacked editorial, generous whitespace, free creative interpretation."
     }
   ]
 }

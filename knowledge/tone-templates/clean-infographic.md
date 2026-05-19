@@ -50,8 +50,8 @@ Source box light gray #F0F4F8 rounded GENEROUS padding, left-aligned.
 · [출처 3]
 Generous spacing + thin horizontal divider.
 소아과언니 navy bold large center (NO quotes).
-SOAGWA UNNIE · 소아청소년과 전문의 gray small.
+DR.SOA UNNIE · 소아청소년과 전문의 gray small.
 Thin divider.
-@soagwa_unnie · 매주 새 가이드 navy.
+@dr.soa_unnie · 매주 새 가이드 navy.
 소아과수첩 앱 · [CTA] teal.
 No pixel values. No quotes.

@@ -84,6 +84,7 @@ APP_LINKS = """📲 소아과수첩 앱 다운로드
 - iOS: https://apps.apple.com/kr/app/소아과수첩-해열제-성장기록-육아/id6758393052"""
 
 BLOG_URL = "https://blog.naver.com/soagwa_unnie"
+INSTA_URL = "https://www.instagram.com/dr.soa_unnie/"
 
 logging.basicConfig(
     level=logging.INFO,
@@ -1355,7 +1356,7 @@ slide n:3-8 body 예시:
 "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: [섹션명]. Large bold headline: [앞부분] navy, [마지막 핵심 단어] coral #C44536. Center: clean editorial illustration related to content, line art coral/navy minimal. Below: [카드 or 리스트 구조]. Bottom thin coral divider. No pixel text on card. No quotes on card."
 
 slide n:9 outro 예시:
-"Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 with thin coral underline. Source box light gray #F0F0EE rounded: 출처 [4개 출처 목록]. Horizontal thin navy divider. Center: 소아과언니 navy bold large — NO quotes NO decoration. Small gray SOAGWA UNNIE · 소아청소년과 전문의. Horizontal divider. @soagwa_unnie · 매주 새 가이드 navy. [앱 CTA] coral. No pixel text. No quotes anywhere."
+"Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 with thin coral underline. Source box light gray #F0F0EE rounded: 출처 [4개 출처 목록]. Horizontal thin navy divider. Center: 소아과언니 navy bold large — NO quotes NO decoration. Small gray DR.SOA UNNIE · 소아청소년과 전문의. Horizontal divider. @dr.soa_unnie · 매주 새 가이드 navy. [앱 CTA] coral. No pixel text. No quotes anywhere."
 ---
 
 검증된 prompt 패턴 (반드시 이 패턴 따를 것):
@@ -1541,7 +1542,7 @@ def generate_caption(topic_kr: str, slug: str, sources: dict) -> str:
    - 토픽 관련 5-6개
    - 육아 일반 2-3개
 
-본문만 작성. 앱 링크/블로그 링크는 포함하지 말 것 (별도 추가됨).
+본문만 작성. 앱 링크/인스타 링크/블로그 링크는 포함하지 말 것 (별도 추가됨).
 """,
         messages=[{
             "role": "user",
@@ -1564,6 +1565,9 @@ def generate_caption(topic_kr: str, slug: str, sources: dict) -> str:
 {app_cta}
 
 {APP_LINKS}
+
+📷 인스타그램
+{INSTA_URL}
 
 🔍 더 많은 소아과 정보
 {BLOG_URL}"""

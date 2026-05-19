@@ -3,7 +3,7 @@
 > 권위 출처(Tier 1·2)에 기반한 의료 정보 카드뉴스 자동 생성 시스템.
 > Claude Code 하네스 + 듀얼 엔진 (HTML/Puppeteer 기본 · 나노바나나 옵션).
 
-[@soagwa_unnie](https://www.instagram.com/soagwa_unnie/) 인스타 카드뉴스 production 도구. 모든 사실은 학회 가이드라인·교과서·peer-reviewed 논문에서만 인용하며, 출처 매핑이 누락된 슬라이드는 reviewer 에이전트가 발행을 차단합니다.
+[@dr.soa_unnie](https://www.instagram.com/dr.soa_unnie/) 인스타 카드뉴스 production 도구. 모든 사실은 학회 가이드라인·교과서·peer-reviewed 논문에서만 인용하며, 출처 매핑이 누락된 슬라이드는 reviewer 에이전트가 발행을 차단합니다.
 
 ---
 
@@ -59,7 +59,7 @@ Claude Code 안에서:
 2. 개인정보 노출 금지 (실명·병원·지역·가족 정보)
 3. "소아청소년과 전문의" 정식 명칭 (소아과 전문의 X)
 4. 독자 호칭 "부모님들" / "보호자분들" (엄마들·여러분 X)
-5. 인스타 핸들 정확히 `@soagwa_unnie`
+5. 인스타 핸들 정확히 `@dr.soa_unnie`
 
 상세는 [CLAUDE.md](CLAUDE.md) 참조.
 

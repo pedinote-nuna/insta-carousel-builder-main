@@ -43,9 +43,9 @@ Source area: hand-drawn rectangle, thin black line border with small corner cros
 · [출처 3]
 Brand block:
 소아과언니 (medium-bold large navy — exactly 4 characters, NO pixel values)
-SOAGWA UNNIE · 소아청소년과 전문의 (small caps gray)
+DR.SOA UNNIE · 소아청소년과 전문의 (small caps gray)
 ──── (thin hand-drawn divider)
-@soagwa_unnie · 매주 새 가이드
+@dr.soa_unnie · 매주 새 가이드
 소아과수첩 앱 · [토픽 관련 CTA]
 Top-right: 소아과언니 (4 characters only, no quotes).
 ABSOLUTE RULE: never render numbers followed by 'px' anywhere.
