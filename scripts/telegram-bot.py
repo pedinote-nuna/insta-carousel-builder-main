@@ -166,6 +166,48 @@ current_task: dict = {
 }
 _task_lock = asyncio.Lock()
 
+# === 사용자 취소·중단 인프라 ===
+# 운영자가 '중단'/'취소' 메시지를 보내면 _cancel_flag=True 가 되어
+# 진행 중인 파이프라인이 다음 체크포인트(_check_cancel)에서 abort 한다.
+# 이미지 생성 서브프로세스가 돌고 있으면 _current_proc 을 kill 해서 즉시 종료한다.
+_cancel_flag: bool = False
+_current_proc = None  # asyncio.subprocess.Process | None
+
+
+def reset_cancel_flag() -> None:
+    global _cancel_flag
+    _cancel_flag = False
+
+
+def is_cancel_requested() -> bool:
+    return _cancel_flag
+
+
+def request_cancel() -> None:
+    """취소 플래그 켜고, 실행 중인 이미지 생성 서브프로세스가 있으면 kill."""
+    global _cancel_flag
+    _cancel_flag = True
+    proc = _current_proc
+    if proc is not None and proc.returncode is None:
+        try:
+            proc.kill()
+        except ProcessLookupError:
+            pass
+        except Exception:  # noqa: BLE001
+            log.exception("subprocess kill 실패")
+
+
+async def _check_cancel(update: Update) -> bool:
+    """파이프라인 중간에 취소 요청이 들어왔는지 확인. True 면 호출 측이 즉시 return."""
+    if is_cancel_requested():
+        try:
+            await update.message.reply_text("🛑 중단됨 — 현재 작업을 종료합니다.")
+        except Exception:  # noqa: BLE001
+            pass
+        return True
+    return False
+
+
 def _load_session() -> dict:
     if SESSION_FILE.exists():
         try:
@@ -697,12 +739,15 @@ def _intent_router_sync(text: str, api_key: str) -> dict:
 - queue: 보류 목록 조회 ("보류 목록", "나중에 쓸 것", "큐 보여줘" 등)
 - done: 완료 목록 조회 ("완료된 거", "다 만든 것", "발행한 것" 등)
 - status: 현재 상태 ("지금 뭐 해", "진행 중인 거", "상태 확인" 등)
-- select: 추천 목록에서 번호 선택 ("1번", "1 3 5", "첫 번째" 등)
+- select: 추천 목록 또는 이번 주 목록에서 번호 선택 ("1번", "1 3 5", "첫 번째" 등)
+  → "만들어줘" / "만들어" / "해줘" / "생성" / "쭉" / "차례로" 같은 키워드가 함께 있으면 params.generate=true
+  → 여러 번호 + generate=true 면 순차 생성 의도. 예) "1,3,5,6,7번 만들어줘"
+  → 단순 번호만(생성 키워드 없음)이면 generate 생략 또는 false
 - queue_move: 보류에서 이번 주로 이동 ("3번 이번 주로", "큐 3 올려줘" 등)
 - delete: 보류에서 삭제 ("2번 없애줘", "삭제 1" 등)
 - retry: 재추천 요청 ("다시", "다른 거", "다시 추천해줘" 등)
 - confirm: 확인/진행 ("응", "좋아", "예", "ㅇㅇ", "ok", "진행해" 등)
-- cancel: 취소 ("아니", "취소", "됐어", "ㄴㄴ" 등)
+- cancel: 취소/중단 ("아니", "취소", "됐어", "ㄴㄴ", "중단", "중단해", "그만", "그만해", "멈춰", "stop", "halt" 등) — 파이프라인 진행 중이면 이미지 생성도 즉시 중단됨
 - feedback_regen: 특정 슬라이드 재생성 요청
   ("4장 내용 너무 어려워", "3번 다시 만들어줘",
    "slide-05 수정해줘", "5번 슬라이드 바꿔줘" 등)
@@ -737,6 +782,7 @@ JSON 형식:
 {"intent": "make", "params": {"topic_kr": "차멀미 예방법", "tone": ""}}
 {"intent": "make", "params": {"topic_kr": "수족구병", "tone": "character-illustration"}}
 {"intent": "select", "params": {"numbers": [1, 3, 5]}}
+{"intent": "select", "params": {"numbers": [1, 3, 5, 6, 7], "generate": true}}  // "1,3,5,6,7번 만들어줘" — 순차 생성
 {"intent": "queue_move", "params": {"numbers": [3]}}
 {"intent": "delete", "params": {"numbers": [2]}}
 {"intent": "topics", "params": {}}
@@ -817,63 +863,125 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
                 )
                 return
         forced_tone = params.get("tone", "")
+        reset_cancel_flag()
         await auto_pipeline(update, topic_kr, slug, forced_tone=forced_tone)
 
     elif intent == "select":
         numbers = params.get("numbers", [])
         forced_tone = params.get("tone", "")
+        generate = bool(params.get("generate", False))
         if not numbers:
             await update.message.reply_text("💡 번호를 알려주세요.")
             return
+
+        # 소스 결정 — 추천 활성 시 추천 목록, 아니면 this_week
+        recs = session.get("recommendation") or []
+        if recs:
+            source_list = recs
+            source_name = "추천"
+        else:
+            _data = load_topics()
+            source_list = _data.get("this_week", [])
+            source_name = "이번 주"
+
         print(
-            f"[DEBUG] recommendation in session: "
-            f"{bool(session.get('recommendation'))}, "
-            f"len={len(session.get('recommendation') or [])}",
+            f"[DEBUG] select intent — numbers={numbers}, generate={generate}, "
+            f"source={source_name}({len(source_list)}개)",
             flush=True,
         )
-        if session.get("recommendation"):
-            # 톤 지정 + 단일 번호 → 추천 항목에서 직접 꺼내 바로 생성
-            if forced_tone and len(numbers) == 1:
-                recs = session.get("recommendation", [])
-                idx = numbers[0] - 1
-                if 0 <= idx < len(recs):
-                    topic = recs[idx]
-                    topic_kr = topic.get("title_kr", "")
-                    slug = topic.get("slug", "")
-                    if not slug:
-                        slug = await korean_to_slug(topic_kr)
-                    # this_week에도 저장
-                    await apply_recommendation_selection(update, numbers)
-                    await auto_pipeline(
-                        update, topic_kr, slug, forced_tone=forced_tone
+
+        if not source_list:
+            await update.message.reply_text(
+                "❓ 활성 추천 목록도 이번 주 주제도 없습니다. /topics 로 시작하세요."
+            )
+            return
+
+        valid_nums = sorted({n for n in numbers if 1 <= n <= len(source_list)})
+        if not valid_nums:
+            await update.message.reply_text(
+                f"❌ 유효한 번호가 없습니다 (1-{len(source_list)})."
+            )
+            return
+
+        # === 순차 생성 모드: "1,3,5,6,7번 만들어줘" ===
+        if generate:
+            reset_cancel_flag()
+            total = len(valid_nums)
+            nums_label = ",".join(str(n) for n in valid_nums)
+            await update.message.reply_text(
+                f"🚀 순차 생성 시작 — {source_name} 목록 {nums_label}번 (총 {total}개)\n"
+                f"💡 중간에 멈추고 싶으면 '중단' 또는 '취소' 라고 보내주세요."
+            )
+            for i, n in enumerate(valid_nums, 1):
+                if is_cancel_requested():
+                    await update.message.reply_text(
+                        f"🛑 중단됨 — {i-1}/{total} 완료, 나머지 건너뜀"
                     )
                     return
-            # 톤 없거나 여러 번호 → 확정만
-            await apply_recommendation_selection(update, numbers)
-        else:
-            # this_week에서 직접 선택
-            data = load_topics()
-            this_week = data.get("this_week", [])
-            idx = numbers[0] - 1
-            print(
-                f"[DEBUG] this_week 선택 — idx={idx}, "
-                f"목록={[t.get('title_kr') for t in this_week]}",
-                flush=True,
-            )
-            if 0 <= idx < len(this_week):
-                topic = this_week[idx]
+                topic = source_list[n - 1]
                 topic_kr = topic.get("title_kr", "")
                 slug = topic.get("slug", "")
                 if not slug:
                     slug = await korean_to_slug(topic_kr)
+                await update.message.reply_text(
+                    f"\n━━━ [{i}/{total}] {n}번 ━━━\n📌 {topic_kr}"
+                )
+                try:
+                    await auto_pipeline(
+                        update, topic_kr, slug, forced_tone=forced_tone
+                    )
+                except Exception as e:  # noqa: BLE001
+                    log.exception("auto_pipeline 실패 (%s)", slug)
+                    await update.message.reply_text(
+                        f"⚠️ {slug} 실패 — 다음으로 넘어갑니다: {e}"
+                    )
+                if is_cancel_requested():
+                    await update.message.reply_text(
+                        f"🛑 중단됨 — {i}/{total} 완료, 나머지 건너뜀"
+                    )
+                    return
+            await update.message.reply_text(f"✅ 순차 생성 전체 완료 — {total}/{total}")
+            return
+
+        # === 기존 동작: 추천 활성 + 톤 + 단일 번호 → 추천에서 직접 생성 ===
+        if recs and forced_tone and len(numbers) == 1:
+            idx = numbers[0] - 1
+            if 0 <= idx < len(recs):
+                topic = recs[idx]
+                topic_kr = topic.get("title_kr", "")
+                slug = topic.get("slug", "")
+                if not slug:
+                    slug = await korean_to_slug(topic_kr)
+                # this_week 에도 저장
+                await apply_recommendation_selection(update, numbers)
+                reset_cancel_flag()
                 await auto_pipeline(
                     update, topic_kr, slug, forced_tone=forced_tone
                 )
-            else:
-                await update.message.reply_text(
-                    f"💡 이번 주 확정된 주제가 {len(this_week)}개예요.\n"
-                    f"1-{len(this_week)} 사이 번호를 말씀해주세요."
-                )
+                return
+
+        # === 기존: 추천 모드 다중 선택 → 확정만 ===
+        if recs:
+            await apply_recommendation_selection(update, numbers)
+            return
+
+        # === 기존: this_week 직접 선택 (단일 번호 즉시 생성) ===
+        idx = numbers[0] - 1
+        if 0 <= idx < len(source_list):
+            topic = source_list[idx]
+            topic_kr = topic.get("title_kr", "")
+            slug = topic.get("slug", "")
+            if not slug:
+                slug = await korean_to_slug(topic_kr)
+            reset_cancel_flag()
+            await auto_pipeline(
+                update, topic_kr, slug, forced_tone=forced_tone
+            )
+        else:
+            await update.message.reply_text(
+                f"💡 이번 주 확정된 주제가 {len(source_list)}개예요.\n"
+                f"1-{len(source_list)} 사이 번호를 말씀해주세요."
+            )
 
     elif intent == "queue":
         await cmd_queue(update, context)
@@ -911,8 +1019,19 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         )
 
     elif intent == "cancel":
-        session["recommendation"] = None
-        await update.message.reply_text("✅ 취소됐어요.")
+        # 항상 cancel 플래그 set — 진행 중인 파이프라인/순차 루프가 다음 체크포인트에서 멈춤
+        # 이미지 생성 서브프로세스가 떠 있으면 즉시 kill 됨
+        was_running = _task_lock.locked() or _current_proc is not None
+        request_cancel()
+        if session.get("recommendation"):
+            session["recommendation"] = None
+        if was_running:
+            await update.message.reply_text(
+                "🛑 중단 요청됨 — 현재 단계 종료 후 멈춥니다.\n"
+                "(이미지 생성 중이면 프로세스도 종료됩니다)"
+            )
+        else:
+            await update.message.reply_text("✅ 취소됐어요.")
 
     elif intent == "feedback_regen":
         slide_n = params.get("slide_n")
@@ -1390,6 +1509,9 @@ async def auto_pipeline(
         f"🚀 자동 파이프라인 시작 — '{topic_kr}' (slug: {slug})"
     )
 
+    if await _check_cancel(update):
+        return
+
     # STEP 1: sources.json 생성
     await update.message.reply_text("⏳ 의학 출처 리서치 중...")
     try:
@@ -1402,6 +1524,9 @@ async def auto_pipeline(
         return
     if not sources:
         await update.message.reply_text("❌ 리서치 응답을 파싱하지 못했습니다.")
+        return
+
+    if await _check_cancel(update):
         return
 
     # STEP 2: 의학 검증
@@ -1426,6 +1551,9 @@ async def auto_pipeline(
     n_claims = len(verified_sources.get("claims", []))
     await update.message.reply_text(f"✓ sources.json 저장 ({n_claims}개 claim)")
 
+    if await _check_cancel(update):
+        return
+
     # STEP 3: template 생성 (톤 자동 선택 포함)
     try:
         template, tone_name = await generate_template(
@@ -1448,9 +1576,16 @@ async def auto_pipeline(
     n_slides = len(template.get("slides", []))
     await update.message.reply_text(f"✓ 템플릿 저장 ({n_slides}장 슬라이드)")
 
+    if await _check_cancel(update):
+        return
+
     # STEP 4: 이미지 생성
-    await update.message.reply_text("🖼️ 이미지 생성 중... (약 4분)")
+    await update.message.reply_text("🖼️ 이미지 생성 중... (약 4분, 중간에 '중단' 가능)")
     await trigger_generation_direct(update, slug)
+
+    if is_cancel_requested():
+        # 이미지 생성 단계에서 중단된 경우 — 캡션 생략하고 종료
+        return
 
     # 세션에 현재 토픽 저장 (피드백·검증·질문 대화용)
     session["last_topic"] = {
@@ -1967,20 +2102,26 @@ async def run_generator(slug: str) -> tuple[bool, str]:
         "--slides",
         str(template_path(slug)),
     ]
+    global _current_proc
     proc = await asyncio.create_subprocess_exec(
         *cmd,
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.STDOUT,
         cwd=str(REPO_ROOT),
     )
+    _current_proc = proc
     try:
         stdout, _ = await asyncio.wait_for(proc.communicate(), timeout=GEN_TIMEOUT_SEC)
     except asyncio.TimeoutError:
         proc.kill()
         await proc.wait()
         raise
+    finally:
+        _current_proc = None
     out = stdout.decode("utf-8", errors="replace") if stdout else ""
     log_tail = "\n".join(out.strip().splitlines()[-15:])
+    if is_cancel_requested():
+        return False, "사용자 요청으로 중단됨"
     return proc.returncode == 0, log_tail
 
 
@@ -2065,7 +2206,9 @@ def build_app() -> Application:
     allowed_chat_id = os.getenv("TELEGRAM_CHAT_ID")
     load_topics()  # data/topics.json 자동 생성
 
-    app = Application.builder().token(token).build()
+    # concurrent_updates=True : 긴 파이프라인(이미지 생성 ~4분) 도중에도
+    # 운영자의 '중단/취소' 메시지가 즉시 처리되도록 함.
+    app = Application.builder().token(token).concurrent_updates(True).build()
 
     def wrap(handler):
         async def wrapped(update: Update, context: ContextTypes.DEFAULT_TYPE):
