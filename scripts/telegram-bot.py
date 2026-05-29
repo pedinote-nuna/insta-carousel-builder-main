@@ -74,6 +74,15 @@ TOPICS_JSON = DATA_DIR / "topics.json"
 SESSION_FILE = REPO_ROOT / "data" / "session.json"
 TOPIC_SELECTION_MD = REPO_ROOT / "knowledge" / "topic-selection.md"
 
+# 블로그 봇 연동 — generate-blog.js 위치
+# 환경변수 BLOG_BOT_ROOT 로 덮어쓸 수 있음. 없으면 ../pediatric-blog-bot-main 추정.
+BLOG_BOT_ROOT = Path(
+    os.environ.get("BLOG_BOT_ROOT")
+    or (REPO_ROOT.parent / "pediatric-blog-bot-main")
+).resolve()
+BLOG_GEN_JS = BLOG_BOT_ROOT / "generate-blog.js"
+BLOG_GEN_TIMEOUT_SEC = 240
+
 GEN_TIMEOUT_SEC = 300
 SLIDE_COUNT = 9
 DONE_PREVIEW = 10
@@ -440,6 +449,10 @@ TONE_DISPLAY = {
     "clean-infographic": "클린 인포그래픽",
     "emergency-alert": "경고·긴급",
     "character-illustration": "캐릭터 일러스트",
+    "dark-magazine": "다크 매거진",
+    "pastel-gradient": "파스텔 그라데이션",
+    "sticker-pop": "스티커 팝",
+    "bold-typography": "볼드 타이포그래피",
 }
 
 TONE_NORMALIZE = {
@@ -454,6 +467,16 @@ TONE_NORMALIZE = {
     "응급": "emergency-alert",
     "캐릭터": "character-illustration",
     "일러스트": "character-illustration",
+    "다크": "dark-magazine",
+    "매거진": "dark-magazine",
+    "파스텔": "pastel-gradient",
+    "그라데이션": "pastel-gradient",
+    "그라디언트": "pastel-gradient",
+    "스티커": "sticker-pop",
+    "팝": "sticker-pop",
+    "볼드": "bold-typography",
+    "타이포": "bold-typography",
+    "타이포그래피": "bold-typography",
 }
 
 
@@ -1216,21 +1239,54 @@ async def delete_from_pending(update: Update, nums: list[int]) -> None:
 # ---------------------------------------------------------------- auto pipeline
 
 
-async def korean_to_slug(topic_kr: str) -> Optional[str]:
-    """한국어 토픽을 영문 케밥-케이스 슬러그로 변환 (Claude API)."""
+def _local_slug_fallback(topic_kr: str) -> str:
+    """API 미사용·실패 시 로컬 슬러그 생성.
+    특수문자 제거 → 공백을 하이픈으로 → 영문·숫자·하이픈만 유지.
+    결과가 비면 'card-YYYYMMDD-NNN' 타임스탬프 슬러그 + 같은 날 카운터 증가.
+    """
+    cleaned = re.sub(r"[?!‼⁉！？,，·~%&#@]", "", topic_kr)
+    cleaned = re.sub(r"\s+", "-", cleaned.strip())
+    cleaned = re.sub(r"[^a-z0-9-]", "", cleaned.lower())
+    cleaned = re.sub(r"-+", "-", cleaned).strip("-")
+    if cleaned:
+        return cleaned
+
+    prefix = f"card-{datetime.now().strftime('%Y%m%d')}-"
+    next_num = 1
+    try:
+        data = load_topics()
+        used_nums = []
+        for key in ("done", "this_week", "pending"):
+            for item in data.get(key, []) or []:
+                if not isinstance(item, dict):
+                    continue
+                slug = item.get("slug", "")
+                if isinstance(slug, str) and slug.startswith(prefix):
+                    m = re.match(r".*-(\d+)$", slug)
+                    if m:
+                        used_nums.append(int(m.group(1)))
+        if used_nums:
+            next_num = max(used_nums) + 1
+    except Exception as e:  # noqa: BLE001
+        log.debug("_local_slug_fallback 카운터 조회 실패: %s", e)
+    return f"{prefix}{next_num:03d}"
+
+
+async def korean_to_slug(topic_kr: str) -> str:
+    """한국어 토픽을 영문 케밥-케이스 슬러그로 변환 (Claude API). 실패 시 로컬 fallback."""
     if Anthropic is None:
-        return None
+        return _local_slug_fallback(topic_kr)
     api_key = os.getenv("ANTHROPIC_API_KEY")
     if not api_key:
-        return None
+        return _local_slug_fallback(topic_kr)
     try:
         return await asyncio.to_thread(_korean_to_slug_sync, topic_kr, api_key)
     except Exception as e:  # noqa: BLE001
         log.exception("korean_to_slug 실패: %s", e)
-        return None
+        return _local_slug_fallback(topic_kr)
 
 
-def _korean_to_slug_sync(topic_kr: str, api_key: str) -> Optional[str]:
+def _korean_to_slug_sync(topic_kr: str, api_key: str) -> str:
     client = Anthropic(api_key=api_key)
     msg = client.messages.create(
         model=ANTHROPIC_MODEL,
@@ -1244,7 +1300,7 @@ def _korean_to_slug_sync(topic_kr: str, api_key: str) -> Optional[str]:
     )
     raw = _collect_text(msg).strip()
     m = re.search(r"[a-z][a-z0-9-]+", raw)
-    return m.group(0) if m else None
+    return m.group(0) if m else _local_slug_fallback(topic_kr)
 
 
 def generate_sources(
@@ -1940,20 +1996,28 @@ VALID_TONES = [
     "clean-infographic",
     "emergency-alert",
     "character-illustration",
+    "dark-magazine",
+    "pastel-gradient",
+    "sticker-pop",
+    "bold-typography",
 ]
 
 TONE_GUIDE = """
-5가지 톤과 어울리는 토픽 유형:
+9가지 톤과 어울리는 토픽 유형:
 1. editorial-modern — 일반 케어·예방법·여행·생활건강·약물 안전
 2. handdrawn-notebook — 영아 돌봄·수유·산통·야간 육아·따뜻한 주제
-3. clean-infographic — 수치·기준·비교표·예방접종·성장 백분위
-4. emergency-alert — 응급 대처·경련·아나필락시스·즉시 신호 판단
-5. character-illustration — 이유식·발달·성장·영양·귀여운 영아 주제
+3. clean-infographic — 가벼운 비교표·일반 예방접종·생활 통계
+4. emergency-alert — 아나필락시스·경련 대처·즉시 119 신호 등 위급
+5. character-illustration — 귀여운 영아 일반·캐릭터로 풀어내는 따뜻한 주제
+6. dark-magazine — 소아심장·선천성 질환, 성장 백분위·표준편차, 희귀질환, 수치·데이터 중심 전문 정보 (신호어: 백분위, 표준편차, 선천성, 심장, 가와사키, 통계, 기준치)
+7. pastel-gradient — 수면, 모유수유, 신생아 케어, 예방접종, 부드러운 육아 정보 (신호어: 수면, 수유, 신생아, 태아, 임신, 백신, 돌봄, 안정)
+8. sticker-pop — 이유식, 간식, 놀이발달, 월령별 체크리스트, 경쾌하고 밝은 생활 육아 (신호어: 이유식, 간식, 놀이, 발달, 월령, 체크리스트, 처음, 시작)
+9. bold-typography — 증상 한 가지 집중 설명, 응급 기준 수치, 즉각 판단 (신호어: 열, 경련, 발진, 기침, 설사, 응급, 즉시, 언제 병원)
 
-규칙:
-- 토픽 특성 보고 가장 자연스럽게 어울리는 톤 선택
-- 딱 하나에만 묶이지 않고 유연하게 판단
-- 최근 사용 톤 피해서 다양성 유지
+스타일 선택 우선순위:
+1. 토픽 키워드가 6~9번 신호어와 일치하면 해당 신규 양식 우선 선택
+2. 복수 일치 시: 데이터 비중이 높으면 dark-magazine, 감성·부드러움이 강하면 pastel-gradient
+3. 최근 사용 톤 피해서 다양성 유지 (직전 3개와 같은 양식 반복 금지)
 """
 
 
@@ -2090,7 +2154,60 @@ async def trigger_generation(update: Update, slug: str) -> None:
             log.exception("add_done 실패")
             await update.message.reply_text(f"⚠️ done 기록 실패: {e}")
 
+        # 인스타 9장 완료 → 블로그 글 자동 생성 (실패해도 인스타 결과는 보존)
+        await run_blog_generator(update, slug)
+
         current_task["status"] = "idle"
+
+
+async def run_blog_generator(update: Update, slug: str) -> None:
+    """인스타 9장 PNG 생성 직후 → 블로그 글도 자동 생성.
+
+    실패해도 인스타 작업은 이미 끝났으므로 예외를 막고 메시지로만 알린다.
+    """
+    if not BLOG_GEN_JS.exists():
+        log.info(f"블로그 생성 스킵 — generate-blog.js 없음: {BLOG_GEN_JS}")
+        return
+
+    await update.message.reply_text(
+        f"📝 블로그 글도 같이 만들고 있어요... ({slug})"
+    )
+
+    env = os.environ.copy()
+    env["INSTA_ROOT"] = str(REPO_ROOT)
+
+    cmd = ["node", str(BLOG_GEN_JS), slug, "--notify"]
+    try:
+        proc = await asyncio.create_subprocess_exec(
+            *cmd,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.STDOUT,
+            cwd=str(BLOG_BOT_ROOT),
+            env=env,
+        )
+        stdout, _ = await asyncio.wait_for(
+            proc.communicate(), timeout=BLOG_GEN_TIMEOUT_SEC
+        )
+        out = stdout.decode("utf-8", errors="replace") if stdout else ""
+        tail = "\n".join(out.strip().splitlines()[-10:])
+
+        if proc.returncode == 0:
+            log.info(f"블로그 생성 완료 — {slug}")
+            # generate-blog.js 가 --notify 로 직접 텔레그램 발송하므로 여기선 조용히.
+        else:
+            await update.message.reply_text(
+                f"⚠️ 블로그 생성 실패 (인스타는 완료). 마지막 로그:\n```\n{tail or '(없음)'}\n```",
+                parse_mode="Markdown",
+            )
+    except asyncio.TimeoutError:
+        await update.message.reply_text(
+            f"⚠️ 블로그 생성 타임아웃 ({BLOG_GEN_TIMEOUT_SEC}초). 인스타는 정상 완료됐어요."
+        )
+    except Exception as e:  # noqa: BLE001
+        log.exception("블로그 생성 호출 실패")
+        await update.message.reply_text(
+            f"⚠️ 블로그 생성 호출 오류: {e}\n인스타는 정상 완료됐어요."
+        )
 
 
 async def run_generator(slug: str) -> tuple[bool, str]:
@@ -2190,6 +2307,9 @@ async def trigger_generation_direct(update: Update, slug: str) -> None:
         except Exception as e:  # noqa: BLE001
             log.exception("add_done 실패")
             await update.message.reply_text(f"⚠️ done 기록 실패: {e}")
+
+        # 인스타 9장 완료 → 블로그 글 자동 생성 (실패해도 인스타 결과는 보존)
+        await run_blog_generator(update, slug)
 
         current_task["status"] = "idle"
 
