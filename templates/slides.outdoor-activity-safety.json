@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Top-left small gray: PARENTING NOTE · 011. Left side upper area: very large bold Korean headline two lines — first line 야외활동 전 in deep navy, second line 안전 체크 5단계 in coral #C44536. Below headline: small muted gray subtitle 놀이터부터 물놀이까지 · CDC 권장 기준. Right side center-bottom: large clean editorial illustration of children playing outdoors safely with sun protection and supervision, line art style in coral and teal, minimal clean strokes showing playground equipment and outdoor scene. Bottom area: thin coral horizontal accent line. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: STEP 1. Large bold headline: 날씨와 navy, 시간대 확인 coral #C44536. Center upper: clean editorial illustration of sun and clock showing peak UV hours, line art coral/navy minimal. Below illustration: light gray rounded card #F0F0EE generous padding. Inside card: ☀️ emoji followed by bold navy text 오전 10시~오후 4시 자외선 최강. Below: small navy text 무더운 날에는 오전이나 저녁 시간대로 조정하세요. Bottom of card: very small gray text CDC 권장. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: STEP 2. Large bold headline: 자외선 차단 navy, 준비하기 coral #C44536. Center: clean editorial illustration of sunscreen bottle and sun hat, line art coral/navy minimal. Below: two light gray rounded cards #F0F0EE stacked vertically with spacing. Top card: bold navy SPF 15 이상 광범위 차단제 선택, small gray text AAP 권장. Bottom card: bold navy 생후 6개월 미만 영아는 그늘에서 보호, small gray text 직사광선 피할 것. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: STEP 3. Large bold headline: 충분한 navy, 수분 섭취 coral #C44536. Center upper: clean editorial illustration of water bottle and child drinking water, line art coral/navy minimal. Below: light gray rounded card #F0F0EE generous padding. Inside card: 💧 emoji followed by bold navy text 활동 전후로 물 충분히. Below: navy text 9-12세 격렬한 활동 시 20분마다 90-240ml. Below: small navy text 어린이는 체온 조절 능력이 떨어지므로 탈수 증상 주의. Bottom of card: very small gray text AAP 권장. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: STEP 4. Large bold headline: 벌레 기피제 navy, 올바른 사용 coral #C44536. Center: clean editorial illustration of insect repellent spray bottle with safety symbol, line art coral/navy minimal. Below: two light gray rounded cards #F0F0EE stacked vertically with spacing. Top card: bold navy DEET 30% 이하 제품 사용, small gray text 생후 2개월 이상. Bottom card: coral outline rounded box with ⚠️ emoji, bold coral 하루 한 번만 도포, small navy text 생후 2개월 미만 사용 금지. Bottom very small gray text AAP 권장. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: STEP 5. Large bold headline: 놀이터 navy, 안전 확인 coral #C44536. Center upper: clean editorial illustration of playground equipment with height measurement marks, line art coral/navy minimal. Below: light gray rounded card #F0F0EE generous padding. Inside card: 📏 emoji followed by bold navy text 연령별 적정 장비 높이. Below: navy text 2-4세 81cm 이하 / 4-5세 152cm 이하. Below: small navy text 보호자 적극 감독 필수, 유아는 팔 닿는 거리에서. Bottom of card: very small gray text CDC·Little Tikes 권장. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 자전거·킥보드. Large bold headline: 헬멧 착용과 navy, 보호자 감독 coral #C44536. Center: clean editorial illustration of child wearing helmet on bicycle, line art coral/navy minimal. Below: two comparison cards side by side light gray #F0F0EE. Left card with teal checkmark ✓: bold navy 자전거·킥보드 탈 때, small gray 헬멧 필수 착용. Right card with coral X ✗: bold navy 놀이터에서는, small gray 헬멧 벗기. Below cards: small navy text center 사고 판단 능력 부족하므로 보호자 주의 필수. Bottom very small gray text CDC·질병관리청. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 물놀이. Large bold headline: 보호자와 navy, 함께 필수 coral #C44536. Center upper: clean editorial illustration of child with adult supervision near water with life vest, line art coral/navy minimal. Below: light gray rounded card #F0F0EE generous padding. Inside card: 🏊 emoji followed by bold navy text 수영 가능한 보호자와 함께. Below: navy text 6세 미만 팔 닿는 거리 arm's reach. Below: navy text 6세 이상 눈 닿는 거리 eye's reach. Bottom of card: coral outline rounded box with ⚠️ emoji, bold coral 절대 혼자 물가 접근 금지, small navy text 익수 사고 예방. Bottom very small gray text 질병관리청·Children's Healthcare. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 with thin coral underline. Below generous spacing: source box light gray #F0F0EE rounded generous padding. Inside box: 출처 in navy small bold aligned left. Below as bulleted list navy small: · CDC Sun Safety Facts 2026. · AAP Sun Safety Information 2024. · AAP Choose Water for Healthy Hydration 2024. · 질병관리청 어린이손상·익수 예방 2024. End of source box. Below spacing: horizontal thin navy divider. Center large area: 소아과언니 in navy bold large — NO quotes, NO decoration, 4 characters only. Below: DR.SOA UNNIE · 소아청소년과 전문의 in gray small. Below: thin gray horizontal divider. Below: @dr.soa_unnie · 매주 새 가이드 in navy small. Below: 소아과수첩 앱 · 진료 메모로 야외활동 기록 in coral small. No pixel text anywhere on card. No quotes anywhere on card."
+    }
+  ]
+}

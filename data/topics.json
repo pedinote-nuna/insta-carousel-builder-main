@@ -1,6 +1,392 @@
 {
-  "this_week": [],
-  "pending": [],
+  "this_week": [
+    {
+      "slug": "spring-allergy-food",
+      "title_kr": "알레르기 악화시키는 음식 vs 도움되는 음식",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "allergic-rhinitis-spring-management",
+      "title_kr": "봄철 알레르기 비염 관리법",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "conjunctivitis-vs-allergy",
+      "title_kr": "눈 충혈·눈곱, 결막염 vs 알레르기 구분법",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "outdoor-play-safety-checklist",
+      "title_kr": "야외 놀이 전 체크리스트 8가지 (벌레·안전·수분)",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "growth-spurt-nutrition-guide",
+      "title_kr": "급성장기 영양 가이드: 키 크는 시기 챙겨야 할 5가지",
+      "category": "성장발달",
+      "palette": "A"
+    },
+    {
+      "slug": "heart-murmur-innocent-vs-pathologic",
+      "title_kr": "심장 잡음 들렸다면? 무해성 vs 병적 구분법",
+      "category": "소아심장",
+      "palette": "A"
+    },
+    {
+      "slug": "japanese-encephalitis-vaccine-timing",
+      "title_kr": "일본뇌염 예방접종 타이밍: 5월에 꼭 맞춰야 하는 이유",
+      "category": "예방접종",
+      "palette": "B"
+    },
+    {
+      "slug": "food-poisoning-early-signs",
+      "title_kr": "식중독 초기 증상과 대처법",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "18-24-month-language-milestone",
+      "title_kr": "18-24개월 언어발달 체크리스트",
+      "category": "성장발달",
+      "palette": "A"
+    },
+    {
+      "slug": "congenital-heart-disease-exercise-guide",
+      "title_kr": "선천성 심장질환 운동 가이드",
+      "category": "소아심장",
+      "palette": "A"
+    },
+    {
+      "slug": "hydration-guide-for-children",
+      "title_kr": "아이 수분 섭취 가이드",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "plagiocephaly-hospital-timing",
+      "title_kr": "사두증, 언제 병원 가야 할까? 체크리스트 7가지",
+      "category": "질환관리",
+      "palette": "B"
+    }
+  ],
+  "pending": [
+    {
+      "slug": "growth-spurt-nutrition",
+      "title_kr": "급성장기 아이 영양, 이것만은 꼭",
+      "category": "성장발달",
+      "palette": "A"
+    },
+    {
+      "slug": "spring-allergy-management",
+      "title_kr": "봄철 알레르기 비염 관리 가이드",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "outdoor-safety-checklist",
+      "title_kr": "야외활동 안전 체크리스트",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "hydration-guide-summer",
+      "title_kr": "여름 준비 수분 섭취 가이드",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "insect-bite-treatment",
+      "title_kr": "벌레 물림 대처법과 위험 신호",
+      "category": "응급·약물 안전",
+      "palette": "B"
+    },
+    {
+      "slug": "mosquito-bite-care",
+      "title_kr": "모기 물렸을 때 올바른 대처법",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "vaccination-before-travel",
+      "title_kr": "해외여행 전 챙겨야 할 예방접종",
+      "category": "예방접종",
+      "palette": "B"
+    },
+    {
+      "slug": "hand-foot-mouth-early-signs",
+      "title_kr": "수족구병 초기 증상 놓치지 마세요",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "healthy-snack-choices",
+      "title_kr": "아이 간식, 건강하게 고르는 법",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "picnic-food-safety",
+      "title_kr": "소풍·피크닉 도시락 식중독 예방",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "insect-bite-guide",
+      "title_kr": "벌레 물림 단계별 대처법",
+      "category": "응급·약물 안전",
+      "palette": "B"
+    },
+    {
+      "slug": "vaccination-schedule-spring",
+      "title_kr": "봄철 추가접종 타이밍 가이드",
+      "category": "예방접종",
+      "palette": "B"
+    },
+    {
+      "slug": "outdoor-play-safety",
+      "title_kr": "안전한 야외놀이 체크리스트",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "heart-murmur-exercise",
+      "title_kr": "심잡음 아이 운동 가이드",
+      "category": "소아심장",
+      "palette": "A"
+    },
+    {
+      "slug": "hiking-safety-checklist",
+      "title_kr": "가족 등산 시 안전 체크리스트",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "outdoor-insect-bite-prevention",
+      "title_kr": "야외활동 벌레 물림 예방과 대처",
+      "category": "응급·약물 안전",
+      "palette": "B"
+    },
+    {
+      "slug": "spring-immunization-catch-up",
+      "title_kr": "놓친 예방접종 따라잡기",
+      "category": "예방접종",
+      "palette": "B"
+    },
+    {
+      "slug": "allergic-rhinitis-vs-cold",
+      "title_kr": "알레르기 비염 vs 감기 구별법",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "outdoor-hydration-guide",
+      "title_kr": "야외활동 시 수분 섭취 가이드",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "outdoor-heat-illness-prevention",
+      "title_kr": "야외활동 시 열사병·탈수 예방",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "mosquito-bite-safety",
+      "title_kr": "모기 물림 안전 대처법",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "growth-milestone-18-24months",
+      "title_kr": "18-24개월 발달이정표 체크리스트",
+      "category": "성장발달",
+      "palette": "A"
+    },
+    {
+      "slug": "food-poisoning-first-response",
+      "title_kr": "식중독 초기 대응법",
+      "category": "응급·약물 안전",
+      "palette": "B"
+    },
+    {
+      "slug": "vitamin-d-supplementation-guide",
+      "title_kr": "영유아 비타민D 보충 가이드",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "mmr-vaccine-timing",
+      "title_kr": "MMR 접종 시기와 부작용 대처",
+      "category": "예방접종",
+      "palette": "B"
+    },
+    {
+      "slug": "outdoor-activity-hydration",
+      "title_kr": "바깥놀이 후 수분 보충, 물만으로 충분할까?",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "mosquito-bite-reaction",
+      "title_kr": "모기 물린 자국이 이렇게 부으면 병원 가세요",
+      "category": "응급·약물 안전",
+      "palette": "B"
+    },
+    {
+      "slug": "fine-dust-indoor-care",
+      "title_kr": "미세먼지 나쁜 날, 실내 환기 이렇게 하세요",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "growth-spurt-nutrition-3-5",
+      "title_kr": "3~5세 성장 급등기, 챙겨야 할 영양소 5가지",
+      "category": "성장발달",
+      "palette": "A"
+    },
+    {
+      "slug": "playground-injury-first-aid",
+      "title_kr": "놀이터 낙상 후 즉시 해야 할 응급처치 4단계",
+      "category": "응급·약물 안전",
+      "palette": "B"
+    },
+    {
+      "slug": "fine-dust-outdoor-guide",
+      "title_kr": "미세먼지 날 외출 가이드",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "vaccine-schedule-preschool",
+      "title_kr": "취학 전 추가접종 체크리스트",
+      "category": "예방접종",
+      "palette": "B"
+    },
+    {
+      "slug": "conjunctivitis-home-care",
+      "title_kr": "유행성 눈병 집 관리법",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "kawasaki-early-signs",
+      "title_kr": "가와사키병 초기 신호 5가지",
+      "category": "소아심장",
+      "palette": "B"
+    },
+    {
+      "slug": "asthma-attack-emergency-signs",
+      "title_kr": "천식 악화, 즉시 응급실 가야 할 신호 7가지",
+      "category": "응급·약물 안전",
+      "palette": "B"
+    },
+    {
+      "slug": "food-allergy-first-symptoms",
+      "title_kr": "식품 알레르기 첫 증상, 놓치면 안 되는 5가지",
+      "category": "응급·약물 안전",
+      "palette": "B"
+    },
+    {
+      "slug": "fine-dust-protection-children",
+      "title_kr": "미세먼지 나쁨 날, 아이 보호 6단계 대처법",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "developmental-milestone-12-18months",
+      "title_kr": "12~18개월 발달 체크리스트: 놓치면 안 되는 신호",
+      "category": "성장발달",
+      "palette": "A"
+    },
+    {
+      "slug": "insect-bite-treatment-guide",
+      "title_kr": "벌레 물림 종류별 대처법 (모기·개미·벌)",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "may-allergy-peak-management",
+      "title_kr": "5월 알레르기 정점, 집에서 할 수 있는 대처법",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "asthma-worsening-signs",
+      "title_kr": "천식 악화 신호 5가지, 즉시 병원 가야 할 때",
+      "category": "응급·약물 안전",
+      "palette": "B"
+    },
+    {
+      "slug": "insect-bite-first-aid",
+      "title_kr": "벌레 물렸을 때 응급처치 5단계",
+      "category": "응급·약물 안전",
+      "palette": "B"
+    },
+    {
+      "slug": "heart-checkup-timing",
+      "title_kr": "우리 아이 심장 검진, 언제 받아야 할까?",
+      "category": "소아심장",
+      "palette": "A"
+    },
+    {
+      "slug": "mosquito-bite-prevention-guide",
+      "title_kr": "모기 물림 예방과 대처법",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "may-height-growth-nutrition",
+      "title_kr": "5월 성장촉진 영양 가이드",
+      "category": "성장발달",
+      "palette": "A"
+    },
+    {
+      "slug": "outdoor-insect-bite-emergency",
+      "title_kr": "벌레 물림 응급 대처법",
+      "category": "응급·약물 안전",
+      "palette": "B"
+    },
+    {
+      "slug": "travel-motion-sickness-medication",
+      "title_kr": "여행 멀미약 안전 사용법",
+      "category": "응급·약물 안전",
+      "palette": "B"
+    },
+    {
+      "slug": "tummy-time-guide-by-month",
+      "title_kr": "월령별 터미타임 시간표 (사두 예방 핵심)",
+      "category": "성장발달",
+      "palette": "A"
+    },
+    {
+      "slug": "helmet-therapy-decision-guide",
+      "title_kr": "사두 헬멧 교정, 정말 필요할까? 판단 기준 5가지",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "sleep-position-rotation-method",
+      "title_kr": "신생아 머리 모양 지키는 수면 자세 로테이션법",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "flat-head-vs-craniosynostosis",
+      "title_kr": "단순 사두 vs 두개골조기유합증 구별법 6가지",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "carrier-usage-for-head-shape",
+      "title_kr": "사두 악화시키는 아기띠 사용법 vs 올바른 사용법",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    }
+  ],
   "done": [
     {
       "slug": "colic-5s",
@@ -16,6 +402,146 @@
       "slug": "sleep-duration",
       "title_kr": "연령별 수면 권장 시간",
       "done_at": "2026-05-10"
+    },
+    {
+      "slug": "car-sickness-prevention",
+      "title_kr": "car-sickness-prevention",
+      "done_at": "2026-05-10"
+    },
+    {
+      "slug": "newborn-jaundice",
+      "title_kr": "newborn-jaundice",
+      "done_at": "2026-05-11"
+    },
+    {
+      "slug": "travel-emergency-kit",
+      "title_kr": "여행 갈 때 꼭 챙겨야 할 소아 비상약",
+      "done_at": "2026-05-11"
+    },
+    {
+      "slug": "sunburn-first-aid",
+      "title_kr": "아이 일광화상, 이렇게 대처하세요",
+      "done_at": "2026-05-11"
+    },
+    {
+      "slug": "hfmd-prevention-checklist",
+      "title_kr": "수족구병 예방 체크리스트 7가지",
+      "done_at": "2026-05-11"
+    },
+    {
+      "slug": "vitamin-d-summer-guide",
+      "title_kr": "여름철 비타민D, 계속 먹여야 할까요?",
+      "done_at": "2026-05-13"
+    },
+    {
+      "slug": "outdoor-activity-safety",
+      "title_kr": "야외활동 전 안전 체크 5단계",
+      "done_at": "2026-05-18"
+    },
+    {
+      "slug": "heart-murmur",
+      "title_kr": "heart-murmur",
+      "done_at": "2026-05-18"
+    },
+    {
+      "slug": "spring-allergic-rhinitis-home-management",
+      "title_kr": "spring-allergic-rhinitis-home-management",
+      "done_at": "2026-05-19"
+    },
+    {
+      "slug": "hand-foot-mouth-disease",
+      "title_kr": "hand-foot-mouth-disease",
+      "done_at": "2026-05-19"
+    },
+    {
+      "slug": "spring-height-growth",
+      "title_kr": "spring-height-growth",
+      "done_at": "2026-05-19"
+    },
+    {
+      "slug": "outdoor-allergy-management",
+      "title_kr": "봄철 야외활동 알레르기 관리법",
+      "done_at": "2026-05-21"
+    },
+    {
+      "slug": "summer-formula-milk-storage",
+      "title_kr": "여름철 분유·모유 보관 완전정복",
+      "done_at": "2026-05-21"
+    },
+    {
+      "slug": "fontanelle-check-guide",
+      "title_kr": "아기 숨골(천문) 체크 가이드, 정상 vs 위험 신호",
+      "done_at": "2026-05-21"
+    },
+    {
+      "slug": "heat-illness-prevention",
+      "title_kr": "아이 열사병, 이렇게 예방하세요",
+      "done_at": "2026-05-21"
+    },
+    {
+      "slug": "family-month-child-nutrition",
+      "title_kr": "가정의달 외식, 아이 영양 챙기는 법",
+      "done_at": "2026-05-21"
+    },
+    {
+      "slug": "12-month-developmental-checklist",
+      "title_kr": "12개월 발달 체크리스트, 이건 꼭 확인하세요",
+      "done_at": "2026-05-21"
+    },
+    {
+      "slug": "hfmd-vs-chickenpox",
+      "title_kr": "수족구병 vs 수두, 헷갈리는 증상 비교표",
+      "done_at": "2026-05-21"
+    },
+    {
+      "slug": "travel-vaccine-schedule",
+      "title_kr": "해외여행 전 필수 예방접종 타이밍",
+      "done_at": "2026-05-21"
+    },
+    {
+      "slug": "outdoor-allergy-guide",
+      "title_kr": "야외활동 알레르기 대처법",
+      "done_at": "2026-05-22"
+    },
+    {
+      "slug": "food-poisoning-symptoms",
+      "title_kr": "food-poisoning-symptoms",
+      "done_at": "2026-05-22"
+    },
+    {
+      "slug": "roseola",
+      "title_kr": "roseola",
+      "done_at": "2026-05-22"
+    },
+    {
+      "slug": "rotavirus-gastroenteritis-care",
+      "title_kr": "로타바이러스 장염 관리법",
+      "done_at": "2026-05-22"
+    },
+    {
+      "slug": "flat-head-syndrome-prevention",
+      "title_kr": "아기 납작머리 예방하는 5가지 자세 교정법",
+      "done_at": "2026-05-22"
+    },
+    {
+      "slug": "summer-baby-food-storage-guide",
+      "title_kr": "summer-baby-food-storage-guide",
+      "done_at": "2026-05-29"
+    },
+    {
+      "slug": "sunscreen-guide-by-age",
+      "title_kr": "sunscreen-guide-by-age",
+      "done_at": "2026-05-29"
+    },
+    {
+      "slug": "air-conditioning-cold-myth",
+      "title_kr": "air-conditioning-cold-myth",
+      "done_at": "2026-05-29"
+    },
+    {
+      "slug": "nosebleed-head-back-danger",
+      "title_kr": "nosebleed-head-back-danger",
+      "done_at": "2026-05-29"
     }
   ]
 }

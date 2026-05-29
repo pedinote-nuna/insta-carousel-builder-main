@@ -1,0 +1,56 @@
+{
+  "topic": "nosebleed-head-back-danger",
+  "topic_type": "통념깨기형",
+  "source_template": "slides.nosebleed-head-back-danger.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "충격 훅 - 잘못된 상식으로 위험에 처한 순간 포착",
+      "prompt": "Portrait 1080x1920 vertical (9:16). Emergency reels hook style. CLOSEUP: Child's head tilted back dramatically, hand pinching nose bridge, blood visible on fingers. Blurred dark navy #0D1B2A background. HUGE bold red #E63946 text overlay center: '고개 뒤로 젖히면 위험!' White warning icon ⚠️ top-right corner. Hyper-realistic photography, dramatic side lighting, shallow depth of field, urgent medical atmosphere.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "공감 훅 - 부모라면 누구나 겪는 당황스러운 순간",
+      "prompt": "Portrait 1080x1920 vertical (9:16). Emergency reels style. Dark navy #0D1B2A background. GENEROUS outer margin. Top-center: white compact text '우리 아이 갑자기 코피 날 때'. Center: EXTREME CLOSEUP worried parent's eyes looking down, realistic photo texture. Bottom third: mint #2EC4B6 rounded speech bubble: '어? 고개 젖혀야 하나?' '휴지 말아 넣어야 하나?' White text, multiple lines. Top-right: 소아과언니 small white. Cinematic lighting, authentic emotion capture.",
+      "file": "0-2.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 3,
+      "role": "reels-visual-proof",
+      "purpose": "올바른 자세 실사 클로즈업으로 각인",
+      "prompt": "Portrait 1080x1920 vertical (9:16). Emergency reels tutorial style. SPLIT SCREEN vertical divide. LEFT half: CLOSEUP child sitting upright, head slightly forward, adult hand gently pinching child's nose middle (NOT bridge), natural indoor lighting. RIGHT half: dark navy #0D1B2A with large mint #2EC4B6 checkmark ✓ + white compact text: '코 중간 꾹 / 고개 살짝 앞으로 / 입으로 숨쉬기'. Top banner red #E63946 thin stripe. Top-right: 소아과언니 white small. Professional medical demonstration photography, soft focus background, educational clarity.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 5,
+      "role": "reels-practical-tip",
+      "purpose": "카드뉴스에 없는 실용 타이밍 정보",
+      "prompt": "Portrait 1080x1920 vertical (9:16). Emergency reels infographic style. Dark navy #0D1B2A background. GENEROUS outer margin. Top-right: 소아과언니 white small. Top-left mint #2EC4B6 rounded label: '꿀팁 시간체크 ⏱'. Headline COMPACT center white bold: '10분이 기준선입니다'. Center: THREE horizontal timeline bars mint to red gradient, each labeled: '5분 경과 → 계속 지혈' / '10분 경과 → 아직도 나오면 주의' / '15분+ 멈추지 않으면 → 응급실'. Bottom: small gray text: '대부분 5분 안에 멈춥니다'. Clean minimal icon design, clear hierarchy, practical timer visualization.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 14,
+      "insert_after": 7,
+      "role": "reels-myth-buster",
+      "purpose": "추가 오해 하나 더 - 얼음 직접 대는 행동",
+      "prompt": "Portrait 1080x1920 vertical (9:16). Emergency reels myth-buster style. Dark navy #0D1B2A background. GENEROUS outer margin. Top-right: 소아과언니 white small. Top-left red #E63946 rounded label: '이것도 NO ❌'. Headline COMPACT center white bold: '얼음 직접 코에 대지 마세요'. Center: CLOSEUP illustration ice cube directly touching nose bridge with red X overlay. Below: mint #2EC4B6 rounded box white text: '✓ 차가운 수건으로 감싸서 / ✓ 코 주변(이마·목덜미)에만 / ✓ 직접 접촉은 동상 위험'. Bottom small text gray: '냉찜질은 보조 수단일 뿐'. Clear do-and-don't contrast, educational warning tone.",
+      "file": "7-1.png"
+    },
+    {
+      "n": 15,
+      "insert_after": 9,
+      "role": "reels-save-cta",
+      "purpose": "저장 유도 + 실천 다짐",
+      "prompt": "Portrait 1080x1920 vertical (9:16). Emergency reels outro CTA style. Dark navy #0D1B2A background. VERY GENEROUS outer margin. Top-right: 소아과언니 white small. Top-center small gray compact: 'SAVE THIS'. Center: Large mint #2EC4B6 bookmark icon outline + white bold text below: '당황할 때 다시 보세요'. Middle section: white checklist compact left-aligned: '☑ 고개 앞으로 / ☑ 코 중간 꾹 / ☑ 10분 체크 / ☑ 계속 나오면 병원'. Bottom: red #E63946 pill-shaped button: '친구에게도 공유 →' white text. Clean modern UI, clear call-to-action hierarchy, friendly reassuring tone, generous whitespace.",
+      "file": "9-1.png"
+    }
+  ]
+}

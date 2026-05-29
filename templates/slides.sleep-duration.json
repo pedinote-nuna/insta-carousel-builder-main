@@ -1,0 +1,53 @@
+{
+  "topic": "sleep-duration",
+  "topic_kr": "연령별 수면 권장 시간",
+  "palette": "clean-infographic",
+  "output_dir": "output/sleep-duration",
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Clean infographic style. White background #FFFFFF. Top-right: '소아과언니' in deep navy #1A1F36, Pretendard SemiBold, no decoration. Center: large bold headline '우리 아이 얼마나 자야 할까?' in deep navy, last 3 words '자야 할까?' highlighted with teal #2C6E63 underline. Below headline: subtitle '연령별 AASM 권장 수면 시간' in gray. Bottom right: simple minimal sleeping baby icon line art in teal. Bottom label: 'PARENTING NOTE · 006' small gray text top-left. No pixel values as text. No quotes rendered on card."
+    },
+    {
+      "n": 2,
+      "role": "why-sleep-matters",
+      "prompt": "Clean infographic style. White background #FFFFFF. Top-right: '소아과언니' navy. Top-left small label: 'WHY SLEEP MATTERS'. Large headline: '수면이 부족하면' navy, '이런 일이 생겨요' with coral #C44536 underline highlight. Below: 3-column icon grid showing consequences — 주의력 저하 / 행동 문제 / 학습 능력 저하 — each with simple line icon above and navy text below. Second row: 2 items — 비만·당뇨 위험 / 감정 기복 심해짐. Icons minimal teal line art. Source: AASM 2016. No pixel values as text."
+    },
+    {
+      "n": 3,
+      "role": "newborn-infant",
+      "prompt": "Clean infographic style. White background #FFFFFF. Top-right: '소아과언니' navy. Top-left small label: 'AGE 0–11개월'. Two large card blocks stacked vertically, each with light gray background #F0F4F8, rounded corners. Card 1: small tag '신생아 0-3개월', giant bold number '14-17' in teal #2C6E63, unit '시간/일' in navy below. Card 2: small tag '영아 4-11개월', giant bold number '12-15' in teal, unit '시간/일' in navy. Between cards subtle divider. Bottom caption: '낮잠 포함 24시간 기준' small gray. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "toddler-preschool",
+      "prompt": "Clean infographic style. White background #FFFFFF. Top-right: '소아과언니' navy. Top-left small label: 'AGE 1–5세'. Two large card blocks stacked vertically, each with light gray background #F0F4F8. Card 1: small tag '영아기 1-2세', giant bold number '11-14' in teal, unit '시간/일' navy. Card 2: small tag '학령전기 3-5세', giant bold number '10-13' in teal, unit '시간/일' navy. Bottom caption: '낮잠 포함 24시간 기준' small gray. No pixel values as text."
+    },
+    {
+      "n": 5,
+      "role": "school-age",
+      "prompt": "Clean infographic style. White background #FFFFFF. Top-right: '소아과언니' navy. Top-left small label: 'AGE 6–12세'. Single large hero card, light gray background #F0F4F8, generous padding. Small tag '학령기 6-12세'. Giant bold number '9-12' in teal #2C6E63, very large. Unit '시간/일' navy. Below number: horizontal bar visualization showing 9h minimum to 12h maximum as filled teal bar on gray track. Bottom note: '취학 후 수면이 가장 부족해지는 시기' in coral #C44536, small. No pixel values as text."
+    },
+    {
+      "n": 6,
+      "role": "teen",
+      "prompt": "Clean infographic style. White background #FFFFFF. Top-right: '소아과언니' navy. Top-left small label: 'AGE 13–18세'. Single large hero card, light gray background #F0F4F8. Small tag '청소년기 13-18세'. Giant bold number '8-10' in teal, very large. Unit '시간/일' navy. Below: coral warning box with hand-drawn border — '⚠️ 한국 청소년 평균 수면: 6-7시간 — 권장보다 2시간 부족'. Bottom note small gray: 'AASM 2016 / AAP 지지'. No pixel values as text."
+    },
+    {
+      "n": 7,
+      "role": "insufficient-sleep-signs",
+      "prompt": "Clean infographic style. White background #FFFFFF. Top-right: '소아과언니' navy. Top-left label: 'CHECK'. Headline: '수면 부족 신호 5가지' navy, '5가지' highlighted teal underline. Numbered list 1-5, each item: large teal number + navy text. 1. 아침에 깨우기가 너무 힘들다 2. 낮에 자주 졸거나 멍하다 3. 감정 기복이 심하고 쉽게 짜증낸다 4. 주말에 평일보다 2시간 이상 더 잔다 5. 집중력이 떨어지고 학습 효율이 낮다. Clean spacing, no decorative elements. No pixel values as text."
+    },
+    {
+      "n": 8,
+      "role": "tips-and-warning",
+      "prompt": "Clean infographic style. White background #FFFFFF. Top-right: '소아과언니' navy. Top-left label: 'TIPS'. Headline: '잠 잘 자는 환경 만들기' navy. Four tip items with teal bullet icons: · 취침 1시간 전 스크린 끄기 · 매일 같은 시간에 자고 일어나기 · 침실 어둡고 시원하게 유지 · 취침 전 음식·주스 금지. Below: coral outlined warning box — '병원 가야 할 때: 6개월 이상 잠들기 힘듦 / 수면 중 코골이+무호흡 / 야경증 주 2회 이상'. No pixel values as text."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Clean infographic style. White background #FFFFFF. Top-right: '소아과언니' navy small. Top label gray: 'SAVE & SHARE'. Large headline: '오늘 확인하고 저장하세요' navy, '저장하세요' teal highlight. Source box light gray #F0F4F8 rounded: 출처 · AASM Consensus Statement. J Clin Sleep Med 12(6), 2016 · AAP HealthyChildren.org (2023) · Nelson Textbook of Pediatrics (2020). Below divider: large '소아과언니' navy bold. 'DR.SOA UNNIE · 소아청소년과 전문의' gray small. Divider line. '@dr.soa_unnie · 매주 새 가이드' navy small. '소아과수첩 앱 · 수면 문제 진료 전 메모해두기' teal small. No pixel values as text. No quotes on card."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Center: large warm brown bold headline 여름철 비타민D, two lines, 계속 먹여야 할까요 with teal green #2C7A5C underline. Below: small gray subtitle 연중 보충 가이드 · AAP 권장 기준. Bottom center: LARGE cute character illustration of chubby baby sitting with sun and vitamin D bottle beside, warm cozy colors, soft watercolor style, happy expression. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 기본 원칙. Large bold headline: 여름에도 warm brown, 매일 필요해요 teal green #2C7A5C. Center: cute character illustration of baby with calendar showing all four seasons, warm watercolor style. Below illustration: light cream card #FFF0E0 rounded with warm brown text: AAP 권장 출생 직후부터 매일 최소 400 IU · 계절 무관 연중 내내. Small teal checkmark bottom-right of card. Warm pastel colors throughout. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral rounded label: 햇빛만으로 부족. Large bold headline: 햇빛 노출은 warm brown, 위험해요 coral #E05C3A. Center: two cards in vertical stack. Top card cream #FFF0E0: cute baby under umbrella illustration + 6개월 미만 직사광선 피하기 warm brown text + teal note 피부암 위험. Bottom card cream: cute sunscreen bottle illustration + 자외선 차단제 사용 시 + teal note 비타민D 생성 감소. Warm cozy colors. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 누가 먹어야 할까. Large bold headline: 모유수유 warm brown, 분유수유 모두 teal green #2C7A5C. Center: two large cards vertical stack. Top card cream #FFF0E0: cute chubby baby breastfeeding illustration + 완전 모유수유 warm brown bold + 출생 후 며칠 이내부터 매일 400 IU + small teal checkmark. Bottom card cream: cute baby with formula bottle illustration + 분유 1L 미만 섭취 시 warm brown bold + 매일 400 IU 보충 + small teal checkmark. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 연령별 권장량. Large bold headline: 나이에 맞게 warm brown, 조절하세요 teal green #2C7A5C. Center: two large cards horizontal side by side. Left card cream #FFF0E0 rounded: cute crawling baby illustration + 12개월 미만 warm brown bold + 매일 400 IU + small teal icon vitamin D droplet. Right card cream: cute toddler standing illustration + 소아 및 청소년 warm brown bold + 매일 600 IU + small teal icon vitamin D droplet. Warm pastel colors. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 왜 중요할까. Large bold headline: 뼈 건강의 warm brown, 필수 영양소 teal green #2C7A5C. Center: large cute character illustration of happy baby with strong bones icon, warm watercolor style. Below: two cream cards #FFF0E0 stacked. Top card: 구루병 예방 warm brown bold + 뼈가 물러지는 질병 차단. Bottom card: 칼슘과 인 흡수 warm brown bold + 뼈 건강 최적화. Small teal hearts decorative. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 식품만으로 충분할까. Large bold headline: 음식만으로는 warm brown, 부족해요 coral #E05C3A. Center: two cards vertical stack cream #FFF0E0. Top card: cute breastfeeding mom illustration + 모유 리터당 5-80 IU 정도만 warm brown + coral note 매우 적음. Bottom card: cute illustrated natural foods plate + 자연식품 비타민D 부족 warm brown + coral note 식이만으로 권장량 달성 어려움. Warm cozy colors. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 이런 경우 꼭 챙기세요. Large bold headline: 여름에도 warm brown, 더 필요한 경우 teal green #2C7A5C. Center: two cards vertical stack cream #FFF0E0 rounded. Top card: cute Korean baby illustration with slightly tan skin tone + 피부색이 어두운 아이 warm brown bold + 최대 10배 더 많은 햇빛 필요 + teal note 보충 필수. Bottom card: cute baby indoors with window illustration + 실내 생활 많거나 차단제 사용 warm brown bold + 여름에도 보충 필요. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline center: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline. Source box cream #FFF0E0 rounded, warm brown text: 출처 warm brown bold, AAP Prevention of Rickets and Vitamin D Deficiency 2008, AAP Vitamin D for Children 2022, 대한소아청소년과학회 비타민D 가이드 2024, Wagner et al Pediatrics 2015. Warm brown horizontal divider. Center: 소아과언니 warm brown bold large, NO quotes. Small gray: DR.SOA UNNIE · 소아청소년과 전문의. Thin divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 성장 기록으로 비타민D 체크 teal. Cute baby and vitamin D bottle illustrations around brand block. No pixel text. No quotes."
+    }
+  ]
+}

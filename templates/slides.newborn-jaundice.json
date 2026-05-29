@@ -1,0 +1,55 @@
+{
+  "topic": "newborn-jaundice",
+  "topic_kr": "신생아 황달",
+  "palette": "A",
+  "output_dir": "output/newborn-jaundice",
+  "image_size": "1080x1350",
+  "image_orientation": "portrait",
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Large breathing whitespace before headline. Headline COMPACT two lines: 신생아 황달 navy, 가이드 with 가이드 underlined in teal #2C6E63. Small subtitle gray: 언제 걱정해야 할까요 · AAP 2022 가이드라인 기준. LARGE minimalist newborn baby with jaundice glow line illustration in teal, prominently placed center-right. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray label: COMMON. Headline COMPACT: 신생아 황달은 navy, 흔합니다 teal #2C6E63 underline. Large minimalist illustration of multiple newborn silhouettes with yellow tint, teal line art style, center-top. Below: two large info cards with REDUCED text + GENEROUS padding + comfortable spacing. Left card light gray #F0F4F8: 만삭아 약 60% teal bold large, 생후 첫 주 navy small. Right card light gray: 미숙아 약 80% teal bold large, 생후 첫 주 navy small. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray rounded label: WHY. Headline COMPACT: 왜 생기는지 navy, 알아두세요 teal #2C6E63 underline. Center-top: large minimalist icon of liver and red blood cells with bilirubin molecules, teal and coral line art. Below: single large card light gray #F0F4F8 with GENEROUS padding. Card content: 빌리루빈이 쌓여요 navy bold + small text 적혈구 수명이 짧고 간 기능 미숙 gray + small icon blood cell teal. Bottom: 피부와 눈 흰자위가 노래요 navy small. Thin teal divider bottom. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray label: TYPE. Headline COMPACT: 생리적 vs navy, 병적 황달 coral #C44536 underline. Two side-by-side cards equal width GENEROUS spacing. Left card light teal #E8F4F2 header: 생리적 황달 teal bold + checkmark icon. Body: 생후 2-3일 시작 navy small + 5-7일경 좋아짐 navy + 정상 과정 gray. Right card light coral #FFF3E0 header: 병적 황달 coral bold + alert icon. Body: 생후 24시간 이내 navy small + 2주 이상 지속 navy + 즉시 진료 coral bold. Thin navy divider bottom. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: CHECK. Headline COMPACT: 언제 검사해야 navy, 할까요 coral #C44536 underline. Center-top: large minimalist illustration of doctor checking newborn with measurement device, teal line art. Below: two stacked cards light gray #F0F4F8 GENEROUS padding + spacing. Top card: 생후 24-48시간 내 teal bold large + 빌리루빈 수치 측정 navy + AAP 2022 권장 gray small. Bottom card coral accent border: 생후 24시간 이내 황달 coral bold + 즉시 의료진에게 알리세요 navy. Thin coral divider bottom. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray label: TREATMENT. Headline COMPACT: 광선치료는 navy, 안전합니다 teal #2C6E63 underline. Center-top: large minimalist illustration of baby under phototherapy lamp with light rays, teal and coral line art. Below: single large card light gray #F0F4F8 GENEROUS padding. Card header: 광선치료 teal bold + lightbulb icon. Body numbered list REDUCED text: 1. 빌리루빈 수치가 기준 초과 시 navy + 2. 안전하고 효과적 navy + 3. AAP 2022 기준 상향 조정 gray small. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray rounded label: PREVENTION. Headline COMPACT: 모유수유가 navy, 도와요 teal #2C6E63 underline. Center-top: large minimalist illustration of breastfeeding mother and baby, teal line art. Below: two stacked cards light gray #F0F4F8 GENEROUS padding + spacing. Top card teal accent: 생후 첫 시간 내 시작 teal bold + 24시간에 8회 이상 navy. Bottom card coral border: ⚠️ 물·포도당액 보충 coral bold + 권장되지 않아요 navy. Thin teal divider bottom. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: EMERGENCY. Headline COMPACT: 치료가 늦으면 navy, 위험해요 coral #C44536 underline. Center-top: large minimalist illustration of brain with warning symbol, coral and navy line art. Below: single large card light coral #FFF3E0 GENEROUS padding + coral left border thick. Card header: 핵황달 위험 coral bold + alert icon. Body list REDUCED text: • 빌리루빈 뇌 축적 navy + • 청력 저하 navy + • 뇌성마비 navy + • 발달 지연 navy. Bottom: 조기 진료가 중요합니다 coral bold. Thin coral divider bottom. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right: 소아과언니 navy, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT center: 오늘 확인하고 navy, 저장하세요 teal #2C6E63 underline. Source box light gray #F0F4F8 rounded GENEROUS padding left-aligned: 출처 navy small bold + • AAP 2022 가이드라인 gray + • 질병관리청 국가건강정보 gray + • StatPearls 신생아 황달 gray + • Pediatrics 2022 원저 gray. Generous spacing + thin horizontal navy divider. 소아과언니 navy bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray small center. Thin divider. @dr.soa_unnie · 매주 새 가이드 navy center. 소아과수첩 앱 · 진료 메모 미리 작성하기 teal center. No pixel values. No quotes."
+    }
+  ]
+}

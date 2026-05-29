@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Top-left small gray: PARENTING NOTE · 011. Left side upper area: very large bold Korean headline two lines — first line 가정의달 외식 in deep navy, second line 영양 가이드 in coral #C44536. Below headline: small muted gray subtitle 레스토랑에서도 건강하게 · AAP 권장 기준. Right side center-bottom: large clean editorial illustration of family dining at restaurant with healthy food plates, line art style in coral and teal, minimal clean strokes showing vegetables fruits and balanced meal. Bottom area: thin coral horizontal accent line. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 외식 현황. Large bold headline: 5월 가정의달 navy, 외식 급증 coral #C44536. Center: clean editorial illustration of calendar with May highlighted and restaurant icons, line art coral/navy minimal. Below: light gray rounded card #F0F0EE with generous padding. Bold navy text: 미국 가정 식품 예산의 절반이 외식. Small navy text: 총 칼로리의 1/3을 집 밖에서 섭취. Coral rounded box below: 레스토랑 음식은 칼로리 높고 영양 품질 낮은 경향. Bottom small gray: AAP HealthyChildren.org 2012. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. White background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 어린이 메뉴. Large bold headline: 키즈 메뉴 navy, 영양 기준 coral #C44536. Center: clean editorial illustration of kids menu items in line art coral/navy minimal. Light gray card #F0F0EE rounded: Bold coral text TOP 5 인기 메뉴. Navy numbered list: 1. 감자튀김 2. 치킨너겟 3. 피자 4. 햄버거 5. 아이스크림. Horizontal thin navy divider in card. Below divider: Bold navy text 권장 칼로리 기준. Three small coral boxes side by side: 메인 300kcal / 감자튀김 100kcal / 디저트 150kcal. Small gray text below: 전체 600kcal 이하 권장 · RAND 2017. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. White background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 2026 최신 가이드. Large bold headline: 미국 식이지침 navy, 핵심 원칙 coral #C44536. Center: clean editorial illustration of balanced plate with food groups, line art coral/navy minimal. Two light gray cards #F0F0EE stacked vertically with generous padding. Top card: Bold coral text ✓ 중점 영양소. Navy bullet list: · 단백질 유제품 · 채소 과일 · 건강한 지방 통곡물 · 최소 가공 식품. Bottom card: Bold coral text ✗ 제한 항목. Navy bullet list: · 고도 가공식품 · 첨가당 · 인공 첨가물 · 당류 음료. Bottom small gray: AAP News 2026-01 · Dietary Guidelines. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. White background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 실전 팁. Large bold headline: 레스토랑 navy, 건강 주문법 coral #C44536. Center: clean editorial illustration of family sharing meal and choosing fruit sides, line art coral/navy minimal. Three light gray cards #F0F0EE rounded stacked vertically. Card 1: Coral number 1 circle + Bold navy: 과일·채소 반찬 선택 + Small gray: 감자튀김 대신 색깔 있는 과일 채소. Card 2: Coral number 2 circle + Bold navy: 음식 나눠 먹기 + Small gray: 애피타이저를 메인으로 또는 절반 포장. Card 3: Coral number 3 circle + Bold navy: 먹기 전 절반 포장 요청 + Small gray: 적정량 섭취로 과식 예방. Bottom small gray: BMC Public Health 2017 · Nemours KidsHealth. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. White background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 음료 선택. Large bold headline: 설탕 음료 navy, 제한 기준 coral #C44536. Center: clean editorial illustration of water glass with X mark on sugary drinks, line art coral/navy minimal. Coral outline rounded box generous padding: ⚠️ coral + Bold coral text: 2세 이상 첨가당 제한. Bold navy text below: 하루 6티스푼 25g 이하. Navy text: 설탕 음료 주당 1잔 8온스 이하. Light gray card #F0F0EE below: Bold navy: 100% 과일 주스 권장량. Two columns: Left 1-3세 하루 4온스 / Right 4-6세 하루 4-6온스. Small gray below: 물과 무가당 음료 우선 선택. Bottom small gray: AHA·AAP 2016 · AAP Policy 2017. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. White background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 필수 영양소. Large bold headline: 성장기 navy, 영양 관리 coral #C44536. Center: clean editorial illustration of various nutrients icons protein calcium iron vitamin D, line art coral/navy minimal. Light gray card #F0F0EE rounded generous padding. Bold coral text: 어린이·청소년 필수 영양소. Navy grid layout four items: 단백질 / 칼슘 / 철분 / 비타민D. Thin navy divider in card. Below divider bold navy: 세 끼 식사 + 적절한 간식. Coral rounded box below main card: Bold navy: 유아기 1-5세 특별 주의. Small navy: 식습관 형성 중요 시기 · 철분·칼슘 부족 주의. Bottom small gray: 질병관리청 국가건강정보포털 2024. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. White background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 간식 가이드. Large bold headline: 건강한 navy, 간식 선택법 coral #C44536. Center: clean editorial illustration of colorful fruits vegetables yogurt cheese arranged aesthetically, line art coral/navy minimal. Light gray card #F0F0EE rounded: Bold coral text ✓ 추천 간식. Navy bullet list: · 다양한 색깔 생 채소·과일 · 요거트 치즈 스틱 · 통곡물 간식. Coral card below: Bold navy WHO 권장량. Two columns: 10세 이상 하루 400g / 더 어린 아이 250-350g. Light gray card #F0F0EE below: Bold coral text ✗ 피할 것. Navy text: 가공식품 · 첨가당. Small navy below: 미취학 아동 하루 1-2회 건강 간식 필요. Bottom small gray: WHO 2026 · AAP HealthyChildren 2020. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 with thin coral underline. Source box light gray #F0F0EE rounded generous padding: 출처 navy small bold. · American Academy of Pediatrics HealthyChildren.org AAP News 2012-2026. · BMC Public Health 2017 Nemours KidsHealth 2024. · 질병관리청 국가건강정보포털 2024. · World Health Organization WHO 2026. Horizontal thin navy divider. Center: 소아과언니 navy bold large — NO quotes NO decoration. Small gray DR.SOA UNNIE · 소아청소년과 전문의. Horizontal thin gray divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 성장 기록으로 영양 관리 coral. No pixel text on card. No quotes anywhere."
+    }
+  ]
+}

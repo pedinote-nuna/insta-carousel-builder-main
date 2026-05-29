@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small handwritten label: PARENTING NOTE · 012 in muted gray. Korean headline navy with 자세 교정법 highlighted in mustard #D4A84A marker style: 아기 납작머리 / 예방하는 자세 교정법. Subtitle below gray smaller: 똑바로 재우면서도 두상 지키는 5가지 방법 · AAP 권장. Hand-drawn small illustration lower right: baby lying down with gentle head support line art sketch, simple black ink strokes, no color fills. Top-right corner: 소아과언니 navy small, exactly 4 characters only, no quotes, no decoration."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: STEP 00 · BACKGROUND in muted gray. Korean headline navy with Back to Sleep highlighted in mustard marker: Back to Sleep 캠페인 이후 / 납작머리가 늘었어요. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of baby sleeping on back in crib, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: 수면 중엔 반드시 똑바로 눕혀 재우되, 깨어있을 땐 자세를 바꿔주세요. Bottom area: hand-drawn rectangle coral #C44536 outlined with corner cross marks. Inside warning box: ⚠️ icon + bold text in coral: 잠잘 때는 영아돌연사 예방 위해 반드시 똑바로! Top-right: 소아과언니 navy small, exactly 4 characters only, no quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: STEP 01 · TUMMY TIME in muted gray. Korean headline navy with 배밀이 시간 highlighted in mustard marker: 매일 감독 하에 / 배밀이 시간 충분히 주기. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of baby on tummy with parent watching, playful simple line art black ink, slightly rough strokes, no color fills. Caption gray below: 생후 3개월까지 하루 약 1시간 목표로 점진적으로 늘리세요. Bottom area small gray rounded box: 목·어깨 근육 강화 + 두개골 압력 분산. Top-right: 소아과언니 navy small, exactly 4 characters only, no quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: STEP 02 · HEAD POSITION in muted gray. Korean headline navy with 머리 방향 highlighted in mustard marker: 침대에서 아기 / 머리 방향 정기적으로 바꾸기. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of baby in crib with arrows showing head position alternating directions, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: 며칠은 발이 한쪽 끝, 며칠 후엔 반대 방향으로. Bottom area small gray rounded box: 항상 같은 부위에 압력 가해지지 않도록. Top-right: 소아과언니 navy small, exactly 4 characters only, no quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: STEP 03 · UPRIGHT TIME in muted gray. Korean headline navy with 바운서 사용 highlighted in mustard marker: 깨어있을 땐 / 바운서 사용 줄이기. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of baby being held upright on shoulder by parent, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: 카시트·바운서·유모차에 너무 오래 두지 마세요. Bottom area small gray rounded box: 낮 시간 세워 안아주는 시간 자주 갖기. Top-right: 소아과언니 navy small, exactly 4 characters only, no quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: STEP 04 · FEEDING POSITION in muted gray. Korean headline navy with 수유 자세 highlighted in mustard marker: 수유·안을 때 / 수유 자세 번갈아 바꾸기. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of baby being fed alternating left and right sides, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: 분유 수유 시 매번 다른 쪽으로 머리 방향 바꿔가며. Bottom area small gray rounded box: 편평한 부위에 압력 가해지지 않도록. Top-right: 소아과언니 navy small, exactly 4 characters only, no quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: STEP 05 · VISUAL STIMULATION in muted gray. Korean headline navy with 관심 유도 highlighted in mustard marker: 장난감 위치 바꿔 / 관심 유도하기. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of baby in crib with toys and mobiles on different sides, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: 청각·시각 자극 있는 방향으로 침대 배치하여 자연스럽게 반대쪽 보게. Bottom area small gray rounded box: 관심 대상 위치 자주 바꿔주세요. Top-right: 소아과언니 navy small, exactly 4 characters only, no quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: STEP 06 · EARLY START in muted gray. Korean headline navy with 생후 초기 highlighted in mustard marker: 생후 초기부터 / 조기 자세 교정 시작. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of newborn baby with gentle stretching guide, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: 출생~3개월에 시작하는 것이 가장 효과적입니다. Bottom area: hand-drawn rectangle coral #C44536 outlined with corner cross marks. Inside warning box: ⚠️ icon + bold text in coral: 목 근육 긴장(사경) 있다면 기저귀 갈 때마다 스트레칭. 개선 안 되면 소아청소년과 상담 필요. Top-right: 소아과언니 navy small, exactly 4 characters only, no quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style closing page. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: SAVE & SHARE in muted gray. Korean headline navy with 저장하세요 highlighted in mustard marker: 오늘 확인하고 / 저장하세요. Source area: hand-drawn rectangle thin black line border with small corner cross marks. Inside 출처 navy bold. List in gray smaller font: · Pediatrics 2011 AAP Guideline Prevention and Management of Positional Skull Deformities in Infants. · Nemours KidsHealth 2024 Tummy Time Guidelines. · NIH Safe to Sleep 2024 Benefits of Tummy Time. · AAP Grand Rounds 2014 Positional Plagiocephaly Prevention is Key. Thin hand-drawn horizontal divider. Brand block center: 소아과언니 medium-bold large navy exactly 4 characters NO pixel values NO quotes. Below: DR.SOA UNNIE · 소아청소년과 전문의 small caps gray. Thin hand-drawn horizontal divider. Below: @dr.soa_unnie · 매주 새 가이드 navy small. Below: 소아과수첩 앱 · 성장 기록 coral small. Top-right: 소아과언니 navy small exactly 4 characters only no quotes. ABSOLUTE RULE: never render numbers followed by px anywhere on card."
+    }
+  ]
+}

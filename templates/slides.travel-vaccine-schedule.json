@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Large breathing whitespace before headline. Headline COMPACT two lines: 해외여행 전 navy, 예방접종 타이밍 with 타이밍 underlined in teal #2C6E63. Small subtitle gray: 출국 4-6주 전 상담 필수 · CDC 가이드라인 기준. LARGE minimalist airplane and vaccine syringe line illustration in teal, prominently placed center-right. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 상담 시기. Headline COMPACT: 출국 4-6주 전 navy, 상담 필수 teal #2C6E63 underline. Center: clean calendar illustration with 4-6 weeks marked in teal, line art minimal. Below: single large card light gray #F0F4F8 GENEROUS padding, rounded corners. Card content: clock icon top-left teal, bold headline navy 여러 차례 접종이 필요한 백신도 있습니다, body text navy smaller 일부 백신은 2-3회 접종이 필요하므로 가능한 빨리 상담 받는 것이 중요합니다. Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 홍역 MMR. Headline COMPACT: 6-11개월 영아도 navy, 접종 가능 teal #2C6E63 underline. Center: large vaccine vial illustration with MMR label in teal, line art minimal. Stacked two cards GENEROUS spacing, REDUCED text 20% smaller. Top card light gray #F0F4F8: syringe icon teal, 출국 2주 전 접종 권장 navy bold, 면역 형성 충분한 시간 확보 gray smaller. Bottom card light amber #FFF3E0: info icon coral, 12개월 이전 접종은 navy bold, 정규 2회에 미포함 gray smaller, 12개월 이후 다시 2회 필요 gray. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: A형간염. Headline COMPACT: 최소 2주 전 navy, 접종 가능 teal #2C6E63 underline. Center: large liver icon with shield illustration in teal, line art minimal. Stacked two cards GENEROUS spacing, REDUCED text 20% smaller. Top card light teal #E8F4F2: checkmark icon teal, 2주 전 접종도 보호 효과 navy bold, 단기 여행도 충분 gray smaller. Bottom card light amber #FFF3E0: baby icon coral, 6-11개월 영아 접종 가능 navy bold, 12개월 이후 정규 2회 추가 필요 gray smaller. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 황열. Headline COMPACT: 9개월 이상 navy, 접종 필수 coral #C44536 underline. Center: large mosquito and vaccine certificate illustration in teal and coral, line art minimal. Stacked two cards GENEROUS spacing, REDUCED text 20% smaller. Top card light gray #F0F4F8: document icon teal, 일부 국가 입국 시 navy bold, 접종 증명서 필수 제출 gray smaller. Bottom card coral light background: alert icon coral, 접종 10일 후 면역 형성 navy bold, 입국 최소 10일 전 완료 필수 gray smaller. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 접종 간격. Headline COMPACT: 생백신과 navy, 비생백신 teal #2C6E63 underline. Two side-by-side cards equal width GENEROUS padding. Left card teal header 생백신, light teal #E8F4F2 body: MMR 수두 황열 navy smaller, 동시 또는 28일 간격 navy bold. Right card navy header 비생백신, light gray #F0F4F8 body: 불활화백신 navy smaller, 간격 제한 없음 navy bold. Bottom coral warning box GENEROUS padding: warning icon coral, 생백신 간격 주의 navy bold smaller. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 따라잡기 접종. Headline COMPACT: 정규 접종 미완료 시 navy, 최소 간격 적용 teal #2C6E63 underline. Center: large calendar with catch-up schedule illustration in teal, line art minimal. Stacked two cards GENEROUS spacing, REDUCED text 20% smaller. Top card light gray #F0F4F8: checkmark icon teal, 최소 간격 적용하면 navy bold, 여행 전 완료 가능 gray smaller. Bottom card light teal #E8F4F2: info icon teal, 간격이 길어진 경우도 navy bold, 처음부터 다시 시작 불필요 gray smaller. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 특수 상황. Headline COMPACT: 말라리아 예방약과 navy, 면역저하자 coral #C44536 underline. Center: large pill and calendar illustration in teal and coral, line art minimal. Stacked two cards GENEROUS spacing, REDUCED text 20% smaller. Top card light gray #F0F4F8: pill icon teal, 말라리아 예방약 navy bold, 여행 1-2주 전부터 복용 시작 gray smaller, 약제별 시작 시기 다름 gray. Bottom card light amber #FFF3E0: alert icon coral, 면역저하자는 navy bold, 3-4개월 전 상담 필수 gray smaller. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right: 소아과언니 navy, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT: 오늘 확인하고 navy, 저장하세요 teal #2C6E63 underline. Source box light gray #F0F4F8 rounded GENEROUS padding, left-aligned. 출처 navy small bold. CDC Yellow Book 2026 Travel Vaccine Recommendations for Infants and Children. AAP Measles Vaccine 2025. CDC Hepatitis A Vaccine VIS 2026. 질병관리청 해외감염정보 2025. Generous spacing thin horizontal divider navy. 소아과언니 navy bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin divider navy. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 여행 전 진료 메모해두기 teal. No pixel values. No quotes."
+    }
+  ]
+}

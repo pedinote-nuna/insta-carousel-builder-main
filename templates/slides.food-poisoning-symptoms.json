@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Top-left small gray: PARENTING NOTE · 023. Left side upper area: very large bold Korean headline two lines — first line 식중독 초기증상과 in deep navy, second line 대처법 in coral #C44536. Below headline: small muted gray subtitle 아이가 구토·설사할 때 · 질병관리청 가이드. Right side center-bottom: large clean editorial illustration of child with stomach discomfort and caring parent, line art style in coral and teal, minimal clean strokes showing thermometer and water glass. Bottom area: thin coral horizontal accent line. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 정의. Large bold headline: 식중독이란 in navy, 무엇일까요 in coral #C44536. Center: clean editorial illustration of contaminated food with bacteria symbols, line art coral/navy minimal clean strokes. Below illustration: light gray rounded card #F0F0EE with generous padding. Bold navy text: 오염된 음식물 섭취 후 나타나는 질환. Small navy bullet list: · 구토, 설사, 복통, 발열 등 증상 / · 수 시간 내 증상 시작 / · 원인균 따라 잠복기 다름. Small gray bottom text: 출처: 질병관리청 국가건강정보포털. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 증상. Large bold headline: 이런 증상이 in navy, 나타나요 in coral #C44536. Center area: four light gray rounded cards #F0F0EE arranged in 2x2 grid. Top-left card: coral icon of stomach + bold navy 설사·구토 + small gray 가장 흔한 증상. Top-right card: coral icon of thermometer + bold navy 복통·발열 + small gray 동반 가능. Bottom-left card: coral icon of warning + bold navy 혈변 주의 + small gray 심각한 경우. Bottom-right card: coral icon of medical + bold navy 합병증 위험 + small gray 빠른 대처 필요. Small gray bottom text: 출처: 질병관리청 급성 세균성 장염. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 위험신호. Large bold headline: 탈수 증상을 in navy, 확인하세요 in coral #C44536. Center: coral outline rounded warning box with generous padding. Large coral ⚠️ icon left. Bold coral text: 어린 아이는 탈수가 빠르게 진행됩니다. Navy text list with checkmarks: ✓ 소변이 거의 나오지 않음 / ✓ 매우 진한 색의 소변 / ✓ 심한 갈증 / ✓ 입과 목이 마름 / ✓ 어지러움. Small gray bottom text: 출처: CDC Salmonella 감염 증상. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 치료원칙. Large bold headline: 가장 중요한 것은 in navy, 수분 보충 in coral #C44536. Center: clean editorial illustration of water glass with electrolyte symbols and recovery arrow, line art coral/navy minimal. Below: light gray rounded card #F0F0EE with generous padding. Bold navy headline: 구토·설사로 인한 수분 손실 교정이 핵심. Two navy text sections with coral bullets: • 경미한 식중독 → 충분한 수분 섭취로 자연 회복 / • 탈수 예방이 가장 중요한 치료 목표. Small gray bottom text: 출처: 질병관리청 식중독 예방 가이드. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 수분 보충. Large bold headline: 경구수액염을 in navy, 사용하세요 in coral #C44536. Center: clean editorial illustration of ORS packet and pediatric drink bottle with check mark, line art coral/navy minimal clean strokes. Below: light gray rounded card #F0F0EE with generous padding. Bold navy text: 경구수액치료 ORS는 경증~중등도 탈수 일차 선택. Navy bullet list with coral dots: • 페디라이트 같은 경구수액염 / • 이온음료도 도움 / • 일반 물보다 흡수 빠름. Small gray bottom text: 출처: CDC·AAP 급성 위장염 관리 가이드. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 응급 대처. Large bold headline: 집에서 만드는 in navy, 수액 레시피 in coral #C44536. Center: clean editorial illustration of measuring spoons, water bottle and mixing bowl, line art coral/navy minimal clean strokes. Below: large light gray rounded card #F0F0EE with generous padding and coral left border accent. Bold navy headline: 끓인 물 1L 기준. Large navy text with coral numbers: 설탕 4티스푼 + 소금 1티스푼. Small navy text: 포도당·전해질 포함되어 순수한 물보다 흡수 빠름. Small gray bottom text: 출처: 질병관리청 식중독 가이드. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small mustard #B8860B rounded label: 주의. Large bold headline: 지사제는 in navy, 함부로 쓰지 마세요 in mustard #B8860B. Center: mustard outline rounded warning box with generous padding. Large mustard ✋ icon. Bold mustard text: 설사는 독소 배출 반응입니다. Navy text: 지사제로 멈추면 회복이 지연될 수 있어요. Horizontal thin gray divider inside box. Bold navy subhead: 이럴 땐 병원 방문. Navy checklist with coral bullets: • 탈수가 심한 경우 / • 구토가 심해 물을 못 마실 때 / • 혈변이나 발열이 심할 때. Small gray bottom text: 출처: 질병관리청 식중독 가이드. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 in navy, 저장하세요 in coral #C44536 with thin coral underline. Light gray rounded box #F0F0EE generous padding. 출처 navy small bold. · 질병관리청 국가건강정보포털 식중독 / · 질병관리청 급성 세균성 장염 / · CDC Salmonella 감염 증상 / · AAP 소아 급성 위장염 관리 가이드. Horizontal thin navy divider. 소아과언니 navy bold large center — NO quotes NO decoration. DR.SOA UNNIE · 소아청소년과 전문의 gray small. Horizontal thin gray divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 진료 메모로 증상 기록 coral. No pixel text on card. No quotes anywhere."
+    }
+  ]
+}

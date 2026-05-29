@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Top: bold red #E63946 stripe full width + COMPACT white text '코피 긴급 가이드'. Top-right below stripe: 소아과언니 white Pretendard SemiBold small, no quotes. Headline COMPACT 25% smaller: '고개 뒤로 젖히면' white bold, '더 위험합니다' bright red #E63946. Small white subtitle: 올바른 응급처치법 · AAP 가이드라인 기준. LARGE prominent line illustration child with nosebleed tilting head back with red X mark, white outline on dark background, center-right area. Bottom-left small gray: PARENTING NOTE · 011. No pixel values. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left red rounded label: 흔한 오해 ⚠️. Headline COMPACT: '코피나면 고개를' white, '뒤로 젖힌다?' red #E63946. Center: LARGE illustration showing traditional wrong method with red prohibition symbol overlay, line art style white and red. Below illustration: dark card #1A2B3C rounded, COMPACT white text: 이것은 잘못된 응급처치법입니다. AAP 가이드라인에서도 권장하지 않습니다. Bottom thin red divider. No pixel values. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left red rounded label: 절대 하지 마세요 ❌. Headline COMPACT: '고개 뒤로 젖히면' white, '이런 위험이' red #E63946. Three rows stacked vertically with GENEROUS spacing: Row 1 - SMALL LINE ILLUSTRATION ICON lungs left with red ❌ overlay + COMPACT white text right '기도로 피 흡인 · 질식 위험'. Row 2 - SMALL ICON stomach left with red ❌ overlay + COMPACT white text right '삼킨 피가 위장 자극 · 구토 유발'. Row 3 - SMALL ICON throat left with red ❌ overlay + COMPACT white text right '목 뒤로 넘어가는 피'. Red outlined box around all three rows with comfortable padding. No pixel values. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left mint #2EC4B6 rounded label: 올바른 자세 ✓. Headline COMPACT: '앉아서 고개를' white, '약간 앞으로' mint #2EC4B6. Center: LARGE illustration child sitting upright leaning slightly forward with mint checkmark, line art white and mint, prominent positioning. Below: dark card #1A2B3C rounded GENEROUS padding, white text COMPACT: sniffing position이라 불리는 자세입니다. 피가 기도나 위장으로 넘어가는 것을 막아줍니다. Bottom mint divider. No pixel values. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left mint rounded label: 핵심 행동 ✓. Headline COMPACT: '콧방울을' white, '5분간 압박' mint #2EC4B6. Center-top: LARGE illustration showing hand pinching soft part of nose with arrows indicating pressure points, line art white and mint. Below illustration three cards stacked #1A2B3C rounded GENEROUS spacing: Card 1 - mint number circle 1 + COMPACT white text '엄지와 검지로 콧방울 말랑한 부분 꽉 잡기'. Card 2 - mint number 2 + white text '최소 5분간 지속 압박 (성인 10-15분)'. Card 3 - mint number 3 + white text '중간에 확인하려 손 떼지 않기'. Mint outlined box around cards. No pixel values. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left mint rounded label: 안심하세요 ✓. Headline COMPACT: '소아 코피' white, '90% 이상 안전' mint #2EC4B6. Center: three stacked icon cards #1A2B3C rounded GENEROUS spacing vertical: Card 1 - ICON nose anatomy diagram mint + COMPACT white text '코 앞쪽에서 발생 · 심각하지 않음'. Card 2 - ICON child silhouette mint + white text '6-10세 어린이 56% 경험'. Card 3 - ICON checkmark mint + white text '대부분 자연스럽게 회복'. Small white text bottom: 출처: StatPearls/AAP 가이드라인. No pixel values. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left mint rounded label: 추가 행동 ✓. Headline COMPACT: '이것도' white, '꼭 기억하세요' mint #2EC4B6. Two rows stacked GENEROUS spacing: Row 1 - SMALL ICON mouth breathing left mint ✓ overlay + COMPACT white text right '입으로 숨쉬기 · 입에 고인 피는 뱉어내기'. Row 2 - SMALL ICON tissue with red X left + white text right '코 안에 휴지나 솜 깊이 넣지 않기 · 점막 손상'. Mint outlined box around rows comfortable padding. Bottom: small white italic text center: 질병관리청 권장 사항. No pixel values. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Full-width bright red #E63946 header bar top + white bold COMPACT '병원 방문이 필요한 경우'. Center: LARGE illustration hospital building with red cross or ambulance icon, line art white and red prominent. Below: numbered items on dark cards #1A2B3C GENEROUS spacing: red number circle 1 + COMPACT white text '10-20분 압박해도 지혈 안 됨'. Red number 2 + white text '코피가 자주 반복됨'. Red number 3 + white text '유전성 출혈질환(HHT) 의심 증상'. Large red rounded border around all numbered items with comfortable padding. Bottom small gray text: AAP 권장 기준. No pixel values. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A. VERY GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT center: 오늘 확인하고 white, 저장하세요 mint #2EC4B6 with thin mint underline. Source box dark #1A2B3C rounded GENEROUS padding white text left-aligned: 출처 white small bold. · AAP Clinical Practice Guideline Epistaxis 2020. · 질병관리청 국가건강정보포털 2024. · Johns Hopkins Medicine Nosebleed Guide. · StatPearls Epistaxis 2024. Thin white horizontal divider. 소아과언니 white bold large center NO quotes NO decoration. Small gray below: DR.SOA UNNIE · 소아청소년과 전문의. Thin white divider. White text: @dr.soa_unnie · 매주 새 가이드. Mint text: 소아과수첩 앱 · 야간 달빛병원 바로 찾기. No pixel values. No quotes anywhere."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "topic": "hfmd-prevention-checklist",
+  "topic_kr": "수족구병 예방 체크리스트",
+  "palette": "A",
+  "output_dir": "output/hfmd-prevention-checklist",
+  "image_size": "1080x1350",
+  "image_orientation": "portrait",
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes, 4 characters. Top-left small gray: PARENTING NOTE · 011. Large breathing whitespace before headline. Headline COMPACT two lines: 수족구병 예방 navy, 체크리스트 with 체크리스트 underlined in teal #2C6E63. Small subtitle gray: 5가지 핵심 예방수칙 · 질병관리청 가이드라인 기준. LARGE minimalist illustration of parent washing child hands at sink, line art style in teal and coral, clean simple strokes, prominently placed right side. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy #1A1F36, no quotes. Top-left small teal rounded label: ABOUT. Headline COMPACT: 수족구병 navy, 이란? with 이란 coral #C44536 underline. Center: clean editorial illustration of child with visible hand-foot-mouth rash spots, line art teal/coral minimal, medical diagram style. Below illustration: light gray card #F0F4F8 GENEROUS padding, left-aligned text navy: 손·발·입안에 수포성 발진이 생기는 바이러스 질환. 주로 5세 이하 영유아에게 발생. Coral warning box rounded: ⚠️ 콕사키·엔테로바이러스 감염. 전염성 매우 강함. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: CHECK 1. Headline COMPACT: 손씻기 navy, 30초 이상 with 30초 이상 teal #2C6E63 underline. Large icon illustration of soap bubbles and running water faucet, teal line art, prominently placed upper center. Below: stacked cards light gray #F0F4F8 GENEROUS padding REDUCED text size 20% smaller. Card 1: 비누·세정제 + 흐르는 물 → 30초 이상 navy bold. Card 2 title small teal: 필수 시점, bullet list navy: · 기저귀 뒤처리 후 · 배변 후 · 코를 풀거나 기침·재채기 후 · 환자를 돌본 후. Comfortable vertical spacing between cards. No pixel values as text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: CHECK 2. Headline COMPACT: 눈·코·입 navy, 만지지 않기 with 만지지 않기 teal underline. Center: large illustration of child face with prohibition symbols over eyes-nose-mouth, coral X marks, teal face outline, clean minimal style. Below: light gray card #F0F4F8 GENEROUS padding REDUCED text: 씻지 않은 손으로 눈·코·입 만지지 않기 navy bold. Light amber card #FFF3E0: ⚠️ small coral + 바이러스 침투 경로 navy bold + 입·눈·코를 통해 몸 안으로 들어감 gray small. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: CHECK 3. Headline COMPACT: 환경 소독 navy, 철저히 with 철저히 teal underline. Large illustration of spray bottle cleaning toys and doorknob, teal and coral accents, line art style, upper center. Stacked cards light gray #F0F4F8 GENEROUS padding REDUCED text 20% smaller comfortable spacing. Card 1: 🧸 small icon + 자주 만지는 표면·공유 물건 navy bold + 장난감·문손잡이 등 소독 gray. Card 2: 👕 small icon + 환자 배설물 묻은 옷 navy bold + 철저히 세탁 gray. No pixel values. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: CHECK 4. Headline COMPACT: 밀접 접촉 navy, 피하기 with 피하기 teal underline. Center: illustration of two children with safe distance arrow between them, prohibition symbol over hug/kiss gesture, coral and teal line art minimal. Below: two side-by-side cards equal width GENEROUS padding. Left card coral header #C44536: 피해야 할 행동 white text, body light gray: · 포옹·키스 등 밀접 접촉 · 컵·식기 등 개인 물건 공유. Right card teal header #2C6E63: 안전한 행동 white text, body light gray: · 충분한 거리 유지 · 개인 물건 따로 사용. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: CHECK 5. Headline COMPACT: 기침 예절 navy, 지키기 with 지키기 teal underline. Large illustration of child coughing into elbow sleeve, droplets shown with coral dots, teal outline figure, upper center prominent. Light gray card #F0F4F8 GENEROUS padding REDUCED text: 옷소매 위쪽 또는 휴지로 입과 코 가리고 기침 navy bold. Light teal card #E8F4F2: ℹ️ small teal + 전파 경로 navy bold + 기침·재채기 시 호흡기 비말(침방울)을 통해 바이러스 전파 gray small. Bottom thin teal divider. No pixel values. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: IMPORTANT. Headline COMPACT: 등원 기준과 navy, 예방 핵심 with 예방 핵심 coral #C44536 underline. Stacked cards GENEROUS padding REDUCED text comfortable spacing. Light teal card #E8F4F2: 등원 가능 조건 teal bold + · 열 없음 · 수업 참여 가능 · 조절되지 않는 침흘림 없음 navy. Light amber card #FFF3E0: 등원 자제 기간 coral bold + 발병 후 1주일간 등원·외출 자제 navy + 증상 시 즉시 병의원 진료 gray. Coral warning box rounded: ⚠️ + 미국은 수족구병 예방백신 없음 → 예방수칙 준수가 핵심 navy bold. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right small: 소아과언니 navy, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT center: 오늘 확인하고 navy, 저장하세요 with 저장하세요 teal #2C6E63 underline. Source box light gray #F0F4F8 rounded GENEROUS padding left-aligned. 출처 navy small bold newline · Centers for Disease Control and Prevention (CDC) newline · 질병관리청 정책브리핑. Generous vertical spacing then thin horizontal navy divider. 소아과언니 navy bold large center NO quotes NO decoration. Small gray: DR.SOA UNNIE · 소아청소년과 전문의. Thin horizontal divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 야간·달빛병원 바로 찾기 teal. No pixel values as text. No quotes anywhere on card."
+    }
+  ]
+}

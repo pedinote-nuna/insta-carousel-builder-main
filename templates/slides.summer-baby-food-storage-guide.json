@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Center: large warm brown bold headline 여름철 이유식 보관, two lines, second line 완전정복 with teal green #2C7A5C underline. Below: small gray subtitle 온도·시간 기준표 · FDA 권장 기준. Bottom center: LARGE cute character illustration of chubby baby sitting next to refrigerator with baby food containers, mom character organizing food storage, warm cozy pastel colors, chubby round characters, watercolor style. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 기본 원칙. Large bold headline: 여름철 이유식 관리 warm brown, 핵심 2가지 teal green #2C7A5C. Center: cute illustration of thermometer character and clock character holding hands, warm colors. Below center: two large cards in vertical stack, light cream #FFF0E0 rounded. First card: 2시간 룰 teal bold + 실온 2시간 이상 방치 시 세균 급증 warm brown + small cute bacteria illustration. Second card: 면역체계 미성숙 teal bold + 영유아는 성인보다 식중독 위험 높음 warm brown + small baby character. Small gray bottom: FDA 권장 기준. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 보관 온도. Large bold headline: 냉장·냉동 온도 warm brown, 필수 기준 teal green #2C7A5C. Center top: cute refrigerator character illustration with temperature displays, warm pastel colors. Below: two large cards stacked vertically, light cream #FFF0E0 rounded. First card: 냉장고 4도 이하 teal bold + 세균 증식 억제 온도 warm brown + small snowflake icon teal. Second card: 냉동실 영하18도 이하 teal bold + 장기 보관 온도 warm brown + small ice crystal icon teal. Small gray bottom: Foodsafety.gov 권장. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 시판 이유식. Large bold headline: 개봉 후 냉장 보관 warm brown, 기준표 teal green #2C7A5C. Center top: cute baby food jar character illustration with open lid, warm colors. Below: two large cards in vertical stack, light cream #FFF0E0 rounded. First card: 과일·채소 2-3일 teal bold + 개봉 후 냉장 보관 시 warm brown + cute fruit/vegetable illustration. Second card: 고기·계란 1일 teal bold + 단백질 함유 제품 빠른 섭취 warm brown + cute meat/egg illustration. Small teal checkmark corners on cards. Small gray bottom: FDA 기준. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 집 이유식. Large bold headline: 직접 만든 이유식 warm brown, 냉장 기준 teal green #2C7A5C. Center top: cute mom character cooking illustration with baby food pot, warm cozy colors. Below: two large cards in vertical stack, light cream #FFF0E0 rounded. First card: 냉장 1-2일 이내 teal bold + 조리 후 빠른 섭취 필수 warm brown + small calendar icon. Second card: 2시간 내 냉장 teal bold + 조리 후 즉시 보관으로 세균 차단 warm brown + small clock icon. Small teal checkmark corners. Small gray bottom: Foodsafety.gov 권장. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 냉동 보관. Large bold headline: 이유식 종류별 warm brown, 냉동 기간 teal green #2C7A5C. Center top: cute freezer character illustration with ice crystals, warm colors. Below: three cards in vertical stack, light cream #FFF0E0 rounded. First card: 과일·채소 6-8개월 teal bold + 비교적 장기 보관 가능 warm brown + small fruit icon. Second card: 고기·계란 1-2개월 teal bold + 단백질 제품 짧은 보관 warm brown + small meat icon. Third card: 집 이유식 1-2개월 권장 teal bold + 신선도 유지 위해 warm brown + small home cooking icon. Small teal checkmark corners. Small gray bottom: FDA·USDA 기준. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral rounded label: 절대 금지. Large bold headline: 재보관·재냉동 warm brown, 절대 안 돼요 coral #E05C3A. Center top: cute baby character with X mark illustration, concerned expression, warm colors. Below: two large cards in vertical stack, light cream #FFF0E0 rounded with coral accent. First card: 먹다 남은 음식 즉시 폐기 coral bold + 침 속 세균으로 오염 warm brown + small bacteria X illustration coral. Second card: 해동 후 재냉동 금지 coral bold + 24시간 내 사용 필수 warm brown + small freezer X illustration coral. Coral X marks on card corners. Small gray bottom: FDA 안전 기준. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 재가열. Large bold headline: 안전한 이유식 warm brown, 재가열 방법 teal green #2C7A5C. Center top: cute microwave character illustration with baby food bowl, warm colors, steam rising. Below: two large cards in vertical stack, light cream #FFF0E0 rounded. First card: 내부 온도 74도 이상 teal bold + 세균 완전 사멸 온도 warm brown + small thermometer illustration. Second card: 전자레인지 15초 후 저어주기 teal bold + 30초 대기 후 온도 확인 warm brown + small timer illustration. Small teal checkmark corners. Small gray bottom: MSU Extension 권장. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline center: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal green #2C7A5C with thin teal underline. Source box light cream #FFF0E0 rounded: 출처 warm brown small bold, bullet list: U.S. Food and Drug Administration 2022, Foodsafety.gov DHHS 2025, Michigan State University Extension 2015, USDA WIC Works Infant Feeding Guide, all in gray small. Warm brown thin horizontal divider. Center: 소아과언니 warm brown bold large, NO quotes NO decoration. Below: small gray DR.SOA UNNIE · 소아청소년과 전문의. Warm brown thin divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 성장 기록으로 이유식 시기 체크 teal green. Cute character illustrations around brand block: baby with spoon, refrigerator icon, food containers, warm pastel colors. No pixel text. No quotes anywhere."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Top-left small gray: PARENTING NOTE · 024. Left side upper area: very large bold Korean headline two lines — first line 로타바이러스 장염 in deep navy, second line 관리법 in medical teal #2C6E63. Below headline: small muted gray subtitle 구토·설사 대응 원칙 · AAP·WHO 권고 기준. Right side center-bottom: large clean editorial illustration of child with upset stomach, parent offering oral rehydration solution in cup, line art style in teal and coral, minimal clean strokes, caring gentle scene. Bottom area: thin teal horizontal accent line. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small teal rounded label: 증상 이해. Large bold headline: 급작스러운 구토로 시작되는 navy, 로타바이러스 장염 teal #2C6E63. Center: clean editorial illustration of symptom timeline, simple icons showing vomiting then watery diarrhea then fever, line art teal/navy minimal clean strokes. Below illustration: light gray card #F0F0EE rounded generous padding. Inside card: navy bold 주요 증상 순서. Teal bullet · 급작스러운 구토로 시작. Teal bullet · 24~48시간 후 물처럼 묽은 설사. Teal bullet · 환자의 약 1/3에서 고열 동반. Teal bullet · 증상 지속 기간: 보통 3~7일. Small gray text at bottom of card: 중등도~중증 시 탈수·전해질 불균형 가능 (AAP Red Book 2024). Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small teal rounded label: 1차 치료. Large bold headline: 경증~중등도 탈수는 navy, 경구 수액 요법 teal #2C6E63. Center: clean editorial illustration of oral rehydration solution bottle with spoon, child drinking, line art teal/navy minimal clean strokes. Below: light gray card #F0F0EE rounded generous padding. Navy bold 경구 수액 요법 (ORT)이 1차 치료입니다. Teal bullet · AAP·WHO·ESPGAN 모두 선택 치료로 권고. Teal bullet · 경증~중등도 탈수 소아에 효과적. Teal bullet · 정맥 수액보다 안전하고 편리. Small gray bottom text: 주요 국제 가이드라인 권장 (CDC MMWR 2003). Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small teal rounded label: 수분 공급. Large bold headline: 연령별 수분 공급과 navy, 추가 보충 원칙 teal #2C6E63. Upper area: clean editorial illustration of measuring cup with ORS solution, droplets, line art teal/navy minimal. Below: Two light gray cards #F0F0EE side by side rounded. Left card: Navy bold 기본 수분 공급. Teal small · 모유수유 중: 더 자주·더 오래. Teal small · 연령별 정해진 양 제공. Right card: Navy bold 추가 보충 원칙. Teal small · 묽은 설사 1회당 10mL/kg. Teal small · 구토 1회당 2mL/kg. Small gray text below cards: 경구 수액 제제 사용 권장 (CDC·Merck Manual). Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small teal rounded label: 아연 보충. Large bold headline: WHO 권고 navy, 아연 보충 요법 teal #2C6E63. Center: clean editorial illustration of zinc supplement tablet, calendar showing 10-14 days, line art teal/navy minimal clean strokes. Below: light gray card #F0F0EE rounded generous padding. Navy bold 급성 설사 시 아연 보충. Teal bullet · 6개월 이상: 20mg/일. Teal bullet · 6개월 미만: 10mg/일. Teal bullet · 기간: 10~14일간 지속. Teal bullet · 효과: 설사 기간·중증도 감소. Small gray bottom text: WHO·UNICEF 공동 권고 (2023). Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 응급 상황. Large bold headline: 중증 탈수나 경구 불가 시 navy, 정맥 수액 필요 coral #C44536. Upper area: Coral outline rounded warning box generous padding. ⚠️ icon + bold coral 정맥 수액이 필요한 경우. Navy text inside: · 중증 탈수 징후. Navy text: · 경구 수액을 전혀 견디지 못함. Navy text: · 지속적인 구토로 수분 섭취 불가. Small gray: 즉시 의료진 상담 필요. Below warning box: light gray card #F0F0EE rounded. Navy bold 중증 탈수 초기 처치. Teal text · 생리식염수 20mL/kg 즉시 정맥 주사. Small gray bottom: CDC·StatPearls 권고 기준. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small mustard #B8860B rounded label: 통념 깨기. Large bold headline: 로타바이러스 장염에 navy, 약은 없습니다 mustard #B8860B. Center: clean editorial illustration of crossed-out pill bottle and syringe, line art mustard/navy minimal clean strokes. Below: light gray card #F0F0EE rounded generous padding. Navy bold 불필요한 치료. Mustard X icon + navy text · 항바이러스제 없음. Mustard X icon + navy text · 지사제 사용 삼가. Mustard X icon + navy text · 항생제 권고 안 됨 (바이러스성). Below card: teal outline rounded box. Teal ✓ + navy bold 핵심은 탈수 예방입니다. Small gray bottom: CDC·AAP 가이드라인 권고. Bottom thin mustard divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small teal rounded label: 전파 예방. Large bold headline: 대변 접촉 전파 차단 navy, 손씻기가 핵심 teal #2C6E63. Center: clean editorial illustration of hands washing with soap under running water, soap bubbles, 30 seconds timer, line art teal/navy minimal clean strokes. Below: light gray card #F0F0EE rounded generous padding. Navy bold 로타바이러스 예방 수칙. Teal bullet · 배변 후 비누와 물로 30초 이상 손씻기. Teal bullet · 기저귀 교체 후 즉시 손 소독. Teal bullet · 증상 사라질 때까지 등원 자제. Teal bullet · 집단 시설 복귀 전 의사 상담. Small gray bottom text: 질병관리청·Medscape 권고 (2023-2025). Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 teal #2C6E63 with thin teal underline. Source box light gray #F0F0EE rounded generous padding. 출처 navy small bold. · AAP Red Book 2024 - Rotavirus Infections navy small. · CDC MMWR 2003 - Managing Acute Gastroenteritis navy small. · WHO·UNICEF 2023 - Zinc Supplementation navy small. · Merck Manual·StatPearls - Oral Rehydration navy small. Horizontal thin navy divider. Center: 소아과언니 navy bold large — NO quotes NO decoration. Small gray DR.SOA UNNIE · 소아청소년과 전문의. Horizontal thin gray divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 증상 기록하고 진료 메모 남기기 teal. No pixel text anywhere. No quotes anywhere on card."
+    }
+  ]
+}

@@ -1,9 +1,10 @@
 {
   "last_topic": {
-    "slug": "travel-emergency-kit",
-    "topic_kr": "여행 응급키트",
-    "sources_path": "output/travel-emergency-kit/sources.json",
-    "template_path": "templates/slides.travel-emergency-kit.json",
-    "output_dir": "output/travel-emergency-kit"
-  }
+    "slug": "nosebleed-head-back-danger",
+    "topic_kr": "코피나면 고개뒤로? 그게 더 위험해요!",
+    "sources_path": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/nosebleed-head-back-danger/sources.json",
+    "template_path": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/templates/slides.nosebleed-head-back-danger.json",
+    "output_dir": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/nosebleed-head-back-danger"
+  },
+  "recommendation": null
 }

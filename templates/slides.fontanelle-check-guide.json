@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Top: bold red #E63946 stripe full width + COMPACT white text 숨골 긴급 가이드. Top-right below stripe: 소아과언니 white Pretendard SemiBold small, no quotes, 4 characters only. Headline COMPACT 25% smaller: 아기 숨골 white bold, 위험 신호 파악법 bright red #E63946. Small white subtitle: 정상 vs 응급 상황 · AAP 가이드라인 기준. LARGE prominent line illustration baby head top view showing fontanelle location white outline on dark background, medical clean style. Bottom-left small gray: PARENTING NOTE · 011. No pixel values. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint #2EC4B6 rounded label: 숨골 기본 정보. Headline COMPACT 25% smaller: 신생아는 2개의 white, 주요 숨골 보유 mint #2EC4B6. Center: LARGE line illustration baby skull diagram showing anterior and posterior fontanelles, white and mint outlines, clean medical style. Below center: two dark cards #1A2B3C rounded, GENEROUS padding. Left card: SMALL icon diamond shape mint + 대천문 white bold + 마름모 형태 gray smaller + 임상 평가 중요 gray smaller. Right card: SMALL icon triangle mint + 소천문 white bold + 삼각 형태 gray smaller + 생후 2개월 닫힘 gray smaller. Bottom thin mint divider. No pixel values. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint rounded label: 정상 범위 ✓. Headline COMPACT: 숨골 정상 크기와 white, 닫히는 시기 mint #2EC4B6. Center: SMALL clean icon ruler/measurement mint. Below: three stacked rows dark cards #1A2B3C rounded GENEROUS spacing. Row 1: SMALL icon calendar mint left + white text right 출생 첫날 대천문 0.6~3.6cm (평균 2.1cm). Row 2: SMALL icon clock mint left + white text right 중간값 13.8개월에 닫힘. Row 3: SMALL icon chart mint left + white text right 생후 12개월 38% · 24개월 96% 닫힘. Mint outlined box around all rows comfortable padding. Bottom small gray: 소천문은 출생 시 0.5~0.7cm · 생후 2개월까지 닫힘. No pixel values."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint rounded label: 올바른 체크법 ✓. Headline COMPACT: 차분하고 직립 자세에서 white, 촉진하세요 mint #2EC4B6. Center upper: LARGE illustration parent gently checking baby fontanelle while baby sitting upright, clean line art white and mint. Below: two rows stacked GENEROUS spacing. Row 1: SMALL icon checkmark mint left + COMPACT white text right 정상 = 약간 오목하고 부드러운 맥박. Row 2: SMALL icon warning mint left + COMPACT white text right 누워 있거나 울 때는 부풀어 보일 수 있음. Mint outlined box around rows. Bottom small gray note: 차분한 자세에서 정상으로 돌아오면 OK. No pixel values."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red #E63946 rounded label: 위험 신호 1 ❌. Headline COMPACT: 함몰된 숨골 white, 탈수 징후 red #E63946. Center upper: LARGE illustration side view baby head with sunken fontanelle marked, red highlight, clean medical line art. Below: four rows stacked dark cards #1A2B3C GENEROUS spacing. Row 1: SMALL icon droplet red left + white text right 숨골이 움푹 들어감. Row 2: SMALL icon warning red left + white text right 소변량 감소. Row 3: SMALL icon mouth red left + white text right 입술·입안 건조. Row 4: SMALL icon tired face red left + white text right 무기력·처짐. Red outlined box around all rows comfortable padding. Bottom small red: 탈수 = 응급 상황. No pixel values."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red rounded label: 위험 신호 2 ❌. Headline COMPACT: 돌출된 숨골 white, 뇌압 상승 red #E63946. Center upper: LARGE illustration baby head with bulging fontanelle protruding outward, red glow effect, clean medical line art. Below: four rows stacked dark cards #1A2B3C GENEROUS spacing. Row 1: SMALL icon alert red left + white text right 숨골이 부풀어 오름. Row 2: SMALL icon bacteria red left + white text right 뇌수막염·뇌염 가능. Row 3: SMALL icon brain red left + white text right 수두증·뇌부종. Row 4: SMALL icon pressure red left + white text right 뇌압 상승. Red outlined box around all rows comfortable padding. Bottom small red: 즉각 응급실 방문 필요. No pixel values."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top center: full-width bright red #E63946 header bar + white bold 119 즉시 연락. Center: LARGE illustration ambulance with red cross and emergency lights, white and red line art, prominent. Below: three numbered items GENEROUS spacing, white background boxes with red borders. Item 1: large red number 1 + white text 차분한 상태 + 직립 자세에서도 돌출 지속. Item 2: large red number 2 + white text 발열·과도한 졸음 동반. Item 3: large red number 3 + white text 구토·경련 증상 있음. Large red rounded border around all items thick stroke. Bottom small white: 진짜 돌출인지 자세 변화로 확인하세요. No pixel values."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red rounded label: 조기 폐쇄 주의 ❌. Headline COMPACT: 생후 6개월 이전 white, 대천문 닫힘 red #E63946. Center upper: LARGE illustration baby skull with premature suture fusion marked, red warning markers, clean medical diagram style. Below: three rows stacked dark cards #1A2B3C GENEROUS spacing. Row 1: SMALL icon skull red left + white text right 두개골조기유합증 가능성. Row 2: SMALL icon ruler red left + white text right 두위 성장 모니터링 필수. Row 3: SMALL icon surgery red left + white text right 뇌압 상승 방지 수술 필요. Red outlined box comfortable padding. Bottom small red: 조기 폐쇄 = 반드시 소아과 상담. No pixel values."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A. VERY GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-center small gray: SAVE & SHARE. Headline COMPACT: 오늘 확인하고 white, 저장하세요 mint #2EC4B6 with thin mint underline. Source box dark #1A2B3C rounded GENEROUS padding vertical. 출처 white small bold. · The Abnormal Fontanel (AFP 2003) gray smaller. · Anatomy Fontanelles (StatPearls 2023) gray smaller. · Fontanelles sunken/bulging (MedlinePlus 2025) gray smaller. · Sunken fontanel complications (MNT 2023) gray smaller. Thin white horizontal divider. 소아과언니 white bold large center NO quotes NO decoration 4 characters only. DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin white divider. @dr.soa_unnie · 매주 새 가이드 white. 소아과수첩 앱 · 야간 달빛병원 바로 찾기 mint #2EC4B6. No pixel values. No quotes anywhere."
+    }
+  ]
+}

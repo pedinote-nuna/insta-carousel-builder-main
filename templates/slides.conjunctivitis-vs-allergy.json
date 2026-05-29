@@ -1,0 +1,47 @@
+[
+  {
+    "n": 1,
+    "role": "cover",
+    "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes, 4 characters only. Top-left small gray: PARENTING NOTE · 021. Center: large warm brown bold headline 눈 충혈·눈곱, two lines, 결막염 vs 알레르기 구분법 with teal green #2C7A5C underline on last word. Below: small gray subtitle 소아 핑크아이 증상별 대처법 · AAP 권장 기준. Bottom center: LARGE cute character illustration of chubby baby rubbing eye with hand, warm cozy pastel colors, soft rounded shapes, gentle expression. Small tissue box and eye drop bottle beside baby. No pixel text. No quotes."
+  },
+  {
+    "n": 2,
+    "role": "body",
+    "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-left small teal rounded label: 결막염 기본. Large bold headline: 결막염은 warm brown, 흔한 양성 질환 teal green #2C7A5C. Center: cute illustration of eye anatomy with gentle pink conjunctiva highlighted, simple warm line art. Below: two cream #FFF0E0 rounded cards side by side. Left card: small cute bacteria icon + 감염성 warm brown + 세균·바이러스 gray small. Right card: small cute flower pollen icon + 비감염성 warm brown + 알레르기 등 gray small. Bottom thin teal divider. No pixel text. No quotes."
+  },
+  {
+    "n": 3,
+    "role": "body",
+    "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-left small teal rounded label: 세균성. Large bold headline: 노란색·녹색 warm brown, 고름 같은 눈곱 teal green #2C7A5C. Center: cute illustration of baby with sticky yellow discharge on eye, chubby cheeks, gentle expression. Below: three cream #FFF0E0 rounded cards stacked vertically. Card 1: 끈적한 노란색·녹색 분비물 warm brown + small bacteria icon. Card 2: 아침에 눈꺼풀 들러붙음 warm brown + small eyelid icon. Card 3: 소아 주요 원인 warm brown + 헤모필루스 인플루엔자 gray small. Bottom thin teal divider. No pixel text. No quotes."
+  },
+  {
+    "n": 4,
+    "role": "body",
+    "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-left small teal rounded label: 바이러스성. Large bold headline: 맑은 분비물 warm brown, 이물감 동반 teal green #2C7A5C. Center: cute illustration of baby with watery eyes and runny nose, tissue in hand, soft pastel colors. Below: three cream #FFF0E0 rounded cards stacked vertically. Card 1: 맑은 물 같은 분비물 warm brown + small water drop icon. Card 2: 모래 들어간 듯한 이물감 warm brown + small eye icon. Card 3: 기침·인후통 등 동반 warm brown + small virus icon. Bottom thin teal divider. No pixel text. No quotes."
+  },
+  {
+    "n": 5,
+    "role": "body",
+    "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-left small teal rounded label: 알레르기성. Large bold headline: 양쪽 눈 warm brown, 가려움증이 특징 teal green #2C7A5C. Center: cute illustration of baby rubbing both eyes with both hands, chubby fingers, pollen particles floating around. Below: three cream #FFF0E0 rounded cards stacked vertically. Card 1: 양쪽 눈 동시 가려움증 warm brown + small itch icon. Card 2: 맑은 눈물·결막 부종 warm brown + small eye drop icon. Card 3: 소아 5명 중 1명 발생 warm brown + small child group icon. Bottom thin teal divider. No pixel text. No quotes."
+  },
+  {
+    "n": 6,
+    "role": "body",
+    "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-left small teal rounded label: 눈곱 색으로 구분. Large bold headline: 눈곱 성상으로 warm brown, 원인 구분 가능 teal green #2C7A5C. Center: three horizontal cream #FFF0E0 rounded cards with ample spacing. Card 1: cute bacteria icon left + 세균성 warm brown bold + 누런색·녹색 고름 같은 눈곱 gray small right. Card 2: cute virus icon left + 바이러스성 warm brown bold + 맑거나 하얀 끈적한 눈곱 gray small right. Card 3: cute pollen icon left + 알레르기성 warm brown bold + 맑거나 하얀 끈적한 눈곱 gray small right. Bottom: small note 아침 눈꺼풀 들러붙음 + 가려움 없음 → 세균성 가능성 높음 gray italic. Bottom thin teal divider. No pixel text. No quotes."
+  },
+  {
+    "n": 7,
+    "role": "body",
+    "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-left small teal rounded label: 알레르기 구분 핵심. Large bold headline: 핵심은 warm brown, 가려움증 teal green #2C7A5C. Center: cute illustration of baby scratching eyes with both hands, pollen and grass in background, soft spring colors. Below: four cream #FFF0E0 rounded cards in 2x2 grid. Card 1: 가려움증 가장 두드러짐 warm brown + small itch icon. Card 2: 알레르기 비염·천식 동반 warm brown + small nose icon. Card 3: 꽃가루 계절에 발생 warm brown + small flower icon. Card 4: 통증·시력저하 없음 warm brown + small checkmark icon. Bottom thin teal divider. No pixel text. No quotes."
+  },
+  {
+    "n": 8,
+    "role": "body",
+    "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-left small teal rounded label: 치료 방법. Large bold headline: 유형별 warm brown, 치료 접근법 teal green #2C7A5C. Center: three large cream #FFF0E0 rounded cards stacked vertically with ample spacing. Card 1: 바이러스성 warm brown bold + 2주 자연 치유·보존적 치료 gray small + cute virus icon right. Card 2: 세균성 warm brown bold + 항생제 안약·경증은 자연 치유 가능 gray small + cute bacteria icon right. Card 3: 알레르기성 warm brown bold + 항히스타민·냉찜질·알레르겐 회피 gray small + cute pollen icon right. Bottom thin teal divider. No pixel text. No quotes."
+  },
+  {
+    "n": 9,
+    "role": "outro",
+    "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-center small gray: SAVE & SHARE. Large headline center: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal green #2C7A5C underline. Source box cream #FFF0E0 rounded: 출처 warm brown small bold, · Pediatrics in Review 2025 Conjunctivitis gray, · Children (Basel) 2023 Pediatric Conjunctivitis gray, · JAMA 2013 Conjunctivitis review gray, · 질병관리청 알레르기결막염 2024 gray. Warm brown thin divider. 소아과언니 warm brown bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 진료 메모로 증상 기록 teal green. Cute character illustrations around brand block: tiny baby rubbing eye left, eye drop bottle right, tissue box bottom. No pixel text. No quotes anywhere."
+  }
+]

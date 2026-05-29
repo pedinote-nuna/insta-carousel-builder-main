@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Center: large warm brown bold headline 봄철 키 성장, two lines, 키 성장 with teal green #2C7A5C underline. Below: small gray subtitle 계절별 성장 차이와 성장 촉진 방법 · AAP 권장 기준. Bottom center: LARGE cute character illustration of chubby toddler standing next to height measurement ruler with spring flowers and sun, warm cozy colors, happy expression, measuring growth. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 계절별 성장. Large bold headline: 봄에 키가 warm brown, 더 자라요 teal green #2C7A5C with underline. Center: cute illustration of two height rulers side by side, left ruler with winter snowflake icon showing slower growth, right ruler with spring flower icon showing faster growth, warm pastel colors. Below illustration: cream card #FFF0E0 rounded with text 아이들의 키 성장 속도는 계절에 따라 차이를 보이며 warm brown, 봄과 여름에 겨울보다 더 빠르게 자랍니다 teal. Small gray text: 일조시간과 연관 · BMC Pediatrics 2013. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 측정 방법. Large bold headline: 12개월 동안 warm brown, 측정하세요 teal green #2C7A5C with underline. Center: cute illustration of calendar turning pages from spring to spring, with small character doctor noting measurements each season, warm colors. Below: cream card #FFF0E0 rounded with text 키 성장 속도는 계절에 따라 변동이 있어 warm brown, 정확한 평가를 위해서는 12개월 기간 동안 측정하는 것이 필요합니다 teal. Small checkmark icon teal corner. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 비타민 D. Large bold headline: 햇볕과 warm brown, 비타민 D teal green #2C7A5C with underline. Center top: cute illustration of smiling sun with rays. Below: two cards in vertical stack, cream #FFF0E0 rounded. First card: 뼈 성장과 재형성에 필수 warm brown bold + small text 비타민 D는 건강한 뼈를 위해 꼭 필요합니다. Second card: AAP 권장량 warm brown bold + 12개월 미만 하루 400 IU teal + 12개월 이상 하루 600 IU teal. Small sun icon each card. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 수면과 성장. Large bold headline: 깊은 잠이 warm brown, 키를 키워요 teal green #2C7A5C with underline. Center: LARGE cute illustration of chubby baby sleeping peacefully in bed with moon and stars, cozy blanket, growth hormone molecules illustrated as small sparkles around baby. Below: cream card #FFF0E0 rounded with text 성장호르몬의 70-80%가 깊은 수면 중 분비됩니다 warm brown. 수면이 방해받으면 성장이 정상적으로 일어나지 않을 수 있어요 teal. Small moon icon corner. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 운동과 뼈. Large bold headline: 체중 부하 운동이 warm brown, 뼈를 튼튼하게 teal green #2C7A5C with underline. Center: four cards 2x2 grid, each cream #FFF0E0 rounded. Card 1: cute character jumping rope + 줄넘기. Card 2: cute character running + 달리기. Card 3: cute character climbing + 오르기. Card 4: cute character dancing + 춤추기. Each card small teal checkmark corner. Below grid: small text 매일 40분 운동 시 요추 골밀도 증가 warm brown · 여아 7% 남아 3.3%. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 영양 섭취. Large bold headline: 단백질이 warm brown, 성장의 기본 teal green #2C7A5C with underline. Center: cute illustration of protein-rich foods as characters - milk carton with smile, egg with happy face, fish, chicken drumstick, beans, all chubby and cute style. Below: cream card #FFF0E0 rounded with text 적절한 단백질 섭취는 19세 미만의 신체적 인지적 발달에 필수적입니다 warm brown. 고품질 단백질(우유 등)이 좋은 성장에 효과적 teal. Small protein molecule icon corner. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 성장 평가. Large bold headline: 성장 추세를 warm brown, 확인하세요 teal green #2C7A5C with underline. Center: cute illustration of growth chart with curved line trending upward, small character doctor pointing at chart with smile. Below: two cards vertical stack cream #FFF0E0 rounded. First card: 백분위수와 Z-score로 평가 warm brown bold + 일관된 성장 추세가 중요합니다 small text. Second card: 0-2세 WHO 성장 기준 teal + 2세 이상 CDC 성장 도표 teal + 한국 2017 소아청소년 성장도표 small gray. Small chart icon each card. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline. Source box cream #FFF0E0 rounded. 출처 warm brown small bold. · BMC Pediatrics 2013 - 계절별 성장 속도. · AAP 2024 - 비타민 D 권장량. · Frontiers Endocrinology 2024 - 수면과 성장호르몬. · CDC Growth Chart Training 2024 - 성장 평가. Warm brown divider line. 소아과언니 warm brown bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray. Divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 성장 기록으로 우리 아이 키 추적하기 teal. No pixel text. No quotes. Cute character illustrations around brand block: small doctor icon, baby measuring height icon, sun icon, all warm pastel style."
+    }
+  ]
+}

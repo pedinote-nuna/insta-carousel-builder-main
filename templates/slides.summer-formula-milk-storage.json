@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes, 4 characters. Top-left small gray: PARENTING NOTE · 013. Large breathing whitespace before headline. Headline COMPACT two lines: 여름철 분유·모유 보관 navy, 완전정복 with 완전정복 underlined in teal #2C6E63. Small subtitle gray: 안전한 수유를 위한 CDC 권장 기준. LARGE minimalist line illustration of baby bottle with thermometer and snowflake icon in teal, prominently placed center-right. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 모유 실온 보관. Headline COMPACT: 신선한 모유는 navy, 4시간까지 with 4시간까지 teal #2C6E63 underline. Center: large minimalist line illustration of breast milk bottle with clock icon in teal. Below illustration: single light gray card #F0F4F8 with GENEROUS padding, left-aligned. Card content: Thermometer icon small teal top-left. 실온 25°C 이하 bold navy large. 최대 4시간 보관 가능 navy medium. Thin divider inside card. 여름철 고온 시 수시간 내 냉장 권장 gray small. Bottom coral warning box rounded: ⚠️ 실내 온도 높으면 즉시 냉장 coral text. No pixel values as text on card. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 모유 냉장 보관. Headline COMPACT: 냉장고 깊숙이 navy, 4일까지 with 4일까지 teal #2C6E63 underline. Center-top: large minimalist line illustration of refrigerator with milk bottles inside in teal. Below: single light gray card #F0F4F8 GENEROUS padding. Card content: Snowflake icon small teal top-left. 냉장 4°C 이하 bold navy large. 최대 4일 보관 가능 navy medium. Thin divider. 냉장고 안쪽 깊은 곳 보관 gray small. 문 쪽 보관 금지 gray small with ❌. Bottom coral warning box: ⚠️ 온도 변화 최소화 필수 coral. No pixel values. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 모유 냉동 보관. Headline COMPACT: 냉동 모유는 navy, 6개월 권장 with 6개월 권장 teal #2C6E63 underline. Center-top: large minimalist line illustration of freezer with labeled milk bags in teal. Below: single light gray card #F0F4F8 GENEROUS padding. Card content: Ice crystal icon small teal top-left. 냉동 -18°C 이하 bold navy large. 권장 6개월 · 최대 12개월 navy medium. Thin divider. 해동 후 냉장 24시간 이내 사용 gray small. 재냉동 절대 금지 coral small with ❌. Bottom coral warning box: ⚠️ 해동 모유 재냉동 금지 coral. No pixel values. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 분유 실온 보관. Headline COMPACT: 조제 분유는 navy, 2시간 이내 with 2시간 이내 coral #C44536 underline. Center-top: large minimalist line illustration of formula bottle with urgent clock icon in coral. Below: single light gray card #F0F4F8 GENEROUS padding. Card content: Clock icon small coral top-left. 실온 보관 최대 2시간 bold navy large. 수유 시작 후 1시간 이내 navy medium. Thin divider. 분유는 모유보다 빠르게 상함 gray small. 여름철 특히 주의 gray small. Bottom coral warning box: ⚠️ 모유보다 실온 취약 coral. No pixel values. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 분유 냉장 보관. Headline COMPACT: 준비한 분유 navy, 24시간까지 with 24시간까지 coral #C44536 underline. Center-top: large minimalist line illustration of refrigerator with formula bottles in coral. Below: two stacked cards light gray #F0F4F8 GENEROUS padding comfortable spacing. Top card: Snowflake icon small coral. 조제 분유 냉장 보관 bold navy. 24시간 이내 사용 navy medium. Bottom card: Container icon small teal. 분유 가루 개봉 후 bold navy. 서늘하고 건조한 곳 보관 navy medium. 1개월 이내 사용 teal small. Bottom warning: ❌ 가루 분유 냉장 보관 금지 coral. No pixel values. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 데우기 주의. Headline COMPACT: 전자레인지는 navy, 절대 금지 with 절대 금지 coral #C44536 underline. Center-top: large minimalist line illustration of microwave with red X mark in coral. Below: single light amber card #FFF3E0 GENEROUS padding. Card content: Warning icon coral top-left. 전자레인지 사용 금지 bold coral large. 고르지 않게 데워져 화상 위험 navy medium. Thin divider. ✅ 안전한 방법 teal small bold. 따뜻한 물에 젖병 담그기 gray. 흐르는 따뜻한 물에 데우기 gray. Bottom coral warning box: ⚠️ 아기 입 화상 예방 필수 coral. No pixel values. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 외출·남은 수유. Headline COMPACT: 먹다 남은 수유는 navy, 2시간 내 폐기 with 2시간 내 폐기 coral #C44536 underline. Center-top: large minimalist line illustration of insulated bag with ice packs and bottles in teal. Below: two stacked cards light gray #F0F4F8 GENEROUS padding comfortable spacing. Top card: Trash icon coral. 남은 모유·분유 bold navy. 수유 완료 후 2시간 이내 버리기 navy medium. 침 세균 증식 위험 gray small. Bottom card: Cooler bag icon teal. 외출 시 모유 보관 bold navy. 아이스팩 보냉가방 24시간 navy medium. Bottom: ✅ 외출 시 필수 아이템 teal. No pixel values. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right: 소아과언니 navy, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT center: 오늘 확인하고 navy, 저장하세요 with 저장하세요 teal #2C6E63 underline. Source box light gray #F0F4F8 rounded GENEROUS padding left-aligned. 출처 navy small bold. · CDC Breast Milk Storage and Preparation 2026. · CDC Breast Milk Storage Q&A 2025. · CDC Infant Formula Preparation 2026. · AAP How to Prepare Powdered Formula 2023. Generous spacing plus thin horizontal navy divider. 소아과언니 navy bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 식사·성장 기록으로 수유 관리 teal. No pixel values. No quotes."
+    }
+  ]
+}

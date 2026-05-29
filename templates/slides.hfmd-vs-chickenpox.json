@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Top-left small gray: PARENTING NOTE · 014. Left side upper area: very large bold Korean headline two lines — first line 수족구병 vs 수두 in deep navy, second line 비교표 in coral #C44536. Below headline: small muted gray subtitle 헷갈리는 증상 완벽 정리 · CDC 기준. Right side center-bottom: large clean editorial illustration showing two children side by side with dotted spots and blisters visual comparison, line art style in coral and teal, minimal clean strokes. Bottom area: thin coral horizontal accent line. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 원인. Large bold headline: 원인 바이러스부터 navy, 다릅니다 coral #C44536. Center upper: clean editorial illustration of two virus particles with labels, line art coral/navy minimal. Below illustration: two side-by-side cards light gray #F0F0EE rounded generous padding. Left card: 수족구병 bold navy + 콕사키바이러스 A16 또는 엔테로바이러스 71 small navy. Right card: 수두 bold navy + 수두-대상포진 바이러스 VZV small navy. Bottom: thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. White background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 호발 연령과 시기. Large bold headline: 걸리는 시기가 navy, 다릅니다 coral #C44536. Center: clean editorial illustration showing calendar and age group icons, line art coral/navy minimal. Two comparison cards light gray #F0F0EE rounded generous padding side by side. Left card: 수족구병 bold navy, 주로 5세 이하 영유아 navy small, 여름-가을철 많이 발생 gray small. Right card: 수두 bold navy, 주로 0-9세 navy small, 4월부터 증가 5-6월·11-12월 정점 gray small. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. White background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 초기 증상. Large bold headline: 초기 증상 순서가 navy, 다릅니다 coral #C44536. Center: clean editorial timeline illustration showing symptom progression, line art coral/navy minimal. Two vertical timeline cards light gray #F0F0EE rounded. Left: 수족구병 bold navy, 1단계 열·인후통 → 2단계 입안 수포 1-2일 후 → 3단계 손발바닥 수포성 발진 navy/gray text. Right: 수두 bold navy, 1단계 발열·권태감 → 2단계 가려운 발진 반점→구진→수포 빠르게 진행 → 3단계 흉부·배·얼굴→전신 navy/gray text. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. White background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 수포 특징. Large bold headline: 수포 위치와 느낌이 navy, 완전히 다릅니다 coral #C44536. Center upper: clean editorial illustration showing body outline with blister distribution markers, line art coral/navy minimal. Two comparison cards light gray #F0F0EE rounded generous padding side by side. Left card: 수족구병 bold navy, 손바닥·발바닥·입안 주로 navy small, 대개 가렵지 않음 gray small. Right card: 수두 bold navy, 전신 분포 navy small, 매우 가려움 gray small, 다양한 단계 병변 동시 출현 특징 gray small. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. White background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 치료와 경과. Large bold headline: 치료 기간과 방법이 navy, 다릅니다 coral #C44536. Center: clean editorial illustration showing recovery timeline icons, line art coral/navy minimal. Two side-by-side cards light gray #F0F0EE rounded generous padding. Left card: 수족구병 bold navy, 7-10일 이내 자연 회복 navy small, 대증 치료로 충분 gray small. Right card: 수두 bold navy, 통상 4-7일 지속 navy small, 건강한 소아 대증 치료 gray small, 고위험군 항바이러스제 고려 gray small. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. White background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 전염력. Large bold headline: 전염 기간이 navy, 다릅니다 coral #C44536. Center upper: clean editorial illustration showing contagion period timeline with calendar icons, line art coral/navy minimal. Coral outline rounded box generous padding: ⚠️ + 전염력 시기 주의 bold coral + 두 질환 모두 전염력 강함 navy text. Below: two comparison cards light gray #F0F0EE rounded. Left: 수족구병 bold navy, 증상 발생 1-2일 전부터 navy small, 증상 후 첫 1주일간 가장 강함 gray small. Right: 수두 bold navy, 발진 1-2일 전부터 navy small, 모든 수포에 딱지 생길 때까지 gray small. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. White background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 예방법. Large bold headline: 예방 가능 여부가 navy, 다릅니다 coral #C44536. Center: clean editorial illustration showing vaccine syringe and handwashing icons, line art coral/navy minimal. Two comparison cards side by side light gray #F0F0EE rounded generous padding. Left card with coral X icon: 수족구병 bold navy, 예방 백신 없음 navy small, 손씻기·개인위생 관리가 최선 gray small. Right card with teal checkmark icon: 수두 bold navy, 백신 접종 가능 navy small, 12-15개월 1차 접종 권장 gray small, 2회 접종 시 높은 예방 효과 gray small. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 with thin coral underline. Source box light gray #F0F0EE rounded generous padding: 출처 navy small bold, · CDC Hand Foot and Mouth Disease 2024 gray small, · CDC Varicella Clinical Guidance 2025 gray small, · 대한소아청소년과학회 수족구병 정보 2024 gray small, · 질병관리청 수두 예방접종 정보 2024 gray small. Horizontal thin navy divider. Center: 소아과언니 navy bold large — NO quotes NO decoration. Small gray: DR.SOA UNNIE · 소아청소년과 전문의. Horizontal thin gray divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 진료 메모 저장하기 coral. No pixel text on card. No quotes anywhere."
+    }
+  ]
+}

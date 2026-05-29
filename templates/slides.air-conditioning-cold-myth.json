@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Top-left small gray: PARENTING NOTE · 011. Left side upper area: very large bold Korean headline two lines — first line 에어컨 바람 맞으면 in deep navy, second line 감기 걸린다? in coral #C44536. Below headline: small muted gray subtitle 소아과 의사가 알려주는 진실 · AAP 권장 기준. Right side center-bottom: large clean editorial illustration of air conditioner unit with gentle airflow lines and small child figure, line art style in coral and teal, minimal clean strokes. Bottom area: thin coral horizontal accent line. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 감기의 진실. Large bold headline: 감기는 바이러스가 navy, 일으킵니다 coral #C44536. Center: clean editorial illustration of virus particles and respiratory system, line art coral/navy minimal. Below illustration: light gray rounded card #F0F0EE generous padding with navy text: 200가지 이상의 바이러스가 감기를 일으키며 그 중 30-50%는 리노바이러스입니다. Small gray source text bottom of card: 대한소아청소년과학회. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 통념 깨기. Large bold headline: 이것들은 감기를 navy, 일으키지 않습니다 coral #C44536. Center upper: clean editorial illustration of jacket, window with breeze, wet hair dryer, line art coral/navy minimal. Three light gray rounded cards #F0F0EE stacked vertically with generous padding: Card 1 bold navy: 재킷을 안 입거나 + small gray: 옷차림은 원인이 아닙니다. Card 2 bold navy: 외풍에 앉거나 + small gray: 바람 자체가 문제가 아닙니다. Card 3 bold navy: 머리 감고 나가는 것 + small gray: 젖은 머리도 원인이 아닙니다. Small gray text bottom: 감기 바이러스는 비말·접촉·오염된 표면을 통해 전파됩니다. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 겨울철 감기. Large bold headline: 겨울에 감기가 많은 navy, 진짜 이유 coral #C44536. Center: clean editorial illustration of indoor scene with multiple people, heating system, dry air symbols, line art coral/navy minimal. Two stacked light gray cards #F0F0EE generous padding: Card 1 with teal icon: bold navy 실내 생활 시간 증가 + small gray: 겨울철에는 실내에서 보내는 시간이 길어져 바이러스 전파 기회가 증가합니다. Card 2 with coral icon: bold navy 낮은 습도 + small gray: 건조한 환경은 코 점막을 건조하게 만들어 바이러스에 취약하게 합니다. Small gray source bottom: Pediatrics in Review 2019. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 에어컨의 역할. Large bold headline: 에어컨 자체가 navy, 문제가 아닙니다 coral #C44536. Center upper: clean editorial illustration of air conditioner with filter, dust particles, dry air flow, line art coral/navy minimal. Two light gray rounded cards #F0F0EE generous padding stacked: Card 1 with small coral warning icon: bold navy 관리 안 된 필터 + gray text: 먼지와 세균을 퍼뜨릴 수 있습니다. Card 2 with small teal droplet icon: bold navy 건조한 환경 + gray text: 호흡기 점막을 건조하게 만들어 바이러스 침입에 취약하게 할 수 있습니다. Small gray source bottom: PBS NewsHour · KidsHealth. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 감기 예방. Large bold headline: 소아는 연간 6-10회 navy, 감기에 걸립니다 coral #C44536. Center: clean editorial illustration of child washing hands, avoiding sick person, line art coral/navy minimal. Large light gray rounded card #F0F0EE generous padding with bold navy headline: 진짜 예방법은? Two bullet points with coral checkmarks: • 손을 자주 씻기 small gray: 비누로 20초 이상. • 감기 환자 피하기 small gray: 사람 많은 곳 주의. Small gray source bottom: American Academy of Pediatrics · 대한소아청소년과학회. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 올바른 사용법. Large bold headline: 에어컨 navy, 건강하게 사용하기 coral #C44536. Center: clean editorial illustration of thermostat showing 26-28 degrees, air flow direction, humidifier, line art coral/navy minimal. Three light gray rounded cards #F0F0EE generous padding stacked vertically: Card 1 coral numbered 1: bold navy 적정 온도 유지 + small gray: 26-28도로 설정하세요. Card 2 coral numbered 2: bold navy 직접 바람 피하기 + small gray: 풍향을 조절하거나 거리를 두세요. Card 3 coral numbered 3: bold navy 온도차·습도 관리 + small gray: 실내외 온도차 5도 이내 · 습도 적정 유지. Small gray source bottom: Vinmec International Hospital. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes. Top-left small coral rounded label: 핵심 정리. Large bold headline center: 에어컨 바람이 navy, 감기를 일으키지 않습니다 coral #C44536. Center: large clean editorial illustration of air conditioner with X mark over direct causation arrow to virus, checkmark over proper usage symbols, line art coral/navy minimal clean. Large light gray rounded card #F0F0EE generous padding center: bold navy large text: 감기는 바이러스 감염입니다. Small gray text below: 에어컨을 올바르게 사용하면 건강한 여름을 보낼 수 있어요. Small gray source text bottom of card: 질병관리청 국가건강정보포털. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 with thin coral underline. Source box light gray #F0F0EE rounded generous padding: 출처 navy small bold then four bullet points gray small: · American Academy of Pediatrics HealthyChildren.org · 대한소아청소년과학회 · Pediatrics in Review 2019 · 질병관리청 국가건강정보포털. Horizontal thin navy divider. Center: 소아과언니 navy bold large — NO quotes NO decoration. Small gray below: DR.SOA UNNIE · 소아청소년과 전문의. Horizontal thin gray divider. Below: @dr.soa_unnie · 매주 새 가이드 navy small. Bottom: 소아과수첩 앱 · 우리 아이 건강 기록 coral small. No pixel text anywhere. No quotes anywhere on card."
+    }
+  ]
+}

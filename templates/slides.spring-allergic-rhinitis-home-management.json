@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 015. Center: large warm brown bold headline 봄철 알레르기 비염, two lines, 집에서 관리하는 방법 with teal green #2C7A5C underline. Below: small gray subtitle 환경관리로 증상 완화하기 · 소아과 전문의 권장. Bottom center: LARGE cute character illustration of chubby child sneezing near blooming spring flowers, tissue in hand, warm cozy colors, soft pastel tones. Small pollen particles floating around illustrated child. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 방법 01. Large bold headline: 침실 환경을 warm brown, 깨끗하게 teal #2C7A5C with thin underline. Center: cute illustration of clean bedroom with happy dust mite-free bedding, warm pastel colors. Below illustration: two rounded cream cards #FFF0E0 stacked vertically. First card: 침구 세탁 warm brown bold + 일주일에 한 번 55도 이상 뜨거운 물 gray small + small washing machine icon. Second card: HEPA 청소기 사용 warm brown bold + 카펫 사용 최소화로 집먼지진드기 제거 gray small + small vacuum icon. Small teal checkmarks on cards. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 방법 02. Large bold headline: 꽃가루 노출을 warm brown, 최소화하기 teal #2C7A5C with thin underline. Center: cute illustration of child wearing mask outdoors with closed windows behind, spring flowers in background, warm colors. Below: two rounded cream cards #FFF0E0 stacked. First card: 창문 닫기와 마스크 착용 warm brown bold + 꽃가루 많은 계절 필수 gray small + window and mask icon. Second card: 외출 후 손씻기 warm brown bold + 옷 갈아입고 얼굴 씻어 알레르겐 제거 gray small + washing hands icon. Small teal checkmarks. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 방법 03. Large bold headline: 식염수로 warm brown, 코 세척하기 teal #2C7A5C with thin underline. Center: LARGE cute illustration of gentle parent helping chubby child with nasal saline irrigation, warm cozy scene, soft water droplets. Below illustration: rounded cream card #FFF0E0 with content. 증상 완화 효과 warm brown bold. Small gray text: 알레르겐과 점액 제거 · 점막 기능 개선 · 비강 열림. Small illustrated nasal spray bottle icon bottom right. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 방법 04. Large bold headline: 실내 공기를 warm brown, 깨끗하게 teal #2C7A5C with thin underline. Center: cute illustration of air purifier with clean air flow and closed windows, warm pastel colors. Below: two rounded cream cards #FFF0E0 stacked. First card: 공기청정기 사용 warm brown bold + 창문 닫고 실내 공기 관리 gray small + air purifier icon. Second card: 외출 시간 조절 warm brown bold + 오전 5시에서 10시 꽃가루 많은 시간대 피하기 gray small + clock icon. Small teal checkmarks. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 방법 05. Large bold headline: 외출 후 warm brown, 꽃가루 씻어내기 teal #2C7A5C with thin underline. Center: cute illustration of child taking shower with bubbles, washing hair, warm cozy bathroom scene. Below: two rounded cream cards #FFF0E0 stacked. First card: 샤워하고 머리 감기 warm brown bold + 귀가 후 피부와 머리카락 꽃가루 제거 gray small + shower icon. Second card: 모자와 선글라스 착용 warm brown bold + 외출 시 눈과 머리 보호 gray small + hat and sunglasses icon. Small teal checkmarks. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral rounded label: 추가 관리 TIP. Large bold headline: 침실 환경과 warm brown, 애완동물 관리 teal #2C7A5C with thin underline. Center: cute illustration of clean bedroom with pet outside room, warm colors. Below: two rounded cream cards #FFF0E0 stacked. First card: 방진 커버 사용 warm brown bold + 매트리스와 베개 보호하고 침구 자주 세탁 gray small + bedding icon. Second card: 애완동물 격리 warm brown bold + 침실 출입 금지하고 가능하면 집 밖에서 키우기 gray small + pet icon. Small teal checkmarks. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 관리의 핵심. Large bold headline: 환경관리와 warm brown, 꾸준한 치료 teal #2C7A5C with thin underline. Center: LARGE cute illustration of happy healthy child with parent, doctor consultation scene, warm cozy colors. Below illustration: rounded cream card #FFF0E0 with content. 세 가지 함께 지켜요 warm brown bold. Small gray bullet points: · 환경 관리 · 처방 약물 규칙적 사용 · 질환에 대한 이해. Bottom small text: 증상 조절 후에도 재발 방지 위해 지속 관리 gray. Small illustrated medical clipboard icon. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline. Source box cream #FFF0E0 rounded. 출처 warm brown small bold. · 분당서울대병원 알레르기 비염 가이드 · 서울대병원 의학정보 · International Journal of Pediatric Otorhinolaryngology 2014 · Journal of Pediatric Health Care 2025. Warm brown divider line. 소아과언니 warm brown bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray. Divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 성장 기록으로 알레르기 관리 체크 teal. No pixel text. No quotes. Cute character illustrations around brand block: small doctor icon, tissue box, air purifier, happy child."
+    }
+  ]
+}

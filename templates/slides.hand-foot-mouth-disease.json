@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small handwritten label: 'PARENTING NOTE · 011' in muted gray. Korean headline (navy with '수족구병' highlighted in mustard #D4A84A marker style): '여름철 영유아 / 수족구병'. Subtitle below (gray, smaller): '증상부터 예방까지 · 대한소아청소년과학회 기준'. Hand-drawn small illustration lower right: child with small dots on hands and feet, simple line art sketch, no color fills. Top-right corner: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 01 · WHAT IS HFMD' in muted gray. Korean headline (navy with '바이러스 감염' highlighted in mustard marker): '콕사키·엔테로 바이러스 감염'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of virus particles and affected child silhouette, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '5세 이하 영유아에게 흔하지만 더 큰 어린이와 성인도 감염 가능'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 02 · SYMPTOMS' in muted gray. Korean headline (navy with '손·발·입' highlighted in mustard marker): '특징적인 수포 발진 / 손·발·입에 나타나요'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration showing child's mouth, palm, and foot with small vesicles marked, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '감염 후 3-7일 잠복기 거쳐 발열·인후통 먼저, 이어 수포 발생'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 03 · TRANSMISSION' in muted gray. Korean headline (navy with '3가지 경로' highlighted in mustard marker): '전파 경로 / 3가지 조심하세요'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of three transmission routes icons - fecal-oral, respiratory droplets, blister contact, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '발병 첫 주 전염력 가장 강하고, 증상 사라진 후에도 몇 주간 바이러스 배출'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 04 · TREATMENT' in muted gray. Korean headline (navy with '자연 회복' highlighted in mustard marker): '대부분 7-10일 내 / 자연 회복됩니다'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of medicine bottle and spoon with calendar showing recovery timeline, simple line art black ink, slightly rough strokes, no color fills. Caption gray below in three lines: '특별한 치료약 없음. 발열·통증에 아세트아미노펜이나 이부프로펜 가능' / '격리: 발열 없고 물집 마르면 등원·등교 가능' / '※ 격리기간은 어린이집·유치원·학교 등 소속기관 규정에 따라 다를 수 있음'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 05 · WARNING' in muted gray. Korean headline (navy with '탈수·합병증' highlighted in mustard marker): '주의할 점 / 탈수·합병증 체크'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Coral #C44536 outlined hand-drawn rectangle with corner cross marks (×). ⚠️ icon + bold warning text in coral: '입안 수포로 수분 섭취 어려워 탈수 위험 / 엔테로 바이러스 71은 뇌막염·뇌염 가능성'. Visual: hand-drawn line illustration of water cup and brain outline, simple line art black ink, slightly rough strokes, no color fills. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 06 · PREVENTION' in muted gray. Korean headline (navy with '손씻기·소독' highlighted in mustard marker): '예방의 핵심 / 손씻기·소독이에요'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of hands under running water with soap bubbles and cleaning spray bottle, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '비누로 20초 이상 손씻기(기저귀 교체 후·화장실 사용 후·식사 전) + 장난감·문손잡이 소독'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 07 · WHEN TO SEE DOCTOR' in muted gray. Korean headline (navy with '등원 중단·즉시 병원' highlighted in mustard marker): '이럴 땐 / 등원 중단·즉시 병원'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Coral #C44536 outlined hand-drawn rectangle with corner cross marks (×). ⚠️ icon + bold warning text in coral: '6개월 미만 영아 / 2일 이상 발열 지속 / 구토·경련 등 심한 증상'. Visual: hand-drawn line illustration of hospital building and calendar with X mark, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '열 내리고 침 흘림 조절되고 수업 참여 가능할 때까지 등원 자제'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style closing page. Grid-pattern beige background #F5F0E5. Top-left small label: 'SAVE & SHARE' in muted gray. Korean headline (navy with '저장하세요' highlighted in mustard marker): '오늘 확인하고 / 저장하세요'. Source area: hand-drawn rectangle, thin black line border with small corner cross marks. 출처 · CDC Hand, Foot, and Mouth Disease Guidelines 2024 · 대한소아청소년과학회 수족구병 · 질병관리청 영유아 수족구병 주의보 2024 · AAP Pediatric Care Online. Brand block: 소아과언니 (medium-bold large navy — exactly 4 characters, NO pixel values) DR.SOA UNNIE · 소아청소년과 전문의 (small caps gray) ──── (thin hand-drawn divider) @dr.soa_unnie · 매주 새 가이드 소아과수첩 앱 · 야간·달빛병원 바로 찾기. Top-right: 소아과언니 (4 characters only, no quotes). ABSOLUTE RULE: never render numbers followed by 'px' anywhere."
+    }
+  ]
+}

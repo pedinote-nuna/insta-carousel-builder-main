@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Large breathing whitespace before headline. Headline COMPACT two lines: 자외선차단제 navy, 몇 개월부터 with 몇 개월부터 underlined in teal #2C6E63. Small subtitle gray: 월령별 기준 완벽 정리 · AAP 가이드라인 기준. LARGE minimalist sun and baby with sunscreen illustration in teal, prominently placed center-right. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 6개월 미만. Headline COMPACT: 생후 6개월 미만 navy, 사용 금지 coral #C44536 underline. Center: large minimalist illustration of baby under umbrella shade in teal line art. Below illustration: single card light gray #F0F4F8 rounded with GENEROUS padding, left-aligned text navy: 자외선차단제 사용 피하기 bold + 그늘과 보호복으로 햇빛 차단 + 피부가 얇고 투과성 높아 흡수·자극 위험. Bottom thin teal divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 예외 상황. Headline COMPACT: 불가피한 경우 navy, 소량만 teal #2C6E63 underline. Center: minimalist illustration of hand applying sunscreen to baby face in coral/teal line art. Below: single card light gray #F0F4F8 rounded GENEROUS padding, left-aligned: 얼굴·손 등 작은 부위 bold navy + 소량만 사용 + 햇빛 피할 수 없을 때만. Bottom thin teal divider. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 6개월 이상. Headline COMPACT: 생후 6개월부터 navy, 사용 안전 teal #2C6E63 underline. Center: large minimalist illustration of baby bottle with sun icon and checkmark in teal. Below: two stacked cards light gray #F0F4F8 rounded with comfortable spacing and GENEROUS padding. Top card: 모든 노출된 피부에 발라야 bold navy + 안전하게 사용 가능. Bottom card: 미네랄 차단제 권장 bold navy + 산화아연 또는 이산화티타늄 성분. Bottom thin teal divider. No pixel values. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: SPF 기준. Headline COMPACT: SPF 얼마가 navy, 적정할까 teal #2C6E63 underline. Center top: minimalist sunscreen bottle illustration with SPF label in teal/navy line art. Below: single large card light gray #F0F4F8 rounded GENEROUS padding, centered text: SPF 15 이상 navy bold large + Broad-spectrum 제품 선택 navy + UVA·UVB 모두 차단 gray small + SPF 15 또는 30이면 충분 navy. Bottom thin teal divider. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 바르는 방법. Headline COMPACT: 얼마나 자주 navy, 다시 발라야 할까 teal #2C6E63 underline. Center: minimalist clock icon with 2HR label in teal. Below: two stacked cards light gray #F0F4F8 rounded with comfortable spacing GENEROUS padding. Top card: 2시간마다 재도포 bold navy + 수영·땀 후 즉시. Bottom card: 충분한 양 사용 bold navy + 성인 기준 골프공 크기(1온스). Bottom thin teal divider. No pixel values. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 추가 보호. Headline COMPACT: 자외선 피하는 navy, 황금 시간 coral #C44536 underline. Center: minimalist sun position diagram showing 10AM-4PM danger zone in coral/teal. Below: two stacked cards. Top card light amber #FFF3E0 rounded GENEROUS padding: 오전 10시~오후 4시 bold navy + 자외선 가장 강한 시간 + 그늘에서 지내기. Bottom card light gray #F0F4F8: 물리적 차단 bold navy + 챙 넓은 모자·긴팔·선글라스. Bottom thin coral divider. No pixel values. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 응급. Headline COMPACT: 1세 미만 navy, 화상 시 즉시 연락 coral #C44536 underline. Center: alert icon with baby silhouette in coral line art. Below: single coral #C44536 background rounded card GENEROUS padding white text: ⚠️ 1세 미만 햇볕 화상 bold + 즉시 소아청소년과 연락. Below another card light gray #F0F4F8: 어린 시절 물집 화상 bold navy + 성인기 흑색종 위험 2배 이상 증가. Bottom thin coral divider. No pixel values. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right: 소아과언니 navy, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT center: 오늘 확인하고 navy, 저장하세요 teal #2C6E63 underline. Source box light gray #F0F4F8 rounded GENEROUS padding left-aligned. 출처 navy small bold newline · AAP Sun Safety 2024 newline · FDA Sunscreen for Infants 2021 newline · AAP News Sun Protection 2008 newline · AAP Dermatology 2025. Generous spacing plus thin horizontal divider navy. 소아과언니 navy bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray small center. Thin divider navy. @dr.soa_unnie · 매주 새 가이드 navy center. 소아과수첩 앱 · 진료 메모 미리 준비하기 teal center. No pixel values. No quotes anywhere."
+    }
+  ]
+}

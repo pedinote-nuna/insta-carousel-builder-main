@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Top: bold red #E63946 stripe full width + COMPACT white text '열사병 예방 긴급 가이드'. Top-right below stripe: 소아과언니 white Pretendard SemiBold small, no quotes, 4 characters only. Headline COMPACT 25% smaller: '아이 열사병' white bold, '이렇게 예방하세요' bright red #E63946. Small white subtitle: '더운 여름철 필수 대처법 · AAP 가이드라인 기준'. LARGE prominent line illustration bright sun with thermometer and child silhouette white outline on dark background, center-right placement. Bottom-left small gray: 'PARENTING NOTE · 024'. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red rounded label: '왜 위험한가요 ⚠'. Headline COMPACT 25% smaller: '아이는' white, '더위에 더 취약합니다' bright red #E63946. Center: SMALL LINE ILLUSTRATION child with thermometer icon mint outline. Below illustration: dark card background #1A2B3C rounded GENEROUS padding, white text COMPACT: '어린 아이는 자신이 덥고 목마른지 인식하지 못하고 스스로 해결할 수 없어요' top line, '수분 섭취가 유지되지 않으면 체온 조절이 어려워 위험해집니다' bottom line. Red glow effect around card subtle. No pixel values. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red rounded label: '절대 하지 마세요 ❌'. Headline COMPACT: '더운 시간대' white, '야외활동 자제' red #E63946. Two rows stacked GENEROUS vertical spacing: Row 1: SMALL LINE ILLUSTRATION sun clock icon left red ❌ overlay + COMPACT white text right '낮 12시~오후 5시 가장 더운 시간대 야외활동 금지'. Row 2: SMALL ILLUSTRATION baby outdoor icon left red ❌ overlay + COMPACT white text right '열지수 32°C 이상일 때 영아 장시간 야외활동 피하기'. Red outlined box around all rows comfortable padding. Bottom thin red accent line. No pixel values. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint rounded label: '수분 섭취 ✓'. Headline COMPACT: '물을 자주' white, '마시게 하세요' mint #2EC4B6. Two rows stacked GENEROUS spacing: Row 1: SMALL ICON water bottle left mint ✓ overlay + COMPACT white text right '매 시간 충분한 물 마시기 — 목마를 때까지 기다리지 마세요'. Row 2: SMALL ICON sports drink left mint ✓ overlay + COMPACT white text right '1시간 이상 활동 시 전해질 음료도 도움이 됩니다'. Mint outlined box around rows GENEROUS padding. Center: SMALL LINE ILLUSTRATION child drinking water mint outline. No pixel values. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint rounded label: '옷차림 ✓'. Headline COMPACT: '시원한 옷을' white, '입혀주세요' mint #2EC4B6. Two rows stacked GENEROUS spacing: Row 1: SMALL ICON t-shirt and hat left mint ✓ overlay + COMPACT white text right '밝은 색 헐렁하고 가벼운 옷 + 챙 넓은 모자'. Row 2: SMALL ICON heavy clothing crossed left mint ✓ overlay + COMPACT white text right '무거운 운동복·보호장비는 열 축적 증가로 위험'. Mint outlined box around rows. Center-bottom: SMALL LINE ILLUSTRATION child wearing light clothes and hat mint outline. No pixel values. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left bright red rounded label: '절대 금지 ❌'. Headline COMPACT: '차 안에' white, '절대 혼자 두지 마세요' bright red #E63946 bold. Center: LARGE LINE ILLUSTRATION car with child seat and warning symbol red outline prominent. Below illustration: dark card #1A2B3C rounded GENEROUS padding, bright red border thick, white text COMPACT: '창문을 열어도 10분 안에 차 내부 온도 약 11°C 상승' top line, '열사병 발생 위험 가장 높고 사망 가능' bottom line bold. Red glow effect strong. No pixel values. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint rounded label: '운동할 때 ✓'. Headline COMPACT: '천천히 적응하고' white, '충분히 쉬세요' mint #2EC4B6. Two rows stacked GENEROUS spacing: Row 1: SMALL ICON calendar with gradual increase left mint ✓ overlay + COMPACT white text right '더운 날씨 운동 시작 시 10-14일 걸쳐 강도·시간 천천히 늘리기'. Row 2: SMALL ICON rest break left mint ✓ overlay + COMPACT white text right '운동 사이 충분한 휴식 시간 주기 — 같은 날 여러 차례 운동 시 더욱 주의'. Mint outlined box around rows. Center-bottom: SMALL LINE ILLUSTRATION child resting under shade mint outline. No pixel values. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Full-width bright red header bar top: white bold COMPACT '이런 증상 보이면 즉시 병원'. Center: LARGE LINE ILLUSTRATION ambulance or emergency icon white outline. Below: numbered items GENEROUS spacing, red rounded border around all: '1' bright red circle + white text COMPACT '심하게 피곤해하거나 어지러워함', '2' red circle + white text '즉시 시원한 곳으로 옮기고 소아청소년과 연락'. Bottom: mint text small '열사병은 예방 가능 — 적절한 준비와 관찰로 대부분 예방할 수 있습니다'. No pixel values. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A. VERY GENEROUS outer margin all sides. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-center small gray: 'SAVE & SHARE'. Headline COMPACT center: '오늘 확인하고' white, '저장하세요' mint #2EC4B6 with thin mint underline. Source box dark #1A2B3C rounded GENEROUS padding white text small: 출처 white bold, · Pediatrics 2011 Climatic Heat Stress and Exercising Children, · AAP HealthyChildren.org Extreme Heat Tips 2024, · CDC Infants and Children and Heat 2025, · 질병관리청 온열질환 2024. Thin white horizontal divider. 소아과언니 white bold large center NO quotes NO decoration 4 characters only. DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin white divider. @dr.soa_unnie · 매주 새 가이드 white. 소아과수첩 앱 · 야간·달빛병원 바로 찾기 mint. No pixel values as text. No quotes anywhere."
+    }
+  ]
+}

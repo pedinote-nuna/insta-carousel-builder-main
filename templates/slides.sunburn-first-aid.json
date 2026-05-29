@@ -1,0 +1,55 @@
+{
+  "topic": "sunburn-first-aid",
+  "topic_kr": "아이 일광화상, 이렇게 대처하세요",
+  "palette": "B",
+  "output_dir": "output/sunburn-first-aid",
+  "image_size": "1080x1350",
+  "image_orientation": "portrait",
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Top: bold bright red #E63946 horizontal stripe full width with COMPACT white text SUNBURN 긴급 가이드. Top-right below stripe: 소아과언니 white Pretendard SemiBold small, no quotes, 4 characters only. Headline COMPACT 25% smaller than normal: 아이 일광화상 white bold, 이렇게 대처하세요 bright red #E63946. Small white subtitle below: 즉시 행동 필요 · AAP 가이드라인 기준. LARGE prominent line illustration center-right: child with sunburn skin redness distressed expression white outline minimal style on dark background, sun icon red above. Bottom-left small gray: PARENTING NOTE · 024. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red #E63946 rounded label: 증상 인지. Headline COMPACT 25% smaller: 일광화상 증상은 white, 6-12시간 내 나타납니다 red #E63946. Center: SMALL line illustration icon of clock and sun white outline minimal. Below: dark card background #1A2B3C rounded GENEROUS padding, white text list COMPACT size with GENEROUS line spacing: · 노출 후 6-12시간 내 증상 시작, · 첫 24시간 동안 가장 불편, · 심한 경우: 물집/발열/오한 bright red highlight, · 두통과 전신 불편감 동반 가능. Bottom thin white divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red #E63946 rounded label: 즉시 병원 ❌. Headline COMPACT 25% smaller: 이럴 땐 white, 즉시 연락하세요 bright red #E63946. Center area: three stacked rows with GENEROUS spacing, each with SMALL LINE ILLUSTRATION ICON left side red ❌ overlay and COMPACT white text right side: Row 1 — baby icon + 1세 미만 영아가 일광화상을 입은 경우, Row 2 — blister icon + 물집이 생긴 경우, Row 3 — thermometer icon + 발열·심한 통증이 있는 경우. All rows inside large red #E63946 outlined rounded box with comfortable padding. Bottom thin white divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint #2EC4B6 rounded label: 즉시 냉각 ✓. Headline COMPACT 25% smaller: 화상 부위를 white, 즉시 식히세요 mint #2EC4B6. Center: LARGE line illustration of child in cool bath or compress on skin white outline minimal clean style. Below: dark card background #1A2B3C rounded GENEROUS padding, mint ✓ icon top-left, white text COMPACT with GENEROUS spacing: · 차가운 물수건 대기, · 시원한 물로 목욕 (찬물 아님), · 필요시 자주 반복. Mint #2EC4B6 outlined rounded box around card. Bottom thin white divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint #2EC4B6 rounded label: 진통제 ✓. Headline COMPACT 25% smaller: 통증 완화는 white, 가능한 빨리 mint #2EC4B6. Center: SMALL medicine bottle and droplet icon white line illustration minimal. Below: two dark cards #1A2B3C stacked with GENEROUS spacing, each with mint ✓ left and COMPACT white text right: Card 1 — 6개월 이상: 이부프로펜 또는 아세트아미노펜, Card 2 — 6개월 미만: 아세트아미노펜만 사용. Small white footnote below cards: 용량은 연령·체중에 맞춰 패키지 확인. Mint #2EC4B6 outlined rounded box around all. Bottom thin white divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint #2EC4B6 rounded label: 수분 보충 ✓. Headline COMPACT 25% smaller: 충분한 수분 공급이 white, 필수입니다 mint #2EC4B6. Center: LARGE line illustration of child drinking water or cup with water droplets white outline minimal clean style. Below: dark card background #1A2B3C rounded GENEROUS padding, mint ✓ icon top-left, white text COMPACT with GENEROUS spacing: · 물 또는 우유 충분히 마시기, · 손실된 체액 보충, · 화상 후 수일간 지속 공급, · 탈수 예방이 핵심. Mint #2EC4B6 outlined rounded box around card. Bottom thin white divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red #E63946 rounded label: 절대 금지 ❌. Headline COMPACT 25% smaller: 물집은 white, 절대 터뜨리지 마세요 bright red #E63946. Center area: two stacked rows with GENEROUS spacing, each with SMALL LINE ILLUSTRATION ICON left side red ❌ overlay and COMPACT white text right side: Row 1 — blister icon + 물집 터뜨리기 금지 (감염 위험), Row 2 — cream tube icon + 의사 지시 없이 크림 바르지 않기. All rows inside large red #E63946 outlined rounded box with comfortable padding. Small white footnote below box: 의사 지시 시에만 보습제·알로에·하이드로코르티손 사용 가능. Bottom thin white divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top area: full-width bright red #E63946 header bar with white bold text COMPACT: 회복 기간 필수 수칙. Center: LARGE line illustration of child under umbrella or shade with red prohibition sun icon white outline minimal clean style. Below: numbered items with GENEROUS spacing, red #E63946 large number left and white text right COMPACT: 1 완전 회복 시까지 햇빛 노출 금지, 2 심한 화상은 탈수·열사병 유발 가능, 3 응급 치료 필요 시 즉시 병원 방문. Large red #E63946 outlined rounded border around all numbered items with comfortable padding. Bottom thin white divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. VERY GENEROUS outer margin all sides. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-center small gray: SAVE & SHARE. Headline COMPACT 25% smaller center-aligned: 오늘 확인하고 저장하세요 white with 저장하세요 mint #2EC4B6 thin underline. Source box dark #1A2B3C rounded GENEROUS padding, white text COMPACT left-aligned: 출처 white small bold, · American Academy of Pediatrics HealthyChildren.org 2024, · Nationwide Children's Hospital Health Library 2025, · Seattle Children's Hospital Dr. Schmitt 2025, · AAP 권장 일광화상 대처법. Thin white horizontal divider. 소아과언니 white bold large center NO quotes NO decoration. DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin white horizontal divider. @dr.soa_unnie · 매주 새 가이드 white. 소아과수첩 앱 · 야간·달빛병원 바로 찾기 mint #2EC4B6. No pixel values as text on card. No quotes anywhere on card."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "topic": "travel-emergency-kit",
+  "topic_kr": "여행 응급키트",
+  "palette": "A",
+  "output_dir": "output/travel-emergency-kit",
+  "image_size": "1080x1350",
+  "image_orientation": "portrait",
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Top-left small gray: PARENTING NOTE · 011. Left side upper area: very large bold Korean headline two lines — first line 여행 응급키트 in deep navy, second line 준비 가이드 in coral #C44536. Below headline: small muted gray subtitle 안전한 여행을 위한 필수품 · CDC 권장 기준. Right side center-bottom: large clean editorial illustration of organized first-aid kit with medical supplies, line art style in coral and teal, minimal clean strokes showing bandages, thermometer, medicine bottles in neat arrangement. Bottom area: thin coral horizontal accent line. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 사전 준비. Large bold headline: 여행 4주 전부터 navy, 준비하세요 coral #C44536. Center: clean editorial illustration of calendar with medical consultation icons, line art coral/navy minimal. Below: three light gray #F0F0EE rounded cards with generous padding. Card 1: bold navy 여행의학 상담 + small gray 출발 4-6주 전 소아청소년과 방문. Card 2: bold navy 개인화 필수 + small gray 여행지·기간·아이 건강 상태 고려. Card 3: bold navy 의료 접근성 확인 + small gray 현지 병원·약국 정보 미리 파악. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 체온 관리. Large bold headline: 체온계는 navy, 필수품입니다 coral #C44536. Center: clean editorial illustration of digital thermometer with temperature display, line art coral/navy minimal. Below: coral outline rounded box with generous padding, ⚠️ icon + bold coral 3세 이하 영유아 + navy text 항문 체온계가 가장 정확 + small gray 발열 기준 38도 이상. Bottom section: light gray #F0F0EE card, bold navy 디지털 체온계 추천 + small gray bullet list • 빠른 측정 • 휴대 편리 • 배터리 여분 준비. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 기본 의약품. Large bold headline: 해열제와 navy, 상처 치료용품 coral #C44536. Center: clean minimal illustration of pediatric medicine bottle, bandage, and first-aid supplies in simple line art, coral/navy palette, modern editorial style. Below: two balanced columns of light gray #F0F0EE rounded cards with equal height. Left card: bold navy 해열진통제 + small gray text • 아세트아미노펜 • 이부프로펜 • 체중별 용량 확인. Right card: bold navy 상처 치료 + small gray text • 일회용 밴드 • 소독제 • 항생제 연고 • 거즈·가위·핀셋. Bottom thin coral horizontal divider. Clean spacing, balanced layout. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 탈수 예방. Large bold headline: 경구수액제는 navy, 미리 구입하세요 coral #C44536. Center: clean editorial illustration of oral rehydration solution packets, line art coral/navy minimal. Below: coral outline rounded box with generous padding, ⚠️ icon + bold coral 소아 탈수 주의 + navy text 설사·구토 시 심각한 문제 발생 가능. Bottom section: light gray #F0F0EE card, bold navy ORS 경구수액제 + small gray • 탈수 예방·치료 최고 효과 • 여행 전 미리 구입 필수 • 현지 구입 어려울 수 있음. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 햇빛·모기. Large bold headline: 자외선차단제와 navy, 모기기피제 coral #C44536. Center: clean editorial illustration of sunscreen bottle and insect repellent spray, line art coral/navy minimal. Below: two light gray #F0F0EE rounded cards stacked. Top card: bold navy 자외선차단제 + small gray SPF 30 이상 broad-spectrum 선택. Bottom card: bold navy 모기기피제 + small gray DEET 20-30% 어린이용 제품. Bottom: coral outline box, ⚠️ + bold coral 2개월 미만 영아 + navy DEET 사용 금지. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 만성질환. Large bold headline: 평소 복용 약은 navy, 여유있게 준비 coral #C44536. Center: clean editorial illustration of prescription medication bottles in original containers, line art coral/navy minimal. Below: light gray #F0F0EE rounded card generous padding, bold navy 약물 휴대 원칙 + small gray bullet list • 원래 용량보다 여유있게 • 원래 용기에 담아 보관 • 기내 수하물로 휴대. Bottom section: coral outline box, ⚠️ + bold coral 천식·알레르기 + navy text 흡입기·에피네프린 자가주사기 필수 휴대. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 안전 수칙. Large bold headline: 응급 연락처와 navy, 보관 원칙 coral #C44536. Center: clean editorial illustration of phone with emergency contact list, line art coral/navy minimal. Below: two light gray #F0F0EE rounded cards stacked generous padding. Top card: bold navy 응급 연락처 미리 기록 + small gray • 근처 응급실 위치와 연락처 • 근처 소아청소년과 위치 정보 • 여행자보험 연락처 • 현지 대사관 연락처. Bottom card: bold navy 약물 보관 안전 수칙 + small gray • 어린이 손 닿지 않게 • 기내 반입 규정 확인 • 고온 다습 환경 피하기. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 with thin coral underline. Source box light gray #F0F0EE rounded generous padding: 출처 bold navy small · CDC Yellow Book 2025 Travel Health Kits · CDC Travelers' Health Traveling with Children · AAP HealthyChildren.org Temperature Guide · Johns Hopkins Medicine Traveler's First-Aid Kit. Horizontal thin navy divider. Center: 소아과언니 navy bold large — NO quotes NO decoration. Small gray DR.SOA UNNIE · 소아청소년과 전문의. Horizontal thin gray divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 진료 메모 coral. No pixel text. No quotes anywhere."
+    }
+  ]
+}

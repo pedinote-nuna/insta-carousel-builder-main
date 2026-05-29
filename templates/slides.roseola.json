@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 013. Large breathing whitespace before headline. Headline COMPACT two lines: 갑작스러운 고열 뒤 navy, 나타나는 분홍 발진 with 분홍 발진 underlined in teal #2C6E63. Small subtitle gray: 돌발진 증상과 대처법 · AAP 가이드라인 기준. LARGE minimalist line illustration of smiling baby with pink rash spots on chest and belly in teal and coral, prominently placed center-right. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: ABOUT. Headline COMPACT: 돌발진이란 navy, 무엇인가요 teal #2C6E63 underline. Clean editorial illustration of baby age icon and virus illustration in teal line art, center-left. Below: light gray #F0F4F8 rounded card GENEROUS padding: small gray label 발생 연령 + bold navy large 생후 6개월~2세 + small navy subtitle 대부분 아이들이 2세 이전 경험. Second card below: small gray label 원인 바이러스 + bold navy large HHV-6, 드물게 HHV-7 + small navy subtitle 침 방울 통해 전파 · 무증상 성인 보균자로부터 감염. Bottom thin teal divider. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: STAGE 1. Headline COMPACT: 처음 3-5일 navy, 갑작스러운 고열 coral #C44536 underline. Large clean illustration of thermometer showing high temperature in coral and navy, center. Below: light gray #F0F4F8 rounded card GENEROUS padding: small gray label 체온 범위 + bold coral extra large 38.9-40.5°C + small navy subtitle 3~5일간 지속. Second card below with light amber #FFF3E0 background: small gray label 특징 + bold navy 고열에도 비교적 활발 + small navy subtitle 다른 증상 거의 없음. Bottom thin coral divider. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: STAGE 2. Headline COMPACT: 열이 내린 후 navy, 나타나는 발진 teal #2C6E63 underline. Large clean illustration of baby torso with pink rash spots spreading pattern in coral dots and navy outline, center. Below: light teal #E8F4F2 rounded card GENEROUS padding: small gray label 발진 시작 + bold teal large 열 내린 후 12-24시간 + small navy subtitle 가슴 · 배 · 등에서 시작. Second card light gray: small gray label 발진 특징 + bold navy 목 · 팔 · 다리로 확산 + small navy subtitle 가렵지 않음 · 수 시간~며칠 지속. Bottom thin teal divider. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small navy rounded label: CARE. Headline COMPACT: 집에서 할 수 있는 navy, 대증 치료 teal #2C6E63 underline. Clean illustration of medicine bottle and water glass in teal and navy line art, top-center. Below: Two equal-width cards side by side. Left card light teal #E8F4F2 header small 해열제 + body light gray: small gray 체온 조절 + bold teal large 아세트아미노펜 또는 이부프로펜 + small navy 용량 확인 필수. Right card navy header small 수분 섭취 + body light gray: small gray 탈수 예방 + bold navy large 충분한 물 · 모유 · 분유 + small navy 자주 소량씩. Bottom coral warning box #C44536 background GENEROUS padding: ⚠️ white + 특별한 치료 불필요 · 자연 회복 white small. No pixel values. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: WARNING. Headline COMPACT: 주의해야 할 navy, 열성 경련 coral #C44536 underline. Large illustration of alert icon and trembling baby outline in coral and navy, center. Below: coral #C44536 background rounded card GENEROUS padding white text: small white label 발생 빈도 + bold white large 10-15% + small white subtitle 고열로 인한 경련 가능. Second card light amber #FFF3E0: small gray label 대처법 + bold navy 대부분 짧고 해롭지 않음 + small navy subtitle 경련 발생 시 즉시 의사 연락. Bottom thin coral divider. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: RETURN. Headline COMPACT: 언제부터 navy, 등원 가능한가요 teal #2C6E63 underline. Clean illustration of calendar with checkmark and happy baby icon in teal and navy line art, center. Below: light teal #E8F4F8 rounded card GENEROUS padding: small gray label 등원 기준 + bold teal extra large 열 내린 후 24시간 + small navy subtitle 더 이상 전염되지 않음. Second card light gray: small gray label 발진 상태 + bold navy 발진 남아있어도 OK + small navy subtitle 열만 없으면 등원 · 등교 가능. Bottom thin teal divider. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: CHECK. Headline COMPACT: 기억하세요 navy, 돌발진 핵심 체크리스트 teal #2C6E63 underline. Clean checklist illustration with three checkmark icons in teal, left side. Right side: Three stacked cards COMPACT text GENEROUS padding. First card light teal: ✓ teal + 고열 3-5일 → 발진 navy bold. Second card light amber: ✓ teal + 발진은 가렵지 않음 navy bold. Third card light gray: ✓ teal + 열 24시간 없으면 등원 가능 navy bold. Bottom thin teal divider. No pixel values. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right small: 소아과언니 navy, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT center: 오늘 확인하고 navy, 저장하세요 teal #2C6E63 with thin teal underline. Source box light gray #F0F4F8 rounded GENEROUS padding left-aligned: 출처 navy small bold, · Roseola in Babies and Toddlers HealthyChildren.org AAP 2024, · Roseola Infantum StatPearls Mullins & Daley 2026, · Roseola-Viral Rash Seattle Children's Hospital 2025, · Roseola Cleveland Clinic 2017. Generous spacing plus thin horizontal navy divider. 소아과언니 navy bold large center NO quotes. Small gray DR.SOA UNNIE · 소아청소년과 전문의. Thin navy divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 체중별 해열제 용량 바로 계산 teal. No pixel values. No quotes anywhere."
+    }
+  ]
+}

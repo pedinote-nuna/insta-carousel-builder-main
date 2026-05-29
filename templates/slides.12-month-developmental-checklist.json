@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes, 4 characters only. Top-left small gray: PARENTING NOTE · 015. Large breathing whitespace before headline. Headline COMPACT two lines: 12개월 navy, 발달 체크리스트 with 체크리스트 underlined in teal #2C6E63. Small subtitle gray: 우리 아이 성장 확인하기 · CDC 가이드라인 기준. LARGE minimalist baby milestone illustration in teal line art style, showing baby standing and playing, prominently placed center-right. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes, 4 characters only. Top-left small rounded label teal background: 발달지표란. Headline COMPACT: 발달지표는 navy, 75번째 백분위수 기준 with 기준 coral #C44536 underline. Center: large minimalist illustration of growth chart with percentile curve in teal/navy line art. Below illustration: single light gray card #F0F4F8 with GENEROUS padding, left-aligned REDUCED text 20% smaller: · 대부분 아이들(75% 이상)이 특정 연령까지 할 수 있는 것 navy, · 2022년 CDC·AAP 개정 기준 navy, · 조기 개입을 위해 'wait-and-see' 지양 navy. Bottom thin teal divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes, 4 characters only. Top-left small rounded label teal background: 사회·정서. Headline COMPACT: 12개월 navy, 사회·정서 발달 with 발달 teal #2C6E63 underline. Large minimalist illustration of baby waving bye-bye in teal/navy line art, center-right. Left side: two stacked cards light gray #F0F4F8 with GENEROUS padding and comfortable spacing, REDUCED text 20% smaller. Top card: small icon of hands clapping + 놀이 상호작용 navy bold + 짝짜꿍·까꿍 게임 navy. Bottom card: small icon of waving hand + 제스처 사용 navy bold + 안녕 손 흔들기 navy. Bottom thin teal divider. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes, 4 characters only. Top-left small rounded label teal background: 의사소통. Headline COMPACT: 언어 navy, 이해와 표현 with 표현 teal #2C6E63 underline. Large minimalist illustration of baby saying mama/dada in speech bubble, teal/navy line art, center-right. Left side: two stacked cards light gray #F0F4F8 with GENEROUS padding and comfortable spacing, REDUCED text 20% smaller. Top card: small speech bubble icon + 특별한 이름 부르기 navy bold + 엄마·아빠 또는 다른 이름 navy. Bottom card: small ear icon + 안돼 이해하기 navy bold + 말할 때 잠깐 멈추거나 멈춤 navy. Bottom thin teal divider. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes, 4 characters only. Top-left small rounded label teal background: 인지. Headline COMPACT: 문제 해결과 navy, 탐색 능력 with 능력 teal #2C6E63 underline. Large minimalist illustration of baby putting blocks in cup, teal/navy line art, center-right. Left side: two stacked cards light gray #F0F4F8 with GENEROUS padding and comfortable spacing, REDUCED text 20% smaller. Top card: small cube icon + 용기에 넣기 navy bold + 블록을 컵에 넣기 navy. Bottom card: small search icon + 숨긴 물건 찾기 navy bold + 담요 아래 장난감 찾아보기 navy. Bottom thin teal divider. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes, 4 characters only. Top-left small rounded label teal background: 운동. Headline COMPACT: 대근육과 navy, 소근육 발달 with 발달 teal #2C6E63 underline. Large minimalist illustration of baby standing holding furniture, teal/navy line art, center-right. Left side: three stacked cards light gray #F0F4F8 with GENEROUS padding and comfortable spacing, REDUCED text 20% smaller. Top card: small standing icon + 잡고 일어서기·걷기 navy bold + 가구 잡고 걸을 수 있음 navy. Middle card: small cup icon + 컵으로 마시기 navy bold + 보호자가 들고 있으면 뚜껑 없는 컵 navy. Bottom card: small hand pinch icon + 집게 집기 navy bold + 엄지와 검지로 작은 음식 집기 navy. Bottom thin teal divider. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes, 4 characters only. Top-left small rounded label coral background: 부모 tip. Headline COMPACT: 발달을 돕는 navy, 일상 활동 with 활동 coral #C44536 underline. Large minimalist illustration of parent talking to baby, teal/navy line art, center. Below: two stacked cards light gray #F0F4F8 with GENEROUS padding and comfortable spacing, REDUCED text 20% smaller. Top card: small speech expand icon + 말 확장하기 navy bold + 따→맞아 자동차야 / 자동차→큰 파란색 자동차네 navy. Bottom card: small teaching icon + 원하는 행동 가르치기 navy bold + 보여주고 격려하기(긍정 말·포옹) navy. Bottom thin coral divider. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes, 4 characters only. Top-left small rounded label coral background: 주의사항. Headline COMPACT: 건강한 navy, 발달 습관 with 습관 coral #C44536 underline. Large minimalist illustration of no screen icon with sleep icon, teal/navy line art, center-right. Left side: two stacked cards light gray #F0F4F8 with GENEROUS padding and comfortable spacing, REDUCED text 20% smaller. Top card: small screen crossed icon + 스크린 타임 제한 navy bold + 2세 미만 영상통화 외 권장 안 됨 navy. Bottom card: small moon icon + 충분한 수면 navy bold + 낮잠 포함 하루 12~16시간(4~12개월) navy. Bottom coral warning box with GENEROUS padding: ⚠️ 일정한 수면 시간이 발달에 도움 coral. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right small: 소아과언니 navy, no quotes, 4 characters only. Top-center small gray: SAVE & SHARE. Headline COMPACT center: 오늘 확인하고 navy, 저장하세요 with 저장하세요 teal #2C6E63 underline. Source box light gray #F0F4F8 rounded GENEROUS padding left-aligned, REDUCED text 20% smaller: 출처 navy small bold, · CDC Developmental Milestones 2026, · Evidence-Informed Milestones Pediatrics 2022, · Mayo Clinic Infant Development 2022, · AAP Screening Recommendations. Generous spacing plus thin horizontal navy divider. 소아과언니 navy bold large center NO quotes NO decoration. DR.SOA UNNIE · 소아청소년과 전문의 gray small center. Thin navy divider. @dr.soa_unnie · 매주 새 가이드 navy center. 소아과수첩 앱 · 우리 아이 발달 기록하기 teal center. No pixel values as text. No quotes anywhere on card."
+    }
+  ]
+}
