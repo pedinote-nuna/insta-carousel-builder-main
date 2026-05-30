@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient style. Background gradient 145deg #FFE4E8 → #E8D5F5 → #C8E8F5. Top-right: 소아과언니 medium purple #7B4FA0 Pretendard SemiBold small — 4 characters only, no quotes. Top-left small muted purple-gray: PARENTING NOTE · 010. Center-upper: small purple rounded pill label 모유 보관. Large bold headline two lines — 모유 냉동하면 deep purple #3D1F60, 영양 없어진다? medium purple #7B4FA0. Below: small muted purple-gray subtitle 과학적 근거로 확인하는 냉동 모유의 진실 · AAP 권장 기준. Center: ONE large semi-transparent white bubble card rounded 24px with LARGE bold number 6개월 deep purple + small caption 권장 냉동 보관 기간 muted purple-gray. Bottom: simple minimal line illustration baby bottle and snowflake in medium purple, soft strokes. No pixel values. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 150deg #FFE4D0 → #FFF5C0. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-left small muted label: 사실 확인. Large bold headline — 냉동해도 영양은 deep purple, 유지됩니다 medium purple. Content: ONE large semi-transparent white bubble card rgba(255,255,255,0.72) rounded 20px center. Inside bubble: small muted purple-gray label top AAP·CDC 가이드라인 + bold deep purple main text 모유를 냉동하면 영양이 완전히 사라진다는 건 사실이 아닙니다. 냉동 모유는 6개월 이내 사용이 권장되며, 최대 12개월까지 보관 가능합니다. + tiny source gray AAP, CDC 2025-2026. Below bubble: small minimal icon frozen milk bag in medium purple soft line. GENEROUS padding inside bubble. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 140deg #C8F5EC → #C8E8F5. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-left small muted label: 올바른 냉동법. Large bold headline — 온도가 deep purple, 핵심입니다 medium purple. Content: TWO stacked semi-transparent white bubble cards rgba(255,255,255,0.72) rounded 20px. First bubble: small muted purple-gray label 냉동실 온도 + VERY LARGE bold deep purple -18°C + small caption 이하 유지 필수 muted purple-gray. Second bubble: small muted purple-gray label 보관 위치 + bold deep purple 냉장고 문이 아닌 안쪽 깊은 곳에 보관하세요 + tiny source gray CDC 2025-2026. GENEROUS padding. Comfortable gap between bubbles. Small thermometer icon medium purple soft line top-right corner. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 135deg #E8D5F5 → #C8F5EC. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-left small muted label: 영양 비교. Large bold headline — 신선할수록 deep purple, 영양이 좋아요 medium purple. Content: THREE stacked semi-transparent white bubble cards rgba(255,255,255,0.72) rounded 20px equal height. First bubble: ① 신선 모유 bold deep purple + small text 항산화제·비타민·지방 최고 muted purple-gray. Second bubble: ② 냉장 모유 bold deep purple + small text 신선 모유 다음으로 우수 muted purple-gray. Third bubble: ③ 냉동 모유 bold deep purple + small text 일부 영양 감소하나 여전히 유익 muted purple-gray. Bottom: tiny source gray AAP, Medela 2025-2026. GENEROUS padding. Comfortable gap. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 150deg #FFE4D0 → #FFF5C0. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-left small muted label: 냉동 시 변화. Large bold headline — 3개월 이후 deep purple, 지방 감소 medium purple. Content: TWO semi-transparent white bubble cards rgba(255,255,255,0.72) rounded 20px side by side equal width. Left bubble: small muted purple-gray label 감소하는 것 + bold deep purple 지방·열량 함량 + small text 3개월 후 유의하게 감소 muted purple-gray. Right bubble: small muted purple-gray label 안정적인 것 + bold deep purple 단백질·유당 + small text 변화 폭 작거나 일정하지 않음 muted purple-gray. Bottom: tiny source gray García-Lara et al., Breastfeeding Med 2012. GENEROUS padding. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 140deg #C8F5EC → #C8E8F5. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-left small muted label: 면역 성분. Large bold headline — 면역 성분은 deep purple, 어떻게 될까요? medium purple. Content: TWO stacked semi-transparent white bubble cards rgba(255,255,255,0.72) rounded 20px. First bubble: ✓ checkmark medium purple + small muted purple-gray label 분비형 IgA + bold deep purple -20°C에서 냉동 6개월간 안정적으로 유지됩니다 + tiny source gray Permanyer et al., J Dairy Sci 2012. Second bubble: ⚠️ icon coral + small muted purple-gray label 락토페린 + bold deep purple -18~-20°C에서 3개월간 평균 37% 감소할 수 있습니다 + tiny source gray Chang et al., J Perinatol 2014. GENEROUS padding. Comfortable gap. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 145deg #FFD5D5 → #FFE4C8. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-left small muted label: 해동 주의. Large bold headline — 전자레인지 deep purple, 절대 금지 medium purple. Content: ONE large semi-transparent coral bubble card rgba(255,200,190,0.6) rounded 20px center. Inside: ⚠️ icon large + bold deep purple 전자레인지는 모유의 영양소를 파괴하고 뜨거운 부분이 생겨 아기 입을 데일 수 있습니다 + small muted gray CDC 2026. Below coral bubble: TWO small white bubble cards side by side. Left: ✓ medium purple + 냉장 해동 bold deep purple. Right: ✓ medium purple + 흐르는 미지근한 물 bold deep purple. GENEROUS padding. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 135deg #E8D5F5 → #C8F5EC. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-left small muted label: 해동 후 보관. Large bold headline — 해동 후엔 deep purple, 24시간 이내 medium purple. Content: THREE stacked semi-transparent white bubble cards rgba(255,255,255,0.72) rounded 20px. First bubble: ① + bold deep purple 냉장 해동한 모유는 완전히 녹은 시점부터 24시간 이내 사용 + tiny gray CDC 2026. Second bubble: ② + bold deep purple 한 번 해동한 모유는 절대 다시 냉동하지 마세요 + tiny gray CDC 2026. Third bubble: ③ + bold deep purple 냉동 모유는 냉장고 문이 아닌 안쪽 깊은 곳에 보관하세요 + tiny gray CDC 2026. GENEROUS padding. Comfortable gap. Small clock icon medium purple soft line. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 145deg #FFE4E8 → #E8D5F5 → #C8E8F5. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-center small muted gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 deep purple, 저장하세요 medium purple #7B4FA0 thin underline. Source bubble: semi-transparent white card rgba(255,255,255,0.72) rounded generous padding. 출처 medium purple small bold. · AAP Breastfeeding Guidelines 2025. · CDC Breast Milk Storage 2026. · García-Lara et al., Breastfeeding Med 2012. · Chang et al., J Perinatol 2014. Thin purple-gray horizontal divider. 소아과언니 medium purple bold large center — NO quotes, NO decoration. DR.SOA UNNIE · 소아청소년과 전문의 muted gray small. Thin divider. @dr.soa_unnie · 매주 새 가이드 deep purple. 소아과수첩 앱 · 믿을 수 있는 육아 정보 medium purple. No pixel values. No quotes anywhere."
+    }
+  ]
+}

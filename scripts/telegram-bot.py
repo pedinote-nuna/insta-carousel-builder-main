@@ -19,6 +19,7 @@
     /topics         — Claude API 로 이번 주 주제 10개 추천
     /queue          — 보류 주제 목록
     /done           — 완료 주제 목록 (최근 10개)
+    /usedtopics     — 사용한 주제 전체 이력 (used-topics.json)
     /new <slug>     — 카드뉴스 9장 생성
     /status         — 진행 상황
 
@@ -45,10 +46,11 @@ from typing import Optional
 
 try:
     from dotenv import load_dotenv
-    from telegram import Update
+    from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
     from telegram.constants import ChatAction
     from telegram.ext import (
         Application,
+        CallbackQueryHandler,
         CommandHandler,
         ContextTypes,
         MessageHandler,
@@ -71,6 +73,10 @@ TEMPLATES_DIR = REPO_ROOT / "templates"
 OUTPUT_DIR = REPO_ROOT / "output"
 DATA_DIR = REPO_ROOT / "data"
 TOPICS_JSON = DATA_DIR / "topics.json"
+USED_TOPICS_JSON = DATA_DIR / "used-topics.json"
+# 톤 템플릿(디자인 DNA) 디렉터리 — find 결과: knowledge/tone-templates/{tone}.md
+TONE_DIR = REPO_ROOT / "knowledge" / "tone-templates"
+TONE_DIR_ALT = REPO_ROOT / "knowledge" / "tone"  # 대안 경로
 SESSION_FILE = REPO_ROOT / "data" / "session.json"
 TOPIC_SELECTION_MD = REPO_ROOT / "knowledge" / "topic-selection.md"
 
@@ -164,6 +170,159 @@ def _clean_topic(r: dict) -> dict:
     }
 
 
+# ---------------------------------------------------------------- used-topics.json
+# 사용한 주제 이력 관리 + 중복(유사) 주제 체크용 키워드 저장소.
+
+# 키워드 비교 시 무시할 너무 흔한 단어 (오탐 방지)
+_KW_STOPWORDS = {
+    "아이", "아기", "영아", "유아", "신생아", "소아", "우리",
+    "방법", "증상", "주의", "관리", "예방", "케어", "가이드", "기준",
+    "때", "후", "전", "및", "그리고", "대처", "정보", "팁",
+}
+
+
+def load_used_topics() -> dict:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    if not USED_TOPICS_JSON.exists():
+        save_used_topics({"topics": []})
+    try:
+        with USED_TOPICS_JSON.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:  # noqa: BLE001
+        data = {}
+    data.setdefault("topics", [])
+    return data
+
+
+def save_used_topics(data: dict) -> None:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    tmp = USED_TOPICS_JSON.with_suffix(".json.tmp")
+    with tmp.open("w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    tmp.replace(USED_TOPICS_JSON)
+
+
+def _normalize_kw(kw: str) -> str:
+    return re.sub(r"\s+", "", str(kw)).strip().lower()
+
+
+def record_used_topic(
+    slug: str, title: str, keywords: list[str], category: str = "",
+    date_str: str = "",
+) -> None:
+    """used-topics.json 에 주제 1건 추가(또는 갱신). slug 기준 중복 방지."""
+    data = load_used_topics()
+    entry = {
+        "slug": slug,
+        "title": title or slug,
+        "keywords": [k for k in (keywords or []) if k],
+        "date": date_str or date.today().isoformat(),
+        "category": category or "미분류",
+    }
+    topics = data["topics"]
+    for i, t in enumerate(topics):
+        if t.get("slug") == slug:
+            topics[i] = entry  # 기존 항목 갱신
+            break
+    else:
+        topics.append(entry)
+    save_used_topics(data)
+
+
+def gather_topic_meta(slug: str) -> tuple[str, str]:
+    """slug 로 (title, category) 수집. 템플릿 → topics.json → slug 순 fallback."""
+    title = ""
+    category = ""
+    tpl = template_path(slug)
+    if tpl.exists():
+        try:
+            d = json.loads(tpl.read_text(encoding="utf-8"))
+            if isinstance(d, dict):
+                title = d.get("topic_kr") or title
+        except Exception:  # noqa: BLE001
+            pass
+    data = load_topics()
+    for area in ("this_week", "pending", "done"):
+        for item in data.get(area, []):
+            if item.get("slug") == slug:
+                title = title or item.get("title_kr", "")
+                category = category or item.get("category", "")
+    return (title or slug), (category or "미분류")
+
+
+def _fallback_keywords(title: str) -> list[str]:
+    """Claude 미사용 시 제목에서 길이 2+ 토큰을 키워드로 추출(간이)."""
+    raw = re.split(r"[\s,·/()\[\]{}!?.~\"'-]+", str(title))
+    out: list[str] = []
+    for tok in raw:
+        tok = tok.strip()
+        if len(tok) >= 2 and _normalize_kw(tok) not in _KW_STOPWORDS:
+            out.append(tok)
+    return out[:6]
+
+
+def _extract_keywords_sync(title: str, api_key: str) -> list[str]:
+    """Claude 로 제목에서 핵심 키워드 3~5개 추출. 실패 시 fallback."""
+    if not api_key or Anthropic is None:
+        return _fallback_keywords(title)
+    try:
+        client = Anthropic(api_key=api_key)
+        resp = client.messages.create(
+            model=ANTHROPIC_MODEL,
+            max_tokens=120,
+            system=(
+                "너는 소아과 카드뉴스 주제의 핵심 키워드 추출기야. "
+                "주어진 한국어 제목에서 검색·중복판단에 쓸 핵심 키워드 3~5개를 뽑아 "
+                'JSON 배열로만 답해. 예: ["코피","응급처치","지혈"]. '
+                "조사·일반어(아이·방법·증상 등)는 제외하고 명사 위주로."
+            ),
+            messages=[{"role": "user", "content": str(title)}],
+        )
+        raw = _collect_text(resp).strip()
+        raw = re.sub(r"^```(?:json)?\s*", "", raw)
+        raw = re.sub(r"\s*```$", "", raw)
+        kws = json.loads(raw)
+        if isinstance(kws, list) and kws:
+            return [str(k).strip() for k in kws if str(k).strip()][:6]
+    except Exception:  # noqa: BLE001
+        log.exception("키워드 추출 실패 — fallback 사용")
+    return _fallback_keywords(title)
+
+
+async def extract_keywords(title: str) -> list[str]:
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    return await asyncio.to_thread(_extract_keywords_sync, title, api_key)
+
+
+def similar_used_topics(keywords: list[str], limit: int = 5) -> list[dict]:
+    """입력 키워드와 겹치는 used-topics 항목을 겹침수 내림차순으로 반환."""
+    kset = {_normalize_kw(k) for k in keywords} - {_normalize_kw(s) for s in _KW_STOPWORDS}
+    kset = {k for k in kset if k}
+    if not kset:
+        return []
+    scored: list[tuple[int, str, dict]] = []
+    for t in load_used_topics().get("topics", []):
+        tset = {_normalize_kw(k) for k in t.get("keywords", [])}
+        overlap = kset & tset
+        if overlap:
+            scored.append((len(overlap), t.get("date", ""), t))
+    scored.sort(key=lambda x: (x[0], x[1]), reverse=True)
+    return [t for _, _, t in scored[:limit]]
+
+
+async def record_used_topic_on_done(slug: str) -> None:
+    """카드뉴스 생성 완료 직후 호출 — used-topics.json 에 자동 등록.
+    실패해도 파이프라인에 영향 없도록 예외를 흡수한다."""
+    try:
+        title, category = gather_topic_meta(slug)
+        keywords = await extract_keywords(title)
+        record_used_topic(slug, title, keywords, category=category)
+        log.info("used-topics 기록: %s (%s)", slug, category)
+    except Exception as e:  # noqa: BLE001
+        log.exception("used-topics 기록 실패 (무시): %s", e)
+
+
 # ---------------------------------------------------------------- session state
 
 
@@ -253,6 +412,134 @@ def template_path(slug: str) -> Path:
     return TEMPLATES_DIR / f"slides.{slug}.json"
 
 
+# ---------------------------------------------------------------- common_style 주입
+# slides.example.json 의 common_style(디자인 DNA)을 새 템플릿에 자동 주입.
+# 팔레트 B(응급·약물·예방접종 등 즉각 위험 주제)는 accent 를 coral→teal 로 변환.
+
+EXAMPLE_TEMPLATE = TEMPLATES_DIR / "slides.example.json"
+_EXAMPLE_COMMON_STYLE: Optional[str] = None
+
+# CLAUDE.md 팔레트 룰: "잘못 적용 시 즉각적 위험?" YES→B. 위험 신호 키워드.
+_PALETTE_B_KEYWORDS = [
+    "응급", "약물", "용량", "투여", "예방접종", "백신", "경련", "열성경련",
+    "119", "질식", "화상", "중독", "골절", "탈수", "아나필락시스", "위험",
+    "mg", "dose", "vaccine", "emergency",
+]
+
+
+def _example_common_style() -> str:
+    """slides.example.json 의 common_style 값(캐시)."""
+    global _EXAMPLE_COMMON_STYLE
+    if _EXAMPLE_COMMON_STYLE is None:
+        try:
+            d = json.loads(EXAMPLE_TEMPLATE.read_text(encoding="utf-8"))
+            _EXAMPLE_COMMON_STYLE = (d.get("common_style") or "") if isinstance(d, dict) else ""
+        except Exception:  # noqa: BLE001
+            log.exception("slides.example.json common_style 로드 실패")
+            _EXAMPLE_COMMON_STYLE = ""
+    return _EXAMPLE_COMMON_STYLE
+
+
+def decide_palette(sources: dict, topic_kr: str = "", slug: str = "") -> str:
+    """팔레트 결정. sources 의 palette 우선, 없으면 위험 키워드로 A/B 판정."""
+    p = str((sources or {}).get("palette", "")).strip().upper()
+    if p in ("A", "B"):
+        return p
+    hay = f"{topic_kr} {slug}".lower()
+    return "B" if any(k.lower() in hay for k in _PALETTE_B_KEYWORDS) else "A"
+
+
+def common_style_for_palette(palette: str) -> str:
+    """팔레트에 맞는 common_style 반환. B 면 primary accent 를 teal 로 치환.
+    (톤 기반 common_style_for_tone 도입 이후엔 보조용)"""
+    base = _example_common_style()
+    if base and palette == "B":
+        base = base.replace("coral #C44536", "teal #2C6E63")
+    return base
+
+
+# ---------------------------------------------------------------- 9종 톤 자동 선택
+# 토픽 키워드 → 톤 매핑. 위에서부터 먼저 일치하는 규칙이 선택됨(순서 중요).
+
+TONE_RULES = [
+    {
+        "tone": "emergency-alert",
+        "keywords": ["응급", "경련", "골절", "출혈", "쇼크", "119", "숨골", "긴급", "위험 신호", "즉시"],
+    },
+    {
+        "tone": "clean-infographic",
+        "keywords": ["백신", "예방접종", "수치", "기준", "용량", "성장", "발달", "체크리스트", "비교", "vs"],
+    },
+    {
+        "tone": "character-illustration",
+        "keywords": ["수유", "이유식", "신생아", "모유", "분유", "수면", "영아", "아기"],
+    },
+    {
+        "tone": "editorial-modern",
+        "keywords": ["감기", "발열", "피부", "아토피", "기침", "콧물", "알레르기", "에어컨"],
+    },
+    {
+        "tone": "handdrawn-notebook",
+        "keywords": ["예방", "생활습관", "루틴", "체크리스트", "단계별", "가이드"],
+    },
+    {
+        "tone": "dark-magazine",
+        "keywords": ["심장", "소아심장", "선천성", "가와사키", "희귀", "전문"],
+    },
+    {
+        "tone": "bold-typography",
+        "keywords": ["통념", "오해", "사실은", "틀렸", "잘못"],
+    },
+    {
+        "tone": "pastel-gradient",
+        "keywords": ["영양", "성장", "키", "몸무게", "백분위", "발달"],
+    },
+    {
+        "tone": "sticker-pop",
+        "keywords": ["수족구", "chickenpox", "수두", "계절", "여름", "겨울"],
+    },
+]
+DEFAULT_TONE = "editorial-modern"
+
+
+def normalize_tone(s: str) -> str:
+    """톤 입력(정식명 또는 한글 별칭)을 정식 톤명으로 정규화. 모르면 ""."""
+    if not s:
+        return ""
+    s = s.strip()
+    if s.lower() in VALID_TONES:
+        return s.lower()
+    # 한글 별칭 부분 일치 (기존 TONE_NORMALIZE 재사용)
+    for key, val in TONE_NORMALIZE.items():
+        if key in s:
+            return val
+    return ""
+
+
+def decide_tone(topic_kr: str, slug: str, user_requested_tone: str = None) -> str:
+    """톤 자동 선택. 사용자 요청(별칭 포함) 우선 → 키워드 매칭 → DEFAULT_TONE."""
+    if user_requested_tone:
+        nt = normalize_tone(user_requested_tone)
+        if nt:
+            return nt
+    for rule in TONE_RULES:
+        for kw in rule["keywords"]:
+            if kw in (topic_kr or "") or kw in (slug or ""):
+                return rule["tone"]
+    return DEFAULT_TONE
+
+
+def common_style_for_tone(tone: str) -> str:
+    """톤별 common_style(디자인 DNA) 로드. tone-templates → tone → example 순 폴백."""
+    tone_path = TONE_DIR / f"{tone}.md"
+    if tone_path.exists():
+        return tone_path.read_text(encoding="utf-8")
+    alt_path = TONE_DIR_ALT / f"{tone}.md"
+    if alt_path.exists():
+        return alt_path.read_text(encoding="utf-8")
+    return _example_common_style()  # 최종 폴백
+
+
 def is_authorized(update: Update, allowed_chat_id: Optional[str]) -> bool:
     if not allowed_chat_id:
         return True
@@ -302,7 +589,7 @@ async def cmd_start(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
         "  • '다시' — 주제 다시 추천\n"
         "\n"
         "📌 슬래시 커맨드도 사용 가능:\n"
-        "  /topics /queue /done /status"
+        "  /topics /queue /done /usedtopics /status"
     )
     await update.message.reply_text(text)
 
@@ -700,6 +987,35 @@ async def cmd_done(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("\n".join(lines))
 
 
+async def cmd_used_topics(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
+    """used-topics.json 전체 목록을 날짜순(최신 먼저)으로 출력."""
+    topics = load_used_topics().get("topics", [])
+    total = len(topics)
+    if total == 0:
+        await update.message.reply_text(
+            "📚 등록된 주제가 없어요.\n"
+            "   python3 scripts/import-topics.py 로 기존 주제를 일괄 등록할 수 있어요."
+        )
+        return
+    ordered = sorted(topics, key=lambda t: t.get("date", ""), reverse=True)
+    lines = [f"📚 사용한 주제 목록 (총 {total}개)", ""]
+    for t in ordered:
+        lines.append(
+            f"{t.get('date','?')} | {t.get('category','미분류')} | "
+            f"{t.get('title', t.get('slug','?'))}"
+        )
+    # 텔레그램 4096자 제한 대비 분할 전송
+    text = "\n".join(lines)
+    chunk = ""
+    for line in text.split("\n"):
+        if len(chunk) + len(line) + 1 > 3800:
+            await update.message.reply_text(chunk)
+            chunk = ""
+        chunk += (line + "\n")
+    if chunk.strip():
+        await update.message.reply_text(chunk)
+
+
 # ---------------------------------------------------------------- /new + duplicate
 
 
@@ -722,6 +1038,78 @@ async def begin_new_with_duplicate_check(update: Update, slug: str) -> None:
         )
         return
     await trigger_generation(update, slug)
+
+
+class _MsgUpdate:
+    """콜백 쿼리에서 auto_pipeline 으로 넘길 때 .message 만 노출하는 경량 래퍼.
+    (auto_pipeline / trigger_generation_direct 은 update.message 만 사용)"""
+
+    def __init__(self, message):
+        self.message = message
+
+
+async def precheck_and_generate(
+    update: Update, topic_kr: str, slug: str, forced_tone: str = ""
+) -> None:
+    """새 주제 생성 직전, used-topics.json 과 유사도 체크.
+    유사 주제가 있으면 인라인 키보드로 확인받고, 없으면 바로 생성."""
+    try:
+        keywords = await extract_keywords(topic_kr)
+        matches = similar_used_topics(keywords)
+    except Exception as e:  # noqa: BLE001
+        log.exception("중복 체크 실패 — 그대로 진행: %s", e)
+        matches = []
+
+    if not matches:
+        await auto_pipeline(update, topic_kr, slug, forced_tone=forced_tone)
+        return
+
+    # 유사 주제 발견 → 인라인 키보드로 확인
+    session["pending_generation"] = {
+        "topic_kr": topic_kr,
+        "slug": slug,
+        "forced_tone": forced_tone,
+    }
+    _save_session()
+
+    lines = ["⚠️ 비슷한 주제가 이미 있어요!", "", "📋 유사한 이전 주제:"]
+    for m in matches:
+        lines.append(f"- {m.get('date','?')} | {m.get('title', m.get('slug','?'))}")
+    lines.append("")
+    lines.append("계속 진행할까요?")
+    keyboard = InlineKeyboardMarkup(
+        [
+            [InlineKeyboardButton("✅ 네, 새로 만들기", callback_data="dup:ok")],
+            [InlineKeyboardButton("❌ 아니요, 취소", callback_data="dup:cancel")],
+        ]
+    )
+    await update.message.reply_text("\n".join(lines), reply_markup=keyboard)
+
+
+async def on_duplicate_callback(
+    update: Update, _: ContextTypes.DEFAULT_TYPE
+) -> None:
+    """인라인 키보드 '네/아니요' 처리."""
+    q = update.callback_query
+    await q.answer()
+    pending = session.get("pending_generation")
+    session["pending_generation"] = None
+    _save_session()
+
+    if q.data == "dup:cancel":
+        await q.edit_message_text("❌ 취소됐어요.")
+        return
+
+    # dup:ok
+    if not pending:
+        await q.edit_message_text("⚠️ 진행할 주제 정보가 만료됐어요. 다시 입력해주세요.")
+        return
+    topic_kr = pending.get("topic_kr", "")
+    slug = pending.get("slug", "")
+    forced_tone = pending.get("forced_tone", "")
+    await q.edit_message_text(f"✅ 새로 만들기 — '{topic_kr}'")
+    reset_cancel_flag()
+    await auto_pipeline(_MsgUpdate(q.message), topic_kr, slug, forced_tone=forced_tone)
 
 
 # ---------------------------------------------------------------- intent router
@@ -887,7 +1275,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
                 return
         forced_tone = params.get("tone", "")
         reset_cancel_flag()
-        await auto_pipeline(update, topic_kr, slug, forced_tone=forced_tone)
+        await precheck_and_generate(update, topic_kr, slug, forced_tone=forced_tone)
 
     elif intent == "select":
         numbers = params.get("numbers", [])
@@ -1435,12 +1823,11 @@ reviewer_pass 필드는 건드리지 말 것."""
 async def generate_template(
     sources: dict, topic_kr: str, slug: str, api_key: str, forced_tone: str = ""
 ) -> tuple[Optional[dict], str]:
-    """톤 자동 선택 + sources 기반으로 9장 슬라이드 템플릿 생성. (template, tone_name) 반환."""
-    if forced_tone:
-        tone_name = forced_tone
-        # tone_history는 업데이트하지 않음 (강제 지정이므로)
-    else:
-        tone_name = await select_tone(topic_kr, slug)
+    """톤 자동 선택 + sources 기반으로 9장 슬라이드 템플릿 생성. (template, tone_name) 반환.
+
+    톤 결정: 사용자 요청(forced_tone, 한글 별칭 포함) 우선 → 키워드 기반 decide_tone()
+    → DEFAULT_TONE. (Claude 기반 select_tone 은 보조용으로 보존만)"""
+    tone_name = decide_tone(topic_kr, slug, forced_tone or None)
     tone_path = REPO_ROOT / "knowledge" / "tone" / f"{tone_name}.md"
     tone_content = tone_path.read_text(encoding="utf-8") if tone_path.exists() else ""
 
@@ -1459,7 +1846,7 @@ def _generate_template_sync(
     api_key: str,
 ) -> Optional[dict]:
     client = Anthropic(api_key=api_key)
-    palette = sources.get("palette", "A")
+    palette = decide_palette(sources, topic_kr, slug)
 
     tone_template_path = REPO_ROOT / "knowledge" / "tone-templates" / f"{tone_name}.md"
     tone_template = (
@@ -1484,6 +1871,8 @@ def _generate_template_sync(
   "topic": "<영문 슬러그>",
   "topic_kr": "<한국어 제목>",
   "palette": "A 또는 B",
+  "tone": "",
+  "common_style": "",
   "output_dir": "output/<영문 슬러그>",
   "image_size": "1080x1350",
   "image_orientation": "portrait",
@@ -1508,7 +1897,8 @@ def _generate_template_sync(
 - prompt는 반드시 영문으로 작성
 - prompt 첫 단어는 반드시 "Portrait"
 - 시그니쳐: Top-right 소아과언니 (따옴표 없이 4글자만)
-- 숫자+px 텍스트 카드에 표시 금지"""
+- 숫자+px 텍스트 카드에 표시 금지
+- common_style·tone 필드는 시스템이 자동으로 채우니 빈 문자열("")로 두면 됨"""
     user = f"""토픽: {topic_kr}
 슬러그: {slug}
 팔레트: {palette}
@@ -1545,6 +1935,19 @@ slide n:9 outro 예시:
     result = _parse_json_object(_collect_text(msg))
     if isinstance(result, list):
         result = {"slides": result}
+
+    # common_style(디자인 DNA) 강제 주입 — Claude 가 비우거나 변형해도 항상 정규값 보장.
+    # 톤별 디자인 DNA(tone-templates/{tone}.md)를 common_style 로 사용.
+    if isinstance(result, dict):
+        result["palette"] = palette
+        result["tone"] = tone_name
+        injected = common_style_for_tone(tone_name)
+        if injected:
+            result["common_style"] = injected
+        elif not result.get("common_style"):
+            log.warning(
+                "common_style 주입값이 비어 있음 — tone-templates/%s.md 확인 필요", tone_name
+            )
     return result
 
 
@@ -2154,8 +2557,17 @@ async def trigger_generation(update: Update, slug: str) -> None:
             log.exception("add_done 실패")
             await update.message.reply_text(f"⚠️ done 기록 실패: {e}")
 
+        # 주제 이력 자동 등록 (used-topics.json) — 실패해도 파이프라인 영향 없음
+        await record_used_topic_on_done(slug)
+
         # 인스타 9장 완료 → 블로그 글 자동 생성 (실패해도 인스타 결과는 보존)
         await run_blog_generator(update, slug)
+
+        # 블로그 생성 직후 → 릴스 보강 컷 자동 생성 (실패해도 파이프라인 중단 안 함)
+        try:
+            await asyncio.to_thread(run_reels_supplement, slug)
+        except Exception as e:  # noqa: BLE001
+            log.warning(f"reels-supplement 호출 실패 (무시): {e}")
 
         current_task["status"] = "idle"
 
@@ -2208,6 +2620,32 @@ async def run_blog_generator(update: Update, slug: str) -> None:
         await update.message.reply_text(
             f"⚠️ 블로그 생성 호출 오류: {e}\n인스타는 정상 완료됐어요."
         )
+
+
+def run_reels_supplement(slug: str):
+    """reels-supplement.py를 백그라운드로 실행"""
+    import subprocess
+    script_path = REPO_ROOT / "scripts" / "reels-supplement.py"
+    if not script_path.exists():
+        print(f"[reels-supplement] 스크립트 없음: {script_path}")
+        return
+    print(f"[reels-supplement] 시작: {slug}")
+    try:
+        result = subprocess.run(
+            ["python3", str(script_path), "--topic", slug],
+            cwd=str(REPO_ROOT),
+            timeout=600,  # 10분 타임아웃
+            capture_output=True,
+            text=True
+        )
+        if result.returncode == 0:
+            print(f"[reels-supplement] 완료: {slug}")
+        else:
+            print(f"[reels-supplement] 오류: {result.stderr[-500:]}")
+    except subprocess.TimeoutExpired:
+        print(f"[reels-supplement] 타임아웃 (10분 초과): {slug}")
+    except Exception as e:
+        print(f"[reels-supplement] 실행 실패: {e}")
 
 
 async def run_generator(slug: str) -> tuple[bool, str]:
@@ -2308,8 +2746,17 @@ async def trigger_generation_direct(update: Update, slug: str) -> None:
             log.exception("add_done 실패")
             await update.message.reply_text(f"⚠️ done 기록 실패: {e}")
 
+        # 주제 이력 자동 등록 (used-topics.json) — 실패해도 파이프라인 영향 없음
+        await record_used_topic_on_done(slug)
+
         # 인스타 9장 완료 → 블로그 글 자동 생성 (실패해도 인스타 결과는 보존)
         await run_blog_generator(update, slug)
+
+        # 블로그 생성 직후 → 릴스 보강 컷 자동 생성 (실패해도 파이프라인 중단 안 함)
+        try:
+            await asyncio.to_thread(run_reels_supplement, slug)
+        except Exception as e:  # noqa: BLE001
+            log.warning(f"reels-supplement 호출 실패 (무시): {e}")
 
         current_task["status"] = "idle"
 
@@ -2352,7 +2799,11 @@ def build_app() -> Application:
     app.add_handler(CommandHandler("topics", wrap(cmd_topics)))
     app.add_handler(CommandHandler("queue", wrap(cmd_queue)))
     app.add_handler(CommandHandler("done", wrap(cmd_done)))
+    app.add_handler(CommandHandler("usedtopics", wrap(cmd_used_topics)))
     app.add_handler(CommandHandler("new", wrap(cmd_new)))
+    app.add_handler(
+        CallbackQueryHandler(wrap(on_duplicate_callback), pattern=r"^dup:")
+    )
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, wrap(handle_text)))
     return app
 

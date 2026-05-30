@@ -1,7 +1,7 @@
 """릴스 보강 컷 생성 스크립트.
 
 기존 카드뉴스 9장(templates/slides.{topic}.json)을 분석해서
-릴스용 추가 6장 프롬프트를 자동 생성하고 이미지까지 만든다.
+릴스용 추가 3~4장 프롬프트를 자동 생성하고 이미지까지 만든다.
 
 사용 예:
     python scripts/reels-supplement.py --topic nosebleed-head-back-danger
@@ -114,22 +114,32 @@ def classify_topic_type(slides_data: dict) -> str:
 
 
 SYSTEM_PROMPT = """당신은 소아과언니(@dr.soa_unnie) 인스타그램 릴스 전문 비주얼 디렉터입니다.
-기존 카드뉴스 9장을 분석해서 릴스용 추가 6장 프롬프트를 작성합니다.
+기존 카드뉴스 9장을 분석해서 릴스용 추가 3~4장 프롬프트를 작성합니다.
 
-릴스 추가 컷 원칙:
-1. 카드뉴스에 이미 있는 내용 반복 금지
-2. 첫 2컷은 반드시 감정/공감/충격 훅
-3. 실사 클로즈업 최소 2장 포함
-4. 카드뉴스에 없는 실용 정보 1장 포함
-5. 마지막 컷은 저장 유도
+추가 장 구성 원칙 (반드시 준수):
+1. 첫 번째 장 (insert_after=0): 훅 장면
+   - 커버(slide-01)와 동일한 주제/내용
+   - 타이포그래피 중심 또는 강렬한 한 줄 메시지
+   - 시청자가 첫 2초 안에 멈추게 하는 충격적 문구
+   - 스타일은 카드뉴스와 동일한 배경색/폰트 유지
 
-비율: 1080x1920 (9:16 세로)
+2. 두 번째~세 번째 장 (insert_after=3~7): 실사 설명 장면
+   - 카드뉴스 본문 내용을 설명하는 실사 클로즈업
+   - 손동작, 자세, 도구 등 행동 위주
+   - 예: 코 잡는 손 클로즈업, 고개 숙인 자세, 타이머 장면
+   - 카드뉴스에 이미 있는 내용이어도 OK — 실사로 보여주는 것이 목적
+   - 아이 또는 부모 손 등장 가능 (얼굴 클로즈업 허용)
+
+3. 마지막 장 (선택사항, insert_after=8~9): 없어도 됨
+   - CTA는 카드뉴스 9번 슬라이드가 담당하므로 추가 CTA 불필요
+
+금지:
+- 카드뉴스에 없는 새로운 의학 정보 추가 금지
+- 6장 이상 생성 금지
+- CTA 장 생성 금지 (카드뉴스 9번이 담당)
+
+비율: 1080x1350 (4:5 인스타 카드뉴스와 동일)
 스타일: 카드뉴스와 동일한 배경색/폰트/액센트 컬러 유지
-
-각 추가 컷에 insert_after 필드를 반드시 포함하세요.
-insert_after는 카드뉴스 몇 번 슬라이드 뒤에 삽입할지 나타냅니다.
-0이면 카드뉴스 1번 앞에 삽입합니다.
-예시: insert_after: 1 이면 카드뉴스 1번 뒤에 삽입.
 
 출력은 JSON 객체만. 다른 텍스트·마크다운·코드펜스 금지."""
 
@@ -150,29 +160,29 @@ def _summarize_slides(slides: list[dict]) -> str:
 def generate_extra_prompts(
     slides_data: dict, topic_type: str, topic_name: str, api_key: str
 ) -> list[dict]:
-    """Claude 로 릴스 추가 6장 프롬프트 생성. extra_slides 리스트 반환."""
+    """Claude 로 릴스 추가 3~4장 프롬프트 생성. extra_slides 리스트 반환."""
     client = Anthropic(api_key=api_key)
     user_prompt = f"""주제 슬러그: {topic_name}
 주제 유형: {topic_type}
 카드뉴스 기존 9장 내용:
 {_summarize_slides(slides_data.get("slides", []))}
 
-위 카드뉴스를 보완하는 릴스 추가 6장 프롬프트를 JSON으로 작성해주세요.
+위 카드뉴스를 보완하는 릴스 추가 3~4장 프롬프트를 JSON으로 작성해주세요.
 
 출력 형식:
 {{
   "extra_slides": [
     {{
       "n": 10,
-      "insert_after": 1,
+      "insert_after": 0,
       "role": "reels-hook",
       "purpose": "이 컷의 목적 한 줄",
-      "prompt": "나노바나나용 영문 프롬프트 (카드뉴스 스타일과 동일)"
+      "prompt": "나노바나나용 영문 프롬프트"
     }}
   ]
 }}
 
-총 6개 (n=10~15). insert_after 는 0~9 정수."""
+반드시 3~4장만 생성하세요. 첫 장은 insert_after=0 훅, 나머지는 실사 설명 장면."""
     msg = client.messages.create(
         model=CLAUDE_MODEL,
         max_tokens=4096,
@@ -188,8 +198,8 @@ def generate_extra_prompts(
         raise ValueError(f"Claude 응답에서 JSON 객체를 찾지 못함: {text[:300]}")
     parsed = json.loads(m.group(0))
     extras = parsed.get("extra_slides", [])
-    if not isinstance(extras, list) or len(extras) != 6:
-        raise ValueError(f"extra_slides 가 6개가 아님 (got {len(extras) if isinstance(extras, list) else '?'})")
+    if not isinstance(extras, list) or not (3 <= len(extras) <= 4):
+        raise ValueError(f"extra_slides 가 3~4개가 아님 (got {len(extras) if isinstance(extras, list) else '?'})")
     return extras
 
 
@@ -323,9 +333,16 @@ ORS→경구수액제, HFMD→수족구병
 def _collect_ordered_slides(
     slides_data: dict, extras_with_file: list[dict], n_card_slides: int
 ) -> list[dict]:
-    """카드뉴스 + extras 를 insert_after 기준으로 인터리브해서 [{label, role, prompt}] 반환."""
+    """카드뉴스 + extras 를 insert_after 기준으로 인터리브해서 [{label, role, prompt}] 반환.
+
+    대본 생성용이므로 실사 설명 장면은 제외한다.
+    extras 중에서는 reels-hook(훅 대본 필요)만 포함하고,
+    reels-visual / reels-explain 등 실사 장면 role 은 모두 제외한다.
+    (role 문자열이 매번 달라질 수 있어, '훅만 화이트리스트' 방식으로 견고하게 처리)"""
     by_pos: dict[int, list[dict]] = {}
     for e in extras_with_file:
+        if str(e.get("role", "")) != "reels-hook":
+            continue
         by_pos.setdefault(e["insert_after"], []).append(e)
     card_by_n = {s.get("n"): s for s in (slides_data.get("slides") or [])}
 
@@ -353,6 +370,24 @@ def _collect_ordered_slides(
     return out
 
 
+# 더빙용 발음 표기(꽈) 강제 — Claude 가 표준어(과)로 정규화하는 것을 사후 교정.
+# 순서대로 적용 (앞 규칙이 뒤 규칙의 입력을 바꿀 수 있으므로 순서 보존).
+_BRAND_FIXES = [
+    ("소아청소년과 전문의", "소아청소년꽈전문의"),
+    ("소아청소년과전문의", "소아청소년꽈전문의"),
+    ("소아과수첩", "소아꽈수첩"),
+    ("소아과언니", "소아꽈언니"),
+    ("소아과언니의", "소아꽈언니의"),
+]
+
+
+def _apply_brand_fixes(text: str) -> str:
+    """대본 텍스트에 브랜드 표기(꽈)를 강제 치환."""
+    for old, new in _BRAND_FIXES:
+        text = text.replace(old, new)
+    return text
+
+
 def generate_voiceover_script(ordered_slides: list[dict], api_key: str) -> str:
     """Claude 로 릴스 대본 생성. 전체 응답 텍스트 반환."""
     client = Anthropic(api_key=api_key)
@@ -373,9 +408,10 @@ def generate_voiceover_script(ordered_slides: list[dict], api_key: str) -> str:
         system=VOICEOVER_SYSTEM_PROMPT,
         messages=[{"role": "user", "content": user_prompt}],
     )
-    return "".join(
+    text = "".join(
         block.text for block in msg.content if getattr(block, "type", "") == "text"
     ).strip()
+    return _apply_brand_fixes(text)
 
 
 def send_voiceover_to_telegram(script_text: str) -> None:
@@ -491,7 +527,7 @@ def send_to_telegram(
 def main() -> int:
     load_dotenv(REPO_ROOT / ".env")
 
-    ap = argparse.ArgumentParser(description="릴스 보강 6장 자동 생성")
+    ap = argparse.ArgumentParser(description="릴스 보강 3~4장 자동 생성")
     ap.add_argument("--topic", required=True, help="슬러그 (templates/slides.{topic}.json)")
     ap.add_argument("--dry-run", action="store_true", help="이미지 생성·텔레그램 전송 없이 프롬프트만 저장")
     args = ap.parse_args()
@@ -518,7 +554,7 @@ def main() -> int:
     topic_type = classify_topic_type(slides_data)
     print(f"[1/6] 주제 유형 분류: {topic_type}")
 
-    print(f"[2/6] Claude 로 릴스 추가 6장 프롬프트 생성 중...")
+    print(f"[2/6] Claude 로 릴스 추가 3~4장 프롬프트 생성 중...")
     try:
         extras = generate_extra_prompts(slides_data, topic_type, args.topic, anth_key)
     except Exception as e:  # noqa: BLE001
@@ -549,7 +585,7 @@ def main() -> int:
     if args.dry_run:
         print("[4/6] --dry-run: 이미지 생성·텔레그램 전송 건너뜀")
         print()
-        print("=== 추가 6장 미리보기 ===")
+        print("=== 추가 3~4장 미리보기 ===")
         for s in extras:
             print(
                 f"  {s.get('n','?')}번 ({s.get('role','?')}) → {s['file']} "

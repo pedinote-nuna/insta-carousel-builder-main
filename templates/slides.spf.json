@@ -1,0 +1,49 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient style. Background gradient 145deg #FFE4E8 → #E8D5F5 → #C8E8F5. Top-right: 소아과언니 medium purple #7B4FA0 Pretendard SemiBold small — 4 characters only, no quotes. Top-left small muted purple-gray: PARENTING NOTE · 015. Center-upper: small purple rounded pill label 선크림 가이드. Large bold headline two lines — 선크림 SPF deep purple #3D1F60, 높을수록 좋다? medium purple #7B4FA0. Below: small muted purple-gray subtitle 아기 피부는 달라요 · AAP 권장 기준. Center: ONE large semi-transparent white bubble card rounded 24px with LARGE bold number SPF 30-50 + small caption 아기 선크림 권장 지수. Bottom: simple minimal line illustration of sun umbrella and baby sunhat in medium purple, soft strokes. No pixel values. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 145deg #FFD5D5 → #FFE4C8. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-left small muted label: 월령별 기준. Large bold headline — 6개월 미만 deep purple, 선크림 사용 금지 medium purple. Content: stacked semi-transparent white bubble cards rgba(255,255,255,0.72) rounded 20px. First bubble card: small muted purple-gray label top 0-6개월 + bold deep purple main text 선크림 사용 권장하지 않음 + tiny source gray AAP 2023. Second bubble card: ⚠️ icon + bold text 물리적 차단 우선 deep purple + small detail 그늘 · 긴 옷 · 모자 착용 muted gray. GENEROUS padding inside each bubble. Comfortable gap between bubbles. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 150deg #FFE4D0 → #FFF5C0. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-left small muted label: 예외 상황. Large bold headline — 불가피한 경우 deep purple, 최소량만 medium purple. Content: ONE hero semi-transparent white bubble card center rgba(255,255,255,0.72) rounded 24px. Inside: small muted label 6개월 미만 예외 + LARGE bold deep purple SPF 15 이상 + small detail text 얼굴 · 손등 등 작은 부위에만 muted gray. Below: small coral-tinted bubble card rgba(255,200,190,0.6) with ⚠️ icon + 최소량 사용 원칙 bold deep purple. Bottom tiny gray source AAP 2023 guideline. GENEROUS padding. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 140deg #C8F5EC → #C8E8F5. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-left small muted label: SPF 수치. Large bold headline — 6개월 이상 deep purple, SPF 30 이상 medium purple. Content: ONE hero bubble card center with VERY LARGE bold purple number SPF 30 + unit 이상 + small caption 광범위 스펙트럼. Below: three smaller supporting bubble cards in a row equal width. First card: SPF 15 bold + 93% 차단 small. Second card: SPF 30 bold + 97% 차단 small. Third card: SPF 50 bold + 98% 차단 small. Bottom small gray source AAP News 2013. GENEROUS padding. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 145deg #E8D5F5 → #C8E8F5. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-left small muted label: 권장 범위. Large bold headline — SPF 50 이상은 deep purple, 추가 효과 미미 medium purple. Content: stacked semi-transparent white bubble cards rounded 20px. First bubble card: small purple-gray label AAP 권장 + bold deep purple SPF 15-50 + small detail 소아청소년 적정 범위 muted gray. Second bubble card: ✗ mark coral + bold text SPF 50 초과 제품 추가 효과 입증 안 됨 deep purple + tiny source AAP 2023. Bottom small illustration of number 50 with checkmark in medium purple line art. GENEROUS padding. Comfortable gap. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 150deg #FFE4D0 → #FFF5C0. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-left small muted label: 성분 선택. Large bold headline — 아기 피부에는 deep purple, 무기자차 선크림 medium purple. Content: Two bubble cards side by side equal width. Left: purple-tinted bubble rgba(200,180,240,0.5) + ✓ checkmark medium purple + bold text Zinc Oxide Titanium Dioxide deep purple + small 물리적 차단 gray. Right: pink-tinted bubble rgba(255,200,190,0.6) + ✗ mark coral + bold text Oxybenzone deep purple + small 가능하면 피하기 gray. Bottom small gray source AAP 2023 guideline. GENEROUS padding. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 135deg #E8D5F5 → #C8F5EC. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-left small muted label: 사용법. Large bold headline — 외출 15-30분 전 deep purple, 2시간마다 덧바르기 medium purple. Content: stacked semi-transparent white bubble cards rounded 20px. First bubble card: small label 사전 도포 + bold deep purple 외출 15-30분 전 바르기 + tiny source Nationwide Children's 2023. Second bubble card: small label 재도포 + bold deep purple 2시간마다 덧바르기 + small gray every 2 hours. Third bubble card: ⚠️ icon + bold 수영 · 땀 후 즉시 deep purple + tiny source AAP News 2013. GENEROUS padding. Comfortable gap. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 145deg #FFE4E8 → #E8D5F5. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-left small muted label: 자외선 보호. Large bold headline — 18세 전 deep purple, 평생 노출의 23-25% medium purple. Content: ONE hero bubble card center with LARGE bold number 23-25% purple + small caption 18세 이전 자외선 누적 노출. Below: stacked supporting bubble cards. First card: ✓ checkmark + bold 1차 방어선 deep purple + small 그늘 · 긴소매 · 모자 · 선글라스 gray. Second card: ⚠️ icon + bold 오전 10시-오후 4시 deep purple + small 자외선 최강 시간대 노출 제한 gray. Bottom tiny source Godar 2003 · AAP 2023. GENEROUS padding. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 145deg #FFE4E8 → #E8D5F5 → #C8E8F5. Top-right: 소아과언니 medium purple small — 4 characters only, no quotes. Top-center small muted gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 deep purple, 저장하세요 medium purple #7B4FA0 thin underline. Source bubble: semi-transparent white card rgba(255,255,255,0.72) rounded generous padding. 출처 medium purple small bold. · American Academy of Pediatrics Sun Safety 2023. · AAP News Sunscreen 101 2013. · Nationwide Children's Hospital 2023. · Godar et al. Photochem Photobiol 2003. Thin purple-gray horizontal divider. 소아과언니 medium purple bold large center — NO quotes, NO decoration. DR.SOA UNNIE · 소아청소년과 전문의 muted gray small. Thin divider. @dr.soa_unnie · 매주 새 가이드 deep purple. 소아과수첩 앱 · 우리 아이 건강 기록 medium purple. No pixel values. No quotes anywhere."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "topic": "card-20260530-001",
+  "topic_type": "보관관리형",
+  "source_template": "slides.card-20260530-001.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 훅 - 충격적 질문으로 시청자 멈추게 하기",
+      "prompt": "Portrait 1080x1350. Soft pastel gradient background 145deg #FFE4E8 → #E8D5F5 → #C8E8F5. Centered bold typography in deep purple #7B4FA0, Pretendard ExtraBold 96pt: \"모유 냉동하면\" line break \"영양 파괴된다?\" Minimal design, no other elements. Clean whitespace. Question mark emphasized slightly larger. Typography-focused minimal style matching card-news aesthetic.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 2,
+      "role": "reels-explain-photo",
+      "purpose": "냉동 과정 실사 - 모유 보관팩을 냉동실에 넣는 손 클로즈업",
+      "prompt": "Portrait 1080x1350. Close-up photo: Asian mother's hand gently placing clear plastic breast milk storage bag (labeled with date sticker) into modern freezer compartment. Bag contains pale yellow-white breast milk, half-full, air removed, lying flat. Freezer interior visible with ice crystals on walls, soft cool lighting. Hand wearing simple ring, natural skin tone. Realistic photo style, shallow depth of field, focus on bag and hand. Clean modern kitchen aesthetic. Soft pastel color grade matching #C8F5EC tones.",
+      "file": "2-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-explain-photo",
+      "purpose": "냉동 모유 변화 실사 - 냉동 전후 색상·층 분리 비교",
+      "prompt": "Portrait 1080x1350. Close-up photo: Two breast milk storage bags side by side on white marble countertop. Left bag: fresh milk, uniform pale yellow-white color. Right bag: frozen-then-thawed milk, slight layer separation visible (creamy top layer, watery bottom), slightly different color gradient. Both bags labeled with handwritten dates. Soft natural window light from left. Realistic photo macro style, bags slightly angled, professional food photography aesthetic. Color grade with soft pastel warmth matching #FFE4D0 → #FFF5C0 gradient tones.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-explain-photo",
+      "purpose": "해동 방법 실사 - 냉장실 또는 흐르는 찬물에 모유팩 해동하는 클로즈업",
+      "prompt": "Portrait 1080x1350. Close-up photo: Frozen breast milk storage bag (with visible ice crystals inside, pale opaque white-yellow) submerged in clear glass bowl filled with cold running water in stainless steel sink. Gentle water stream visible, small bubbles. Asian mother's hand holding bag edge, natural skin tone, simple nail polish. Bag partially thawed, transitioning from opaque to translucent. Realistic photo style, soft kitchen lighting, shallow depth of field focus on bag. Clean modern kitchen background slightly blurred. Color grade with cool pastel tones matching #C8F5EC → #C8E8F5 gradient.",
+      "file": "7-1.png"
+    }
+  ]
+}
