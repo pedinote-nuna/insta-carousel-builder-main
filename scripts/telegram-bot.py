@@ -94,6 +94,13 @@ SLIDE_COUNT = 9
 DONE_PREVIEW = 10
 ANTHROPIC_MODEL = "claude-sonnet-4-5-20250929"
 
+# === /batch (여러 주제 일괄 순차 처리) 설정 ===
+# 단가·장수는 운영자가 조정 가능한 상수로 분리(하드코딩 금지).
+BATCH_MAX_TOPICS = 10          # 한 배치 최대 주제 수 (초과분은 잘라냄)
+BATCH_MIN_TOPIC_LEN = 5        # 주제 1개 최소 글자 수 (미만이면 그 줄 제외)
+BATCH_IMAGES_PER_TOPIC = 14    # 주제당 생성 이미지 추정치(인스타 9 + 릴스/블로그 보강)
+BATCH_COST_PER_TOPIC_USD = 1.88  # 주제당 예상 비용(USD) — 확인 게이트 안내용
+
 APP_LINKS = """📲 소아과수첩 앱 다운로드
 - Android: https://play.google.com/store/apps/details?id=com.pedinote.app
 - iOS: https://apps.apple.com/kr/app/소아과수첩-해열제-성장기록-육아/id6758393052"""
@@ -502,6 +509,62 @@ TONE_RULES = [
 DEFAULT_TONE = "editorial-modern"
 
 
+# === 주제 "성격"(동사·맥락) 기반 1차 분류 ===
+# 명사("신생아·아기")가 아니라 주제가 무엇을 하려는지(성격)로 스타일을 정한다.
+# 순서 중요(위→아래 첫 일치): 위험 → 비교 → 부드러운 일상 → 실천·단계.
+# 같은 "신생아" 주제라도 성격이 다르면 다른 스타일이 나오게 하는 것이 목적.
+NATURE_RULES = [
+    {   # 1) 위험·응급·판단형 — 잘못 적용 시 즉각 위험
+        "tone": "emergency-alert",
+        "keywords": [
+            "응급", "응급실", "응급처치", "위험", "위급", "부딪", "찧", "화상",
+            "데인", "경련", "발작", "질식", "삼킴", "삼켰", "이물", "기도막",
+            "119", "쇼크", "출혈", "골절", "중독", "호흡곤란", "숨", "청색",
+            "위험 신호", "즉시", "언제 병원", "응급 상황",
+        ],
+    },
+    {   # 2) 비교·감별형
+        "tone": "editorial-modern",
+        "keywords": [
+            "vs", "비교", "구별", "감별", "차이", "다른 점", "색깔로",
+            "어떻게 다", "헷갈", "구분",
+        ],
+    },
+    {   # 3) 부드러운 일상 — 캐릭터형(먹놀이·발달 놀이)
+        "tone": "character-illustration",
+        "keywords": [
+            "이유식", "간식", "놀이", "장난감", "촉감", "그림책", "월령", "처음",
+        ],
+    },
+    {   # 3') 부드러운 일상 — 손그림형(달램·돌봄·재우기)
+        "tone": "handdrawn-notebook",
+        "keywords": [
+            "딸꾹질", "손톱", "달래", "달램", "트림", "배앓이", "산통", "잠투정",
+            "낮잠", "목욕", "이앓이", "보채", "토닥", "재우", "안아", "스킨십",
+            "기저귀", "속싸개",
+        ],
+    },
+    {   # 4) 실천·단계·방법형 — 검증된 고성과 스타일
+        "tone": "clean-infographic",
+        "keywords": [
+            "순서", "단계", "방법", "하는 법", "소독", "씻기", "씻는", "닦",
+            "재우는 법", "먹이는", "관리법", "대처법", "준비물", "꿀팁", "루틴",
+            "체크리스트",
+        ],
+    },
+]
+
+
+def classify_nature(text: str) -> str:
+    """주제의 '성격'(동사·맥락 키워드)으로 1차 톤 분류. 신호 없으면 ""(폴백 유도)."""
+    t = text or ""
+    for rule in NATURE_RULES:
+        for kw in rule["keywords"]:
+            if kw in t:
+                return rule["tone"]
+    return ""
+
+
 def normalize_tone(s: str) -> str:
     """톤 입력(정식명 또는 한글 별칭)을 정식 톤명으로 정규화. 모르면 ""."""
     if not s:
@@ -517,11 +580,21 @@ def normalize_tone(s: str) -> str:
 
 
 def decide_tone(topic_kr: str, slug: str, user_requested_tone: str = None) -> str:
-    """톤 자동 선택. 사용자 요청(별칭 포함) 우선 → 키워드 매칭 → DEFAULT_TONE."""
+    """톤 자동 선택.
+    우선순위: ① 사용자 수동 지정(별칭 포함) → ② 주제 '성격' 분류(명사 쏠림 방지)
+    → ③ 기존 9종 명사 규칙 폴백(수족구→sticker-pop, 심장→dark-magazine 등 보존)
+    → ④ DEFAULT_TONE."""
+    # ① 사용자 수동 지정 우선
     if user_requested_tone:
         nt = normalize_tone(user_requested_tone)
         if nt:
             return nt
+    # ② 주제 '성격'(동사·맥락) 우선 — "신생아/아기" 명사보다 먼저 판단
+    hay = f"{topic_kr or ''} {slug or ''}"
+    nature = classify_nature(hay)
+    if nature:
+        return nature
+    # ③ 성격 신호가 없을 때만 기존 9종 명사 규칙 폴백
     for rule in TONE_RULES:
         for kw in rule["keywords"]:
             if kw in (topic_kr or "") or kw in (slug or ""):
@@ -589,7 +662,10 @@ async def cmd_start(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
         "  • '다시' — 주제 다시 추천\n"
         "\n"
         "📌 슬래시 커맨드도 사용 가능:\n"
-        "  /topics /queue /done /usedtopics /status"
+        "  /topics /new /batch /cancel /help\n"
+        "  /queue /done /usedtopics /status\n"
+        "\n"
+        "📦 /batch — 여러 주제 한꺼번에 처리"
     )
     await update.message.reply_text(text)
 
@@ -1179,6 +1255,11 @@ def _intent_router_sync(text: str, api_key: str) -> dict:
   ("travel-emergency-kit 말이야", "아까 만든 거 말이야",
    "방금 그거", "그 카드뉴스" 등)
   → params: {"slug": "travel-emergency-kit"}
+- edit_existing: 이미 만들어진 카드뉴스 수정 요청
+  ("신생아 배꼽관리 이미 만들어져있는데 수정",
+   "기존 X 카드뉴스 수정해줘",
+   "X 슬라이드 내용 틀렸어 고쳐줘" 등)
+  → params: {"slug_hint": "신생아 배꼽관리", "instruction": "수정 내용"}
 - topics_by_tone: 특정 톤으로 주제 추천 요청
   ("손그림 톤으로 추천해줘", "캐릭터 스타일 주제 뭐 있어",
    "에디토리얼 모던으로 해줘", "클린 인포그래픽 주제 추천" 등)
@@ -1207,6 +1288,7 @@ JSON 형식:
 {"intent": "edit_slide", "params": {"slide_n": 3, "instruction": "38도 아니고 38.5도야"}}
 {"intent": "general_question", "params": {"question": "차멀미약 몇 살부터?"}}
 {"intent": "context_reference", "params": {"slug": "travel-emergency-kit"}}
+{"intent": "edit_existing", "params": {"slug_hint": "신생아 배꼽관리", "instruction": "3번 슬라이드 내용 수정"}}
 {"intent": "topics_by_tone", "params": {"tone": "handdrawn-notebook"}}
 {"intent": "keyword_topics", "params": {"keyword": "수족구"}}
 {"intent": "unknown", "params": {}}
@@ -1222,12 +1304,261 @@ JSON 형식:
         return {"intent": "unknown", "params": {}}
 
 
+# ---------------------------------------------------------------- /batch (일괄 처리)
+# 설계: 기존 stage 머신이 없으므로 session["batch"] dict 하나로 상태를 표현.
+#   - {"stage": "awaiting_topics"}                  → 주제 줄목록 입력 대기
+#   - {"stage": "awaiting_confirm", "queue": [...]} → 비용 확인('확인') 대기
+#   - {"stage": "running", "queue": [...]}          → 순차 처리 중
+# 풀 파이프라인은 기존 auto_pipeline 을 그대로 호출(본체 무수정).
+# 취소는 기존 request_cancel() 인프라 재사용 — 즉시 중단(서브프로세스 kill).
+
+_BATCH_CONFIRM_WORDS = {"확인", "ok", "진행", "예", "네", "ㅇㅋ", "ㅇㅇ"}
+_BATCH_CANCEL_WORDS = {"취소", "중단", "그만", "그만해", "멈춰", "cancel", "stop"}
+
+
+def _parse_batch_topics(text: str) -> tuple[list[dict], list[str]]:
+    """줄바꿈 기준 주제 목록 파싱.
+    반환: (처리할 주제 리스트[{"topic","tone"}], 운영자 안내 메시지 리스트).
+    규칙:
+      - 빈 줄 제거, 앞뒤 공백 제거, 주제 5자 미만 줄 제외, 최대 10개
+      - '주제 | 스타일' 형식이면 스타일 수동 지정(정식명·한글별칭 허용)
+        · 5종/9종에 없는 스타일이면 안내 후 자동매핑으로 폴백(tone="")"""
+    notices: list[str] = []
+    topics: list[dict] = []
+    entry_no = 0  # 비어있지 않은 줄에만 번호 부여 (운영자가 보는 항목 순번)
+    for raw in text.split("\n"):
+        line = raw.strip()
+        if not line:
+            continue
+        entry_no += 1
+
+        # '주제 | 스타일' 수동 지정 분리 (첫 '|' 기준)
+        tone = ""
+        if "|" in line:
+            topic_part, style_part = line.split("|", 1)
+            topic = topic_part.strip()
+            style_raw = style_part.strip()
+            if style_raw:
+                nt = normalize_tone(style_raw)
+                if nt:
+                    tone = nt
+                else:
+                    notices.append(
+                        f"⚠️ {entry_no}번째 줄의 스타일 '{style_raw}'은 없는 스타일이라 "
+                        f"자동매핑을 사용할게요."
+                    )
+        else:
+            topic = line
+
+        if len(topic) < BATCH_MIN_TOPIC_LEN:
+            notices.append(f"⚠️ {entry_no}번째 줄('{topic}')은 너무 짧아 제외했어요.")
+            continue
+        topics.append({"topic": topic, "tone": tone})
+
+    if len(topics) > BATCH_MAX_TOPICS:
+        dropped = len(topics) - BATCH_MAX_TOPICS
+        topics = topics[:BATCH_MAX_TOPICS]
+        notices.append(
+            f"⚠️ 최대 {BATCH_MAX_TOPICS}개까지만 가능해서 뒤 {dropped}개는 제외하고 "
+            f"앞 {BATCH_MAX_TOPICS}개만 처리할게요."
+        )
+    return topics, notices
+
+
+def _format_batch_confirm(topics: list[dict]) -> str:
+    """확인 게이트 메시지(주제 목록 + 수동지정 스타일 + 예상 비용)."""
+    n = len(topics)
+    cost = n * BATCH_COST_PER_TOPIC_USD
+    lines = [f"📋 처리할 주제 {n}개:", ""]
+    for i, t in enumerate(topics, 1):
+        suffix = ""
+        if t.get("tone"):
+            disp = TONE_DISPLAY.get(t["tone"], t["tone"])
+            suffix = f"  🎨 {disp}(지정)"
+        lines.append(f" {i}. {t['topic']}{suffix}")
+    lines.append("")
+    lines.append(
+        f"예상: 이미지 {n}×{BATCH_IMAGES_PER_TOPIC}장, 약 ${cost:.2f} 비용 발생"
+    )
+    lines.append("진행하려면 '확인', 취소하려면 /cancel")
+    return "\n".join(lines)
+
+
+async def cmd_batch(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
+    """/batch — 여러 주제를 줄바꿈으로 받아 순차 일괄 처리 시작."""
+    if _task_lock.locked():
+        await update.message.reply_text(
+            f"⏳ 이미 다른 작업이 진행 중입니다 ({current_task.get('topic')}).\n"
+            f"   끝난 뒤 다시 /batch 해주세요. (/status 로 확인)"
+        )
+        return
+    session["batch"] = {"stage": "awaiting_topics"}
+    _save_session()
+    await update.message.reply_text(
+        "📝 처리할 주제를 줄바꿈으로 여러 개 보내주세요. (예: 한 줄에 하나씩)\n"
+        f"   • 한 줄에 한 주제, 최대 {BATCH_MAX_TOPICS}개\n"
+        f"   • 너무 짧은 줄({BATCH_MIN_TOPIC_LEN}자 미만)은 자동 제외\n"
+        "   • 그만두려면 /cancel"
+    )
+
+
+async def run_batch(update: Update, queue: list[dict]) -> None:
+    """큐의 주제를 하나씩 기존 auto_pipeline 으로 순차 처리.
+    각 항목은 {"topic","tone"} — tone 이 있으면 수동지정 스타일로 강제.
+    한 개 실패해도 멈추지 않고 다음으로. /cancel(즉시 중단) 시 남은 큐 취소."""
+    reset_cancel_flag()
+    session["batch"] = {"stage": "running", "queue": queue}
+    _save_session()
+
+    total = len(queue)
+    success = 0
+    failed: list[str] = []
+    cancelled = False
+
+    await update.message.reply_text(
+        f"🚀 배치 시작 — 총 {total}개 주제를 순서대로 처리합니다.\n"
+        "💡 중간에 멈추려면 /cancel (현재 이미지 생성까지 즉시 중단)"
+    )
+
+    for i, item in enumerate(queue, 1):
+        topic_kr = item["topic"]
+        forced_tone = item.get("tone", "")
+        if is_cancel_requested():
+            cancelled = True
+            await update.message.reply_text(
+                f"🛑 중단됨 — {i - 1}/{total} 완료, 나머지 {total - (i - 1)}개 취소"
+            )
+            break
+
+        tone_note = f" (🎨 {forced_tone} 지정)" if forced_tone else ""
+        await update.message.reply_text(
+            f"⏳ ({i}/{total}) '{topic_kr}' 처리 시작...{tone_note}"
+        )
+        try:
+            slug = await korean_to_slug(topic_kr)
+            # 기존 풀 파이프라인 재사용 (sources→검증→템플릿→이미지→캡션→블로그→릴스)
+            # forced_tone 은 decide_tone 에서 최우선 적용됨
+            await auto_pipeline(update, topic_kr, slug, forced_tone=forced_tone)
+        except Exception as e:  # noqa: BLE001
+            log.exception("batch auto_pipeline 실패 (%s)", topic_kr)
+            failed.append(topic_kr)
+            await update.message.reply_text(
+                f"⚠️ ({i}/{total}) '{topic_kr}' 실패: {e}. 다음 주제로 넘어갑니다."
+            )
+            continue
+
+        # 파이프라인 내부에서 취소된 경우 — 성공으로 치지 않고 종료
+        if is_cancel_requested():
+            cancelled = True
+            await update.message.reply_text(
+                f"🛑 중단됨 — {i}/{total} 진행 중 취소, 나머지 건너뜀"
+            )
+            break
+
+        success += 1
+        await update.message.reply_text(f"✅ ({i}/{total}) '{topic_kr}' 완료")
+
+    session["batch"] = None
+    _save_session()
+
+    if not cancelled:
+        lines = [
+            f"🎉 배치 완료 — 총 {total}개 중 성공 {success}개 / 실패 {len(failed)}개"
+        ]
+        if failed:
+            lines.append("")
+            lines.append("실패 목록:")
+            for t in failed:
+                lines.append(f"  • {t}")
+        await update.message.reply_text("\n".join(lines))
+
+
+async def cmd_cancel(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
+    """/cancel — 진행 중이면 즉시 중단, 배치 대기 상태면 큐 비우고 IDLE 복귀."""
+    was_running = _task_lock.locked() or _current_proc is not None
+    had_batch = bool(session.get("batch"))
+    request_cancel()  # 실행 중 서브프로세스가 있으면 즉시 kill
+    if session.get("recommendation"):
+        session["recommendation"] = None
+    session["batch"] = None
+    session["duplicate_slug"] = None
+    session["pending_generation"] = None
+    _save_session()
+
+    if was_running:
+        await update.message.reply_text(
+            "🛑 중단 요청됨 — 현재 단계 종료 후 멈춥니다.\n"
+            "(이미지 생성 중이면 프로세스도 즉시 종료됩니다)"
+        )
+    elif had_batch:
+        await update.message.reply_text("✅ 배치를 취소했어요. 남은 주제는 비웠습니다.")
+    else:
+        await update.message.reply_text("✅ 취소할 작업이 없어요.")
+
+
+async def cmd_help(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
+    """/help — 사용 가능한 커맨드 안내."""
+    text = (
+        "👶 소아과언니 카드뉴스 봇 — 도움말\n"
+        "\n"
+        "📌 슬래시 커맨드:\n"
+        "  /topics — 이번 주 주제 10개 추천\n"
+        "  /new <slug> — 단일 주제 카드뉴스 생성\n"
+        "  /batch — 여러 주제 한꺼번에 처리\n"
+        "  /cancel — 진행 중 작업 즉시 중단\n"
+        "  /queue /done /usedtopics /status — 목록·상태 조회\n"
+        "\n"
+        "💬 자연어도 됩니다:\n"
+        "  • '주제 추천해줘' / '수족구병 만들어줘'\n"
+        "  • '1 3 5번 만들어줘' (추천 목록 순차 생성)\n"
+        "  • '중단' / '취소' (진행 중 멈춤)"
+    )
+    await update.message.reply_text(text)
+
+
 # ---------------------------------------------------------------- handle_text
 
 
 async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     text = (update.message.text or "").strip()
     if not text:
+        return
+
+    # === /batch 진행 상태 인터셉트 (intent_router 보다 먼저) ===
+    # 주제 줄목록·'확인'이 Claude 의도 분류기로 잘못 들어가지 않도록 여기서 가로챈다.
+    batch = session.get("batch")
+    if batch and batch.get("stage") == "awaiting_topics":
+        topics, notices = _parse_batch_topics(text)
+        for note in notices:
+            await update.message.reply_text(note)
+        if not topics:
+            await update.message.reply_text(
+                "❌ 처리할 주제가 없어요. 한 줄에 하나씩 다시 보내주세요. (그만두려면 /cancel)"
+            )
+            return
+        session["batch"] = {"stage": "awaiting_confirm", "queue": topics}
+        _save_session()
+        await update.message.reply_text(_format_batch_confirm(topics))
+        return
+    if batch and batch.get("stage") == "awaiting_confirm":
+        low = text.strip().lower()
+        if low in _BATCH_CONFIRM_WORDS:
+            queue = list(batch.get("queue", []))
+            if not queue:
+                session["batch"] = None
+                _save_session()
+                await update.message.reply_text("❌ 큐가 비어 있어요. /batch 로 다시 시작해주세요.")
+                return
+            await run_batch(update, queue)
+            return
+        if low in _BATCH_CANCEL_WORDS:
+            session["batch"] = None
+            _save_session()
+            await update.message.reply_text("✅ 배치를 취소했어요.")
+            return
+        await update.message.reply_text(
+            "❓ '확인' 이라고 보내면 시작하고, /cancel 이면 취소돼요."
+        )
         return
 
     # duplicate confirm/cancel 대기 중이면 기존 로직
@@ -1494,6 +1825,44 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         else:
             await update.message.reply_text(
                 "💡 어떤 카드뉴스를 말씀하시는지 알려주세요."
+            )
+
+    elif intent == "edit_existing":
+        slug_hint = params.get("slug_hint", "")
+        instruction = params.get("instruction", "")
+
+        # output/ 폴더에서 매칭되는 토픽 찾기
+        matched = None
+        if slug_hint:
+            for d in OUTPUT_DIR.iterdir():
+                src = d / "sources.json"
+                if src.exists():
+                    try:
+                        data = json.loads(src.read_text())
+                        if slug_hint in data.get("topic_kr", "") or slug_hint in d.name:
+                            matched = {
+                                "slug": d.name,
+                                "topic_kr": data.get("topic_kr", d.name),
+                                "sources_path": str(src),
+                                "template_path": str(TEMPLATES_DIR / f"slides.{d.name}.json"),
+                                "output_dir": str(d),
+                            }
+                            break
+                    except Exception:
+                        continue
+
+        if matched:
+            session["last_topic"] = matched
+            _save_session()
+            await update.message.reply_text(
+                f"📌 '{matched['topic_kr']}' 카드뉴스로 설정했어요.\n"
+                f"수정 내용: {instruction}\n"
+                f"어떤 슬라이드를 수정할까요? (예: '2번 슬라이드 수정해줘')"
+            )
+        else:
+            await update.message.reply_text(
+                f"💡 '{slug_hint}' 카드뉴스를 찾지 못했어요.\n"
+                f"output/ 폴더에 있는지 확인해주세요."
             )
 
     elif intent == "topics_by_tone":
@@ -2801,6 +3170,9 @@ def build_app() -> Application:
     app.add_handler(CommandHandler("done", wrap(cmd_done)))
     app.add_handler(CommandHandler("usedtopics", wrap(cmd_used_topics)))
     app.add_handler(CommandHandler("new", wrap(cmd_new)))
+    app.add_handler(CommandHandler("batch", wrap(cmd_batch)))
+    app.add_handler(CommandHandler("cancel", wrap(cmd_cancel)))
+    app.add_handler(CommandHandler("help", wrap(cmd_help)))
     app.add_handler(
         CallbackQueryHandler(wrap(on_duplicate_callback), pattern=r"^dup:")
     )
