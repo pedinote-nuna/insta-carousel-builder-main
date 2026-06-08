@@ -438,9 +438,22 @@ def find_topic_by_hint(hint: str) -> dict | None:
             data = json.loads(src.read_text())
             topic_kr = data.get("topic_kr", "")
             slug = d.name
-            # slug 또는 topic_kr에서 hint 매칭
-            if (hint_lower in slug.lower().replace("-", "")
-                    or hint_lower in topic_kr.replace(" ", "")):
+            # 힌트를 단어로 분리해서 하나라도 매칭되면 후보로
+            # (hint_lower 는 공백·하이픈이 제거돼 있어, 원본 hint 에서 단어를 뽑는다)
+            hint_words = hint.lower().replace("-", " ").split()
+            slug_normalized = slug.lower().replace("-", " ")
+            topic_normalized = topic_kr.lower().replace(" ", "")
+
+            # 전체 포함 매칭
+            full_match = (hint_lower in slug_normalized.replace(" ", "")
+                          or hint_lower in topic_normalized)
+
+            # 단어별 매칭 (힌트 단어의 50% 이상 포함 시)
+            word_matches = sum(1 for w in hint_words
+                               if w in slug_normalized or w in topic_normalized)
+            partial_match = len(hint_words) > 0 and word_matches / len(hint_words) >= 0.5
+
+            if full_match or partial_match:
                 return {
                     "slug": slug,
                     "topic_kr": topic_kr,
