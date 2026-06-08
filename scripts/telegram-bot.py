@@ -419,6 +419,40 @@ def template_path(slug: str) -> Path:
     return TEMPLATES_DIR / f"slides.{slug}.json"
 
 
+def find_topic_by_hint(hint: str) -> dict | None:
+    """
+    hint(토픽명 또는 slug 일부)로 output/ 폴더에서 토픽 찾기.
+    항상 파일 기반으로 검색 — session 의존 없음.
+    """
+    if not hint:
+        return None
+    hint_lower = hint.lower().replace(" ", "").replace("-", "")
+
+    for d in OUTPUT_DIR.iterdir():
+        if not d.is_dir():
+            continue
+        src = d / "sources.json"
+        if not src.exists():
+            continue
+        try:
+            data = json.loads(src.read_text())
+            topic_kr = data.get("topic_kr", "")
+            slug = d.name
+            # slug 또는 topic_kr에서 hint 매칭
+            if (hint_lower in slug.lower().replace("-", "")
+                    or hint_lower in topic_kr.replace(" ", "")):
+                return {
+                    "slug": slug,
+                    "topic_kr": topic_kr,
+                    "sources_path": str(src),
+                    "template_path": str(TEMPLATES_DIR / f"slides.{slug}.json"),
+                    "output_dir": str(d),
+                }
+        except Exception:
+            continue
+    return None
+
+
 # ---------------------------------------------------------------- common_style 주입
 # slides.example.json 의 common_style(디자인 DNA)을 새 템플릿에 자동 주입.
 # 팔레트 B(응급·약물·예방접종 등 즉각 위험 주제)는 accent 를 coral→teal 로 변환.
@@ -1238,19 +1272,25 @@ def _intent_router_sync(text: str, api_key: str) -> dict:
 - feedback_regen: 특정 슬라이드 재생성 요청
   ("4장 내용 너무 어려워", "3번 다시 만들어줘",
    "slide-05 수정해줘", "5번 슬라이드 바꿔줘" 등)
-  → params: {"slide_n": 4, "feedback": "너무 어려워"}
+  → params: {"slide_n": 4, "feedback": "너무 어려워", "topic_hint": ""}
 - verify_slide: 의학 내용 확인 질문
   ("8번 내용 맞아?", "3장 의학적으로 정확해?",
    "이 내용 근거 있어?" 등)
-  → params: {"slide_n": 8}
+  → params: {"slide_n": 8, "topic_hint": ""}
 - edit_slide: 구체적 수정 지시
   ("3번 슬라이드 38도 아니고 38.5도야",
    "5장에 부루펜 6개월 이상이라고 추가해줘" 등)
-  → params: {"slide_n": 3, "instruction": "38도 아니고 38.5도야"}
+  → params: {"slide_n": 3, "instruction": "38도 아니고 38.5도야", "topic_hint": ""}
 - general_question: 현재 토픽 관련 일반 질문
   ("차멀미약 몇 살부터 먹여?",
    "이 내용 부모들한테 어떻게 설명하면 좋아?" 등)
-  → params: {"question": "질문 내용"}
+  → params: {"question": "질문 내용", "topic_hint": ""}
+
+★ topic_hint 추출 규칙 (feedback_regen·verify_slide·edit_slide·general_question 공통):
+  입력에 토픽명/주제가 함께 언급되면 params.topic_hint 에 그 토픽명을 채움.
+  - "신생아 배꼽관리 2번 슬라이드 수정해줘" → topic_hint: "신생아 배꼽관리", slide_n: 2
+  - "차멀미 카드뉴스 3번 다시 만들어줘" → topic_hint: "차멀미", slide_n: 3
+  - "4번 내용 너무 어려워" → topic_hint: "" (현재 토픽 사용)
 - context_reference: 이미 만든 카드뉴스를 언급
   ("travel-emergency-kit 말이야", "아까 만든 거 말이야",
    "방금 그거", "그 카드뉴스" 등)
@@ -1283,10 +1323,10 @@ JSON 형식:
 "수족구병 캐릭터스타일로 해줘" → {"intent": "make", "params": {"topic_kr": "수족구병", "tone": "character-illustration"}}
 "열성경련 경고톤으로 만들어줘" → {"intent": "make", "params": {"topic_kr": "열성경련", "tone": "emergency-alert"}}
 "1번 손그림으로 만들어줘" → {"intent": "select", "params": {"numbers": [1], "tone": "handdrawn-notebook"}}
-{"intent": "feedback_regen", "params": {"slide_n": 4, "feedback": "너무 어려워"}}
-{"intent": "verify_slide", "params": {"slide_n": 8}}
-{"intent": "edit_slide", "params": {"slide_n": 3, "instruction": "38도 아니고 38.5도야"}}
-{"intent": "general_question", "params": {"question": "차멀미약 몇 살부터?"}}
+{"intent": "feedback_regen", "params": {"slide_n": 4, "feedback": "너무 어려워", "topic_hint": ""}}
+{"intent": "verify_slide", "params": {"slide_n": 8, "topic_hint": ""}}
+{"intent": "edit_slide", "params": {"slide_n": 3, "instruction": "38도 아니고 38.5도야", "topic_hint": "신생아 배꼽관리"}}
+{"intent": "general_question", "params": {"question": "차멀미약 몇 살부터?", "topic_hint": ""}}
 {"intent": "context_reference", "params": {"slug": "travel-emergency-kit"}}
 {"intent": "edit_existing", "params": {"slug_hint": "신생아 배꼽관리", "instruction": "3번 슬라이드 내용 수정"}}
 {"intent": "topics_by_tone", "params": {"tone": "handdrawn-notebook"}}
@@ -1778,39 +1818,68 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
     elif intent == "feedback_regen":
         slide_n = params.get("slide_n")
         feedback = params.get("feedback", "더 쉽게 설명해줘")
-        last = session.get("last_topic")
+        # topic_hint 있으면 파일에서 검색, 없으면 session 사용
+        topic_hint = params.get("topic_hint", "")
+        last = find_topic_by_hint(topic_hint) if topic_hint else session.get("last_topic")
         if not last:
             await update.message.reply_text(
-                "💡 먼저 카드뉴스를 만들어주세요."
+                "💡 어떤 카드뉴스를 수정할지 알려주세요.\n"
+                "예) '신생아 배꼽관리 2번 슬라이드 수정해줘'"
             )
             return
+        # 찾은 토픽을 session에 업데이트
+        session["last_topic"] = last
+        _save_session()
         await regen_single_slide(update, last, slide_n, feedback)
 
     elif intent == "verify_slide":
         slide_n = params.get("slide_n")
-        last = session.get("last_topic")
+        # topic_hint 있으면 파일에서 검색, 없으면 session 사용
+        topic_hint = params.get("topic_hint", "")
+        last = find_topic_by_hint(topic_hint) if topic_hint else session.get("last_topic")
         if not last:
             await update.message.reply_text(
-                "💡 먼저 카드뉴스를 만들어주세요."
+                "💡 어떤 카드뉴스를 수정할지 알려주세요.\n"
+                "예) '신생아 배꼽관리 2번 슬라이드 수정해줘'"
             )
             return
+        # 찾은 토픽을 session에 업데이트
+        session["last_topic"] = last
+        _save_session()
         await verify_single_slide(update, last, slide_n)
 
     elif intent == "edit_slide":
         slide_n = params.get("slide_n")
         instruction = params.get("instruction", "")
-        last = session.get("last_topic")
-        if not last or not instruction:
+        # topic_hint 있으면 파일에서 검색, 없으면 session 사용
+        topic_hint = params.get("topic_hint", "")
+        last = find_topic_by_hint(topic_hint) if topic_hint else session.get("last_topic")
+        if not last:
+            await update.message.reply_text(
+                "💡 어떤 카드뉴스를 수정할지 알려주세요.\n"
+                "예) '신생아 배꼽관리 2번 슬라이드 수정해줘'"
+            )
+            return
+        if not instruction:
             await update.message.reply_text(
                 "💡 수정 내용을 구체적으로 알려주세요.\n"
                 "예) '3번 슬라이드 38도 아니고 38.5도야'"
             )
             return
+        # 찾은 토픽을 session에 업데이트
+        session["last_topic"] = last
+        _save_session()
         await regen_single_slide(update, last, slide_n, instruction)
 
     elif intent == "general_question":
         question = params.get("question", "")
-        last = session.get("last_topic")
+        # topic_hint 있으면 파일에서 검색, 없으면 session 사용
+        topic_hint = params.get("topic_hint", "")
+        last = find_topic_by_hint(topic_hint) if topic_hint else session.get("last_topic")
+        if last:
+            # 찾은 토픽을 session에 업데이트
+            session["last_topic"] = last
+            _save_session()
         await answer_general_question(update, last, question)
 
     elif intent == "context_reference":
@@ -1831,25 +1900,8 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         slug_hint = params.get("slug_hint", "")
         instruction = params.get("instruction", "")
 
-        # output/ 폴더에서 매칭되는 토픽 찾기
-        matched = None
-        if slug_hint:
-            for d in OUTPUT_DIR.iterdir():
-                src = d / "sources.json"
-                if src.exists():
-                    try:
-                        data = json.loads(src.read_text())
-                        if slug_hint in data.get("topic_kr", "") or slug_hint in d.name:
-                            matched = {
-                                "slug": d.name,
-                                "topic_kr": data.get("topic_kr", d.name),
-                                "sources_path": str(src),
-                                "template_path": str(TEMPLATES_DIR / f"slides.{d.name}.json"),
-                                "output_dir": str(d),
-                            }
-                            break
-                    except Exception:
-                        continue
+        # output/ 폴더에서 매칭되는 토픽 찾기 (파일 기반)
+        matched = find_topic_by_hint(slug_hint)
 
         if matched:
             session["last_topic"] = matched
