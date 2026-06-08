@@ -426,8 +426,9 @@ def find_topic_by_hint(hint: str) -> dict | None:
     """
     if not hint:
         return None
-    hint_lower = hint.lower().replace(" ", "").replace("-", "")
 
+    # 모든 후보를 점수와 함께 수집한 뒤, 가장 높은 점수를 반환한다.
+    candidates: list[tuple[float, dict]] = []
     for d in OUTPUT_DIR.iterdir():
         if not d.is_dir():
             continue
@@ -437,32 +438,37 @@ def find_topic_by_hint(hint: str) -> dict | None:
         try:
             data = json.loads(src.read_text())
             topic_kr = data.get("topic_kr", "")
-            slug = d.name
-            # 힌트를 단어로 분리해서 하나라도 매칭되면 후보로
-            # (hint_lower 는 공백·하이픈이 제거돼 있어, 원본 hint 에서 단어를 뽑는다)
+
+            # 힌트를 단어로 분리해서 단어별 매칭 점수 계산
             hint_words = hint.lower().replace("-", " ").split()
-            slug_normalized = slug.lower().replace("-", " ")
-            topic_normalized = topic_kr.lower().replace(" ", "")
+            slug_normalized = d.name.lower().replace("-", " ")
+            topic_normalized = topic_kr.lower()
 
-            # 전체 포함 매칭
-            full_match = (hint_lower in slug_normalized.replace(" ", "")
-                          or hint_lower in topic_normalized)
-
-            # 단어별 매칭 (힌트 단어의 50% 이상 포함 시)
             word_matches = sum(1 for w in hint_words
                                if w in slug_normalized or w in topic_normalized)
-            partial_match = len(hint_words) > 0 and word_matches / len(hint_words) >= 0.5
+            score = word_matches / len(hint_words) if hint_words else 0
 
-            if full_match or partial_match:
-                return {
-                    "slug": slug,
+            # 전체 포함 매칭이면 만점 처리
+            full_match = (hint.lower().replace(" ", "") in d.name.replace("-", "")
+                          or hint.lower().replace(" ", "") in topic_kr.replace(" ", "").lower())
+            if full_match:
+                score = 1.0
+
+            if score >= 0.6:
+                candidates.append((score, {
+                    "slug": d.name,
                     "topic_kr": topic_kr,
                     "sources_path": str(src),
-                    "template_path": str(TEMPLATES_DIR / f"slides.{slug}.json"),
+                    "template_path": str(TEMPLATES_DIR / f"slides.{d.name}.json"),
                     "output_dir": str(d),
-                }
+                }))
         except Exception:
             continue
+
+    # 가장 높은 점수 반환
+    if candidates:
+        candidates.sort(key=lambda x: x[0], reverse=True)
+        return candidates[0][1]
     return None
 
 
@@ -1292,8 +1298,13 @@ def _intent_router_sync(text: str, api_key: str) -> dict:
   → params: {"slide_n": 8, "topic_hint": ""}
 - edit_slide: 구체적 수정 지시
   ("3번 슬라이드 38도 아니고 38.5도야",
-   "5장에 부루펜 6개월 이상이라고 추가해줘" 등)
+   "5장에 부루펜 6개월 이상이라고 추가해줘",
+   "신생아 배꼽관리 2번 슬라이드 수정해줘, 한국은 소독하도록 권장해" 등)
   → params: {"slide_n": 3, "instruction": "38도 아니고 38.5도야", "topic_hint": ""}
+  → 토픽명이 함께 언급되면 topic_hint 에 채움. 예)
+    "신생아 배꼽관리 2번 슬라이드 수정해줘, 한국은 소독하도록 권장해"
+    → {"slide_n": 2, "instruction": "한국은 소독하도록 권장해", "topic_hint": "신생아 배꼽관리"}
+  → instruction 은 빈 문자열로 두지 말 것. 사용자가 원하는 변경사항을 문장에서 최대한 추출해 채울 것.
 - general_question: 현재 토픽 관련 일반 질문
   ("차멀미약 몇 살부터 먹여?",
    "이 내용 부모들한테 어떻게 설명하면 좋아?" 등)
