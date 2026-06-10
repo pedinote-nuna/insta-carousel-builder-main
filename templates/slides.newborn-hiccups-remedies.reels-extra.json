@@ -1,0 +1,40 @@
+{
+  "topic": "newborn-hiccups-remedies",
+  "topic_type": "통념깨기형",
+  "source_template": "slides.newborn-hiccups-remedies.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 훅 - 딸꾹질 통념 깨기 충격 문구",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with bold square grid lines. Center: large Korean text in navy #1a365d bold handwritten font: '딸꾹질 멈추려고\n코 잡으면 안 돼요!' Underline '안 돼요' in coral #C44536 with thick brush stroke. Bottom corner: small red X mark icon. Minimal layout, high contrast, eye-catching typography for Instagram Reels hook",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "수유 중 딸꾹질 실사 - 젖병 각도 클로즈업",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up shot. Mother's hand holding baby bottle at 45-degree angle, feeding newborn baby (face blurred or out of focus). Soft natural window light. Beige/cream nursery background. Focus on bottle angle and baby's mouth. Warm color grading with beige #F5F0E5 tones. Gentle, educational vibe. Korean parenting Instagram aesthetic",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "트림 자세 실사 - 어깨에 기댄 아기 등 토닥이는 손",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up shot. Newborn baby resting on parent's shoulder (baby's face not visible, back of head shown). Parent's hand gently patting baby's back in circular motion. Soft fabric texture (beige or cream clothing). Natural indoor lighting. Focus on hand movement and baby's back. Warm color grading. Calm, instructional mood. Korean parenting content style",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "금지 행동 실사 - 코 잡는 손 클로즈업 (X 표시)",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up shot. Adult hand gently pinching baby's nose bridge (baby face blurred). Overlay: large red X mark icon in coral #C44536 semi-transparent. Neutral beige background #F5F0E5. Soft lighting. Educational warning tone. Clean composition with copy space at top. Korean Instagram parenting alert style",
+      "file": "7-1.png"
+    }
+  ]
+}

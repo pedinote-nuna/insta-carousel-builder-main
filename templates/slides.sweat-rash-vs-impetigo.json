@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Large breathing whitespace before headline. Headline COMPACT two lines: 땀띠 vs 농가진 navy, 정확한 구분법 with 구분법 underlined in teal #2C6E63. Small subtitle gray: 비슷해도 다른 두 질환 · 전문의 가이드. LARGE minimalist split illustration: left side baby with sweat droplets teal line art, right side baby with honey crust spots coral line art, clean minimal strokes prominently placed center-right. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 질환 정의. Headline COMPACT: 두 질환은 navy, 완전히 다릅니다 with 다릅니다 teal #2C6E63 underline. Two side-by-side cards equal width with GENEROUS padding. Left card light teal #E8F4F2 background rounded: small icon droplet top-left, 땀띠 teal bold medium, 땀샘이 막혀 땀이 피부 안에 갇히면서 발생하는 발진 navy small with comfortable line spacing. Right card light coral #FFF3E0 background rounded: small icon bacteria top-left, 농가진 coral bold medium, 황색포도알균이나 사슬알균에 의한 세균성 피부 감염 navy small with comfortable line spacing. Large minimalist icon center-bottom: sweat gland vs bacteria illustration teal and coral line art. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 땀띠 특징. Headline COMPACT: 땀띠는 navy, 저절로 좋아집니다 with 좋아집니다 teal #2C6E63 underline. LARGE minimalist illustration top-center: baby with small bumps on neck/chest teal line art clean strokes. Below illustration, stacked two cards light teal #E8F4F2 background rounded with REDUCED text 20% smaller and GENEROUS padding. Card 1: 외관 teal small bold top, 작고 투명하거나 붉은색 물집 · 좁쌀 같은 발진 navy comfortable spacing. Card 2: 경과 teal small bold top, 시원하게 유지하면 수일 내 자연 호전 navy comfortable spacing. Bottom coral accent line thin. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 농가진 특징. Headline COMPACT: 농가진의 핵심 navy, 꿀색 딱지 with 꿀색 딱지 coral #C44536 underline. LARGE minimalist illustration top-center: close-up face with honey-colored crust around nose/mouth coral line art clean strokes prominently placed. Below illustration, stacked two cards light coral #FFF3E0 background rounded with REDUCED text 20% smaller and GENEROUS padding. Card 1: 특징적 증상 coral small bold top, 물집이 터진 후 생기는 꿀색(황금색) 딱지 navy comfortable spacing. Card 2: 주요 부위 coral small bold top, 코와 입 주변 얼굴 · 손발 · 고름과 진물 동반 navy comfortable spacing. Bottom coral accent line thin. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray rounded label: 전염성. Headline COMPACT: 가장 큰 차이는 navy, 전염 여부 with 전염 여부 teal #2C6E63 underline. Two side-by-side cards equal width with GENEROUS padding. Left card light teal #E8F4F2 background rounded: 땀띠 teal bold medium top, large ✗ symbol teal center, 전염되지 않습니다 navy small, 더운 환경과 땀 때문에 발생 gray smaller with comfortable spacing. Right card light coral #FFF3E0 background rounded: 농가진 coral bold medium top, large ⚠ symbol coral center, 매우 전염성 높음 navy small bold, 직접 접촉 · 수건 · 옷 통해 쉽게 전파 gray smaller with comfortable spacing. Bottom large minimalist icon: hands sharing towel with X mark coral line art. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray rounded label: 분포 위치. Headline COMPACT: 발생 부위로 navy, 구분하세요 with 구분하세요 teal #2C6E63 underline. Two side-by-side cards equal width with GENEROUS padding. Left card light teal #E8F4F8 background rounded: 땀띠 teal bold medium top, small body outline icon with dots on neck/chest/back/armpit teal, 넓게 분포 navy small bold, 목 · 가슴 · 등 · 겨드랑이 등 땀 많이 나고 옷에 마찰되는 부위 gray smaller with comfortable line spacing. Right card light coral #FFF3E0 background rounded: 농가진 coral bold medium top, small body outline icon with spots on face/arms/legs coral, 국소적 분포 navy small bold, 코·입 주변과 팔다리 · 위성 병변으로 퍼짐 gray smaller with comfortable line spacing. Bottom thin teal divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 땀띠 관리. Headline COMPACT: 땀띠는 navy, 환경 관리가 전부 with 환경 관리가 전부 teal #2C6E63 underline. LARGE minimalist illustration top-center: baby in loose clothing with cool breeze teal line art clean strokes. Below illustration, stacked three cards light teal #E8F4F8 background rounded with REDUCED text 20% smaller and GENEROUS padding comfortable spacing between cards. Card 1: ① small teal circle left, 시원한 환경 유지 · 통풍 잘 되는 공간 navy. Card 2: ② small teal circle left, 시원한 물로 목욕 · 땀 제거 navy. Card 3: ③ small teal circle left, 헐렁한 면 옷 입히기 navy. Bottom small gray text center: 별도 치료 불필요 · 자연 호전. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 농가진 치료. Headline COMPACT: 농가진은 navy, 반드시 항생제 with 반드시 항생제 coral #C44536 underline. LARGE minimalist illustration top-center: medicine bottle and ointment tube coral line art clean strokes. Below illustration, stacked two cards light coral #FFF3E0 background rounded with REDUCED text 20% smaller and GENEROUS padding. Card 1: 국소 병변 coral small bold top, 항생제 연고 navy medium with comfortable spacing. Card 2: 광범위한 경우 coral small bold top, 먹는 항생제 navy medium with comfortable spacing. Bottom coral warning box rounded GENEROUS padding: ⚠ symbol left, 항생제 치료 시작 후 최소 12시간 후 등원·등교 가능 · 병변은 가려야 함 navy small with comfortable line spacing. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right small: 소아과언니 navy, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT center: 오늘 확인하고 navy, 저장하세요 with 저장하세요 teal #2C6E63 underline. Source box light gray #F0F4F8 rounded GENEROUS padding left-aligned: 출처 navy small bold, · StatPearls - Miliaria 2024, · American Family Physician - Impetigo Diagnosis 2014, · CDC - Group A Strep Impetigo Guidance 2025, · Nelson Textbook of Pediatrics 21st Ed gray smaller comfortable line spacing. Generous vertical spacing then thin horizontal navy divider. 소아과언니 navy bold large center NO quotes NO decoration. DR.SOA UNNIE · 소아청소년과 전문의 gray small center. Thin horizontal divider. @dr.soa_unnie · 매주 새 가이드 navy center. 소아과수첩 앱 · 진료 메모 미리 준비하기 teal center. Generous bottom whitespace. No pixel values. No quotes anywhere."
+    }
+  ],
+  "palette": "A",
+  "tone": "clean-infographic",
+  "common_style": "# 클린 인포그래픽 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 흰색 #FFFFFF\n- 텍스트: deep navy #1A1F36\n- 강조: teal #2C6E63\n- 경고: coral #C44536\n- 카드 배경: light gray #F0F4F8\n- VERY GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 20% 작게 (빽빽함 방지)\n- 시그니쳐: 우상단 소아과언니 (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin on all four sides.\nTop-right small: '소아과언니' Pretendard SemiBold navy only, no decoration, no quotes.\nTop-left small gray: 'PARENTING NOTE · [번호]'.\nLarge breathing whitespace before headline.\nHeadline COMPACT two lines: '[첫 줄]' navy, '[둘째 줄]' with '[핵심 단어]' underlined in teal #2C6E63.\nSmall subtitle gray: '[부제] · AAP 가이드라인 기준'.\nLARGE minimalist [토픽 관련] line illustration in teal, prominently placed.\nGenerous bottom whitespace. No pixel values as text. No quotes on card.\n\n## BODY 데이터 카드 패턴\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nGENEROUS outer margin all sides.\nTop-right small: '소아과언니' navy, no quotes.\nTop-left small gray label: '[섹션명]'.\nHeadline COMPACT: '[앞부분]' navy, '[핵심 단어]' teal or coral underline.\nStacked/grid cards with REDUCED text (20% smaller) + GENEROUS padding + comfortable spacing.\nEach card: age/category icon top-left + tag label + bold number/text + subtitle.\nNo pixel values as text on card.\n\n## 비교 카드 패턴\nTwo side-by-side cards equal width.\nLeft card teal header / Right card navy header.\nBody light gray: label small gray + main value teal/navy large bold + interval/unit navy.\nBottom coral warning box: ⚠️ + warning text.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' navy, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' navy, '저장하세요' teal underline.\nSource box light gray #F0F4F8 rounded GENEROUS padding, left-aligned.\n출처 (navy small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nGenerous spacing + thin horizontal divider.\n소아과언니 navy bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray small.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 navy.\n소아과수첩 앱 · [CTA] teal.\nNo pixel values. No quotes.\n"
+}

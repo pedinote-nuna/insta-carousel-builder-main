@@ -1,0 +1,40 @@
+{
+  "topic": "delayed-drowning-response",
+  "topic_type": "응급정보형",
+  "source_template": "slides.delayed-drowning-response.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 시선 고정용 충격 훅",
+      "prompt": "Portrait 1080x1350. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold small, no quotes, 4 characters only. Center: extra large bold text in coral #FF6B6B Pretendard ExtraBold: 물놀이 후 24시간이\n가장 위험합니다. Large warning icon in coral above text. Minimal typography-focused design. No illustration. High urgency visual.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 4,
+      "role": "reels-visual",
+      "purpose": "물 흡인 후 정상 놀이 장면 실사 보강",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up shot. Young child 4-6 years old playing with toys on living room floor, smiling naturally. Bright afternoon sunlight from window. Soft focus background. Warm home interior. Parents watching from side (blurred). Natural everyday scene after swimming. Shot from parent's eye level. Top-right overlay: 소아과언니 warm brown small text. Bottom overlay: semi-transparent white rounded box with teal text Pretendard Medium: 물 먹었어도\n멀쩡하게 놀 수 있어요. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "4-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 6,
+      "role": "reels-visual",
+      "purpose": "응급 증상 실사 클로즈업",
+      "prompt": "Portrait 1080x1350. Photorealistic extreme close-up. Child's torso, hand on chest, labored breathing motion visible (chest rising/falling). Slight pale skin tone. Soft indoor lighting. Worried parent's hand gently touching child's shoulder (blurred in background). Medical urgency mood but not graphic. Shot from side angle. Top-right overlay: 소아과언니 warm brown small text. Bottom overlay: semi-transparent coral rounded box with white bold text Pretendard Bold: 호흡곤란\n기침\n→ 즉시 응급실. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "6-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "24시간 관찰 부모 손 클로즈업",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up. Parent's hand gently checking sleeping child's forehead (temperature check gesture). Soft bedroom night light. Digital clock on nightstand showing 22:47. Peaceful sleeping child in background (blurred, only silhouette visible). Warm protective parenting mood. Shot from above at 45-degree angle. Top-right overlay: 소아과언니 warm brown small text. Bottom overlay: semi-transparent teal rounded box with white text Pretendard Medium: 물놀이 후 24시간\n자주 확인하세요. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "7-1.png"
+    }
+  ]
+}

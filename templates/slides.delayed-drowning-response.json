@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes, 4 characters only. Top-left small gray: PARENTING NOTE · 011. Center upper: large warm brown bold headline two lines — first line 물놀이 후, second line 지연성 익수? with teal green #2C7A5C underline on 익수. Below headline: small gray subtitle 과학적으로 정확한 대처법 · AAP 권장 기준. Bottom center: LARGE cute character illustration of chubby toddler in swim floaties playing in shallow water with happy parent nearby, warm cozy colors, watercolor style, gentle splashes around. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-left small teal rounded label: 중요한 사실. Large bold headline center: 지연성 익수는 warm brown, 의학 용어가 아닙니다 with coral #E05C3A underline on 아닙니다. Below: light cream #FFF0E0 rounded card containing Korean text 소아청소년과 의사는 보호자에게 이전 증상 없이 나중에 익수가 발생하지 않는다는 것을 설명해야 합니다 warm brown, with small cute doctor character illustration giving reassuring gesture. Bottom: small gray text AAP Pediatrics 2019. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-left small teal rounded label: 올바른 용어. Large bold headline: 익수 또는 warm brown, 비치명적 익수 teal #2C7A5C with underline. Center: two cards side by side in cream #FFF0E0 rounded — left card with red X mark containing crossed-out terms 'near drowning', 'dry drowning', 'secondary drowning', 'delayed drowning' in small text, right card with teal checkmark containing 익수 drowning, 비치명적 익수 nonfatal drowning. Cute character illustration of medical textbook icon between cards. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-left small teal rounded label: 증상 시기. Large bold headline: 증상은 보통 warm brown, 6-8시간 이내 teal #2C7A5C with underline on 6-8시간 이내. Center: large cute character illustration of clock showing timeline from 0 to 8 hours, with small chubby baby character. Below clock: light cream #FFF0E0 rounded card with Korean text 8시간 이내에 증상이 없으면 치명적인 익수는 예기치 않게 며칠 또는 몇 주 후에 발생하지 않습니다 warm brown. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-left small teal rounded label: 증상 없을 때. Large bold headline: 정상적으로 보인다면 warm brown, 과도한 걱정 NO teal #2C7A5C with underline on NO. Center: large cute character illustration of happy chubby toddler playing normally after swimming, parent smiling nearby. Below: light cream #FFF0E0 rounded card grid 2x2 with teal checkmarks — 호흡곤란 없음, 기침 없음, 구토 없음, 정상 활동. Bottom gray small text: 무증상 또는 경미한 증상만 있는 아이는 대부분 관찰 후 안전하게 귀가 가능. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-left small coral rounded label: 응급 증상. Large bold headline: 이런 증상 있다면 warm brown, 즉시 응급실 coral #E05C3A with underline. Center: four cards in 2x2 grid, each cream #FFF0E0 rounded with coral accent — top left: cute character struggling to breathe with text 호흡곤란, top right: character coughing with text 지속적인 기침, bottom left: extremely tired character with text 극심한 피로, bottom right: character with behavior change with text 행동 변화. Small gray text bottom: 증상은 보통 6-8시간 이내 나타남. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-left small teal rounded label: 관찰 지침. Large bold headline: 무증상이라면 warm brown, 6-8시간 관찰 teal #2C7A5C with underline on 6-8시간 관찰. Center: large cute character illustration of parent gently watching sleeping or playing child with clock icon showing observation period. Below: cream #FFF0E0 rounded card with Korean checklist — 호흡곤란 없음, 비정상 활력징후 없음, 의식 변화 없음 체크 시 안전하게 귀가 가능, with small teal checkmarks. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-left small teal rounded label: 예방이 최우선. Large bold headline: 익수 예방이 warm brown, 가장 중요합니다 teal #2C7A5C with underline. Center: large cute character illustration of parent closely supervising chubby toddler in water within arm's reach, warm protective scene. Below: light cream #FFF0E0 rounded card with Korean text 항상 팔이 닿는 거리에서 감독 warm brown bold. Bottom small gray text: 익수는 1-4세 어린이의 가장 주요한 사망 원인입니다 with CDC reference. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, 4 characters only. Top-center small gray: SAVE & SHARE. Large headline center: 오늘 확인하고 warm brown, 저장하세요 teal #2C7A5C with thin underline. Source box cream #FFF0E0 rounded containing 출처 warm brown small bold, list: AAP Pediatrics Prevention of Drowning 2019/2021, Pediatrics in Review 2021, University of Hawaii Pediatrics Textbook 2022, Texas Children's Hospital 2024. Warm brown divider line. 소아과언니 warm brown bold large center NO quotes NO decoration. Small gray DR.SOA UNNIE · 소아청소년과 전문의. Divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 진료 메모로 물놀이 관찰 기록 teal. Cute character illustrations around brand block: tiny doctor icon, baby with floaties icon, water droplet icons. No pixel text. No quotes anywhere."
+    }
+  ],
+  "palette": "A",
+  "tone": "character-illustration",
+  "common_style": "# 캐릭터 일러스트 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 소프트 파스텔 베이지 #FFF8F0\n- 텍스트: 웜 브라운 #3D2B1F\n- 강조: teal green #2C7A5C\n- 경고: coral #E05C3A\n- 카드 배경: 크림 #FFF0E0\n- 일러스트: 따뜻한 수채화풍 아기/엄마/음식 캐릭터 (cute, chubby, warm)\n- 시그니쳐: 우상단 소아과언니 warm brown (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nCenter: large warm brown bold headline [토픽 핵심어], two lines, [둘째 줄] with teal green #2C7A5C underline.\nBelow: small gray subtitle [부제] · AAP 권장 기준.\nBottom center: LARGE cute character illustration [토픽 관련 귀여운 아기/엄마 장면], warm cozy colors, chubby characters.\nNo pixel text. No quotes.\n\n## 2x2 그리드 패턴\nFour cards in 2x2 grid, each light cream #FFF0E0 rounded.\nEach card: cute character illustration inside + Korean label below.\nSmall teal checkmark corner.\nWarm pastel colors throughout.\n\n## 금지 항목 패턴 (귀여운 X)\nFour forbidden food/item cards in 2x2 grid.\nEach: cute illustrated item with red X overlay + Korean label + reason.\nWarm background maintained (NOT dark).\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown small, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline.\nSource box cream #FFF0E0 rounded.\n출처 (warm brown small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nWarm brown divider line.\n소아과언니 warm brown bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nDivider.\n@dr.soa_unnie · 매주 새 가이드 warm brown.\n소아과수첩 앱 · [CTA] teal.\nNo pixel text. No quotes.\nCute character illustrations around brand block (doctor/baby/food icons).\n"
+}

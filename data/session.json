@@ -1,10 +1,13 @@
 {
   "last_topic": {
-    "slug": "card-20260530-001",
-    "topic_kr": "모유 냉동하면 영양 없어진다? 사실일까요",
-    "sources_path": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/card-20260530-001/sources.json",
-    "template_path": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/templates/slides.card-20260530-001.json",
-    "output_dir": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/card-20260530-001"
+    "slug": "late-walking-developmental-milestones",
+    "topic_kr": "걸음마 늦는 아이 정상 범위 vs 검사 필요 기준",
+    "sources_path": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/late-walking-developmental-milestones/sources.json",
+    "template_path": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/templates/slides.late-walking-developmental-milestones.json",
+    "output_dir": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/late-walking-developmental-milestones"
   },
-  "recommendation": null
+  "recommendation": null,
+  "pending_generation": null,
+  "batch": null,
+  "duplicate_slug": null
 }

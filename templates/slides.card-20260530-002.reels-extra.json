@@ -1,0 +1,40 @@
+{
+  "topic": "card-20260530-002",
+  "topic_type": "보관관리형",
+  "source_template": "slides.card-20260530-002.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 훅 - 충격적인 첫 문구로 시청자 멈추게 하기",
+      "prompt": "Portrait 1080x1350. Bold typography-focused design. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold 18px, no decoration, no quotes. Center: huge bold headline in warm brown #3D2B1F Pretendard ExtraBold 72px: 분유 실온 보관? 위험할 수 있어요. Below in gray #6B7280 Pretendard Medium 28px: 아기 건강 지키는 올바른 분유 보관법. Small decorative illustration of baby bottle with warning icon bottom-right corner. Clean minimal design, high contrast text, urgent tone.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 4,
+      "role": "reels-visual",
+      "purpose": "분유 온도 체크하는 실사 - 손목에 떨어뜨리는 장면",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up shot. Mother's hand holding baby bottle, tilting and dropping few drops of milk onto inner wrist to test temperature. Warm natural lighting, soft focus background. Skin tone realistic, gentle motion blur on milk drops. Baby bottle white with pastel measurements visible. Shot from side angle, focus on wrist and bottle. Clean hygienic aesthetic, natural skin texture, caring gesture. Professional product photography style. Top-right small overlay: 소아과언니 warm brown Pretendard SemiBold, no quotes.",
+      "file": "4-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 6,
+      "role": "reels-visual",
+      "purpose": "여름철 분유 보관 - 냉장고 문 여는 실사",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up shot. Hand opening refrigerator door, inside view showing baby bottles stored upright on middle shelf. Cool LED lighting from fridge interior, condensation details on glass bottles. Clean organized fridge interior, white shelves, soft blue-white color temperature. Focus on bottles in foreground, blurred food items in background. Fresh hygienic atmosphere, professional product photography. Top-right small overlay: 소아과언니 warm brown Pretendard SemiBold, no quotes. Bottom text overlay in white rounded box: 여름엔 냉장 보관 필수.",
+      "file": "6-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "2시간 경과 분유 버리는 실사 - 시계와 함께",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up shot. Baby bottle with leftover milk next to analog clock showing 2 hours passed. Hand reaching to pour milk into sink drain. Kitchen countertop background, natural daylight. Clock face clearly visible showing time difference, bottle half-full with formula. Composition: bottle left, clock center-right, sink drain bottom. Realistic product shot, clean modern kitchen aesthetic, soft shadows. Top-right small overlay: 소아과언니 warm brown Pretendard SemiBold, no quotes. Bottom text overlay in coral #E05C3A rounded box: 2시간 지난 분유는 버려요.",
+      "file": "7-1.png"
+    }
+  ]
+}

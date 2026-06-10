@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Large breathing whitespace before headline. Headline COMPACT two lines: 신생아 배꼽 관리 navy, 언제 병원 가야 할까요 with 병원 가야 할까요 underlined in teal #2C6E63. Small subtitle gray: 제대 관리 가이드 · AAP 권장 기준. LARGE minimalist umbilical cord care line illustration in teal, prominently placed center-right, showing newborn belly button area with gentle clean strokes. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray rounded label: 기본 원칙. Headline COMPACT: 신생아 배꼽 관리의 navy, 핵심 원칙 with 핵심 원칙 teal #2C6E63 underline. Center: clean editorial illustration of umbilical cord in line art teal/navy minimal, showing clean dry care concept. Below: two stacked cards light gray #F0F4F8 background with GENEROUS padding and comfortable spacing. Top card: 청결과 건조 유지 navy bold + 제대는 깨끗하고 건조하게 유지하는 것이 가장 중요합니다 gray smaller. Bottom card: 소독제 사용 불필요 navy bold + 고소득 국가에서는 알코올 등 소독제 없이 건조 관리를 권장합니다 gray smaller. Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray rounded label: 일상 관리법. Headline COMPACT: 매일 이렇게 navy, 관리하세요 with 관리하세요 teal #2C6E63 underline. Center-top: minimalist baby diaper area illustration line art teal, showing proper cord positioning. Below: three stacked numbered cards light gray #F0F4F8 with REDUCED text size and GENEROUS padding. Card 1: 1 teal circle + 공기에 노출 navy bold + 제대를 공기에 노출시키거나 깨끗한 천으로 느슨하게 덮어줍니다 gray compact. Card 2: 2 teal circle + 더러워지면 물로 navy bold + 제대가 더러워지면 물로 부드럽게 닦아주세요 gray compact. Card 3: 3 teal circle + 기저귀는 아래로 navy bold + 기저귀를 제대 아래로 접어서 소변이 묻지 않도록 합니다 gray compact. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray rounded label: 정상 과정. Headline COMPACT: 제대 탈락 navy, 정상 과정 with 정상 과정 teal #2C6E63 underline. Center: clean timeline illustration showing cord falling off process, minimalist teal/navy line art. Below: large card light teal #E8F4F2 background GENEROUS padding. Top: 생후 1-3주 navy bold large. Middle: 제대는 보통 생후 1~3주 사이에 자연스럽게 떨어집니다 navy regular compact. Bottom area light gray #F0F4F8 rounded box: 정상 신호 teal small bold + 기저귀에 피 몇 방울 묻는 것은 정상입니다 navy compact. Small coral warning box bottom: ⚠️ 지속적인 출혈이 있으면 즉시 병원 방문 coral. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 응급 신호. Headline COMPACT: 즉시 병원 가야 하는 navy, 감염 신호 with 감염 신호 coral #C44536 underline. Center-top: alert icon illustration with exclamation mark coral/navy. Below: two stacked warning cards coral #C44536 background with GENEROUS padding. Top card: ⚠️ 배꼽 주위 발적 white bold + 배꼽 주위 피부가 붉게 변하는 경우 제대염 감염 가능성 white compact. Bottom card: ⚠️ 악취나는 분비물 white bold + 노란색 분비물이 나오고 악취가 나는 경우 white compact. Bottom area light gray #F0F4F8 rounded: 제대염이란 teal small bold + 제대 감염으로 조기 발견 시 항생제로 치료 가능 navy compact. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 통증 신호. Headline COMPACT: 아기가 울면 navy, 진료 필요 with 진료 필요 coral #C44536 underline. Center: illustration of baby crying with hand near belly button area, minimalist line art coral/navy showing discomfort. Below: large coral #C44536 background card GENEROUS padding. Top: ⚠️ 통증 반응 white bold large. Middle: 제대나 근처 피부를 만질 때 아기가 우는 경우 감염 가능성이 있어 진료가 필요합니다 white compact. Bottom area light amber #FFF3E0 rounded box: 조기 치료 중요 coral small bold + 방치하면 패혈증으로 진행될 수 있습니다 navy compact. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray rounded label: 시기별 체크. Headline COMPACT: 제대 탈락 navy, 시기 체크 with 시기 체크 teal #2C6E63 underline. Center: calendar/timeline illustration minimalist teal showing weeks progression. Below: two stacked timeline cards with GENEROUS padding. Top card light amber #FFF3E0: 생후 3주 체크 navy bold + 생후 3주가 지나도 제대가 떨어지지 않으면 병원 진료를 받아야 합니다 navy compact. Bottom card light gray #F0F4F8: 생후 2개월 체크 navy bold + 생후 8주가 되어도 배꼽이 떨어지지 않으면 다른 원인이 있을 수 있어 진료가 필요합니다 navy compact. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray rounded label: 탈락 후 관리. Headline COMPACT: 제대 탈락 후 navy, 확인 사항 with 확인 사항 teal #2C6E63 underline. Center: illustration of healed belly button with small granuloma dot, clean line art teal/navy. Below: large card light teal #E8F4F2 background GENEROUS padding. Top: 육아종 체크 navy bold large. Middle: 제대가 떨어진 후 작은 붉은 반점이 남는 경우가 있습니다 navy compact. Small timeline: 약 1주일 후 사라짐 gray + 지속되면 소아과 진료 teal. Bottom light gray #F0F4F8 rounded box: 발생률 teal small bold + 제대염은 고소득 국가에서 0.2-0.7% 아기에게만 발생하지만 조기 증상 인지가 중요합니다 navy compact. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right: 소아과언니 navy, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT: 오늘 확인하고 navy, 저장하세요 with 저장하세요 teal #2C6E63 underline. Source box light gray #F0F4F8 rounded GENEROUS padding, left-aligned. 출처 navy small bold, then four sources: · AAP Pediatrics 2016 Umbilical Cord Care Guideline, · AAP HealthyChildren.org Umbilical Cord Care 2024, · 대한소아청소년과학회 신생아 배꼽 관리, · StatPearls Omphalitis 2022. Generous spacing plus thin horizontal navy divider. 소아과언니 navy bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 진료 전 증상 메모해두기 teal. No pixel values. No quotes."
+    }
+  ],
+  "palette": "A",
+  "tone": "clean-infographic",
+  "common_style": "# 클린 인포그래픽 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 흰색 #FFFFFF\n- 텍스트: deep navy #1A1F36\n- 강조: teal #2C6E63\n- 경고: coral #C44536\n- 카드 배경: light gray #F0F4F8\n- VERY GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 20% 작게 (빽빽함 방지)\n- 시그니쳐: 우상단 소아과언니 (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin on all four sides.\nTop-right small: '소아과언니' Pretendard SemiBold navy only, no decoration, no quotes.\nTop-left small gray: 'PARENTING NOTE · [번호]'.\nLarge breathing whitespace before headline.\nHeadline COMPACT two lines: '[첫 줄]' navy, '[둘째 줄]' with '[핵심 단어]' underlined in teal #2C6E63.\nSmall subtitle gray: '[부제] · AAP 가이드라인 기준'.\nLARGE minimalist [토픽 관련] line illustration in teal, prominently placed.\nGenerous bottom whitespace. No pixel values as text. No quotes on card.\n\n## BODY 데이터 카드 패턴\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nGENEROUS outer margin all sides.\nTop-right small: '소아과언니' navy, no quotes.\nTop-left small gray label: '[섹션명]'.\nHeadline COMPACT: '[앞부분]' navy, '[핵심 단어]' teal or coral underline.\nStacked/grid cards with REDUCED text (20% smaller) + GENEROUS padding + comfortable spacing.\nEach card: age/category icon top-left + tag label + bold number/text + subtitle.\nNo pixel values as text on card.\n\n## 비교 카드 패턴\nTwo side-by-side cards equal width.\nLeft card teal header / Right card navy header.\nBody light gray: label small gray + main value teal/navy large bold + interval/unit navy.\nBottom coral warning box: ⚠️ + warning text.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' navy, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' navy, '저장하세요' teal underline.\nSource box light gray #F0F4F8 rounded GENEROUS padding, left-aligned.\n출처 (navy small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nGenerous spacing + thin horizontal divider.\n소아과언니 navy bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray small.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 navy.\n소아과수첩 앱 · [CTA] teal.\nNo pixel values. No quotes.\n"
+}

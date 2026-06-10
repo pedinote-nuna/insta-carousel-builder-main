@@ -1,0 +1,40 @@
+{
+  "topic": "late-talking-children",
+  "topic_type": "발달체크형",
+  "source_template": "slides.late-talking-children.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 시작 2초 내 시선 고정 - 부모의 불안을 건드리는 훅",
+      "prompt": "Portrait 1080x1350. Typography-focused editorial design. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — exactly 4 Korean characters, no quotes, no decoration. Center: massive bold headline in navy #1A1F36, Pretendard ExtraBold 72pt: '우리 아이만\n말이 늦는 걸까요?' — 2 lines, left-aligned, dramatic line break after 아이만. Bottom subtle coral #FF6B6B underline accent beneath 늦는. Minimal, impactful, anxiety-triggering question. No illustrations, no child faces. Pure typographic shock.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-explanation",
+      "purpose": "언어발달 선별검사 실사 장면 - 체크리스트 작성하는 부모 손",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up shot. Soft natural window light. Parent's hand holding black pen, checking boxes on printed K-ASQ Korean questionnaire paper on white wooden table. Paper shows Korean text '18개월 언어발달 체크리스트' header visible. Warm shallow depth of field. Hand in gentle focus, paper slightly blurred background. Coral #FF6B6B small label top-left: 선별검사. Top-right: 소아과언니 navy small text — 4 characters only. Clinical yet intimate documentary style. Clean, trustworthy, professional healthcare atmosphere.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-explanation",
+      "purpose": "전문가 평가 장면 - 언어치료사와 아이의 상호작용 클로즈업",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up. Soft clinical lighting. Speech therapist's hands presenting colorful picture cards to toddler (back of head visible, no face). Cards show simple objects: 사과, 공, 컵. Child's small hand reaching toward card. Warm bokeh background, pastel therapy room. Coral #FF6B6B small label top-left: 평가 과정. Top-right: 소아과언니 navy small — 4 characters only. Gentle, professional, hopeful documentary tone. Focus on interaction, not faces. Clean medical-grade aesthetic.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-explanation",
+      "purpose": "가정 내 언어 자극 실사 - 부모가 그림책 읽어주는 손 클로즈업",
+      "prompt": "Portrait 1080x1350. Photorealistic overhead shot. Warm living room natural light. Parent's hands holding open Korean picture book with bright illustrations (animals, fruits visible). Toddler's small hands touching page corner (no face shown). Book on soft cream blanket. Cozy, intimate atmosphere. Coral #FF6B6B small label top-left: 가정 지원. Top-right: 소아과언니 navy small — 4 characters only. Shallow depth of field, focus on book and hands. Warm, encouraging, nurturing visual tone. Everyday parenting moment elevated to clinical guidance.",
+      "file": "7-1.png"
+    }
+  ]
+}

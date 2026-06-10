@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 022. Center: large warm brown bold headline 분유 타는 물 온도, two lines, 여름에 달라야 할까요 with teal green #2C7A5C underline. Below: small gray subtitle 계절별 분유 조제 기준 · WHO/CDC 가이드. Bottom center: LARGE cute character illustration showing happy chubby baby in summer outfit sitting next to warm milk bottle and thermometer, warm cozy colors, chubby characters, soft watercolor style. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes, no decoration. Top-left small teal rounded label: 기본 원칙. Large bold headline: 계절과 상관없이 warm brown, 동일한 원칙이에요 teal green #2C7A5C. Center: large cute illustration of sun and snowflake side by side with equals sign, baby bottle in center, warm pastel colors. Below illustration: light cream #FFF0E0 rounded card with warm brown text 여름이든 겨울이든 분유 타는 물 온도는 같은 기준을 따라요 · WHO/FAO 가이드. Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral #E05C3A rounded label: 고위험군. Large bold headline: 이 아기들은 warm brown, 70도 이상 필수예요 coral #E05C3A. Center area: three cards in vertical stack, each light cream #FFF0E0 rounded. First card: cute preterm baby illustration + 생후 2개월 미만 아기. Second card: tiny baby in incubator illustration + 미숙아. Third card: baby with protective shield illustration + 면역저하 영아. Below cards: light cream card with text 끓인 물 5분 식혀 최소 70도에서 분유 타기 · 크로노박터균 사멸 warm brown small. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 건강한 만삭아. Large bold headline: 실온 물로 warm brown, 타도 괜찮아요 teal green #2C7A5C. Center: large cute illustration of healthy chubby baby sitting next to tap water faucet and bottle, warm colors. Below: two light cream #FFF0E0 rounded cards side by side. Left card: 안전한 수돗물 끓인 후 실온으로 식혀서 OK + small checkmark teal. Right card: 생후 2개월 이상 건강한 아기 실온 수돗물 바로 사용 OK + small checkmark teal. Bottom: small gray text AAP 권장 기준. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 먹일 때 온도. Large bold headline: 반드시 체온으로 warm brown, 식혀서 먹이세요 teal green #2C7A5C. Center: large cute illustration of mom testing milk temperature on wrist with baby smiling nearby, warm cozy watercolor style. Below illustration: light cream #FFF0E0 rounded card with warm brown text 37도 체온 정도 · 손목 안쪽에 떨어뜨려 따뜻하게 느껴지면 OK. Small teal thermometer icon. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 여름철 급여. Large bold headline: 여름에도 체온 정도가 warm brown, 권장돼요 teal green #2C7A5C. Center: cute illustration of baby happily drinking milk with sun icon in background, warm pastel colors. Below: two light cream #FFF0E0 cards stacked. Top card: 체온 37도 정도 권장 + small teal checkmark. Bottom card: 차갑게 먹여도 안전해요 (반드시 데울 필요 없음) + small teal checkmark. Bottom: small gray text CDC 가이드. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral #E05C3A rounded label: 보관 주의. Large bold headline: 시간 지키지 않으면 warm brown, 세균 번식해요 coral #E05C3A. Center area: two light cream #FFF0E0 rounded cards vertical stack. Top card: cute clock illustration + 조제 후 2시간 이내 사용 안 하면 즉시 냉장 24시간 이내 사용 warm brown text. Bottom card: cute bacteria illustration with X mark + 수유 시작 후 1시간 지나면 버리기 아기 침 섞인 분유는 세균 급증 warm brown text. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral #E05C3A rounded label: 데우기 금지. Large bold headline: 전자레인지는 warm brown, 절대 사용 금지 coral #E05C3A. Center: large cute illustration of microwave with big red X mark and sad baby bottle inside, warm colors. Below: light cream #FFF0E0 rounded card with coral text 불균일 가열로 입 데일 위험. Below that: another cream card with teal text 올바른 방법: 흐르는 따뜻한 물에 젖병 담그기 or 따뜻한 물 그릇에 넣어 데우기 + small cute bottle in warm water bowl illustration. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline. Source box cream #FFF0E0 rounded. 출처 warm brown small bold. · WHO/FAO Safe Preparation Guidelines 2007. · CDC Infant Formula Preparation 2024. · AAP Formula Water Safety 2024. Warm brown divider line. 소아과언니 warm brown bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray. Divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 성장 기록으로 분유 시기 체크 teal. No pixel text. No quotes. Cute character illustrations around brand block: baby drinking milk, thermometer, water droplet icons, warm watercolor style."
+    }
+  ],
+  "palette": "A",
+  "tone": "character-illustration",
+  "common_style": "# 캐릭터 일러스트 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 소프트 파스텔 베이지 #FFF8F0\n- 텍스트: 웜 브라운 #3D2B1F\n- 강조: teal green #2C7A5C\n- 경고: coral #E05C3A\n- 카드 배경: 크림 #FFF0E0\n- 일러스트: 따뜻한 수채화풍 아기/엄마/음식 캐릭터 (cute, chubby, warm)\n- 시그니쳐: 우상단 소아과언니 warm brown (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nCenter: large warm brown bold headline [토픽 핵심어], two lines, [둘째 줄] with teal green #2C7A5C underline.\nBelow: small gray subtitle [부제] · AAP 권장 기준.\nBottom center: LARGE cute character illustration [토픽 관련 귀여운 아기/엄마 장면], warm cozy colors, chubby characters.\nNo pixel text. No quotes.\n\n## 2x2 그리드 패턴\nFour cards in 2x2 grid, each light cream #FFF0E0 rounded.\nEach card: cute character illustration inside + Korean label below.\nSmall teal checkmark corner.\nWarm pastel colors throughout.\n\n## 금지 항목 패턴 (귀여운 X)\nFour forbidden food/item cards in 2x2 grid.\nEach: cute illustrated item with red X overlay + Korean label + reason.\nWarm background maintained (NOT dark).\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown small, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline.\nSource box cream #FFF0E0 rounded.\n출처 (warm brown small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nWarm brown divider line.\n소아과언니 warm brown bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nDivider.\n@dr.soa_unnie · 매주 새 가이드 warm brown.\n소아과수첩 앱 · [CTA] teal.\nNo pixel text. No quotes.\nCute character illustrations around brand block (doctor/baby/food icons).\n"
+}

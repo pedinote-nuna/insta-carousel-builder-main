@@ -1,0 +1,40 @@
+{
+  "topic": "extrusion",
+  "topic_type": "발달체크형",
+  "source_template": "slides.extrusion.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "생후 4~6개월 이유식 시작 시기를 강조하는 훅 장면",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold small, no decoration, no quotes. Center: Giant bold headline in warm brown #3D2B1F Pretendard ExtraBold: '생후 4~6개월\n이유식 시작 신호' with line breaks, centered alignment. Bottom-center: Small teal accent circle with tiny white text '4가지 체크'. Minimal clean layout, no illustrations, typography-focused design, high contrast for instant readability within 2 seconds.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "목 가누기 준비 신호를 실사로 보여주는 장면",
+      "prompt": "Portrait 1080x1350. Realistic photo. Close-up of Asian baby (4-6 months old) sitting upright with stable head control, supported gently by parent's hands under armpits. Baby wearing soft pastel onesie, natural indoor lighting, warm tone. Shallow depth of field focusing on baby's steady head posture. Top-right overlay: 소아과언니 warm brown small text. Top-left overlay: Small teal rounded label '준비 신호 1'. Clean lifestyle photography, no face close-up, emphasis on body posture and head stability.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "혀내밀기 반사 소실을 실사로 보여주는 장면",
+      "prompt": "Portrait 1080x1350. Realistic photo. Close-up of baby's mouth area (lower face only, no full face) with parent's hand gently holding small baby spoon near lips. Baby's tongue NOT pushing spoon out, accepting spoon calmly. Soft natural lighting, warm skin tone, pastel background blur. Top-right overlay: 소아과언니 warm brown small text. Top-left overlay: Small teal rounded label '준비 신호 3'. Clean macro photography, focus on mouth and spoon interaction, showing readiness for solid food.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "손으로 음식 잡는 행동을 실사로 보여주는 장면",
+      "prompt": "Portrait 1080x1350. Realistic photo. Extreme close-up of baby's small hand reaching toward and grabbing small piece of soft food (banana slice or rice puff) on white plate. Parent's hand partially visible guiding gently. Natural indoor lighting, warm tone, shallow depth of field. Top-right overlay: 소아과언니 warm brown small text. Top-left overlay: Small teal rounded label '준비 신호 4'. Clean lifestyle macro photography, emphasis on baby's hand-eye coordination and grasping motion.",
+      "file": "7-1.png"
+    }
+  ]
+}

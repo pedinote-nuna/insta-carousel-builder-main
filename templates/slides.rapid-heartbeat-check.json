@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 014. Large breathing whitespace before headline. Headline COMPACT two lines: 아이 가슴이 빠르게 뛴다 navy, 집에서 확인하는 법 with 확인하는 법 underlined in teal #2C6E63. Small subtitle gray: 연령별 정상 심박수와 응급 신호 · 대한소아청소년과학회 기준. LARGE minimalist heart with pulse wave line illustration in teal, prominently placed center-right. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray rounded label: 정상 범위. Headline COMPACT: 연령별 정상 심박수 navy, 심박수 with teal #2C6E63 underline. Small heart icon teal top-center. Stacked age group cards with REDUCED text 20% smaller + GENEROUS padding + comfortable vertical spacing. Five cards light gray #F0F4F8 rounded: 신생아 0-1개월 small gray top-left + 100-205회/분 navy bold large center + 영아 1-12개월 + 100-190회/분 + 유아 1-2세 + 98-140회/분 + 학령기 6-12세 + 60-95회/분 + 청소년 13-18세 + 60-80회/분. Bottom small note gray: 성장하면서 점차 느려집니다. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 측정 위치. Headline COMPACT: 맥박 재는 navy, 위치 with teal #2C6E63 underline. Center-top: minimalist line illustration of hand and wrist showing pulse point, teal outline. Two stacked cards light gray #F0F4F8 rounded GENEROUS padding. First card: small icon hand pointing + 소아·학령기 아동 small gray + 손목 안쪽 요골동맥 navy bold + 엄지 아래 손목 안쪽에 검지와 중지 두 손가락 navy small. Second card: small icon arm + 영아 12개월 미만 small gray + 위팔 안쪽 상완동맥 navy bold + 손목 혈관이 작아 위팔이 가장 정확 navy small. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 측정 방법. Headline COMPACT: 정확하게 재는 navy, 방법 with teal #2C6E63 underline. Minimalist stopwatch icon teal center-top. Three numbered step cards light gray #F0F4F8 rounded GENEROUS padding, vertical stack with comfortable spacing. Card 1: large teal circle 1 left + 최소 5분 안정 navy bold + 아이를 조용히 앉혀 휴식 navy small. Card 2: large teal circle 2 left + 30초 동안 세기 navy bold + 맥박 뛰는 횟수 카운트 navy small. Card 3: large teal circle 3 left + 2배 곱하기 navy bold + 1분당 심박수 계산 navy small. Bottom small note gray: 안정 상태에서 측정이 가장 정확합니다. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 빠른 심박. Headline COMPACT: 심장이 빠르게 뛰는 navy, 흔한 이유 with teal #2C6E63 underline. Minimalist thermometer and activity icons teal top-center. Five stacked cards light gray #F0F4F8 rounded GENEROUS padding with icons. Card 1: fever icon + 발열 navy bold + 체온 1도 상승 시 심박수 10회 증가 navy small. Card 2: water icon + 탈수 navy bold + 수분 부족으로 심박수 증가 navy small. Card 3: running icon + 운동·활동 navy bold + 신체 활동 후 일시적 증가 navy small. Card 4: emotion icon + 스트레스·불안 navy bold + 교감신경 항진으로 심박수 증가 navy small. Card 5: pill icon + 약물 navy bold + 일부 약물이 심박수에 영향 navy small. Bottom note gray: 동성 빈맥 — 원인 해결 시 정상화. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 구분. Headline COMPACT: 동성 빈맥 vs navy, 부정맥 with coral #C44536 underline. Two side-by-side comparison cards equal width GENEROUS padding. Left card teal #2C6E63 header 동성 빈맥 + body light gray #F0F4F8: 원인 있음 small gray + 발열·탈수·운동 등 navy + 원인 치료 시 호전 teal bold. Right card coral #C44536 header 부정맥 + body light gray #F0F4F8: 심장 신호 문제 small gray + 상심실성·심실성 빈맥 navy + 전문 치료 필요 coral bold. Bottom coral warning box rounded: ⚠️ + 부정맥은 실신·돌연사 위험 — 즉각 치료 필요 coral. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 응급 신호. Headline COMPACT: 즉시 응급실 가야 할 navy, 신호 with coral #C44536 underline. Large warning icon coral center-top. Five stacked cards coral background #C44536 with white text GENEROUS padding. Card 1: ⚠️ + 영아 220회 이상 white bold + 학령기 180회 이상 white. Card 2: ⚠️ + 가슴 두근거림 호소 white bold + 심장이 빠르게 뛴다고 표현 white. Card 3: ⚠️ + 어지러움·창백함 white bold + 혈압 저하 신호 white. Card 4: ⚠️ + 호흡곤란 white bold + 숨쉬기 힘들어함 white. Card 5: ⚠️ + 실신·의식 저하 white bold + 혈역학적 불안정 white. Bottom note coral: 위 증상 동반 시 즉시 119 또는 응급실. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 진료 시기. Headline COMPACT: 소아청소년과 방문이 필요한 navy, 경우 with teal #2C6E63 underline. Minimalist calendar check icon teal top-center. Four stacked cards light gray #F0F4F8 rounded GENEROUS padding. Card 1: checkmark icon + 안정 시에도 지속적으로 빠름 navy bold + 정상 범위 초과가 반복됨 navy small. Card 2: checkmark icon + 심박수가 너무 빨라 세기 어려움 navy bold + 측정 자체가 불가능 navy small. Card 3: checkmark icon + 증상 없어도 비정상 범위 navy bold + 면밀한 관찰 필요 navy small. Card 4: checkmark icon + 가족력 있는 경우 navy bold + 심장 질환·돌연사 가족력 navy small. Bottom note gray: 조기 발견이 중요합니다. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right: 소아과언니 navy, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT: 오늘 확인하고 navy, 저장하세요 with 저장하세요 teal #2C6E63 underline. Source box light gray #F0F4F8 rounded GENEROUS padding, left-aligned. 출처 navy small bold line break · 대한소아청소년과학회 빈맥 질환정보 line break · Nelson Textbook of Pediatrics 21st Ed line break · Lancet 2011 Normal Heart Rate Ranges line break · AHA AAP Pediatric Life Support 2025. Generous spacing + thin horizontal navy divider. 소아과언니 navy bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin navy divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 야간·달빛병원 바로 찾기 teal. No pixel values. No quotes."
+    }
+  ],
+  "palette": "A",
+  "tone": "clean-infographic",
+  "common_style": "# 클린 인포그래픽 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 흰색 #FFFFFF\n- 텍스트: deep navy #1A1F36\n- 강조: teal #2C6E63\n- 경고: coral #C44536\n- 카드 배경: light gray #F0F4F8\n- VERY GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 20% 작게 (빽빽함 방지)\n- 시그니쳐: 우상단 소아과언니 (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin on all four sides.\nTop-right small: '소아과언니' Pretendard SemiBold navy only, no decoration, no quotes.\nTop-left small gray: 'PARENTING NOTE · [번호]'.\nLarge breathing whitespace before headline.\nHeadline COMPACT two lines: '[첫 줄]' navy, '[둘째 줄]' with '[핵심 단어]' underlined in teal #2C6E63.\nSmall subtitle gray: '[부제] · AAP 가이드라인 기준'.\nLARGE minimalist [토픽 관련] line illustration in teal, prominently placed.\nGenerous bottom whitespace. No pixel values as text. No quotes on card.\n\n## BODY 데이터 카드 패턴\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nGENEROUS outer margin all sides.\nTop-right small: '소아과언니' navy, no quotes.\nTop-left small gray label: '[섹션명]'.\nHeadline COMPACT: '[앞부분]' navy, '[핵심 단어]' teal or coral underline.\nStacked/grid cards with REDUCED text (20% smaller) + GENEROUS padding + comfortable spacing.\nEach card: age/category icon top-left + tag label + bold number/text + subtitle.\nNo pixel values as text on card.\n\n## 비교 카드 패턴\nTwo side-by-side cards equal width.\nLeft card teal header / Right card navy header.\nBody light gray: label small gray + main value teal/navy large bold + interval/unit navy.\nBottom coral warning box: ⚠️ + warning text.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' navy, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' navy, '저장하세요' teal underline.\nSource box light gray #F0F4F8 rounded GENEROUS padding, left-aligned.\n출처 (navy small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nGenerous spacing + thin horizontal divider.\n소아과언니 navy bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray small.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 navy.\n소아과수첩 앱 · [CTA] teal.\nNo pixel values. No quotes.\n"
+}

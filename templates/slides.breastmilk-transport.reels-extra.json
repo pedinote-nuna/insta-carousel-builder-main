@@ -1,0 +1,40 @@
+{
+  "topic": "breastmilk-transport",
+  "topic_type": "보관관리형",
+  "source_template": "slides.breastmilk-transport.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 훅 - 충격적 질문으로 시청자 멈추게 하기",
+      "prompt": "Portrait 1080x1350. Bold typography design on soft pastel background #FFF8F0. Center: massive bold text '모유 운반 중 상하면?' in warm brown #3D2B1F, Pretendard ExtraBold 120pt. Below in smaller coral #E05C3A: '냉장고 없이 이동할 때'. Top-right corner: small '소아과언니' warm brown. Minimalist, high contrast, urgent tone. No illustrations, pure typography impact.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 2,
+      "role": "reels-visual",
+      "purpose": "아이스팩 쿨백 준비 실사 - 보관 용기 설명 보완",
+      "prompt": "Portrait 1080x1350. Close-up photo-realistic shot. Mother's hands placing frozen ice packs into insulated cooler bag on kitchen counter. Breast milk storage bags visible inside transparent container. Warm natural kitchen lighting. Soft focus background. Clean modern aesthetic. Top-right small overlay: '소아과언니' warm brown text. Practical, instructional, intimate angle.",
+      "file": "2-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "항공 수하물 검색대 통과 실사 - 항공 여행 팁 시각화",
+      "prompt": "Portrait 1080x1350. Close-up photo-realistic shot. Hands holding insulated breast milk cooler bag at airport security checkpoint. TSA-style tray visible. Soft airport terminal lighting. Professional traveler vibe. Cooler bag labeled clearly. Top-right small overlay: '소아과언니' warm brown text. Confident, reassuring mood. Shallow depth of field focusing on bag.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "얼음 녹은 모유팩 실사 - 절대 금지 경고 강화",
+      "prompt": "Portrait 1080x1350. Close-up photo-realistic shot. Hand holding breast milk storage bag with partially melted ice visible inside bag, condensation droplets on surface. Warm concerned lighting. Red X overlay subtly in corner. Top-right small overlay: '소아과언니' warm brown text. Cautionary tone, educational, close intimate shot showing texture detail.",
+      "file": "7-1.png"
+    }
+  ]
+}

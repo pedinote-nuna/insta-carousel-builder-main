@@ -1,0 +1,40 @@
+{
+  "topic": "choking-emergency-first-aid",
+  "topic_type": "응급정보형",
+  "source_template": "slides.choking-emergency-first-aid.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "충격적 훅 - 3초 안에 행동해야 하는 긴박함 전달",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: ultra-bold white sans-serif text '3분이면\\n뇌손상 시작' stacked, massive size, urgent typography. Below in smaller red #E63946 bold: '기도폐쇄 골든타임'. Typography-only composition, no illustrations. Extreme urgency visual hierarchy. Clean margins, professional emergency guide aesthetic.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "기침 가능 여부 판단 - 목 잡는 제스처 실사",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up. Young child's hands clutching throat in universal choking sign, both hands on neck, fingers spread, distressed expression partially visible. Soft natural lighting, shallow depth of field focusing on hands and throat area. Warm skin tones, urgent body language. Clean background blur, medical documentary photography style. No text, pure visual communication of choking emergency signal.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "하임리히법 자세 - 실제 처치 동작 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up. Adult hands performing Heimlich maneuver on child from behind, fist positioned between navel and ribcage, other hand gripping fist, correct hand placement emphasized. Mid-torso framing, child's body angle showing proper technique. Clinical lighting, sharp focus on hand position. Medical training photography style, educational clarity. Caucasian or Asian hands, neutral clothing, professional demonstration aesthetic.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "영아 처치법 - 등 두드리기 자세 실사",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up. Infant (under 1 year) positioned face-down on adult's forearm, head lower than chest, adult's hand supporting infant's jaw and chest. Other hand delivering firm back blows between shoulder blades. Detailed focus on hand placement and infant position. Soft medical lighting, safe handling demonstration. Professional pediatric first aid photography style, clear instructional visual. Baby doll or realistic training model acceptable.",
+      "file": "7-1.png"
+    }
+  ]
+}

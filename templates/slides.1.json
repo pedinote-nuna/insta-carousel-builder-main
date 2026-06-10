@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Top: bold red #E63946 stripe full width with COMPACT white text 'BURN EMERGENCY GUIDE'. Top-right below stripe: 소아과언니 white Pretendard SemiBold small, no quotes, 4 characters only. Headline COMPACT 25% smaller: '화상 입었을 때' white bold, '첫 1분이 중요합니다' bright red #E63946. Small white subtitle: '즉시 행동으로 손상을 최소화 · AAP 가이드라인 기준'. LARGE prominent line illustration of child with burn injury and parent doing first aid, white outline on dark background, prominent placement center-right. Bottom-left small gray: 'PARENTING NOTE · 010'. No pixel values. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red rounded label: '즉시 행동 ✓'. Headline COMPACT 25% smaller: '열원으로부터' white bold, '아이를 떼어내세요' mint #2EC4B6. Center-upper: MEDIUM line illustration of parent removing child from hot surface, white outline with mint accents. Below illustration: mint outlined box with GENEROUS padding containing two rows. First row: SMALL ICON left (water drop with mint ✓ overlay) plus COMPACT white text right '뜨거운 물·물체로부터 즉시 이동'. Second row: SMALL ICON left (clothing with mint ✓ overlay) plus COMPACT white text right '옷에 불이 붙었다면 불을 끄고 단단히 붙지 않은 옷은 제거'. GENEROUS spacing between rows. Bottom thin mint divider. No pixel values. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint rounded label: '찬물로 식히기 ✓'. Headline COMPACT 25% smaller: '흐르는 찬물로' white bold, '5분간 식혀주세요' mint #2EC4B6. Center: LARGE line illustration of running cool water over burned hand under faucet, white and mint outline. Below: mint outlined box GENEROUS padding. Inside: SMALL water icon left (mint ✓) plus COMPACT white text right '찬물로 약 5분간 흐르게 해서 식히기'. Second row: SMALL thermometer down icon left (mint ✓) plus COMPACT white text right '화상 진행을 멈추고 통증·부종 감소'. GENEROUS spacing. Bottom thin mint divider. No pixel values. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red rounded label: '절대 하지 마세요 ❌'. Headline COMPACT 25% smaller: '얼음을' white bold, '직접 대지 마세요' bright red #E63946. Center-upper: MEDIUM line illustration of ice cube with big red X overlay, white outline. Below: red outlined box GENEROUS padding containing two rows. First row: SMALL ICON left (ice cube with red ❌ overlay) plus COMPACT white text right '얼음을 화상 부위에 직접 대면 안 됨'. Second row: SMALL ICON left (blood vessel constriction icon with red ❌) plus COMPACT white text right '혈관수축·저체온증 위험 증가해 화상 악화'. GENEROUS spacing between rows. Bottom thin red divider. No pixel values. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red rounded label: '절대 금지 ❌'. Headline COMPACT 25% smaller: '화상 부위를' white bold, '만지지 마세요' bright red #E63946. Center-upper: MEDIUM line illustration of hand touching blister with red X overlay, white outline. Below: red outlined box GENEROUS padding. First row: SMALL hand rubbing icon left (red ❌ overlay) plus COMPACT white text right '화상 부위 문지르지 말기 · 손상 악화'. Second row: SMALL blister icon left (red ❌ overlay) plus COMPACT white text right '물집 터뜨리지 말기 · 감염 위험 증가'. GENEROUS spacing between rows. Bottom thin red divider. No pixel values. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red rounded label: '민간요법 금지 ❌'. Headline COMPACT 25% smaller: '아무것도' white bold, '바르지 마세요' bright red #E63946. Center-upper: MEDIUM line illustration of butter, oil, soybean paste, toothpaste with big red X, white outline. Below: red outlined box GENEROUS padding. First row: SMALL folk remedy icon left (red ❌ overlay) plus COMPACT white text right '버터·기름·된장·간장·치약 등 민간요법 금지'. Second row: SMALL ointment tube icon left (red ❌ overlay) plus COMPACT white text right '소아청소년과 의사 지시 없이 연고·약 바르지 말기'. GENEROUS spacing. Bottom thin red divider. No pixel values. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint rounded label: '보호하기 ✓'. Headline COMPACT 25% smaller: '깨끗한 붕대로' white bold, '덮어주세요' mint #2EC4B6. Center: LARGE line illustration of clean bandage wrapping around arm burn gently, white and mint outline. Below: mint outlined box GENEROUS padding. Inside: SMALL bandage icon left (mint ✓) plus COMPACT white text right '화상 부위를 깨끗한 붕대로 덮기'. Second row: SMALL shield icon left (mint ✓) plus COMPACT white text right '감염 위험 낮추고 통증 감소'. GENEROUS spacing. Bottom thin mint divider. No pixel values. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Full-width bright red #E63946 header bar with white bold '즉시 병원으로 가야 할 때'. Center: LARGE line illustration of ambulance with emergency light, white and red outline prominent. Below: numbered items in large red rounded border GENEROUS padding. Number 1 in red circle plus white text '물집이 생기고 아이 손바닥보다 큰 화상'. Number 2 in red circle plus white text '손·발·얼굴·생식기·관절 부위 화상'. Number 3 in red circle plus white text '전기 화상이나 피부가 까맣게 탄 경우'. GENEROUS spacing between items. Bottom thin red divider. No pixel values. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. VERY GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-center small gray: 'SAVE & SHARE'. Headline COMPACT: '오늘 확인하고' white bold with '저장하세요' mint #2EC4B6 underline. Source box dark #1A2B3C rounded GENEROUS padding. 출처 white small bold. Bullet 'First Aid Guide for Parents & Caregivers - Burns, AAP 2017'. Bullet 'First Aid for Burns: Parent FAQs, AAP 2023'. Bullet 'Cool Running Water as a First Aid Treatment for Burn Injuries, Annals of Emergency Medicine 2025'. Thin white divider. 소아과언니 white bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin white divider. '@dr.soa_unnie · 매주 새 가이드' white. '소아과수첩 앱 · 야간 달빛병원 바로 찾기' mint. No pixel values. No quotes anywhere."
+    }
+  ],
+  "palette": "B",
+  "tone": "emergency-alert",
+  "common_style": "# 경고·긴급 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 짙은 네이비 #0D1B2A\n- 텍스트: 흰색 #FFFFFF\n- 긴급 강조: bright red #E63946\n- 안전/긍정: mint #2EC4B6\n- 카드 배경: #1A2B3C\n- GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 25% 작게\n- 슬라이드마다 아이콘/일러스트 필수\n- 시그니쳐: 우상단 소아과언니 white (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A.\nGENEROUS outer margin all sides.\nTop: bold red #E63946 stripe full width + COMPACT white text '[토픽] 긴급 가이드'.\nTop-right below stripe: '소아과언니' white Pretendard SemiBold small, no quotes.\nHeadline COMPACT (25% smaller): '[첫 줄]' white bold, '[핵심 긴급 표현]' bright red #E63946.\nSmall white subtitle: '[부제] · AAP 가이드라인 기준'.\nLARGE prominent line illustration [토픽 관련 응급 장면] white outline on dark background.\nBottom-left small gray: 'PARENTING NOTE · [번호]'.\nNo pixel values. No quotes.\n\n## 금지 항목 패턴 (❌ 슬라이드)\nDark navy background.\nTop-left red rounded label: '절대 하지 마세요 ❌'.\nHeadline COMPACT: '[내용]' white, '[핵심]' red.\nRows stacked: SMALL LINE ILLUSTRATION ICON left (red ❌ overlay) + COMPACT white text right.\nRed outlined box around all rows, comfortable padding.\nNo pixel values.\n\n## 행동 항목 패턴 (✓ 슬라이드)\nDark navy background.\nTop-left mint rounded label: '[행동] ✓'.\nHeadline COMPACT: '[내용]' white, '[핵심]' mint #2EC4B6.\nRows stacked: SMALL ICON left (mint ✓ overlay) + COMPACT white text right, GENEROUS spacing.\nMint outlined box around all rows.\nNo pixel values.\n\n## 119 패턴\nFull-width bright red header bar + white bold '[긴급 행동]'.\nLARGE relevant illustration center (구급차/응급 아이콘).\nNumbered items: red number + white text, GENEROUS spacing.\nLarge red rounded border around items.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' white small, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' white, '저장하세요' mint underline.\nSource box dark #1A2B3C rounded GENEROUS padding.\n출처 (white small bold)\n· [출처 1]\n· [출처 2]\nThin white divider.\n소아과언니 white bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 white.\n소아과수첩 앱 · [CTA] mint.\nNo pixel values. No quotes.\n"
+}

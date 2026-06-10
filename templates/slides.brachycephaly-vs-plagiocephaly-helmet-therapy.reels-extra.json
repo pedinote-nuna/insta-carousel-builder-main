@@ -1,0 +1,40 @@
+{
+  "topic": "brachycephaly-vs-plagiocephaly-helmet-therapy",
+  "topic_type": "비교형",
+  "source_template": "slides.brachycephaly-vs-plagiocephaly-helmet-therapy.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 훅 - 부모의 불안을 자극하는 충격 문구로 시선 고정",
+      "prompt": "Portrait 1080x1350 vertical. Clean bold typography style. White background #FFFFFF. VERY GENEROUS outer margin all sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration. Center LARGE bold headline navy Pretendard ExtraBold 72pt: 우리 아기 머리\n헬멧 써야 할까요? Bottom-center small coral #FF6B6B Pretendard Medium 28pt: 단두증 vs 사두증 구분법. Minimal clean design, strong typographic hierarchy, no icons, no illustrations, maximum readability for instant scroll-stop impact.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "단두증 실사 - 위에서 본 아기 머리 클로즈업으로 짧고 넓은 형태 시각화",
+      "prompt": "Portrait 1080x1350 vertical. Clean photographic closeup. Soft natural lighting. Top-down view of baby's head resting on white blanket, showing brachycephalic shape: short front-to-back, wide side-to-side, symmetrical round appearance. Baby has soft black hair, peaceful sleeping expression. Minimal depth of field focusing on head shape. Top-right small overlay text: 소아과언니 white with subtle shadow. Bottom overlay small teal rounded label: 단두증 Pretendard SemiBold. Warm natural skin tones, gentle soft focus background, no harsh shadows, medical documentation aesthetic, parent's gentle hand barely visible at edge showing scale.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "사두증 실사 - 위에서 본 아기 머리 클로즈업으로 비대칭 평평한 형태 시각화",
+      "prompt": "Portrait 1080x1350 vertical. Clean photographic closeup. Soft natural lighting. Top-down view of baby's head resting on white blanket, showing plagiocephalic shape: asymmetrical flattening on one side (right posterior), visible diagonal distortion, one ear slightly forward. Baby has soft brown hair, peaceful sleeping expression. Minimal depth of field focusing on head asymmetry. Top-right small overlay text: 소아과언니 white with subtle shadow. Bottom overlay small coral rounded label: 사두증 Pretendard SemiBold. Warm natural skin tones, gentle soft focus background, no harsh shadows, medical documentation aesthetic, subtle grid overlay showing asymmetry.",
+      "file": "3-2.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 6,
+      "role": "reels-visual",
+      "purpose": "재배치 실사 - 부모 손이 아기 머리 방향 바꾸는 장면으로 2단계 실천법 시각화",
+      "prompt": "Portrait 1080x1350 vertical. Clean photographic closeup. Soft natural lighting. Parent's gentle hands carefully turning baby's head to alternate side on white crib sheet. Focus on hands: one supporting back of head, one guiding chin, showing tender repositioning technique. Baby appears comfortable, eyes closed peacefully. Hands show natural skin tone, clean nails, wedding ring visible suggesting parent. Shallow depth of field, focus on hand-head contact point. Top-right small overlay text: 소아과언니 white with subtle shadow. Bottom overlay small teal rounded label: 재배치 Pretendard SemiBold. Warm natural palette, soft morning light through window, safety and care emphasized, medical guidance aesthetic, no face closeup.",
+      "file": "6-1.png"
+    }
+  ]
+}

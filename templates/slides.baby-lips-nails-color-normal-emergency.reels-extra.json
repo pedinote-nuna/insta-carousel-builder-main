@@ -1,0 +1,40 @@
+{
+  "topic": "baby-lips-nails-color-normal-emergency",
+  "topic_type": "응급정보형",
+  "source_template": "slides.baby-lips-nails-color-normal-emergency.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 시작 2초 안에 시청자를 멈추게 하는 충격적 훅 장면",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert hook style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: HUGE bold white text '입술이 파래요' top line, smaller white text '지금 바로 확인하세요' bottom line. Top-right corner: tiny red flashing dot icon. Typography-focused, no imagery. Ultra-clean minimal emergency alert aesthetic. Massive font hierarchy for instant impact.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-action",
+      "purpose": "손발 끝 청색증을 실사로 보여주는 클로즈업 장면",
+      "prompt": "Portrait 1080x1350 vertical close-up photograph. Soft indoor lighting. Baby's tiny hand held gently by adult hand, fingertips showing slight bluish tint on nail beds. Clean white background or soft cream blanket. Natural skin tone with subtle color variation visible on fingertips. Photorealistic medical documentation style. Gentle caring hands composition. Focus sharp on fingertips, shallow depth of field. No face visible, hands only. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-action",
+      "purpose": "입술과 혀 색 확인하는 실사 관찰 장면",
+      "prompt": "Portrait 1080x1350 vertical close-up photograph. Soft natural light. Baby's mouth area close-up, pink healthy lips slightly open showing pink tongue inside. Parent's gentle finger pointing toward mouth area (finger edge of frame). Clean simple background, focus on healthy pink color of mucous membranes. Medical observation demonstration style. No full face visible, mouth and chin area only. Photorealistic, documentary healthcare aesthetic. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 6,
+      "role": "reels-action",
+      "purpose": "119 긴급 전화하는 손 클로즈업 장면",
+      "prompt": "Portrait 1080x1350 vertical close-up photograph. Dramatic lighting. Adult hand holding smartphone, screen showing '119' large digits dialed on phone keypad. Finger pressing call button. Dark background with spotlight on phone screen. Urgent emergency call composition. Modern smartphone interface visible. Photorealistic, high-contrast emergency documentation style. No face, hand and phone only. Sharp focus on screen numbers. Korean mother/father, East Asian appearance, Korean parent",
+      "file": "6-1.png"
+    }
+  ]
+}

@@ -157,6 +157,66 @@ def _summarize_slides(slides: list[dict]) -> str:
     return "\n".join(lines)
 
 
+# ---------------------------------------------------------------- 한국인 외모 강제
+# 나노바나나(Gemini)가 기본적으로 서양인 얼굴을 그리는 경향을 교정한다.
+# 사람(아기·부모·손 등)이 등장하는 프롬프트에만 한국인/동아시아 외모 suffix 를 붙인다.
+# 단어 경계(\b) 정규식으로 'many'·'human' 같은 오탐을 막는다.
+
+_PERSON_BABY_RE = re.compile(
+    r"\b(baby|babies|infant|infants|newborn|newborns|toddler|toddlers|"
+    r"child|children|kid|kids|boy|boys|girl|girls)\b",
+    re.IGNORECASE,
+)
+_PERSON_ADULT_RE = re.compile(
+    r"\b(mother|mothers|father|fathers|mom|mum|dad|parent|parents|"
+    r"adult|adults|woman|women|man|men|caregiver|caregivers)\b",
+    re.IGNORECASE,
+)
+_PERSON_GENERIC_RE = re.compile(
+    r"\b(hand|hands|finger|fingers|face|faces|person|people|"
+    r"arm|arms|cheek|cheeks|skin)\b",
+    re.IGNORECASE,
+)
+
+# 사람 유형별 suffix (운영자 요청 문구 기반)
+_KOREAN_SUFFIX_BABY = "Korean baby, East Asian facial features, chubby cheeks"
+_KOREAN_SUFFIX_ADULT = "Korean mother/father, East Asian appearance, Korean parent"
+_KOREAN_SUFFIX_GENERIC = (
+    "Korean ethnicity, East Asian facial features, Korean baby/parent appearance"
+)
+
+
+def _append_korean_ethnicity(prompt: str) -> str:
+    """사람(아기·부모·손 등)이 등장하는 프롬프트에 한국인 외모 suffix 를 덧붙인다.
+
+    - 아기 키워드 → 아기용 suffix
+    - 부모/어른 키워드 → 부모용 suffix
+    - 손·피부 등 일반 신체만 등장 → 일반 suffix
+    - 사람이 없거나 이미 Korean/East Asian 표기가 있으면 원본 그대로.
+    """
+    if not prompt:
+        return prompt
+    low = prompt.lower()
+    if "korean" in low or "east asian" in low:
+        return prompt  # 이미 명시됨 → 중복 방지
+
+    pieces: list[str] = []
+    if _PERSON_BABY_RE.search(prompt):
+        pieces.append(_KOREAN_SUFFIX_BABY)
+    if _PERSON_ADULT_RE.search(prompt):
+        pieces.append(_KOREAN_SUFFIX_ADULT)
+    if not pieces and _PERSON_GENERIC_RE.search(prompt):
+        pieces.append(_KOREAN_SUFFIX_GENERIC)
+
+    if not pieces:
+        return prompt  # 사람 없음 → 그대로
+
+    suffix = "; ".join(pieces)
+    base = prompt.rstrip()
+    sep = "" if base.endswith((".", ",", ";", ":")) else "."
+    return f"{base}{sep} {suffix}"
+
+
 def generate_extra_prompts(
     slides_data: dict, topic_type: str, topic_name: str, api_key: str
 ) -> list[dict]:
@@ -200,6 +260,10 @@ def generate_extra_prompts(
     extras = parsed.get("extra_slides", [])
     if not isinstance(extras, list) or not (3 <= len(extras) <= 4):
         raise ValueError(f"extra_slides 가 3~4개가 아님 (got {len(extras) if isinstance(extras, list) else '?'})")
+    # 사람이 등장하는 프롬프트에 한국인 외모 suffix 자동 부착
+    for e in extras:
+        if isinstance(e, dict):
+            e["prompt"] = _append_korean_ethnicity(str(e.get("prompt", "")))
     return extras
 
 
@@ -352,6 +416,7 @@ def _collect_ordered_slides(
             "label": extra["file"],
             "role": str(extra.get("role", "")),
             "prompt": str(extra.get("prompt", "")),
+            "korean_overlay": str(extra.get("korean_overlay", "")),
         })
     for i in range(1, n_card_slides + 1):
         card = card_by_n.get(i)
@@ -360,12 +425,14 @@ def _collect_ordered_slides(
                 "label": f"slide-{i:02d}",
                 "role": str(card.get("role", "")),
                 "prompt": str(card.get("prompt", "")),
+                "korean_overlay": str(card.get("korean_overlay", "")),
             })
         for extra in by_pos.get(i, []):
             out.append({
                 "label": extra["file"],
                 "role": str(extra.get("role", "")),
                 "prompt": str(extra.get("prompt", "")),
+                "korean_overlay": str(extra.get("korean_overlay", "")),
             })
     return out
 
@@ -388,30 +455,130 @@ def _apply_brand_fixes(text: str) -> str:
     return text
 
 
+# prompt 안에서 'Korean headline text:' 뒤 한국어 또는 큰따옴표 안 한국어를 추출.
+_HANGUL = r"가-힣"
+_KO_HEADLINE_LABEL = re.compile(
+    r"(?:korean\s+headline\s+text|korean\s+headline|headline|헤드라인|한국어\s*(?:헤드라인|텍스트|문구))"
+    r"(?:\s+[A-Za-z]+){0,2}"  # 'Headline COMPACT:' 처럼 라벨 뒤 수식어 1~2개 허용
+    r"\s*[:：]\s*(.+)",
+    re.IGNORECASE,
+)
+_KO_QUOTED = re.compile(r"[\"“”]([^\"“”]*[" + _HANGUL + r"][^\"“”]*)[\"“”]")
+
+
+def _clean_headline_segment(seg: str) -> str:
+    """헤드라인 세그먼트에서 디자인 지시 토큰(hex 색·영문 스타일어)을 제거하고 한국어만 남긴다.
+
+    예) '발달지표는 navy, 75번째 백분위수 기준 with 기준 coral #C44536 underline'
+        → '발달지표는 75번째 백분위수 기준 기준'
+    """
+    # 1) 첫 문장까지만 (마침표·줄바꿈·세미콜론 경계)
+    seg = re.split(r"[\n;.]", seg, maxsplit=1)[0]
+    # 2) hex 색상 코드 제거
+    seg = re.sub(r"#[0-9A-Fa-f]{3,8}\b", " ", seg)
+    # 3) 한글이 전혀 없는 ASCII 토큰(navy, coral, with, underline 등) 제거
+    seg = re.sub(r"\b[A-Za-z][A-Za-z0-9_/-]*\b", " ", seg)
+    # 4) 남은 스타일성 구두점·공백 정리
+    seg = re.sub(r"[,:·/]+", " ", seg)
+    seg = re.sub(r"\s+", " ", seg).strip().strip("\"“”")
+    # 5) 액센트 대상어 중복(예: '… 기준 기준') 제거 — 인접 동일 토큰 1개로
+    seg = re.sub(r"\b(\S+)(\s+\1\b)+", r"\1", seg)
+    return seg
+
+
+def _has_korean(text: str) -> bool:
+    """문자열에 한글이 포함되어 있는지 확인"""
+    if not text:
+        return False
+    return any('가' <= ch <= '힣' or 'ᄀ' <= ch <= 'ᇿ' for ch in text)
+
+
+def _extract_korean_summary(prompt: str) -> str:
+    """슬라이드 prompt 에서 대본용 한국어 요약을 추출.
+
+    1) 'Korean headline text:'/'Headline ...:' 류 라벨 뒤 텍스트 우선
+    2) 없으면 큰따옴표 안 한국어 문구(가장 긴 것)
+    3) 둘 다 없으면 빈 문자열 (호출부에서 prompt 앞 200자로 폴백)
+    """
+    if not prompt:
+        return ""
+    m = _KO_HEADLINE_LABEL.search(prompt)
+    if m:
+        head = _clean_headline_segment(m.group(1).strip())
+        # 정제 후 한글이 남아 있을 때만 채택
+        if head and re.search(r"[" + _HANGUL + r"]", head):
+            return head[:200]
+    quoted = _KO_QUOTED.findall(prompt)
+    if quoted:
+        return max((q.strip() for q in quoted), key=len)[:200]
+    return ""
+
+
 def generate_voiceover_script(ordered_slides: list[dict], api_key: str) -> str:
-    """Claude 로 릴스 대본 생성. 전체 응답 텍스트 반환."""
+    """Claude 로 릴스 대본 생성. voiceover.txt 형식(|| 자막형 포함) 반환."""
     client = Anthropic(api_key=api_key)
     lines = []
     for i, s in enumerate(ordered_slides, 1):
-        prompt = str(s.get("prompt", "")).replace("\n", " ").strip()
-        if len(prompt) > 150:
-            prompt = prompt[:150]
-        lines.append(f"{s['label']} / {s.get('role','?')} / {prompt}")
+        # 한국어 요약 추출 — 우선순위대로, 한글이 들어있는 값만 채택
+        summary = str(s.get("korean_overlay", "")).strip()
+        if not summary:
+            cand = str(s.get("topic", "")).strip()
+            if _has_korean(cand):
+                summary = cand
+        if not summary:
+            cand = str(s.get("subtitle", "")).strip()
+            if _has_korean(cand):
+                summary = cand
+        if not summary:
+            cand = str(s.get("description", "")).strip()
+            if _has_korean(cand):
+                summary = cand[:60]
+        if not summary:
+            cand = _extract_korean_summary(str(s.get("prompt", "")))
+            if _has_korean(cand):
+                summary = cand
+        # 한글 요약을 끝내 못 뽑으면 해당 슬라이드는 제외 (영어 prompt 폴백 금지)
+        if not _has_korean(summary):
+            continue
+        lines.append(f"{s['label']} / {s.get('role','?')} / {summary}")
+
+    system_prompt = """너는 소아과언니 인스타그램 릴스 대본 작성 전문가야.
+슬라이드 목록이 주어지면 아래 규칙으로 voiceover.txt 형식의 대본을 작성해.
+
+## 대본 구조
+첫 줄 고정: 소아청소년꽈 전문의가 알려드립니다.
+마지막 줄 고정: 소아꽈언니의 소아꽈수첩입니다.
+슬라이드 순서대로 핵심 내용 한 문장씩. 전체 180~200자(공백 제외), 슬라이드마다 균일, 구어체(~해요).
+
+## 숫자 → 한글
+6개월→육개월, 9개월→구개월, 18개월→십팔개월, 38℃→삼십팔도, 26℃→이십육도,
+5분→오분, 20분→이십분, 10일→열흘, 14일→이주일, 3일→사흘, 7일→일주일,
+119→일일구에 전화하세요, AAP→에이에이피, SPF→에스피에프, DEET→디트
+
+## 출력 형식 (voiceover.txt)
+한 줄 = 한 슬라이드. 숫자가 있는 줄만 끝에 || 자막형 추가.
+자막형 변환: 오분→5분, 이십분→20분, 열흘→10일, 이주일→14일, 사흘→3일,
+일주일→7일, 삼십팔도→38℃, 삼십구도→39℃, 일일구→119, 에스피에프→SPF,
+에이에이피→AAP, 육개월→6개월, 구개월→9개월, 십팔개월→18개월.
+숫자 없는 줄은 || 없이 그대로.
+
+대본 텍스트만 출력. 설명 없이."""
+
     user_prompt = (
-        "아래는 최종 순서로 정렬된 전체 슬라이드 목록입니다.\n"
-        "각 슬라이드에 맞는 릴스 대본을 작성해주세요.\n\n"
+        "아래 슬라이드로 voiceover.txt 형식 대본을 작성해줘.\n\n"
         + "\n".join(lines)
     )
+
     msg = client.messages.create(
         model=CLAUDE_MODEL,
-        max_tokens=4096,
-        system=VOICEOVER_SYSTEM_PROMPT,
+        max_tokens=2048,
+        system=system_prompt,
         messages=[{"role": "user", "content": user_prompt}],
     )
-    text = "".join(
-        block.text for block in msg.content if getattr(block, "type", "") == "text"
-    ).strip()
-    return _apply_brand_fixes(text)
+    result = msg.content[0].text.strip()
+    # 꽈 표기 안전장치
+    result = _apply_brand_fixes(result)
+    return result
 
 
 def send_voiceover_to_telegram(script_text: str) -> None:
@@ -626,9 +793,33 @@ def main() -> int:
         except Exception as e:  # noqa: BLE001
             print(f"[WARN] 대본 생성 실패: {e}")
         else:
+            out_dir.mkdir(parents=True, exist_ok=True)
             voiceover_path = out_dir / "voiceover.txt"
             voiceover_path.write_text(script_text + "\n", encoding="utf-8")
-            print(f"대본 저장: {voiceover_path.relative_to(REPO_ROOT)}")
+            print(f"[대본] 저장 완료: {voiceover_path}")
+
+            # SRT 자동 생성
+            srt_script = REPO_ROOT / "scripts" / "estimate_srt.py"
+            srt_path = out_dir / "output.srt"
+            if srt_script.exists():
+                import subprocess
+                subprocess.run(
+                    ["python3", str(srt_script), str(voiceover_path), "-o", str(srt_path)],
+                    check=False
+                )
+                print(f"[SRT] 저장 완료: {srt_path}")
+
+            # ElevenLabs 대본 출력
+            el_lines = []
+            for line in script_text.strip().split("\n"):
+                if "||" in line:
+                    el_lines.append(line.split("||")[0].strip())
+                else:
+                    el_lines.append(line.strip())
+            el_script = "\n".join(el_lines)
+            print(f"\n🎙️ ElevenLabs 대본:\n{el_script}")
+            send_voiceover_to_telegram("🎙️ ElevenLabs 대본:\n\n" + el_script)
+
             send_voiceover_to_telegram(script_text)
     return 0
 

@@ -1,0 +1,40 @@
+{
+  "topic": "card-20260610-002",
+  "topic_type": "비교형",
+  "source_template": "slides.card-20260610-002.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 훅 - 부모들이 가장 헷갈리는 신생아 변 색깔 의문점 제시",
+      "prompt": "Portrait 1080x1350. Bold typography-focused design. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes. Center: huge bold headline in navy #1A1F36 Pretendard Bold 72pt: '노란 변? 초록 변?\n어느 게 정상일까?' — line break after question mark, left-aligned. Bottom: small coral #FF6B6B accent line 4px thick, 200px width. No baby, no photo, pure typography shock value. Editorial modern minimal style. Korean baby, East Asian facial features, chubby cheeks",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "DAY 1-3 태변을 실제 기저귀로 보여주는 클로즈업",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up shot. Top view of white disposable diaper with dark greenish-black sticky stool (meconium texture) in center. Parent's hand wearing simple white cotton sleeve gently holding diaper edge. Soft natural window light from left. Clean white changing mat background. Top-right overlay: 소아과언니 navy small text — 4 characters only. Top-left small coral rounded label floating: DAY 1-3. Professional medical documentary style, clean composition, sharp focus on stool texture. Korean mother/father, East Asian appearance, Korean parent",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "변 색깔 비교를 실물 기저귀 나란히 배치로 명확히 시각화",
+      "prompt": "Portrait 1080x1350. Photorealistic flat lay composition. Three white disposable diapers arranged vertically with 80px gap. Top diaper: mustard yellow soft stool. Middle diaper: greenish-yellow stool. Bottom diaper: bright orange-red alarming stool with small coral warning icon overlay. Shot from directly above. Soft even lighting, no harsh shadows. Clean white background. Top-right: 소아과언니 navy small — 4 characters only. Left side: small teal rounded label NORMAL, middle: small teal label OK, bottom: small coral label EMERGENCY. Medical reference photography style, color accuracy critical.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "이유식 후 변화를 실사 클로즈업으로 보여주며 안심 메시지 전달",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up shot. Baby's small hand (6-8 months old) reaching toward white bowl with soft mashed carrot puree. Blurred background shows white high chair tray. Foreground bottom: edge of white diaper with brownish-green formed stool visible (natural color change after solids). Soft natural light. Top-right: 소아과언니 navy small — 4 characters only. Top-left: small teal rounded label AFTER SOLIDS. Bottom overlay: semi-transparent white bar with navy text Pretendard Medium 28pt: '이유식 시작 후 변색 변화는 자연스러워요'. Warm reassuring documentary style. Korean baby, East Asian facial features, chubby cheeks",
+      "file": "7-1.png"
+    }
+  ]
+}

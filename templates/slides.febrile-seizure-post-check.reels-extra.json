@@ -1,0 +1,40 @@
+{
+  "topic": "febrile-seizure-post-check",
+  "topic_type": "응급정보형",
+  "source_template": "slides.febrile-seizure-post-check.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 시작 2초 내 시선 고정 - 응급 상황 각인",
+      "prompt": "Portrait 1080x1350 vertical. Ultra-bold typography hook screen. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: massive bold white text '열성경련 후\n이것만은 꼭 확인하세요' in 2 lines, Korean font weight 900, size 72pt. Top thin red #E63946 alert stripe full width. Bottom small white text '놓치면 안 되는 응급 신호'. Minimal design, maximum impact, emergency alert mood, clean spacing, professional medical content style.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual-explanation",
+      "purpose": "목 경직 체크 실사 시연 - 뇌수막염 신호 확인법",
+      "prompt": "Portrait 1080x1350 vertical. Close-up realistic photo. Adult hands gently checking toddler neck flexibility. Child lying down on white bed. One hand supporting back of head, other hand on chest. Soft natural window light from left. Focus on gentle neck examination motion. Warm caring mood. Medical demonstration context. Clean white bedding. Shallow depth of field. Professional healthcare photography style. Safe gentle touch visible. Parent-child trust atmosphere.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual-explanation",
+      "purpose": "팔다리 움직임 관찰 실사 - 마비 여부 체크",
+      "prompt": "Portrait 1080x1350 vertical. Close-up realistic photo. Toddler's arms and legs moving naturally on play mat. Bright indirect daylight. Focus on symmetrical limb movement - both arms reaching up, both legs kicking. Colorful soft toy nearby for scale. Natural playful motion captured. Clean simple background. Emphasis on normal bilateral movement. Warm reassuring atmosphere. Documentary medical photography style. Sharp focus on limbs, slight motion blur acceptable.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual-explanation",
+      "purpose": "체온계 측정 실사 - 발열 원인 추적 시각화",
+      "prompt": "Portrait 1080x1350 vertical. Close-up realistic photo. Digital ear thermometer in parent's hand checking toddler temperature. Child's ear visible in frame. Thermometer display showing reading (blur numbers). Soft natural light. Focus on thermometer device and gentle examination. Clean home interior background softly blurred. Calm caring moment. Medical monitoring context. Professional product photography meets healthcare documentation style. Warm color temperature. Shallow DOF emphasizing thermometer.",
+      "file": "7-1.png"
+    }
+  ]
+}

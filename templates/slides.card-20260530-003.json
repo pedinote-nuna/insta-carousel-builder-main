@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 003. Center: large warm brown bold headline 아기 변 색깔, two lines, 병원 가야 하는 색 with teal green #2C7A5C underline. Below: small gray subtitle 응급 신호 색깔 3가지 · AAP 가이드. Bottom center: LARGE cute character illustration of worried parent holding diaper with question marks around, chubby baby sitting nearby looking curious, warm cozy pastel colors, soft rounded shapes. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral #E05C3A rounded label: 응급 색깔 1. Large bold headline: 검은색 변 warm brown, 언제 위험할까요 coral #E05C3A. Center: large cute illustration of black diaper with concerned baby character beside it, warm soft colors. Below illustration: two cream cards #FFF0E0 stacked vertically. First card: 생후 2-3일 태변 — teal checkmark — 정상이에요 (끈적한 검은색). Second card: 생후 1주 이후 검은색 — coral X — 즉시 병원 (상부 위장관 출�blood). Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral #E05C3A rounded label: 응급 색깔 2. Large bold headline: 백색 또는 회백색 변 warm brown, 담도폐쇄 신호 coral #E05C3A. Center: large cute illustration of white/gray diaper with alarm clock icon, worried parent character holding baby. Below: cream card #FFF0E0 rounded large. Inside card: 담즙이 장으로 배출 안 됨 (bold warm brown) + 담도폐쇄증·간 질환 가능 + 즉시 소아과 연락 필수 + 생후 60일 이내 수술 시 예후 좋음 (teal text). Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral #E05C3A rounded label: 응급 색깔 3. Large bold headline: 적색 변 warm brown, 혈변 coral #E05C3A. Center: large cute illustration of red-stained diaper with concerned doctor character examining it. Below: two cream cards #FFF0E0 in vertical stack. First card: 소량 혈변 — 항문 균열 가능 (teal checkmark) — 의사 확인 필요. Second card: 대량 출혈·지속 출혈 — coral warning icon — 응급 진료. Small gray text bottom: 우유 단백질 알레르기·장 출혈 등 다양한 원인. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal #2C7A5C rounded label: 정상 범위. Large bold headline: 이 색깔들은 warm brown, 모두 정상이에요 teal #2C7A5C underline. Center: four cute diaper illustrations in 2x2 grid, each different color with smiling baby character. Top-left: yellow diaper + 황색. Top-right: brown diaper + 갈색. Bottom-left: green diaper + 녹색. Bottom-right: orange diaper + 주황색. Each with teal checkmark corner. Below grid: small cream card #FFF0E0: 수유 방법·식이에 따라 달라져요 (warm brown). Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal #2C7A5C rounded label: 녹색 변. Large bold headline: 녹색 변은 warm brown, 거의 항상 정상 teal #2C7A5C underline. Center: large cute illustration of green diaper with happy baby character eating green vegetables, cute broccoli and spinach characters around. Below: cream card #FFF0E0 rounded large. Inside: 녹색 변 원인 (bold warm brown) + 담즙 (teal dot) + 수유 패턴 변화 (teal dot) + 녹색 채소 섭취 (teal dot) + 철분제 복용 (teal dot). Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small warm brown rounded label: 체크 포인트. Large bold headline: 변 색깔보다 warm brown, 더 중요한 것 teal #2C7A5C underline. Center: large cute illustration of happy baby with checkmarks around, parent measuring height/weight, feeding bottle, thermometer icons in warm pastel colors. Below: four cream cards #FFF0E0 in 2x2 grid. Top-left: 수유량 (teal checkmark). Top-right: 체중 증가 (teal checkmark). Bottom-left: 활동성 (teal checkmark). Bottom-right: 발열 여부 (teal checkmark). Small gray text bottom: 아이의 전반적 상태를 함께 확인하세요. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small warm brown rounded label: 황달 + 백색변. Large bold headline: 2주 이상 황달 warm brown, 즉시 검사 coral #E05C3A. Center: large cute illustration of jaundiced baby with white diaper, doctor character with clipboard and test tube. Below: cream card #FFF0E0 rounded large. Inside: 생후 2주 황달 지속 + 백색변 동반 시 (bold warm brown) → 직접 빌리루빈 측정 필수 (coral) → 담도폐쇄 배제 검사 (coral) → NASPGHAN 가이드라인 권장 (small gray). Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline. Source box cream #FFF0E0 rounded. 출처 (warm brown small bold) · The Many Colors of Baby Poop (AAP, 2024) · Guideline for the Evaluation of Cholestatic Jaundice (JPGN, 2017) · Stools - Unusual Color (AAP, 2024) · Bloody Stool (Gomella's Neonatology, 2020). Warm brown divider line. 소아과언니 warm brown bold large center (NO quotes). DR.SOA UNNIE · 소아청소년과 전문의 gray. Divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 성장 기록으로 변 색깔 체크 teal. No pixel text. No quotes. Cute character illustrations around brand block: baby with diaper, doctor with stethoscope, parent icons in warm pastel colors."
+    }
+  ],
+  "palette": "A",
+  "tone": "character-illustration",
+  "common_style": "# 캐릭터 일러스트 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 소프트 파스텔 베이지 #FFF8F0\n- 텍스트: 웜 브라운 #3D2B1F\n- 강조: teal green #2C7A5C\n- 경고: coral #E05C3A\n- 카드 배경: 크림 #FFF0E0\n- 일러스트: 따뜻한 수채화풍 아기/엄마/음식 캐릭터 (cute, chubby, warm)\n- 시그니쳐: 우상단 소아과언니 warm brown (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nCenter: large warm brown bold headline [토픽 핵심어], two lines, [둘째 줄] with teal green #2C7A5C underline.\nBelow: small gray subtitle [부제] · AAP 권장 기준.\nBottom center: LARGE cute character illustration [토픽 관련 귀여운 아기/엄마 장면], warm cozy colors, chubby characters.\nNo pixel text. No quotes.\n\n## 2x2 그리드 패턴\nFour cards in 2x2 grid, each light cream #FFF0E0 rounded.\nEach card: cute character illustration inside + Korean label below.\nSmall teal checkmark corner.\nWarm pastel colors throughout.\n\n## 금지 항목 패턴 (귀여운 X)\nFour forbidden food/item cards in 2x2 grid.\nEach: cute illustrated item with red X overlay + Korean label + reason.\nWarm background maintained (NOT dark).\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown small, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline.\nSource box cream #FFF0E0 rounded.\n출처 (warm brown small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nWarm brown divider line.\n소아과언니 warm brown bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nDivider.\n@dr.soa_unnie · 매주 새 가이드 warm brown.\n소아과수첩 앱 · [CTA] teal.\nNo pixel text. No quotes.\nCute character illustrations around brand block (doctor/baby/food icons).\n"
+}

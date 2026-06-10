@@ -1,0 +1,40 @@
+{
+  "topic": "irplane",
+  "topic_type": "보관관리형",
+  "source_template": "slides.irplane.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 훅: 영아산통으로 고통받는 부모의 공감 유도",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Center: bold Korean typography '밤마다 울고 보채는 우리 아기\n영아산통일까요?' in navy #1A365D, each line centered, large font size (80pt). Bottom corner: small handwritten note '3개월 전 아기의 90%가 경험해요' in soft gray. Minimal, text-focused design for immediate emotional hook.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-photo",
+      "purpose": "풋볼 안기 자세를 실사로 보여주는 클로즈업",
+      "prompt": "Portrait 1080x1350. Close-up photograph of parent's hands holding a baby in football hold position. Baby lying face-down along parent's forearm, head supported by hand, legs straddling elbow. Soft natural lighting. Warm skin tones. Focus on hand position and baby's calm expression. Gentle pressure visible on baby's tummy. Clean white or cream background. Professional parenting guide photography style.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 4,
+      "role": "reels-photo",
+      "purpose": "세로 안기 자세를 실사로 보여주는 클로즈업",
+      "prompt": "Portrait 1080x1350. Close-up photograph of baby held upright against parent's chest, parent's hand gently supporting baby's head and neck. Baby's head resting on parent's shoulder. Soft natural lighting. Focus on proper head support technique. Parent wearing simple beige or white clothing. Baby in soft pastel onesie. Warm, comforting atmosphere. Professional parenting guide photography style.",
+      "file": "4-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 6,
+      "role": "reels-photo",
+      "purpose": "아기띠 착용 모습을 실사로 보여주는 클로즈업",
+      "prompt": "Portrait 1080x1350. Close-up photograph of baby secured in soft fabric baby carrier against parent's chest. Focus on baby's curled position and gentle compression. Baby's face peaceful, slightly turned. Parent's hands adjusting carrier straps. Soft natural lighting. Neutral beige or gray carrier. Clean indoor setting. Professional parenting guide photography style showing proper carrier positioning.",
+      "file": "6-1.png"
+    }
+  ]
+}

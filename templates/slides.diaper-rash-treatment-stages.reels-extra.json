@@ -1,0 +1,40 @@
+{
+  "topic": "diaper-rash-treatment-stages",
+  "topic_type": "응급정보형",
+  "source_template": "slides.diaper-rash-treatment-stages.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 오프닝 훅 - 충격적 질문으로 시청 유도",
+      "prompt": "Portrait 1080x1350. Bold typography-focused design. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Centered large Korean text in navy #2C3E50, bold weight: '기저귀 발진\n연고 순서\n틀리면 악화됩니다' with dramatic line breaks. Each line slightly offset for dynamic feel. Small accent: red asterisk (*) next to '악화' word. Bottom corner: tiny handwritten note 'from 소아과언니' in muted gray. Minimalist, high-impact shock message style.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-explain",
+      "purpose": "경증 단계 실사 - 보습제 바르는 손 클로즈업",
+      "prompt": "Portrait 1080x1350. Close-up photo-realistic scene. Adult hand gently applying white moisturizing cream on baby's clean diaper area (hip/thigh skin visible, no face). Soft natural window light from left. Cream texture visible on fingertips. Background: blurred nursery setting with pastel tones. Warm, caring, hygienic atmosphere. Overlay: semi-transparent label top-left 'STEP 01 · 보습제만' in Korean, muted navy text on frosted white badge.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-explain",
+      "purpose": "중등도 단계 실사 - 아연 연고 튜브와 바르는 동작",
+      "prompt": "Portrait 1080x1350. Close-up photo-realistic scene. Hand squeezing thick white zinc oxide ointment from tube onto fingertip. Tube label partially visible (generic white/blue design). Background: changing mat surface, soft focus. Another hand gently spreading ointment on baby's reddened skin (anonymous body part, no face). Natural lighting, clinical yet warm mood. Overlay: semi-transparent label top-right 'STEP 03 · 아연 연고' in Korean, muted navy on frosted white badge.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-explain",
+      "purpose": "항진균제 단계 실사 - 연고 튜브 손에 들고 있는 클로즈업",
+      "prompt": "Portrait 1080x1350. Close-up photo-realistic scene. Adult hand holding antifungal cream tube (generic white tube with simple label). Background: blurred pharmacy shelf or medicine cabinet with soft bokeh. Other hand pointing at tube label area (no readable text, just gesture). Concerned-but-informed mood. Natural indoor lighting. Overlay: semi-transparent label bottom-center '위성 병변 보이면\n항진균제 추가' in Korean, two lines, muted navy on frosted white rounded rectangle badge.",
+      "file": "7-1.png"
+    }
+  ]
+}

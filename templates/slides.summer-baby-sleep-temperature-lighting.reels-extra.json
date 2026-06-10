@@ -1,0 +1,40 @@
+{
+  "topic": "summer-baby-sleep-temperature-lighting",
+  "topic_type": "보관관리형",
+  "source_template": "slides.summer-baby-sleep-temperature-lighting.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 멈춤 유도 훅 - 여름밤 아기 수면 온도 충격 메시지",
+      "prompt": "Portrait 1080x1350 vertical. Clean typography-focused hook slide. Soft pastel background gradient from light mint #E8F5F1 to white #FFFFFF. VERY GENEROUS outer margin all sides. Top-right small: '소아과언니' Pretendard SemiBold navy #1A1F36. Center bold headline Pretendard ExtraBold 72pt navy #1A1F36, two lines with tight leading: '여름밤 26°C\n아기는 땀범벅?' Bottom-center small subtext Pretendard Medium 28pt gray #6B7280: '적정 온도를 모르면 위험해요'. No illustrations, pure typographic impact. Ultra-clean minimal design.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-photo",
+      "purpose": "온도계 실사 - 18-22°C 확인하는 장면",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up shot. Digital room thermometer display showing '20°C' in bright LED numbers. Parent's hand holding white modern thermometer against soft-focus nursery background with wooden crib edge visible. Warm natural window light from left side. Shallow depth of field focusing on temperature display. Clean household aesthetic. Professional lifestyle photography style. Shot on Canon EOS R6, 50mm f/1.8 lens.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-photo",
+      "purpose": "선풍기 배치 실사 - 간접 바람 방향 설명",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic medium shot. White standing fan positioned at angle, air flow direction indicated by subtle motion blur of light fabric curtain. Baby crib visible in soft background blur, showing safe distance. Parent's hand adjusting fan head direction away from crib. Soft morning light through sheer curtains. Clean modern nursery interior. Safety-focused composition. Shot on Canon EOS R6, 35mm f/2.0 lens, natural lighting.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-photo",
+      "purpose": "암막 커튼 실사 - 낮잠 시 빛 차단 장면",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic interior shot. Parent's hand gently closing thick blackout curtain in nursery, thin edge of bright daylight visible before complete darkness. Soft-focus baby crib silhouette in darkened room. Contrast between bright window edge and dark interior showing effective light blocking. Calm peaceful atmosphere. Side lighting creates dramatic but gentle mood. Shot on Canon EOS R6, 24mm f/2.8 lens, natural window light.",
+      "file": "7-1.png"
+    }
+  ]
+}

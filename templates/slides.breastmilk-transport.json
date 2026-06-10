@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Center: large warm brown bold headline 여행·외출 시, two lines, 모유 운반법 with teal green #2C7A5C underline. Below: small gray subtitle 안전한 보관과 이동 · CDC 권장 기준. Bottom center: LARGE cute character illustration of young mom packing breast milk bottles into insulated cooler bag with ice packs, warm cozy colors, chubby characters, soft watercolor style. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 준비 사항. Large bold headline: 모유 운반 전 warm brown, 필수 체크 teal green #2C7A5C underline. Center: cute illustration of mom washing hands at sink with soap bubbles, warm watercolor style. Below: two cream #FFF0E0 rounded cards stacked. First card: cute hand washing icon + 비누와 물로 손 씻기 warm brown + small gray 알코올 60% 이상 손소독제 대체 가능. Second card: cute sealed container icon + 뚜껑 단단히 닫히는 전용 용기 warm brown + small gray 유리 또는 플라스틱 소재. Small teal checkmarks. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 보관 용기. Large bold headline: 날짜 표기하고 warm brown, 보냉백에 넣기 teal green #2C7A5C underline. Center: cute illustration of labeled breast milk bottle with date sticker in insulated cooler bag with frozen ice packs, warm pastel colors. Below: two cream #FFF0E0 rounded cards stacked. First card: cute calendar icon + 유축한 날짜 반드시 표기 warm brown + small teal checkmark. Second card: cute cooler bag icon + 냉동 아이스팩과 보냉백 사용 warm brown + small gray 최대 24시간 안전 운반 가능. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 도착 후. Large bold headline: 목적지 도착하면 warm brown, 즉시 보관 teal green #2C7A5C underline. Center: cute illustration of mom arriving at destination and placing breast milk in refrigerator, warm cozy scene. Below: three cream #FFF0E0 rounded cards in vertical stack. First card: cute baby bottle icon + 즉시 수유 warm brown. Second card: cute refrigerator icon + 냉장 보관 warm brown. Third card: cute freezer icon + 냉동 보관 warm brown. Small gray note below: 아이스팩으로 냉장 온도 유지되었다면 냉장·냉동 모두 가능. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 항공 여행. Large bold headline: 비행기 탑승 시 warm brown, 기내 반입 가능 teal green #2C7A5C underline. Center: cute illustration of mom at airport security with breast milk bottles and cooler bag, friendly TSA officer, warm pastel colors. Below: two cream #FFF0E0 rounded cards stacked. First card: cute airplane icon + 모유 양 제한 없이 기내 반입 warm brown + small gray 아이스팩·젤팩도 함께 휴대 가능. Second card: cute document icon + TSA 규정 사본 휴대 권장 warm brown + small gray 공항 보안 검색 원활. Small teal checkmarks. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 장거리 이동. Large bold headline: 먼 거리 운반은 warm brown, 전문 서비스 이용 teal green #2C7A5C underline. Center: cute illustration of temperature-controlled delivery box with breast milk bottles, warm colors. Below: two cream #FFF0E0 rounded cards stacked. First card: cute delivery truck icon + 온도 조절 배송 서비스 warm brown + small teal checkmark. Second card: cute breast pump icon + 보관 시설 없으면 폐기하되 정기 유축 warm brown + small gray 모유 분비량 유지 중요. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral #E05C3A rounded label: 절대 금지. Large bold headline: 전자레인지 warm brown, 절대 사용 금지 coral #E05C3A underline. Center: cute illustration of microwave with big red X overlay and breast milk bottle, warm background maintained. Below: two cream #FFF0E0 rounded cards stacked. First card: cute broken nutrient icon with red X + 전자레인지는 영양소 파괴 warm brown + small coral 뜨거운 부분 만들어 화상 위험. Second card: cute warm water bowl icon + 올바른 해동법 warm brown + small gray 냉장고에서 밤새 해동 또는 미지근한 물에 담가 해동. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 보관 기한. Large bold headline: 온도별 warm brown, 안전 보관 시간 teal green #2C7A5C underline. Center: cute illustration of thermometer and storage containers at different temperatures, warm pastel colors. Below: three cream #FFF0E0 rounded cards in vertical stack. First card: cute room temperature icon + 실온 25도 이하 최대 4시간 warm brown. Second card: cute refrigerator icon + 냉장 4도 최대 4일 warm brown. Third card: cute freezer icon + 냉동 -18도 6개월 warm brown + small gray 최대 12개월. Small gray note below: 냉장고·냉동고 문쪽 금지, 안쪽 깊은 곳 보관. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline. Source box cream #FFF0E0 rounded. 출처 warm brown small bold. · CDC Breast Milk Storage and Preparation 2026. · CDC Travel Recommendations for Nursing Mothers 2026. · CDC Travel and Breastfeeding Yellow Book 2026. · CDC Breast Milk Storage Questions and Answers 2023. Warm brown divider line. 소아과언니 warm brown bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray. Divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 성장 기록으로 수유 일정 체크 teal. No pixel text. No quotes. Cute character illustrations around brand block of mom with baby and breast milk bottles, warm cozy style."
+    }
+  ],
+  "palette": "A",
+  "tone": "character-illustration",
+  "common_style": "# 캐릭터 일러스트 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 소프트 파스텔 베이지 #FFF8F0\n- 텍스트: 웜 브라운 #3D2B1F\n- 강조: teal green #2C7A5C\n- 경고: coral #E05C3A\n- 카드 배경: 크림 #FFF0E0\n- 일러스트: 따뜻한 수채화풍 아기/엄마/음식 캐릭터 (cute, chubby, warm)\n- 시그니쳐: 우상단 소아과언니 warm brown (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nCenter: large warm brown bold headline [토픽 핵심어], two lines, [둘째 줄] with teal green #2C7A5C underline.\nBelow: small gray subtitle [부제] · AAP 권장 기준.\nBottom center: LARGE cute character illustration [토픽 관련 귀여운 아기/엄마 장면], warm cozy colors, chubby characters.\nNo pixel text. No quotes.\n\n## 2x2 그리드 패턴\nFour cards in 2x2 grid, each light cream #FFF0E0 rounded.\nEach card: cute character illustration inside + Korean label below.\nSmall teal checkmark corner.\nWarm pastel colors throughout.\n\n## 금지 항목 패턴 (귀여운 X)\nFour forbidden food/item cards in 2x2 grid.\nEach: cute illustrated item with red X overlay + Korean label + reason.\nWarm background maintained (NOT dark).\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown small, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline.\nSource box cream #FFF0E0 rounded.\n출처 (warm brown small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nWarm brown divider line.\n소아과언니 warm brown bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nDivider.\n@dr.soa_unnie · 매주 새 가이드 warm brown.\n소아과수첩 앱 · [CTA] teal.\nNo pixel text. No quotes.\nCute character illustrations around brand block (doctor/baby/food icons).\n"
+}

@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Top: bold red #E63946 stripe full width + COMPACT white text 이물질 삼킴 긴급 가이드. Top-right below stripe: 소아과언니 white Pretendard SemiBold small, no quotes, 4 characters only. Headline COMPACT 25% smaller: 아이가 이물질을 white bold, 삼켰다면? bright red #E63946. Small white subtitle: 즉시 응급실 vs 집에서 대기 · 소아소화기학회 가이드라인. LARGE prominent line illustration child with distressed expression and magnified esophagus/stomach area with object inside, white outline on dark background, medical emergency style. Bottom-left small gray: PARENTING NOTE · 013. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, 4 characters only, no quotes. Top-left mint #2EC4B6 rounded label: 기본 정보 ✓. Headline COMPACT: 대부분은 white, 저절로 배출됩니다 mint #2EC4B6. Center: SMALL clean line illustration digestive tract with object passing through, white and mint outline, simple medical diagram style. Below illustration: dark card #1A2B3C rounded GENEROUS padding. White text rows COMPACT with GENEROUS spacing: 생후 6개월~3세 가장 흔함 · 80-90% 자연 배출 · 대변 관찰하며 경과 확인. Mint thin divider bottom. No pixel values. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left red #E63946 rounded label: 즉시 응급실 ❌. Headline COMPACT: 단추형 배터리 white, 2시간 이내 제거 필수 red #E63946. Center: LARGE prominent illustration button battery with warning radiation lines and corrosive liquid drops, red and white, dramatic emergency style. Below: red outlined box GENEROUS padding. White text COMPACT: 침과 만나면 알칼리 화학반응 · 2시간 이내 조직 손상 시작 · 식도 위치 시 응급 내시경 제거. Red glow effect around box. No pixel values. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left red rounded label: 즉시 응급실 ❌. Headline COMPACT: 자석 2개 이상 white, 장 천공 위험 red #E63946. Center: LARGE illustration two magnets attracting through intestinal wall causing pinch/perforation, red danger lines, white and red medical diagram style. Below: red outlined box GENEROUS padding. White text COMPACT with GENEROUS line spacing: 서로 다른 장 부위 끌어당김 · 천공·괴사 유발 가능 · 강력 자석은 더 위험. Red warning icon left of each line. No pixel values. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left red rounded label: 즉시 응급실 ❌. Headline COMPACT: 뾰족하거나 white, 날카로운 물체 red #E63946. Center: SMALL line illustrations in row: toothpick, safety pin, nail, each with red danger outline, white stroke on dark background. Below: red outlined box GENEROUS padding. White text COMPACT: 이쑤시개·안전핀·못 등 · 소화기관 점막 손상 위험 · 천공 가능성 있어 응급 제거. Red ❌ icon left of each line. No pixel values. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left mint #2EC4B6 rounded label: 대기 가능 ✓. Headline COMPACT: 동전·구슬은 white, 증상 없으면 경과 관찰 mint. Center: SMALL clean illustration coin in stomach, peaceful digestive tract diagram, mint and white outline. Below: mint outlined box GENEROUS padding. White text COMPACT with GENEROUS spacing: 동전은 가장 흔한 이물질 · 위장 도달 시 95% 자연 배출 · 대변에서 확인될 때까지 관찰. Mint ✓ icon left of each line. No pixel values. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left red rounded label: 즉시 응급실 119. Headline COMPACT: 이런 증상 있으면 white, 식도에 걸렸을 수 있어요 red #E63946. Center: LARGE illustration child with hand on chest showing distress, esophagus highlighted with stuck object, red warning glow, white and red medical style. Below: red outlined box GENEROUS padding. White text COMPACT rows with GENEROUS spacing: 침 흘림·삼킴 곤란 · 음식 거부·구토 · 가슴 통증·호흡 곤란. Red emergency icon left of each symptom. No pixel values. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left red rounded label: 응급실 상담 필요. Headline COMPACT: 크거나 긴 물체 white, 막힐 위험 red #E63946. Center: SMALL illustration measuring ruler with objects showing size comparison 2cm width and 6cm length, red measurement lines, white and red technical diagram style. Below: dark card #1A2B3C rounded GENEROUS padding. White text COMPACT: 직경 2cm 이상 큰 물체 · 유문 통과 어려움 · 길이 6cm 이상 긴 물체 · 십이지장 통과 어려움. Red warning triangle left of each line. No pixel values. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A. VERY GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-center small gray: SAVE & SHARE. Headline COMPACT center: 오늘 확인하고 white bold, 저장하세요 mint #2EC4B6 with thin mint underline. Source box dark #1A2B3C rounded GENEROUS padding center. 출처 white small bold. · Clinical Endoscopy 2018 이물질 삼킴 리뷰 white small. · NASPGHAN 2015 이물질 관리 가이드라인 white small. · StatPearls 2025 소아 이물질 섭취 white small. · PMC 2021 단추형 배터리 손상 관리 white small. Thin white horizontal divider. 소아과언니 white bold large center, NO quotes, NO decoration. DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin white divider. @dr.soa_unnie · 매주 새 가이드 white. 소아과수첩 앱 · 야간·달빛병원 바로 찾기 mint #2EC4B6. No pixel values as text. No quotes anywhere."
+    }
+  ],
+  "palette": "B",
+  "tone": "emergency-alert",
+  "common_style": "# 경고·긴급 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 짙은 네이비 #0D1B2A\n- 텍스트: 흰색 #FFFFFF\n- 긴급 강조: bright red #E63946\n- 안전/긍정: mint #2EC4B6\n- 카드 배경: #1A2B3C\n- GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 25% 작게\n- 슬라이드마다 아이콘/일러스트 필수\n- 시그니쳐: 우상단 소아과언니 white (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A.\nGENEROUS outer margin all sides.\nTop: bold red #E63946 stripe full width + COMPACT white text '[토픽] 긴급 가이드'.\nTop-right below stripe: '소아과언니' white Pretendard SemiBold small, no quotes.\nHeadline COMPACT (25% smaller): '[첫 줄]' white bold, '[핵심 긴급 표현]' bright red #E63946.\nSmall white subtitle: '[부제] · AAP 가이드라인 기준'.\nLARGE prominent line illustration [토픽 관련 응급 장면] white outline on dark background.\nBottom-left small gray: 'PARENTING NOTE · [번호]'.\nNo pixel values. No quotes.\n\n## 금지 항목 패턴 (❌ 슬라이드)\nDark navy background.\nTop-left red rounded label: '절대 하지 마세요 ❌'.\nHeadline COMPACT: '[내용]' white, '[핵심]' red.\nRows stacked: SMALL LINE ILLUSTRATION ICON left (red ❌ overlay) + COMPACT white text right.\nRed outlined box around all rows, comfortable padding.\nNo pixel values.\n\n## 행동 항목 패턴 (✓ 슬라이드)\nDark navy background.\nTop-left mint rounded label: '[행동] ✓'.\nHeadline COMPACT: '[내용]' white, '[핵심]' mint #2EC4B6.\nRows stacked: SMALL ICON left (mint ✓ overlay) + COMPACT white text right, GENEROUS spacing.\nMint outlined box around all rows.\nNo pixel values.\n\n## 119 패턴\nFull-width bright red header bar + white bold '[긴급 행동]'.\nLARGE relevant illustration center (구급차/응급 아이콘).\nNumbered items: red number + white text, GENEROUS spacing.\nLarge red rounded border around items.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' white small, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' white, '저장하세요' mint underline.\nSource box dark #1A2B3C rounded GENEROUS padding.\n출처 (white small bold)\n· [출처 1]\n· [출처 2]\nThin white divider.\n소아과언니 white bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 white.\n소아과수첩 앱 · [CTA] mint.\nNo pixel values. No quotes.\n"
+}

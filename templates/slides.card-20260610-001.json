@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 061. Center: large warm brown bold headline 우리 아이 in first line, 열날 때 병원 언제? in second line with teal green #2C7A5C underline. Below: small gray subtitle 월령별 체온 기준 · AAP 권장. Bottom center: LARGE cute character illustration of worried mom holding chubby baby with thermometer, baby has flushed cheeks, warm cozy colors, soft pastel tones, gentle expression. Small cute thermometer icon floating nearby. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 체온 측정 기준. Large bold headline: 가장 정확한 측정은 warm brown, 직장 체온 teal green #2C7A5C with underline. Center: cute illustration of baby lying down with rectal thermometer being measured gently, warm pastel colors, reassuring scene. Below illustration: light cream #FFF0E0 rounded card with text 생후 3개월 미만 warm brown bold, 직장 체온 38.0℃ 이상 teal bold larger. Small gray text: 3세 미만 권장 측정법. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral #E05C3A rounded label: 0-28일 신생아. Large bold headline: 신생아 발열은 warm brown, 응급상황 coral #E05C3A with underline. Center: cute illustration of tiny newborn baby wrapped in blanket with worried expression, warm hospital setting, soft colors. Below: large light cream card rounded, 직장 체온 38.0℃ 이상 warm brown bold large, arrow pointing to 즉시 병원 방문 coral bold box. Small gray text bottom: 면역체계 미숙 · 패혈증 위험. Bottom coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 1-2개월. Large bold headline: 생후 29-60일 warm brown, 병원 방문 필요 teal green #2C7A5C with underline. Center: cute illustration of 2-month-old chubby baby with flushed cheeks held by caring mom, thermometer nearby, warm cozy scene. Below: light cream card rounded, 직장 체온 38.0℃ 이상 warm brown bold, arrow to 소아청소년과 진료 teal box. Small gray text: AAP 가이드라인 권장 평가. Bottom teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 3-6개월. Large bold headline: 생후 3-6개월 warm brown, 진료 시기 teal green #2C7A5C with underline. Center: cute illustration of sitting baby 4-5 months old looking tired, mom checking forehead, warm nurturing scene. Below: two stacked light cream cards rounded. First card: 직장 체온 38.3℃ 이상 warm brown bold, teal arrow to 소아청소년과 진료. Second card: 24시간 이상 지속 warm brown, 또는 아이가 축 늘어짐 gray smaller. Bottom teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 6개월 이상. Large bold headline: 생후 6개월 이상 warm brown, 고열 기준 teal green #2C7A5C with underline. Center: cute illustration of older baby sitting playing with toy, slight flush on cheeks, happy but warm scene. Below: large light cream card rounded, 직장 체온 39.4℃ 이상 warm brown bold very large, or 발열 지속 시 gray below, arrow to 진료 필요 teal box. Small gray text: 심한 세균 감염 가능성 평가. Bottom teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral #E05C3A rounded label: 응급 증상. Large bold headline: 온도보다 중요한 warm brown, 전반적 상태 coral #E05C3A with underline. Center: three vertical light cream cards rounded. Each card: cute icon illustration + text. First: baby convulsing gently illustrated + 5분 이상 경련 coral bold. Second: sleepy baby + 의식 혼미 coral bold. Third: baby breathing hard + 호흡곤란 coral bold. Large arrow below pointing to 즉시 응급실 coral bold box. Bottom coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 집에서 케어. Large bold headline: 발열 시 warm brown, 집에서 돌보기 teal green #2C7A5C with underline. Center: cute illustration of mom giving water to baby, baby drinking happily, warm nurturing scene, water bottle and medicine nearby. Below: two light cream cards stacked rounded. First card: 충분한 수분 섭취 warm brown bold + cute water drop icon. Second card: 해열제 사용 warm brown bold, 6개월 미만 아세트아미노펜만 gray smaller, 6개월 이상 이부프로펜 가능 gray smaller. Bottom teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline. Source box cream #FFF0E0 rounded. 출처 warm brown small bold. · AAP Fever and Your Baby 2024. · AAP Evaluation of Febrile Infants 2021. · MedlinePlus Infant Fever Guide 2024. · JAMA Febrile Infant Study 2023. Warm brown divider line. 소아과언니 warm brown bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray. Divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 성장 기록으로 발열 체크 teal. No pixel text. No quotes. Cute character illustrations around brand block: tiny thermometer, baby face, water drop icons in warm pastel colors."
+    }
+  ],
+  "palette": "A",
+  "tone": "character-illustration",
+  "common_style": "# 캐릭터 일러스트 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 소프트 파스텔 베이지 #FFF8F0\n- 텍스트: 웜 브라운 #3D2B1F\n- 강조: teal green #2C7A5C\n- 경고: coral #E05C3A\n- 카드 배경: 크림 #FFF0E0\n- 일러스트: 따뜻한 수채화풍 아기/엄마/음식 캐릭터 (cute, chubby, warm)\n- 시그니쳐: 우상단 소아과언니 warm brown (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nCenter: large warm brown bold headline [토픽 핵심어], two lines, [둘째 줄] with teal green #2C7A5C underline.\nBelow: small gray subtitle [부제] · AAP 권장 기준.\nBottom center: LARGE cute character illustration [토픽 관련 귀여운 아기/엄마 장면], warm cozy colors, chubby characters.\nNo pixel text. No quotes.\n\n## 2x2 그리드 패턴\nFour cards in 2x2 grid, each light cream #FFF0E0 rounded.\nEach card: cute character illustration inside + Korean label below.\nSmall teal checkmark corner.\nWarm pastel colors throughout.\n\n## 금지 항목 패턴 (귀여운 X)\nFour forbidden food/item cards in 2x2 grid.\nEach: cute illustrated item with red X overlay + Korean label + reason.\nWarm background maintained (NOT dark).\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown small, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline.\nSource box cream #FFF0E0 rounded.\n출처 (warm brown small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nWarm brown divider line.\n소아과언니 warm brown bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nDivider.\n@dr.soa_unnie · 매주 새 가이드 warm brown.\n소아과수첩 앱 · [CTA] teal.\nNo pixel text. No quotes.\nCute character illustrations around brand block (doctor/baby/food icons).\n"
+}

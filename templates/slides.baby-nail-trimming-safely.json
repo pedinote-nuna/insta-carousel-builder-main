@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small handwritten label: 'PARENTING NOTE · 011' in muted gray. Korean headline (deep navy #1A1F36 with '안전하게' highlighted in mustard #D4A84A marker style): '아기 손톱 / 안전하게 깎는 법'. Subtitle below (gray, smaller): '신생아부터 영아까지 · AAP 권장 기준'. Hand-drawn small illustration lower right: baby hand with tiny fingernails, simple black line art sketch, no color fills, soft rough strokes. Top-right corner: 소아과언니 (exactly 4 characters only, no quotes, no decoration)."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'WHY · 왜 손톱을 자주 깎아야 할까요?' in muted gray. Korean headline (deep navy with '얼굴을 긁을 수 있어요' highlighted in mustard #D4A84A marker): '신생아는 손을 흔들다가 / 얼굴을 긁을 수 있어요'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual center: hand-drawn line illustration of baby face with small scratch mark on cheek, simple black ink line art, slightly rough strokes, no color fills. Below illustration gray caption: '손톱: 일주일 1~2회 / 발톱: 한 달 1~2회'. Top-right: 소아과언니 (exactly 4 characters only, no quotes)."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 01 · TIMING' in muted gray. Korean headline (deep navy with '잠들었을 때' highlighted in mustard #D4A84A marker): '아기가 잠들었을 때가 / 가장 안전해요'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual center: hand-drawn line illustration of sleeping baby with peaceful expression, simple black ink line art, soft rough strokes, no color fills. Below two hand-drawn check boxes with × marks: '✓ 깊은 수면 시간대' and '✓ 목욕 직후 (손톱이 부드러워짐)' in gray. Top-right: 소아과언니 (exactly 4 characters only, no quotes)."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 02 · TOOLS' in muted gray. Korean headline (deep navy with '둥근 끝 아기 전용' highlighted in mustard #D4A84A marker): '둥근 끝 아기 전용 / 도구만 사용하세요'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual center: hand-drawn line illustrations of three tools vertically arranged: baby nail scissors (rounded tip), baby nail clipper, emery board, simple black ink line art, no color fills. Each with small gray label. Hand-drawn coral #C44536 outlined warning box bottom: '⚠️ 성인용 손톱깎이 절대 금지' in coral bold, thin hand-drawn border with corner × marks. Top-right: 소아과언니 (exactly 4 characters only, no quotes)."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 03 · TECHNIQUE' in muted gray. Korean headline (deep navy with '살을 눌러 공간 확보' highlighted in mustard #D4A84A marker): '손가락 끝 살을 눌러 / 공간 확보 후 자르기'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual center: hand-drawn line illustration showing adult finger gently pressing baby fingertip pad downward, creating space between nail and skin, simple black ink line art, instructional arrows, no color fills. Below two hand-drawn boxes with gray text: '손톱 → 둥글게 곡선 따라' and '발톱 → 일자로 (내향성 예방)'. Top-right: 소아과언니 (exactly 4 characters only, no quotes)."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 04 · DON'T' in muted gray. Korean headline (deep navy with '절대 하지 마세요' highlighted in mustard #D4A84A marker): '이것만은 / 절대 하지 마세요'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Two hand-drawn coral #C44536 outlined warning boxes stacked vertically, thin border with corner × marks: First box '⚠️ 입으로 물어뜯기 금지 (세균 감염 위험)' in coral bold. Second box '⚠️ 큐티클 밀거나 자르기 금지 (감염 방어막)' in coral bold. Small gray caption bottom: '큐티클은 자연 보호막입니다'. Top-right: 소아과언니 (exactly 4 characters only, no quotes)."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'EMERGENCY · 실수했을 때' in muted gray. Korean headline (deep navy with '멸균 거즈로 압박' highlighted in mustard #D4A84A marker): '피부를 베었다면 / 멸균 거즈로 압박하세요'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual center: hand-drawn line illustration of sterile gauze pad gently pressing on baby finger, simple black ink line art, soft pressure indication, no color fills. Hand-drawn coral #C44536 outlined warning box below, thin border with corner × marks: '⚠️ 반창고 사용 금지 (질식 위험)' in coral bold. Small gray caption: '부드럽게 지혈 후 자연 회복'. Top-right: 소아과언니 (exactly 4 characters only, no quotes)."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'TIP · 손싸개 사용' in muted gray. Korean headline (deep navy with '제한적으로만' highlighted in mustard #D4A84A marker): '손싸개는 / 제한적으로만 사용하세요'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual center: hand-drawn line illustration of baby mittens with dotted outline (indicating limited use), simple black ink line art, no color fills. Below two hand-drawn boxes with gray text: '✓ 필요시에만 단시간' and '✗ 수면 외 시간 자제 (손 탐색 발달 방해)'. Thin hand-drawn horizontal divider. Top-right: 소아과언니 (exactly 4 characters only, no quotes)."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style closing page. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'SAVE & SHARE' in muted gray. Korean headline center (deep navy with '저장하세요' highlighted in mustard #D4A84A marker): '오늘 확인하고 / 저장하세요'. Source area: hand-drawn rectangle, thin black line border with small corner cross marks (×). 출처 in small navy bold, followed by gray smaller text list: · MedlinePlus Medical Encyclopedia (2025) · AAP HealthyChildren.org (2009, 2020) · Kaiser Permanente Health Encyclopedia (2026) · American Academy of Dermatology (2023). Horizontal hand-drawn thin divider. Brand block center: 소아과언니 (medium-bold large deep navy #1A1F36 — exactly 4 characters, NO pixel values, NO decoration). DR.SOA UNNIE · 소아청소년과 전문의 (small caps gray). Hand-drawn thin horizontal divider. @dr.soa_unnie · 매주 새 가이드 (gray). 소아과수첩 앱 · 성장 기록 (navy). Top-right: 소아과언니 (exactly 4 characters only, no quotes). ABSOLUTE RULE: never render numbers followed by 'px' anywhere on card."
+    }
+  ],
+  "palette": "A",
+  "tone": "handdrawn-notebook",
+  "common_style": "# 손그림 노트북 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 모눈종이 베이지 #F5F0E5\n- 텍스트: deep navy #1A1F36\n- 형광펜 강조: mustard #D4A84A (헤드라인 핵심 단어 하이라이트)\n- 경고 액센트: coral #C44536 (의학 안전 경고만)\n- 일러스트: 검정 펜 손그림 line art, 채색 없음\n- 시그니쳐: 우상단 소아과언니 (따옴표 없이 4글자만)\n- 픽셀값 텍스트 카드에 절대 금지\n\n## COVER 패턴 (slide n:1)\nHand-drawn notebook style.\nGrid-pattern beige background #F5F0E5 with subtle square grid lines.\nTop-left small handwritten label: 'PARENTING NOTE · [번호]' in muted gray.\nKorean headline (navy with '[핵심 단어]' highlighted in mustard #D4A84A marker style): '[헤드라인 첫 줄] / [헤드라인 둘째 줄]'.\nSubtitle below (gray, smaller): '[부제]'.\nHand-drawn small illustration lower right: [토픽 관련 line art sketch], no color fills.\nTop-right corner: 소아과언니 (4 characters only, no quotes).\n\n## BODY 패턴 (slide n:2-8)\nHand-drawn notebook style.\nGrid-pattern beige background #F5F0E5 with subtle square grid lines.\nTop-left small label: '[STEP 번호 · 영문명]' in muted gray.\nKorean headline (navy with '[강조 단어]' highlighted in mustard marker): '[헤드라인]'.\nIMPORTANT: render Korean words exactly as written, no arbitrary splitting.\nVisual: hand-drawn line illustration of [토픽 관련 장면], simple line art black ink, slightly rough strokes, no color fills.\nCaption gray below: '[캡션]'.\nTop-right: 소아과언니 (4 characters only, no quotes).\n\n## 경고 박스 패턴\nCoral #C44536 outlined hand-drawn rectangle with corner cross marks (×).\n⚠️ icon + bold warning text in coral.\n\n## OUTRO 패턴 (slide n:9)\nHand-drawn notebook style closing page.\nTop-left small label: 'SAVE & SHARE' in muted gray.\nKorean headline (navy with '저장하세요' highlighted in mustard marker).\nSource area: hand-drawn rectangle, thin black line border with small corner cross marks.\n출처\n· [출처 1]\n· [출처 2]\n· [출처 3]\nBrand block:\n소아과언니 (medium-bold large navy — exactly 4 characters, NO pixel values)\nDR.SOA UNNIE · 소아청소년과 전문의 (small caps gray)\n──── (thin hand-drawn divider)\n@dr.soa_unnie · 매주 새 가이드\n소아과수첩 앱 · [토픽 관련 CTA]\nTop-right: 소아과언니 (4 characters only, no quotes).\nABSOLUTE RULE: never render numbers followed by 'px' anywhere.\n"
+}

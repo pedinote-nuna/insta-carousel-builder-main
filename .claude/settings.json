@@ -22,7 +22,17 @@
       "Bash(python3 -c \"from PIL import Image, ImageDraw, ImageFont; print\\('Pillow OK'\\)\")",
       "Bash(python3 -c \"import ast; ast.parse\\(open\\('scripts/reels-supplement.py'\\).read\\(\\)\\); print\\('[ast.parse] OK'\\)\")",
       "Bash(python3 scripts/reels-supplement.py --topic nosebleed-head-back-danger)",
-      "Bash(python3 -c \"import json; d=json.load\\(open\\('package.json'\\)\\); print\\('name:', d.get\\('name'\\)\\); print\\('type:', d.get\\('type'\\)\\); print\\('main:', d.get\\('main'\\)\\); print\\('scripts:', list\\(d.get\\('scripts',{}\\).keys\\(\\)\\)\\)\")"
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('package.json'\\)\\); print\\('name:', d.get\\('name'\\)\\); print\\('type:', d.get\\('type'\\)\\); print\\('main:', d.get\\('main'\\)\\); print\\('scripts:', list\\(d.get\\('scripts',{}\\).keys\\(\\)\\)\\)\")",
+      "Bash(python3 -c ' *)",
+      "Bash(echo \"=== 1. pediatric-blog-bot posts \\(최근 5개\\) ===\"; ls -dt /Users/simple-is-great-ai-assistant/Assistant/pediatric-blog-bot-main/posts/*/ 2>/dev/null | head -5 *)",
+      "Read(//Users/simple-is-great-ai-assistant/Assistant/pediatric-blog-bot-main/posts/**)",
+      "Bash(echo \"=== generate-blog.js 인자 처리 + INSTA_ROOT 사용부 ===\" *)",
+      "Read(//Users/simple-is-great-ai-assistant/Assistant/pediatric-blog-bot-main/**)",
+      "Bash(node generate-blog.js late-talking-children --insta-root=../insta-carousel-builder-main)",
+      "Bash(echo \"EXIT=$?\")",
+      "Bash(node generate-blog.js summer-baby-sleep-temperature-lighting --insta-root=../insta-carousel-builder-main)",
+      "Bash(node generate-blog.js emergency-symptoms --insta-root=../insta-carousel-builder-main)",
+      "Bash(node generate-blog.js baby-seizures-what-to-do --insta-root=../insta-carousel-builder-main)"
     ]
   },
   "hooks": {

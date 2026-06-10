@@ -1,0 +1,40 @@
+{
+  "topic": "foreign-object-ingestion-emergency",
+  "topic_type": "응급정보형",
+  "source_template": "slides.foreign-object-ingestion-emergency.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 멈추게 하는 충격 훅 - 응급 상황 경고",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. CENTER: ultra-bold white text 아이가 이물질을 삼켰다면 in massive sans-serif font, line height 1.2. Below: red #E63946 bold text 이 3가지만 기억하세요 with emergency icon ⚠️. Minimal design, typography-focused, high contrast, urgent mood, Korean medical content.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "동전·자석 삼킴 실사 - 즉시 응급실 상황 시각화",
+      "prompt": "Portrait 1080x1350 vertical close-up. Child's small hand holding shiny coin (500 won Korean coin) near mouth. Blurred background. Warm natural lighting. Photorealistic medical documentation style. Focus on hand and coin. Urgent atmosphere. No face visible, hand only. Clean composition. Korean emergency medical content visual.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "기침·침흘림 증상 실사 - 응급 증상 시각화",
+      "prompt": "Portrait 1080x1350 vertical close-up. Asian toddler's neck and lower face (no eyes), child coughing gesture, hand on throat. Soft indoor lighting. Parent's hand gently supporting child's back. Concerned but calm mood. Medical documentation photography style. Focus on throat area and coughing posture. Korean pediatric emergency content.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "하임리히법 실사 - 응급처치 행동 시각화",
+      "prompt": "Portrait 1080x1350 vertical close-up. Adult hands performing Heimlich maneuver position on child mannequin or doll. Hands placed below ribcage, upward thrust position. Clean white background. Medical training photography style. Clear hand position visible. Professional urgent atmosphere. Educational Korean pediatric first aid visual content.",
+      "file": "7-1.png"
+    }
+  ]
+}

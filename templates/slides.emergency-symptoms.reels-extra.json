@@ -1,0 +1,40 @@
+{
+  "topic": "emergency-symptoms",
+  "topic_type": "응급정보형",
+  "source_template": "slides.emergency-symptoms.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "2초 안에 멈추게 하는 충격 훅 - 커버와 동일 주제",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert hook style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: ultra-bold Korean typography '이 증상 보이면\\n즉시 119' in massive white Pretendard ExtraBold 80pt, line-height 1.2, center-aligned. Below: smaller red #E63946 text '놓치면 위험합니다' 36pt medium weight. Minimal design, maximum impact, typography-focused, no icons, clean emergency poster aesthetic.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "경련 증상 실사 클로즈업 - 몸 떨림 표현",
+      "prompt": "Portrait 1080x1350 vertical close-up. Photorealistic medical scene. Child's arm trembling/shaking motion blur, parent's hand gently supporting but not restraining. Soft clinical lighting, shallow depth of field, focus on hand detail. Neutral medical environment background softly blurred. Documentary photography style, empathetic tone, shows seizure symptom without graphic content. Color grading: cool tones with slight desaturation for medical authenticity.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "탈수 징후 실사 - 입술·피부 건조 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical extreme close-up. Photorealistic medical detail. Child's dry cracked lips macro shot, showing severe dehydration signs. Soft natural window lighting from side creating subtle shadows. Skin texture visible, clinical accuracy, respectful framing. Background softly blurred cream/white tone. Medical photography aesthetic, educational purpose, gentle composition. Color palette: warm beige/pink undertones with clinical clarity.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "응급 상황 행동 실사 - 전화 거는 손 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical close-up. Photorealistic urgent scene. Parent's hand dialing 119 on smartphone screen in focus, showing emergency call interface. Dramatic side lighting, slight motion blur suggesting urgency. Background dark blurred suggesting nighttime emergency. Phone screen glowing with '119' digits clearly visible. Documentary style, tense atmosphere, action-oriented composition. Color grading: cool blue tones with warm phone screen glow contrast.",
+      "file": "7-1.png"
+    }
+  ]
+}

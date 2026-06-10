@@ -1,0 +1,40 @@
+{
+  "topic": "vs",
+  "topic_type": "응급정보형",
+  "source_template": "slides.vs.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 시작 2초 내 시선 고정용 충격 훅",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: giant bold white Korean text '화상 깊이 구분 못 하면 위험합니다' in 2 lines, ultra-thick font weight 900, letter-spacing tight. Bottom-right corner: small red #E63946 emergency badge icon. Top subtle red glow effect. Minimalist typography-only design. No illustrations. High contrast emergency poster aesthetic.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "1도 화상 증상을 실사 클로즈업으로 시각화",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up. Child's forearm with mild redness on skin, simulating 1st-degree burn appearance. Soft natural lighting. Parent's hand gently touching the red area to check warmth. Clean white background or light neutral surface. Medical accuracy focus. No blisters visible. Skin texture clear. Warm tone. Shallow depth of field. Documentary medical photography style.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "흐르는 찬물 응급처치 장면 실사 시연",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up. Child's hand under running cold tap water in modern bathroom sink. Water flowing gently over reddened skin area. Parent's hands supporting child's wrist. Bright clean lighting. Stainless steel faucet visible. Water droplets sparkling. Motion blur on water stream. Hygienic white tile background. Emergency first-aid tutorial photography style. Shallow focus on hand and water contact point.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "물집 2도 화상 위험 신호 실사 강조",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic extreme close-up. Medical illustration style showing skin with clear fluid-filled blister on child's palm (simulated safe demonstration). Soft diffused clinical lighting. Latex-gloved medical hand pointing gently at blister area with pen tip (not touching). Clean white medical background. Sharp focus on blister texture. Educational medical photography aesthetic. Warning visual for parents. No graphic injury—clean professional medical training image style.",
+      "file": "7-1.png"
+    }
+  ]
+}

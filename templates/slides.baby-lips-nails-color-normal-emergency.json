@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Top: bold red #E63946 stripe full width + COMPACT white text '청색증 긴급 가이드'. Top-right below stripe: '소아과언니' white Pretendard SemiBold small, no quotes. Headline COMPACT (25% smaller): '아기 입술·손톱 색깔' white bold, '응급 vs 정상 기준' bright red #E63946. Small white subtitle: 'AAP 가이드라인 기준 · 산소포화도 선별검사'. LARGE prominent line illustration baby face close-up showing lips and tiny hand with nails, white outline on dark background, clean minimal strokes. Bottom-left small gray: 'PARENTING NOTE · 011'. No pixel values. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Top-left red rounded label: '청색증이란 ❌'. Headline COMPACT: '혈액 산소포화도가 낮아져' white, '피부·입술·손톱이 푸르게' red #E63946. Center: LARGE line illustration showing bluish discoloration on baby lips and fingernails, white outline with red glow effect, minimal clean strokes. Below illustration: dark card #1A2B3C rounded GENEROUS padding, white text COMPACT: '정상 산소포화도 95% 이상 (신생아 기준)'. Bottom thin red divider. No pixel values. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Top-left mint rounded label: '정상 말초성 청색증 ✓'. Headline COMPACT: '손발에만 푸른빛' white, '신생아 정상 소견' mint #2EC4B6. Center: SMALL line illustration icon baby hands and feet with slight blue tint, white outline mint glow. Two rows stacked GENEROUS spacing: Row 1: SMALL icon checkmark mint left + COMPACT white text right '생후 첫 며칠 내 자연 소실'. Row 2: SMALL icon checkmark mint left + COMPACT white text right '차가울 때 일시적 재발 가능'. Mint outlined box around rows comfortable padding. Bottom mint divider. No pixel values. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Top-left red rounded label: '중심성 청색증 ❌'. Headline COMPACT: '입술·혀·몸통 중심부' white, '절대 정상 아님' red #E63946. Center: LARGE line illustration baby face showing blue lips and tongue, white outline with red warning glow, clean strokes. Three rows stacked GENEROUS spacing: Row 1: SMALL icon X red left + COMPACT white text right '신생아 즉시 의사 평가 필수'. Row 2: SMALL icon X red left + COMPACT white text right '선천성 심장병 가능성'. Row 3: SMALL icon X red left + COMPACT white text right '폐질환·혈액질환 원인'. Red outlined box around all rows comfortable padding. No pixel values. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Top-left mint rounded label: '관찰 방법 ✓'. Headline COMPACT: '청색증 확인하는' white, '가장 좋은 방법' mint #2EC4B6. Center: LARGE line illustration parent comparing baby's lips and nails with their own, white outline mint glow, minimal clean strokes. Three rows stacked GENEROUS spacing: Row 1: SMALL icon magnifying glass mint left + COMPACT white text right '가족(부모·형제)과 비교하기'. Row 2: SMALL icon hand mint left + COMPACT white text right '손발톱·입술·혀 관찰'. Row 3: SMALL icon ear mint left + COMPACT white text right '피부 얇은 부위(귀) 확인'. Mint outlined box around rows. No pixel values. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Full-width bright red header bar + white bold '119 즉시 응급실'. Center: LARGE line illustration ambulance with red cross and emergency lights, white outline red glow effect. Four numbered items GENEROUS spacing, red circle number + white text COMPACT: '1. 숨쉬기 힘들어하며 입술·얼굴 파래짐'. '2. 수유 거부 + 식은땀'. '3. 수유 중 멈춤'. '4. 호흡수·심박수 감소'. Large red rounded border around all items comfortable padding. Bottom red divider. No pixel values. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Top-left mint rounded label: '일시적 정상 ✓'. Headline COMPACT: '이럴 땐' white, '걱정 안 해도 돼요' mint #2EC4B6. Center: SMALL line illustration icon baby being warmed with blanket, white outline mint glow. Four rows stacked GENEROUS spacing: Row 1: SMALL icon snowflake mint left + COMPACT white text right '손발 차가울 때'. Row 2: SMALL icon bath mint left + COMPACT white text right '목욕 직후'. Row 3: SMALL icon crying mint left + COMPACT white text right '심하게 운 직후'. Row 4: SMALL icon arrow mint left + COMPACT white text right '보온·마사지로 회복 안 되면 병원'. Mint outlined box around rows comfortable padding. No pixel values. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Top-left mint rounded label: '신생아 선별검사 ✓'. Headline COMPACT: '생후 24시간 이후' white, '산소포화도 검사' mint #2EC4B6. Center: LARGE line illustration pulse oximeter on baby's hand and foot, white outline mint glow, clean minimal strokes. Dark card #1A2B3C rounded GENEROUS padding: White text COMPACT: 'AAP 권장 2025년 기준'. Mint bold: '오른손·발 모두 ≥95%'. White text: '양측 차이 ≤3%'. Bottom mint divider. No pixel values. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A. VERY GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Top-center small gray: 'SAVE & SHARE'. Headline COMPACT: '오늘 확인하고' white, '저장하세요' mint #2EC4B6 with thin mint underline. Source box dark #1A2B3C rounded GENEROUS padding: 출처 (white small bold). · AAP Textbook of Pediatric Care Ch.136 Cyanosis. · Pediatrics 2025 Newborn Screening Guidelines. · AHA Neonatal Resuscitation Guidelines. · Nelson Textbook of Pediatrics Ch.92. Thin white divider. 소아과언니 white bold large center (NO quotes). DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin white divider. @dr.soa_unnie · 매주 새 가이드 white. 소아과수첩 앱 · 야간병원 바로 찾기 mint. No pixel values. No quotes."
+    }
+  ],
+  "palette": "B",
+  "tone": "emergency-alert",
+  "common_style": "# 경고·긴급 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 짙은 네이비 #0D1B2A\n- 텍스트: 흰색 #FFFFFF\n- 긴급 강조: bright red #E63946\n- 안전/긍정: mint #2EC4B6\n- 카드 배경: #1A2B3C\n- GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 25% 작게\n- 슬라이드마다 아이콘/일러스트 필수\n- 시그니쳐: 우상단 소아과언니 white (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A.\nGENEROUS outer margin all sides.\nTop: bold red #E63946 stripe full width + COMPACT white text '[토픽] 긴급 가이드'.\nTop-right below stripe: '소아과언니' white Pretendard SemiBold small, no quotes.\nHeadline COMPACT (25% smaller): '[첫 줄]' white bold, '[핵심 긴급 표현]' bright red #E63946.\nSmall white subtitle: '[부제] · AAP 가이드라인 기준'.\nLARGE prominent line illustration [토픽 관련 응급 장면] white outline on dark background.\nBottom-left small gray: 'PARENTING NOTE · [번호]'.\nNo pixel values. No quotes.\n\n## 금지 항목 패턴 (❌ 슬라이드)\nDark navy background.\nTop-left red rounded label: '절대 하지 마세요 ❌'.\nHeadline COMPACT: '[내용]' white, '[핵심]' red.\nRows stacked: SMALL LINE ILLUSTRATION ICON left (red ❌ overlay) + COMPACT white text right.\nRed outlined box around all rows, comfortable padding.\nNo pixel values.\n\n## 행동 항목 패턴 (✓ 슬라이드)\nDark navy background.\nTop-left mint rounded label: '[행동] ✓'.\nHeadline COMPACT: '[내용]' white, '[핵심]' mint #2EC4B6.\nRows stacked: SMALL ICON left (mint ✓ overlay) + COMPACT white text right, GENEROUS spacing.\nMint outlined box around all rows.\nNo pixel values.\n\n## 119 패턴\nFull-width bright red header bar + white bold '[긴급 행동]'.\nLARGE relevant illustration center (구급차/응급 아이콘).\nNumbered items: red number + white text, GENEROUS spacing.\nLarge red rounded border around items.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' white small, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' white, '저장하세요' mint underline.\nSource box dark #1A2B3C rounded GENEROUS padding.\n출처 (white small bold)\n· [출처 1]\n· [출처 2]\nThin white divider.\n소아과언니 white bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 white.\n소아과수첩 앱 · [CTA] mint.\nNo pixel values. No quotes.\n"
+}

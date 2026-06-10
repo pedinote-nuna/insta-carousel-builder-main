@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Top: bold red #E63946 stripe full width with COMPACT white text 'ANAPHYLAXIS 긴급 가이드'. Top-right below stripe: 소아과언니 white Pretendard SemiBold small — 4 characters only, no quotes, no decoration. Headline COMPACT centered: 벌레 쏘임 알레르기 쇼크 white bold, 첫 대처법 bright red #E63946. Small white subtitle below: 에피네프린이 생명을 구합니다 · AAP 가이드라인 기준. Center-right: LARGE prominent line illustration of emergency epinephrine auto-injector with child outline, white outline on dark background, clean minimal strokes. Bottom-left small gray text: PARENTING NOTE · 027. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small — 4 characters only, no quotes, no decoration. Top-left red #E63946 rounded label: 위험 신호. Headline COMPACT: 아나필락시스는 white bold, 생명을 위협합니다 bright red #E63946. Center: LARGE clean line illustration of child showing distress symptoms — breathing difficulty, swelling, dizziness icons around figure, white and red outline minimal style. Below illustration: dark card #1A2B3C rounded with GENEROUS padding, white text COMPACT: 호흡곤란 · 목 부종 · 현기증 · 혈압저하 등 전신 증상이 갑자기 나타나는 중증 알레르ギ 반응. Bottom small gray text: 성인 3% 발생, 소아도 치명적일 수 있음. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small — 4 characters only, no quotes, no decoration. Top-left mint #2EC4B6 rounded label: 첫 번째 행동 ✓. Headline COMPACT: 에피네프린 white bold, 즉시 투여하세요 mint #2EC4B6. Center: LARGE illustration of epinephrine auto-injector device, detailed clean line art white and mint, emphasizing injection mechanism. Below: mint #2EC4B6 outlined box with GENEROUS padding, stacked rows with SMALL mint ✓ icon left: 사망률 감소하는 유일한 1차 치료제. 증상이 경미해도 즉시 투여 필수. 중증 알레르기 병력 있으면 바로 사용. Each row COMPACT white text, GENEROUS vertical spacing. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small — 4 characters only, no quotes, no decoration. Top-left mint #2EC4B6 rounded label: 투여 방법 ✓. Headline COMPACT: 허벅지 바깥쪽 white bold, 근육주사 mint #2EC4B6. Center-left: MEDIUM illustration of child's thigh showing injection site — anterolateral middle third highlighted in mint, anatomical line art white outline. Center-right: mint outlined box with GENEROUS padding, COMPACT white text rows with SMALL icons: 투여 부위: 허벅지 중간 바깥쪽 (대퇴부 전외측). 용량: 체중 15~30kg → 0.15mg, 30kg 이상 → 0.3mg. 옷 위에서도 투여 가능. GENEROUS spacing between rows. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small — 4 characters only, no quotes, no decoration. Top: full-width bright red #E63946 header bar with white bold text 투여 후 즉시 119 신고. Center: LARGE illustration of ambulance with emergency phone icon, red and white line art, red glow effect around vehicle. Below: large red #E63946 rounded border box with GENEROUS padding, numbered items in white: 1. 에피네프린 투여 직후 119 연락. 2. 반드시 응급실 이송 필요. 3. 증상 지속되면 5~15분 후 2차 투여 고려. Each item COMPACT text, GENEROUS vertical spacing, red number circles. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small — 4 characters only, no quotes, no decoration. Top-left mint #2EC4B6 rounded label: 자세 유지 ✓. Headline COMPACT: 평평한 곳에 눕히고 white bold, 다리를 올려주세요 mint #2EC4B6. Center: LARGE illustration showing correct positioning — child lying flat with legs elevated, side view line art in white and mint, arrow indicating leg elevation. Below: mint outlined box GENEROUS padding, stacked rows SMALL mint ✓ icons: 평평한 곳에 눕히기. 다리 들어올려 혈액순환 돕기. 호흡곤란 시 상체만 약간 세우되 다리는 펴기. Each row COMPACT white text, GENEROUS spacing. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small — 4 characters only, no quotes, no decoration. Top-left red #E63946 rounded label: 주의 ⚠. Headline COMPACT: 증상 호전되어도 white bold, 응급실 방문 필수 red #E63946. Center: LARGE illustration of hospital building with clock icon showing time passage, red and white line art, emphasis on emergency entrance. Below: red outlined box GENEROUS padding, dark #1A2B3C inner card with white text COMPACT: 이중반응 (2차 반응) 가능성. 의료진 관찰 4~6시간 필요. 증상 없어도 반드시 응급실 경과 확인. GENEROUS line spacing. Bottom small mint text: 귀가 판단은 의료진과 상의. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small — 4 characters only, no quotes, no decoration. Top-left red #E63946 rounded label: 흔한 오해 ❌. Headline COMPACT: 항히스타민제나 스테로이드는 white bold, 에피네프린 대체 불가 red #E63946. Center: LARGE illustration showing medicine bottles with red X overlay, pill icons crossed out in red, clean line art. Below: red outlined box GENEROUS padding, stacked rows SMALL red ❌ icons left: 항히스타민제는 보조 치료일 뿐. 스테로이드는 즉각 효과 없음. 에피네프린만이 생명 구하는 1차 치료. Each row COMPACT white text, GENEROUS spacing. Bottom mint rounded box small: 아나필락시스 병력 있으면 자가주사기 2개 항상 휴대. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. VERY GENEROUS outer margin. Top-right: 소아과언니 white small — 4 characters only, no quotes, no decoration. Top-center small gray text: SAVE & SHARE. Headline COMPACT centered: 오늘 확인하고 white bold, 저장하세요 mint #2EC4B6 with thin mint underline. Source box dark #1A2B3C rounded GENEROUS padding white small text: 출처 (white bold) · AAP HealthyChildren.org Insect Sting Allergies 2024 · 질병관리청 아나필락시스 예방관리 수칙 2024 · UpToDate Anaphylaxis Emergency Treatment 2026 · World Allergy Organization ICON Anaphylaxis 2014. Thin white horizontal divider. Center: 소아과언니 white bold large, NO quotes NO decoration. Below: DR.SOA UNNIE · 소아청소년과 전문의 small gray. Thin white horizontal divider. @dr.soa_unnie · 매주 새 가이드 white small. Bottom mint #2EC4B6 rounded box: 소아과수첩 앱 · 야간 달빛병원 바로 찾기. No pixel values as text on card. No quotes anywhere on card."
+    }
+  ],
+  "palette": "A",
+  "tone": "emergency-alert",
+  "common_style": "# 경고·긴급 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 짙은 네이비 #0D1B2A\n- 텍스트: 흰색 #FFFFFF\n- 긴급 강조: bright red #E63946\n- 안전/긍정: mint #2EC4B6\n- 카드 배경: #1A2B3C\n- GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 25% 작게\n- 슬라이드마다 아이콘/일러스트 필수\n- 시그니쳐: 우상단 소아과언니 white (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A.\nGENEROUS outer margin all sides.\nTop: bold red #E63946 stripe full width + COMPACT white text '[토픽] 긴급 가이드'.\nTop-right below stripe: '소아과언니' white Pretendard SemiBold small, no quotes.\nHeadline COMPACT (25% smaller): '[첫 줄]' white bold, '[핵심 긴급 표현]' bright red #E63946.\nSmall white subtitle: '[부제] · AAP 가이드라인 기준'.\nLARGE prominent line illustration [토픽 관련 응급 장면] white outline on dark background.\nBottom-left small gray: 'PARENTING NOTE · [번호]'.\nNo pixel values. No quotes.\n\n## 금지 항목 패턴 (❌ 슬라이드)\nDark navy background.\nTop-left red rounded label: '절대 하지 마세요 ❌'.\nHeadline COMPACT: '[내용]' white, '[핵심]' red.\nRows stacked: SMALL LINE ILLUSTRATION ICON left (red ❌ overlay) + COMPACT white text right.\nRed outlined box around all rows, comfortable padding.\nNo pixel values.\n\n## 행동 항목 패턴 (✓ 슬라이드)\nDark navy background.\nTop-left mint rounded label: '[행동] ✓'.\nHeadline COMPACT: '[내용]' white, '[핵심]' mint #2EC4B6.\nRows stacked: SMALL ICON left (mint ✓ overlay) + COMPACT white text right, GENEROUS spacing.\nMint outlined box around all rows.\nNo pixel values.\n\n## 119 패턴\nFull-width bright red header bar + white bold '[긴급 행동]'.\nLARGE relevant illustration center (구급차/응급 아이콘).\nNumbered items: red number + white text, GENEROUS spacing.\nLarge red rounded border around items.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' white small, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' white, '저장하세요' mint underline.\nSource box dark #1A2B3C rounded GENEROUS padding.\n출처 (white small bold)\n· [출처 1]\n· [출처 2]\nThin white divider.\n소아과언니 white bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 white.\n소아과수첩 앱 · [CTA] mint.\nNo pixel values. No quotes.\n"
+}

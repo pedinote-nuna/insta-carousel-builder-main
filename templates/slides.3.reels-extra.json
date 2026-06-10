@@ -1,0 +1,40 @@
+{
+  "topic": "3",
+  "topic_type": "응급정보형",
+  "source_template": "slides.3.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 훅 - 열성경련 긴급 상황 강조",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: huge bold white text '아이가 경련할 때' top line, bright red #E63946 text '이것만은 꼭!' bottom line, extremely large font size. Top-right corner: small white text '소아과언니' 4 characters only. Minimalist typography-focused design. No illustrations. High contrast. Urgent atmosphere.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-action",
+      "purpose": "옆으로 눕히는 자세 실사 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Close-up photo realistic scene. Adult hands gently turning a young child (2-4 years old) to recovery position on soft carpet floor. Child lying on side, face visible from side angle. Gentle lighting. Calm home interior background slightly blurred. Focus on hands positioning and child's safe posture. Medical emergency care atmosphere. Soft natural colors. Professional healthcare photography style.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-action",
+      "purpose": "타이머 체크 실사 - 5분 측정 강조",
+      "prompt": "Portrait 1080x1350 vertical. Close-up photo realistic scene. Adult hand holding smartphone showing timer app displaying '3:47' counting up. Background: blurred scene of child lying on carpet (soft focus, no detail). Smartphone screen bright and clear in focus. Hand slightly trembling to show urgency. Emergency situation lighting. Professional healthcare photography style. Vertical composition emphasizing timer as main focal point.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-action",
+      "purpose": "절대 금지 행동 실사 - 입에 물건 넣기 금지",
+      "prompt": "Portrait 1080x1350 vertical. Close-up photo realistic scene with RED X overlay. Adult hand holding spoon approaching child's mouth (child face blurred in background). Large bright red X mark or prohibition symbol overlaid on center. Dramatic lighting emphasizing danger. Warning atmosphere. Professional medical photography style. Clear 'DO NOT' visual message. Soft background blur focusing on prohibited action in foreground.",
+      "file": "7-1.png"
+    }
+  ]
+}

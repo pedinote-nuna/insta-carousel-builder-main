@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small handwritten label: 'PARENTING NOTE · 011' in muted gray. Korean headline (navy with '멈추는 방법' highlighted in mustard #D4A84A marker style): '신생아 딸꾹질 / 멈추는 방법'. Subtitle below (gray, smaller): 'AAP 권장 · 안전한 대처법'. Hand-drawn small illustration lower right: baby lying peacefully with tiny hiccup bubble, simple line art sketch black ink, no color fills. Top-right corner: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 01 · UNDERSTANDING' in muted gray. Korean headline (navy with '흔한 현상' highlighted in mustard marker): '신생아 딸꾹질은 / 흔한 현상입니다'. Visual: hand-drawn line illustration of calm baby with small hiccup symbols around, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '대부분 5-10분 이내 자연스럽게 멈춥니다 / 아기에게는 부모가 느끼는 것보다 불편하지 않아요'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 02 · DURING FEEDING' in muted gray. Korean headline (navy with '자세 바꾸기' highlighted in mustard marker): '수유 중 딸꾹질하면 / 자세 바꾸기'. Visual: hand-drawn line illustration of parent holding baby upright for burping, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '아기 자세를 바꾸고 트림을 시켜주세요 / 딸꾹질이 멈출 때까지 기다렸다가 수유 재개'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 03 · IF CONTINUES' in muted gray. Korean headline (navy with '수유 재개' highlighted in mustard marker): '5-10분 안 멈추면 / 수유 재개해보세요'. Visual: hand-drawn line illustration of feeding bottle or breast with gentle flow arrows, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '몇 분간 수유를 재개하면 / 보통 딸꾹질이 멈춥니다'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 04 · BURPING GUIDE' in muted gray. Korean headline (navy with '트림시키기' highlighted in mustard marker): '자주 트림시키기가 / 예방법입니다'. Visual: hand-drawn line illustration of baby bottle with measurement marks and breast icon, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '분유 수유: 60-90ml마다 트림 / 모유 수유: 유방 바꿀 때 트림'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 05 · PREVENTION' in muted gray. Korean headline (navy with '차분할 때' highlighted in mustard marker): '아기가 차분할 때 / 수유하세요'. Visual: hand-drawn line illustration of calm peaceful baby face with clock symbol showing early timing, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '극도로 배고프기 전에 수유하면 / 딸꾹질 발생 가능성이 줄어듭니다'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'CAUTION · DON'TS' in coral #C44536. Korean headline (navy with '하지 마세요' highlighted in coral marker): '이런 방법은 절대 / 하지 마세요'. Coral #C44536 outlined hand-drawn rectangle with corner cross marks: ⚠️ icon + '아기 놀라게 하기 · 혀 당기기 금지 / 6개월 미만 물 주기 금지 (전해질 균형 방해)'. Visual: hand-drawn X mark over wrong methods icons, simple line art black ink, slightly rough strokes, no color fills. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'ALERT · WHEN TO SEE DOCTOR' in coral #C44536. Korean headline (navy with '병원 방문' highlighted in coral marker): '이럴 땐 즉시 / 병원 방문하세요'. Coral #C44536 outlined hand-drawn rectangle with corner cross marks: ⚠️ icon + bold text '딸꾹질이 2시간 이상 지속 / 호흡 곤란 동반 / 과도한 구토 동반 / 수유 거부'. Visual: hand-drawn line illustration of hospital building or stethoscope, simple line art black ink, slightly rough strokes, no color fills. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style closing page. Grid-pattern beige background #F5F0E5. Top-left small label: 'SAVE & SHARE' in muted gray. Korean headline (navy with '저장하세요' highlighted in mustard marker): '오늘 확인하고 / 저장하세요'. Source area: hand-drawn rectangle, thin black line border with small corner cross marks. 출처 / · American Academy of Pediatrics, HealthyChildren.org (2024) / · Healthline Medical Review Team (2025) / · OSF HealthCare Medical Team (2024) / · Discover Magazine (2025). Brand block: 소아과언니 (medium-bold large navy — exactly 4 characters, NO pixel values) / DR.SOA UNNIE · 소아청소년과 전문의 (small caps gray) / ──── (thin hand-drawn divider) / @dr.soa_unnie · 매주 새 가이드 / 소아과수첩 앱 · 진료 메모. Top-right: 소아과언니 (4 characters only, no quotes). ABSOLUTE RULE: never render numbers followed by 'px' anywhere."
+    }
+  ],
+  "palette": "A",
+  "tone": "handdrawn-notebook",
+  "common_style": "# 손그림 노트북 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 모눈종이 베이지 #F5F0E5\n- 텍스트: deep navy #1A1F36\n- 형광펜 강조: mustard #D4A84A (헤드라인 핵심 단어 하이라이트)\n- 경고 액센트: coral #C44536 (의학 안전 경고만)\n- 일러스트: 검정 펜 손그림 line art, 채색 없음\n- 시그니쳐: 우상단 소아과언니 (따옴표 없이 4글자만)\n- 픽셀값 텍스트 카드에 절대 금지\n\n## COVER 패턴 (slide n:1)\nHand-drawn notebook style.\nGrid-pattern beige background #F5F0E5 with subtle square grid lines.\nTop-left small handwritten label: 'PARENTING NOTE · [번호]' in muted gray.\nKorean headline (navy with '[핵심 단어]' highlighted in mustard #D4A84A marker style): '[헤드라인 첫 줄] / [헤드라인 둘째 줄]'.\nSubtitle below (gray, smaller): '[부제]'.\nHand-drawn small illustration lower right: [토픽 관련 line art sketch], no color fills.\nTop-right corner: 소아과언니 (4 characters only, no quotes).\n\n## BODY 패턴 (slide n:2-8)\nHand-drawn notebook style.\nGrid-pattern beige background #F5F0E5 with subtle square grid lines.\nTop-left small label: '[STEP 번호 · 영문명]' in muted gray.\nKorean headline (navy with '[강조 단어]' highlighted in mustard marker): '[헤드라인]'.\nIMPORTANT: render Korean words exactly as written, no arbitrary splitting.\nVisual: hand-drawn line illustration of [토픽 관련 장면], simple line art black ink, slightly rough strokes, no color fills.\nCaption gray below: '[캡션]'.\nTop-right: 소아과언니 (4 characters only, no quotes).\n\n## 경고 박스 패턴\nCoral #C44536 outlined hand-drawn rectangle with corner cross marks (×).\n⚠️ icon + bold warning text in coral.\n\n## OUTRO 패턴 (slide n:9)\nHand-drawn notebook style closing page.\nTop-left small label: 'SAVE & SHARE' in muted gray.\nKorean headline (navy with '저장하세요' highlighted in mustard marker).\nSource area: hand-drawn rectangle, thin black line border with small corner cross marks.\n출처\n· [출처 1]\n· [출처 2]\n· [출처 3]\nBrand block:\n소아과언니 (medium-bold large navy — exactly 4 characters, NO pixel values)\nDR.SOA UNNIE · 소아청소년과 전문의 (small caps gray)\n──── (thin hand-drawn divider)\n@dr.soa_unnie · 매주 새 가이드\n소아과수첩 앱 · [토픽 관련 CTA]\nTop-right: 소아과언니 (4 characters only, no quotes).\nABSOLUTE RULE: never render numbers followed by 'px' anywhere.\n"
+}

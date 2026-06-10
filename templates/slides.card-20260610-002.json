@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Top-left small gray: PARENTING NOTE · 002. Left side upper area: very large bold Korean headline two lines — first line 신생아 변 색깔로 보는 in deep navy, second line 건강 신호표 in coral #C44536. Below headline: small muted gray subtitle 생후 첫 달 변 색깔 가이드 · AAP 권장 기준. Right side center-bottom: large clean editorial illustration of baby diaper with color spectrum chart, line art style in coral and teal, minimal clean strokes. Bottom area: thin coral horizontal accent line. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: DAY 1-3. Large bold headline: 생후 첫 변은 navy, 태변입니다 coral #C44536. Center: clean editorial illustration of black sticky diaper contents, line art coral/navy minimal. Below illustration: light gray rounded card generous padding — bold navy 검은색~짙은 녹색의 끈적한 변 + small text 생후 24-48시간 이내 배출 정상 + amber warning box 48시간 내 배출 안 되면 의사 상담. Bottom small gray source: AAP HealthyChildren.org 2024. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: DAY 3-5. Large bold headline: 이행변과 navy, 수유별 차이 coral #C44536. Center: clean editorial illustration showing two baby bottles side by side, line art coral/navy minimal. Two comparison cards below: Left card light gray rounded 모유 수유 bold navy + 겨자색 씨앗 입자 + 묽은 변 small text. Right card light gray rounded 분유 수유 bold navy + 황갈색 단단한 변 small text. Bottom small gray source: AAP HealthyChildren.org 2024. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small teal rounded label: NORMAL RANGE. Large bold headline: 갈색·노란색·초록색은 navy, 모두 정상 coral #C44536. Center: clean editorial illustration of three circles in brown, yellow, green gradient, line art coral/navy minimal. Below: light gray rounded card generous padding — teal checkmark icon + bold navy 정상 범위 변 색깔 + bullet list small text: 담즙 색소 반영 · 철분 보충제 영향 가능 · 식품 색소도 원인. Bottom small gray source: AAP Symptom Checker. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: EMERGENCY. Large bold headline: 백색·회색 변은 navy, 즉시 병원 coral #C44536. Center: clean editorial illustration of white/gray diaper with alert icon, line art coral/navy minimal. Below: coral outline rounded box generous padding — ⚠️ emoji + bold coral 담도폐쇄증 의심 신호 + navy small text 담즙이 장으로 배출 안 됨 · 생후 60일 내 Kasai 수술 필요 · 백색변 발견 즉시 소아청소년과 진료. Bottom small gray source: Medicine Baltimore 2016, Hepatology 2008. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: WATCH OUT. Large bold headline: 혈변·검은색 변은 navy, 출혈 신호 coral #C44536. Center: clean editorial illustration showing two alert icons with color indicators red and black, line art coral/navy minimal. Two alert cards below: Left card light gray rounded 선홍색 변 bold navy + 하부 위장관 출혈 · 항문 열상 small text. Right card light gray rounded 검은색 변 (생후 3일 이후) bold navy + 상부 위장관 출혈 small text. Bottom small gray source: AAP The Many Colors of Baby Poop. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small teal rounded label: AFTER SOLIDS. Large bold headline: 이유식 후엔 navy, 다양한 색 coral #C44536. Center: clean editorial illustration of baby food jars and colorful food pieces carrot spinach corn, line art coral/navy minimal. Below: light gray rounded card generous padding — teal checkmark icon + bold navy 식재료별 변 색깔 변화 + bullet list small text: 당근 → 주황색 · 시금치 → 녹색 · 옥수수·블루베리 껍질 → 소화 안 된 조각 정상. Bottom small gray source: AAP Symptom Checker. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: QUICK CHECK. Large bold headline: 즉시 병원 vs navy, 관찰 가능 coral #C44536. Center: clean editorial illustration of hospital building and home icon side by side, line art coral/navy minimal. Two comparison cards: Left card coral outline 즉시 병원 bold + 백색·회색변 · 검은색변 (태변 이후) · 선홍색 혈변 small text. Right card teal outline 관찰 가능 bold + 잘 먹고 잘 놀고 · 체중 증가 잘 되면 · 다양한 색 걱정 NO small text. Bottom small gray source: AAP HealthyChildren.org 2024. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 with thin coral underline. Source box light gray #F0F0EE rounded generous padding — 출처 navy small bold then bullet list: AAP HealthyChildren.org Baby First Days 2024 · AAP Stools Unusual Color Symptom Checker · Medicine Baltimore Biliary Atresia 2016 · Hepatology Kasai Surgery Timing 2008. Horizontal thin navy divider. Center: 소아과언니 navy bold large — NO quotes NO decoration. Small gray DR.SOA UNNIE · 소아청소년과 전문의. Horizontal thin gray divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 성장 기록으로 변화 추적하기 coral. No pixel text anywhere. No quotes anywhere on card."
+    }
+  ],
+  "palette": "A",
+  "tone": "editorial-modern",
+  "common_style": "# 에디토리얼 모던 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 흰색 #FAFAF7\n- 텍스트: deep navy #1A1F36\n- 강조 (팔레트 A): coral #C44536\n- 강조 (팔레트 B): teal #2C6E63\n- 카드 배경: light gray #F0F0EE\n- 일러스트: clean line art editorial style (coral/navy 조합)\n- 시그니쳐: 우상단 소아과언니 navy (따옴표 없이 4글자만)\n\n## 팔레트 결정\n- 팔레트 A (coral): 일반 케어·예방법·여행·생활건강\n- 팔레트 B (teal): 수치·기준·데이터 중심\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Editorial modern style. Clean white background #FAFAF7.\nTop-right: 소아과언니 deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nLeft upper: very large bold headline two lines — [첫 줄] deep navy, [핵심 단어] coral #C44536.\nBelow: small muted gray subtitle [부제] · AAP 권장 기준.\nRight center-bottom: LARGE clean editorial illustration [토픽 관련], line art coral/teal minimal.\nBottom: thin coral horizontal accent line.\nNo pixel values. No quotes.\n\n## BODY 패턴 (slide n:2-8)\nPortrait 1080x1350. Editorial modern style. White background #FAFAF7.\nTop-right: 소아과언니 navy small — 4 characters only, no quotes.\nTop-left small coral rounded label: [섹션명].\nLarge bold headline: [앞부분] navy, [마지막 핵심 단어] coral #C44536.\nCenter: clean editorial illustration [토픽 관련], line art coral/navy minimal.\nContent: [리스트 or 카드 구조 — 토픽에 맞게].\nBottom thin coral divider.\nNo pixel text. No quotes.\n\n## 비교 카드 패턴\nTwo comparison cards side by side.\nLeft ✓ card light gray: teal checkmark + bold text + small caption.\nRight ✗ card light gray: coral X + bold text + small caption.\nBottom small gray source text.\n\n## 경고 박스 패턴\nCoral outline rounded box.\n⚠️ + bold coral warning text + navy detail text + small gray source.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Editorial modern style. White background #FAFAF7.\nTop-right: 소아과언니 navy small — 4 characters only, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 thin underline.\nSource box light gray #F0F0EE rounded generous padding.\n출처 (navy small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\n· [출처 4]\nHorizontal thin navy divider.\n소아과언니 navy bold large center — NO quotes, NO decoration.\nDR.SOA UNNIE · 소아청소년과 전문의 gray small.\nThin gray divider.\n@dr.soa_unnie · 매주 새 가이드 navy.\n소아과수첩 앱 · [CTA] coral.\nNo pixel text. No quotes anywhere.\n"
+}

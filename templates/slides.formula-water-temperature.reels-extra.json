@@ -1,0 +1,40 @@
+{
+  "topic": "formula-water-temperature",
+  "topic_type": "보관관리형",
+  "source_template": "slides.formula-water-temperature.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 시작 2초 안에 시선을 붙잡는 충격 훅",
+      "prompt": "Portrait 1080x1350. Bold typography design on soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold 16pt, no decoration. Center: Massive bold headline in warm brown #3D2B1F Pretendard ExtraBold 72pt: \"분유 물 온도\" line break \"잘못하면\" line break \"위험해요\" Each line centered, strong hierarchy. Bottom small text coral #E05C3A 18pt: \"특히 미숙아·저체중아\" Minimal clean layout, high readability, urgent tone but warm feel.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-action",
+      "purpose": "물을 먼저 넣는 올바른 순서를 실사 클로즈업으로 보여줌",
+      "prompt": "Portrait 1080x1350. Close-up photo realistic scene. Adult hand holding baby bottle under running tap water, filling bottle first before powder. Warm kitchen lighting, soft focus background. Top-right overlay: 소아과언니 warm brown small Pretendard SemiBold, semi-transparent. Bottom text overlay warm brown #3D2B1F Pretendard Bold 48pt: \"물 먼저\" line break \"분유 나중\" White rounded rectangle background behind text for readability. Clean modern kitchen aesthetic, soft natural light.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-action",
+      "purpose": "전자레인지 금지를 실사로 강조",
+      "prompt": "Portrait 1080x1350. Close-up photo realistic scene. Baby bottle inside microwave with glowing interior light, shot from front. Large red X mark overlay across entire image semi-transparent. Top-right: 소아과언니 warm brown small Pretendard SemiBold. Center bold text coral #E05C3A Pretendard ExtraBold 56pt: \"전자레인지\" line break \"절대 금지\" White rounded rectangle behind text. Dramatic lighting, warning tone but not scary, clear prohibition message.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-action",
+      "purpose": "손 씻기를 실사 클로즈업으로 보여줌",
+      "prompt": "Portrait 1080x1350. Close-up photo realistic scene. Adult hands washing thoroughly under running water with soap bubbles, side angle view. Warm bathroom lighting, water droplets visible. Top-right overlay: 소아과언니 warm brown small Pretendard SemiBold. Bottom text overlay teal #2C7A5C Pretendard Bold 48pt: \"조유 전\" line break \"손 씻기 필수\" White rounded rectangle background behind text. Clean hygienic aesthetic, soft natural light, emphasizing cleanliness.",
+      "file": "7-1.png"
+    }
+  ]
+}

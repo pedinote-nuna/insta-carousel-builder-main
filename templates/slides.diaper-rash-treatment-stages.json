@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small handwritten label: 'PARENTING NOTE · 012' in muted gray. Korean headline (navy with '단계별 대처법' highlighted in mustard #D4A84A marker style): '기저귀 발진 / 단계별 대처법'. Subtitle below (gray, smaller): '경증부터 칸디다까지 · AAP 권장 기준'. Hand-drawn small illustration lower right: baby diaper area with small rash dots line art sketch, no color fills. Top-right corner: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 00 · OVERVIEW' in muted gray. Korean headline (navy with '가장 흔한' highlighted in mustard marker): '기저귀 발진은 영유아에게 / 가장 흔한 피부 질환입니다'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of baby bottom with small scattered dots indicating mild irritation, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '대부분 가벼운 자가치유 질환이지만 적절한 관리가 필요해요'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 01 · MILD' in muted gray. Korean headline (navy with '경증 단계' highlighted in mustard marker): '경증 단계 / 자주 갈아주기가 핵심'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of clock showing 3-4 hour intervals and diaper change symbol, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '분홍색 또는 붉은 반점 · 경계 불분명'. Hand-drawn rectangle box with corner cross marks (×), gray outline: '3-4시간마다 또는 배변 후마다 교체 / 피부를 깨끗하고 건조하게 유지'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 02 · BARRIER' in muted gray. Korean headline (navy with '두껍게' highlighted in mustard marker): '보호 연고는 / 두껍게 발라주세요'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of cake with thick frosting layer and ointment tube, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '바셀린 또는 산화아연 함유 연고'. Hand-drawn rectangle box with corner cross marks (×), gray outline: '매 기저귀 교체 시마다 / 케이크 위 아이싱처럼 두껍게'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 03 · MODERATE' in muted gray. Korean headline (navy with '중등도 단계' highlighted in mustard marker): '중등도 단계 / 스테로이드 단기 사용'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of skin with small bumps and blisters, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '구진 · 수포 · 표재성 미란 동반'. Hand-drawn rectangle box with corner cross marks (×), gray outline: '저농도 하이드로코르티손 0.5-1% / 하루 2회 · 3-5일간 단기간만 / 2-3일 내 호전 없으면 진료'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 04 · CANDIDA SIGN' in muted gray. Korean headline (navy with '칸디다 발진' highlighted in mustard marker): '칸디다 발진 / 특징적인 신호들'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of diaper area with sharp-bordered bright red patch and small satellite lesions around it, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '날카로운 경계와 위성 병변이 특징'. Hand-drawn rectangle box with corner cross marks (×), gray outline: '✓ 선명하고 밝은 붉은색 / ✓ 날카로운 경계 / ✓ 주변에 작은 붉은 점·농포 / ✓ 사타구니 주름에 더 심함'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 05 · ANTIFUNGAL' in muted gray. Korean headline (navy with '항진균 치료' highlighted in mustard marker): '칸디다 발진은 / 항진균 치료가 필요해요'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of medicine tube with application arrow and calendar marking 7-10 days, simple line art black ink, slightly rough strokes, no color fills. Caption gray below: '매 기저귀 교체 시마다 발라주세요'. Hand-drawn rectangle box with corner cross marks (×), gray outline: '1차: 나이스타틴 / 2차 (1-3일 호전 없으면): / 클로트리마졸·미코나졸·케토코나졸 / 하루 2회 · 7-10일간'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 06 · DOCTOR VISIT' in muted gray. Korean headline (navy with '병원 진료' highlighted in mustard marker): '이럴 땐 꼭 / 병원 진료 받으세요'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Coral #C44536 outlined hand-drawn rectangle with corner cross marks (×). Inside: ⚠️ icon + bold text in coral: '즉시 진료 신호'. Below rectangle: Hand-drawn checklist boxes with gray text: '☐ 3일 이상 지속 / ☐ 피부 갈라짐·진물·출혈 / ☐ 발열 동반 / ☐ 복부나 다리로 발진 확산'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style closing page. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'SAVE & SHARE' in muted gray. Korean headline (navy with '저장하세요' highlighted in mustard marker): '오늘 확인하고 / 저장하세요'. Source area: hand-drawn rectangle, thin black line border with small corner cross marks. Inside gray text: '출처 / · AAP HealthyChildren.org Diaper Rash 2024 / · StatPearls Diaper Dermatitis 2023 / · Mayo Clinic Diaper Rash Treatment 2024 / · Texas Children's Hospital Guidelines 2023'. Thin hand-drawn horizontal divider. Brand block center: 소아과언니 (medium-bold large navy — exactly 4 characters, NO pixel values) / DR.SOA UNNIE · 소아청소년과 전문의 (small caps gray) / ──── (thin hand-drawn divider) / @dr.soa_unnie · 매주 새 가이드 / 소아과수첩 앱 · 진료 메모 기록하기. Top-right: 소아과언니 (4 characters only, no quotes). ABSOLUTE RULE: never render numbers followed by 'px' anywhere."
+    }
+  ],
+  "palette": "A",
+  "tone": "handdrawn-notebook",
+  "common_style": "# 손그림 노트북 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 모눈종이 베이지 #F5F0E5\n- 텍스트: deep navy #1A1F36\n- 형광펜 강조: mustard #D4A84A (헤드라인 핵심 단어 하이라이트)\n- 경고 액센트: coral #C44536 (의학 안전 경고만)\n- 일러스트: 검정 펜 손그림 line art, 채색 없음\n- 시그니쳐: 우상단 소아과언니 (따옴표 없이 4글자만)\n- 픽셀값 텍스트 카드에 절대 금지\n\n## COVER 패턴 (slide n:1)\nHand-drawn notebook style.\nGrid-pattern beige background #F5F0E5 with subtle square grid lines.\nTop-left small handwritten label: 'PARENTING NOTE · [번호]' in muted gray.\nKorean headline (navy with '[핵심 단어]' highlighted in mustard #D4A84A marker style): '[헤드라인 첫 줄] / [헤드라인 둘째 줄]'.\nSubtitle below (gray, smaller): '[부제]'.\nHand-drawn small illustration lower right: [토픽 관련 line art sketch], no color fills.\nTop-right corner: 소아과언니 (4 characters only, no quotes).\n\n## BODY 패턴 (slide n:2-8)\nHand-drawn notebook style.\nGrid-pattern beige background #F5F0E5 with subtle square grid lines.\nTop-left small label: '[STEP 번호 · 영문명]' in muted gray.\nKorean headline (navy with '[강조 단어]' highlighted in mustard marker): '[헤드라인]'.\nIMPORTANT: render Korean words exactly as written, no arbitrary splitting.\nVisual: hand-drawn line illustration of [토픽 관련 장면], simple line art black ink, slightly rough strokes, no color fills.\nCaption gray below: '[캡션]'.\nTop-right: 소아과언니 (4 characters only, no quotes).\n\n## 경고 박스 패턴\nCoral #C44536 outlined hand-drawn rectangle with corner cross marks (×).\n⚠️ icon + bold warning text in coral.\n\n## OUTRO 패턴 (slide n:9)\nHand-drawn notebook style closing page.\nTop-left small label: 'SAVE & SHARE' in muted gray.\nKorean headline (navy with '저장하세요' highlighted in mustard marker).\nSource area: hand-drawn rectangle, thin black line border with small corner cross marks.\n출처\n· [출처 1]\n· [출처 2]\n· [출처 3]\nBrand block:\n소아과언니 (medium-bold large navy — exactly 4 characters, NO pixel values)\nDR.SOA UNNIE · 소아청소년과 전문의 (small caps gray)\n──── (thin hand-drawn divider)\n@dr.soa_unnie · 매주 새 가이드\n소아과수첩 앱 · [토픽 관련 CTA]\nTop-right: 소아과언니 (4 characters only, no quotes).\nABSOLUTE RULE: never render numbers followed by 'px' anywhere.\n"
+}

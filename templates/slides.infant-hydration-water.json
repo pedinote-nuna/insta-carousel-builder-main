@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Center: large warm brown bold headline 여름철 아기 물 두lines, second line 언제부터 괜찮을까 with teal green #2C7A5C underline. Below: small gray subtitle 생후 6개월 기준 · AAP 권장 가이드. Bottom center: LARGE cute character illustration of chubby baby sitting with water bottle and confused mom beside, warm cozy colors, soft pastel tones, adorable round faces. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 6개월 전. Large bold headline: 모유나 분유만으로 warm brown, 충분해요 teal green #2C7A5C with thin underline. Center: large cute illustration of happy baby drinking from bottle, surrounded by breast milk and formula icons, warm pastel colors. Below illustration: light cream #FFF0E0 rounded card with Korean text 생후 6개월까지는 모유나 분유만으로 필요한 모든 수분이 공급됩니다 warm brown, small teal checkmark corner. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral #E05C3A rounded label: 위험. Large bold headline: 6개월 전 물 warm brown, 뇌 부종 위험 coral #E05C3A with thin underline. Center: concerned baby character illustration with water glass, medical warning symbols in soft coral. Below: two cream cards stacked. First card: 저나트륨혈증 발생 with cute sad baby icon. Second card: 뇌 부종과 경련 유발 가능 with medical icon. Warm brown text. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 이유. Large bold headline: 아기 신장은 warm brown, 아직 미성숙해요 teal green #2C7A5C with underline. Center: cute baby character with kidney illustration, medical educational style warm colors. Below: two light cream #FFF0E0 rounded cards vertically stacked. First card: 과도한 수분 처리 불가 with cute kidney icon + Korean explanation. Second card: 위가 작아 영양 섭취 감소 with tiny stomach icon + explanation. Warm brown text, teal accents. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 6개월부터. Large bold headline: 이제 물을 warm brown, 시작해도 돼요 teal green #2C7A5C with underline. Center: happy baby character holding sippy cup, celebrating with mom character, warm cozy illustration. Below: light cream #FFF0E0 rounded card with large Korean text 하루 4-8온스 warm brown bold, beneath in smaller text 소량부터 컵으로 제공, still main hydration from breast milk or formula. Small teal checkmark corner. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 더운 날. Large bold headline: 여름철에도 warm brown, 물 대신 수유 teal green #2C7A5C with underline. Center: cute baby character with sun and thermometer icons, sweating gently, warm summer colors. Below: two cream cards in 2x1 layout. First card: 6개월 전 → 모유·분유 횟수 증가 with baby bottle icon. Second card: 6개월 후 → 추가 수유로 수분 보충 with sippy cup + bottle icons. Warm brown text. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral #E05C3A rounded label: 절대 금지. Large bold headline: 분유 희석은 warm brown, 성장 장애 유발 coral #E05C3A with underline. Center: illustrated formula bottle with red X overlay, concerned baby character beside it, warm colors maintained. Below: light cream #FFF0E0 rounded card with Korean text 물로 희석하면 영양소 농도 저하 warm brown, beneath 제조사 지침대로 정확히 조제하세요 bold. Red warning icon corner. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral #E05C3A rounded label: 탈수 신호. Large bold headline: 이런 증상 보이면 warm brown, 바로 병원 coral #E05C3A with underline. Center: three light cream #FFF0E0 rounded cards vertically stacked. First card: 기저귀 6개 이하 젖음 with diaper icon. Second card: 입술·입안 마름 with cute baby mouth icon. Third card: 울 때 눈물 없음 with crying baby icon. Each card cute character illustration inside, warm brown text, coral warning dots. Bottom: 물 대신 모유·분유 증가 + 소아청소년과 상담 small text. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline. Source box cream #FFF0E0 rounded. 출처 warm brown small bold. HealthyChildren.org - AAP 2026. AAP News 2025. AAP CACFP 2025. Cureus 2024. Warm brown divider line. 소아과언니 warm brown bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray. Divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 성장 기록으로 수유 시기 체크 teal. No pixel text. No quotes. Cute character illustrations around brand block, baby with water bottle and mom icons warm colors."
+    }
+  ],
+  "palette": "B",
+  "tone": "character-illustration",
+  "common_style": "# 캐릭터 일러스트 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 소프트 파스텔 베이지 #FFF8F0\n- 텍스트: 웜 브라운 #3D2B1F\n- 강조: teal green #2C7A5C\n- 경고: coral #E05C3A\n- 카드 배경: 크림 #FFF0E0\n- 일러스트: 따뜻한 수채화풍 아기/엄마/음식 캐릭터 (cute, chubby, warm)\n- 시그니쳐: 우상단 소아과언니 warm brown (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nCenter: large warm brown bold headline [토픽 핵심어], two lines, [둘째 줄] with teal green #2C7A5C underline.\nBelow: small gray subtitle [부제] · AAP 권장 기준.\nBottom center: LARGE cute character illustration [토픽 관련 귀여운 아기/엄마 장면], warm cozy colors, chubby characters.\nNo pixel text. No quotes.\n\n## 2x2 그리드 패턴\nFour cards in 2x2 grid, each light cream #FFF0E0 rounded.\nEach card: cute character illustration inside + Korean label below.\nSmall teal checkmark corner.\nWarm pastel colors throughout.\n\n## 금지 항목 패턴 (귀여운 X)\nFour forbidden food/item cards in 2x2 grid.\nEach: cute illustrated item with red X overlay + Korean label + reason.\nWarm background maintained (NOT dark).\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown small, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline.\nSource box cream #FFF0E0 rounded.\n출처 (warm brown small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nWarm brown divider line.\n소아과언니 warm brown bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nDivider.\n@dr.soa_unnie · 매주 새 가이드 warm brown.\n소아과수첩 앱 · [CTA] teal.\nNo pixel text. No quotes.\nCute character illustrations around brand block (doctor/baby/food icons).\n"
+}

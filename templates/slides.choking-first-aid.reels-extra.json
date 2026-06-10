@@ -1,0 +1,40 @@
+{
+  "topic": "choking-first-aid",
+  "topic_type": "응급정보형",
+  "source_template": "slides.choking-first-aid.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 훅 - 응급상황 경고로 시선 집중",
+      "prompt": "Portrait 1080x1350 vertical. Bold typography-focused emergency alert design. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36. Center dominant: Large bold text 아이가 숨을 못쉬어요! Pretendard ExtraBold coral #FF6B6B 72pt, urgent spacing. Below medium: 지금 바로 해야 할 응급처치 Pretendard Medium navy 32pt. Bottom small coral rounded label: 생명을 살리는 3분. Minimal clean infographic style, no illustration, typography only, high urgency visual hierarchy.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 4,
+      "role": "reels-action",
+      "purpose": "영아 등 두드리기 실사 - 자세와 손동작 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Realistic close-up photo. Adult hand supporting infant (under 1 year old) face-down on forearm, infant's head lower than body. Clear view of hand striking between shoulder blades with heel of palm. Warm indoor lighting, white background blur. Focus on correct hand position and angle. Professional medical demonstration style, clean composition, safety-focused framing. No faces visible, hands and body position only.",
+      "file": "4-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 6,
+      "role": "reels-action",
+      "purpose": "영아 가슴 압박 실사 - 두 손가락 위치 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Realistic close-up photo. Infant lying face-up on firm flat surface. Adult's two fingers (index and middle) positioned on center of infant's chest, just below nipple line. Clear view of proper finger placement and compression angle. Warm indoor lighting, white background blur. Focus on correct hand technique. Professional medical demonstration style, clean composition, instructional clarity. No faces visible, hands and infant torso only.",
+      "file": "6-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-action",
+      "purpose": "하임리히법 실사 - 복부 압박 자세 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Realistic close-up photo. Adult standing behind child (over 1 year old), arms wrapped around child's waist. Fist positioned above navel, below ribcage. Other hand grasping fist, ready for upward thrust. Clear view of proper hand placement and body positioning. Warm indoor lighting, white background blur. Focus on correct Heimlich maneuver technique. Professional medical demonstration style, clean composition, safety emphasis. Torso and hands only, no faces visible.",
+      "file": "7-1.png"
+    }
+  ]
+}

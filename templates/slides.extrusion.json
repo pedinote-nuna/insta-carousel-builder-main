@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 012. Center: large warm brown bold headline 이유식 시작, two lines, 준비 신호 4가지 with teal green #2C7A5C underline. Below: small gray subtitle 생후 6개월경 · AAP WHO 권장 기준. Bottom center: LARGE cute character illustration of chubby happy baby sitting in highchair with spoon and bowl, warm cozy pastel colors, watercolor style. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 시작 시기. Large bold headline: 생후 약 6개월경 warm brown, 이유식 시작 teal green #2C7A5C with underline. Center: cute illustration of calendar with baby icon and spoon, warm pastel colors. Below: two light cream #FFF0E0 rounded cards stacked vertically. First card: 4개월 이전은 너무 이르고 warm brown small. Second card: 6개월 이후는 철분·영양소 부족 위험 warm brown small. Small cute baby character icon in corner of each card. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 준비 신호 1. Large bold headline: 목을 가누고 warm brown, 앉을 수 있나요 teal green #2C7A5C with underline. Center: LARGE cute illustration of chubby baby sitting upright in highchair, head steady, warm cozy colors, happy expression. Below: light cream #FFF0E0 rounded card with text 하이체어나 수유 의자에 목을 꼿꼿이 세우고 앉을 수 있어야 안전하게 이유식을 먹을 수 있습니다 warm brown. Small teal checkmark icon corner. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 준비 신호 2. Large bold headline: 음식에 관심을 warm brown, 보이나요 teal green #2C7A5C with underline. Center: LARGE cute illustration of baby watching parent eat, reaching hands toward food plate, curious expression, warm pastel colors. Below: light cream #FFF0E0 rounded card with text 어른이 먹는 것을 보고 음식에 손을 뻗거나 입을 벌리면 이유식 준비가 된 신호입니다 warm brown. Small teal checkmark icon corner. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 준비 신호 3. Large bold headline: 혀내밀기 반사가 warm brown, 사라졌나요 teal green #2C7A5C with underline. Center: two side-by-side illustrations. Left: baby with tongue OUT pushing food away, small red X overlay. Right: baby with mouth OPEN accepting spoon, small teal checkmark. Both cute chubby characters, warm colors. Below: light cream #FFF0E0 rounded card with text 생후 4-6개월경 자연스럽게 사라지는 보호 반사입니다 warm brown. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 준비 신호 3. Large bold headline: 숟가락 음식을 warm brown, 삼킬 수 있나요 teal green #2C7A5C with underline. Center: LARGE cute illustration of baby successfully swallowing from spoon, happy satisfied expression, warm cozy colors. Below: light cream #FFF0E0 rounded card with text 숟가락으로 준 음식을 혀로 밀어내지 않고 삼킬 수 있다면 준비가 된 것입니다 warm brown. Small teal checkmark icon corner. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 준비 신호 4. Large bold headline: 손으로 음식을 warm brown, 잡나요 teal green #2C7A5C with underline. Center: LARGE cute illustration of baby using pincer grasp to pick up small food piece and bring to mouth, warm pastel colors, chubby hands. Below: light cream #FFF0E0 rounded card with text 손과 눈의 협응이 발달하여 스스로 먹는 연습을 시작할 수 있는 단계입니다 warm brown. Small teal checkmark icon corner. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 첫 이유식. Large bold headline: 철분 강화 식품으로 warm brown, 시작하세요 teal green #2C7A5C with underline. Center: three light cream #FFF0E0 rounded cards in vertical stack. First card: cute illustration of fortified cereal bowl + label 철분 강화 시리얼. Second card: cute illustration of meat puree + label 고기 퓨레. Third card: cute illustration of vegetable puree + label 채소 퓨레. Each card warm pastel colors, small teal icon corner. Bottom: small gray text 한 번에 한 가지씩 3-5일 간격으로 시도. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal green #2C7A5C underline. Source box cream #FFF0E0 rounded. 출처 warm brown small bold, · AAP HealthyChildren Starting Solid Foods 2024, · CDC Infant Nutrition When What How 2026, · WHO Complementary Feeding Guideline 2023, · Blueberry Pediatrics Baby Nutrition Guide 2026. Warm brown divider line. 소아과언니 warm brown bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray. Divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 성장 기록으로 이유식 시기 체크 teal green. No pixel text. No quotes. Cute character illustrations around brand block: baby with spoon, bowl, highchair icons in warm pastel."
+    }
+  ],
+  "palette": "A",
+  "tone": "character-illustration",
+  "common_style": "# 캐릭터 일러스트 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 소프트 파스텔 베이지 #FFF8F0\n- 텍스트: 웜 브라운 #3D2B1F\n- 강조: teal green #2C7A5C\n- 경고: coral #E05C3A\n- 카드 배경: 크림 #FFF0E0\n- 일러스트: 따뜻한 수채화풍 아기/엄마/음식 캐릭터 (cute, chubby, warm)\n- 시그니쳐: 우상단 소아과언니 warm brown (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nCenter: large warm brown bold headline [토픽 핵심어], two lines, [둘째 줄] with teal green #2C7A5C underline.\nBelow: small gray subtitle [부제] · AAP 권장 기준.\nBottom center: LARGE cute character illustration [토픽 관련 귀여운 아기/엄마 장면], warm cozy colors, chubby characters.\nNo pixel text. No quotes.\n\n## 2x2 그리드 패턴\nFour cards in 2x2 grid, each light cream #FFF0E0 rounded.\nEach card: cute character illustration inside + Korean label below.\nSmall teal checkmark corner.\nWarm pastel colors throughout.\n\n## 금지 항목 패턴 (귀여운 X)\nFour forbidden food/item cards in 2x2 grid.\nEach: cute illustrated item with red X overlay + Korean label + reason.\nWarm background maintained (NOT dark).\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown small, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline.\nSource box cream #FFF0E0 rounded.\n출처 (warm brown small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nWarm brown divider line.\n소아과언니 warm brown bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nDivider.\n@dr.soa_unnie · 매주 새 가이드 warm brown.\n소아과수첩 앱 · [CTA] teal.\nNo pixel text. No quotes.\nCute character illustrations around brand block (doctor/baby/food icons).\n"
+}

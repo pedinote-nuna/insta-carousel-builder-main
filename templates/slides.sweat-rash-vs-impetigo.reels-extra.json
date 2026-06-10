@@ -1,0 +1,40 @@
+{
+  "topic": "sweat-rash-vs-impetigo",
+  "topic_type": "비교형",
+  "source_template": "slides.sweat-rash-vs-impetigo.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 훅 - 땀띠vs농가진 헷갈림 공감 유도",
+      "prompt": "Portrait 1080x1350 vertical. White background #FFFFFF. VERY GENEROUS outer margin all sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only. Center ultra-bold typography: 땀띠인 줄 알았는데 / 농가진이었다고요? Pretendard ExtraBold navy #1A1F36, 72-80pt, center-aligned, generous line spacing. Bottom small teal accent line decoration. Clean minimalist infographic style. No photos, no illustrations, pure typography impact.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "땀띠 실제 모습 - 빨간 좁쌀 발진 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical close-up photo. Baby or toddler skin showing heat rash (땀띠): tiny red pinpoint bumps clustered together, no fluid, no crusting. Natural indoor lighting. Clean white or soft gray background. Focus on neck, chest, or back area where sweat accumulates. Skin looks irritated but dry. Medical documentation style. Shallow depth of field. Professional pediatric dermatology reference photo aesthetic.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 4,
+      "role": "reels-visual",
+      "purpose": "농가진 실제 모습 - 물집과 딱지 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical close-up photo. Child skin showing impetigo (농가진): visible honey-colored crusted lesions, some oozing fluid, larger than heat rash bumps. Natural indoor lighting. Clean white or soft gray background. Focus on mouth, nose periphery, or limb area. Skin shows clear infection signs with wet appearance. Medical documentation style. Shallow depth of field. Professional pediatric dermatology reference photo aesthetic.",
+      "file": "4-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "땀띠 관리 실사 - 시원한 물로 닦는 손 동작",
+      "prompt": "Portrait 1080x1350 vertical close-up photo. Parent or caregiver hand gently wiping baby's neck/back with cool wet soft cloth or cotton pad. Baby skin visible with mild redness. Natural indoor bathroom or nursery lighting. Clean white background. Focus on gentle dabbing motion. Water droplets visible on cloth. Soft caring gesture. Lifestyle pediatric care aesthetic. Warm natural color palette. Shallow depth of field on hand and cloth.",
+      "file": "7-1.png"
+    }
+  ]
+}

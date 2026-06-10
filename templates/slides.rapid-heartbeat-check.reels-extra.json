@@ -1,0 +1,40 @@
+{
+  "topic": "rapid-heartbeat-check",
+  "topic_type": "응급정보형",
+  "source_template": "slides.rapid-heartbeat-check.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 시작 2초 내 시선 고정용 충격 훅",
+      "prompt": "Portrait 1080x1350 vertical. Bold typography-focused design. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Center: massive bold headline in navy #1A1F36, Pretendard ExtraBold: \"우리 아이 심장이\\n너무 빨리 뛰어요\" (line break after 심장이). Below headline, small coral #FF6B6B accent text Pretendard Medium: \"지금 바로 확인하세요\". Top-right corner small: 소아과언니 Pretendard SemiBold navy #1A1F36, no decoration. Bottom subtle: tiny pulsing heart icon coral, minimal. Clean, urgent, attention-grabbing. No other elements.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-action",
+      "purpose": "손목 맥박 측정 실사 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up shot. Adult hand gently pressing two fingers (index and middle) on child's wrist pulse point (radial artery, thumb side). Soft natural indoor lighting. Focus on hand position and fingers placement. Child's hand relaxed, palm facing up. Warm skin tones. Shallow depth of field, fingers in sharp focus. Clean white or light cream background. Medical accuracy: proper finger placement visible. Calm, instructional mood. No text overlay. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-action",
+      "purpose": "스톱워치/타이머 15초 측정 실사",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up shot. Smartphone timer app showing 00:15 on screen, held in adult hand. Or analog stopwatch showing 15-second mark. Bright clear display. Hand holding device steady. Soft diffused lighting. Background blurred, focus on timer display. Modern, clean aesthetic. Implies counting pulse for 15 seconds. Calm medical instructional mood. No people's faces visible, only hand and timer. Neutral background. Korean mother/father, East Asian appearance, Korean parent",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 6,
+      "role": "reels-action",
+      "purpose": "아이가 숨차하는 모습 실사 (응급 신호 강조)",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic medium shot. Young child (3-7 years old, Asian or diverse) sitting on bed or couch, hand on chest, breathing with slight effort. Face shows mild discomfort but not severe distress. Natural indoor lighting. Parent's hand gently touching child's shoulder from side (reassuring). Soft focus background (bedroom or living room). Warm, concerned but calm mood. Medical realism: child appears tired, slightly pale. No dramatic expressions. Clean, documentary-style healthcare photography. Emphasis on respiratory effort visible. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "6-1.png"
+    }
+  ]
+}

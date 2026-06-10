@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Top: bold red #E63946 stripe full width + COMPACT white text '청색증 긴급 가이드'. Top-right below stripe: 소아과언니 white Pretendard SemiBold small, no quotes, 4 characters only. Headline COMPACT 25% smaller: '아이 입술이' white bold, '파래졌다면' bright red #E63946. Small white subtitle: '말초성 vs 중심성 구별법 · AAP 가이드라인 기준'. LARGE prominent line illustration baby face with blue-tinted lips white outline on dark background, medical alert symbol. Bottom-left small gray: 'PARENTING NOTE · 011'. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red rounded label: '청색증이란 ⚠️'. Headline COMPACT: '혈액 속 산소가 부족할 때' white, '피부가 파랗게' red #E63946. Center: SMALL clean line illustration blood cells with low oxygen levels white/red minimal style. Below illustration: dark card #1A2B3C rounded GENEROUS padding, white text '헤모글로빈 5g/dL 이상 증가 시 나타나는 청색 변색'. Bottom small white text: '급성 청색증 = 생명 위협 신호'. Red thin divider bottom. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint rounded label: '괜찮은 청색증 ✓'. Headline COMPACT: '말초성 청색증' white, '정상일 수 있어요' mint #2EC4B6. Center: SMALL line illustration newborn baby hands and feet with slight blue tint white outline. Below: mint outlined box GENEROUS padding, rows stacked with SMALL icons left + COMPACT white text right, GENEROUS spacing between rows. Row 1: baby icon + '신생아 생후 24~48시간'. Row 2: location icon + '손·발·입 주변만 파랗게'. Row 3: checkmark icon + '정상 산소포화도에서도 나타남'. Bottom small gray text: '미성숙한 혈관 조절 때문'. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red rounded label: '위험한 청색증 ❌'. Headline COMPACT: '중심성 청색증' white, '절대 정상 아님' red #E63946. Center: LARGE line illustration baby torso showing blue lips, tongue, chest white/red outline medical illustration style. Below: red outlined box GENEROUS padding, rows stacked with SMALL icons left + COMPACT white text right, GENEROUS spacing. Row 1: red warning icon + '입술·혀·몸통 중심부'. Row 2: red alert icon + '혈중 산소량 저하 신호'. Row 3: red cross icon + '심장·폐·혈액 문제'. Bottom bold red text: '신생아기 절대 정상 아님'. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Full-width bright red #E63946 header bar + white bold '즉시 119 신고'. Center: LARGE ambulance illustration white outline with red emergency lights. Below: numbered items with GENEROUS spacing, red number circles + white text. 1. '무호흡 또는 호흡정지'. 2. '심박수 60회/분 미만'. 3. '호흡곤란 + 흉통'. 4. '의식저하 동반'. Large red rounded border around all numbered items GENEROUS padding. Bottom bold white text: '소생술 즉시 시작'. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint rounded label: '병원 검사 ✓'. Headline COMPACT: '원인 구별이' white, '중요합니다' mint #2EC4B6. Center: SMALL line illustration ultrasound machine and pulse oximeter white/mint minimal style. Below: two dark cards #1A2B3C stacked vertically GENEROUS spacing. Card 1: mint left border + white text '심초음파 + 맥박산소측정' + small gray '→ 호흡기 vs 심장 원인'. Card 2: mint left border + white text '관동맥 의존성 병변 의심 시' + small gray '→ 프로스타글란딘 주입 1차 치료'. Bottom small white text: '생후 24시간 후 스크리닝'. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red rounded label: '신생아 위험 신호 ❌'. Headline COMPACT: '생후 5~10분 이상' white, '중심성 청색증 지속' red #E63946. Center: SMALL line illustration newborn baby with alert symbols white/red style. Below: red outlined box GENEROUS padding, rows stacked with SMALL red warning icons left + COMPACT white text right, GENEROUS spacing. Row 1: '기도폐쇄 징후'. Row 2: '호흡노력 저하와 피로'. Row 3: '서맥'. Row 4: '저혈압·관류저하'. Bottom bold red text: '즉각적인 지지 치료 필요'. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red rounded label: '무호흡 + 청색증 ❌'. Headline COMPACT: '20초 이상 무호흡' white, '즉각 평가 필요' red #E63946. Center: LARGE line illustration stopwatch with alert symbol white/red outline. Below: two dark cards #1A2B3C stacked GENEROUS spacing. Card 1: red left border + white bold '위험' + white text '20초 이상 지속되는 무호흡'. Card 2: red left border + white bold '위험' + white text '서맥 동반된 짧은 무호흡'. Bottom white text: '청색증은 연령·위치·동반 증상에 따라' + mint text '양성일 수도, 생명위협일 수도'. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A. VERY GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-center small gray: 'SAVE & SHARE'. Headline COMPACT: '오늘 확인하고' white, '저장하세요' mint #2EC4B6 with thin mint underline. Source box dark #1A2B3C rounded GENEROUS padding. 출처 white small bold. · AAP Textbook of Pediatric Care Ch.136 Cyanosis 2016. · AAP Pediatric Care Online Cyanosis 2024. · StatPearls Cyanosis 2022. · StatPearls Pediatric Neonatal Resuscitation 2025. Thin white divider. 소아과언니 white bold large center, NO quotes, 4 characters only. DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin white divider. @dr.soa_unnie · 매주 새 가이드 white. 소아과수첩 앱 · 야간·달빛병원 바로 찾기 mint. No pixel values as text on card. No quotes anywhere on card."
+    }
+  ],
+  "palette": "B",
+  "tone": "emergency-alert",
+  "common_style": "# 경고·긴급 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 짙은 네이비 #0D1B2A\n- 텍스트: 흰색 #FFFFFF\n- 긴급 강조: bright red #E63946\n- 안전/긍정: mint #2EC4B6\n- 카드 배경: #1A2B3C\n- GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 25% 작게\n- 슬라이드마다 아이콘/일러스트 필수\n- 시그니쳐: 우상단 소아과언니 white (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A.\nGENEROUS outer margin all sides.\nTop: bold red #E63946 stripe full width + COMPACT white text '[토픽] 긴급 가이드'.\nTop-right below stripe: '소아과언니' white Pretendard SemiBold small, no quotes.\nHeadline COMPACT (25% smaller): '[첫 줄]' white bold, '[핵심 긴급 표현]' bright red #E63946.\nSmall white subtitle: '[부제] · AAP 가이드라인 기준'.\nLARGE prominent line illustration [토픽 관련 응급 장면] white outline on dark background.\nBottom-left small gray: 'PARENTING NOTE · [번호]'.\nNo pixel values. No quotes.\n\n## 금지 항목 패턴 (❌ 슬라이드)\nDark navy background.\nTop-left red rounded label: '절대 하지 마세요 ❌'.\nHeadline COMPACT: '[내용]' white, '[핵심]' red.\nRows stacked: SMALL LINE ILLUSTRATION ICON left (red ❌ overlay) + COMPACT white text right.\nRed outlined box around all rows, comfortable padding.\nNo pixel values.\n\n## 행동 항목 패턴 (✓ 슬라이드)\nDark navy background.\nTop-left mint rounded label: '[행동] ✓'.\nHeadline COMPACT: '[내용]' white, '[핵심]' mint #2EC4B6.\nRows stacked: SMALL ICON left (mint ✓ overlay) + COMPACT white text right, GENEROUS spacing.\nMint outlined box around all rows.\nNo pixel values.\n\n## 119 패턴\nFull-width bright red header bar + white bold '[긴급 행동]'.\nLARGE relevant illustration center (구급차/응급 아이콘).\nNumbered items: red number + white text, GENEROUS spacing.\nLarge red rounded border around items.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' white small, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' white, '저장하세요' mint underline.\nSource box dark #1A2B3C rounded GENEROUS padding.\n출처 (white small bold)\n· [출처 1]\n· [출처 2]\nThin white divider.\n소아과언니 white bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 white.\n소아과수첩 앱 · [CTA] mint.\nNo pixel values. No quotes.\n"
+}

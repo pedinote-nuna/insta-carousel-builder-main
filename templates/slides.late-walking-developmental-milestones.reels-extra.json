@@ -1,0 +1,40 @@
+{
+  "topic": "late-walking-developmental-milestones",
+  "topic_type": "발달체크형",
+  "source_template": "slides.late-walking-developmental-milestones.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 멈추게 하는 충격적 질문으로 시청 유도",
+      "prompt": "Portrait 1080x1350. Bold typography-focused design. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Center: massive bold headline in navy #1A1F36 Pretendard ExtraBold 72pt: 18개월인데\n아직 못 걸어요 (line break after 18개월인데). Below headline: thin coral #FF6B6B underline accent 4px thick, 200px wide. Bottom area: small gray #8B8B8B text Pretendard Regular 28pt: 혹시 우리 아이만\n느린 걸까요? Minimalist modern editorial style. No illustrations, no icons, pure typography impact. --style raw --s 50 --ar 4:5",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "혼자 걷기 시작하는 순간을 실사로 보여주는 클로즈업",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up shot. Asian toddler's legs and feet taking first independent steps on soft cream carpet, side view low angle. Chubby toddler legs in pastel cotton pants, bare feet. Parent's hands hovering protectively nearby but not touching, out of focus in background. Soft natural window light from left creating gentle shadows. Shallow depth of field focusing on feet in motion. Clean modern Korean home interior blurred background. Documentary style authentic moment. Top-right small overlay: 소아과언니 in navy. Warm natural color grading. Canon EF 50mm f/1.4 aesthetic. --style raw --s 250 --ar 4:5",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 6,
+      "role": "reels-visual",
+      "purpose": "소아과 검사 장면을 실사로 보여주며 부모 안심 유도",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up shot. Gentle pediatrician's hands in white coat examining Asian toddler's leg reflexes and muscle tone on exam table. Toddler sitting comfortably, legs dangling. Doctor's hands performing professional developmental assessment, checking joint flexibility. Clean modern pediatric clinic setting with soft pastel blue-gray walls blurred background. Mother's hand visible holding child's hand for comfort. Soft clinical lighting. Professional medical documentary style. Top-right small overlay: 소아과언니 in navy. Natural color grading with medical clarity. 35mm lens aesthetic. --style raw --s 250 --ar 4:5. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "6-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "집에서 걷기 연습 돕는 부모-아이 상호작용 실사 장면",
+      "prompt": "Portrait 1080x1350. Photorealistic overhead shot. Asian parent's hands holding both hands of standing toddler practicing walking on soft play mat in bright modern Korean living room. Toddler's small hands gripping parent's fingers, legs taking cautious steps. Colorful sensory play mat below. Natural afternoon sunlight streaming through window creating warm atmosphere. Soft toys and baby-safe furniture blurred in background. Authentic parenting moment captured. Documentary lifestyle style. Top-right small overlay: 소아과언니 in navy. Warm natural color grading. 50mm f/2.0 aesthetic with gentle bokeh. --style raw --s 250 --ar 4:5",
+      "file": "7-1.png"
+    }
+  ]
+}

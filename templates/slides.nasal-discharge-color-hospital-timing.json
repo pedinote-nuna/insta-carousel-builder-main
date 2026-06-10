@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Top-left small gray: PARENTING NOTE · 011. Left side upper area: very large bold Korean headline two lines — first line 콧물 색깔로 보는 in deep navy, second line 병원 갈 타이밍 in coral #C44536. Below headline: small muted gray subtitle 색깔만으론 판단 못해요 · AAP 권장 기준. Right side center-bottom: large clean editorial illustration of child with runny nose and color spectrum, line art style in coral and teal, minimal clean strokes showing clear to yellow-green nasal discharge spectrum. Bottom area: thin coral horizontal accent line. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "이 피드백은 \"콧물 색깔로 보는 병원 갈 타이밍\" 토픽의 2번 슬라이드인데, \"배꼽 소독\" 관련 내용으로 수정 요청하셨습니다. 이는 완전히 다른 토픽(신생아 배꼽관리)으로의 변경을 의미합니다.\n\n규칙에 따라 sources.json에 없는 새로운 사실(배꼽 소독 관련)을 추가할 수 없으므로, 이 수정 요청은 수행할 수 없습니다.\n\n기존 prompt를 그대로 반환합니다:\n\nPortrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 맑은 콧물. Large bold headline: 감기 초기엔 navy, 정상이에요 coral #C44536. Center: clean editorial illustration of nose with clear water droplets flowing out, line art coral/navy minimal, simple anatomical style. Below illustration: light gray rounded card #F0F0EE generous padding — bold navy text 바이러스를 씻어내는 방어 반응입니다 + small gray caption 감기 바이러스가 처음 감염되면 코는 많은 양의 맑은 점액을 만들어 바이러스를 체외로 배출합니다. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 색깔 변화. Large bold headline: 노란·초록 콧물도 navy, 정상 과정이에요 coral #C44536. Center area: three horizontal stages with icons — Stage 1: clear droplet icon coral + 맑은 콧물 (초기) gray text · Stage 2: yellow-green droplet icon teal + 노란·초록 콧물 (중기) gray text · Stage 3: clear droplet icon coral + 다시 맑아짐 (회복) gray text. Below stages: light gray rounded card #F0F0EE — bold navy 세균 감염이 아닙니다 + small gray 점액 분비·건조·염증 반응 때문에 색이 변하는 것으로, 세균 중복감염을 의미하지 않습니다. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 감기 경과. Large bold headline: 감기는 보통 navy, 1주일이에요 coral #C44536. Center: clean editorial timeline illustration — horizontal line with markers Day 1-3 coral, Day 4-7 teal, Day 8-14 gray dotted. Below timeline: three light gray rounded cards #F0F0EE vertical stack — Card 1: bold navy 초기 (1-3일) + small gray 묽고 맑은 분비물 · Card 2: bold navy 중기 (4-7일) + small gray 진하고 황록색, 양 감소 · Card 3: bold navy 회복 (7-14일) + small gray 증상 소실, 기침은 2주까지 가능. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small mustard #B8860B rounded label: 통념 깨기. Large bold headline: 콧물 색깔만으론 navy, 판단 못해요 mustard #B8860B. Center: large X mark in mustard with editorial illustration of colored nasal discharge crossed out. Below: light gray rounded card #F0F0EE generous padding — bold navy 바이러스 vs 세균 구별 불가 + small gray 녹색·노란 콧물은 감기가 낫는 과정에서 흔하며 부비동염을 의미하지 않습니다. Bottom area: small gray source text AAP Red Book 2015 · Pediatrics 2013. Bottom thin mustard divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 10일 기준. Large bold headline: 10일 이상 지속되면 navy, 병원 가세요 coral #C44536. Center: clean editorial illustration of calendar with day 10 circled in coral, clock icon teal. Below: coral outline rounded box generous padding — ⚠️ coral + bold coral 호전 없이 10일 넘으면 의심 + navy detail text 콧물·기침이 호전 없이 10일 이상 지속되는 경우 급성 세균성 부비동염 가능성이 있습니다 + small gray source AAP Guideline 2013. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 재악화. Large bold headline: 호전 후 다시 악화되면 navy, 병원 가세요 coral #C44536. Center: clean editorial illustration of symptom graph — line going down (improving) then suddenly up (worsening) in coral arrow. Below: light gray rounded card #F0F0EE — bold navy 이중 악화 패턴 (Double Sickening) + small gray 초기 호전 후 콧물·기침·발열이 다시 악화되는 경우 급성 세균성 부비동염을 의심해야 합니다. Bottom area: small gray source text Pediatrics 2013 · AAP Clinical Practice Guideline. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 즉시 진료. Large bold headline: 이런 경우엔 navy, 바로 병원 가세요 coral #C44536. Center area: three coral outline rounded boxes vertical stack generous spacing — Box 1: 🌡️ + bold navy 고열 + 화농성 콧물 + small gray 39도 이상 고열과 진한 콧물 최소 3일 연속 · Box 2: 👃 + bold navy 한쪽 코 + 악취 콧물 + small gray 한쪽에서만 나오거나 냄새가 나는 경우 · Box 3: 🩸 + bold navy 피 섞인 콧물 + small gray 혈액이 섞여 나오는 경우. Bottom area: small gray source AAP Guideline 2013 · MedlinePlus. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 with thin coral underline. Source box light gray #F0F0EE rounded generous padding: 출처 navy small bold + · Nelson Textbook of Pediatrics 22nd ed 2025 small gray + · Pediatrics AAP Clinical Practice Guideline 2013 small gray + · AAP Red Book 2015 small gray + · MSD Manual 2025 small gray. Horizontal thin navy divider. Center: 소아과언니 navy bold large — NO quotes NO decoration. Small gray DR.SOA UNNIE · 소아청소년과 전문의. Horizontal thin gray divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 진료 메모 coral. No pixel text on card. No quotes anywhere."
+    }
+  ],
+  "palette": "A",
+  "tone": "editorial-modern",
+  "common_style": "# 에디토리얼 모던 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 흰색 #FAFAF7\n- 텍스트: deep navy #1A1F36\n- 강조 (팔레트 A): coral #C44536\n- 강조 (팔레트 B): teal #2C6E63\n- 카드 배경: light gray #F0F0EE\n- 일러스트: clean line art editorial style (coral/navy 조합)\n- 시그니쳐: 우상단 소아과언니 navy (따옴표 없이 4글자만)\n\n## 팔레트 결정\n- 팔레트 A (coral): 일반 케어·예방법·여행·생활건강\n- 팔레트 B (teal): 수치·기준·데이터 중심\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Editorial modern style. Clean white background #FAFAF7.\nTop-right: 소아과언니 deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nLeft upper: very large bold headline two lines — [첫 줄] deep navy, [핵심 단어] coral #C44536.\nBelow: small muted gray subtitle [부제] · AAP 권장 기준.\nRight center-bottom: LARGE clean editorial illustration [토픽 관련], line art coral/teal minimal.\nBottom: thin coral horizontal accent line.\nNo pixel values. No quotes.\n\n## BODY 패턴 (slide n:2-8)\nPortrait 1080x1350. Editorial modern style. White background #FAFAF7.\nTop-right: 소아과언니 navy small — 4 characters only, no quotes.\nTop-left small coral rounded label: [섹션명].\nLarge bold headline: [앞부분] navy, [마지막 핵심 단어] coral #C44536.\nCenter: clean editorial illustration [토픽 관련], line art coral/navy minimal.\nContent: [리스트 or 카드 구조 — 토픽에 맞게].\nBottom thin coral divider.\nNo pixel text. No quotes.\n\n## 비교 카드 패턴\nTwo comparison cards side by side.\nLeft ✓ card light gray: teal checkmark + bold text + small caption.\nRight ✗ card light gray: coral X + bold text + small caption.\nBottom small gray source text.\n\n## 경고 박스 패턴\nCoral outline rounded box.\n⚠️ + bold coral warning text + navy detail text + small gray source.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Editorial modern style. White background #FAFAF7.\nTop-right: 소아과언니 navy small — 4 characters only, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 thin underline.\nSource box light gray #F0F0EE rounded generous padding.\n출처 (navy small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\n· [출처 4]\nHorizontal thin navy divider.\n소아과언니 navy bold large center — NO quotes, NO decoration.\nDR.SOA UNNIE · 소아청소년과 전문의 gray small.\nThin gray divider.\n@dr.soa_unnie · 매주 새 가이드 navy.\n소아과수첩 앱 · [CTA] coral.\nNo pixel text. No quotes anywhere.\n"
+}

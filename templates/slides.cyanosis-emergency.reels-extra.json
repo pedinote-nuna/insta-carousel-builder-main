@@ -1,0 +1,40 @@
+{
+  "topic": "cyanosis-emergency",
+  "topic_type": "응급정보형",
+  "source_template": "slides.cyanosis-emergency.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 안에 시청자를 멈추게 하는 충격적 훅 - 청색증 응급 상황 강조",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: massive bold white text '입술이 파래지면' top line, '119 먼저' bottom line, ultra bold 80pt font, dramatic spacing. Thin red #E63946 underline below 119. Top-right corner: small white '소아과언니' 4 characters only. Minimal design, typography-focused, urgent mood, high contrast white on navy.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "괜찮은 청색증 vs 위험한 청색증 구분 - 손발 vs 입술 클로즈업 실사",
+      "prompt": "Portrait 1080x1350 vertical. Split comparison layout. Top half: close-up baby hand and foot with slight bluish tint on white blanket, soft natural light, calm mood. Bottom half: extreme close-up baby lips clearly blue-purple cyanotic color, sharp focus on mouth area, clinical lighting. Thin white horizontal divider line between halves. Top-right corner: small white '소아과언니' text. Realistic medical photography style, educational comparison, no text overlay, clean pediatric visual.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "119 신고 후 대기 중 아이 옆구리 눕히기 행동 가이드 실사",
+      "prompt": "Portrait 1080x1350 vertical. Close-up action shot: parent's hands gently positioning baby on side (recovery position) on soft surface, baby wearing light clothing, hands supporting head and body carefully. Overhead angle, soft home lighting, warm tone. Focus on hand placement and baby position. Top-right corner: small white '소아과언니' text. Realistic lifestyle photography, emergency first aid demonstration, natural colors, no graphic overlay, instructional visual.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "신생아 청색증 + 무호흡 위험 신호 - 숨 멈춘 신생아 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Extreme close-up newborn baby chest and face, eyes closed, completely still, clinical lighting, subtle blue-purple tone on lips visible, no breathing movement. Shot from side angle showing ribcage area, medical monitoring context implied (soft edge of blanket/incubator visible). Top-right corner: small white '소아과언니' text. Serious medical photography style, high detail, realistic hospital newborn setting, urgent mood, educational alarm visual.",
+      "file": "7-1.png"
+    }
+  ]
+}

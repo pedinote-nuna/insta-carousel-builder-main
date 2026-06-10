@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Center: large warm brown bold headline 신생아 수면자세, two lines, 돌연사 막는 규칙 with teal green #2C7A5C underline. Below: small gray subtitle 매년 3500명 영아 사망 예방 · AAP 권장 기준. Bottom center: LARGE cute character illustration of sleeping baby on back in safe crib, peaceful expression, warm cozy colors, chubby baby character, soft blanket, stars mobile above. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral #E05C3A rounded label: 왜 중요한가요. Large bold headline: 매년 3500명의 warm brown, 영아가 수면 중 사망 with teal green #2C7A5C underline. Center: cute illustration of concerned parent holding baby, warm colors. Below: light cream #FFF0E0 rounded card with text 미국 AAP 보고 · 상당수가 영아돌연사증후군 SIDS warm brown. Small cream card below: 국내 출생아 1000명당 0.31명 SIDS 사망 gray text. Bottom: small teal icon with text 안전한 수면환경이 생명을 구합니다. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal #2C7A5C rounded label: 필수 수면자세. Large bold headline: 1세 미만 모든 영아는 warm brown, 반드시 등을 대고 with teal green underline. Center upper: LARGE cute illustration of baby sleeping on back, safe position, peaceful face, arms relaxed. Below illustration: light cream #FFF0E0 rounded card stack. Card 1: 낮잠과 밤잠 모두 똑바로 누운 자세 warm brown bold + small gray 仰臥位 supine position. Card 2 with coral #E05C3A X icon: 옆으로 눕히기 측와위도 안전하지 않음. Card 3 with coral X: 엎드린 자세 복와위 절대 금지 + 역류 있어도 권장 안 됨 gray. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal #2C7A5C rounded label: 안전한 잠자리. Large bold headline: 단단하고 평평한 warm brown, 표면에서만 with teal green underline. Center: cute illustration of safe crib with firm flat mattress, minimal items, teal checkmark. Below: four forbidden item cards in 2x2 grid, each light cream rounded. Card 1: cute pillow illustration with coral X + 베개 금지. Card 2: soft blanket with X + 이불 제거. Card 3: stuffed toy with X + 인형 치우기. Card 4: bumper pad with X + 범퍼패드 위험. Bottom cream rounded box: 10도 이상 기울어진 제품 사용 금지 warm brown + 카시트 바운서 스윙 일상 수면 부적합 small gray. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal #2C7A5C rounded label: 같은 방 다른 침대. Large bold headline: 생후 6개월 최소 warm brown, 1년까지 같은 방 with teal green underline. Center upper: cute illustration of parent bed and separate baby crib in same room, warm cozy bedroom scene, moon and stars. Below: two large light cream #FFF0E0 rounded cards side by side. Left card with teal checkmark: 같은 방 사용 room-sharing warm brown bold + SIDS 위험 최대 50% 감소 teal green small. Right card with coral X: 같은 침대 사용 bed-sharing 금지 warm brown bold + 질식 위험 높음 coral small. Bottom thin teal divider with text: 아기 전용 침대나 바구니 필수 warm brown. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal #2C7A5C rounded label: 뒤집기와 강보. Large bold headline: 뒤집기 가능하면 warm brown, 그대로 두어도 됩니다 with teal green underline. Center: cute illustration sequence of baby rolling over, three stages, warm colors. Below: light cream #FFF0E0 rounded card: 양방향 뒤집기 가능 후 수면 중 엎드려도 OK warm brown + 단 재울 때는 항상 등 대고 teal green small. Bottom: coral #E05C3A rounded warning card with cute swaddle illustration: 강보 사용 시 주의 coral bold + 뒤집기 시도 징후 보이면 즉시 중단 생후 3-4개월 warm brown + 가중 강보 가중 담요 사용 금지 coral small. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal #2C7A5C rounded label: 모유수유와 공갈젖꼭지. Large bold headline: SIDS 위험 줄이는 warm brown, 두 가지 습관 with teal green underline. Center: two large light cream #FFF0E0 rounded cards stacked. Top card: cute illustration of breastfeeding mother and baby, warm colors + 모유수유 warm brown bold + SIDS 위험 감소 효과 teal + 최소 6개월 완전 모유수유 권장 gray. Bottom card: cute pacifier illustration + 공갈젖꼭지 사용 권장 warm brown bold + 낮잠 밤잠 시 제공 teal + 모유수유아는 수유 확립 후 도입 gray. Bottom: small teal rounded note: 아기가 거부하면 억지로 권하지 않기. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal #2C7A5C rounded label: 추가 안전 수칙. Large bold headline: 꼭 지켜야 할 warm brown, 3가지 더 with teal green underline. Center: three light cream #FFF0E0 rounded cards in vertical stack. Card 1 with cute no-smoking illustration: 니코틴 알코올 약물 노출 피하기 warm brown bold + 임신 중 출산 후 모두 teal. Card 2 with cute baby getting vaccine illustration: 정기 예방접종 받기 warm brown bold + SIDS 예방 효과 teal. Card 3 with cute tummy time illustration: 깨어있을 때 배밀이 시간 warm brown bold + 생후 7주까지 하루 15-30분 teal + 성인 감독 필수 gray. Bottom coral #E05C3A rounded warning: 상업용 SIDS 모니터 권장 안 됨 coral + 안전 가이드라인 대체 불가 warm brown small. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline. Source box cream #FFF0E0 rounded. 출처 warm brown small bold. · Sleep-Related Infant Deaths AAP 2022. · 대한소아청소년과학회 SIDS 정보 2024. · Back to Sleep Tummy to Play AAP 2022. Warm brown divider line. 소아과언니 warm brown bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray. Divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 성장 기록으로 수면 안전 체크 teal. No pixel text. No quotes. Cute character illustrations around brand block: sleeping baby, safe crib, pacifier icons warm pastel colors."
+    }
+  ],
+  "palette": "A",
+  "tone": "character-illustration",
+  "common_style": "# 캐릭터 일러스트 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 소프트 파스텔 베이지 #FFF8F0\n- 텍스트: 웜 브라운 #3D2B1F\n- 강조: teal green #2C7A5C\n- 경고: coral #E05C3A\n- 카드 배경: 크림 #FFF0E0\n- 일러스트: 따뜻한 수채화풍 아기/엄마/음식 캐릭터 (cute, chubby, warm)\n- 시그니쳐: 우상단 소아과언니 warm brown (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nCenter: large warm brown bold headline [토픽 핵심어], two lines, [둘째 줄] with teal green #2C7A5C underline.\nBelow: small gray subtitle [부제] · AAP 권장 기준.\nBottom center: LARGE cute character illustration [토픽 관련 귀여운 아기/엄마 장면], warm cozy colors, chubby characters.\nNo pixel text. No quotes.\n\n## 2x2 그리드 패턴\nFour cards in 2x2 grid, each light cream #FFF0E0 rounded.\nEach card: cute character illustration inside + Korean label below.\nSmall teal checkmark corner.\nWarm pastel colors throughout.\n\n## 금지 항목 패턴 (귀여운 X)\nFour forbidden food/item cards in 2x2 grid.\nEach: cute illustrated item with red X overlay + Korean label + reason.\nWarm background maintained (NOT dark).\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown small, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline.\nSource box cream #FFF0E0 rounded.\n출처 (warm brown small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nWarm brown divider line.\n소아과언니 warm brown bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nDivider.\n@dr.soa_unnie · 매주 새 가이드 warm brown.\n소아과수첩 앱 · [CTA] teal.\nNo pixel text. No quotes.\nCute character illustrations around brand block (doctor/baby/food icons).\n"
+}

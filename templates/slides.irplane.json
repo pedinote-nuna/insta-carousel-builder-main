@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small handwritten label: 'PARENTING NOTE · 024' in muted gray. Korean headline (navy with '5가지 자세' highlighted in mustard #D4A84A marker style): '배앓이 달래는 / 5가지 자세'. Subtitle below (gray, smaller): '영아산통 완화 · AAP 권장 기준'. Hand-drawn small illustration lower right: baby being held in football hold position, simple line art sketch in black ink, no color fills. Top-right corner: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'INTRO · COLIC' in muted gray. Korean headline (navy with '영아산통' highlighted in mustard marker): '영아산통이란?'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of crying baby with clenched fists, simple line art black ink, slightly rough strokes, no color fills. Below illustration, gray text in hand-drawn box with corner cross marks: '생후 2-3주 시작 → 6주 최고조 → 3-4개월 자연 해결'. Lower section: small hand-drawn rectangle with thin border, inside text (navy): '하루 3시간 이상 · 주 3일 이상 · 3주 이상 지속'. Caption gray below: '과도한 울음이 특징입니다'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 01 · FOOTBALL HOLD' in muted gray. Korean headline (navy with '비행기 자세' highlighted in mustard marker): '비행기 자세'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of baby lying face-down on parent's forearm, head near elbow, legs dangling on both sides, simple line art black ink, slightly rough strokes, no color fills. Below illustration, gray text: '팔뚝 위에 엎드려 눕히기 · 복부 압력으로 가스 배출'. Lower section coral #C44536 outlined hand-drawn rectangle with corner cross marks (×): '⚠️ 잠들면 반드시 등 대고 눕히는 자세로 변경'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 02 · UPRIGHT HOLD' in muted gray. Korean headline (navy with '세로 안기' highlighted in mustard marker): '세로 안기'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of parent holding baby upright against chest, supporting head and neck, simple line art black ink, slightly rough strokes, no color fills. Below illustration, gray text: '머리와 목 지지 · 가스 배출과 역류 감소'. Lower section hand-drawn box with thin border: '수유 후 30분 정도 세워 안으면 소화에 도움'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 03 · TUMMY TIME' in muted gray. Korean headline (navy with '배 대고 눕히기' highlighted in mustard marker): '배 대고 눕히기'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of baby lying on tummy on floor mat, parent's hand on baby's back, simple line art black ink, slightly rough strokes, no color fills. Below illustration, gray text: '하루 2-3회 · 3-5분 시작 → 생후 7주 15-30분'. Lower section coral #C44536 outlined hand-drawn rectangle with corner cross marks (×): '⚠️ 깨어있을 때만 · 보호자 감독 필수 · 잠잘 때 절대 금지'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 04 · BABY CARRIER' in muted gray. Korean headline (navy with '아기띠로 안기' highlighted in mustard marker): '아기띠로 안기'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of parent wearing baby in carrier while walking, baby facing parent, simple line art black ink, slightly rough strokes, no color fills. Below illustration, gray text: '리드미컬한 움직임 + 신체 접촉 + 체온'. Lower section hand-drawn box with thin border: '안정감과 불편함 완화 효과'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'STEP 05 · RHYTHMIC MOTION' in muted gray. Korean headline (navy with '흔들의자 태우기' highlighted in mustard marker): '흔들의자 태우기'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual: hand-drawn line illustration of baby in rocking chair or swing with gentle motion lines, simple line art black ink, slightly rough strokes, no color fills. Below illustration, gray text: '일정한 리듬 + 진정 효과 소리'. Lower section coral #C44536 outlined hand-drawn rectangle with corner cross marks (×): '⚠️ 세탁기·건조기 위에 절대 올려놓지 마세요'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style. Grid-pattern beige background #F5F0E5 with subtle square grid lines. Top-left small label: 'PLUS TIP · SWADDLE & SOUND' in muted gray. Korean headline (navy with '추가 팁' highlighted in mustard marker): '추가 팁'. IMPORTANT: render Korean words exactly as written, no arbitrary splitting. Visual upper: hand-drawn line illustration of swaddled baby with arms secured, legs have room to move, simple line art black ink. Visual lower: hand-drawn line illustration of white noise machine with sound waves, simple line art black ink. Between visuals, gray text: '포대기 감싸기 · 다리 여유 공간 필수'. Below second visual, gray text: '백색소음 · 일정한 소리로 진정 효과'. Bottom coral #C44536 outlined box with corner cross marks: '⚠️ 뒤집기 시도 시작하면(2-3개월) 포대기 중단'. Top-right: 소아과언니 (4 characters only, no quotes)."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Hand-drawn notebook style closing page. Grid-pattern beige background #F5F0E5. Top-left small label: 'SAVE & SHARE' in muted gray. Korean headline (navy with '저장하세요' highlighted in mustard marker): '오늘 확인하고 저장하세요'. Source area: hand-drawn rectangle, thin black line border with small corner cross marks. 출처 (small navy bold) then gray list: · American Academy of Pediatrics Colic Relief Tips 2024 · MedlinePlus Medical Encyclopedia Colic and crying 2025 · AAP Back to Sleep Tummy to Play 2024 · AAP Sleep-Related Infant Deaths 2022. Thin hand-drawn horizontal divider. Brand block center: 소아과언니 (medium-bold large navy — exactly 4 characters, NO pixel values). Below: DR.SOA UNNIE · 소아청소년과 전문의 (small caps gray). Thin hand-drawn divider. @dr.soa_unnie · 매주 새 가이드 (navy). 소아과수첩 앱 · 야간·달빛병원 바로 찾기 (coral). Top-right: 소아과언니 (4 characters only, no quotes). ABSOLUTE RULE: never render numbers followed by 'px' anywhere."
+    }
+  ],
+  "palette": "A",
+  "tone": "handdrawn-notebook",
+  "common_style": "# 손그림 노트북 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 모눈종이 베이지 #F5F0E5\n- 텍스트: deep navy #1A1F36\n- 형광펜 강조: mustard #D4A84A (헤드라인 핵심 단어 하이라이트)\n- 경고 액센트: coral #C44536 (의학 안전 경고만)\n- 일러스트: 검정 펜 손그림 line art, 채색 없음\n- 시그니쳐: 우상단 소아과언니 (따옴표 없이 4글자만)\n- 픽셀값 텍스트 카드에 절대 금지\n\n## COVER 패턴 (slide n:1)\nHand-drawn notebook style.\nGrid-pattern beige background #F5F0E5 with subtle square grid lines.\nTop-left small handwritten label: 'PARENTING NOTE · [번호]' in muted gray.\nKorean headline (navy with '[핵심 단어]' highlighted in mustard #D4A84A marker style): '[헤드라인 첫 줄] / [헤드라인 둘째 줄]'.\nSubtitle below (gray, smaller): '[부제]'.\nHand-drawn small illustration lower right: [토픽 관련 line art sketch], no color fills.\nTop-right corner: 소아과언니 (4 characters only, no quotes).\n\n## BODY 패턴 (slide n:2-8)\nHand-drawn notebook style.\nGrid-pattern beige background #F5F0E5 with subtle square grid lines.\nTop-left small label: '[STEP 번호 · 영문명]' in muted gray.\nKorean headline (navy with '[강조 단어]' highlighted in mustard marker): '[헤드라인]'.\nIMPORTANT: render Korean words exactly as written, no arbitrary splitting.\nVisual: hand-drawn line illustration of [토픽 관련 장면], simple line art black ink, slightly rough strokes, no color fills.\nCaption gray below: '[캡션]'.\nTop-right: 소아과언니 (4 characters only, no quotes).\n\n## 경고 박스 패턴\nCoral #C44536 outlined hand-drawn rectangle with corner cross marks (×).\n⚠️ icon + bold warning text in coral.\n\n## OUTRO 패턴 (slide n:9)\nHand-drawn notebook style closing page.\nTop-left small label: 'SAVE & SHARE' in muted gray.\nKorean headline (navy with '저장하세요' highlighted in mustard marker).\nSource area: hand-drawn rectangle, thin black line border with small corner cross marks.\n출처\n· [출처 1]\n· [출처 2]\n· [출처 3]\nBrand block:\n소아과언니 (medium-bold large navy — exactly 4 characters, NO pixel values)\nDR.SOA UNNIE · 소아청소년과 전문의 (small caps gray)\n──── (thin hand-drawn divider)\n@dr.soa_unnie · 매주 새 가이드\n소아과수첩 앱 · [토픽 관련 CTA]\nTop-right: 소아과언니 (4 characters only, no quotes).\nABSOLUTE RULE: never render numbers followed by 'px' anywhere.\n"
+}

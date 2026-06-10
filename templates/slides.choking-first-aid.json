@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Large breathing whitespace before headline. Headline COMPACT two lines: 목에 뭐가 걸렸을 때 navy, 응급처치 with 응급처치 underlined in coral #C44536. Small subtitle gray: 영아 등 두드리기 vs 하임리히 · AHA+AAP 2025 가이드라인. LARGE minimalist illustration of infant back blows and chest thrusts line art in teal #2C6E63 and coral, prominently placed center-right. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: EMERGENCY. Headline COMPACT: 기도폐쇄는 with 응급 상황입니다 coral #C44536 underline. Center: large clean illustration of child holding throat (universal choking sign) line art coral minimal. Below: single coral #C44536 background card GENEROUS padding: ⚠️ 위험 신호 bold, 말 못함 · 제대로 기침 못함 · 목 움켜쥠 navy, 즉시 응급처치 필요 coral bold. Bottom coral warning box: 완전 기도폐쇄 시 4분 안에 뇌 손상 시작 가능. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: GUIDELINE. Headline COMPACT: 2025년 10월 navy, 가이드라인 업데이트 teal #2C6E63 underline. Center: large minimalist AHA AAP logo illustration line art teal. Below: two equal-width cards side-by-side GENEROUS padding. Left card light teal #E8F4F2: 👶 영아 (1세 미만) bold navy, 등 두드리기 + 가슴 압박 navy, 하임리히 금지 coral small. Right card light gray #F0F4F8: 🧒 소아/성인 (1세 이상) bold navy, 등 두드리기 + 복부 밀어내기 (하임리히) navy. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 영아 (1세 미만). Headline COMPACT: 영아는 navy, 하임리히 절대 금지 coral #C44536 underline. Center: large illustration of infant anatomy showing internal organs line art coral minimal. Below: coral #C44536 warning box GENEROUS padding: ⛔ 복부 밀어내기 금지 bold, 내부 장기 손상 위험 navy. Below: light teal #E8F4F2 instruction box GENEROUS padding: ✓ 올바른 방법 teal bold, 등 두드리기 5회 → 가슴 압박 5회 반복 navy. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: STEP 1. Headline COMPACT: 영아 navy, 등 두드리기 5회 teal #2C6E63 underline. Center: LARGE detailed illustration of infant positioned face-down on forearm, head lower than body, hand delivering back blows between shoulder blades, line art teal minimal. Below: numbered instruction card light gray #F0F4F8 GENEROUS padding: ① 아기를 팔 위에 엎드려 눕힘 navy, ② 머리가 몸통보다 낮게 위치 navy, ③ 손바닥 뒤꿈치로 어깨뼈 사이 5회 세게 두드림 teal bold. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: STEP 2. Headline COMPACT: 영아 navy, 가슴 압박 5회 teal #2C6E63 underline. Center: LARGE detailed illustration of infant positioned face-up, two fingers delivering chest compressions below nipple line on sternum, line art teal minimal. Below: numbered instruction card light gray #F0F4F8 GENEROUS padding: ① 아기를 뒤집어 똑바로 눕힘 navy, ② 두 손가락으로 젖꼭지 연결선 바로 아래 가슴뼈 압박 navy, ③ 5회 압박 teal bold, ④ 이물질 나오거나 의식 잃을 때까지 반복 coral. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 소아/성인 (1세 이상). Headline COMPACT: 등 두드리기 + navy, 복부 밀어내기 (하임리히) teal #2C6E63 underline. Center: LARGE detailed illustration of Heimlich maneuver — rescuer behind patient, fist positioned between navel and ribs, upward thrust motion, line art teal minimal. Below: two stacked instruction cards GENEROUS padding. Top card light gray #F0F4F8: 등 두드리기 5회 bold navy, 어깨뼈 사이 세게 두드림 navy. Bottom card light teal #E8F4F2: 복부 밀어내기 5회 bold teal, 주먹을 배꼽-갈비뼈 사이에 대고 빠르게 위로 밀어 올림 navy. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 주의사항. Headline COMPACT: 반드시 navy, 기억하세요 coral #C44536 underline. Center: three stacked alert cards GENEROUS padding comfortable spacing. First card light amber #FFF3E0: ⚠️ 이물질 보이면 조심스럽게 제거 bold navy, 보이지 않을 때 손가락 넣어 휘젓지 말 것 (더 깊이 밀려 들어갈 수 있음) gray. Second card coral #C44536 background: 🚨 의식 잃으면 즉시 119 신고 + 심폐소생술 시작 white bold. Third card light gray #F0F4F8: 🏥 이물질 빠진 후에도 반드시 병원 방문 (내부 손상 확인) navy. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right: 소아과언니 navy, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT: 오늘 확인하고 navy, 저장하세요 teal #2C6E63 underline. Source box light gray #F0F4F8 rounded GENEROUS padding left-aligned: 출처 navy small bold, · Part 6 Pediatric Basic Life Support 2025 AHA AAP Guidelines Circulation 2025-10-21, · 2025 AHA Guidelines for CPR and ECC Circulation 2025-10-22, · 심폐소생술 (이물질에 의한 기도폐쇄의 처치) 질병관리청 2024, · Choking infant under 1 year MedlinePlus NIH 2026-02-10. Generous spacing thin horizontal navy divider. 소아과언니 navy bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray small center. Thin navy divider. @dr.soa_unnie · 매주 새 가이드 navy center. 소아과수첩 앱 · 야간 응급 병원 바로 찾기 teal center. No pixel values. No quotes."
+    }
+  ],
+  "palette": "A",
+  "tone": "clean-infographic",
+  "common_style": "# 클린 인포그래픽 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 흰색 #FFFFFF\n- 텍스트: deep navy #1A1F36\n- 강조: teal #2C6E63\n- 경고: coral #C44536\n- 카드 배경: light gray #F0F4F8\n- VERY GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 20% 작게 (빽빽함 방지)\n- 시그니쳐: 우상단 소아과언니 (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin on all four sides.\nTop-right small: '소아과언니' Pretendard SemiBold navy only, no decoration, no quotes.\nTop-left small gray: 'PARENTING NOTE · [번호]'.\nLarge breathing whitespace before headline.\nHeadline COMPACT two lines: '[첫 줄]' navy, '[둘째 줄]' with '[핵심 단어]' underlined in teal #2C6E63.\nSmall subtitle gray: '[부제] · AAP 가이드라인 기준'.\nLARGE minimalist [토픽 관련] line illustration in teal, prominently placed.\nGenerous bottom whitespace. No pixel values as text. No quotes on card.\n\n## BODY 데이터 카드 패턴\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nGENEROUS outer margin all sides.\nTop-right small: '소아과언니' navy, no quotes.\nTop-left small gray label: '[섹션명]'.\nHeadline COMPACT: '[앞부분]' navy, '[핵심 단어]' teal or coral underline.\nStacked/grid cards with REDUCED text (20% smaller) + GENEROUS padding + comfortable spacing.\nEach card: age/category icon top-left + tag label + bold number/text + subtitle.\nNo pixel values as text on card.\n\n## 비교 카드 패턴\nTwo side-by-side cards equal width.\nLeft card teal header / Right card navy header.\nBody light gray: label small gray + main value teal/navy large bold + interval/unit navy.\nBottom coral warning box: ⚠️ + warning text.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' navy, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' navy, '저장하세요' teal underline.\nSource box light gray #F0F4F8 rounded GENEROUS padding, left-aligned.\n출처 (navy small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nGenerous spacing + thin horizontal divider.\n소아과언니 navy bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray small.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 navy.\n소아과수첩 앱 · [CTA] teal.\nNo pixel values. No quotes.\n"
+}

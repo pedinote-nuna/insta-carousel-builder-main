@@ -1,0 +1,40 @@
+{
+  "topic": "newborn-belly-button-care-when-to-see-doctor",
+  "topic_type": "응급정보형",
+  "source_template": "slides.newborn-belly-button-care-when-to-see-doctor.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "배꼽 관리 실수로 응급실 가는 상황 방지 - 강렬한 첫 화면",
+      "prompt": "Portrait 1080x1350 vertical. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36, no decoration. Center ultra-bold typography in coral #FF6B6B: '이런 증상 있으면\n바로 병원!' Size 72pt Pretendard ExtraBold. Below smaller navy text: '신생아 배꼽 응급 신호'. Minimalist, high-impact hook design for reels opening.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "알코올 솜으로 배꼽 소독하는 실제 장면 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical close-up photo. Parent's hand gently holding white cotton swab with alcohol, cleaning newborn baby's umbilical cord stump. Extreme close-up on belly button area, soft natural lighting, clean white bedding background. Focus on careful circular cleaning motion. Realistic medical care demonstration, professional photography, shallow depth of field.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "배꼽 주변 발적/부종 응급 징후 실사 비교",
+      "prompt": "Portrait 1080x1350 vertical split-screen comparison. LEFT side: healthy normal umbilical stump - clean, dry, dark brown color. RIGHT side: warning signs - redness around base, swelling, clinical photography style. Both extreme close-ups of newborn belly area. Soft medical lighting. Small overlay text in coral: '정상 vs 응급'. Educational medical comparison, realistic texture, professional hospital photography quality.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "배꼽 탈락 후 배꼽 모양 확인하는 부모 손 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical close-up photo. Parent's fingers gently checking newborn's healed belly button after cord fell off. Extreme close-up on clean, well-healed navel. Baby lying on white soft blanket. Warm natural window light. Focus on gentle inspection gesture. Reassuring, tender moment. Realistic skin texture, professional maternity photography style, shallow depth of field on belly area.",
+      "file": "7-1.png"
+    }
+  ]
+}

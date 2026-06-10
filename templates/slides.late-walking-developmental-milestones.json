@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Top-left small gray: PARENTING NOTE · 024. Left side upper area: very large bold Korean headline two lines — first line 걸음마 늦는 아이 in deep navy, second line 정상 범위 in coral #C44536. Below headline: small muted gray subtitle 18개월 기준과 검사 시점 · CDC/AAP 가이드. Right side center-bottom: large clean editorial illustration of toddler taking first steps holding parent's hand, line art style in coral and teal, minimal clean strokes, joyful simple expression. Bottom area: thin coral horizontal accent line. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 2022 개정 기준. Large bold headline: 18개월이 새로운 navy, 이정표입니다 coral #C44536. Center: clean editorial illustration of milestone chart with 18 months highlighted, line art coral/navy minimal, calendar or timeline visual. Below illustration: light gray rounded card generous padding. Bold navy text: 2022년 CDC/AAP 가이드라인 개정. Small navy paragraph: 혼자 걷기 이정표를 18개월로 설정 — 75% 이상 아이들이 이 시기까지 독립보행 달성. Teal highlight box: 이전 기준 12개월(50%)에서 변경 → 불필요한 지켜보기 줄이고 조기 개입 촉진. Bottom thin coral divider. Small gray source text right-aligned. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: WHO 연구 데이터. Large bold headline: 9개월부터 17개월까지 navy, 모두 정상 coral #C44536. Center: clean editorial illustration of wide spectrum range visual, line art coral/navy minimal, multiple toddlers at different ages walking. Below: large light gray #F0F0EE rounded card. Bold navy: WHO 독립보행 정상 범위. Large teal numbers: 8.2~17.6개월 (1st-99th percentile). Navy text list with coral bullet points: · 9개월에 걷는 아이, · 17개월에 걷는 아이, · 모두 정상 범위 포함. Small gray box bottom: 97%는 16개월 이전 독립보행 시작, 95%는 9-16개월 사이. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 시기별 이정표. Large bold headline: 12개월·18개월 navy, 체크포인트 coral #C44536. Center: clean editorial illustration of two milestone stages side by side, line art coral/navy minimal. Two comparison cards below. Left card light gray rounded: coral icon 12M + bold navy 가구 잡고 서기 + small gray cruising 옆으로 걷기. Right card light gray rounded: teal icon 18M + bold navy 혼자 걷기 + small gray 독립보행 달성. Below cards: small coral rounded info box. ℹ️ + navy text: 개인차가 큰 발달 영역 — 성격(신중한 기질), 체형(머리 큰 경우), 조산아(교정연령), 이동 효율성(빠른 기어다니기) 등이 영향. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 검사 필요 기준. Large bold headline: 18개월 독립보행 못 하면 navy, 상담 필요 coral #C44536. Center: clean editorial illustration of doctor consultation scene, line art coral/navy minimal, parent with toddler meeting pediatrician. Below: coral outline rounded box generous padding. ⚠️ + bold coral: 18개월까지 혼자 못 걷는 경우 + navy detail text: 소아청소년과 의사 상담 권장. Small gray box below: 16개월 이후 걷기 시작 = 지연된 독립보행(delayed walking) — 비정형 발달 지표로 확립. Bottom thin coral divider. Small gray source text right-aligned. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: AAP 권장 검사. Large bold headline: 정기검진 시 navy, 선별검사 coral #C44536. Center: clean editorial illustration of developmental screening checklist, line art coral/navy minimal, clipboard with checkmarks. Below: light gray #F0F0EE rounded card. Bold navy: AAP 발달 선별검사 권장 시기. Coral bullet list: · 9개월 정기검진, · 18개월 정기검진 + 자폐 선별, · 24개월 자폐 선별, · 30개월 정기검진. Below card: small teal rounded warning box. ⚠️ + navy text: 즉시 평가 필요한 경우 — 다른 이정표(앉기/뒤집기/서기) 함께 지연, 이미 획득한 기능 소실, 근육 긴장도 이상 동반. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 지연 원인. Large bold headline: 조기 발견이 navy, 중요합니다 coral #C44536. Center: clean editorial illustration of medical evaluation concept, line art coral/navy minimal, stethoscope and child silhouette. Below: light gray rounded card. Bold navy: 걷기 지연 가능한 원인. Navy text with coral dash bullets: — 저긴장도(low muscle tone), — 조산, — 신경학적 질환(뇌성마비/근이영양증), — 발달성 고관절 이형성증. Small teal box below: ℹ️ + navy: 조기 발견 중요한 이유 — 발달 지연 확인 빠를수록 치료·학습 중재 일찍 시작 가능. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 집에서 지원. Large bold headline: 우리 아이 navy, 응원하기 coral #C44536. Center: clean editorial illustration of parent encouraging toddler to walk, line art coral/navy minimal, playful supportive scene. Below: light gray #F0F0EE rounded card generous padding. Bold navy: 집에서 할 수 있는 지원. Coral numbered list: 1. 충분한 바닥 놀이 시간(유모차/보행기 최소화), 2. 가구 잡고 서기 연습, 3. 손 잡고 걷기, 4. 밀고 다니는 장난감 제공. Small coral box bottom: ⚠️ + navy: 발달 이정표 놓치거나 우려사항 있다면 기다리지 말고 소아청소년과 상담 + 발달 선별검사 요청. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 with thin coral underline. Source box light gray #F0F0EE rounded generous padding. 출처 navy small bold. · Evidence-Informed Milestones for Developmental Surveillance Tools (Pediatrics, 2022). · CDC's Developmental Milestones (CDC Learn the Signs. Act Early., 2026). · WHO Motor Development Study (Acta Paediatrica, 2006). · Motor Delays: Early Identification and Evaluation (Pediatrics, 2013). Horizontal thin navy divider. Center: 소아과언니 navy bold large — NO quotes NO decoration. Small gray DR.SOA UNNIE · 소아청소년과 전문의. Thin gray horizontal divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 성장 기록 coral. No pixel text on card. No quotes anywhere."
+    }
+  ],
+  "palette": "A",
+  "tone": "editorial-modern",
+  "common_style": "# 에디토리얼 모던 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 흰색 #FAFAF7\n- 텍스트: deep navy #1A1F36\n- 강조 (팔레트 A): coral #C44536\n- 강조 (팔레트 B): teal #2C6E63\n- 카드 배경: light gray #F0F0EE\n- 일러스트: clean line art editorial style (coral/navy 조합)\n- 시그니쳐: 우상단 소아과언니 navy (따옴표 없이 4글자만)\n\n## 팔레트 결정\n- 팔레트 A (coral): 일반 케어·예방법·여행·생활건강\n- 팔레트 B (teal): 수치·기준·데이터 중심\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Editorial modern style. Clean white background #FAFAF7.\nTop-right: 소아과언니 deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nLeft upper: very large bold headline two lines — [첫 줄] deep navy, [핵심 단어] coral #C44536.\nBelow: small muted gray subtitle [부제] · AAP 권장 기준.\nRight center-bottom: LARGE clean editorial illustration [토픽 관련], line art coral/teal minimal.\nBottom: thin coral horizontal accent line.\nNo pixel values. No quotes.\n\n## BODY 패턴 (slide n:2-8)\nPortrait 1080x1350. Editorial modern style. White background #FAFAF7.\nTop-right: 소아과언니 navy small — 4 characters only, no quotes.\nTop-left small coral rounded label: [섹션명].\nLarge bold headline: [앞부분] navy, [마지막 핵심 단어] coral #C44536.\nCenter: clean editorial illustration [토픽 관련], line art coral/navy minimal.\nContent: [리스트 or 카드 구조 — 토픽에 맞게].\nBottom thin coral divider.\nNo pixel text. No quotes.\n\n## 비교 카드 패턴\nTwo comparison cards side by side.\nLeft ✓ card light gray: teal checkmark + bold text + small caption.\nRight ✗ card light gray: coral X + bold text + small caption.\nBottom small gray source text.\n\n## 경고 박스 패턴\nCoral outline rounded box.\n⚠️ + bold coral warning text + navy detail text + small gray source.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Editorial modern style. White background #FAFAF7.\nTop-right: 소아과언니 navy small — 4 characters only, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 thin underline.\nSource box light gray #F0F0EE rounded generous padding.\n출처 (navy small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\n· [출처 4]\nHorizontal thin navy divider.\n소아과언니 navy bold large center — NO quotes, NO decoration.\nDR.SOA UNNIE · 소아청소년과 전문의 gray small.\nThin gray divider.\n@dr.soa_unnie · 매주 새 가이드 navy.\n소아과수첩 앱 · [CTA] coral.\nNo pixel text. No quotes anywhere.\n"
+}

@@ -1,0 +1,40 @@
+{
+  "topic": "baby-nail-trimming-safely",
+  "topic_type": "발달체크형",
+  "source_template": "slides.baby-nail-trimming-safely.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 시선 고정용 충격 훅 - 아기 손톱 깎기 실수 경고",
+      "prompt": "Portrait 1080x1350. Bold typography-focused design. Grid-pattern beige background #F5F0E5 with subtle square grid lines matching notebook style. Center: Large Korean text '아기 손톱 잘못 깎으면\n피가 날 수 있어요' in deep navy #2C3E50, bold weight, 72pt, center-aligned with dramatic line breaks. Small red warning icon (!) top-right corner. Bottom: Small handwritten label 'BABY NAIL CARE GUIDE' in muted gray. Clean, urgent, attention-grabbing layout with ample white space. Soft drop shadow under main text for depth.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-action",
+      "purpose": "자는 아기 손 클로즈업 - STEP 01 타이밍 실사 보충",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up shot. Soft natural window light. Baby sleeping peacefully with tiny hand resting on white cotton blanket. Focus on baby's relaxed fingers and small curved nails. Shallow depth of field, blurred background. Warm beige tone (#F5F0E5) color grading matching notebook style. Top-left overlay: Small translucent label 'STEP 01 · 잠들었을 때' in white with subtle shadow. Gentle, calm, nurturing atmosphere. Shot from 45-degree angle above.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 4,
+      "role": "reels-action",
+      "purpose": "손톱깎이 도구 실사 - STEP 02 도구 선택 시각화",
+      "prompt": "Portrait 1080x1350. Photorealistic product shot. Flat lay on beige grid-pattern surface (#F5F0E5). Three baby nail care tools arranged horizontally: baby nail scissors (left), baby nail clipper (center), baby nail file (right). Soft diffused studio lighting. Clean shadows. Top-center overlay: Small label 'STEP 02 · 안전한 도구' in deep navy. Tools shown at slight angle for dimension. Professional e-commerce style photography. Crisp focus, warm tone matching notebook aesthetic.",
+      "file": "4-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 5,
+      "role": "reels-action",
+      "purpose": "손톱 깎는 손동작 클로즈업 - STEP 03 테크닉 실사 시연",
+      "prompt": "Portrait 1080x1350. Photorealistic extreme close-up. Adult hand gently holding baby's tiny finger, trimming nail with baby nail clipper. Focus on clipper blade positioning slightly below fingertip. Soft natural light from left. Shallow depth of field, background softly blurred to beige (#F5F0E5). Top-left overlay: Small label 'STEP 03 · 살 피하기' in white with shadow. Warm skin tones, safe and caring gesture. Shot from side angle showing proper technique clearly.",
+      "file": "5-1.png"
+    }
+  ]
+}

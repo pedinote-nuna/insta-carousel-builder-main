@@ -1,0 +1,40 @@
+{
+  "topic": "baby-seizures-what-to-do",
+  "topic_type": "응급정보형",
+  "source_template": "slides.baby-seizures-what-to-do.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 주목 유도 - 부모 최대 공포 자극",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: massive bold white Korean text '아이가 경련해요' (My child is having a seizure), extremely large font size covering 40% of canvas, heavy weight 900. Below in smaller red #E63946 bold text: '지금 당장 해야 할 일'. Typography-only design, no illustrations, no icons. Urgent emergency poster aesthetic. High contrast white on dark navy.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-explanation",
+      "purpose": "옆으로 눕히기 실사 시연",
+      "prompt": "Portrait 1080x1350 vertical photorealistic close-up. Young Asian parent's hands gently turning a baby (6-12 months old) onto their side on a soft beige floor mat. Baby lying on left side in recovery position. Hands wearing simple white long-sleeve shirt. Soft natural window light from left. Focus on the gentle rolling motion, hands supporting baby's head and shoulder. Clean minimal home interior background slightly blurred. Shot from 45-degree angle above. Calm caregiving moment despite emergency context.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-explanation",
+      "purpose": "타이머 확인 실사 - 5분 측정 중요성 강조",
+      "prompt": "Portrait 1080x1350 vertical photorealistic close-up. Asian parent's hand holding smartphone showing stopwatch timer app running at 00:04:23 (4 minutes 23 seconds). Screen bright and clear. Other hand slightly blurred in background near a baby lying on soft surface (baby out of focus, only suggesting presence). Anxious but focused atmosphere. Natural indoor lighting. Shot from above at 60-degree angle. Modern minimal aesthetic, clean background. Timer digits large and prominent on phone screen.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 6,
+      "role": "reels-explanation",
+      "purpose": "119 응급전화 실사 - 즉시 행동 촉구",
+      "prompt": "Portrait 1080x1350 vertical photorealistic close-up. Asian parent's hand holding smartphone with emergency call screen showing '119' in large digits ready to dial. Finger hovering over green call button. Urgent but controlled gesture. Soft natural light. Background blurred showing edge of baby mat/blanket suggesting emergency context. Shot from straight-on angle. Clean modern phone interface. Tense moment captured with sharp focus on phone screen and hand.",
+      "file": "6-1.png"
+    }
+  ]
+}

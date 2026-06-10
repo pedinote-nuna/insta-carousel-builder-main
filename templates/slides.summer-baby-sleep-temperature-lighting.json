@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: '소아과언니' Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes. Top-left small gray: 'PARENTING NOTE · 011'. Large breathing whitespace before headline. Headline COMPACT two lines: '잠 못 자는 여름 밤 아기' navy, '온도·조도 세팅 기준' with '세팅 기준' underlined in teal #2C6E63. Small subtitle gray: 'AAP 권장 환경 가이드라인 · 2022'. LARGE minimalist line illustration of sleeping baby in crib with thermometer and moon icon, teal and coral accents, prominently placed center-right. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: '소아과언니' navy, no quotes. Top-left small coral rounded label: '온도 기준'. Headline COMPACT: '수면 환경 온도는' navy, '20~22°C' teal #2C6E63 underline. Large thermometer illustration center, minimal line art teal/coral. Below: single large info card light gray #F0F4F8 rounded, GENEROUS padding. Card content top-aligned: small gray label 'AAP 권장', large bold '20~22°C' teal, subtitle navy '(68~72°F)'. Below card: coral warning box rounded: '⚠️ 과열은 SIDS 위험 증가' coral #C44536 text. Comfortable spacing between elements. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: '소아과언니' navy, no quotes. Top-left small teal rounded label: '체온 확인'. Headline COMPACT: '손발이 아닌' navy, '목 뒤·가슴 확인' teal underline. Center: illustration of baby torso with hand checking neck/chest area, minimal line art coral/navy. Below: two stacked cards light gray #F0F4F8, REDUCED text 20% smaller, GENEROUS padding. Card 1: '✓ 정확한 위치' navy bold + 'ㆍ목 뒤 ㆍ가슴' navy. Card 2: '⚠️ 과열 증상' coral bold + 'ㆍ땀 ㆍ가슴 열감 ㆍ피부 홍조' navy. Comfortable card spacing. No pixel values. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: '소아과언니' navy, no quotes. Top-left small teal rounded label: '옷차림'. Headline COMPACT: '어른보다' navy, '한 겹 더' teal underline. Large illustration center: layered clothing icon with baby onesie, minimal teal/coral. Below: two key info cards light gray #F0F4F8 stacked, GENEROUS padding, REDUCED text. Card 1: small gray label '수면 시 적정' + large bold '어른 + 1겹' teal + navy subtitle '얇은 수면조끼 권장'. Card 2: small gray label '금지' + large bold '실내 모자 X' coral + navy subtitle '머리로 체온 조절'. Coral accent line bottom. No pixel values. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: '소아과언니' navy, no quotes. Top-left small teal rounded label: '안전 도구'. Headline COMPACT: '담요 대신' navy, '수면조끼·선풍기' teal underline. Center: two side-by-side illustrations, sleep sack (left) and fan (right), minimal line art teal/navy. Below: two equal-width cards side-by-side light gray #F0F4F8, GENEROUS padding. Left card: small icon sleep sack + 'Sleep Sack' gray label + '✓ 안전한 보온' teal bold + '질식 위험 없음' navy. Right card: small fan icon + '선풍기' gray label + '✓ 공기 순환' navy bold + '아기에게 직접 향하지 않게' coral small. No pixel values. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: '소아과언니' navy, no quotes. Top-left small coral rounded label: '조명 기준'. Headline COMPACT: '밤 수면은' navy, '어두운 환경' coral #C44536 underline. Large moon and sleeping baby illustration center, minimal line art navy/teal. Below: single large info card light gray #F0F4F8 rounded, GENEROUS padding. Card top: small gray label '멜라토닌 분비 촉진' + large bold '완전 암실' navy + subtitle teal '생후 3-4개월부터 일주기 확립'. Bottom: small coral accent box '낮-밤 구분 학습 중요'. Comfortable spacing. No pixel values. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: '소아과언니' navy, no quotes. Top-left small teal rounded label: '야간 조명'. Headline COMPACT: '수유·기저귀 갈 때' navy, '붉은색 약한 조명' teal underline. Center: illustration of red night light bulb icon, minimal line art coral. Below: single large card light gray #F0F4F8 rounded, GENEROUS padding, REDUCED text. Card content: small gray label '권장 색상' + large bold '붉은색(Red)' coral #C44536 + navy subtitle '멜라토닌 억제 최소화'. Below card: small info box light teal background #E8F4F2 rounded: 'ℹ️ 다른 파장의 빛은 수면 방해' navy small. No pixel values. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: '소아과언니' navy, no quotes. Top-left small teal rounded label: '낮잠 조명'. Headline COMPACT: '낮잠 시간에는' navy, '약간의 빛 유지' teal underline. Center: illustration of curtain with partial light coming through, sun icon, minimal line art teal/navy. Below: two stacked cards light gray #F0F4F8, GENEROUS padding, REDUCED text. Card 1: small gray label '낮잠 환경' + large bold '완전 암실 X' navy + subtitle teal '낮-밤 구분 학습'. Card 2: small gray label '주간 활동' + large bold '자연광 노출' teal + navy subtitle '밤 수면 질 향상'. Coral accent line bottom. No pixel values. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right: '소아과언니' navy, no quotes. Top-center small gray: 'SAVE & SHARE'. Headline COMPACT: '오늘 확인하고' navy, '저장하세요' teal #2C6E63 underline. Source box light gray #F0F4F8 rounded GENEROUS padding, left-aligned. 출처 (navy small bold), · AAP Sleep-Related Infant Deaths 2022 Recommendations, · AAP HealthyChildren.org Safe Sleep Guide, · European Journal of Pediatrics 2024 Light Exposure Study, · Pediatric Sleep Research Literature. Generous spacing + thin horizontal divider navy. 소아과언니 navy bold large center (NO quotes). DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 수면 문제 진료 전 메모해두기 teal. No pixel values. No quotes."
+    }
+  ],
+  "palette": "A",
+  "tone": "clean-infographic",
+  "common_style": "# 클린 인포그래픽 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 흰색 #FFFFFF\n- 텍스트: deep navy #1A1F36\n- 강조: teal #2C6E63\n- 경고: coral #C44536\n- 카드 배경: light gray #F0F4F8\n- VERY GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 20% 작게 (빽빽함 방지)\n- 시그니쳐: 우상단 소아과언니 (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin on all four sides.\nTop-right small: '소아과언니' Pretendard SemiBold navy only, no decoration, no quotes.\nTop-left small gray: 'PARENTING NOTE · [번호]'.\nLarge breathing whitespace before headline.\nHeadline COMPACT two lines: '[첫 줄]' navy, '[둘째 줄]' with '[핵심 단어]' underlined in teal #2C6E63.\nSmall subtitle gray: '[부제] · AAP 가이드라인 기준'.\nLARGE minimalist [토픽 관련] line illustration in teal, prominently placed.\nGenerous bottom whitespace. No pixel values as text. No quotes on card.\n\n## BODY 데이터 카드 패턴\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nGENEROUS outer margin all sides.\nTop-right small: '소아과언니' navy, no quotes.\nTop-left small gray label: '[섹션명]'.\nHeadline COMPACT: '[앞부분]' navy, '[핵심 단어]' teal or coral underline.\nStacked/grid cards with REDUCED text (20% smaller) + GENEROUS padding + comfortable spacing.\nEach card: age/category icon top-left + tag label + bold number/text + subtitle.\nNo pixel values as text on card.\n\n## 비교 카드 패턴\nTwo side-by-side cards equal width.\nLeft card teal header / Right card navy header.\nBody light gray: label small gray + main value teal/navy large bold + interval/unit navy.\nBottom coral warning box: ⚠️ + warning text.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' navy, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' navy, '저장하세요' teal underline.\nSource box light gray #F0F4F8 rounded GENEROUS padding, left-aligned.\n출처 (navy small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nGenerous spacing + thin horizontal divider.\n소아과언니 navy bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray small.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 navy.\n소아과수첩 앱 · [CTA] teal.\nNo pixel values. No quotes.\n"
+}

@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Top: bold red #E63946 stripe full width + COMPACT white text '기도폐쇄 긴급 가이드'. Top-right below stripe: '소아과언니' white Pretendard SemiBold small, no quotes. Headline COMPACT (25% smaller): '목 막힘' white bold, '4분이 생명' bright red #E63946. Small white subtitle: '아이 목에 이물질 걸렸을 때 · 2025 AHA/AAP 가이드라인'. LARGE prominent line illustration of child choking with hand on throat, white outline on dark background, urgent expression. Bottom-left small gray: 'PARENTING NOTE · 011'. No pixel values. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Top-left red rounded label: '왜 위험한가요'. Headline COMPACT: '산소가 4분 이상 가지 못하면' white, '뇌손상·사망' bright red #E63946. Center: LARGE line illustration of brain with red warning symbols and clock showing 4 minutes, white outline style. Below illustration: dark card #1A2B3C rounded with red left border, COMPACT white text '5세 미만 어린이 기도폐쇄 사망률 가장 높음 · 75%는 1세 미만'. Small icon of warning triangle red bottom-right. No pixel values. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Top-left mint rounded label: '긴급 신호 확인 ✓'. Headline COMPACT: '완전 기도폐쇄' white, '이렇게 보입니다' mint #2EC4B6. Center area: 4 rounded cards #1A2B3C stacked vertically, GENEROUS spacing. Each card: SMALL LINE ILLUSTRATION ICON left (hand on throat, no speech, no cough, blue face) + COMPACT white text right ('목을 움켜쥠', '말할 수 없음', '기침할 수 없음', '얼굴 청색증'). Mint outlined border around all cards. No pixel values. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Top-left mint rounded label: '기침 가능할 때 ✓'. Headline COMPACT: '효과적으로 기침한다면' white, '계속 기침하게' mint #2EC4B6. Center: LARGE illustration of child coughing effectively with mint arrow showing outward movement, white line art. Below: mint rounded box with COMPACT white text '기침으로 이물질 배출 유도 · 기침으로도 안 나오면 즉시 119'. Bottom: small icon of phone with 119, mint glow. No pixel values. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Top-left mint rounded label: '1세 이상 처치 ① ✓'. Headline COMPACT: '등 두드리기' mint #2EC4B6, '5회' white. Center: LARGE detailed illustration showing back blows technique - child leaning forward, hand striking between shoulder blades, white line art with mint accent arrows. Below illustration: mint outlined box with numbered steps, COMPACT white text '1. 아이를 앞으로 숙임 · 2. 양 어깨뼈 사이 · 3. 손바닥 뒤꿈치로 강하게 · 4. 5회 반복'. Small mint ✓ icon bottom-right. No pixel values. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Top-left mint rounded label: '1세 이상 처치 ② ✓'. Headline COMPACT: '복부 밀어올리기' mint #2EC4B6, '하임리히법' white. Center: LARGE detailed illustration showing Heimlich maneuver - fist position between navel and sternum, upward thrust motion, white line art with mint directional arrows. Below: mint outlined box with numbered steps, COMPACT white text '1. 배꼽과 명치 사이에 주먹 · 2. 빠르게 위로 밀어올림 · 3. 5회 시행 · 4. 등 두드리기와 교대 반복'. Bottom small text white: '이물질 배출 또는 의식 잃을 때까지'. No pixel values. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Top-left mint rounded label: '1세 미만 처치 ✓'. Headline COMPACT: '영아는 가슴 압박으로' white, '복부 밀기 금지' red #E63946. Center: TWO large illustrations side by side. Left: infant back blows on forearm (head lower), white line art mint. Right: infant chest thrusts (two fingers on sternum), white line art mint. Below each: COMPACT white text '등 두드리기 5회 · 어깨뼈 사이 손바닥' and '가슴 압박 5회 · 젖꼭지선 아래 흉골'. Red warning box bottom: '복부 손상 위험 · 복부 밀기 절대 금지'. No pixel values. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Full-width bright red #E63946 header bar top: '의식 잃으면 즉시 119' white bold. Center: LARGE illustration of ambulance with red emergency lights, white line art with red glow. Below: numbered items with red circle numbers, COMPACT white text, GENEROUS vertical spacing '1. 즉시 119 신고 · 2. 심폐소생술 CPR 시작 · 3. 이물질 보이면 손가락 제거 · 4. 안 보이면 절대 휘저어 찾지 마세요'. Large red rounded border around all items. Bottom red box: '하임리히 후 반드시 병원 확인 · 복부 장기 손상 가능성'. No pixel values. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A. VERY GENEROUS outer margin. Top-right: '소아과언니' white small, no quotes. Top-center small gray: 'SAVE & SHARE'. Headline COMPACT: '오늘 확인하고' white, '저장하세요' mint #2EC4B6 underline. Source box dark #1A2B3C rounded GENEROUS padding. 출처 (white small bold) · 2025 AHA/AAP 소아 기본소생술 가이드라인 · 질병관리청 심폐소생술 국가건강정보포털 · AAP 기도폐쇄 예방 및 응급처치 가이드 · 중앙응급의료센터 기본응급처치. Thin white divider. 소아과언니 white bold large center (NO quotes). DR.SOA UNNIE · 소아청소년과 전문의 gray. Thin divider. @dr.soa_unnie · 매주 새 가이드 white. 소아과수첩 앱 · 야간 달빛병원 바로 찾기 mint. No pixel values. No quotes."
+    }
+  ],
+  "palette": "B",
+  "tone": "emergency-alert",
+  "common_style": "# 경고·긴급 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 짙은 네이비 #0D1B2A\n- 텍스트: 흰색 #FFFFFF\n- 긴급 강조: bright red #E63946\n- 안전/긍정: mint #2EC4B6\n- 카드 배경: #1A2B3C\n- GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 25% 작게\n- 슬라이드마다 아이콘/일러스트 필수\n- 시그니쳐: 우상단 소아과언니 white (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A.\nGENEROUS outer margin all sides.\nTop: bold red #E63946 stripe full width + COMPACT white text '[토픽] 긴급 가이드'.\nTop-right below stripe: '소아과언니' white Pretendard SemiBold small, no quotes.\nHeadline COMPACT (25% smaller): '[첫 줄]' white bold, '[핵심 긴급 표현]' bright red #E63946.\nSmall white subtitle: '[부제] · AAP 가이드라인 기준'.\nLARGE prominent line illustration [토픽 관련 응급 장면] white outline on dark background.\nBottom-left small gray: 'PARENTING NOTE · [번호]'.\nNo pixel values. No quotes.\n\n## 금지 항목 패턴 (❌ 슬라이드)\nDark navy background.\nTop-left red rounded label: '절대 하지 마세요 ❌'.\nHeadline COMPACT: '[내용]' white, '[핵심]' red.\nRows stacked: SMALL LINE ILLUSTRATION ICON left (red ❌ overlay) + COMPACT white text right.\nRed outlined box around all rows, comfortable padding.\nNo pixel values.\n\n## 행동 항목 패턴 (✓ 슬라이드)\nDark navy background.\nTop-left mint rounded label: '[행동] ✓'.\nHeadline COMPACT: '[내용]' white, '[핵심]' mint #2EC4B6.\nRows stacked: SMALL ICON left (mint ✓ overlay) + COMPACT white text right, GENEROUS spacing.\nMint outlined box around all rows.\nNo pixel values.\n\n## 119 패턴\nFull-width bright red header bar + white bold '[긴급 행동]'.\nLARGE relevant illustration center (구급차/응급 아이콘).\nNumbered items: red number + white text, GENEROUS spacing.\nLarge red rounded border around items.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' white small, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' white, '저장하세요' mint underline.\nSource box dark #1A2B3C rounded GENEROUS padding.\n출처 (white small bold)\n· [출처 1]\n· [출처 2]\nThin white divider.\n소아과언니 white bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 white.\n소아과수첩 앱 · [CTA] mint.\nNo pixel values. No quotes.\n"
+}

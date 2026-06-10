@@ -1,0 +1,40 @@
+{
+  "topic": "insect-sting-anaphylaxis-first-aid",
+  "topic_type": "응급정보형",
+  "source_template": "slides.insect-sting-anaphylaxis-first-aid.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 첫 2초 훅 - 아나필락시스 긴급 경고",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: ultra-bold giant white text '벌 쏘인 후\n호흡곤란?' stacked vertically, each line centered, maximum font size 120pt, heavy weight. Below center: bright red #E63946 rounded rectangle badge with compact white bold text '아나필락시스 쇼크'. Bottom: small mint #2EC4B6 sans-serif text '지금 바로 119'. Minimal design. High contrast. Korean typography optimized. No person. No decoration. Emergency poster aesthetic.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 2,
+      "role": "reels-visual",
+      "purpose": "아나필락시스 증상 실사 - 목 부위 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical close-up photograph. Child's neck and lower face area, natural skin tone, slightly flushed. Child's hand gently touching throat area showing discomfort. Soft natural indoor lighting. Slightly worried expression visible on lower face. Clean white or light gray background. Medical emergency context. Realistic skin texture. No text overlay. Photorealistic style. Shallow depth of field focusing on neck and hand gesture. Korean baby, East Asian facial features, chubby cheeks",
+      "file": "2-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 4,
+      "role": "reels-visual",
+      "purpose": "에피펜 주사 실사 - 허벅지 투여 장면",
+      "prompt": "Portrait 1080x1350 vertical close-up photograph. EpiPen auto-injector being held against outer thigh of child wearing light-colored shorts or pants. Adult hand firmly gripping orange EpiPen device at 90-degree angle to thigh. Clear view of injection site on lateral thigh muscle. Bright clean lighting. Medical emergency action shot. Realistic textures. No face visible, focus on hands and injection technique. Photorealistic style. Neutral background blurred. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "4-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "119 신고 실사 - 스마트폰 긴급통화 화면",
+      "prompt": "Portrait 1080x1350 vertical close-up photograph. Adult hand holding smartphone showing emergency call screen dialing 119. Screen display clearly visible with large '119' numbers and 'Emergency Call' or Korean '긴급통화' text. Bright phone screen illuminated. Blurred background suggesting indoor emergency situation. Finger hovering over or pressing call button. Realistic smartphone UI. Urgent atmosphere. Photorealistic style. Shallow depth of field with phone screen in sharp focus.",
+      "file": "7-1.png"
+    }
+  ]
+}

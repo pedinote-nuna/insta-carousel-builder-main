@@ -1,0 +1,40 @@
+{
+  "topic": "summer-parenting-myths",
+  "topic_type": "보관관리형",
+  "source_template": "slides.summer-parenting-myths.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 안에 시청자를 멈추게 하는 충격적 메시지",
+      "prompt": "Portrait 1080x1350. Bold typography style. Deep black background #111111. No illustrations. Top-right: 소아과언니 gray #888888 Pretendard SemiBold small — 4 characters only, no quotes. Center: massive bold white Korean headline '여름 육아\n이거 다 거짓말이에요' Pretendard ExtraBold 72pt, line-height 1.2. Bottom: small red rounded pill label '5가지 오해' 32pt. Minimal clean design, high contrast, attention-grabbing typography, professional medical content style.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "머리카락을 묶는 행동을 실사로 보여주는 장면",
+      "prompt": "Portrait 1080x1350. Close-up photo of parent's hands gently tying a young child's hair into a ponytail from behind. Natural indoor lighting. Child wearing light summer clothing. Soft focus on background, sharp focus on hands and hair. Warm tone, candid moment, summer parenting concept. Clean minimal composition, professional photography style.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "자외선 차단제를 바르는 행동을 실사로 보여주는 장면",
+      "prompt": "Portrait 1080x1350. Close-up photo of parent's hand applying white sunscreen cream on child's arm outdoors. Bright natural daylight. Child's skin visible, sunscreen being spread gently. Blurred green park or outdoor background. Focus on the application gesture. Clean, bright, summer safety concept. Professional photography, warm and caring mood.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "물놀이 후 귀를 닦는 행동을 실사로 보여주는 장면",
+      "prompt": "Portrait 1080x1350. Close-up photo of parent gently wiping child's ear with soft white towel after swimming. Child's head tilted slightly. Bathroom or poolside setting, soft indoor lighting. Focus on caring hand gesture and towel. Child's face partially visible but not full frontal. Clean, hygienic, summer care concept. Professional photography, calm and gentle mood.",
+      "file": "7-1.png"
+    }
+  ]
+}

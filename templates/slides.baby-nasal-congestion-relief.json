@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Center: large warm brown bold headline 아기 코막힘, two lines, second line 뚫는 순서 with teal green #2C7A5C underline. Below: small gray subtitle 식염수와 흡입 단계별 가이드 · AAP 권장. Bottom center: LARGE cute character illustration of chubby baby with slightly stuffy nose, warm cozy pastel colors, mother gently holding baby, soft tissue box nearby, warm gentle atmosphere. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 왜 중요한가요. Large bold headline: 아기는 코로만 warm brown, 숨을 쉬어요 teal green #2C7A5C with underline. Center: large cute character illustration of chubby baby breathing through nose, gentle air flow lines illustrated, warm pastel blue and pink tones. Below illustration: light cream card #FFF0E0 rounded with warm brown text: 신생아와 영아는 의무적 비호흡자로 코막힘이 수유와 수면에 직접 영향을 줍니다. Small teal icon corner. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: AAP 권장 방법. Large bold headline: 식염수와 warm brown, 흡입기 사용 teal green #2C7A5C with underline. Center: two large items in vertical stack. First: cute illustrated saline drops bottle with sparkle, warm pastel colors. Second: cute illustrated bulb syringe character with gentle smile, soft pink tone. Light cream card #FFF0E0 below: AAP는 식염수 방울과 bulb syringe 사용을 호흡기 감염 코막힘 치료로 권장합니다. Small teal checkmark corner. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 연구 결과. Large bold headline: 식염수와 흡입 warm brown, 함께 가장 효과적 teal green #2C7A5C with underline. Center: large cute character illustration showing before/after concept, chubby baby character on left with stuffy nose (gentle blue tone), arrow pointing right, same baby smiling with clear nose (warm happy colors). Light cream card #FFF0E0 rounded below: 식염수 단독도 도움이 되지만 식염수와 흡인을 함께 사용하면 가장 효과적입니다. Small teal plus icon corner. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: STEP 1. Large bold headline: 식염수 warm brown, 3-4방울 넣기 teal green #2C7A5C with underline. Center: large cute step-by-step illustration. Top: cute saline bottle dropping into baby nose (gentle pastel blue drops). Middle: cute baby character head tilted back gently, warm pink cheeks. Bottom: small clock icon showing 1 minute wait. Light cream card #FFF0E0 rounded: 각 콧구멍에 3-4방울 넣은 후 머리를 뒤로 젖힌 채 약 1분 유지하여 점액이 묽어지도록 합니다. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: STEP 2. Large bold headline: Bulb syringe warm brown, 부드럽게 흡입 teal green #2C7A5C with underline. Center: large cute step-by-step illustration in three stages vertically. Stage 1: bulb syringe squeezed (air out), warm pink tone. Stage 2: gentle insertion into baby nose, baby character calm. Stage 3: slow release, gentle suction, warm cozy colors. Light cream card #FFF0E0 rounded: 공기를 짜낸 상태로 콧구멍에 부드럽게 삽입 후 천천히 놓아 흡입합니다. 깊은 흡인은 하지 않습니다. Small teal gentle icon corner. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral rounded label: 주의사항. Large bold headline: 하루 warm brown, 2-3회만 coral #E05C3A with underline. Center: cute character illustration of calendar with 2-3 checkmarks in warm teal, cute baby character happy on left, gentle warning icon (soft coral tone, NOT harsh) on right. Light cream card #FFF0E0 rounded: 너무 자주 하면 코 내부가 건조해지고 출혈이 발생할 수 있습니다. 하루 2-3회로 제한하세요. Small coral gentle warning icon corner. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 최적 타이밍. Large bold headline: 수유 전과 warm brown, 취침 전 teal green #2C7A5C with underline. Center: two large cute illustrations in 2x1 grid. Left card light cream #FFF0E0: cute baby drinking bottle happily, warm pastel colors, small teal icon corner, label 수유 전. Right card light cream #FFF0E0: cute baby sleeping peacefully with gentle moon icon, warm cozy colors, small teal icon corner, label 취침 전. Below: small warm brown text card: 코를 뚫어주면 아기가 더 편하게 먹고 잘 수 있습니다. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline center: 오늘 확인하고 warm brown, 저장하세요 teal green #2C7A5C with underline. Source box light cream #FFF0E0 rounded, warm brown text. 출처 warm brown bold. AAP Bronchiolitis Guideline 2014. Contemporary Pediatrics 2026. Nationwide Children's Hospital. CHKD Patient Education. Warm brown thin divider. 소아과언니 warm brown bold large center, NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 성장 기록으로 호흡 패턴 체크 teal green. Cute character illustrations around: tiny baby icon, saline drop icon, bulb syringe icon in warm pastel tones. No pixel text. No quotes anywhere."
+    }
+  ],
+  "palette": "A",
+  "tone": "character-illustration",
+  "common_style": "# 캐릭터 일러스트 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 소프트 파스텔 베이지 #FFF8F0\n- 텍스트: 웜 브라운 #3D2B1F\n- 강조: teal green #2C7A5C\n- 경고: coral #E05C3A\n- 카드 배경: 크림 #FFF0E0\n- 일러스트: 따뜻한 수채화풍 아기/엄마/음식 캐릭터 (cute, chubby, warm)\n- 시그니쳐: 우상단 소아과언니 warm brown (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nCenter: large warm brown bold headline [토픽 핵심어], two lines, [둘째 줄] with teal green #2C7A5C underline.\nBelow: small gray subtitle [부제] · AAP 권장 기준.\nBottom center: LARGE cute character illustration [토픽 관련 귀여운 아기/엄마 장면], warm cozy colors, chubby characters.\nNo pixel text. No quotes.\n\n## 2x2 그리드 패턴\nFour cards in 2x2 grid, each light cream #FFF0E0 rounded.\nEach card: cute character illustration inside + Korean label below.\nSmall teal checkmark corner.\nWarm pastel colors throughout.\n\n## 금지 항목 패턴 (귀여운 X)\nFour forbidden food/item cards in 2x2 grid.\nEach: cute illustrated item with red X overlay + Korean label + reason.\nWarm background maintained (NOT dark).\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown small, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline.\nSource box cream #FFF0E0 rounded.\n출처 (warm brown small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nWarm brown divider line.\n소아과언니 warm brown bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nDivider.\n@dr.soa_unnie · 매주 새 가이드 warm brown.\n소아과수첩 앱 · [CTA] teal.\nNo pixel text. No quotes.\nCute character illustrations around brand block (doctor/baby/food icons).\n"
+}

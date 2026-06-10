@@ -1,0 +1,40 @@
+{
+  "topic": "card-20260530-003",
+  "topic_type": "응급정보형",
+  "source_template": "slides.card-20260530-003.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "훅 - 부모의 불안을 자극하는 충격적 한 줄 메시지",
+      "prompt": "Portrait 1080x1350. Bold typography-focused design. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold small, no decoration. Center: giant bold headline in coral red #E05C3A Pretendard ExtraBold 80pt: 이 색깔 변이면\n당장 응급실! Below in warm brown regular 32pt: 아기 변 색깔로 보는 건강 신호. Simple diaper icon illustration bottom-right corner, soft shadow. Clean minimalist layout, high contrast text for instant readability. No photos, pure typography impact.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "빨간 변 실사 - 응급 상황 시각화",
+      "prompt": "Portrait 1080x1350. Ultra close-up photorealistic shot. Baby diaper with bright red bloody stool visible (medical stock photo style). Parent's hand wearing latex glove gently opening diaper edge. Soft natural lighting from top. Blurred warm bedroom background. Top-right overlay: 소아과언니 warm brown small text. Top-left coral #E05C3A rounded label: 빨간 변. Bottom overlay semi-transparent white bar with bold coral text: 즉시 응급실 방문. Clinical yet warm tone, documentary medical photography style. Sharp focus on red stool, shallow depth of field.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "정상 변 실사 - 안심시키는 클로즈업",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up. Baby diaper with healthy yellow-brown mustard-like stool (breastfed baby stool). Parent's hand without glove gently holding diaper corner. Soft morning light from window. Clean white changing mat background slightly blurred. Top-right overlay: 소아과언니 warm brown small text. Top-left teal #2C7A5C rounded label: 정상 변. Bottom overlay semi-transparent white bar with bold teal text: 걱정하지 마세요. Reassuring warm color grading, lifestyle photography feel, soft focus edges.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "체크 포인트 실사 - 행동 유도 장면",
+      "prompt": "Portrait 1080x1350. Photorealistic overhead shot. Parent's hands holding smartphone taking photo of baby diaper (seen from above). Diaper with visible stool in frame. Modern smartphone screen showing camera interface. Clean white changing table surface. Soft diffused lighting. Top-right overlay: 소아과언니 warm brown small text. Top-left warm brown #3D2B1F rounded label: 체크 포인트. Bottom overlay semi-transparent white bar with bold brown text: 사진 찍어서 기록하세요. Natural hands-on parenting moment, documentary style, warm neutral tones.",
+      "file": "7-1.png"
+    }
+  ]
+}

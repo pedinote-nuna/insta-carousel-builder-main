@@ -1,0 +1,40 @@
+{
+  "topic": "infant-hydration-water",
+  "topic_type": "발달체크형",
+  "source_template": "slides.infant-hydration-water.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "시청자를 멈추게 하는 충격적 질문 훅",
+      "prompt": "Portrait 1080x1350. Bold typography design. Soft pastel background #FFF8F0. Top-right corner: '소아과언니' in warm brown #3D2B1F, Pretendard SemiBold, small size, no decoration. Center: Large impactful headline in warm brown #3D2B1F, Pretendard ExtraBold: '6개월 전 아기에게\n물 먹이면 안 되는 이유' split into two lines, center-aligned. Below headline: Small coral #E05C3A rounded label with white text '위험' positioned slightly left. Bottom third: Subtle illustration of a baby bottle with water droplets, soft shadow, minimal style. Clean margins, warm friendly atmosphere, no face, typography-focused design.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-explanation",
+      "purpose": "아기 신장 미성숙을 보여주는 실사 클로즈업",
+      "prompt": "Portrait 1080x1350. Close-up photograph. Soft natural lighting. Focus on tiny infant hand (under 6 months) being gently held by adult hand, showing size comparison. Soft pastel background blur #FFF8F0. Top-right corner: '소아과언니' in warm brown small text. Top-left: Small teal rounded label '미성숙한 신장'. Warm skin tones, gentle touch, emphasizing fragility and smallness. Shallow depth of field, tender moment, medical educational context, no face visible, hands only, realistic photography style.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-explanation",
+      "purpose": "이유식과 함께 물을 주는 장면 실사",
+      "prompt": "Portrait 1080x1350. Close-up photograph. Natural daylight. Overhead view of baby spoon with pureed food and small sippy cup with water on clean white feeding tray. Soft pastel background #FFF8F0 visible around edges. Top-right corner: '소아과언니' in warm brown small text. Top-left: Small teal rounded label '6개월부터'. Warm color palette, fresh food textures, clean presentation, educational feeding moment, no people visible, focus on food and water setup, realistic product photography style.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-explanation",
+      "purpose": "탈수 증상 체크 - 기저귀 확인 실사",
+      "prompt": "Portrait 1080x1350. Close-up photograph. Soft natural lighting. Parent's hands gently checking baby diaper, focus on hands and diaper area, baby's torso visible but no face. Soft pastel background #FFF8F0. Top-right corner: '소아과언니' in warm brown small text. Top-left: Small coral #E05C3A rounded label '탈수 신호'. Clean white diaper, caring gesture, medical check context, warm skin tones, educational demonstration, realistic photography style, tender parenting moment.",
+      "file": "7-1.png"
+    }
+  ]
+}

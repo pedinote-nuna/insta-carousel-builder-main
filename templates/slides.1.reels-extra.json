@@ -1,0 +1,40 @@
+{
+  "topic": "1",
+  "topic_type": "응급정보형",
+  "source_template": "slides.1.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 시작 2초 안에 시청자를 멈추게 하는 충격적 훅 메시지",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: massive bold white typography '화상 입었을 때' top line, bright red #E63946 bold text '절대 하면 안 되는 것' bottom line, huge font size 72pt+, ultra-bold weight, centered alignment, dramatic spacing between lines. No person, no objects, pure typography impact. High contrast, minimal design, emergency warning mood.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "찬물로 화상 부위 식히는 실제 행동 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up. Adult hand gently holding child's small burned forearm under running cool tap water in white ceramic sink. Water flowing smoothly over red skin area. Soft bathroom lighting, blurred background, focus on water stream and skin contact. Medical care mood, gentle action, safety demonstration. Clean modern home setting. No face visible, hands and forearm only.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "물집을 터뜨리려는 금지 행동 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic extreme close-up. Adult hand holding sharp needle approaching clear water-filled blister on child's pink skin. STOP gesture overlay: bold red X mark or red circle-slash symbol over the needle. Dramatic lighting, shallow depth of field, blurred background. Warning mood, prohibited action demonstration. Skin texture visible, medical prohibition concept. No face, hand and blister only.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 6,
+      "role": "reels-visual",
+      "purpose": "민간요법(된장/감자 등) 금지 행동 실사",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up. Adult hand holding small bowl of yellow-brown soybean paste (된장) or raw potato slice approaching child's arm with red burn mark. STOP gesture overlay: bold red X mark or prohibition symbol over the bowl. Bright kitchen lighting, clean white background, clear product visibility. Warning mood, folk remedy prohibition concept. No face visible, hands and burn area only, educational safety demonstration.",
+      "file": "6-1.png"
+    }
+  ]
+}

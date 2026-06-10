@@ -1,0 +1,40 @@
+{
+  "topic": "baby-nasal-congestion-relief",
+  "topic_type": "발달체크형",
+  "source_template": "slides.baby-nasal-congestion-relief.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 훅 - 부모의 공감과 즉각적 해결책 제시",
+      "prompt": "Portrait 1080x1350. Bold typography-focused design. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold small, no quotes. Center: Giant bold headline in warm brown #3D2B1F: '아기 코막힘\n5분 안에 해결' Pretendard ExtraBold 120pt, center-aligned, line-height 1.2. Below in smaller teal #2D9B9B: 'AAP 권장 방법' 40pt medium weight. Bottom accent: Soft rounded teal badge with white text '소아과 검증'. Minimal decoration, maximum readability, warm caring mood, professional medical trust",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-action",
+      "purpose": "식염수 점비 실사 시연 - 정확한 사용법 시각화",
+      "prompt": "Portrait 1080x1350. Close-up realistic photo style. Soft natural lighting. Mother's gentle hands holding saline dropper above adorable Asian baby's nose (6-month-old, lying on soft cream blanket). Baby looking up calmly. Focus on dropper tip and nostril positioning. Warm home environment blurred background. Top-right overlay: 소아과언니 warm brown small text. Top-left teal rounded badge: 'STEP 1' white text. Bottom text overlay semi-transparent white rounded box: '코구멍당 2-3방울' warm brown bold Korean text. Professional medical demonstration aesthetic, reassuring parental guidance mood, soft pastel color grading #FFF8F0 tone",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 6,
+      "role": "reels-action",
+      "purpose": "흡입기 사용 실사 - 올바른 각도와 타이밍 강조",
+      "prompt": "Portrait 1080x1350. Close-up realistic photo style. Soft natural lighting. Parent's hand holding blue bulb nasal aspirator gently at baby's nostril (side profile view of Asian baby 8-month-old, sitting supported). Focus on aspirator positioning and baby's calm expression. Cozy home setting with cream tones. Top-right overlay: 소아과언니 warm brown small. Top-left teal rounded badge: 'STEP 2' white text. Bottom overlay white rounded box: '부드럽게 천천히' warm brown bold Korean, below '3-4회 반복' smaller teal text. Caring instructional mood, professional pediatric guidance aesthetic, warm color grading",
+      "file": "6-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-action",
+      "purpose": "수유 전 타이밍 실사 - 최적 시간대 시각화",
+      "prompt": "Portrait 1080x1350. Lifestyle realistic photo style. Soft warm lighting. Clock showing feeding time (analog clock 10 o'clock position visible) on nursery wall, foreground: Mother preparing to feed baby (Asian baby 5-month-old in mother's arms, baby looking peaceful). Cozy nursery with soft cream and teal accents. Top-right overlay: 소아과언니 warm brown small. Top-left teal rounded badge: '최적 타이밍' white text. Bottom overlay white rounded box: '수유 15분 전' large warm brown bold Korean, below '코 뚫고 편안하게' smaller teal text. Warm parenting moment, practical timing guidance mood, soft pastel environment",
+      "file": "7-1.png"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Top-left small gray: PARENTING NOTE · 024. Center-left area: very large bold Korean headline in two lines — first line 말을 늦게 하는 in deep navy #1A1F36, second line 아이 in coral #C44536, strong typographic hierarchy. Below headline: small muted gray subtitle 우리 아이는 괜찮을까요? · ASHA 참고. Right side center: large editorial illustration of young toddler sitting with thoughtful expression and small speech bubble icon above head, minimal line art style in coral and teal accents, clean modern strokes. Bottom center: thin coral horizontal accent line. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 발달 기준. Large bold headline: 우리 아이 언어발달, navy 정상일까요? coral #C44536. Center upper: clean editorial illustration of milestone timeline with baby and toddler icons, line art coral/navy minimal. Below illustration: three clean cards in light gray #F0F0EE with generous padding stacked vertically. First card: 12개월 bold navy + 첫 낱말 (엄마, 아빠) small navy. Second card: 18개월 bold navy + 50-100개 낱말·어구 표현 small navy. Third card: 24개월 bold navy + 두 단어 조합 문장 small navy. Bottom right small gray: ASHA·질병관리청. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 정의. Large bold headline: 말늦은아이는 navy 누구일까요? coral #C44536. Center: clean editorial illustration of toddler playing happily with toys but with minimal speech bubble, line art coral/navy minimal showing normal play and social skills. Below: large light gray #F0F0EE rounded box generous padding. Bold navy: 말늦은아이 (Late Talker). Small navy text: 18-30개월 유아 중 표현언어 발달은 지연되었지만, 언어 이해력·놀이·운동·사회성 발달은 정상인 아이. Thin coral divider inside box. Bold navy: 24개월 기준. Bullet list small navy: · 50개 미만 단어 표현, · 두 단어 조합 불가. Bottom small gray: ASHA 2024. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 선별검사. Large bold headline: AAP 권장 navy 검사 시기 coral #C44536. Center upper: clean editorial illustration of pediatrician with checklist and stethoscope examining toddler, line art coral/navy minimal. Below: two section layout. First section bold navy: 모든 정기검진 시 + small navy: 발달 감시 (Developmental Surveillance). Second section bold navy: 표준화 선별검사 권장 시기 + three clean cards in light gray #F0F0EE horizontal row: 9개월, 18개월, 30개월 each in separate card with bold navy text. Bottom small gray: AAP Pediatrics 2020. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 평가 과정. Large bold headline: 언어발달 지연 navy 평가 방법 coral #C44536. Center: clean editorial illustration of hearing test equipment and speech therapist with child, line art coral/navy minimal. Below: large light gray #F0F0EE rounded box generous padding with two steps. Step 1 bold coral with number: 1. 청력 검사 + small navy: 언어발달 지연 의심 시 반드시 실시. Thin divider. Step 2 bold coral with number: 2. 전문 평가 + small navy: 언어치료사의 체계적 평가와 진단 필요, 재활의학과·소아청소년과 진료 후 치료계획 수립. Bottom small gray: ASHA·질병관리청. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 중요성. Large bold headline: 조기 중재가 navy 중요한 이유 coral #C44536. Center upper: clean editorial illustration of brain with growth pathways and child learning, line art coral/navy minimal showing neural development. Below: large light gray #F0F0EE rounded box generous padding. Bold navy: 생후 첫 3년 = 언어 습득 황금기 + small navy: 뇌 발달과 성숙의 가장 중요한 시기. Thin coral divider inside box. Bold navy: 조기 중재 효과 + three bullet points small navy: · 학업 성취도 향상, · 학교 참여도 증가, · 사회성 기술 발달. Bottom small gray: NIDCD·ASHA 2024. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 가정 지원. Large bold headline: 부모가 할 수 있는 navy 언어 자극 coral #C44536. Center: clean editorial illustration of parent and child playing together with books and toys in warm interaction, line art coral/navy minimal. Below: three clean cards in light gray #F0F0EE stacked vertically generous padding. First card: coral icon of speech bubble + bold navy: 아이 신호 읽고 반응하기 + small navy: 적절한 의사소통 환경 조성. Second card: coral icon of play blocks + bold navy: 놀이를 통한 언어 자극 + small navy: 아이 발화에 반응적 태도. Third card: coral icon of book + bold navy: 다양한 표현 경험 제공 + small navy: 풍부한 언어 환경. Bottom small gray: ASHA·Int J Environ Res Public Health 2020. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 주의사항. Large bold headline: 꼭 기억해야 할 navy 두 가지 coral #C44536. Center: clean editorial illustration of smartphone with X mark and parent-child face-to-face interaction with checkmark, line art coral/navy minimal. Below: two sections with coral outline boxes generous padding. First box: ⚠️ emoji + bold coral: 스마트기기 단독 노출 주의 + small navy: 직접적인 상호작용이 언어발달에 중요합니다. Second box: ⚠️ emoji + bold coral: 20-40%는 언어장애로 이어질 수 있음 + small navy: 조기 평가와 중재가 필요합니다. Bottom small gray: ASHA 2024. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 with thin coral underline. Source box light gray #F0F0EE rounded generous padding. 출처 navy small bold left-aligned, then four bullet points small navy left-aligned: · ASHA Practice Portal Late Language Emergence 2024, · AAP Pediatrics Promoting Optimal Development 2020, · 질병관리청 국가건강정보포털 언어장애 2024, · NIDCD Speech and Language Milestones 2024. Horizontal thin navy divider. Center: 소아과언니 navy bold large — NO quotes NO decoration. Below small gray: DR.SOA UNNIE · 소아청소년과 전문의. Thin gray horizontal divider. Below navy: @dr.soa_unnie · 매주 새 가이드. Below coral: 소아과수첩 앱 · 성장 기록으로 우리 아이 발달 체크하기. No pixel text anywhere. No quotes anywhere."
+    }
+  ],
+  "palette": "A",
+  "tone": "editorial-modern",
+  "common_style": "# 에디토리얼 모던 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 흰색 #FAFAF7\n- 텍스트: deep navy #1A1F36\n- 강조 (팔레트 A): coral #C44536\n- 강조 (팔레트 B): teal #2C6E63\n- 카드 배경: light gray #F0F0EE\n- 일러스트: clean line art editorial style (coral/navy 조합)\n- 시그니쳐: 우상단 소아과언니 navy (따옴표 없이 4글자만)\n\n## 팔레트 결정\n- 팔레트 A (coral): 일반 케어·예방법·여행·생활건강\n- 팔레트 B (teal): 수치·기준·데이터 중심\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Editorial modern style. Clean white background #FAFAF7.\nTop-right: 소아과언니 deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nLeft upper: very large bold headline two lines — [첫 줄] deep navy, [핵심 단어] coral #C44536.\nBelow: small muted gray subtitle [부제] · AAP 권장 기준.\nRight center-bottom: LARGE clean editorial illustration [토픽 관련], line art coral/teal minimal.\nBottom: thin coral horizontal accent line.\nNo pixel values. No quotes.\n\n## BODY 패턴 (slide n:2-8)\nPortrait 1080x1350. Editorial modern style. White background #FAFAF7.\nTop-right: 소아과언니 navy small — 4 characters only, no quotes.\nTop-left small coral rounded label: [섹션명].\nLarge bold headline: [앞부분] navy, [마지막 핵심 단어] coral #C44536.\nCenter: clean editorial illustration [토픽 관련], line art coral/navy minimal.\nContent: [리스트 or 카드 구조 — 토픽에 맞게].\nBottom thin coral divider.\nNo pixel text. No quotes.\n\n## 비교 카드 패턴\nTwo comparison cards side by side.\nLeft ✓ card light gray: teal checkmark + bold text + small caption.\nRight ✗ card light gray: coral X + bold text + small caption.\nBottom small gray source text.\n\n## 경고 박스 패턴\nCoral outline rounded box.\n⚠️ + bold coral warning text + navy detail text + small gray source.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Editorial modern style. White background #FAFAF7.\nTop-right: 소아과언니 navy small — 4 characters only, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 thin underline.\nSource box light gray #F0F0EE rounded generous padding.\n출처 (navy small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\n· [출처 4]\nHorizontal thin navy divider.\n소아과언니 navy bold large center — NO quotes, NO decoration.\nDR.SOA UNNIE · 소아청소년과 전문의 gray small.\nThin gray divider.\n@dr.soa_unnie · 매주 새 가이드 navy.\n소아과수첩 앱 · [CTA] coral.\nNo pixel text. No quotes anywhere.\n"
+}

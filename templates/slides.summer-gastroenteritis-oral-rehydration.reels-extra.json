@@ -1,0 +1,40 @@
+{
+  "topic": "summer-gastroenteritis-oral-rehydration",
+  "topic_type": "비교형",
+  "source_template": "slides.summer-gastroenteritis-oral-rehydration.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "훅 - 여름 장염 급증 경고로 2초 안에 시선 고정",
+      "prompt": "Portrait 1080x1350. Bold typography hook scene. Cream yellow background #FFF9EC with subtle radial dot grid pattern opacity 7%. Center: huge bold text '여름 장염\n탈수 위험' in black #1A1A1A Pretendard ExtraBold 120pt, line-height 1.2, center-aligned. Below center: medium warning text '수분 보충 잘못하면\n응급실 직행' in black 36pt Pretendard SemiBold, center-aligned. Top-right corner: small black label box with '소아과언니' white text Pretendard Bold — 4 characters only. Bottom: small purple #C8B4F8 accent bar width 200px height 8px, centered. Clean minimal sticker pop aesthetic. No illustrations, typography-focused impact.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-action",
+      "purpose": "탈수 체크 - 아이 입술·피부 확인하는 부모 손 클로즈업",
+      "prompt": "Portrait 1080x1350. Close-up photorealistic scene. Soft natural window light. Focus: caring parent's hand gently touching toddler's dry lips and pinching skin on arm to check dehydration. Toddler 2-3 years old, Asian, neutral expression, wearing light summer cotton shirt. Background soft blur cream yellow #FFF9EC tone. Hand gesture clear and instructional. Warm skin tones. Medical care atmosphere. Sharp focus on hand-skin contact point. Shallow depth of field f/2.8. Clean clinical-editorial photography style.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-action",
+      "purpose": "경구수액 제품 - 이온음료 vs 경구수액 실물 비교 클로즈업",
+      "prompt": "Portrait 1080x1350. Product comparison close-up. Bright clean table top shot. Left side: colorful commercial ion sports drink bottle (blue/green label visible). Right side: medical oral rehydration solution packet (white/medical design, Korean text visible). Between them: small versus 'VS' text in black. Background white marble table surface with soft cream yellow #FFF9EC accent edge lighting. Products angled 15deg toward camera. Sharp focus on both products. Professional product photography lighting, slightly elevated angle 30deg. Clean clinical comparison aesthetic.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 6,
+      "role": "reels-action",
+      "purpose": "조금씩 자주 - 작은 컵에 수액 따르며 타이머 보는 손 클로즈업",
+      "prompt": "Portrait 1080x1350. Close-up instructional scene. Soft natural light. Focus: parent's hand pouring small amount of clear oral rehydration solution into small transparent measuring cup (30ml mark visible). Beside cup: smartphone on table showing timer app '5분' in focus. Background soft blur cream yellow #FFF9EC tone. Hand steady and careful. Medical measuring cup with ml markings clear. Wooden table surface. Warm instructional care atmosphere. Sharp focus on pouring action and timer screen. Editorial healthcare photography style, 45deg overhead angle.",
+      "file": "6-1.png"
+    }
+  ]
+}

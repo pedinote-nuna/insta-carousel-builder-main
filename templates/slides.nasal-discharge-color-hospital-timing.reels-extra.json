@@ -1,0 +1,40 @@
+{
+  "topic": "nasal-discharge-color-hospital-timing",
+  "topic_type": "비교형",
+  "source_template": "slides.nasal-discharge-color-hospital-timing.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 시작 2초 내 시선 고정 — 충격적 한 줄 메시지",
+      "prompt": "Portrait 1080x1350. Bold typography-centered hook slide. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes. Center: massive bold headline in navy #1A1F36, Pretendard ExtraBold 72pt, 2 lines maximum: '노란 콧물 = 항생제?' Bottom third: small coral #FF6B6B underline accent bar 120px wide. Minimal, high-impact, editorial modern style. No illustrations, no icons — pure typographic shock value to stop scroll within 2 seconds.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "감기 초기 맑은 콧물 → 노란 콧물 변화 실사 클로즈업",
+      "prompt": "Portrait 1080x1350. Photorealistic close-up. Young child's nose and upper lip area, soft natural lighting. Clear watery nasal discharge visible on one nostril, contrasted with yellowish-green mucus on the other side — split comparison within single face. Parent's hand gently holding white tissue near nose. Shallow depth of field, focus on nostrils. Clean white clinical background slightly blurred. Natural skin tones, no harsh shadows. Medical documentary style — calm, informative, non-alarming. Top-right small overlay: 소아과언니 navy 4 characters only.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 6,
+      "role": "reels-visual",
+      "purpose": "10일 경과 관찰 타임라인 실사 표현",
+      "prompt": "Portrait 1080x1350. Photorealistic lifestyle shot. Parent's hand marking days on a simple white wall calendar with coral #FF6B6B marker pen — close-up of hand and calendar grid. Calendar shows 10 consecutive days circled. Soft home interior lighting, warm but clinical feel. Wooden table edge visible at bottom, white mug with thermometer beside calendar. Shallow depth of field focusing on the '10일' mark. Editorial modern documentary style — conveys patience and monitoring. Top-right small overlay: 소아과언니 navy 4 characters only.",
+      "file": "6-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "재악화 증상(고열·호흡곤란) 즉시 진료 행동 실사",
+      "prompt": "Portrait 1080x1350. Photorealistic urgent care scene. Close-up of parent's hand holding digital thermometer displaying 39.5°C in red LED, with worried child's blurred shoulder/neck in background. Second hand reaching for smartphone to call doctor — screen shows '소아과' contact. Shallow depth of field, focus on thermometer reading. Warm indoor lighting with slight cool blue accent suggesting nighttime urgency. Clean white bedding background. Medical documentary style — conveys clear action trigger without panic. Top-right small overlay: 소아과언니 navy 4 characters only.",
+      "file": "7-1.png"
+    }
+  ]
+}

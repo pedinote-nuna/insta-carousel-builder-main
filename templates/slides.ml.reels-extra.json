@@ -1,0 +1,40 @@
+{
+  "topic": "ml",
+  "topic_type": "발달체크형",
+  "source_template": "slides.ml.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 시작 2초 안에 시선을 끄는 충격적 훅 메시지",
+      "prompt": "Portrait 1080x1350. Bold typography-focused design. Soft pastel background #FFF8F0. Top-right corner: 소아과언니 in warm brown #3D2B1F, Pretendard SemiBold, small size, no quotes, no decoration. Center: massive bold headline in warm brown #3D2B1F, Pretendard ExtraBold: '트림 안 시키면\n위험할 수 있어요' (line break after 안 시키면). Below headline, small teal accent text: '아기 트림, 제대로 알고 하세요'. Minimal geometric decoration: small pastel circles scattered bottom corners. Clean, urgent, stopping power.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 4,
+      "role": "reels-action",
+      "purpose": "어깨 트림 자세를 실사 클로즈업으로 보여주는 설명 장면",
+      "prompt": "Portrait 1080x1350. Realistic photo close-up. Soft natural lighting, warm tone. Close-up shot: baby resting on parent's shoulder, parent's hand gently patting baby's back in circular motion. Focus on hand position and baby's head support. Baby wearing soft pastel clothing, parent's hand clearly visible with wedding ring. Blurred warm pastel background #FFF8F0. Top-right overlay: 소아과언니 in warm brown small text. Bottom overlay: semi-transparent white rounded box with teal text: '어깨에 기대어 등 토닥토닥'. Warm, caring, instructional close-up photo.",
+      "file": "4-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 6,
+      "role": "reels-action",
+      "purpose": "올바른 손 모양 실사 클로즈업 - 손가락 모양과 등 두드리는 동작",
+      "prompt": "Portrait 1080x1350. Realistic photo extreme close-up. Soft natural lighting, warm tone. Extreme close-up: parent's hand on baby's back, fingers slightly curved (not flat palm), gentle patting motion visible. Baby wearing soft pastel onesie, texture of fabric visible. Focus on hand shape and finger position. Blurred warm background. Top-right overlay: 소아과언니 in warm brown small text. Bottom overlay: semi-transparent white rounded box with teal text: '손가락 살짝 구부려서 톡톡'. Detailed, educational, hand-focused close-up photo.",
+      "file": "6-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-action",
+      "purpose": "5~10분 기다리는 모습 - 타이머와 아기를 안고 기다리는 실사",
+      "prompt": "Portrait 1080x1350. Realistic photo scene. Soft natural lighting, warm cozy atmosphere. Medium shot: parent holding baby upright against shoulder in comfortable nursing chair, smartphone with timer visible on armrest showing '5:00' or '7:30'. Baby calm, parent relaxed. Warm pastel room background #FFF8F0 tone, soft window light. Top-right overlay: 소아과언니 in warm brown small text. Bottom overlay: semi-transparent white rounded box with teal text: '5~10분 여유롭게 기다려요'. Calm, patient, reassuring real-life photo.",
+      "file": "7-1.png"
+    }
+  ]
+}

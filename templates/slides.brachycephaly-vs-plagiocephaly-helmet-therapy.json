@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Large breathing whitespace before headline. Headline COMPACT two lines: 우리 아기 두상 in deep navy, 교정 헬멧 필요할까 with 필요할까 underlined in teal #2C6E63. Small subtitle gray: 사두증·단두증 구별과 치료 시기 · CNS 가이드라인 기준. LARGE minimalist infant head side view line illustration in teal and coral showing skull shape asymmetry, prominently placed center-right. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 진단. Headline COMPACT: 사두증과 단두증 navy, 무엇이 다른가요 with 다른가요 teal #2C6E63 underline. Two side-by-side comparison cards equal width GENEROUS padding. Left card: light teal #E8F4F2 header 사두증 Plagiocephaly bold navy, body text left-aligned navy small: 한쪽 뒤통수만 납작, 비대칭 두상, 귀가 앞으로 밀림, 이마 한쪽 돌출. Small line illustration top showing asymmetric head shape. Right card: light gray #F0F4F8 header 단두증 Brachycephaly bold navy, body text left-aligned navy small: 뒤통수 전체 납작, 대칭적 두상, 머리 폭이 넓어짐, 얼굴 특징 작아 보임. Small line illustration top showing symmetric flat back head. Bottom coral #C44536 thin accent line. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 원인. Headline COMPACT: 왜 생기나요 navy, 예방 가능한가요 with 가능한가요 teal #2C6E63 underline. Center large minimalist illustration: infant lying on back with pressure arrows, teal and coral line art. Below two stacked cards GENEROUS padding comfortable spacing. First card light gray #F0F4F8: icon left 자세 압박, bold navy 반복적 외부 압력, small gray text: 자궁 내 또는 출생 후 같은 자세 유지 시 발생. Second card light amber #FFF3E0: icon left 증가 추세, bold navy 발생률 20-48%, small gray text: 1992년 등 대고 눕히기 캠페인 이후 2-5%에서 급증. Bottom thin coral divider with small text: 두개골유합증과는 구별 필요. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray rounded label: 감별. Headline COMPACT: 두개골유합증과 navy, 어떻게 구별하나요 with 구별하나요 teal #2C6E63 underline. Center large minimalist medical examination illustration teal line art: doctor examining infant head. Below three stacked cards GENEROUS padding. Card 1 light gray #F0F4F8: 신체검사 bold navy, small gray: 대부분 신체검사만으로 진단 충분. Card 2 light teal #E8F4F2: 감별 포인트 bold navy, small gray list: 촉지 가능한 뼈 융기 없음, 귀 위치 차이 lambdoid 유합증은 귀가 뒤로, 사두증은 앞으로. Card 3 light amber #FFF3E0: 영상검사 bold navy, small gray: 임상 진단 불확실한 경우에만 필요. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 1단계. Headline COMPACT: 자세 변경과 navy, 엎드려 놀기부터 with 놀기부터 teal #2C6E63 underline. Center large minimalist illustration: happy infant in tummy time position, teal and coral line art prominently placed. Below two stacked cards GENEROUS padding comfortable spacing. First card light teal #E8F4F2: icon 자세 변경 bold navy large, body small gray: 출생 시부터 3개월까지 핵심, 한 쪽으로만 눕지 않도록 좌우 번갈아. Second card light gray #F0F4F8: icon 깨어있을 때 Tummy Time bold navy large, body small gray: 생후 7주까지 하루 15-30분 이상, 두상 변형 예방 + 운동 발달 향상. Bottom coral #C44536 rounded box GENEROUS padding: ⚠️ 수면 시에는 항상 등 대고 눕히기 안전한 수면환경 유지. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 2단계. Headline COMPACT: 물리치료는 navy, 언제 시작하나요 with 시작하나요 teal #2C6E63 underline. Center large minimalist illustration: physical therapist with infant doing neck stretches, teal line art prominently placed. Below three stacked cards GENEROUS padding comfortable spacing. Card 1 light teal #E8F4F2: 권장 시기 bold navy, small gray: 생후 7주 이상 영아에서 효과적 Level I 근거. Card 2 light gray #F0F4F8: 치료 효과 bold navy, small gray: 자세 변경 교육만 하는 것보다 우수한 개선. Card 3 light amber #FFF3E0: 안전성 bold navy, small gray: AAP 권고 준수로 positioning pillow보다 우선 권장. Bottom thin coral divider with small text: 전문 물리치료사 상담 권장. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 3단계. Headline COMPACT: 헬멧 치료 navy, 언제 필요한가요 with 필요한가요 coral #C44536 underline. Center large minimalist illustration: infant wearing cranial molding helmet side view, coral and teal line art prominently placed. Below three stacked cards GENEROUS padding comfortable spacing. Card 1 light amber #FFF3E0: 적응증 1 bold navy, small gray: 보존적 치료 후에도 중등도-중증 사두증/단두증 지속 Level II 권고. Card 2 light gray #F0F4F8: 적응증 2 bold navy, small gray: 늦은 나이에 중등도-중증 사두증 보이는 영아 Level II 권고. Card 3 light teal #E8F4F2: 권고 수준 bold navy, small gray: CNS 가이드라인 Level II 근거 기반. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 효과. Headline COMPACT: 헬멧 치료 navy, 효과적인 시기와 방법 with 방법 teal #2C6E63 underline. Center large minimalist timeline illustration: age progression 4-6-9 months with helmet icon, teal and coral line art. Below three stacked cards GENEROUS padding comfortable spacing. Card 1 light teal #E8F4F2: icon 최적 시기 bold navy large, body small gray: 생후 4-6개월 시작 시 가장 효과적, 9개월 이후 효과 감소. Card 2 light gray #F0F4F8: icon 착용 시간 bold navy large, body small gray: 하루 6시간 이상 특히 수면 중, 15시간 이상 고순응도 시 더 좋은 개선. Card 3 light amber #FFF3E0: icon 순응도 bold navy large, body small gray: 착용 순응도가 치료 성공의 핵심 요인. Bottom coral #C44536 rounded box: ⚠️ 전문의 진단과 정기 추적관찰 필수. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right: 소아과언니 navy, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT center: 오늘 확인하고 navy, 저장하세요 with 저장하세요 teal #2C6E63 thin underline. Source box light gray #F0F4F8 rounded GENEROUS padding left-aligned: 출처 navy small bold line break · Congress of Neurological Surgeons Guideline 2016 line break · AAP Prevention and Management Guideline 2011 line break · StatPearls Plagiocephaly & Brachycephaly 2024-2025 line break · PMC Helmet Therapy Clinical Outcomes 2025. Generous spacing plus thin horizontal navy divider. 소아과언니 navy bold large center NO quotes NO decoration. Small gray center: DR.SOA UNNIE · 소아청소년과 전문의. Thin horizontal divider. Navy center: @dr.soa_unnie · 매주 새 가이드. Teal center: 소아과수첩 앱 · 진료 메모 작성하고 전문의 상담받기. No pixel values. No quotes anywhere."
+    }
+  ],
+  "palette": "A",
+  "tone": "clean-infographic",
+  "common_style": "# 클린 인포그래픽 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 흰색 #FFFFFF\n- 텍스트: deep navy #1A1F36\n- 강조: teal #2C6E63\n- 경고: coral #C44536\n- 카드 배경: light gray #F0F4F8\n- VERY GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 20% 작게 (빽빽함 방지)\n- 시그니쳐: 우상단 소아과언니 (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin on all four sides.\nTop-right small: '소아과언니' Pretendard SemiBold navy only, no decoration, no quotes.\nTop-left small gray: 'PARENTING NOTE · [번호]'.\nLarge breathing whitespace before headline.\nHeadline COMPACT two lines: '[첫 줄]' navy, '[둘째 줄]' with '[핵심 단어]' underlined in teal #2C6E63.\nSmall subtitle gray: '[부제] · AAP 가이드라인 기준'.\nLARGE minimalist [토픽 관련] line illustration in teal, prominently placed.\nGenerous bottom whitespace. No pixel values as text. No quotes on card.\n\n## BODY 데이터 카드 패턴\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nGENEROUS outer margin all sides.\nTop-right small: '소아과언니' navy, no quotes.\nTop-left small gray label: '[섹션명]'.\nHeadline COMPACT: '[앞부분]' navy, '[핵심 단어]' teal or coral underline.\nStacked/grid cards with REDUCED text (20% smaller) + GENEROUS padding + comfortable spacing.\nEach card: age/category icon top-left + tag label + bold number/text + subtitle.\nNo pixel values as text on card.\n\n## 비교 카드 패턴\nTwo side-by-side cards equal width.\nLeft card teal header / Right card navy header.\nBody light gray: label small gray + main value teal/navy large bold + interval/unit navy.\nBottom coral warning box: ⚠️ + warning text.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' navy, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' navy, '저장하세요' teal underline.\nSource box light gray #F0F4F8 rounded GENEROUS padding, left-aligned.\n출처 (navy small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nGenerous spacing + thin horizontal divider.\n소아과언니 navy bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray small.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 navy.\n소아과수첩 앱 · [CTA] teal.\nNo pixel values. No quotes.\n"
+}

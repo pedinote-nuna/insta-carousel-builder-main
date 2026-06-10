@@ -1,0 +1,40 @@
+{
+  "topic": "newborn-sleep-position",
+  "topic_type": "발달체크형",
+  "source_template": "slides.newborn-sleep-position.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 첫 2초 훅 - 충격적 통계로 시선 사로잡기",
+      "prompt": "Portrait 1080x1350. Bold typography on soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, small, no decoration. Center: huge bold headline warm brown #3D2B1F Pretendard ExtraBold 72pt: 영아 돌연사 90% 예방 가능. Below headline: smaller coral #E05C3A text Pretendard Medium 32pt: 단 하나의 수면자세로. Bottom: subtle warm brown #3D2B1F text 20pt: 생후 12개월까지 필수. Clean minimal design, no illustration, strong contrast, urgent tone.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-real-photo",
+      "purpose": "바른 등 대고 자는 자세 실사 클로즈업",
+      "prompt": "Portrait 1080x1350. Soft natural lighting. Close-up photo: newborn baby sleeping on back on firm white mattress, face turned slightly to side, arms bent naturally at sides, wearing simple cotton onesie. Clean white fitted sheet, no blanket visible. Warm peaceful atmosphere, soft morning light from window. Top-right overlay: 소아과언니 warm brown #3D2B1F small. Bottom overlay translucent teal #2C7A5C rounded label: 필수 수면자세 Pretendard SemiBold white text. Realistic photography, shallow depth of field, tender parenting moment.",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-real-photo",
+      "purpose": "안전한 잠자리 환경 실사 - 딱딱한 매트리스와 빈 침대",
+      "prompt": "Portrait 1080x1350. Bright natural lighting. Close-up photo: firm crib mattress with fitted white sheet only, completely empty and flat. Parent's hand (partial view) gently smoothing the sheet. Wooden crib rails visible in background, simple modern nursery setting. Top-right overlay: 소아과언니 warm brown #3D2B1F small. Bottom overlay translucent teal #2C7A5C rounded label: 안전한 잠자리 Pretendard SemiBold white text. Realistic photography, clean minimal aesthetic, safety-focused composition.",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-real-photo",
+      "purpose": "강보 사용법 실사 - 팔 자유로운 모습",
+      "prompt": "Portrait 1080x1350. Soft natural lighting. Close-up photo: baby's arms free and visible outside swaddle wrap, chest and lower body gently wrapped in breathable muslin swaddle blanket in soft neutral color. Baby lying on back on firm surface. Parent's hands visible adjusting swaddle, showing proper technique. Top-right overlay: 소아과언니 warm brown #3D2B1F small. Bottom overlay translucent teal #2C7A5C rounded label: 뒤집기 시작 전까지 Pretendard SemiBold white text. Realistic photography, warm caring hands, educational demonstration style.",
+      "file": "7-1.png"
+    }
+  ]
+}
