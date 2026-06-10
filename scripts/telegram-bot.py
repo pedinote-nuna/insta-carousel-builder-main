@@ -1332,6 +1332,10 @@ def _intent_router_sync(text: str, api_key: str) -> dict:
   ("수족구 관련 주제 추천해줘", "RSV로 뭔가 만들어봐",
    "독감 관련 뭐 있어?" 등)
   → params: {"keyword": "수족구"}
+- regen_images: 기존 카드뉴스의 이미지(그림)만 다시 생성 (글·대본은 유지)
+  ("이미지만 다시 만들어줘", "그림만 재생성", "사진 다시 뽑아줘",
+   "이물질 삼킴 이미지만 다시", "X 그림 다시 만들어" 등)
+  → params: {"topic_hint": "이물질 삼킴"}  (토픽 언급 없으면 빈 문자열)
 - unknown: 위 중 어느 것도 아님
 
 JSON 형식:
@@ -1355,6 +1359,7 @@ JSON 형식:
 {"intent": "edit_existing", "params": {"slug_hint": "신생아 배꼽관리", "instruction": "3번 슬라이드 내용 수정"}}
 {"intent": "topics_by_tone", "params": {"tone": "handdrawn-notebook"}}
 {"intent": "keyword_topics", "params": {"keyword": "수족구"}}
+{"intent": "regen_images", "params": {"topic_hint": "이물질 삼킴"}}
 {"intent": "unknown", "params": {}}
 """,
         messages=[{"role": "user", "content": text}],
@@ -1974,6 +1979,20 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         else:
             await update.message.reply_text("💡 어떤 키워드로 찾을까요?")
 
+    elif intent == "regen_images":
+        # 기존 글·대본 유지하고 이미지만 재생성
+        topic_hint = params.get("topic_hint", "")
+        last = find_topic_by_hint(topic_hint) if topic_hint else session.get("last_topic")
+        if not last:
+            await update.message.reply_text(
+                "💡 어떤 카드뉴스 이미지를 다시 만들까요?\n"
+                "예) '이물질 삼킴 이미지만 다시' 또는 /regen <slug>"
+            )
+            return
+        session["last_topic"] = last
+        _save_session()
+        await regen_images_only(update, last["slug"])
+
     else:
         await update.message.reply_text(
             "💡 이렇게 말씀해보세요:\n"
@@ -2496,11 +2515,20 @@ async def auto_pipeline(
 
     # STEP 4: 이미지 생성
     await update.message.reply_text("🖼️ 이미지 생성 중... (약 4분, 중간에 '중단' 가능)")
-    await trigger_generation_direct(update, slug)
+    img_ok = await trigger_generation_direct(update, slug)
 
     if is_cancel_requested():
         # 이미지 생성 단계에서 중단된 경우 — 캡션 생략하고 종료
         return
+
+    if not img_ok:
+        # 이미지 생성 실패(무음 실패 포함) — 캡션·다운스트림 생략하고
+        # 예외를 올려 batch(run_batch)가 이 주제를 '실패'로 집계하게 한다.
+        await update.message.reply_text(
+            f"❌ 이미지 생성 실패로 '{topic_kr}' 처리를 중단합니다. "
+            f"(/regen {slug} 으로 이미지만 다시 시도 가능)"
+        )
+        raise RuntimeError(f"이미지 생성 실패 — output/{slug}/ PNG 누락")
 
     # 세션에 현재 토픽 저장 (피드백·검증·질문 대화용)
     session["last_topic"] = {
@@ -3104,6 +3132,16 @@ def run_reels_supplement(slug: str):
         print(f"[reels-supplement] 실행 실패: {e}")
 
 
+def _missing_slides(slug: str) -> list[str]:
+    """output/{slug}/ 에 실제로 없는 slide PNG 파일명 목록을 반환."""
+    folder = OUTPUT_DIR / slug
+    return [
+        f"slide-{i:02d}.png"
+        for i in range(1, SLIDE_COUNT + 1)
+        if not (folder / f"slide-{i:02d}.png").exists()
+    ]
+
+
 async def run_generator(slug: str) -> tuple[bool, str]:
     cmd = [
         sys.executable,
@@ -3133,6 +3171,17 @@ async def run_generator(slug: str) -> tuple[bool, str]:
     log_tail = "\n".join(out.strip().splitlines()[-15:])
     if is_cancel_requested():
         return False, "사용자 요청으로 중단됨"
+    # ⚠️ 무음 실패 차단: nanobanana-gen.py 는 슬라이드가 전부 실패해도 종료코드 0 으로 끝난다.
+    #    종료코드만 믿지 말고 PNG 9장이 실제로 생겼는지 검증한다 (한 장이라도 없으면 실패).
+    missing = _missing_slides(slug)
+    if proc.returncode == 0 and missing:
+        have = SLIDE_COUNT - len(missing)
+        detail = (
+            f"이미지 생성 실패 — PNG {have}/{SLIDE_COUNT}장만 생성됨. "
+            f"누락: {', '.join(missing)}"
+        )
+        tail = (log_tail + "\n" + detail).strip() if log_tail else detail
+        return False, tail
     return proc.returncode == 0, log_tail
 
 
@@ -3147,13 +3196,14 @@ async def send_slides(update: Update, slug: str) -> None:
             await update.message.reply_photo(photo=f, caption=f"{slug} · {i:02d}/09")
 
 
-async def trigger_generation_direct(update: Update, slug: str) -> None:
-    """auto_pipeline 전용 — 템플릿 존재 체크 생략 (방금 생성한 직후)."""
+async def trigger_generation_direct(update: Update, slug: str) -> bool:
+    """auto_pipeline 전용 — 템플릿 존재 체크 생략 (방금 생성한 직후).
+    반환: 이미지 9장 생성·전송까지 성공하면 True, 실패면 False."""
     if _task_lock.locked():
         await update.message.reply_text(
             f"⏳ 이미 다른 작업 진행 중입니다 ({current_task['topic']}). /status 로 확인하세요."
         )
-        return
+        return False
 
     async with _task_lock:
         current_task.update(
@@ -3170,14 +3220,14 @@ async def trigger_generation_direct(update: Update, slug: str) -> None:
                 f"❌ 생성 타임아웃 ({GEN_TIMEOUT_SEC}초)."
             )
             current_task["status"] = "idle"
-            return
+            return False
         except Exception as e:  # noqa: BLE001
             current_task["status"] = "failed"
             current_task["error"] = str(e)
             log.exception("generator 실패")
             await update.message.reply_text(f"❌ 생성 실패: {e}")
             current_task["status"] = "idle"
-            return
+            return False
 
         if not ok:
             current_task["status"] = "failed"
@@ -3186,7 +3236,7 @@ async def trigger_generation_direct(update: Update, slug: str) -> None:
                 parse_mode="Markdown",
             )
             current_task["status"] = "idle"
-            return
+            return False
 
         current_task["status"] = "sending"
         await update.message.reply_text(
@@ -3215,6 +3265,80 @@ async def trigger_generation_direct(update: Update, slug: str) -> None:
             log.warning(f"reels-supplement 호출 실패 (무시): {e}")
 
         current_task["status"] = "idle"
+        return True
+
+
+# ---------------------------------------------------------------- 이미지만 재생성
+# 기존 sources.json·템플릿·대본은 그대로 두고 slide PNG 만 다시 생성한다.
+# (nanobanana-gen.py 는 --slides 템플릿만 읽어 이미지를 만들므로 본체 무변경.)
+
+
+async def regen_images_only(update: Update, slug: str) -> None:
+    """기존 글·대본은 유지하고 이미지(slide PNG)만 재생성 → 전송."""
+    tpl = template_path(slug)
+    if not tpl.exists():
+        await update.message.reply_text(
+            f"❌ 템플릿이 없어요: templates/slides.{slug}.json\n"
+            f"   재생성할 이미지 정의가 없어 진행할 수 없어요."
+        )
+        return
+    if _task_lock.locked():
+        await update.message.reply_text(
+            f"⏳ 이미 다른 작업 진행 중입니다 ({current_task['topic']}). /status 로 확인하세요."
+        )
+        return
+
+    reset_cancel_flag()
+    async with _task_lock:
+        current_task.update(
+            topic=slug, started_at=time.time(), status="running", error=None
+        )
+        await update.message.reply_text(
+            f"🔁 '{slug}' 이미지만 재생성합니다 (sources·캡션·대본은 그대로 유지)..."
+        )
+        await update.message.chat.send_action(ChatAction.TYPING)
+
+        try:
+            ok, log_tail = await run_generator(slug)
+        except asyncio.TimeoutError:
+            current_task["status"] = "idle"
+            await update.message.reply_text(f"❌ 재생성 타임아웃 ({GEN_TIMEOUT_SEC}초).")
+            return
+        except Exception as e:  # noqa: BLE001
+            current_task["status"] = "idle"
+            log.exception("regen_images 실패")
+            await update.message.reply_text(f"❌ 재생성 실패: {e}")
+            return
+
+        if not ok:
+            current_task["status"] = "idle"
+            await update.message.reply_text(
+                f"❌ 이미지 재생성 실패. 마지막 로그:\n```\n{log_tail}\n```",
+                parse_mode="Markdown",
+            )
+            return
+
+        current_task["status"] = "sending"
+        await update.message.reply_text("✅ 이미지 재생성 완료! 9장 전송합니다.")
+        await send_slides(update, slug)
+        current_task["status"] = "idle"
+
+
+async def cmd_regen(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """/regen <slug 또는 토픽명> — 기존 글·대본 두고 이미지만 재생성."""
+    args_text = " ".join(context.args) if context.args else ""
+    slug = extract_topic_slug(args_text)
+    if not slug:
+        # 영문 슬러그가 아니면 한글 토픽 힌트로 output/ 에서 찾기
+        hit = find_topic_by_hint(args_text) if args_text else session.get("last_topic")
+        if hit:
+            slug = hit.get("slug")
+    if not slug:
+        await update.message.reply_text(
+            "❗ 사용법: /regen <slug 또는 토픽명>\n   예) /regen foreign-object-ingestion-emergency"
+        )
+        return
+    await regen_images_only(update, slug)
 
 
 # ---------------------------------------------------------------- bootstrap
@@ -3257,6 +3381,7 @@ def build_app() -> Application:
     app.add_handler(CommandHandler("done", wrap(cmd_done)))
     app.add_handler(CommandHandler("usedtopics", wrap(cmd_used_topics)))
     app.add_handler(CommandHandler("new", wrap(cmd_new)))
+    app.add_handler(CommandHandler("regen", wrap(cmd_regen)))
     app.add_handler(CommandHandler("batch", wrap(cmd_batch)))
     app.add_handler(CommandHandler("cancel", wrap(cmd_cancel)))
     app.add_handler(CommandHandler("help", wrap(cmd_help)))
