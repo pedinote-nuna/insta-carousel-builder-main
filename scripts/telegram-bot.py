@@ -1642,6 +1642,17 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
     params = intent_data.get("params", {})
 
     if intent == "topics":
+        # 가드: /batch 상태가 풀린 채 여러 줄 주제 목록이 들어오면 추천기로 새지 않게,
+        # 2줄 이상 명시 주제 목록은 추천 대신 batch 확인 게이트로 보낸다.
+        # (진짜 "주제 추천해줘"는 보통 1줄이라 여기 안 걸림. auto_pipeline·추천기 본체 무변경)
+        topics, notices = _parse_batch_topics(text)
+        if len(topics) >= 2:
+            for note in notices:
+                await update.message.reply_text(note)
+            session["batch"] = {"stage": "awaiting_confirm", "queue": topics}
+            _save_session()
+            await update.message.reply_text(_format_batch_confirm(topics))
+            return
         await cmd_topics(update, context)
 
     elif intent == "make":
