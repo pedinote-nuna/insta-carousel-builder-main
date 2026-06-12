@@ -30,6 +30,7 @@
 from __future__ import annotations
 
 import argparse
+import difflib
 import json
 import os
 import random
@@ -273,6 +274,108 @@ def parse_slide_numbers(voiceover_txt: Path) -> list:
     return nums
 
 
+# ---------------------------------------------------------------- STEP 1.5 (검증)
+def _send_telegram_warn(text: str) -> None:
+    """텔레그램으로 경고 전송 (토큰/챗ID 없으면 조용히 스킵)."""
+    token = os.getenv("TELEGRAM_BOT_TOKEN")
+    chat_id = os.getenv("TELEGRAM_CHAT_ID")
+    if not token or not chat_id:
+        return
+    try:
+        import requests
+        requests.post(
+            f"https://api.telegram.org/bot{token}/sendMessage",
+            data={"chat_id": chat_id, "text": text}, timeout=30,
+        )
+    except Exception:  # noqa: BLE001
+        pass
+
+
+def validate_script_vs_slides(base: Path, script_lines: list, telegram: bool = False) -> None:
+    """script.txt 줄 수 vs 슬라이드 이미지 수 비교 + (sources.json 있으면) Claude 내용 검증.
+    줄 수 불일치면 즉시 중단. 내용 불일치면 경고 후 사용자 확인(또는 telegram 자동 중단)."""
+    # 1) script.txt 줄 수 vs 슬라이드 이미지(slide-*.png) 수
+    n_lines = len(script_lines)
+    m_imgs = len(sorted(base.glob("slide-*.png")))
+    log(f"  script.txt {n_lines}줄 vs 슬라이드 이미지 {m_imgs}장")
+    if n_lines != m_imgs:
+        log(f"[ERROR] script.txt {n_lines}줄인데 슬라이드 이미지는 {m_imgs}장이에요.")
+        if telegram:
+            _send_telegram_warn(f"⚠️ 영상 생성 중단 — script.txt {n_lines}줄인데 슬라이드 이미지는 {m_imgs}장이에요.")
+        sys.exit(1)
+
+    # 2) sources.json 있으면 Claude(haiku)로 슬라이드별 내용 검증
+    sources_path = base / "sources.json"
+    if not sources_path.exists():
+        log("  sources.json 없음 — 줄 수 검증만 통과")
+        return
+    try:
+        data = json.loads(sources_path.read_text(encoding="utf-8"))
+    except Exception as e:  # noqa: BLE001
+        log(f"  [경고] sources.json 파싱 실패({e}) — 내용 검증 스킵")
+        return
+    claims = data.get("claims", []) if isinstance(data, dict) else []
+    by_slide = {}
+    for c in claims:
+        sn = c.get("slide_n")
+        if sn is None:
+            continue
+        by_slide.setdefault(int(sn), []).append(str(c.get("claim_text", "")).strip())
+
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    if not api_key:
+        log("  [경고] ANTHROPIC_API_KEY 없음 — 내용 검증 스킵")
+        return
+    try:
+        from anthropic import Anthropic
+    except ImportError:
+        log("  [경고] anthropic 미설치 — 내용 검증 스킵")
+        return
+    client = Anthropic(api_key=api_key)
+
+    mismatches = []
+    for i, line in enumerate(script_lines, start=1):
+        claim = " ".join(t for t in by_slide.get(i, []) if t)
+        if not claim:  # 해당 슬라이드 claim 없으면 스킵
+            continue
+        prompt = (
+            "아래 script 줄이 해당 슬라이드 내용과 맞으면 OK, 맞지 않으면 MISMATCH라고만 답해.\n"
+            f"slide {i} claim: {claim}\nscript: {line}"
+        )
+        try:
+            resp = client.messages.create(
+                model="claude-haiku-4-5-20251001",
+                max_tokens=10,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            ans = "".join(getattr(b, "text", "") for b in resp.content).strip().upper()
+        except Exception as e:  # noqa: BLE001
+            log(f"  [경고] 슬라이드 {i} 검증 API 실패({e}) — 스킵")
+            continue
+        if "MISMATCH" in ans:
+            mismatches.append((i, line, claim))
+
+    if not mismatches:
+        log("  ✅ 내용 검증 통과 — 불일치 없음")
+        return
+
+    warn_text = "\n".join(
+        f"[WARNING] 슬라이드 {i} 불일치 가능성:\n  script: {line}\n  슬라이드 내용: {claim}"
+        for i, line, claim in mismatches
+    )
+    log(warn_text)
+
+    if telegram:
+        _send_telegram_warn("⚠️ 영상 생성 중단 — 내용 검증 불일치:\n\n" + warn_text)
+        log("  [중단] --telegram 모드 — 자동 중단합니다.")
+        sys.exit(1)
+    try:
+        input("계속 진행하려면 엔터, 중단하려면 Ctrl+C ")
+    except KeyboardInterrupt:
+        log("\n  [중단] 사용자가 중단했습니다.")
+        sys.exit(1)
+
+
 # ---------------------------------------------------------------- STEP 2
 def tts_elevenlabs(text: str, out_mp3: Path) -> None:
     try:
@@ -330,7 +433,12 @@ def whisper_segments(mp3: Path, json_out: Path, n_slides: int) -> list:
     log("  whisper small 모델 로드 중... (최초 1회 다운로드 가능)")
     model = whisper.load_model("small")
     log("  음성 분석 중 (word_timestamps=True)...")
-    result = model.transcribe(str(mp3), language="ko", word_timestamps=True, verbose=False)
+    result = model.transcribe(
+        str(mp3), language="ko", word_timestamps=True, verbose=False,
+        condition_on_previous_text=True,
+        no_speech_threshold=0.6,
+        compression_ratio_threshold=2.4,
+    )
     segs = [
         {"start": float(s["start"]), "end": float(s["end"]), "text": str(s["text"]).strip()}
         for s in (result.get("segments", []) or [])
@@ -354,17 +462,51 @@ def whisper_segments(mp3: Path, json_out: Path, n_slides: int) -> list:
 
 
 # ---------------------------------------------------------------- STEP 5
-def map_slides_to_segments(slides: list, srt_texts: list, segments: list, total: float) -> list:
+def map_slides_to_segments(slides: list, srt_texts: list, segments: list, total: float,
+                           script_lines: list = None) -> list:
     """이미지 순서 = voiceover.txt 슬라이드 번호, 자막 텍스트 = output.srt(srt_texts),
-    타임스탬프 = whisper segment.start.
-    슬라이드 i → start = segment[i].start, end = segment[i+1].start (마지막은 전체 길이),
-    text = srt_texts[i]. (슬라이드1 start 는 0.0 으로 클램프 — 합계 = 전체 길이 보장)
-    segment 가 부족하면 글자수 비례 폴백."""
+    타임스탬프 = whisper segment.
+
+    매핑: script_lines(=script.txt 줄) 각 줄을 difflib 유사도로 segment 에 정렬한다.
+      - cursor 부터 연속 1~3개 segment 를 합친 텍스트를 script 줄과 비교해 가장 유사한 window 선택
+        (이후 슬라이드가 최소 1개씩 갖도록 window 상한 제한). window start=첫 seg start, end=마지막 seg end.
+        마지막 슬라이드는 남은 segment 전부.
+      - script_lines 없음/부족하거나 segment < 슬라이드면 글자수 비례 폴백.
+    슬라이드1 start=0.0, 마지막 슬라이드 end=전체 길이. text = srt_texts[i]."""
+    script_lines = script_lines or []
     n = len(slides)
-    if len(segments) >= n:
+    m = len(segments)
+    if script_lines and len(script_lines) >= n and m >= n:
+        # 텍스트 유사도 기반 정렬 — cursor 부터 연속 1~3개 segment 를 합쳐 비교, 최적 window 선택
+        starts, ends = [], []
+        cursor = 0
+        sizes = []
+        for i in range(n):
+            if i == n - 1:
+                grp = segments[cursor:m] or [segments[m - 1]]  # 마지막 슬라이드 = 남은 전부
+            else:
+                remaining_after = n - 1 - i  # 이후 슬라이드 수 (각 ≥1 보장)
+                max_w = max(1, min(3, (m - cursor) - remaining_after))
+                best_w, best_r = 1, -1.0
+                for w in range(1, max_w + 1):
+                    combined = " ".join(
+                        str(segments[cursor + k].get("text", "")) for k in range(w)
+                    )
+                    r = difflib.SequenceMatcher(None, script_lines[i], combined).ratio()
+                    if r > best_r:
+                        best_r, best_w = r, w
+                grp = segments[cursor:cursor + best_w]
+            starts.append(float(grp[0]["start"]))
+            ends.append(float(grp[-1]["end"]))
+            sizes.append(len(grp))
+            cursor += len(grp)
+        log(f"  유사도 매칭(윈도우): segment {m}개 → 슬라이드 {n}개 (window {sizes})")
+    elif m >= n:
+        # script_lines 없음 — segment.start 1:1 (end=다음 슬라이드 start)
         starts = [float(segments[i]["start"]) for i in range(n)]
+        ends = [starts[i + 1] if i + 1 < n else total for i in range(n)]
     else:
-        log(f"  [경고] segment({len(segments)}) < 슬라이드({n}) — 글자수 비례 폴백")
+        log(f"  [경고] segment({m}) < 슬라이드({n}) — 글자수 비례 폴백")
         weights = [max(1, len(to_voice(s["text"]))) for s in slides]
         tot = float(sum(weights))
         acc = 0.0
@@ -372,12 +514,14 @@ def map_slides_to_segments(slides: list, srt_texts: list, segments: list, total:
         for w in weights:
             starts.append(total * acc / tot)
             acc += w
-    starts[0] = 0.0  # 첫 슬라이드는 0초부터 (합계 = 전체 길이 보장)
+        ends = [starts[i + 1] if i + 1 < n else total for i in range(n)]
+    starts[0] = 0.0   # 첫 슬라이드는 0초부터 (합계 = 전체 길이 보장)
+    ends[-1] = total  # 마지막 슬라이드 end = 전체 음성 길이
 
     mapped = []
     for i in range(n):
         st = starts[i]
-        en = starts[i + 1] if i + 1 < n else total
+        en = ends[i]
         if en < st:
             en = st
         text = srt_texts[i] if i < len(srt_texts) else slides[i]["text"]
@@ -458,7 +602,10 @@ def build_image_timeline(mapped: list, images: dict, total: float) -> list:
     n = len(mapped)
     for i, m in enumerate(mapped):
         num = m["slide_num"]
-        st, en = m["start"], m["end"]
+        st = m["start"]
+        # 슬라이드 표시 구간 = [자기 start, 다음 슬라이드 start) — 마지막은 음성 전체 길이.
+        # segment 사이 공백은 이 슬라이드(=이전 이미지)의 마지막 이미지에 흡수돼 그대로 표시됨.
+        en = mapped[i + 1]["start"] if i + 1 < n else total
         wdur = en - st
         is_last = (i == n - 1)
         slide_path = slides.get(num)
@@ -496,12 +643,9 @@ def build_image_timeline(mapped: list, images: dict, total: float) -> list:
         else:
             emit(slide_path, st, en, caption)
 
-    # 부동소수 보정 — 합계를 정확히 total 로
-    if timeline:
-        s = timeline[-1]
-        diff = total - timeline[-1]["end"]
-        if abs(diff) > 1e-6:
-            s["end"] = total
+    # segment 타임스탬프를 그대로 사용 — 마지막 이미지 end 만 음성 전체 길이로 보정
+    if timeline and abs(timeline[-1]["end"] - total) > 1e-6:
+        timeline[-1]["end"] = total
     return timeline
 
 
@@ -603,7 +747,8 @@ def compose_video(timeline: list, voiceover: Path, out_mp4: Path, work_dir: Path
     cmd = ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(listfile),
            "-i", str(voiceover)]
     if bgm:
-        cmd += ["-i", str(bgm)]
+        # BGM 무한 루프(-stream_loop -1) → amix duration=first 가 영상 길이에 맞춰 자동 컷
+        cmd += ["-stream_loop", "-1", "-i", str(bgm)]
         fc = (
             "[0:v]fps=%d,format=yuv420p,setsar=1[vout];"
             "[1:a]anull[a0];[2:a]volume=%.3f[a1];"
@@ -659,6 +804,8 @@ def main() -> int:
     ap.add_argument("--topic", required=True, help="토픽 슬러그 (output/{topic}/)")
     ap.add_argument("--dry-run", action="store_true",
                     help="Step1/5/6/7 로직만 실행 (API/Whisper 호출 없음)")
+    ap.add_argument("--telegram", action="store_true",
+                    help="텔레그램 봇 실행 모드 — 검증 경고를 텔레그램 전송 후 자동 중단")
     args = ap.parse_args()
     topic = args.topic
 
@@ -698,6 +845,13 @@ def main() -> int:
         slide_src = f"script.txt 줄 수({n_lines})"
     log(f"  음성대본 {len(full_script)}자, 자막 {len(srt_texts)}줄, 슬라이드 {len(slides)}개 (순서: {slide_src})")
     log(f"  대본 미리보기: {full_script[:60]}…")
+    # script.txt 줄 목록 (Step5 유사도 매칭용) — output/{topic}/script.txt
+    script_lines = []
+    _script_txt = base / "script.txt"
+    if _script_txt.exists():
+        script_lines = [
+            ln.strip() for ln in _script_txt.read_text(encoding="utf-8").splitlines() if ln.strip()
+        ]
     done(1, "Step1 입력 준비")
 
     if args.dry_run:
@@ -707,7 +861,7 @@ def main() -> int:
         log(f"[DRY-RUN] 가짜 segment {len(segments)}개, 합계 {total:.1f}s 로 진행")
 
         step(5, "슬라이드별 타임스탬프 매핑")
-        mapped = map_slides_to_segments(slides, srt_texts, segments, total)
+        mapped = map_slides_to_segments(slides, srt_texts, segments, total, script_lines)
         for m in mapped:
             log("  슬라이드%d %5.2f~%5.2f  %s"
                 % (m["slide_num"], m["start"], m["end"], m["text"][:24]))
@@ -730,6 +884,11 @@ def main() -> int:
         return 0
 
     # --- 실제 빌드 ---
+    # STEP 1.5: script.txt 줄 수 + 슬라이드 내용 검증
+    step(1.5, "script.txt 검증 (줄 수 + 슬라이드 내용)")
+    validate_script_vs_slides(base, script_lines, telegram=args.telegram)
+    done(1.5, "script.txt 검증")
+
     # STEP 2
     step(2, "ElevenLabs 음성 생성")
     tts_elevenlabs(full_script, raw_mp3)
@@ -752,7 +911,7 @@ def main() -> int:
     for i, seg in enumerate(segments):
         print(f"  seg{i}: {seg['start']:.2f}~{seg['end']:.2f} : {seg['text'][:20]}")
     step(5, "슬라이드별 타임스탬프 매핑")
-    mapped = map_slides_to_segments(slides, srt_texts, segments, total)
+    mapped = map_slides_to_segments(slides, srt_texts, segments, total, script_lines)
     for m in mapped:
         print(f"  슬라이드{m['slide_num']}: {m['start']:.2f}~{m['end']:.2f}")
     done(5, "타임스탬프 매핑")
