@@ -1705,8 +1705,14 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         )
         return
 
-    # === 슬라이드 수정 준비 ("<검색어> N번 수정 준비") ===
-    if "수정" in text and "준비" in text and re.search(r"\d+번", text):
+    # === 슬라이드 수정 준비 (여러 패턴) ===
+    if (
+        "수정 준비" in text
+        or "수정자료" in text
+        or "수정 자료" in text
+        or ("수정해줘" in text and re.search(r"\d+번", text))
+        or ("슬라이드" in text and "수정" in text and re.search(r"\d+", text))
+    ):
         await _handle_slide_edit_prepare(update, context)
         return
 
@@ -3897,9 +3903,15 @@ async def _handle_slide_prompt_edit(update: Update, context: ContextTypes.DEFAUL
             )
         msg = f"✅ slide-{slide_n:02d} 재생성 완료!"
         if script_line:
-            msg += f"\n📝 script.txt {slide_n}번 줄 업데이트 {'✅' if script_updated else '⚠️ 실패'}"
+            if script_updated:
+                msg += f"\n📝 script.txt {slide_n}번 줄 업데이트 ✅"
+            else:
+                msg += "\n⚠️ script.txt가 없어요. 먼저 영상을 한 번 생성해주세요."
         if srt_line:
-            msg += f"\n📝 output.srt {slide_n}번 자막 업데이트 {'✅' if srt_updated else '⚠️ 실패'}"
+            if srt_updated:
+                msg += f"\n📝 output.srt {slide_n}번 자막 업데이트 ✅"
+            else:
+                msg += "\n⚠️ output.srt가 없어요. 먼저 영상을 한 번 생성해주세요."
         await update.message.reply_text(msg)
     else:
         await update.message.reply_text("❌ 이미지 재생성 실패했어요.")
