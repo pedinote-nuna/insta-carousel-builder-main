@@ -33,7 +33,7 @@
     {
       "n": 7,
       "role": "body",
-      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 구강 & 정상 범위. Headline COMPACT: 구강 체온은 navy, 4-5세 이상부터 with 4-5세 이상부터 teal underline. Center: large card light teal #E8F4F2 GENEROUS padding. Top: thermometer icon teal small. Bold navy large: 정상 영아 체온. Navy: 36.4-37.5℃. Small gray: (97.5-99.5℉). Bottom navy small: 오후 늦은 시간 최고 · 새벽 최저. Right side: simple graph illustration showing daily temperature curve, line art teal. Bottom thin teal divider. No pixel text. No quotes."
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 주의사항. Headline COMPACT: 체온 측정 전 navy, 꼭 기억하세요 coral underline. Three stacked cards with comfortable spacing between each card. Card 1: coral light background, coral warning icon + 수은 체온계 사용 금지 coral bold, subtitle gray: AAP 권고. Card 2: light gray background, bath and clock icon + 목욕·운동 후 20-30분 안정 navy bold, subtitle gray: 측정 전 안정 권장. Card 3: light gray background, baby and doctor icon + 3개월 미만 38℃ 이상 즉시 진료 navy bold, subtitle gray: 의료진 상담 필수. Right side icons: prohibition sign coral, clock with 20-30 min label, baby with thermometer coral X. Bottom thin teal divider. No pixel text. No quotes. Do NOT render any layout instruction words like GENEROUS as visible text."
     },
     {
       "n": 8,

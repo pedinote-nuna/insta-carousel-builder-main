@@ -1723,22 +1723,26 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         await update.message.reply_text(msg)
         return
 
-    # === "N번 M번 슬라이드 수정 준비" (목록에서 토픽·슬라이드 선택) ===
-    if update.effective_chat.id in SLIDE_EDIT_LIST_SESSION:
-        _mm = (re.search(r"(\d+)번\s*(\d+)번\s*슬라이드\s*수정\s*준비", text)
-               or re.search(r"(\d+)번\s*(\d+)번\s*수정\s*준비", text))
-        if _mm:
+    # === "N번 M번 [P번 ...] 수정 준비" (목록에서 토픽·슬라이드 선택) ===
+    # 첫 번호=토픽, 나머지=슬라이드들. 숫자 2개=단일, 3개 이상=멀티(슬라이드마다 순차 전송).
+    if (update.effective_chat.id in SLIDE_EDIT_LIST_SESSION
+            and "수정" in text and "준비" in text):
+        _nums = [int(x) for x in re.findall(r"(\d+)번", text)]
+        if len(_nums) >= 2:
             _cid = update.effective_chat.id
-            topic_idx = int(_mm.group(1)) - 1
-            slide_n = int(_mm.group(2))
+            topic_idx = _nums[0] - 1
+            slide_ns = _nums[1:]
             lst = SLIDE_EDIT_LIST_SESSION[_cid]
-            if 0 <= topic_idx < len(lst):
-                item = lst[topic_idx]
+            if not (0 <= topic_idx < len(lst)):
+                await update.message.reply_text(f"❌ 토픽 번호를 확인해주세요. (1~{len(lst)})")
+                return
+            item = lst[topic_idx]
+            for i, slide_n in enumerate(slide_ns):
+                if i > 0:
+                    await asyncio.sleep(0.3)
                 await _send_slide_edit_context(
                     update, context, _cid, item["slug"], item["title_kr"], slide_n
                 )
-            else:
-                await update.message.reply_text(f"❌ 토픽 번호를 확인해주세요. (1~{len(lst)})")
             return
 
     # === 슬라이드 수정 준비 (여러 패턴, 자연어 백업) ===
