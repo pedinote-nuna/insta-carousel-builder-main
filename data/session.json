@@ -1,10 +1,10 @@
 {
   "last_topic": {
-    "slug": "late-walking-developmental-milestones",
-    "topic_kr": "걸음마 늦는 아이 정상 범위 vs 검사 필요 기준",
-    "sources_path": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/late-walking-developmental-milestones/sources.json",
-    "template_path": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/templates/slides.late-walking-developmental-milestones.json",
-    "output_dir": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/late-walking-developmental-milestones"
+    "slug": "vs",
+    "topic_kr": "변비 vs 정상 배변 횟수 모양별 병원 기준표",
+    "sources_path": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/vs/sources.json",
+    "template_path": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/templates/slides.vs.json",
+    "output_dir": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/vs"
   },
   "recommendation": null,
   "pending_generation": null,

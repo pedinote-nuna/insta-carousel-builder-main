@@ -1,0 +1,40 @@
+{
+  "topic": "card-20260612-003",
+  "topic_type": "비교형",
+  "source_template": "slides.card-20260612-003.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 훅 - 부모의 공포 자극",
+      "prompt": "Portrait 1080x1350. Bold typography-focused design. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold small, no quotes. Center: huge bold warning text '아이가 기침하면서\\n숨을 못 쉰다면?' in warm brown #3D2B1F, Pretendard ExtraBold 120pt, dramatic line breaks. Bottom: small urgent coral #FF6B6B text '질식 vs 기침 구별법' Pretendard Medium 32pt. Minimalist, no illustrations, high contrast, urgent mood.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "질식 시 목 잡는 제스처 실사",
+      "prompt": "Portrait 1080x1350. Close-up photo-realistic style. Soft warm lighting. Asian toddler's hand reaching to neck in universal choking sign gesture, blurred background #FFF8F0. Top-right: 소아과언니 warm brown small overlay text, no quotes. Bottom overlay: bold coral #FF6B6B text '질식: 목을 잡고 소리 없음' Pretendard Bold 48pt. Clean, educational, focused on hand gesture, no face needed, soft vignette. Korean baby, East Asian facial features, chubby cheeks",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "등 두드리기 실사 시연",
+      "prompt": "Portrait 1080x1350. Close-up photo-realistic style. Soft warm lighting. Adult hand performing back blows on infant dummy or baby doll positioned face-down on forearm, 45-degree angle view, clean white background fading to #FFF8F0. Top-right: 소아과언니 warm brown small overlay text, no quotes. Bottom overlay: bold teal #4A90A4 text '등 두드리기: 손꿈치로 5회' Pretendard Bold 48pt. Educational, clear hand position, professional medical training photo style. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "가슴 압박 실사 시연",
+      "prompt": "Portrait 1080x1350. Close-up photo-realistic style. Soft warm lighting. Adult fingers performing chest compressions on infant dummy, two-finger technique visible, top-down view, clean white surface fading to #FFF8F0. Top-right: 소아과언니 warm brown small overlay text, no quotes. Bottom overlay: bold teal #4A90A4 text '가슴 압박: 두 손가락, 5회' Pretendard Bold 48pt. Educational, clear finger position, professional CPR training photo style. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "7-1.png"
+    }
+  ]
+}

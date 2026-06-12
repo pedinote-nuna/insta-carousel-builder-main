@@ -1,6 +1,6 @@
 {
   "topic": "vs",
-  "topic_type": "응급정보형",
+  "topic_type": "비교형",
   "source_template": "slides.vs.json",
   "n_card_slides": 9,
   "extra_slides": [
@@ -8,32 +8,32 @@
       "n": 10,
       "insert_after": 0,
       "role": "reels-hook",
-      "purpose": "릴스 시작 2초 내 시선 고정용 충격 훅",
-      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: giant bold white Korean text '화상 깊이 구분 못 하면 위험합니다' in 2 lines, ultra-thick font weight 900, letter-spacing tight. Bottom-right corner: small red #E63946 emergency badge icon. Top subtle red glow effect. Minimalist typography-only design. No illustrations. High contrast emergency poster aesthetic.",
+      "purpose": "첫 2초 시선 고정용 충격 훅 - 변비 vs 설사 구분의 중요성 강조",
+      "prompt": "Portrait 1080x1350. Bold typography on clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no decoration. Center: huge bold headline in navy #1A1F36, Pretendard ExtraBold 72pt: '변비인지 설사인지 / 모르겠다고요?' (two lines, centered). Below headline, coral #FF6B58 accent line 4px thick, 120px wide. Bottom third: small coral rounded label: 4가지만 체크하세요. Editorial modern minimalist style, high contrast, designed to stop scroll in first 2 seconds.",
       "file": "0-1.png"
     },
     {
       "n": 11,
       "insert_after": 3,
       "role": "reels-visual",
-      "purpose": "1도 화상 증상을 실사 클로즈업으로 시각화",
-      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up. Child's forearm with mild redness on skin, simulating 1st-degree burn appearance. Soft natural lighting. Parent's hand gently touching the red area to check warmth. Clean white background or light neutral surface. Medical accuracy focus. No blisters visible. Skin texture clear. Warm tone. Shallow depth of field. Documentary medical photography style.",
+      "purpose": "브리스톨 척도 실물 비교 - 딱딱한 변 vs 무른 변 시각화",
+      "prompt": "Portrait 1080x1350. Close-up overhead shot of Bristol Stool Chart visual comparison. Clean white marble surface. Left side: dark brown modeling clay shaped as hard pellets (type 1-2), labeled with small navy tag '변비'. Right side: soft pudding-like brown substance (type 6-7), labeled with coral tag '설사'. Between them: normal banana-shaped brown form (type 4) with green checkmark. Top-right: 소아과언니 navy small watermark. Soft natural window light, editorial food photography style, clinical yet approachable, sharp focus, professional medical educational content.",
       "file": "3-1.png"
     },
     {
       "n": 12,
       "insert_after": 5,
       "role": "reels-visual",
-      "purpose": "흐르는 찬물 응급처치 장면 실사 시연",
-      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up. Child's hand under running cold tap water in modern bathroom sink. Water flowing gently over reddened skin area. Parent's hands supporting child's wrist. Bright clean lighting. Stainless steel faucet visible. Water droplets sparkling. Motion blur on water stream. Hygienic white tile background. Emergency first-aid tutorial photography style. Shallow focus on hand and water contact point.",
+      "purpose": "배변 시 아이 표정/자세 실사 - 변비 고통 vs 설사 급박함 대비",
+      "prompt": "Portrait 1080x1350. Split screen comparison. Left half: toddler sitting on white potty training toilet, straining face (eyes closed, furrowed brow), hands gripping knees, showing effort — constipation sign. Small navy overlay text: '10분 이상 힘주기'. Right half: same toddler rushing to bathroom, urgent expression, parent's hand gently guiding — diarrhea urgency. Small coral overlay text: '급하게 자주'. Both scenes: soft natural home lighting, clean modern bathroom tiles, warm beige tones, documentary parenting photography style. Top-right: 소아과언니 watermark. Faces partially shown (no full face), focus on body language and posture. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
       "file": "5-1.png"
     },
     {
       "n": 13,
       "insert_after": 7,
       "role": "reels-visual",
-      "purpose": "물집 2도 화상 위험 신호 실사 강조",
-      "prompt": "Portrait 1080x1350 vertical. Photorealistic extreme close-up. Medical illustration style showing skin with clear fluid-filled blister on child's palm (simulated safe demonstration). Soft diffused clinical lighting. Latex-gloved medical hand pointing gently at blister area with pen tip (not touching). Clean white medical background. Sharp focus on blister texture. Educational medical photography aesthetic. Warning visual for parents. No graphic injury—clean professional medical training image style.",
+      "purpose": "역행성 똥묻힘 실사 재연 - 부모들이 놓치기 쉬운 신호 시각화",
+      "prompt": "Portrait 1080x1350. Close-up of child's white cotton underwear held by parent's hands against clean white background. Small brown smudge stain visible on fabric (simulated with safe brown watercolor). Parent's hand pointing to stain with index finger. Overlay text in mustard #B8860B rounded label top-left: '역행성 똥묻힘'. Below, navy Pretendard Medium 32pt: '4세 이상에서 / 이건 변비 신호' (two lines). Bottom: small coral caption: '속옷 체크 필수'. Soft diffused lighting, clinical documentary style, educational medical content, respectful and informative tone, white linen texture background. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
       "file": "7-1.png"
     }
   ]

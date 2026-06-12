@@ -38,7 +38,7 @@
     {
       "n": 8,
       "role": "body",
-      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 집에서 지원. Large bold headline: 우리 아이 navy, 응원하기 coral #C44536. Center: clean editorial illustration of parent encouraging toddler to walk, line art coral/navy minimal, playful supportive scene. Below: light gray #F0F0EE rounded card generous padding. Bold navy: 집에서 할 수 있는 지원. Coral numbered list: 1. 충분한 바닥 놀이 시간(유모차/보행기 최소화), 2. 가구 잡고 서기 연습, 3. 손 잡고 걷기, 4. 밀고 다니는 장난감 제공. Small coral box bottom: ⚠️ + navy: 발달 이정표 놓치거나 우려사항 있다면 기다리지 말고 소아청소년과 상담 + 발달 선별검사 요청. Bottom thin coral divider. No pixel text. No quotes."
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 가정 지원법. Large bold headline navy: 걷기 연습 coral, 이렇게 도와주세요. Center: clean editorial illustration showing 4 small vignettes in 2x2 grid layout — baby on floor mat playing, toddler holding furniture edge standing, parent holding child's hand walking, child pushing toy walker. Line art style coral/navy minimal, simple icons with small labels. Below: light gray #F0F0EE rounded card generous padding. Bold navy subhead: 전문가 권장 가정 지원법. Coral bullet points (• not numbers): 하루 충분한 바닥 시간 제공 | 가구 잡고 서기 기회 만들기 | 양손 잡고 함께 걷기 | 밀며 걷는 장난감 활용. Small coral alert box bottom: ⚠️ + navy: 발달 이정표 지연이나 우려사항이 있다면 기다리지 말고 소아청소년과에 상담하고 발달 선별검사를 요청하세요. Bottom thin coral divider. No pixel text. No quotes."
     },
     {
       "n": 9,

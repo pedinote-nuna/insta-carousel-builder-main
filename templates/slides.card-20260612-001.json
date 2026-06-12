@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 012. Center: large warm brown bold headline 아기 목욕 완전정복, two lines, 완전정복 with teal green #2C7A5C underline. Below: small gray subtitle 온도부터 순서까지 · AAP 권장 기준. Bottom center: LARGE cute character illustration of chubby baby sitting in bathtub with warm water, smiling with rubber duck, soft bubbles around, warm cozy pastel colors, chubby round character design. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 첫 목욕 시기. Large bold headline: 신생아 첫 목욕은 warm brown, 24시간 이후 teal green #2C7A5C with thin underline. Center: cute illustration of sleeping newborn baby wrapped in soft blanket with clock showing 24h. Below illustration: two light cream #FFF0E0 rounded cards stacked vertically. First card: 생후 24시간 이후 권장 warm brown bold + small teal checkmark + AAP 가이드라인 gray. Second card: 조기 목욕 위험 warm brown bold + small coral warning icon + 저체온증·저혈당 위험 증가 gray. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 적정 온도. Large bold headline: 목욕물은 warm brown, 37-38도 teal green #2C7A5C with thin underline. Center: cute illustration of thermometer in bathtub showing safe temperature zone, warm steam rising. Below: two light cream #FFF0E0 rounded cards side by side. Left card: large 37-38°C teal bold + 98-100°F gray + cute baby icon + 적정 목욕 온도 warm brown. Right card: large 49°C coral bold + 120°F gray + warning icon + 수도꼭지 최고 온도 warm brown + 화상 예방 필수 gray. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 월령별 방법. Large bold headline: 탯줄 떨어지기 warm brown, 전후로 구분 teal green #2C7A5C with thin underline. Center area: two large light cream #FFF0E0 rounded sections stacked vertically. Top section: cute illustration of baby getting sponge bath on towel + 탯줄 떨어지기 전 warm brown bold + 1-2주 gray + 스펀지 목욕만 teal + small checkmark. Bottom section: cute illustration of baby in small bathtub enjoying bath + 탯줄 떨어진 후 warm brown bold + 전신 목욕 가능 teal + Mayo Clinic 권장 gray + small checkmark. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 목욕 순서. Large bold headline: 깨끗한 곳부터 warm brown, 더러운 곳 순 teal green #2C7A5C with thin underline. Center: vertical flowchart with five light cream #FFF0E0 rounded cards connected by teal arrows. Card 1: cute face icon + 1 얼굴 warm brown. Card 2: cute hair icon + 2 머리 warm brown. Card 3: cute upper body icon + 3 상반신 warm brown. Card 4: cute lower body icon + 4 하반신 warm brown. Card 5: cute diaper area icon + 5 엉덩이 warm brown. Bottom: small gray text 물 깊이 약 5cm 권장 + small bathtub illustration. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 시간·환경. Large bold headline: 5-10분 이내 warm brown, 짧고 따뜻하게 teal green #2C7A5C with thin underline. Center: cute illustration of happy baby in bathtub with timer and thermometer icons. Below: two large light cream #FFF0E0 rounded cards side by side. Left card: cute clock icon + 목욕 시간 warm brown bold + 5-10분 이내 teal large + 피부 건조 예방 gray. Right card: cute room thermometer icon + 실내 온도 warm brown bold + 24-27°C teal large + 따뜻하게 유지 gray. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 목욕 빈도. Large bold headline: 신생아는 warm brown, 주 2-3회면 충분 teal green #2C7A5C with thin underline. Center: cute calendar illustration showing week with 2-3 bath icons marked. Below: two light cream #FFF0E0 rounded cards stacked. Top card: large 주 2-3회 teal bold + cute baby icon + 신생아 적정 빈도 warm brown + AAP 권장 gray + small checkmark. Bottom card: coral warning icon + 너무 자주 목욕 시 warm brown + 피부 건조 위험 증가 coral + Mayo Clinic gray. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral rounded label: 안전 수칙. Large bold headline: 절대 혼자 warm brown, 두지 마세요 coral #E05C3A with thin underline. Center: large illustration of parent's hand always on baby in bathtub, protective gesture. Below: two light cream #FFF0E0 rounded cards stacked. Top card: coral warning icon large + 목욕 중 절대 혼자 두지 않기 warm brown bold + AAP 필수 수칙 gray. Bottom card: cute hand testing water icon + 손목·팔꿈치로 온도 확인 warm brown bold + Mayo Clinic 권장 gray + small checkmark teal. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline center: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C with thin underline. Source box light cream #FFF0E0 rounded: 출처 warm brown small bold, AAP HealthyChildren.org 2025, Mayo Clinic 2026, Cleveland Clinic 2023, Raising Children Network 2026 gray list. Warm brown horizontal divider. Center: 소아과언니 warm brown bold large, NO quotes. Small gray: DR.SOA UNNIE · 소아청소년과 전문의. Horizontal divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 성장 기록으로 목욕 시기 체크 teal. Cute character illustrations around: baby in bathtub, rubber duck, thermometer, soft bubbles. No pixel text. No quotes."
+    }
+  ],
+  "palette": "A",
+  "tone": "character-illustration",
+  "common_style": "# 캐릭터 일러스트 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 소프트 파스텔 베이지 #FFF8F0\n- 텍스트: 웜 브라운 #3D2B1F\n- 강조: teal green #2C7A5C\n- 경고: coral #E05C3A\n- 카드 배경: 크림 #FFF0E0\n- 일러스트: 따뜻한 수채화풍 아기/엄마/음식 캐릭터 (cute, chubby, warm)\n- 시그니쳐: 우상단 소아과언니 warm brown (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nCenter: large warm brown bold headline [토픽 핵심어], two lines, [둘째 줄] with teal green #2C7A5C underline.\nBelow: small gray subtitle [부제] · AAP 권장 기준.\nBottom center: LARGE cute character illustration [토픽 관련 귀여운 아기/엄마 장면], warm cozy colors, chubby characters.\nNo pixel text. No quotes.\n\n## 2x2 그리드 패턴\nFour cards in 2x2 grid, each light cream #FFF0E0 rounded.\nEach card: cute character illustration inside + Korean label below.\nSmall teal checkmark corner.\nWarm pastel colors throughout.\n\n## 금지 항목 패턴 (귀여운 X)\nFour forbidden food/item cards in 2x2 grid.\nEach: cute illustrated item with red X overlay + Korean label + reason.\nWarm background maintained (NOT dark).\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown small, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline.\nSource box cream #FFF0E0 rounded.\n출처 (warm brown small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nWarm brown divider line.\n소아과언니 warm brown bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nDivider.\n@dr.soa_unnie · 매주 새 가이드 warm brown.\n소아과수첩 앱 · [CTA] teal.\nNo pixel text. No quotes.\nCute character illustrations around brand block (doctor/baby/food icons).\n"
+}

@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 004. Large breathing whitespace before headline. Headline COMPACT two lines: 아기 체온 측정 navy, 부위별 정확한 기준 with 정확한 기준 underlined in teal #2C6E63. Small subtitle gray: 연령별 권장 방법 · AAP 가이드라인 기준. LARGE minimalist thermometer and baby line illustration in teal, prominently placed center-right. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 0-3개월. Headline COMPACT: 3개월 미만 영아는 navy, 직장 체온이 기준 with 직장 체온이 기준 teal #2C6E63 underline. Center-right: clean editorial illustration of rectal thermometer and baby, line art teal/navy minimal. Below headline: large rounded card light gray #F0F4F8 with GENEROUS padding. Inside card top: small icon thermometer teal. Bold navy large: 직장 체온 38℃ 이상 = 발열. Small navy text below: (100.4℉ 이상). Bottom of card coral small: 가장 정확한 측정 방법. Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 직장 체온. Headline COMPACT: 올바른 직장 체온 navy, 측정 방법 with 측정 방법 teal underline. Center-left: minimalist illustration of thermometer with depth markers, line art teal. Right side: two stacked cards light gray #F0F4F8 GENEROUS padding. Top card: 6개월 미만 small gray + 1.3cm bold navy large + (0.5인치) small navy. Bottom card: 6개월 이상 small gray + 2.5cm bold navy large + (1인치) small navy. Bottom coral box rounded: ⚠️ 윤활제 사용 필수. Thin teal divider bottom. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 겨드랑이. Headline COMPACT: 겨드랑이 체온 navy, 스크리닝 목적 with 스크리닝 목적 teal underline. Center: large rounded card light gray #F0F4F8 GENEROUS padding. Top icon armpit thermometer teal small. Main value navy bold large: 37.2℃ 이상. Small gray below: (99℉ 이상). Navy text: 직장 체온 재확인 필요. Small teal box at bottom: 직장 체온보다 0.3-0.6℃ 낮게 측정. Right side: simple illustration baby with thermometer under arm, line art navy/teal. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 이마(측두동맥). Headline COMPACT: 이마 체온계 navy, 두 번째로 정확 with 두 번째로 정확 teal underline. Center-left: illustration forehead thermometer scanning, line art teal minimal. Right side: large card light gray #F0F4F8 GENEROUS padding. Top: small icon forehead scan teal. Bold navy: 직장 다음 정확도. Small navy text: 최근 연구에서 신생아에게도 정확. Bottom teal small: AAP 권장 방법. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 귀(고막). Headline COMPACT: 귀 체온계 navy, 6개월 이상부터 with 6개월 이상부터 coral #C44536 underline. Center: two stacked cards. Top card light amber #FFF3E0 padding: ⚠️ 6개월 미만 권장 안 됨 coral bold. Bottom card light gray #F0F4F8 padding: small icon ear teal + 올바른 사용법 navy bold. Text below: 1세 이상: 귀 뒤쪽 위로. 1세 미만: 귀 뒤쪽 아래로. Right side: illustration ear canal with thermometer positioning, line art navy/teal. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 구강 & 정상 범위. Headline COMPACT: 구강 체온은 navy, 4-5세 이상부터 with 4-5세 이상부터 teal underline. Center: large card light teal #E8F4F2 GENEROUS padding. Top: thermometer icon teal small. Bold navy large: 정상 영아 체온. Navy: 36.4-37.5℃. Small gray: (97.5-99.5℉). Bottom navy small: 오후 늦은 시간 최고 · 새벽 최저. Right side: simple graph illustration showing daily temperature curve, line art teal. Bottom thin teal divider. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 주의사항. Headline COMPACT: 체온 측정 전 navy, 꼭 기억하세요 with 꼭 기억하세요 coral underline. Center: three stacked cards GENEROUS spacing. Card 1 light amber #FFF3E0: ⚠️ 수은 체온계 사용 금지 coral bold + AAP 권고 small navy. Card 2 light gray #F0F4F8: 목욕·운동 후 20-30분 안정 navy bold. Card 3 light gray #F0F4F8: 3개월 미만 38℃ 이상 즉시 진료 navy bold. Right side: illustration warning symbols and clock, line art coral/navy. Bottom thin coral divider. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right: 소아과언니 navy, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT: 오늘 확인하고 navy, 저장하세요 with 저장하세요 teal #2C6E63 underline. Source box light gray #F0F4F8 rounded GENEROUS padding, left-aligned. 출처 navy small bold. · American Academy of Pediatrics Fever Guidelines 2024. · Mayo Clinic Thermometer Basics 2025. · AAP Thermometer Use 101 2009. · 식품의약품안전처 체온계 사용법 2016. Generous spacing + thin horizontal divider navy. 소아과언니 navy bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 해열제 계산기로 체중별 용량 바로 확인 teal. No pixel values. No quotes."
+    }
+  ],
+  "palette": "A",
+  "tone": "clean-infographic",
+  "common_style": "# 클린 인포그래픽 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 흰색 #FFFFFF\n- 텍스트: deep navy #1A1F36\n- 강조: teal #2C6E63\n- 경고: coral #C44536\n- 카드 배경: light gray #F0F4F8\n- VERY GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 20% 작게 (빽빽함 방지)\n- 시그니쳐: 우상단 소아과언니 (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin on all four sides.\nTop-right small: '소아과언니' Pretendard SemiBold navy only, no decoration, no quotes.\nTop-left small gray: 'PARENTING NOTE · [번호]'.\nLarge breathing whitespace before headline.\nHeadline COMPACT two lines: '[첫 줄]' navy, '[둘째 줄]' with '[핵심 단어]' underlined in teal #2C6E63.\nSmall subtitle gray: '[부제] · AAP 가이드라인 기준'.\nLARGE minimalist [토픽 관련] line illustration in teal, prominently placed.\nGenerous bottom whitespace. No pixel values as text. No quotes on card.\n\n## BODY 데이터 카드 패턴\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nGENEROUS outer margin all sides.\nTop-right small: '소아과언니' navy, no quotes.\nTop-left small gray label: '[섹션명]'.\nHeadline COMPACT: '[앞부분]' navy, '[핵심 단어]' teal or coral underline.\nStacked/grid cards with REDUCED text (20% smaller) + GENEROUS padding + comfortable spacing.\nEach card: age/category icon top-left + tag label + bold number/text + subtitle.\nNo pixel values as text on card.\n\n## 비교 카드 패턴\nTwo side-by-side cards equal width.\nLeft card teal header / Right card navy header.\nBody light gray: label small gray + main value teal/navy large bold + interval/unit navy.\nBottom coral warning box: ⚠️ + warning text.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' navy, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' navy, '저장하세요' teal underline.\nSource box light gray #F0F4F8 rounded GENEROUS padding, left-aligned.\n출처 (navy small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nGenerous spacing + thin horizontal divider.\n소아과언니 navy bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray small.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 navy.\n소아과수첩 앱 · [CTA] teal.\nNo pixel values. No quotes.\n"
+}

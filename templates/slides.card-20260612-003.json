@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 003. Center: large warm brown bold headline 아기가 기침할 때, two lines, 등 두드리기 금지 with teal green #2C7A5C underline. Below: small gray subtitle 질식 vs 기침 구별법과 응급처치 · AAP 권장 기준. Bottom center: LARGE cute character illustration of worried parent holding coughing baby gently, warm cozy colors, chubby characters, soft pastel tones. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 기침의 역할. Large bold headline: 기침은 warm brown, 정상 반응이에요 teal green #2C7A5C with underline. Center: cute illustration of baby coughing with small particles coming out, showing natural defense mechanism, warm colors. Below: two cream #FFF0E0 rounded cards stacked. First card: 기도 이물질 제거 bold + small icon of airway. Second card: 강한 기침은 스스로 배출 신호 bold + small checkmark. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral rounded label: 위험. Large bold headline: 기침할 때 warm brown, 등 두드리면 안 돼요 coral #E05C3A with underline. Center: illustration of hand about to pat baby's back with large red X overlay, worried expression. Below: cream #FFF0E0 rounded card with warning icon. 음식물이 기도로 떨어져 완전 막힘 위험 bold warm brown. Small text: 기침 중에는 아무것도 하지 마세요. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 구별법. Large bold headline: 질식과 warm brown, 기침은 달라요 teal green #2C7A5C with underline. Center: two side-by-side comparison cards cream #FFF0E0 rounded. Left card: 질식 bold coral + illustration of silent blue-faced baby + 소리 없음 · 숨 못 쉼 · 얼굴 파랗게. Right card: 기침 bold teal + illustration of coughing baby with sound waves + 소리 남 · 숨 쉼 · 스스로 배출. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral rounded label: 실제 질식 시. Large bold headline: 진짜 질식일 때만 warm brown, 응급처치 하세요 coral #E05C3A with underline. Center: illustration showing alternating sequence with arrows, cute style. Top: 5회 등 두드리기 + baby face-down icon. Arrow down. Bottom: 5회 가슴 압박 + baby face-up icon. Small cream card below: 영아에게 복부 압박 절대 금지 with X icon. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 등 두드리기. Large bold headline: 올바른 warm brown, 자세가 중요해요 teal green #2C7A5C with underline. Center: LARGE illustration showing proper infant position on adult's forearm, baby face-down, head lower than body, hand supporting jaw and neck, warm detailed style. Below: two cream #FFF0E0 rounded instruction cards. First: 머리가 몸통보다 낮게 bold + angle icon. Second: 어깨뼈 사이 5회 빠르고 강하게 bold + hand icon. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 가슴 압박. Large bold headline: 등 두드리기 후에도 warm brown, 안 나오면 가슴 압박 teal green #2C7A5C with underline. Center: LARGE illustration showing infant flipped face-up on adult's arm, head still low, hand positioned on chest center below nipples, warm detailed style. Below: two cream #FFF0E0 rounded instruction cards. First: 아기 뒤집어 얼굴 위로 bold + flip icon. Second: 젖꼭지 아래 가슴뼈 중앙 5회 압박 bold + chest icon. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral rounded label: 주의사항. Large bold headline: 이럴 땐 warm brown, CPR을 하세요 coral #E05C3A with underline. Center: illustration of baby with medical symbols around (asthma inhaler, infection icon, swelling icon, head injury icon), warm but serious tone. Below: cream #FFF0E0 rounded card. 천식·감염·부종·머리 외상 시 CPR bold + 등 두드리기·가슴 압박 금지. Small bottom card teal: 질식 해결 후에도 반드시 의료진 진찰. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline. Source box cream #FFF0E0 rounded. 출처 warm brown small bold, MedlinePlus Medical Encyclopedia Updated 2026-02, AHA AAP Guidelines for CPR and ECC 2025, AAP HealthyChildren.org 2015, ASHA Leader 2016. Warm brown divider line. 소아과언니 warm brown bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray. Divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 진료 메모로 응급 상황 기록 teal. No pixel text. No quotes. Cute character illustrations around brand block of doctor with baby and heart icons."
+    }
+  ],
+  "palette": "A",
+  "tone": "character-illustration",
+  "common_style": "# 캐릭터 일러스트 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 소프트 파스텔 베이지 #FFF8F0\n- 텍스트: 웜 브라운 #3D2B1F\n- 강조: teal green #2C7A5C\n- 경고: coral #E05C3A\n- 카드 배경: 크림 #FFF0E0\n- 일러스트: 따뜻한 수채화풍 아기/엄마/음식 캐릭터 (cute, chubby, warm)\n- 시그니쳐: 우상단 소아과언니 warm brown (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nCenter: large warm brown bold headline [토픽 핵심어], two lines, [둘째 줄] with teal green #2C7A5C underline.\nBelow: small gray subtitle [부제] · AAP 권장 기준.\nBottom center: LARGE cute character illustration [토픽 관련 귀여운 아기/엄마 장면], warm cozy colors, chubby characters.\nNo pixel text. No quotes.\n\n## 2x2 그리드 패턴\nFour cards in 2x2 grid, each light cream #FFF0E0 rounded.\nEach card: cute character illustration inside + Korean label below.\nSmall teal checkmark corner.\nWarm pastel colors throughout.\n\n## 금지 항목 패턴 (귀여운 X)\nFour forbidden food/item cards in 2x2 grid.\nEach: cute illustrated item with red X overlay + Korean label + reason.\nWarm background maintained (NOT dark).\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown small, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline.\nSource box cream #FFF0E0 rounded.\n출처 (warm brown small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nWarm brown divider line.\n소아과언니 warm brown bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nDivider.\n@dr.soa_unnie · 매주 새 가이드 warm brown.\n소아과수첩 앱 · [CTA] teal.\nNo pixel text. No quotes.\nCute character illustrations around brand block (doctor/baby/food icons).\n"
+}

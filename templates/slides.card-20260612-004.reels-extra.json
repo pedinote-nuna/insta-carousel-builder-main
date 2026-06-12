@@ -1,0 +1,40 @@
+{
+  "topic": "card-20260612-004",
+  "topic_type": "응급정보형",
+  "source_template": "slides.card-20260612-004.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 첫 2초 훅 - 체온계 선택 실수로 응급실 가는 부모들의 불안 자극",
+      "prompt": "Portrait 1080x1350 vertical. Bold typography-focused design. Solid coral #FF6B6B background. White Pretendard ExtraBold centered text, large size: \"체온계 잘못 골라서\" line break \"응급실 갔어요\" line break smaller white text below: \"신생아 체온 측정, 이것만은 꼭\" Very minimal design, maximum readability for first 2 seconds hook",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-action",
+      "purpose": "직장 체온계 실사 - 0-3개월 아기에게 직장 체온 측정하는 손 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up shot. Baby lying on white changing pad, view from above. Parent's hand gently holding digital rectal thermometer with protective cover, positioning near baby's diaper area (medical context, non-graphic). Soft natural window light. Clean white background. Focus on gentle hand posture and thermometer tip. Professional medical demonstration style. Calm pastel tones. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-action",
+      "purpose": "이마 체온계 사용 실사 - 부모가 아기 이마에 체온계 대는 장면",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic medium close-up. Mother's hand holding white temporal artery thermometer, gently placing on toddler's forehead. Child's face partially visible (focus on forehead area). Soft morning light. Clean home interior background, slightly blurred. Warm skin tones. Device display screen visible showing temperature reading. Caring gesture, medical accuracy. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-action",
+      "purpose": "구강 체온계 NG 장면 - 5세 미만 아이가 체온계 물고 움직이는 위험한 순간",
+      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up shot. Young child (3-4 years old) sitting, attempting to hold oral thermometer in mouth but moving head, thermometer slightly tilted. Parent's hand trying to steady child's chin. Expression of difficulty/frustration. Soft indoor light. Slightly motion-blurred to show movement risk. Visual emphasis on why oral method is unreliable for young kids. Documentary medical education style. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "7-1.png"
+    }
+  ]
+}

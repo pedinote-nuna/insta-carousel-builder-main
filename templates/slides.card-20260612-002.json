@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 012. Large breathing whitespace before headline. Headline COMPACT two lines: 아기 귀 navy, 면봉으로 파면 안 돼요 with 안 돼요 underlined in teal #2C6E63. Small subtitle gray: 매일 닦지 않아도 괜찮아요 · AAO-HNS 가이드라인 기준. LARGE minimalist baby ear with cotton swab crossed out line illustration in teal, prominently placed right side. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 귀지의 역할. Headline COMPACT: 귀지는 navy, 보호막이에요 teal #2C6E63 underline. Center: LARGE minimalist ear anatomy illustration showing protective earwax layer, line art in teal and navy. Below illustration: light gray #F0F4F8 rounded info card with GENEROUS padding, left-aligned text COMPACT size. Card content: small teal dot icon + 먼지·이물질 차단 navy bold, 외이도를 보호해요 gray subtitle. Below: small teal dot icon + 상처 방지 navy bold, 귀 안쪽 피부를 지켜요 gray subtitle. Below: small teal dot icon + 감염 예방 navy bold, 세균 침입을 막아요 gray subtitle. Generous bottom spacing. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 자가 청소. Headline COMPACT: 귀는 스스로 navy, 청소해요 teal #2C6E63 underline. Center: LARGE minimalist illustration showing earwax naturally moving outward from ear canal, curved arrow in teal, line art style. Below: light gray #F0F4F8 rounded card GENEROUS padding. Card top: small teal calendar icon. Main text navy bold COMPACT: 귀지와 노폐물이 저절로 밖으로 배출돼요. Subtitle gray smaller: 외이도의 자가 청소 기능 덕분이에요. Bottom thin teal divider. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 면봉의 문제. Headline COMPACT: 면봉은 귀지를 navy, 밀어 넣어요 coral #C44536 underline. Center: LARGE minimalist illustration showing cotton swab pushing earwax deeper into ear canal, X mark in coral, cross-section view line art. Below: stacked two cards with comfortable vertical spacing. First card light amber #FFF3E0 rounded GENEROUS padding: small coral warning icon top-left + 귀지 매복 유발 navy bold + 귀지를 제거하지 않고 깊숙이 밀어 넣어요 gray subtitle. Second card light gray #F0F4F8 rounded GENEROUS padding: small navy data icon + 연구 결과 navy bold + 면봉 사용 아이들에게서 귀지 매복 발생률 더 높아요 gray subtitle. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 손상 통계. Headline COMPACT: 매일 34명 아이가 navy, 응급실 방문 coral #C44536 underline. Center top: LARGE bold number 263,338명 in coral with small gray subtitle below: 미국 1990-2010년 면봉 관련 귀 손상 (21년간). Below: light gray #F0F4F8 rounded card GENEROUS padding. Card content COMPACT text: small coral alert icon + 하루 평균 약 34명 navy bold larger + 면봉으로 인한 귀 손상으로 응급실 치료 gray subtitle. Bottom: thin coral warning box with ⚠️ icon + 집에서 면봉 사용이 얼마나 위험한지 보여주는 수치예요 navy small. Generous bottom spacing. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 손상 발생. Headline COMPACT: 77%가 navy, 아이 스스로 사용할 때 coral #C44536 underline. Center: three horizontal bar chart style cards with comfortable spacing. First card (longest bar) coral background GENEROUS padding: 77% white bold large + 아이 스스로 사용 white subtitle. Second card (medium bar) light amber background: 16% navy bold + 부모가 사용 navy subtitle. Third card (shortest bar) light gray background: 6% navy bold + 형제자매 사용 navy subtitle. Below bars: light teal #E8F4F2 rounded info card GENEROUS padding: small teal age icon + 40%가 3세 미만 navy bold + 8세 미만이 전체의 2/3 차지 gray subtitle. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: 흔한 손상. Headline COMPACT: 고막 천공부터 navy, 청력 손실까지 coral #C44536 underline. Center: three stacked cards equal height, comfortable vertical spacing, GENEROUS padding each. First card light gray #F0F4F8: small coral icon ear with debris + 이물감 30% navy bold + 귀 안에 뭔가 있는 느낌 gray subtitle. Second card light amber #FFF3E0: small coral icon perforated eardrum + 고막 천공 25% navy bold + 고막에 구멍이 생겨요 gray subtitle. Third card light gray: small coral icon tissue damage + 연조직 손상 23% navy bold + 귀 안쪽 피부가 다쳐요 gray subtitle. Bottom coral warning box rounded GENEROUS padding: ⚠️ + 심한 경우 어지러움·균형 장애·영구적 청력 손실 가능 navy small bold. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: AAO-HNS 권고. Headline COMPACT: 팔꿈치보다 작은 것은 navy, 귀에 넣지 마세요 teal #2C6E63 underline. Center: LARGE minimalist illustration of elbow with comparison arrow and small objects (cotton swab, finger) crossed out in coral, line art style. Below: light teal #E8F4F2 rounded card GENEROUS padding, left-aligned. Card top: small teal checkmark icon + 미국 이비인후과학회 공식 권고 navy bold. Main quote text navy medium: 면봉이나 작은 물체로 귀를 청소하지 마세요. Subtitle gray: 환자·보호자 모두에게 조언되어야 합니다. Bottom thin teal divider. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right: 소아과언니 navy, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT: 오늘 확인하고 navy, 저장하세요 teal #2C6E63 underline. Source box light gray #F0F4F8 rounded GENEROUS padding, left-aligned. 출처 navy small bold. · AAO-HNS Clinical Practice Guideline: Earwax (Cerumen Impaction) 2017 gray. · Schwartz SR et al., Otolaryngology-Head and Neck Surgery 2017 gray. · Ameen ZS et al., The Journal of Pediatrics 2017 gray. · American Academy of Pediatrics endorsement 2017 gray. Generous spacing plus thin horizontal divider navy. 소아과언니 navy bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray small center. Thin divider navy. @dr.soa_unnie · 매주 새 가이드 navy center. 소아과수첩 앱 · 진료 메모 미리 작성하기 teal center. No pixel values. No quotes."
+    }
+  ],
+  "palette": "A",
+  "tone": "clean-infographic",
+  "common_style": "# 클린 인포그래픽 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 흰색 #FFFFFF\n- 텍스트: deep navy #1A1F36\n- 강조: teal #2C6E63\n- 경고: coral #C44536\n- 카드 배경: light gray #F0F4F8\n- VERY GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 20% 작게 (빽빽함 방지)\n- 시그니쳐: 우상단 소아과언니 (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin on all four sides.\nTop-right small: '소아과언니' Pretendard SemiBold navy only, no decoration, no quotes.\nTop-left small gray: 'PARENTING NOTE · [번호]'.\nLarge breathing whitespace before headline.\nHeadline COMPACT two lines: '[첫 줄]' navy, '[둘째 줄]' with '[핵심 단어]' underlined in teal #2C6E63.\nSmall subtitle gray: '[부제] · AAP 가이드라인 기준'.\nLARGE minimalist [토픽 관련] line illustration in teal, prominently placed.\nGenerous bottom whitespace. No pixel values as text. No quotes on card.\n\n## BODY 데이터 카드 패턴\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nGENEROUS outer margin all sides.\nTop-right small: '소아과언니' navy, no quotes.\nTop-left small gray label: '[섹션명]'.\nHeadline COMPACT: '[앞부분]' navy, '[핵심 단어]' teal or coral underline.\nStacked/grid cards with REDUCED text (20% smaller) + GENEROUS padding + comfortable spacing.\nEach card: age/category icon top-left + tag label + bold number/text + subtitle.\nNo pixel values as text on card.\n\n## 비교 카드 패턴\nTwo side-by-side cards equal width.\nLeft card teal header / Right card navy header.\nBody light gray: label small gray + main value teal/navy large bold + interval/unit navy.\nBottom coral warning box: ⚠️ + warning text.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' navy, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' navy, '저장하세요' teal underline.\nSource box light gray #F0F4F8 rounded GENEROUS padding, left-aligned.\n출처 (navy small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nGenerous spacing + thin horizontal divider.\n소아과언니 navy bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray small.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 navy.\n소아과수첩 앱 · [CTA] teal.\nNo pixel values. No quotes.\n"
+}

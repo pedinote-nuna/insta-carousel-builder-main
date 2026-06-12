@@ -74,6 +74,7 @@ OUTPUT_DIR = REPO_ROOT / "output"
 DATA_DIR = REPO_ROOT / "data"
 TOPICS_JSON = DATA_DIR / "topics.json"
 USED_TOPICS_JSON = DATA_DIR / "used-topics.json"
+REELS_IDEAS_JSON = DATA_DIR / "reels-ideas.json"
 # 톤 템플릿(디자인 DNA) 디렉터리 — find 결과: knowledge/tone-templates/{tone}.md
 TONE_DIR = REPO_ROOT / "knowledge" / "tone-templates"
 TONE_DIR_ALT = REPO_ROOT / "knowledge" / "tone"  # 대안 경로
@@ -407,6 +408,9 @@ REGEN_SESSION: dict = {}
 
 # 영상 생성 에러 자동 수정 세션: chat_id → {"topic": slug, "error_type": str, "error_msg": str}
 ERROR_SESSION: dict = {}
+
+# 슬라이드 수정 컨텍스트 세션: chat_id → {"topic": slug, "title_kr": str}
+SLIDE_CONTEXT_SESSION: dict = {}
 
 
 # ---------------------------------------------------------------- helpers
@@ -1666,6 +1670,87 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
     if not text:
         return
 
+    # === 슬라이드 프롬프트 JSON 수정 플로우 (가장 먼저 감지) ===
+    if text.startswith("{") and text.rstrip().endswith("}"):
+        try:
+            payload = json.loads(text)
+        except Exception:  # noqa: BLE001
+            payload = None
+        if (isinstance(payload, dict) and "topic" in payload
+                and "slide_n" in payload and "prompt" in payload):
+            await _handle_slide_prompt_edit(update, context, payload)
+            return
+
+    # === 슬라이드 컨텍스트 초기화 ===
+    if text == "컨텍스트 초기화":
+        SLIDE_CONTEXT_SESSION.pop(update.effective_chat.id, None)
+        await update.message.reply_text(
+            "🔄 컨텍스트 초기화됐어요. 다음 수정 준비 요청 시 전체 컨텍스트를 다시 전송합니다."
+        )
+        return
+
+    # === 슬라이드 수정 준비 ("<검색어> N번 수정 준비") ===
+    if "수정" in text and "준비" in text and re.search(r"\d+번", text):
+        await _handle_slide_edit_prepare(update, context)
+        return
+
+    # === 릴스 아이디어 저장 ("릴스 아이디어 저장" / "아이디어 저장해줘" + 번호 목록) ===
+    _idea_first_line = text.split("\n", 1)[0]
+    if "아이디어" in _idea_first_line and "저장" in _idea_first_line:
+        new_titles = []
+        for ln in text.split("\n")[1:]:
+            ln = ln.strip()
+            if not ln:
+                continue
+            mm = re.match(r"^\d+[.)]?\s*(.+)$", ln)
+            title = mm.group(1).strip() if mm else ln.lstrip("-•").strip()
+            if title:
+                new_titles.append(title)
+        if not new_titles:
+            await update.message.reply_text(
+                "💡 저장할 아이디어를 다음 줄에 번호로 적어주세요.\n예) '릴스 아이디어 저장\\n1. 아기 열날때 해열제 타이밍'"
+            )
+            return
+        ideas = _load_reels_ideas()
+        next_id = max((it.get("id", 0) for it in ideas), default=0) + 1
+        for t in new_titles:
+            ideas.append({"id": next_id, "title": t})
+            next_id += 1
+        _save_reels_ideas(ideas)
+        await update.message.reply_text(
+            f"✅ {len(new_titles)}개 릴스 아이디어 저장 완료!\n현재 총 {len(ideas)}개"
+        )
+        return
+
+    # === 릴스 아이디어 삭제 ("아이디어 N번 삭제") ===
+    _idea_del = re.search(r"아이디어\s*(\d+)번\s*삭제", text)
+    if _idea_del:
+        n = int(_idea_del.group(1))
+        ideas = _load_reels_ideas()
+        if 1 <= n <= len(ideas):
+            removed = ideas.pop(n - 1)
+            _save_reels_ideas(ideas)
+            await update.message.reply_text(
+                f"✅ '{removed.get('title','')}' 삭제됐어요.\n남은 아이디어: {len(ideas)}개"
+            )
+        else:
+            await update.message.reply_text(f"❌ 번호를 확인해주세요. (1~{len(ideas)})")
+        return
+
+    # === 릴스 아이디어 목록 ("릴스 아이디어" / "아이디어 보여줘") ===
+    if text in ("릴스 아이디어", "아이디어 보여줘", "릴스 아이디어 목록"):
+        ideas = _load_reels_ideas()
+        if not ideas:
+            await update.message.reply_text(
+                "💡 저장된 릴스 아이디어가 없어요.\n추가: '릴스 아이디어 저장\\n1. 새 아이디어'"
+            )
+            return
+        lines = [f"{i+1}. {it.get('title','')}" for i, it in enumerate(ideas)]
+        msg = f"💡 릴스 아이디어 목록 ({len(ideas)}개)\n\n" + "\n".join(lines)
+        msg += "\n\n삭제: '아이디어 3번 삭제'\n추가: '릴스 아이디어 저장\\n1. 새 아이디어'"
+        await update.message.reply_text(msg)
+        return
+
     # === /batch 진행 상태 인터셉트 (intent_router 보다 먼저) ===
     # 주제 줄목록·'확인'이 Claude 의도 분류기로 잘못 들어가지 않도록 여기서 가로챈다.
     batch = session.get("batch")
@@ -1812,6 +1897,9 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
 
         del VIDEO_SESSION[chat_id]
         await update.message.reply_text(f"✅ 릴스_최종/{today}_{slug}/ 에 저장했어요!")
+        _removed = _auto_remove_matching_idea(_topic_kr_for(slug))
+        if _removed:
+            await update.message.reply_text(f"💡 릴스 아이디어 목록에서 '{_removed}' 자동 삭제했어요.")
         return
 
     # 복수 컨펌 ("N번 컨펌" / "1,3번 컨펌" / "전체 컨펌") — generated 목록 대상
@@ -1828,14 +1916,20 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
             )
             return
         confirmed_slugs = set()
+        confirmed_titles = []
         for idx in sorted(set(targets)):
             g = gen[idx]
             _save_video_to_final(g["slug"], Path(g["mp4_path"]))
             confirmed_slugs.add(g["slug"])
+            confirmed_titles.append(g.get("title_kr") or g["slug"])
         VIDEO_SESSION[chat_id]["generated"] = [
             g for g in gen if g["slug"] not in confirmed_slugs
         ]
         await update.message.reply_text(f"✅ {len(confirmed_slugs)}개 저장 완료!")
+        for _title in confirmed_titles:
+            _removed = _auto_remove_matching_idea(_title)
+            if _removed:
+                await update.message.reply_text(f"💡 릴스 아이디어 목록에서 '{_removed}' 자동 삭제했어요.")
         return
 
     # 재생성 → 기존 output.mp4 삭제 후 다시 생성
@@ -3532,6 +3626,226 @@ def _extract_error_cause(out: str) -> str:
     return "알 수 없는 오류"
 
 
+async def _reply_chunks(update: Update, text: str, limit: int = 4000) -> None:
+    """긴 텍스트를 줄 경계로 분할해 전송 (텔레그램 4096자 제한 대비)."""
+    if len(text) <= limit:
+        await update.message.reply_text(text)
+        return
+    buf = ""
+    for line in text.split("\n"):
+        if len(buf) + len(line) + 1 > limit:
+            if buf.strip():
+                await update.message.reply_text(buf)
+            buf = ""
+        buf += line + "\n"
+    if buf.strip():
+        await update.message.reply_text(buf)
+
+
+def _replace_script_line(topic: str, slide_n: int, new_line: str) -> bool:
+    """output/{topic}/script.txt 의 slide_n 번째 줄을 new_line 으로 교체. 성공 시 True."""
+    p = OUTPUT_DIR / topic / "script.txt"
+    if not p.exists():
+        return False
+    lines = p.read_text(encoding="utf-8").splitlines()
+    if slide_n < 1 or slide_n > len(lines):
+        return False
+    lines[slide_n - 1] = new_line.strip()
+    p.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return True
+
+
+def _replace_srt_block_text(topic: str, slide_n: int, new_text: str) -> bool:
+    """output/{topic}/output.srt 의 slide_n 번째 블록 텍스트만 교체(번호·타임스탬프 유지)."""
+    p = OUTPUT_DIR / topic / "output.srt"
+    if not p.exists():
+        return False
+    raw = p.read_text(encoding="utf-8").strip()
+    blocks = re.split(r"\n\s*\n", raw)
+    if slide_n < 1 or slide_n > len(blocks):
+        return False
+    blk_lines = blocks[slide_n - 1].splitlines()
+    if len(blk_lines) < 2:
+        return False
+    # blk_lines[0]=번호, [1]=타임스탬프, [2:]=텍스트 → 텍스트만 교체
+    blocks[slide_n - 1] = "\n".join([blk_lines[0], blk_lines[1], new_text.strip()])
+    p.write_text("\n\n".join(blocks) + "\n", encoding="utf-8")
+    return True
+
+
+async def _handle_slide_edit_prepare(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """'<검색어> N번 수정 준비' → 템플릿/스크립트/자막 컨텍스트 + 이미지 전송."""
+    text = (update.message.text or "").strip()
+    cid = update.effective_chat.id
+    sm = re.search(r"(\d+)번", text)
+    if not sm:
+        await update.message.reply_text("❌ 슬라이드 번호를 찾을 수 없어요. 예) '차멀미 8번 수정 준비'")
+        return
+    slide_n = int(sm.group(1))
+    # 검색어 추출 (번호·키워드 제거)
+    q = text
+    for tok in (f"{slide_n}번", "수정", "준비", "슬라이드", "해줘", "해 줘", "줘"):
+        q = q.replace(tok, " ")
+    query = " ".join(q.split()).strip()
+
+    # 토픽 결정 — 검색어 있으면 find_topic_by_query, 없으면 세션 토픽 재사용
+    if query:
+        results = find_topic_by_query(query)
+        if not results:
+            await update.message.reply_text(f"❌ '{query}' 토픽을 찾을 수 없어요.")
+            return
+        topic = results[0]["slug"]
+        title_kr = results[0].get("topic_kr") or topic
+    else:
+        sess = SLIDE_CONTEXT_SESSION.get(cid)
+        if not sess:
+            await update.message.reply_text("❌ 토픽 검색어를 함께 알려주세요. 예) '차멀미 8번 수정 준비'")
+            return
+        topic = sess["topic"]
+        title_kr = sess.get("title_kr") or topic
+
+    # 템플릿에서 prompt + common_style
+    tpl_path = TEMPLATES_DIR / f"slides.{topic}.json"
+    if not tpl_path.exists():
+        await update.message.reply_text(f"❌ topic을 찾을 수 없어요: {topic}")
+        return
+    try:
+        data = json.loads(tpl_path.read_text(encoding="utf-8"))
+    except Exception as e:  # noqa: BLE001
+        await update.message.reply_text(f"❌ 템플릿 읽기 실패: {e}")
+        return
+    slides = data.get("slides", []) if isinstance(data, dict) else []
+    target = next((s for s in slides if s.get("n") == slide_n), None)
+    if target is None:
+        await update.message.reply_text(f"❌ 슬라이드 {slide_n}번을 찾을 수 없어요.")
+        return
+    prompt = str(target.get("prompt", ""))
+    common_style = str(data.get("common_style", "")) if isinstance(data, dict) else ""
+
+    base = OUTPUT_DIR / topic
+    script_txt = ""
+    if (base / "script.txt").exists():
+        script_txt = (base / "script.txt").read_text(encoding="utf-8").strip()
+    srt_txt = ""
+    if (base / "output.srt").exists():
+        srt_txt = (base / "output.srt").read_text(encoding="utf-8").strip()
+
+    # 이미지 전송 (매번)
+    png = base / f"slide-{slide_n:02d}.png"
+    if png.exists():
+        with png.open("rb") as f:
+            await context.bot.send_photo(chat_id=cid, photo=f, caption=f"slide-{slide_n:02d}")
+
+    # 같은 토픽이면 프롬프트만, 첫 요청/다른 토픽이면 전체 컨텍스트
+    prev = SLIDE_CONTEXT_SESSION.get(cid)
+    same_topic = bool(prev and prev.get("topic") == topic)
+    SLIDE_CONTEXT_SESSION[cid] = {"topic": topic, "title_kr": title_kr}
+
+    if same_topic:
+        await _reply_chunks(
+            update,
+            f"📋 {title_kr} 컨텍스트 유지 중 — 프롬프트만 전송합니다.\n\n"
+            f"━━━ {slide_n}번 현재 프롬프트 ━━━\n{prompt}"
+        )
+        return
+    await _reply_chunks(
+        update,
+        "📋 수정 준비 완료!\n"
+        f"토픽: {title_kr} ({topic})\n"
+        f"슬라이드: {slide_n}번\n\n"
+        f"━━━ 현재 프롬프트 ━━━\n{prompt}\n\n"
+        f"━━━ common_style ━━━\n{common_style}\n\n"
+        f"━━━ script.txt 전체 ━━━\n{script_txt}\n\n"
+        f"━━━ output.srt 전체 ━━━\n{srt_txt}\n\n"
+        "━━━ 사용법 ━━━\n"
+        "위 내용을 Claude.ai에 붙여넣고\n"
+        "슬라이드 이미지와 함께 수정 요청하세요.\n"
+        "수정된 JSON을 이 채팅에 붙여넣으면 자동 처리됩니다."
+    )
+
+
+def _run_nanobanana_single(topic: str, slide_n: int) -> bool:
+    """nanobanana-gen.py 로 슬라이드 1장만 재생성. 성공 시 True."""
+    import subprocess
+    cmd = [
+        "python3", str(NANO_GEN),
+        "--topic", topic,
+        "--slides", str(TEMPLATES_DIR / f"slides.{topic}.json"),
+        "--slide-n", str(slide_n),
+    ]
+    try:
+        result = subprocess.run(
+            cmd, cwd=str(REPO_ROOT), capture_output=True, text=True, timeout=300
+        )
+        return result.returncode == 0
+    except Exception:  # noqa: BLE001
+        log.exception("nanobanana 단일 재생성 실패")
+        return False
+
+
+async def _handle_slide_prompt_edit(update: Update, context: ContextTypes.DEFAULT_TYPE,
+                                    payload: dict) -> None:
+    """JSON({topic, slide_n, prompt}) → 템플릿 prompt 교체 후 해당 슬라이드만 재생성·전송."""
+    topic = str(payload.get("topic", "")).strip()
+    new_prompt = str(payload.get("prompt", ""))
+    try:
+        slide_n = int(payload.get("slide_n"))
+    except (TypeError, ValueError):
+        await update.message.reply_text(f"❌ 슬라이드 {payload.get('slide_n')}번을 찾을 수 없어요.")
+        return
+
+    # 1) 템플릿 읽기
+    tpl_path = TEMPLATES_DIR / f"slides.{topic}.json"
+    if not topic or not tpl_path.exists():
+        await update.message.reply_text(f"❌ topic을 찾을 수 없어요: {topic}")
+        return
+    try:
+        data = json.loads(tpl_path.read_text(encoding="utf-8"))
+    except Exception as e:  # noqa: BLE001
+        await update.message.reply_text(f"❌ 템플릿 읽기 실패: {e}")
+        return
+
+    # 2) slide_n 항목 찾아 prompt 교체
+    slides = data.get("slides", []) if isinstance(data, dict) else []
+    target = next((s for s in slides if s.get("n") == slide_n), None)
+    if target is None:
+        await update.message.reply_text(f"❌ 슬라이드 {slide_n}번을 찾을 수 없어요.")
+        return
+    target["prompt"] = new_prompt
+
+    # 3) 템플릿 저장
+    tpl_path.write_text(
+        json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+
+    # 3-2) script_line / srt_line (선택) 반영
+    script_line = payload.get("script_line")
+    srt_line = payload.get("srt_line")
+    script_updated = _replace_script_line(topic, slide_n, str(script_line)) if script_line else None
+    srt_updated = _replace_srt_block_text(topic, slide_n, str(srt_line)) if srt_line else None
+
+    # 4~5) 재생성
+    await update.message.reply_text(f"🔄 slide-{slide_n:02d} 재생성 중...")
+    success = await asyncio.to_thread(_run_nanobanana_single, topic, slide_n)
+
+    # 6~7) 전송 + 완료 메시지
+    png = OUTPUT_DIR / topic / f"slide-{slide_n:02d}.png"
+    if success and png.exists():
+        with png.open("rb") as f:
+            await context.bot.send_photo(
+                chat_id=update.effective_chat.id, photo=f,
+                caption=f"slide-{slide_n:02d}",
+            )
+        msg = f"✅ slide-{slide_n:02d} 재생성 완료!"
+        if script_line:
+            msg += f"\n📝 script.txt {slide_n}번 줄 업데이트 {'✅' if script_updated else '⚠️ 실패'}"
+        if srt_line:
+            msg += f"\n📝 output.srt {slide_n}번 자막 업데이트 {'✅' if srt_updated else '⚠️ 실패'}"
+        await update.message.reply_text(msg)
+    else:
+        await update.message.reply_text("❌ 이미지 재생성 실패했어요.")
+
+
 def run_reels_video_builder(slug: str):
     """reels-video-builder.py 실행. (success, error_type, error_msg) 튜플 반환."""
     import subprocess
@@ -3698,6 +4012,44 @@ def _save_video_to_final(slug: str, mp4_src: Path) -> str:
     if caption_src.exists():
         shutil.copy2(caption_src, final_dir / f"{today}_{slug}.txt")
     return f"릴스_최종/{today}_{slug}/"
+
+
+# ---------------------------------------------------------------- 릴스 아이디어 저장소
+def _load_reels_ideas() -> list:
+    """data/reels-ideas.json 의 ideas 리스트 반환 (없으면 빈 리스트)."""
+    if not REELS_IDEAS_JSON.exists():
+        return []
+    try:
+        data = json.loads(REELS_IDEAS_JSON.read_text(encoding="utf-8"))
+        return data.get("ideas", []) if isinstance(data, dict) else []
+    except Exception:  # noqa: BLE001
+        return []
+
+
+def _save_reels_ideas(ideas: list) -> None:
+    """data/reels-ideas.json 저장 (파일/폴더 자동 생성)."""
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    REELS_IDEAS_JSON.write_text(
+        json.dumps({"ideas": ideas}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+
+
+def _auto_remove_matching_idea(title_kr: str):
+    """title_kr 와 difflib ratio > 0.6 로 매칭되는 아이디어를 삭제하고 그 title 반환(없으면 None)."""
+    import difflib
+    ideas = _load_reels_ideas()
+    if not title_kr or not ideas:
+        return None
+    best_i, best_r = -1, 0.0
+    for i, it in enumerate(ideas):
+        r = difflib.SequenceMatcher(None, title_kr, str(it.get("title", ""))).ratio()
+        if r > best_r:
+            best_r, best_i = r, i
+    if best_i >= 0 and best_r > 0.6:
+        removed = ideas.pop(best_i)
+        _save_reels_ideas(ideas)
+        return removed.get("title", "")
+    return None
 
 
 def _missing_slides(slug: str) -> list[str]:

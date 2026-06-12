@@ -1,0 +1,40 @@
+{
+  "topic": "card-20260612-002",
+  "topic_type": "비교형",
+  "source_template": "slides.card-20260612-002.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 안에 시청자를 멈추게 하는 충격적 메시지",
+      "prompt": "Portrait 1080x1350 vertical. White background #FFFFFF. VERY GENEROUS outer margin all sides. Center: bold typography in navy #1A1F36, Pretendard ExtraBold 72pt: '면봉으로 귀 파면\n안 됩니다'. Below in coral #FF6B6B, Pretendard SemiBold 48pt: '매일 12,000명이\n응급실 간다고요?'. Bottom small teal #20B2AA label: 소아과언니. No icons, no decorations. Clean infographic style.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "면봉 사용의 위험성을 실사로 보여주는 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Close-up photo: adult hand holding white cotton swab near child's ear (side profile, no face visible). Soft natural lighting. White background #FFFFFF. GENEROUS outer margin. Top-right small overlay text: 소아과언니 navy #1A1F36. Top-left small coral #FF6B6B rounded label: 위험. Photorealistic style, clean composition. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 6,
+      "role": "reels-visual",
+      "purpose": "귀 손상 발생 순간을 시각화한 실사 장면",
+      "prompt": "Portrait 1080x1350 vertical. Close-up photo: child's hand holding cotton swab horizontally at eye level, motion blur suggesting sudden movement. Soft white background #FFFFFF. GENEROUS outer margin. Top-right small overlay text: 소아과언니 navy #1A1F36. Top-left small coral #FF6B6B rounded label: 77%가 아이 스스로. Photorealistic style, clean composition, no face visible. Korean baby, East Asian facial features, chubby cheeks",
+      "file": "6-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "자가 청소 메커니즘을 실사로 보여주는 귀 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Close-up photo: side profile of child's ear (no face), gentle finger pointing to ear canal opening. Soft natural lighting. White background #FFFFFF. GENEROUS outer margin. Top-right small overlay text: 소아과언니 navy #1A1F36. Top-left small teal #20B2AA rounded label: 자가 청소. Photorealistic style, clean composition, medical accuracy. Korean baby, East Asian facial features, chubby cheeks",
+      "file": "7-1.png"
+    }
+  ]
+}
