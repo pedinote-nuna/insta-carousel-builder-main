@@ -74,6 +74,10 @@ BGM_VOLUME = 0.07
 FIXED_FIRST = "소아청소년꽈 전문의가 알려드립니다."
 FIXED_LAST = "소아꽈언니의 소아꽈수첩입니다."
 
+# 에러 보고 컨텍스트 (main 에서 설정) — fail() 출력/텔레그램용
+_RUN_TOPIC = ""
+_RUN_TELEGRAM = False
+
 
 def to_voice(t: str) -> str:
     """음성용: 소아과 → 소아꽈."""
@@ -98,8 +102,61 @@ def done(n, title: str) -> None:
     log(f"[STEP {n}] ✅ {title} 완료")
 
 
+_STEP_NO = {
+    "입력 확인": "1",
+    "대본 파싱": "1",
+    "STEP 1.5 검증": "1.5",
+    "음성 생성": "2",
+    "음성 후처리": "3",
+    "오디오 길이 확인": "3",
+    "Whisper 분석": "4",
+    "최종 SRT 생성": "5",
+    "이미지 시퀀스": "7",
+    "영상 합성": "8",
+}
+
+
+def _err_step_and_hint(stepname: str, msg: str):
+    """에러 stepname/메시지로 (STEP 번호, 해결 힌트) 결정."""
+    s = stepname or ""
+    m = msg or ""
+    low = m.lower()
+    step_no = _STEP_NO.get(s, "?")
+    # 1) script.txt 줄 수 불일치
+    mm = re.search(r"script\.txt (\d+)줄인데 슬라이드 이미지는 (\d+)장", m)
+    if mm:
+        return "1.5", f"script.txt 줄 수({mm.group(1)})를 슬라이드 수({mm.group(2)})에 맞게 수정해주세요."
+    # 2) output.srt 없음
+    if "output.srt" in m and ("없" in m or "추출하지" in m):
+        cmd = (f"python3 scripts/estimate_srt.py output/{_RUN_TOPIC}/reels/voiceover.txt "
+               f"-o output/{_RUN_TOPIC}/output.srt")
+        return step_no, f"estimate_srt.py로 output.srt를 생성해주세요:\n{cmd}"
+    # 3) ElevenLabs API 실패
+    if "음성 생성" in s or "elevenlabs" in low:
+        return step_no, "ELEVENLABS_API_KEY를 확인해주세요. 크레딧이 부족할 수 있어요."
+    # 4) Whisper 실패
+    if "whisper" in s.lower() or "whisper" in low:
+        return step_no, ("voiceover.mp3 파일이 손상됐을 수 있어요. "
+                         "voiceover_raw.mp3를 삭제하고 다시 시도해주세요.")
+    # 5) ffmpeg 실패
+    if "ffmpeg" in low or "ffprobe" in low or s in ("음성 후처리", "영상 합성", "오디오 길이 확인"):
+        return step_no, "ffmpeg 설치 여부 확인: brew install ffmpeg"
+    # 6) 기타 예외
+    return step_no, f"에러 내용: {m}"
+
+
 def fail(stepname: str, msg: str):
-    log(f"[ERROR] {stepname} 실패: {msg}")
+    """에러 출력(원인+해결방법+토픽) + (--telegram 시) 텔레그램 전송 후 중단."""
+    step_no, hint = _err_step_and_hint(stepname, msg)
+    out = (
+        f"❌ [STEP {step_no}] 에러 발생\n"
+        f"원인: {msg}\n"
+        f"해결방법: {hint}\n"
+        f"토픽: {_RUN_TOPIC}"
+    )
+    log(out)
+    if _RUN_TELEGRAM:
+        _send_telegram_warn(out)
     sys.exit(1)
 
 
@@ -299,10 +356,7 @@ def validate_script_vs_slides(base: Path, script_lines: list, telegram: bool = F
     m_imgs = len(sorted(base.glob("slide-*.png")))
     log(f"  script.txt {n_lines}줄 vs 슬라이드 이미지 {m_imgs}장")
     if n_lines != m_imgs:
-        log(f"[ERROR] script.txt {n_lines}줄인데 슬라이드 이미지는 {m_imgs}장이에요.")
-        if telegram:
-            _send_telegram_warn(f"⚠️ 영상 생성 중단 — script.txt {n_lines}줄인데 슬라이드 이미지는 {m_imgs}장이에요.")
-        sys.exit(1)
+        fail("STEP 1.5 검증", f"script.txt {n_lines}줄인데 슬라이드 이미지는 {m_imgs}장이에요.")
 
     # 2) sources.json 있으면 Claude(haiku)로 슬라이드별 내용 검증
     sources_path = base / "sources.json"
@@ -365,15 +419,10 @@ def validate_script_vs_slides(base: Path, script_lines: list, telegram: bool = F
     )
     log(warn_text)
 
+    # 내용 불일치(WARNING)는 중단하지 않고 경고만 — 텔레그램 모드면 경고 전송 후 자동 계속
     if telegram:
-        _send_telegram_warn("⚠️ 영상 생성 중단 — 내용 검증 불일치:\n\n" + warn_text)
-        log("  [중단] --telegram 모드 — 자동 중단합니다.")
-        sys.exit(1)
-    try:
-        input("계속 진행하려면 엔터, 중단하려면 Ctrl+C ")
-    except KeyboardInterrupt:
-        log("\n  [중단] 사용자가 중단했습니다.")
-        sys.exit(1)
+        _send_telegram_warn("⚠️ 내용 검증 불일치(경고) — 계속 진행합니다:\n\n" + warn_text)
+    log("  [계속] 내용 불일치 경고 — 중단 없이 진행합니다.")
 
 
 # ---------------------------------------------------------------- STEP 2
@@ -808,6 +857,9 @@ def main() -> int:
                     help="텔레그램 봇 실행 모드 — 검증 경고를 텔레그램 전송 후 자동 중단")
     args = ap.parse_args()
     topic = args.topic
+    # 에러 보고 컨텍스트 설정 (fail() 출력/텔레그램용)
+    globals()["_RUN_TOPIC"] = topic
+    globals()["_RUN_TELEGRAM"] = args.telegram
 
     base = OUTPUT_DIR / topic
     reels = base / "reels"

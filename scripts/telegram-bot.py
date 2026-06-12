@@ -405,6 +405,9 @@ VIDEO_SESSION: dict = {}
 # 카드뉴스 재생성 제안 세션: chat_id → {"candidates": [{slug,topic_kr}...], "topic_kr", "tone"}
 REGEN_SESSION: dict = {}
 
+# 영상 생성 에러 자동 수정 세션: chat_id → {"topic": slug, "error_type": str, "error_msg": str}
+ERROR_SESSION: dict = {}
+
 
 # ---------------------------------------------------------------- helpers
 
@@ -1702,6 +1705,38 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
 
     # === 영상 생성 플로우 ===
     chat_id = update.effective_chat.id
+
+    # 영상 생성 에러 자동/직접 수정
+    if chat_id in ERROR_SESSION and text == "자동 수정해줘":
+        info = ERROR_SESSION[chat_id]
+        slug = info["topic"]
+        etype = info["error_type"]
+        title = _topic_kr_for(slug)
+        if etype == "other":
+            await update.message.reply_text("자동 수정이 어려운 에러예요. 에러 내용을 확인해주세요.")
+            return
+        await update.message.reply_text(f"🔧 '{title}' 자동 수정 시작합니다... ({etype})")
+        fixed = await asyncio.to_thread(_auto_fix_error, slug, etype)
+        if not fixed:
+            await update.message.reply_text("⚠️ 자동 수정에 실패했어요. '직접 수정할게'로 직접 고쳐주세요.")
+            return
+        del ERROR_SESSION[chat_id]
+        await update.message.reply_text("✅ 자동 수정 완료 — 영상 재생성을 시도합니다.")
+        mp4 = await _gen_one_video(update, context, chat_id, slug, title)
+        if mp4:
+            VIDEO_SESSION.setdefault(
+                chat_id, {"pending": [], "generated": [], "last_slug": None, "last_mp4": None}
+            )
+            VIDEO_SESSION[chat_id]["last_slug"] = slug
+            VIDEO_SESSION[chat_id]["last_mp4"] = str(mp4)
+            await update.message.reply_text("✅ 재생성 완료! 확인 후 '컨펌' 또는 '재생성'으로 알려주세요.")
+        return
+
+    if chat_id in ERROR_SESSION and text == "직접 수정할게":
+        del ERROR_SESSION[chat_id]
+        await update.message.reply_text("수정 후 '영상' 명령으로 다시 시도해주세요.")
+        return
+
     if text == "영상":
         prev_gen = VIDEO_SESSION.get(chat_id, {}).get("generated", [])
         gen_slugs = {g["slug"] for g in prev_gen}
@@ -1811,7 +1846,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         if old_mp4.exists():
             old_mp4.unlink()
         await update.message.reply_text(f"🔄 {slug} 재생성 시작합니다...")
-        success = await asyncio.to_thread(run_reels_video_builder, slug)
+        success, _et, _em = await asyncio.to_thread(run_reels_video_builder, slug)
         if success:
             mp4_path = REPO_ROOT / "output" / slug / "reels" / "output.mp4"
             if mp4_path.exists():
@@ -1838,7 +1873,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         gen_new = []
         for i, item in enumerate(pending, 1):
             await update.message.reply_text(f"🎬 {i}/{total} {item['title_kr']} 생성 중...")
-            mp4 = await _gen_one_video(update, context, chat_id, item["slug"])
+            mp4 = await _gen_one_video(update, context, chat_id, item["slug"], item["title_kr"])
             if mp4:
                 gen_new.append({
                     "slug": item["slug"],
@@ -1875,8 +1910,9 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
                 return
             if len(valid) == 1:
                 # 단일 — 기존 컨펌 플로우 (last_slug/last_mp4 + '컨펌'/'재생성')
-                slug = pending[valid[0] - 1]["slug"]
-                mp4 = await _gen_one_video(update, context, chat_id, slug)
+                item = pending[valid[0] - 1]
+                slug = item["slug"]
+                mp4 = await _gen_one_video(update, context, chat_id, slug, item["title_kr"])
                 if mp4:
                     VIDEO_SESSION[chat_id]["last_slug"] = slug
                     VIDEO_SESSION[chat_id]["last_mp4"] = str(mp4)
@@ -1888,7 +1924,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
             gen_new = []
             for n in valid:
                 item = pending[n - 1]
-                mp4 = await _gen_one_video(update, context, chat_id, item["slug"])
+                mp4 = await _gen_one_video(update, context, chat_id, item["slug"], item["title_kr"])
                 if mp4:
                     gen_new.append({
                         "slug": item["slug"],
@@ -3456,17 +3492,144 @@ def run_reels_supplement(slug: str):
         print(f"[reels-supplement] 실행 실패: {e}")
 
 
-def run_reels_video_builder(slug: str) -> bool:
-    """reels-video-builder.py를 실행해 output.mp4 생성. 성공 시 True."""
+# 영상 에러 타입별 해결방법 힌트 (텔레그램 안내용)
+_VIDEO_ERR_HINT = {
+    "script_line_mismatch": "script.txt 줄 수를 슬라이드 수에 맞게 조정해야 해요.",
+    "srt_missing": "output.srt를 estimate_srt.py로 생성해야 해요.",
+    "elevenlabs_fail": "ELEVENLABS_API_KEY/크레딧을 확인해주세요.",
+    "whisper_fail": "voiceover.mp3가 손상됐을 수 있어요. 임시 파일 삭제 후 재시도가 필요해요.",
+    "ffmpeg_fail": "ffmpeg 설치를 확인해주세요 (brew install ffmpeg).",
+    "other": "에러 내용을 확인해주세요.",
+}
+
+
+def _classify_video_error(out: str) -> str:
+    """reels-video-builder.py stdout/stderr 에서 에러 타입 판단."""
+    o = out or ""
+    low = o.lower()
+    if "script.txt" in o and ("줄인데" in o or "줄 수" in o):
+        return "script_line_mismatch"
+    if "output.srt" in o and ("없" in o or "estimate_srt" in o):
+        return "srt_missing"
+    if "elevenlabs" in low or "[STEP 2]" in o or "음성 생성" in o:
+        return "elevenlabs_fail"
+    if "whisper" in low or "[STEP 4]" in o:
+        return "whisper_fail"
+    if "ffmpeg" in low or "ffprobe" in low:
+        return "ffmpeg_fail"
+    return "other"
+
+
+def _extract_error_cause(out: str) -> str:
+    """출력에서 '원인:' 줄(없으면 ❌/[ERROR] 줄)을 에러 메시지로 추출."""
+    lines = (out or "").splitlines()
+    for ln in lines:
+        if ln.strip().startswith("원인:"):
+            return ln.split("원인:", 1)[1].strip()
+    for ln in lines:
+        if "❌" in ln or "[ERROR]" in ln:
+            return ln.strip()
+    return "알 수 없는 오류"
+
+
+def run_reels_video_builder(slug: str):
+    """reels-video-builder.py 실행. (success, error_type, error_msg) 튜플 반환."""
     import subprocess
     script_path = REPO_ROOT / "scripts" / "reels-video-builder.py"
     if not script_path.exists():
+        return (False, "other", "reels-video-builder.py 스크립트를 찾을 수 없어요.")
+    try:
+        result = subprocess.run(
+            ["python3", str(script_path), "--topic", slug],
+            capture_output=True, text=True, timeout=600
+        )
+    except subprocess.TimeoutExpired:
+        return (False, "other", "타임아웃 (10분 초과)")
+    if result.returncode == 0:
+        return (True, "", "")
+    out = (result.stdout or "") + "\n" + (result.stderr or "")
+    return (False, _classify_video_error(out), _extract_error_cause(out))
+
+
+def _fix_script_line_count(slug: str) -> bool:
+    """script.txt 줄 수를 슬라이드 수에 맞게 Claude(haiku)로 압축/확장 + output.srt 재생성."""
+    import subprocess
+    base = REPO_ROOT / "output" / slug
+    reels = base / "reels"
+    script_path = base / "script.txt"
+    if not script_path.exists() and (reels / "script.txt").exists():
+        script_path = reels / "script.txt"
+    if not script_path.exists():
         return False
-    result = subprocess.run(
-        ["python3", str(script_path), "--topic", slug],
-        capture_output=True, text=True, timeout=600
+    lines = [ln.strip() for ln in script_path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+    n_slides = len(sorted(base.glob("slide-*.png")))
+    n_lines = len(lines)
+    if n_slides == 0 or n_lines == n_slides:
+        return False
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    if not api_key or Anthropic is None:
+        return False
+    content = "\n".join(lines)
+    verb = "줄여줘" if n_lines > n_slides else "늘려줘"
+    merge_hint = ("내용은 유지하되 비슷한 문장 합치기."
+                  if n_lines > n_slides else "내용은 유지하되 문장을 자연스럽게 나눠서.")
+    prompt = (
+        f"아래 script.txt를 {n_slides}줄로 {verb}. "
+        f"첫줄(소아청소년꽈전문의가 알려드립니다.)과 마지막줄(소아꽈언니의 소아꽈수첩입니다.)은 고정. "
+        f"{merge_hint} 줄바꿈으로 구분해서 정확히 {n_slides}줄만 출력해.\n\n{content}"
     )
-    return result.returncode == 0
+    try:
+        client = Anthropic(api_key=api_key)
+        resp = client.messages.create(
+            model="claude-haiku-4-5-20251001", max_tokens=1500,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        out = _collect_text(resp).strip()
+    except Exception:  # noqa: BLE001
+        log.exception("script 줄 수 자동 수정 API 실패")
+        return False
+    new_lines = [ln.strip() for ln in out.splitlines() if ln.strip()]
+    if len(new_lines) != n_slides:
+        log.warning("script 자동 수정 결과 줄 수 불일치: %d != %d", len(new_lines), n_slides)
+        return False
+    script_path.write_text("\n".join(new_lines) + "\n", encoding="utf-8")
+    # output.srt 를 수정된 script.txt 기준으로 재생성
+    out_srt = base / "output.srt"
+    subprocess.run(
+        ["python3", str(REPO_ROOT / "scripts" / "estimate_srt.py"),
+         str(script_path), "-o", str(out_srt)],
+        check=False, timeout=120,
+    )
+    return out_srt.exists()
+
+
+def _auto_fix_error(slug: str, error_type: str) -> bool:
+    """에러 타입별 자동 수정. 성공 시 True."""
+    import subprocess
+    base = REPO_ROOT / "output" / slug
+    reels = base / "reels"
+    try:
+        if error_type == "script_line_mismatch":
+            return _fix_script_line_count(slug)
+        if error_type == "srt_missing":
+            vo = reels / "voiceover.txt"
+            out_srt = base / "output.srt"
+            subprocess.run(
+                ["python3", str(REPO_ROOT / "scripts" / "estimate_srt.py"),
+                 str(vo), "-o", str(out_srt)],
+                check=False, timeout=120,
+            )
+            return out_srt.exists()
+        if error_type in ("elevenlabs_fail", "whisper_fail"):
+            for f in (reels / "voiceover_raw.mp3", reels / "voiceover.mp3",
+                      reels / "whisper_segments.json"):
+                if f.exists():
+                    f.unlink()
+            return True
+        return False  # other 등 자동 수정 불가
+    except Exception:  # noqa: BLE001
+        log.exception("auto-fix 실패 (%s/%s)", slug, error_type)
+        return False
 
 
 def get_pending_video_topics() -> list[dict]:
@@ -3492,12 +3655,23 @@ def get_pending_video_topics() -> list[dict]:
     return pending
 
 
-async def _gen_one_video(update, context, chat_id, slug: str):
-    """영상 1개 생성 + 텔레그램 전송. 성공 시 mp4 Path, 실패 시 None."""
+async def _gen_one_video(update, context, chat_id, slug: str, title_kr: str = None):
+    """영상 1개 생성 + 텔레그램 전송. 성공 시 mp4 Path, 실패 시 None.
+    실패하면 ERROR_SESSION 설정 + 자동/직접 수정 안내."""
+    title_kr = title_kr or slug
     await update.message.reply_text(f"🎬 {slug} 영상 생성 시작합니다...\n(2~3분 소요)")
-    success = await asyncio.to_thread(run_reels_video_builder, slug)
+    success, error_type, error_msg = await asyncio.to_thread(run_reels_video_builder, slug)
     if not success:
-        await update.message.reply_text(f"❌ {slug} 영상 생성 실패했어요.")
+        hint = _VIDEO_ERR_HINT.get(error_type, _VIDEO_ERR_HINT["other"])
+        ERROR_SESSION[chat_id] = {"topic": slug, "error_type": error_type, "error_msg": error_msg}
+        await update.message.reply_text(
+            f"❌ {title_kr} 영상 생성 실패\n"
+            f"원인: {error_msg}\n"
+            f"해결방법: {hint}\n\n"
+            f"수정하려면:\n"
+            f"- '자동 수정해줘' → 봇이 자동으로 수정 후 재시도\n"
+            f"- '직접 수정할게' → 수정 후 다시 번호로 만들어줘"
+        )
         return None
     mp4_path = REPO_ROOT / "output" / slug / "reels" / "output.mp4"
     if not mp4_path.exists():
