@@ -1694,33 +1694,51 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         await _handle_slide_edit_prepare(update, context)
         return
 
-    # === 릴스 아이디어 저장 ("릴스 아이디어 저장" / "아이디어 저장해줘" + 번호 목록) ===
-    _idea_first_line = text.split("\n", 1)[0]
-    if "아이디어" in _idea_first_line and "저장" in _idea_first_line:
+    # === 릴스 아이디어 저장 ("아이디어 저장"/"릴스 아이디어"/"아이디어 추가" + 내용) ===
+    _idea_lines = text.split("\n")
+    _idea_first = _idea_lines[0].strip()
+    _idea_kw = next(
+        (k for k in ("아이디어 저장", "릴스 아이디어", "아이디어 추가") if k in _idea_first),
+        None,
+    )
+    if _idea_kw:
+        # 트리거 키워드 뒤 같은 줄 내용 + 다음 줄들을 아이디어로 파싱 (번호/기호/맨줄 모두 허용)
+        # 트리거 문구 전체를 제거(긴 것 먼저) — "릴스 아이디어 저장"에서 "릴스"만 남는 버그 방지
+        first_rest = _idea_first
+        for _ph in ("릴스 아이디어 저장", "릴스 아이디어 추가", "릴스 아이디어",
+                    "아이디어 저장", "아이디어 추가"):
+            first_rest = first_rest.replace(_ph, "", 1)
+        first_rest = first_rest.strip()
+        if first_rest in ("보여줘", "보여 줘", "목록", "해줘", "해 줘", "줘", ""):
+            first_rest = ""
+        content_lines = ([first_rest] if first_rest else []) + _idea_lines[1:]
         new_titles = []
-        for ln in text.split("\n")[1:]:
+        for ln in content_lines:
             ln = ln.strip()
-            if not ln:
+            if not ln:  # 빈 줄 무시
                 continue
-            mm = re.match(r"^\d+[.)]?\s*(.+)$", ln)
-            title = mm.group(1).strip() if mm else ln.lstrip("-•").strip()
+            mm = re.match(r"^\d+[.)]?\s*(.+)$", ln)  # "1. " / "1) "
+            title = mm.group(1).strip() if mm else ln.lstrip("-•·").strip()  # "- " 또는 맨줄
             if title:
                 new_titles.append(title)
-        if not new_titles:
+        if new_titles:
+            ideas = _load_reels_ideas()
+            next_id = max((it.get("id", 0) for it in ideas), default=0) + 1
+            for t in new_titles:
+                ideas.append({"id": next_id, "title": t})
+                next_id += 1
+            _save_reels_ideas(ideas)
             await update.message.reply_text(
-                "💡 저장할 아이디어를 다음 줄에 번호로 적어주세요.\n예) '릴스 아이디어 저장\\n1. 아기 열날때 해열제 타이밍'"
+                f"✅ {len(new_titles)}개 릴스 아이디어 저장 완료!\n현재 총 {len(ideas)}개"
             )
             return
-        ideas = _load_reels_ideas()
-        next_id = max((it.get("id", 0) for it in ideas), default=0) + 1
-        for t in new_titles:
-            ideas.append({"id": next_id, "title": t})
-            next_id += 1
-        _save_reels_ideas(ideas)
-        await update.message.reply_text(
-            f"✅ {len(new_titles)}개 릴스 아이디어 저장 완료!\n현재 총 {len(ideas)}개"
-        )
-        return
+        # 내용 없음 → '릴스 아이디어' 단독은 목록 조회로 넘기고, 그 외엔 안내
+        if text.strip() not in ("릴스 아이디어", "아이디어 보여줘", "릴스 아이디어 목록"):
+            await update.message.reply_text(
+                "💡 저장할 아이디어를 적어주세요.\n예) '릴스 아이디어 저장\\n1. 아기 열날때 해열제 타이밍'"
+            )
+            return
+        # else: fall through → 아래 목록 조회 핸들러
 
     # === 릴스 아이디어 삭제 ("아이디어 N번 삭제") ===
     _idea_del = re.search(r"아이디어\s*(\d+)번\s*삭제", text)
@@ -2556,10 +2574,31 @@ async def delete_from_pending(update: Update, nums: list[int]) -> None:
 # ---------------------------------------------------------------- auto pipeline
 
 
+# 한국어 키워드 → 영어 slug 매핑 (로컬 폴백용)
+_SLUG_KEYWORD_MAP = {
+    "신생아": "newborn", "아기": "baby", "영아": "infant",
+    "목욕": "bath", "수유": "feeding", "모유": "breastmilk",
+    "분유": "formula", "이유식": "baby-food", "수면": "sleep",
+    "열": "fever", "기침": "cough", "콧물": "nasal",
+    "구토": "vomiting", "설사": "diarrhea", "변비": "constipation",
+    "발달": "development", "성장": "growth", "걷기": "walking",
+    "말하기": "speech", "예방접종": "vaccine", "응급": "emergency",
+    "화상": "burn", "질식": "choking", "익수": "drowning",
+    "심장": "heart", "청색증": "cyanosis", "발열": "fever",
+    "귀": "ear", "눈": "eye", "코": "nose", "입": "mouth",
+    "피부": "skin", "두드러기": "rash", "습진": "eczema",
+    "체온": "temperature", "체중": "weight", "키": "height",
+    "방법": "guide", "타이밍": "timing", "기준": "checklist",
+    "증상": "symptoms", "응급실": "emergency", "병원": "hospital",
+    "안전": "safety", "주의": "caution", "금지": "warning",
+}
+
+
 def _local_slug_fallback(topic_kr: str) -> str:
     """API 미사용·실패 시 로컬 슬러그 생성.
     특수문자 제거 → 공백을 하이픈으로 → 영문·숫자·하이픈만 유지.
-    결과가 비면 'card-YYYYMMDD-NNN' 타임스탬프 슬러그 + 같은 날 카운터 증가.
+    영문이 비면 한국어 키워드 매핑(2개 이상)으로 slug 시도,
+    그래도 안 되면 'card-YYYYMMDD-NNN' 타임스탬프 슬러그 + 같은 날 카운터 증가.
     """
     cleaned = re.sub(r"[?!‼⁉！？,，·~%&#@]", "", topic_kr)
     cleaned = re.sub(r"\s+", "-", cleaned.strip())
@@ -2567,6 +2606,20 @@ def _local_slug_fallback(topic_kr: str) -> str:
     cleaned = re.sub(r"-+", "-", cleaned).strip("-")
     if cleaned:
         return cleaned
+
+    # 한국어 키워드 매핑 — 토픽 등장 순서대로 추출, 중복 영어 제거, 2개 이상이면 slug 사용
+    matches = []
+    for kw, en in _SLUG_KEYWORD_MAP.items():
+        idx = topic_kr.find(kw)
+        if idx != -1:
+            matches.append((idx, -len(kw), en))
+    matches.sort()
+    slug_parts = []
+    for _, _, en in matches:
+        if en not in slug_parts:
+            slug_parts.append(en)
+    if len(slug_parts) >= 2:
+        return "-".join(slug_parts)
 
     prefix = f"card-{datetime.now().strftime('%Y%m%d')}-"
     next_num = 1
