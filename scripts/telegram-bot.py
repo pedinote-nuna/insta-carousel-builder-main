@@ -1708,7 +1708,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
             await update.message.reply_text("✅ 모든 토픽이 영상으로 만들어졌어요!")
             return
         VIDEO_SESSION[chat_id] = {"pending": pending, "last_slug": None, "last_mp4": None}
-        lines = [f"{i+1}. {t}" for i, t in enumerate(pending)]
+        lines = [f"{i+1}. {t['title_kr']} ({t['slug']})" for i, t in enumerate(pending)]
         msg = "🎬 영상 미완성 토픽 목록이에요:\n\n" + "\n".join(lines)
         msg += "\n\n번호로 만들어줘 하면 영상 생성할게요.\n예: '1번 만들어줘'"
         await update.message.reply_text(msg)
@@ -1723,12 +1723,15 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
                 await update.message.reply_text(f"🔍 '{query}' 관련 토픽을 찾지 못했어요.")
                 return
             VIDEO_SESSION[chat_id] = {
-                "pending": [r["slug"] for r in results],
+                "pending": [
+                    {"slug": r["slug"], "title_kr": r.get("topic_kr") or r["slug"]}
+                    for r in results
+                ],
                 "last_slug": None,
                 "last_mp4": None,
             }
             lines = [
-                f"{i+1}. {r['slug']}" + (f"  ({r['topic_kr']})" if r.get("topic_kr") and r["topic_kr"] != r["slug"] else "")
+                f"{i+1}. {(r.get('topic_kr') or r['slug'])} ({r['slug']})"
                 for i, r in enumerate(results)
             ]
             msg = f"🔍 '{query}' 검색 결과예요:\n\n" + "\n".join(lines)
@@ -1798,7 +1801,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
             idx = int(m.group(1)) - 1
             pending = VIDEO_SESSION[chat_id]["pending"]
             if 0 <= idx < len(pending):
-                slug = pending[idx]
+                slug = pending[idx]["slug"]
                 await update.message.reply_text(f"🎬 {slug} 영상 생성 시작합니다...\n(2~3분 소요)")
                 success = await asyncio.to_thread(run_reels_video_builder, slug)
                 if success:
@@ -3384,16 +3387,26 @@ def run_reels_video_builder(slug: str) -> bool:
     return result.returncode == 0
 
 
-def get_pending_video_topics() -> list[str]:
-    """voiceover.txt 는 있는데 output.mp4 가 없는(영상 미완성) 토픽 목록."""
+def get_pending_video_topics() -> list[dict]:
+    """voiceover.txt 는 있는데 output.mp4 가 없는(영상 미완성) 토픽 목록.
+    2026-06-10 이후 완료된(done_at >= '2026-06-10') 토픽만, [{'slug','title_kr'}] 반환."""
     output_dir = REPO_ROOT / "output"
+    # topics.json done 에서 6/10 이후 완료된 slug 집합
+    recent_done = {
+        item["slug"]
+        for item in load_topics().get("done", [])
+        if item.get("done_at", "") >= "2026-06-10"
+    }
     pending = []
     for topic_dir in sorted(output_dir.iterdir()):
+        slug = topic_dir.name
+        if slug not in recent_done:  # done 에 없거나 6/10 이전이면 제외
+            continue
         if not (topic_dir / "reels" / "voiceover.txt").exists():
             continue
         if (topic_dir / "reels" / "output.mp4").exists():
             continue
-        pending.append(topic_dir.name)
+        pending.append({"slug": slug, "title_kr": _topic_kr_for(slug)})
     return pending
 
 
