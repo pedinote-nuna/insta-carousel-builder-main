@@ -412,6 +412,9 @@ ERROR_SESSION: dict = {}
 # 슬라이드 수정 컨텍스트 세션: chat_id → {"topic": slug, "title_kr": str}
 SLIDE_CONTEXT_SESSION: dict = {}
 
+# 릴스 아이디어 입력 대기 세션: chat_id → True (다음 메시지를 아이디어 목록으로 파싱)
+IDEA_INPUT_SESSION: dict = {}
+
 
 # ---------------------------------------------------------------- helpers
 
@@ -1670,6 +1673,19 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
     if not text:
         return
 
+    # === 릴스 아이디어 입력 대기 — 안내 직후 다음 메시지를 아이디어 목록으로 파싱 ===
+    if IDEA_INPUT_SESSION.get(update.effective_chat.id):
+        IDEA_INPUT_SESSION.pop(update.effective_chat.id, None)
+        new_titles = _parse_idea_titles(text.split("\n"))
+        if not new_titles:
+            await update.message.reply_text("💡 저장할 아이디어가 없어 취소했어요.")
+            return
+        total = _append_reels_ideas(new_titles)
+        await update.message.reply_text(
+            f"✅ {len(new_titles)}개 릴스 아이디어 저장 완료!\n현재 총 {total}개"
+        )
+        return
+
     # === 슬라이드 프롬프트 JSON 수정 플로우 (가장 먼저 감지) ===
     if text.startswith("{") and text.rstrip().endswith("}"):
         try:
@@ -1712,30 +1728,20 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         if first_rest in ("보여줘", "보여 줘", "목록", "해줘", "해 줘", "줘", ""):
             first_rest = ""
         content_lines = ([first_rest] if first_rest else []) + _idea_lines[1:]
-        new_titles = []
-        for ln in content_lines:
-            ln = ln.strip()
-            if not ln:  # 빈 줄 무시
-                continue
-            mm = re.match(r"^\d+[.)]?\s*(.+)$", ln)  # "1. " / "1) "
-            title = mm.group(1).strip() if mm else ln.lstrip("-•·").strip()  # "- " 또는 맨줄
-            if title:
-                new_titles.append(title)
+        new_titles = _parse_idea_titles(content_lines)
         if new_titles:
-            ideas = _load_reels_ideas()
-            next_id = max((it.get("id", 0) for it in ideas), default=0) + 1
-            for t in new_titles:
-                ideas.append({"id": next_id, "title": t})
-                next_id += 1
-            _save_reels_ideas(ideas)
+            total = _append_reels_ideas(new_titles)
             await update.message.reply_text(
-                f"✅ {len(new_titles)}개 릴스 아이디어 저장 완료!\n현재 총 {len(ideas)}개"
+                f"✅ {len(new_titles)}개 릴스 아이디어 저장 완료!\n현재 총 {total}개"
             )
             return
-        # 내용 없음 → '릴스 아이디어' 단독은 목록 조회로 넘기고, 그 외엔 안내
+        # 내용 없음 → '릴스 아이디어' 단독은 목록 조회로 넘기고,
+        # 그 외엔 입력 대기 상태로 두고 다음 메시지를 아이디어로 받음
         if text.strip() not in ("릴스 아이디어", "아이디어 보여줘", "릴스 아이디어 목록"):
+            IDEA_INPUT_SESSION[update.effective_chat.id] = True
             await update.message.reply_text(
-                "💡 저장할 아이디어를 적어주세요.\n예) '릴스 아이디어 저장\\n1. 아기 열날때 해열제 타이밍'"
+                "💡 저장할 아이디어를 적어주세요.\n"
+                "(번호·기호 없이 줄바꿈만 해도 돼요. 한 줄에 하나씩)"
             )
             return
         # else: fall through → 아래 목록 조회 핸들러
@@ -4103,6 +4109,31 @@ def _auto_remove_matching_idea(title_kr: str):
         _save_reels_ideas(ideas)
         return removed.get("title", "")
     return None
+
+
+def _parse_idea_titles(lines: list) -> list:
+    """줄 목록을 아이디어 제목으로 파싱. "1. " / "1) " / "- " / 맨줄 모두 허용, 빈 줄 무시."""
+    titles = []
+    for ln in lines:
+        ln = ln.strip()
+        if not ln:
+            continue
+        mm = re.match(r"^\d+[.)]?\s*(.+)$", ln)
+        title = mm.group(1).strip() if mm else ln.lstrip("-•·").strip()
+        if title:
+            titles.append(title)
+    return titles
+
+
+def _append_reels_ideas(new_titles: list) -> int:
+    """아이디어 제목들을 저장소에 추가(id 부여). 전체 개수 반환."""
+    ideas = _load_reels_ideas()
+    next_id = max((it.get("id", 0) for it in ideas), default=0) + 1
+    for t in new_titles:
+        ideas.append({"id": next_id, "title": t})
+        next_id += 1
+    _save_reels_ideas(ideas)
+    return len(ideas)
 
 
 def _missing_slides(slug: str) -> list[str]:
