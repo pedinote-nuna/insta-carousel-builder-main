@@ -399,6 +399,9 @@ def _save_session():
 
 session: dict = _load_session()
 
+# 영상 생성 플로우 세션 상태: chat_id → {"pending": [토픽...]}
+VIDEO_SESSION: dict = {}
+
 
 # ---------------------------------------------------------------- helpers
 
@@ -470,6 +473,70 @@ def find_topic_by_hint(hint: str) -> dict | None:
         candidates.sort(key=lambda x: x[0], reverse=True)
         return candidates[0][1]
     return None
+
+
+def _all_output_topics_with_slides() -> list[str]:
+    """output/ 에서 slide-01.png 가 있는(=콘텐츠 있는) 토픽 slug 목록."""
+    if not OUTPUT_DIR.exists():
+        return []
+    return [
+        d.name for d in sorted(OUTPUT_DIR.iterdir())
+        if d.is_dir() and (d / "slide-01.png").exists()
+    ]
+
+
+def _topic_kr_for(slug: str) -> str:
+    """slug 의 한국어 제목 — sources.json topic_kr 우선, 없으면 topics.json/slug."""
+    src = OUTPUT_DIR / slug / "sources.json"
+    if src.exists():
+        try:
+            data = json.loads(src.read_text())
+            if isinstance(data, dict) and data.get("topic_kr"):
+                return data["topic_kr"]
+        except Exception:  # noqa: BLE001
+            pass
+    return title_for_slug(slug)
+
+
+def find_topic_by_query(query: str) -> list[dict]:
+    """자연어 쿼리로 output/ 토픽을 검색. Claude(haiku)로 관련 slug 최대 5개,
+    [{'slug','topic_kr'}] 반환. API 없으면 단순 부분일치로 폴백."""
+    slugs = _all_output_topics_with_slides()
+    if not slugs or not query.strip():
+        return []
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    if not api_key or Anthropic is None:
+        ql = query.lower().replace(" ", "")
+        hits = [s for s in slugs if ql in s.lower().replace("-", "")]
+        return [{"slug": s, "topic_kr": _topic_kr_for(s)} for s in hits[:5]]
+
+    slug_list = "\n".join(f"- {s}" for s in slugs)
+    parsed = []
+    try:
+        client = Anthropic(api_key=api_key)
+        resp = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=300,
+            system="너는 소아과 콘텐츠 토픽 검색 도우미야. 한국어 검색어와 가장 관련있는 토픽 slug를 찾아줘.",
+            messages=[{
+                "role": "user",
+                "content": (
+                    f"검색어: {query}\n\n토픽 목록:\n{slug_list}\n\n"
+                    "관련있는 slug를 최대 5개 JSON 배열로만 반환해. 예: [\"choking-first-aid\"]"
+                ),
+            }],
+        )
+        raw = _collect_text(resp).strip()
+        raw = re.sub(r"^```(?:json)?\s*", "", raw)
+        raw = re.sub(r"\s*```$", "", raw)
+        m = re.search(r"\[[\s\S]*\]", raw)
+        if m:
+            parsed = json.loads(m.group(0))
+    except Exception:  # noqa: BLE001
+        log.exception("find_topic_by_query 실패")
+        parsed = []
+    valid = [s for s in parsed if isinstance(s, str) and s in slugs][:5]
+    return [{"slug": s, "topic_kr": _topic_kr_for(s)} for s in valid]
 
 
 # ---------------------------------------------------------------- common_style 주입
@@ -1629,6 +1696,128 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
             "❓ '확인' 이라고 보내면 시작하고, /cancel 이면 취소돼요."
         )
         return
+
+    # === 영상 생성 플로우 ===
+    chat_id = update.effective_chat.id
+    if text == "영상":
+        pending = get_pending_video_topics()
+        if not pending:
+            await update.message.reply_text("✅ 모든 토픽이 영상으로 만들어졌어요!")
+            return
+        VIDEO_SESSION[chat_id] = {"pending": pending, "last_slug": None, "last_mp4": None}
+        lines = [f"{i+1}. {t}" for i, t in enumerate(pending)]
+        msg = "🎬 영상 미완성 토픽 목록이에요:\n\n" + "\n".join(lines)
+        msg += "\n\n번호로 만들어줘 하면 영상 생성할게요.\n예: '1번 만들어줘'"
+        await update.message.reply_text(msg)
+        return
+
+    # "영상 <검색어>" → 자연어로 토픽 검색 후 목록 표시
+    if text.startswith("영상") and text != "영상":
+        query = text[2:].strip()
+        if query:
+            results = find_topic_by_query(query)
+            if not results:
+                await update.message.reply_text(f"🔍 '{query}' 관련 토픽을 찾지 못했어요.")
+                return
+            VIDEO_SESSION[chat_id] = {
+                "pending": [r["slug"] for r in results],
+                "last_slug": None,
+                "last_mp4": None,
+            }
+            lines = [
+                f"{i+1}. {r['slug']}" + (f"  ({r['topic_kr']})" if r.get("topic_kr") and r["topic_kr"] != r["slug"] else "")
+                for i, r in enumerate(results)
+            ]
+            msg = f"🔍 '{query}' 검색 결과예요:\n\n" + "\n".join(lines)
+            msg += "\n\n번호로 만들어줘 하면 영상 생성할게요.\n예: '1번 만들어줘'"
+            await update.message.reply_text(msg)
+            return
+
+    # 컨펌 → 릴스_최종 폴더로 저장
+    if text == "컨펌" and chat_id in VIDEO_SESSION and VIDEO_SESSION[chat_id].get("last_slug"):
+        slug = VIDEO_SESSION[chat_id]["last_slug"]
+        src = Path(VIDEO_SESSION[chat_id]["last_mp4"])
+
+        # 최종 폴더: 릴스_최종/{오늘날짜}_{slug}/
+        from datetime import date
+        today = date.today().strftime("%m%d")
+        final_dir = REPO_ROOT / "릴스_최종" / f"{today}_{slug}"
+        final_dir.mkdir(parents=True, exist_ok=True)
+
+        # output.mp4 복사
+        import shutil
+        dst = final_dir / f"{today}_{slug}.mp4"
+        shutil.copy2(src, dst)
+
+        # cover 이미지도 복사 (slide-01.png)
+        cover_src = REPO_ROOT / "output" / slug / "slide-01.png"
+        if cover_src.exists():
+            shutil.copy2(cover_src, final_dir / f"{today}_{slug}-Cover.jpg")
+
+        # caption.txt도 복사
+        caption_src = REPO_ROOT / "output" / slug / "caption.txt"
+        if caption_src.exists():
+            shutil.copy2(caption_src, final_dir / f"{today}_{slug}.txt")
+
+        del VIDEO_SESSION[chat_id]
+        await update.message.reply_text(f"✅ 릴스_최종/{today}_{slug}/ 에 저장했어요!")
+        return
+
+    # 재생성 → 기존 output.mp4 삭제 후 다시 생성
+    if text == "재생성" and chat_id in VIDEO_SESSION and VIDEO_SESSION[chat_id].get("last_slug"):
+        slug = VIDEO_SESSION[chat_id]["last_slug"]
+        # 기존 output.mp4 삭제 후 재생성
+        old_mp4 = REPO_ROOT / "output" / slug / "reels" / "output.mp4"
+        if old_mp4.exists():
+            old_mp4.unlink()
+        await update.message.reply_text(f"🔄 {slug} 재생성 시작합니다...")
+        success = await asyncio.to_thread(run_reels_video_builder, slug)
+        if success:
+            mp4_path = REPO_ROOT / "output" / slug / "reels" / "output.mp4"
+            if mp4_path.exists():
+                VIDEO_SESSION[chat_id]["last_mp4"] = str(mp4_path)
+                await context.bot.send_video(
+                    chat_id=chat_id,
+                    video=open(mp4_path, "rb"),
+                    caption=f"🔄 {slug} 재생성 완료!"
+                )
+                await update.message.reply_text("확인 후 '컨펌' 또는 '재생성'으로 알려주세요.")
+            else:
+                await update.message.reply_text("⚠️ 영상 파일을 찾을 수 없어요.")
+        else:
+            await update.message.reply_text(f"❌ {slug} 재생성 실패했어요.")
+        return
+
+    # 영상 생성 요청 ("N번 만들어줘")
+    if chat_id in VIDEO_SESSION:
+        m = re.match(r"(\d+)번\s*만들어줘", text.strip())
+        if m:
+            idx = int(m.group(1)) - 1
+            pending = VIDEO_SESSION[chat_id]["pending"]
+            if 0 <= idx < len(pending):
+                slug = pending[idx]
+                await update.message.reply_text(f"🎬 {slug} 영상 생성 시작합니다...\n(2~3분 소요)")
+                success = await asyncio.to_thread(run_reels_video_builder, slug)
+                if success:
+                    mp4_path = REPO_ROOT / "output" / slug / "reels" / "output.mp4"
+                    if mp4_path.exists():
+                        await context.bot.send_video(
+                            chat_id=chat_id,
+                            video=open(mp4_path, "rb"),
+                            caption=f"✅ {slug} 영상 완성!"
+                        )
+                        VIDEO_SESSION[chat_id]["last_slug"] = slug
+                        VIDEO_SESSION[chat_id]["last_mp4"] = str(mp4_path)
+                        await update.message.reply_text(
+                            "✅ 영상 확인해보세요!\n확인 후 '컨펌' 또는 '재생성'으로 알려주세요."
+                        )
+                    else:
+                        await update.message.reply_text("⚠️ 영상 파일을 찾을 수 없어요.")
+                else:
+                    await update.message.reply_text(f"❌ {slug} 영상 생성 실패했어요.")
+            else:
+                await update.message.reply_text(f"❌ 번호를 다시 확인해주세요. (1~{len(pending)})")
+            return
 
     # duplicate confirm/cancel 대기 중이면 기존 로직
     if session.get("duplicate_slug"):
@@ -3130,6 +3319,32 @@ def run_reels_supplement(slug: str):
         print(f"[reels-supplement] 타임아웃 (10분 초과): {slug}")
     except Exception as e:
         print(f"[reels-supplement] 실행 실패: {e}")
+
+
+def run_reels_video_builder(slug: str) -> bool:
+    """reels-video-builder.py를 실행해 output.mp4 생성. 성공 시 True."""
+    import subprocess
+    script_path = REPO_ROOT / "scripts" / "reels-video-builder.py"
+    if not script_path.exists():
+        return False
+    result = subprocess.run(
+        ["python3", str(script_path), "--topic", slug],
+        capture_output=True, text=True, timeout=600
+    )
+    return result.returncode == 0
+
+
+def get_pending_video_topics() -> list[str]:
+    """voiceover.txt 는 있는데 output.mp4 가 없는(영상 미완성) 토픽 목록."""
+    output_dir = REPO_ROOT / "output"
+    pending = []
+    for topic_dir in sorted(output_dir.iterdir()):
+        if not (topic_dir / "reels" / "voiceover.txt").exists():
+            continue
+        if (topic_dir / "reels" / "output.mp4").exists():
+            continue
+        pending.append(topic_dir.name)
+    return pending
 
 
 def _missing_slides(slug: str) -> list[str]:
