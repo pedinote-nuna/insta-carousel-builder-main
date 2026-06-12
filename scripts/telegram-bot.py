@@ -523,7 +523,7 @@ def find_topic_by_query(query: str) -> list[dict]:
         hits = [s for s in slugs if ql in s.lower().replace("-", "")]
         return [{"slug": s, "topic_kr": _topic_kr_for(s)} for s in hits[:5]]
 
-    slug_list = "\n".join(f"- {s}" for s in slugs)
+    slug_list = "\n".join(f"- {s} | {_topic_kr_for(s)}" for s in slugs)
     parsed = []
     try:
         client = Anthropic(api_key=api_key)
