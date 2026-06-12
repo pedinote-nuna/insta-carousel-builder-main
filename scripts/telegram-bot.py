@@ -1828,6 +1828,35 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
             await update.message.reply_text(f"❌ {slug} 재생성 실패했어요.")
         return
 
+    # "전체" / "전체 만들어줘" → pending 전체 순차 생성 (intent_router 보다 먼저)
+    if chat_id in VIDEO_SESSION and "컨펌" not in text and text in ("전체", "전체 만들어줘"):
+        pending = VIDEO_SESSION[chat_id]["pending"]
+        if not pending:
+            await update.message.reply_text("⚠️ 생성할 토픽이 없어요. '영상'으로 목록을 먼저 불러주세요.")
+            return
+        total = len(pending)
+        gen_new = []
+        for i, item in enumerate(pending, 1):
+            await update.message.reply_text(f"🎬 {i}/{total} {item['title_kr']} 생성 중...")
+            mp4 = await _gen_one_video(update, context, chat_id, item["slug"])
+            if mp4:
+                gen_new.append({
+                    "slug": item["slug"],
+                    "title_kr": item["title_kr"],
+                    "mp4_path": str(mp4),
+                })
+        if not gen_new:
+            return
+        gen = VIDEO_SESSION[chat_id].get("generated", [])
+        new_slugs = {x["slug"] for x in gen_new}
+        gen = [g for g in gen if g["slug"] not in new_slugs] + gen_new
+        VIDEO_SESSION[chat_id]["generated"] = gen
+        clines = [f"{i+1}. {g['title_kr']} ({g['slug']})" for i, g in enumerate(gen)]
+        msg = f"✅ 전체 {len(gen_new)}개 생성 완료!\n\n" + "\n".join(clines)
+        msg += "\n\n컨펌할 번호를 알려주세요.\n예: '전체 컨펌' 또는 '1,3번 컨펌'"
+        await update.message.reply_text(msg)
+        return
+
     # 영상 생성 요청 — 단일/복수 ("4번", "4번 만들어줘", "1번 3번 만들어줘", "1,3,5 만들어줘")
     if chat_id in VIDEO_SESSION and "컨펌" not in text and "재생성" not in text:
         if "만들어줘" in text:
