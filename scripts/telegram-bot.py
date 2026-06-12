@@ -402,6 +402,9 @@ session: dict = _load_session()
 # 영상 생성 플로우 세션 상태: chat_id → {"pending": [토픽...]}
 VIDEO_SESSION: dict = {}
 
+# 카드뉴스 재생성 제안 세션: chat_id → {"candidates": [{slug,topic_kr}...], "topic_kr", "tone"}
+REGEN_SESSION: dict = {}
+
 
 # ---------------------------------------------------------------- helpers
 
@@ -1819,6 +1822,37 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
                 await update.message.reply_text(f"❌ 번호를 다시 확인해주세요. (1~{len(pending)})")
             return
 
+    # 카드뉴스 재생성/새로 만들기 응답 (REGEN_SESSION 활성 시)
+    if chat_id in REGEN_SESSION:
+        rm = re.match(r"(\d+)번\s*재생성", text.strip())
+        if rm:
+            idx = int(rm.group(1)) - 1
+            cands = REGEN_SESSION[chat_id]["candidates"]
+            if 0 <= idx < len(cands):
+                slug = cands[idx]["slug"]
+                del REGEN_SESSION[chat_id]
+                await update.message.reply_text(f"🔄 '{slug}' 카드뉴스를 재생성합니다...")
+                reset_cancel_flag()
+                await trigger_generation(update, slug)
+            else:
+                await update.message.reply_text(f"❌ 번호를 다시 확인해주세요. (1~{len(cands)})")
+            return
+        if text.strip() == "새로 만들어줘":
+            info = REGEN_SESSION.pop(chat_id)
+            topic_kr = info.get("topic_kr", "")
+            forced_tone = info.get("tone", "")
+            if not topic_kr:
+                await update.message.reply_text("💡 어떤 주제로 새로 만들까요?")
+                return
+            await update.message.reply_text(f"🔤 '{topic_kr}' 새로 만들게요. 영문 슬러그 생성 중...")
+            slug = await korean_to_slug(topic_kr)
+            if not slug:
+                await update.message.reply_text(f"❌ '{topic_kr}' 슬러그 변환 실패.")
+                return
+            reset_cancel_flag()
+            await precheck_and_generate(update, topic_kr, slug, forced_tone=forced_tone)
+            return
+
     # duplicate confirm/cancel 대기 중이면 기존 로직
     if session.get("duplicate_slug"):
         if text.lower() in ("예", "yes", "y", "응", "ㅇ", "ㅇㅇ", "ok", "진행"):
@@ -1853,6 +1887,22 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         topic_kr = params.get("topic_kr", "")
         if not topic_kr:
             await update.message.reply_text("💡 어떤 주제로 만들까요?")
+            return
+        # 기존 토픽 검색 → 매칭 있으면 재생성/새로 만들기 선택 제안
+        existing = find_topic_by_query(topic_kr)
+        if existing:
+            REGEN_SESSION[chat_id] = {
+                "candidates": existing,
+                "topic_kr": topic_kr,
+                "tone": params.get("tone", ""),
+            }
+            _lines = [
+                f"{i+1}. {c.get('topic_kr') or c['slug']} ({c['slug']})"
+                for i, c in enumerate(existing)
+            ]
+            _msg = "🔍 비슷한 주제가 이미 있어요:\n" + "\n".join(_lines)
+            _msg += "\n\n재생성하려면 번호로 말씀해주세요. (예: '1번 재생성')\n새로 만들려면 '새로 만들어줘'라고 해주세요."
+            await update.message.reply_text(_msg)
             return
         data = load_topics()
         matched = next(
