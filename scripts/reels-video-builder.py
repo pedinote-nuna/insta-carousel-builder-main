@@ -392,12 +392,11 @@ def map_slides_to_segments(slides: list, srt_texts: list, segments: list, total:
 
 # ---------------------------------------------------------------- STEP 6
 def build_final_srt(mapped: list, srt_out: Path) -> list:
-    """슬라이드 1번 제외, 자막 텍스트는 mapped[N].text(output.srt 텍스트), 13자 줄바꿈 → final.srt.
-    타임스탬프는 mapped[N].start/end 사용. return 자막 엔트리 [{'start','end','text'}]."""
+    """슬라이드 1번 포함(모든 슬라이드 동일 처리), 자막 텍스트는 mapped[N].text(output.srt 텍스트),
+    13자 줄바꿈 → final.srt. 타임스탬프는 mapped[N].start/end 사용.
+    return 자막 엔트리 [{'start','end','text'}]."""
     entries = []
     for m in mapped:
-        if m["slide_num"] == 1:
-            continue
         entries.append({
             "start": m["start"],
             "end": m["end"],
@@ -410,7 +409,7 @@ def build_final_srt(mapped: list, srt_out: Path) -> list:
         out.append(e["text"])
         out.append("")
     srt_out.write_text("\n".join(out) + "\n", encoding="utf-8")
-    log(f"  자막 {len(entries)}개 (슬라이드1 제외) → {srt_out.name}")
+    log(f"  자막 {len(entries)}개 (슬라이드1 포함) → {srt_out.name}")
     return entries
 
 
@@ -445,7 +444,7 @@ def build_image_timeline(mapped: list, images: dict, total: float) -> list:
       - slide-01 (+ 0-1.png 있으면 슬라이드1 윈도우 3:1 — 슬라이드 3/4, 보충 1/4)
       - slide-02~09 순서, prefix-N 보충은 slide-0N 윈도우 3:1 분할(슬라이드 3/4, 보충 1/4)
       - 마지막 슬라이드 윈도우는 1:2 분할 → 앞 1/3 slide-09, 뒤 2/3 promo
-      - 자막: 슬라이드1·promo 는 없음, 나머지는 해당 슬라이드 자막(역치환)
+      - 자막: promo 만 없음, 슬라이드는 모두 해당 슬라이드 자막(역치환) 표시
     """
     slides = images["slides"]
     extras = images["extras"]
@@ -465,7 +464,7 @@ def build_image_timeline(mapped: list, images: dict, total: float) -> list:
         slide_path = slides.get(num)
         if slide_path is None:
             fail("이미지 시퀀스", f"slide-{num:02d}.png 가 없음 (output/{mapped and ''}…)")
-        caption = "" if num == 1 else to_sub(m["text"])
+        caption = to_sub(m["text"])
 
         # 이 슬라이드 윈도우에 들어갈 보충 이미지
         ex = list(extras.get(num, []))

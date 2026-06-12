@@ -1703,14 +1703,23 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
     # === 영상 생성 플로우 ===
     chat_id = update.effective_chat.id
     if text == "영상":
-        pending = get_pending_video_topics()
+        prev_gen = VIDEO_SESSION.get(chat_id, {}).get("generated", [])
+        gen_slugs = {g["slug"] for g in prev_gen}
+        # 파일 pending(mp4 없음) + 생성됨-미컨펌(mp4 있음) 합치기 (중복 slug 제거)
+        pending = [p for p in get_pending_video_topics() if p["slug"] not in gen_slugs]
+        pending += [{"slug": g["slug"], "title_kr": g["title_kr"]} for g in prev_gen]
         if not pending:
             await update.message.reply_text("✅ 모든 토픽이 영상으로 만들어졌어요!")
             return
-        VIDEO_SESSION[chat_id] = {"pending": pending, "last_slug": None, "last_mp4": None}
-        lines = [f"{i+1}. {t['title_kr']} ({t['slug']})" for i, t in enumerate(pending)]
+        VIDEO_SESSION[chat_id] = {
+            "pending": pending, "generated": prev_gen, "last_slug": None, "last_mp4": None,
+        }
+        lines = []
+        for i, t in enumerate(pending):
+            mark = "  🎬 생성됨(미컨펌)" if t["slug"] in gen_slugs else ""
+            lines.append(f"{i+1}. {t['title_kr']} ({t['slug']}){mark}")
         msg = "🎬 영상 미완성 토픽 목록이에요:\n\n" + "\n".join(lines)
-        msg += "\n\n번호로 만들어줘 하면 영상 생성할게요.\n예: '1번 만들어줘'"
+        msg += "\n\n번호로 만들어줘 하면 영상 생성할게요.\n예: '1번 만들어줘' / '1번 3번 만들어줘'"
         await update.message.reply_text(msg)
         return
 
@@ -1727,6 +1736,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
                     {"slug": r["slug"], "title_kr": r.get("topic_kr") or r["slug"]}
                     for r in results
                 ],
+                "generated": VIDEO_SESSION.get(chat_id, {}).get("generated", []),
                 "last_slug": None,
                 "last_mp4": None,
             }
@@ -1769,6 +1779,30 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         await update.message.reply_text(f"✅ 릴스_최종/{today}_{slug}/ 에 저장했어요!")
         return
 
+    # 복수 컨펌 ("N번 컨펌" / "1,3번 컨펌" / "전체 컨펌") — generated 목록 대상
+    if chat_id in VIDEO_SESSION and "컨펌" in text and VIDEO_SESSION[chat_id].get("generated"):
+        gen = VIDEO_SESSION[chat_id]["generated"]
+        if "전체" in text:
+            targets = list(range(len(gen)))
+        else:
+            nums = [int(x) for x in re.findall(r"\d+", text)]
+            targets = [n - 1 for n in nums if 1 <= n <= len(gen)]
+        if not targets:
+            await update.message.reply_text(
+                f"❌ 컨펌할 번호를 확인해주세요. (1~{len(gen)}, 또는 '전체 컨펌')"
+            )
+            return
+        confirmed_slugs = set()
+        for idx in sorted(set(targets)):
+            g = gen[idx]
+            _save_video_to_final(g["slug"], Path(g["mp4_path"]))
+            confirmed_slugs.add(g["slug"])
+        VIDEO_SESSION[chat_id]["generated"] = [
+            g for g in gen if g["slug"] not in confirmed_slugs
+        ]
+        await update.message.reply_text(f"✅ {len(confirmed_slugs)}개 저장 완료!")
+        return
+
     # 재생성 → 기존 output.mp4 삭제 후 다시 생성
     if text == "재생성" and chat_id in VIDEO_SESSION and VIDEO_SESSION[chat_id].get("last_slug"):
         slug = VIDEO_SESSION[chat_id]["last_slug"]
@@ -1794,35 +1828,54 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
             await update.message.reply_text(f"❌ {slug} 재생성 실패했어요.")
         return
 
-    # 영상 생성 요청 ("N번 만들어줘")
-    if chat_id in VIDEO_SESSION:
-        m = re.match(r"(\d+)번\s*만들어줘", text.strip())
-        if m:
-            idx = int(m.group(1)) - 1
+    # 영상 생성 요청 — 단일/복수 ("4번", "4번 만들어줘", "1번 3번 만들어줘", "1,3,5 만들어줘")
+    if chat_id in VIDEO_SESSION and "컨펌" not in text and "재생성" not in text:
+        if "만들어줘" in text:
+            nums = [int(x) for x in re.findall(r"\d+", text)]
+        else:
+            nums = [int(x) for x in re.findall(r"(\d+)번", text)]
+        if nums:
             pending = VIDEO_SESSION[chat_id]["pending"]
-            if 0 <= idx < len(pending):
-                slug = pending[idx]["slug"]
-                await update.message.reply_text(f"🎬 {slug} 영상 생성 시작합니다...\n(2~3분 소요)")
-                success = await asyncio.to_thread(run_reels_video_builder, slug)
-                if success:
-                    mp4_path = REPO_ROOT / "output" / slug / "reels" / "output.mp4"
-                    if mp4_path.exists():
-                        await context.bot.send_video(
-                            chat_id=chat_id,
-                            video=open(mp4_path, "rb"),
-                            caption=f"✅ {slug} 영상 완성!"
-                        )
-                        VIDEO_SESSION[chat_id]["last_slug"] = slug
-                        VIDEO_SESSION[chat_id]["last_mp4"] = str(mp4_path)
-                        await update.message.reply_text(
-                            "✅ 영상 확인해보세요!\n확인 후 '컨펌' 또는 '재생성'으로 알려주세요."
-                        )
-                    else:
-                        await update.message.reply_text("⚠️ 영상 파일을 찾을 수 없어요.")
-                else:
-                    await update.message.reply_text(f"❌ {slug} 영상 생성 실패했어요.")
-            else:
-                await update.message.reply_text(f"❌ 번호를 다시 확인해주세요. (1~{len(pending)})")
+            valid = [n for n in nums if 1 <= n <= len(pending)]
+            invalid = [n for n in nums if not (1 <= n <= len(pending))]
+            if invalid:
+                await update.message.reply_text(
+                    f"❌ 잘못된 번호: {invalid} (1~{len(pending)})"
+                )
+            if not valid:
+                return
+            if len(valid) == 1:
+                # 단일 — 기존 컨펌 플로우 (last_slug/last_mp4 + '컨펌'/'재생성')
+                slug = pending[valid[0] - 1]["slug"]
+                mp4 = await _gen_one_video(update, context, chat_id, slug)
+                if mp4:
+                    VIDEO_SESSION[chat_id]["last_slug"] = slug
+                    VIDEO_SESSION[chat_id]["last_mp4"] = str(mp4)
+                    await update.message.reply_text(
+                        "✅ 영상 확인해보세요!\n확인 후 '컨펌' 또는 '재생성'으로 알려주세요."
+                    )
+                return
+            # 복수 — 순차 생성 후 컨펌 대기 (generated 저장)
+            gen_new = []
+            for n in valid:
+                item = pending[n - 1]
+                mp4 = await _gen_one_video(update, context, chat_id, item["slug"])
+                if mp4:
+                    gen_new.append({
+                        "slug": item["slug"],
+                        "title_kr": item["title_kr"],
+                        "mp4_path": str(mp4),
+                    })
+            if not gen_new:
+                return
+            gen = VIDEO_SESSION[chat_id].get("generated", [])
+            new_slugs = {x["slug"] for x in gen_new}
+            gen = [g for g in gen if g["slug"] not in new_slugs] + gen_new
+            VIDEO_SESSION[chat_id]["generated"] = gen
+            clines = [f"{i+1}. {g['title_kr']} ({g['slug']})" for i, g in enumerate(gen)]
+            msg = f"✅ {len(gen_new)}개 영상 생성 완료!\n\n" + "\n".join(clines)
+            msg += "\n\n컨펌할 번호를 알려주세요.\n예: '1,3번 컨펌' 또는 '전체 컨펌'"
+            await update.message.reply_text(msg)
             return
 
     # 카드뉴스 재생성/새로 만들기 응답 (REGEN_SESSION 활성 시)
@@ -3408,6 +3461,40 @@ def get_pending_video_topics() -> list[dict]:
             continue
         pending.append({"slug": slug, "title_kr": _topic_kr_for(slug)})
     return pending
+
+
+async def _gen_one_video(update, context, chat_id, slug: str):
+    """영상 1개 생성 + 텔레그램 전송. 성공 시 mp4 Path, 실패 시 None."""
+    await update.message.reply_text(f"🎬 {slug} 영상 생성 시작합니다...\n(2~3분 소요)")
+    success = await asyncio.to_thread(run_reels_video_builder, slug)
+    if not success:
+        await update.message.reply_text(f"❌ {slug} 영상 생성 실패했어요.")
+        return None
+    mp4_path = REPO_ROOT / "output" / slug / "reels" / "output.mp4"
+    if not mp4_path.exists():
+        await update.message.reply_text("⚠️ 영상 파일을 찾을 수 없어요.")
+        return None
+    await context.bot.send_video(
+        chat_id=chat_id, video=open(mp4_path, "rb"), caption=f"✅ {slug} 영상 완성!"
+    )
+    return mp4_path
+
+
+def _save_video_to_final(slug: str, mp4_src: Path) -> str:
+    """영상 mp4 + cover(slide-01) + caption 을 릴스_최종/{MMDD}_{slug}/ 로 복사. 상대경로 반환."""
+    import shutil
+    from datetime import date
+    today = date.today().strftime("%m%d")
+    final_dir = REPO_ROOT / "릴스_최종" / f"{today}_{slug}"
+    final_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(mp4_src, final_dir / f"{today}_{slug}.mp4")
+    cover_src = REPO_ROOT / "output" / slug / "slide-01.png"
+    if cover_src.exists():
+        shutil.copy2(cover_src, final_dir / f"{today}_{slug}-Cover.jpg")
+    caption_src = REPO_ROOT / "output" / slug / "caption.txt"
+    if caption_src.exists():
+        shutil.copy2(caption_src, final_dir / f"{today}_{slug}.txt")
+    return f"릴스_최종/{today}_{slug}/"
 
 
 def _missing_slides(slug: str) -> list[str]:

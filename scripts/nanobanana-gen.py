@@ -53,7 +53,11 @@ def load_slides(slides_path: Path) -> list[dict]:
 
 
 def render_prompt(slide: dict, common_style: str) -> str:
-    return f"{common_style}\n\n{slide['prompt']}"
+    prompt = slide['prompt']
+    # cover(slide-01) 슬라이드에 "소아청소년과 전문의" 텍스트 자동 추가
+    if str(slide.get('role', '')).lower() == 'cover':
+        prompt += "\n\nIMPORTANT: At the bottom center of the image, render Korean text '소아청소년과 전문의' in a clear, readable font. The text should be prominent and visible against the background."
+    return f"{common_style}\n\n{prompt}"
 
 
 def main():
