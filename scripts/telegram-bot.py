@@ -415,6 +415,9 @@ SLIDE_CONTEXT_SESSION: dict = {}
 # 릴스 아이디어 입력 대기 세션: chat_id → True (다음 메시지를 아이디어 목록으로 파싱)
 IDEA_INPUT_SESSION: dict = {}
 
+# 슬라이드 수정 토픽 목록 세션: chat_id → [{"slug","title_kr"}, ...] ('수정' 으로 목록 표시 후)
+SLIDE_EDIT_LIST_SESSION: dict = {}
+
 
 # ---------------------------------------------------------------- helpers
 
@@ -1705,7 +1708,40 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         )
         return
 
-    # === 슬라이드 수정 준비 (여러 패턴) ===
+    # === "수정" 단독 → 미완성 토픽 목록 표시 ===
+    if text == "수정":
+        pending = get_pending_video_topics()
+        if not pending:
+            await update.message.reply_text("✅ 수정할 미완성 토픽이 없어요.")
+            return
+        SLIDE_EDIT_LIST_SESSION[update.effective_chat.id] = [
+            {"slug": p["slug"], "title_kr": p["title_kr"]} for p in pending
+        ]
+        lines = [f"{i+1}. {p['title_kr']} ({p['slug']})" for i, p in enumerate(pending)]
+        msg = "✏️ 수정할 토픽을 선택하세요:\n" + "\n".join(lines)
+        msg += "\n\n예) '1번 8번 슬라이드 수정 준비'"
+        await update.message.reply_text(msg)
+        return
+
+    # === "N번 M번 슬라이드 수정 준비" (목록에서 토픽·슬라이드 선택) ===
+    if update.effective_chat.id in SLIDE_EDIT_LIST_SESSION:
+        _mm = (re.search(r"(\d+)번\s*(\d+)번\s*슬라이드\s*수정\s*준비", text)
+               or re.search(r"(\d+)번\s*(\d+)번\s*수정\s*준비", text))
+        if _mm:
+            _cid = update.effective_chat.id
+            topic_idx = int(_mm.group(1)) - 1
+            slide_n = int(_mm.group(2))
+            lst = SLIDE_EDIT_LIST_SESSION[_cid]
+            if 0 <= topic_idx < len(lst):
+                item = lst[topic_idx]
+                await _send_slide_edit_context(
+                    update, context, _cid, item["slug"], item["title_kr"], slide_n
+                )
+            else:
+                await update.message.reply_text(f"❌ 토픽 번호를 확인해주세요. (1~{len(lst)})")
+            return
+
+    # === 슬라이드 수정 준비 (여러 패턴, 자연어 백업) ===
     if (
         "수정 준비" in text
         or "수정자료" in text
@@ -3738,37 +3774,10 @@ def _replace_srt_block_text(topic: str, slide_n: int, new_text: str) -> bool:
     return True
 
 
-async def _handle_slide_edit_prepare(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """'<검색어> N번 수정 준비' → 템플릿/스크립트/자막 컨텍스트 + 이미지 전송."""
-    text = (update.message.text or "").strip()
-    cid = update.effective_chat.id
-    sm = re.search(r"(\d+)번", text)
-    if not sm:
-        await update.message.reply_text("❌ 슬라이드 번호를 찾을 수 없어요. 예) '차멀미 8번 수정 준비'")
-        return
-    slide_n = int(sm.group(1))
-    # 검색어 추출 (번호·키워드 제거)
-    q = text
-    for tok in (f"{slide_n}번", "수정", "준비", "슬라이드", "해줘", "해 줘", "줘"):
-        q = q.replace(tok, " ")
-    query = " ".join(q.split()).strip()
-
-    # 토픽 결정 — 검색어 있으면 find_topic_by_query, 없으면 세션 토픽 재사용
-    if query:
-        results = find_topic_by_query(query)
-        if not results:
-            await update.message.reply_text(f"❌ '{query}' 토픽을 찾을 수 없어요.")
-            return
-        topic = results[0]["slug"]
-        title_kr = results[0].get("topic_kr") or topic
-    else:
-        sess = SLIDE_CONTEXT_SESSION.get(cid)
-        if not sess:
-            await update.message.reply_text("❌ 토픽 검색어를 함께 알려주세요. 예) '차멀미 8번 수정 준비'")
-            return
-        topic = sess["topic"]
-        title_kr = sess.get("title_kr") or topic
-
+async def _send_slide_edit_context(update: Update, context: ContextTypes.DEFAULT_TYPE,
+                                   cid: int, topic: str, title_kr: str, slide_n: int) -> None:
+    """주어진 topic+slide_n 으로 템플릿/스크립트/자막 컨텍스트 + 이미지 전송.
+    같은 토픽 재요청이면 프롬프트만, 첫/다른 토픽이면 전체 컨텍스트."""
     # 템플릿에서 prompt + common_style
     tpl_path = TEMPLATES_DIR / f"slides.{topic}.json"
     if not tpl_path.exists():
@@ -3827,6 +3836,38 @@ async def _handle_slide_edit_prepare(update: Update, context: ContextTypes.DEFAU
         "슬라이드 이미지와 함께 수정 요청하세요.\n"
         "수정된 JSON을 이 채팅에 붙여넣으면 자동 처리됩니다."
     )
+
+
+async def _handle_slide_edit_prepare(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """자연어 '<검색어> N번 수정 준비' → 토픽 검색 후 컨텍스트 전송 (백업 트리거)."""
+    text = (update.message.text or "").strip()
+    cid = update.effective_chat.id
+    sm = re.search(r"(\d+)번", text)
+    if not sm:
+        await update.message.reply_text("❌ 슬라이드 번호를 찾을 수 없어요. 예) '차멀미 8번 수정 준비'")
+        return
+    slide_n = int(sm.group(1))
+    # 검색어 추출 (번호·키워드 제거)
+    q = text
+    for tok in (f"{slide_n}번", "수정", "준비", "슬라이드", "해줘", "해 줘", "줘", "자료"):
+        q = q.replace(tok, " ")
+    query = " ".join(q.split()).strip()
+    # 토픽 결정 — 검색어 있으면 find_topic_by_query, 없으면 세션 토픽 재사용
+    if query:
+        results = find_topic_by_query(query)
+        if not results:
+            await update.message.reply_text(f"❌ '{query}' 토픽을 찾을 수 없어요.")
+            return
+        topic = results[0]["slug"]
+        title_kr = results[0].get("topic_kr") or topic
+    else:
+        sess = SLIDE_CONTEXT_SESSION.get(cid)
+        if not sess:
+            await update.message.reply_text("❌ 토픽 검색어를 함께 알려주세요. 예) '차멀미 8번 수정 준비'")
+            return
+        topic = sess["topic"]
+        title_kr = sess.get("title_kr") or topic
+    await _send_slide_edit_context(update, context, cid, topic, title_kr, slide_n)
 
 
 def _run_nanobanana_single(topic: str, slide_n: int) -> bool:
