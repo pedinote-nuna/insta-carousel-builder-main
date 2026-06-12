@@ -38,7 +38,7 @@
     {
       "n": 8,
       "role": "body",
-      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: AAO-HNS 권고. Headline COMPACT: 팔꿈치보다 작은 것은 navy, 귀에 넣지 마세요 teal #2C6E63 underline. Center: LARGE minimalist illustration of elbow with comparison arrow and small objects (cotton swab, finger) crossed out in coral, line art style. Below: light teal #E8F4F2 rounded card GENEROUS padding, left-aligned. Card top: small teal checkmark icon + 미국 이비인후과학회 공식 권고 navy bold. Main quote text navy medium: 면봉이나 작은 물체로 귀를 청소하지 마세요. Subtitle gray: 환자·보호자 모두에게 조언되어야 합니다. Bottom thin teal divider. No pixel values as text. No quotes on card."
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: AAO-HNS 권고. Headline COMPACT: 면봉 대신 navy, 이렇게 하세요 coral #C44536 underline. Center: LARGE minimalist illustration of soft towel or cloth gently wiping outer ear area only, teal line art style, warm and gentle feel. Below two stacked cards GENEROUS padding. Card 1: teal left border, teal checkmark icon + 올바른 귀 청소법 teal bold. Body navy: 목욕 후 귀 바깥쪽만 부드러운 천으로 살살 닦아주세요. Card 2: light gray background, coral warning icon + 이것만 기억하세요 navy bold. Body navy: 귀 안쪽은 스스로 청소돼요. 아무것도 넣지 않는 게 최선이에요. Bottom thin teal divider. No pixel values as text. No quotes."
     },
     {
       "n": 9,

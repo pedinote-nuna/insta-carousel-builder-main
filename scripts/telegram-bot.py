@@ -3744,15 +3744,22 @@ async def _reply_chunks(update: Update, text: str, limit: int = 4000) -> None:
 
 
 def _replace_script_line(topic: str, slide_n: int, new_line: str) -> bool:
-    """output/{topic}/script.txt 의 slide_n 번째 줄을 new_line 으로 교체. 성공 시 True."""
+    """output/{topic}/script.txt 의 slide_n 번째 줄을 new_line 으로 교체.
+    줄 수가 교체 전후 동일해야 함(new_line 에 줄바꿈이 섞여 늘어나면 실패). 성공 시 True."""
     p = OUTPUT_DIR / topic / "script.txt"
     if not p.exists():
         return False
     lines = p.read_text(encoding="utf-8").splitlines()
     if slide_n < 1 or slide_n > len(lines):
         return False
+    before = len(lines)
     lines[slide_n - 1] = new_line.strip()
-    p.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    new_content = "\n".join(lines) + "\n"
+    # 교체 후 줄 수가 달라지면(늘어나면) 실패 처리 — 저장하지 않음
+    if len(new_content.splitlines()) != before:
+        return False
+    p.write_text(new_content, encoding="utf-8")
+    log.info("script.txt %s번 줄 교체 완료: %s줄 유지", slide_n, len(lines))
     return True
 
 
@@ -3768,9 +3775,15 @@ def _replace_srt_block_text(topic: str, slide_n: int, new_text: str) -> bool:
     blk_lines = blocks[slide_n - 1].splitlines()
     if len(blk_lines) < 2:
         return False
+    before = len(blocks)
     # blk_lines[0]=번호, [1]=타임스탬프, [2:]=텍스트 → 텍스트만 교체
     blocks[slide_n - 1] = "\n".join([blk_lines[0], blk_lines[1], new_text.strip()])
-    p.write_text("\n\n".join(blocks) + "\n", encoding="utf-8")
+    new_content = "\n\n".join(blocks) + "\n"
+    # 교체 후 블록 수가 달라지면(늘어나면) 실패 처리 — 저장하지 않음
+    if len(re.split(r"\n\s*\n", new_content.strip())) != before:
+        return False
+    p.write_text(new_content, encoding="utf-8")
+    log.info("output.srt %s번 블록 교체 완료: %s블록 유지", slide_n, len(blocks))
     return True
 
 
