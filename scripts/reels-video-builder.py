@@ -913,8 +913,67 @@ def main() -> int:
     log(f"  음성대본 {len(full_script)}자, 자막 {len(srt_texts)}줄, 슬라이드 {len(slides)}개 (순서: {slide_src})")
     log(f"  대본 미리보기: {full_script[:60]}…")
     # script.txt 줄 목록 (Step5 유사도 매칭용) — output/{topic}/script.txt
-    script_lines = []
+    # script.txt 없으면 voiceover.txt 로 자동 생성 후 계속 진행
     _script_txt = base / "script.txt"
+    if not _script_txt.exists():
+        if voiceover_txt.exists():
+            _vo_lines = voiceover_txt.read_text(encoding="utf-8").splitlines()
+            _gen_lines = []
+            # 1) "## [전체 대본 ...]" 섹션 파싱(헤더 변형 허용) → 문장 분리
+            _in_sec, _buf = False, []
+            for ln in _vo_lines:
+                s = ln.strip()
+                if not _in_sec:
+                    if s.startswith("## [전체 대본"):
+                        _in_sec = True
+                    continue
+                if s.startswith("---") or s.startswith("## ") or s.startswith("**총"):
+                    break
+                if s:
+                    _buf.append(s)
+            if _buf:
+                _gen_lines = [
+                    x.strip() for x in re.split(r"(?<=[.!?])\s+", " ".join(_buf)) if x.strip()
+                ]
+            # 2) 섹션 없으면 '[슬라이드 N]' 헤더(별표 유무 무관) + 같은 줄/다음 줄 본문
+            if not _gen_lines:
+                _hdr = re.compile(r"^\**\[\s*슬라이드[^\]]*\]\**\s*(.*)$")
+                _pending = False
+                for ln in _vo_lines:
+                    s = ln.strip()
+                    m = _hdr.match(s)
+                    if m:
+                        _same = m.group(1).strip()
+                        if _same:
+                            _gen_lines.append(_same)
+                            _pending = False
+                        else:
+                            _pending = True
+                    elif _pending and s:
+                        _gen_lines.append(s)
+                        _pending = False
+            # 3) 그래도 없으면 평문(한 줄=한 슬라이드, '발음형 || 자막형'은 앞부분)
+            if not _gen_lines:
+                for ln in _vo_lines:
+                    s = ln.strip()
+                    if not s or s.startswith("#") or s.startswith("---") or s.startswith("["):
+                        continue
+                    if "||" in s:
+                        s = s.split("||")[0].strip()
+                    if s:
+                        _gen_lines.append(s)
+            # 4) 소아청소년꽈전문의 → 소아청소년꽈 전문의 (띄어쓰기 보정)
+            _gen_lines = [
+                l.replace("소아청소년꽈전문의", "소아청소년꽈 전문의") for l in _gen_lines
+            ]
+            if _gen_lines:
+                _script_txt.write_text("\n".join(_gen_lines) + "\n", encoding="utf-8")
+                log("[INFO] script.txt 자동 생성됨")
+            else:
+                fail("대본 파싱", "script.txt 자동 생성 실패: voiceover.txt 파싱 결과 없음")
+        else:
+            fail("대본 파싱", f"script.txt 없음 + voiceover.txt 없음: {_script_txt}")
+    script_lines = []
     if _script_txt.exists():
         script_lines = [
             ln.strip() for ln in _script_txt.read_text(encoding="utf-8").splitlines() if ln.strip()
