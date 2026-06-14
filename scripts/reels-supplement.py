@@ -527,8 +527,48 @@ def _extract_korean_summary(prompt: str) -> str:
     return ""
 
 
-def generate_voiceover_script(ordered_slides: list[dict], api_key: str) -> str:
-    """Claude 로 릴스 대본 생성. voiceover.txt 형식(|| 자막형 포함) 반환."""
+# 대본 앞/뒤 고정 멘트 (줄 수 보정 시 유지)
+_FIXED_FIRST_LINE = "소아청소년꽈 전문의가 알려드립니다."
+_FIXED_LAST_LINE = "소아꽈언니의 소아꽈수첩입니다."
+
+
+def _enforce_script_line_count(text: str, n: int) -> str:
+    """대본 줄 수를 슬라이드 수 n 에 맞춰 검증·보정.
+    불일치 시 [WARNING] 출력 후, 앞/뒤 고정 줄을 유지하면서 중간만 압축/확장."""
+    lines = [ln.strip() for ln in text.split("\n") if ln.strip()]
+    m = len(lines)
+    if m == n:
+        return text
+    print(f"[WARNING] 대본 {m}줄 vs 슬라이드 {n}장 불일치")
+    if n < 2:
+        return text
+    middle = lines[1:-1] if m >= 2 else lines[:]
+    target = n - 2
+    if len(middle) > target:
+        # 압축: 초과 줄을 마지막 보존 줄에 합쳐 target 개로 축소
+        if target <= 0:
+            middle = []
+        else:
+            head = middle[:target - 1]
+            tail = " ".join(middle[target - 1:]).strip()
+            middle = head + ([tail] if tail else [])
+    elif len(middle) < target:
+        # 확장: 가장 긴 줄을 문장/절 경계로 분할해 target 개까지 늘림
+        guard = 0
+        while len(middle) < target and middle and guard < 100:
+            guard += 1
+            idx = max(range(len(middle)), key=lambda i: len(middle[i]))
+            parts = re.split(r"(?<=[.!?])\s+|,\s*", middle[idx], maxsplit=1)
+            if len(parts) < 2 or not parts[0].strip() or not parts[1].strip():
+                break
+            middle[idx:idx + 1] = [parts[0].strip(), parts[1].strip()]
+    return "\n".join([_FIXED_FIRST_LINE] + middle + [_FIXED_LAST_LINE])
+
+
+def generate_voiceover_script(ordered_slides: list[dict], api_key: str,
+                              n_slides: int = 0) -> str:
+    """Claude 로 릴스 대본 생성. voiceover.txt 형식(|| 자막형 포함) 반환.
+    n_slides 가 주어지면 정확히 그 줄 수로 생성·보정."""
     client = Anthropic(api_key=api_key)
     lines = []
     for i, s in enumerate(ordered_slides, 1):
@@ -588,6 +628,16 @@ def generate_voiceover_script(ordered_slides: list[dict], api_key: str) -> str:
 
 대본 텍스트만 출력. 설명 없이."""
 
+    # 슬라이드 수에 맞춰 정확히 N줄 생성하도록 지시
+    if n_slides >= 2:
+        system_prompt += (
+            f"\n\n## 줄 수 엄수 (가장 중요)\n"
+            f"반드시 정확히 {n_slides}줄만 생성하세요. "
+            f"첫 줄은 '{_FIXED_FIRST_LINE}' "
+            f"마지막 줄은 '{_FIXED_LAST_LINE}' 고정. "
+            f"중간 {n_slides - 2}줄로 내용 구성."
+        )
+
     user_prompt = (
         "아래 슬라이드로 voiceover.txt 형식 대본을 작성해줘.\n\n"
         + "\n".join(lines)
@@ -602,6 +652,9 @@ def generate_voiceover_script(ordered_slides: list[dict], api_key: str) -> str:
     result = msg.content[0].text.strip()
     # 꽈 표기 안전장치
     result = _apply_brand_fixes(result)
+    # 슬라이드 수에 맞춰 줄 수 검증 + 자동 보정
+    if n_slides >= 2:
+        result = _enforce_script_line_count(result, n_slides)
     return result
 
 
@@ -812,8 +865,10 @@ def main() -> int:
         print("[WARN] ANTHROPIC_API_KEY 없음 → 대본 생성 스킵")
     else:
         ordered = _collect_ordered_slides(slides_data, extras, n_card_slides)
+        # 슬라이드 이미지 수 = 생성할 대본 줄 수
+        n_slides = len(list((OUTPUT_DIR / args.topic).glob("slide-*.png")))
         try:
-            script_text = generate_voiceover_script(ordered, anth_key)
+            script_text = generate_voiceover_script(ordered, anth_key, n_slides)
         except Exception as e:  # noqa: BLE001
             print(f"[WARN] 대본 생성 실패: {e}")
         else:

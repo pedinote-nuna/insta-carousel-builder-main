@@ -1015,22 +1015,44 @@ def main() -> int:
     validate_script_vs_slides(base, script_lines, telegram=args.telegram)
     done(1.5, "script.txt 검증")
 
-    # STEP 2
-    step(2, "ElevenLabs 음성 생성")
-    tts_elevenlabs(full_script, raw_mp3)
-    done(2, "음성 생성")
+    # STEP 2~4: 음성 생성 — script.txt 변경 감지 후 재사용/재생성 결정
+    _reuse_audio = False
+    if final_mp3.exists():
+        if _script_txt.exists() and _script_txt.stat().st_mtime > final_mp3.stat().st_mtime:
+            # script.txt 가 voiceover.mp3 보다 최신 → 기존 음성/세그먼트 폐기 후 재생성
+            log("[INFO] script.txt가 변경됨 → 음성 재생성")
+            for _p in (raw_mp3, final_mp3, seg_json):
+                if _p.exists():
+                    _p.unlink()
+        elif seg_json.exists():
+            # 변경 없음 + 캐시 존재 → Step2~4 스킵, 기존 음성/세그먼트 재사용
+            _reuse_audio = True
 
-    # STEP 3
-    step(3, "음성 후처리 (배속 + 무음제거)")
-    postprocess_audio(raw_mp3, final_mp3)
-    total = ffprobe_duration(final_mp3)
-    log(f"  최종 음성 길이: {total:.1f}s")
-    done(3, "음성 후처리")
+    if _reuse_audio:
+        log("[INFO] script.txt 변경 없음 → 기존 음성 재사용 (Step2~4 스킵)")
+        total = ffprobe_duration(final_mp3)
+        segments = [
+            {"start": float(s["start"]), "end": float(s["end"]), "text": str(s["text"])}
+            for s in json.loads(seg_json.read_text(encoding="utf-8"))
+        ]
+        log(f"  재사용: {final_mp3.name} ({total:.1f}s), 세그먼트 {len(segments)}개")
+    else:
+        # STEP 2
+        step(2, "ElevenLabs 음성 생성")
+        tts_elevenlabs(full_script, raw_mp3)
+        done(2, "음성 생성")
 
-    # STEP 4
-    step(4, "Whisper word-level 타임스탬프 추출")
-    segments = whisper_segments(final_mp3, seg_json, len(slides))
-    done(4, "Whisper 분석")
+        # STEP 3
+        step(3, "음성 후처리 (배속 + 무음제거)")
+        postprocess_audio(raw_mp3, final_mp3)
+        total = ffprobe_duration(final_mp3)
+        log(f"  최종 음성 길이: {total:.1f}s")
+        done(3, "음성 후처리")
+
+        # STEP 4
+        step(4, "Whisper word-level 타임스탬프 추출")
+        segments = whisper_segments(final_mp3, seg_json, len(slides))
+        done(4, "Whisper 분석")
 
     # STEP 5
     print("[DEBUG] 실제 segment 확인:")

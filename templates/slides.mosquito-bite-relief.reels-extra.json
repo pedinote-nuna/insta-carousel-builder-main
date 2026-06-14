@@ -8,33 +8,33 @@
       "n": 10,
       "insert_after": 0,
       "role": "reels-hook",
-      "purpose": "릴스 오프닝 훅 - 즉각적 주목 유도",
-      "prompt": "Portrait 1080x1350 vertical. Bold typography-focused design. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Center large bold text in navy #1A1F36 Pretendard ExtraBold 80pt: 모기 물렸을 때. Below smaller coral #FF6B6B text 48pt: 절대 긁으면 안 됩니다. Top-right small: 소아과언니 navy only. Minimal clean design, maximum readability, urgency conveyed through color contrast and bold typography.",
+      "purpose": "시청자를 멈추게 하는 충격적 첫 문구 - 모기 물렸을 때 절대 금지 행동",
+      "prompt": "Portrait 1080x1350 vertical. Bold typography-focused design. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Center: huge bold shocking text in coral #FF6B6B '절대 긁지 마세요!' Pretendard ExtraBold 80pt, centered. Below in smaller navy #1A1F36 text 32pt: '모기 물린 곳 제대로 관리하는 법'. Top-right corner small: 소아과언니 Pretendard SemiBold navy only. Clean minimalist hook style matching card news aesthetic. No decorations, no illustrations, pure typography impact.",
       "file": "0-1.png"
     },
     {
       "n": 11,
       "insert_after": 2,
-      "role": "reels-action",
-      "purpose": "찬물 세척 실사 - STEP 01 행동 시각화",
-      "prompt": "Portrait 1080x1350 vertical. Close-up photorealistic shot. Child's arm with mosquito bite under running cool tap water. Parent's hand gently holding child's wrist. Water flowing over red swollen bite mark. Soft natural bathroom lighting. Focus on water droplets and bite area. Clean white sink background. Hygienic medical atmosphere. Sharp focus on bite and water stream, shallow depth of field. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "role": "reels-visual",
+      "purpose": "STEP 01 냉찜질 실사 클로즈업 - 손이 얼음팩을 팔에 대는 장면",
+      "prompt": "Portrait 1080x1350 vertical photorealistic close-up. Clean bright natural lighting. Child's arm with small red mosquito bite visible. Parent's hand gently pressing clean ice pack wrapped in thin towel against the bite area. Soft fabric texture visible. Focus on the cooling action. Bright white clinical background. Hyper-realistic skin texture, gentle caring gesture. Shot from side angle showing contact between ice pack and skin. Medical care atmosphere. 4:5 ratio Instagram reels format. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
       "file": "2-1.png"
     },
     {
       "n": 12,
-      "insert_after": 4,
-      "role": "reels-action",
-      "purpose": "얼음팩 적용 실사 - STEP 03 행동 시각화",
-      "prompt": "Portrait 1080x1350 vertical. Close-up photorealistic shot. Blue gel ice pack wrapped in thin white cloth placed on child's mosquito bite on arm. Parent's hand gently holding ice pack in place. Child's skin visible around cloth edges. Soft home lighting. Focus on ice pack application technique. Clean background. Medical care atmosphere. Timer or clock visible slightly blurred in background suggesting 10-minute duration. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
-      "file": "4-1.png"
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "STEP 03 손톱 자르기 실사 클로즈업 - 아이 손 + 손톱깎이",
+      "prompt": "Portrait 1080x1350 vertical photorealistic extreme close-up. Clean bright natural lighting. Child's small hand with focus on fingernails. Parent's hand holding baby nail clipper carefully trimming child's nail. Soft focus background. Hyper-realistic skin texture, gentle precise movement. White clean surface underneath. Shot from 45-degree angle showing careful trimming action. Pediatric care atmosphere. Safety and hygiene emphasis. 4:5 ratio Instagram reels format. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "5-1.png"
     },
     {
       "n": 13,
-      "insert_after": 6,
-      "role": "reels-action",
-      "purpose": "연고 도포 실사 - STEP 04 행동 시각화",
-      "prompt": "Portrait 1080x1350 vertical. Close-up photorealistic shot. Parent's finger applying white antihistamine cream/ointment to child's red mosquito bite. Small tube of anti-itch medication visible in frame. Gentle dabbing motion. Child's arm relaxed on clean white surface. Soft natural lighting. Focus on application point and cream texture. Clinical yet warm home care atmosphere. Tube label partially visible showing medical product. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
-      "file": "6-1.png"
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "병원 방문 신호 실사 - 붓기/발적 심한 팔 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical photorealistic close-up. Clinical lighting. Child's arm showing concerning signs: significant swelling around mosquito bite area, redness spreading beyond bite, visible inflammation. Medical examination setting. Gentle parent's hand pointing to swollen area with concern. Hyper-realistic skin texture showing abnormal reaction. White clinical background. Shot from front angle clearly showing severity of reaction. Urgent care atmosphere. Warning visual emphasis. 4:5 ratio Instagram reels format. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "7-1.png"
     }
   ]
 }
