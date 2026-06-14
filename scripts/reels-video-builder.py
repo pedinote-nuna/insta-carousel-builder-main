@@ -349,8 +349,12 @@ def _send_telegram_warn(text: str) -> None:
 
 
 def _regenerate_script_from_slides(base: Path, n: int, client) -> None:
-    """슬라이드 prompt 기반으로 script.txt 를 Claude(haiku)로 재생성한 뒤,
-    voiceover.mp3 삭제 + 빌드 중단(재실행 유도). 정상 반환하지 않음(fail() 로 종료)."""
+    """슬라이드 prompt 기반으로 script.txt 를 Claude(haiku)로 1:1 재생성한 뒤,
+    voiceover.mp3 삭제 + 빌드 중단(재실행 유도). 정상 반환하지 않음(fail() 로 종료).
+
+    줄=슬라이드 1:1 보장: 본문(슬라이드 2~n-1) N-2줄만 받아
+    [FIXED_FIRST] + 본문 + [FIXED_LAST] 로 조립. 압축·병합·[1:-1] 추측 없음.
+    Haiku 가 N-2줄과 다르게 주면 최대 2회 재요청, 그래도 안 맞으면 명시적 중단."""
     topic = base.name
     tpl_path = REPO_ROOT / "templates" / f"slides.{topic}.json"
     if not tpl_path.exists():
@@ -360,59 +364,61 @@ def _regenerate_script_from_slides(base: Path, n: int, client) -> None:
     except Exception as e:  # noqa: BLE001
         fail("STEP 1.5 검증", f"슬라이드 템플릿 파싱 실패: {e}")
     tpl_slides = tpl.get("slides", []) if isinstance(tpl, dict) else []
-    # 각 슬라이드 prompt 에서 핵심 한국어만 추출
-    summaries = [
-        " ".join(re.findall(r'[가-힣]+[가-힣\s·%\d]*', str(s.get("prompt", "")))).strip()
-        for s in tpl_slides
-    ]
-    slide_listing = "\n".join(
-        f"슬라이드 {i}: {summary}" for i, summary in enumerate(summaries, 1)
-    )
-    user_prompt = (
-        f"각 슬라이드 내용을 보고 정확히 {n}줄 대본을 써줘.\n"
-        f"{slide_listing}\n"
-        f"첫 줄: {FIXED_FIRST} (고정)\n"
-        f"마지막 줄: {FIXED_LAST} (고정)\n"
-        f"각 줄은 해당 슬라이드 내용을 자연스럽게 한 문장으로."
-    )
-    try:
-        resp = client.messages.create(
-            model="claude-haiku-4-5-20251001",
-            max_tokens=1024,
-            messages=[{"role": "user", "content": user_prompt}],
+    by_n = {s.get("n"): s for s in tpl_slides if isinstance(s, dict)}
+    target = max(n - 2, 0)  # 본문 줄 수 = 슬라이드 2~n-1 (첫/끝은 고정 멘트)
+
+    body: list = []
+    if target > 0:
+        # 본문 슬라이드(2~n-1) prompt 에서 핵심 한국어만 추출 → 순서 그대로 제시
+        body_listing = "\n".join(
+            "슬라이드 %d: %s" % (
+                i,
+                " ".join(re.findall(r'[가-힣]+[가-힣\s·%\d]*',
+                                    str((by_n.get(i) or {}).get("prompt", "")))).strip(),
+            )
+            for i in range(2, n)
         )
-        text = "".join(getattr(b, "text", "") for b in resp.content).strip()
-    except Exception as e:  # noqa: BLE001
-        fail("STEP 1.5 검증", f"script.txt 재생성 API 실패: {e}")
-    # 정확히 n줄로 보정 — 앞/뒤 고정 멘트 유지, 중간만 압축/확장
-    # Claude 가 붙인 줄 번호("1. ", "2. " 등)는 제거
-    out_lines = [
-        re.sub(r'^\d+\.\s*', '', ln.strip())
-        for ln in text.split("\n") if ln.strip()
-    ]
-    middle = out_lines[1:-1] if len(out_lines) >= 2 else out_lines[:]
-    target = max(n - 2, 0)
-    if len(middle) > target:
-        if target == 0:
-            middle = []
-        else:
-            head = middle[:target - 1]
-            tail = " ".join(middle[target - 1:]).strip()
-            middle = head + ([tail] if tail else [])
-    else:
-        guard = 0
-        while len(middle) < target and middle and guard < 100:
-            guard += 1
-            idx = max(range(len(middle)), key=lambda k: len(middle[k]))
-            parts = re.split(r"(?<=[.!?])\s+|,\s*", middle[idx], maxsplit=1)
-            if len(parts) < 2 or not parts[0].strip() or not parts[1].strip():
-                break
-            middle[idx:idx + 1] = [parts[0].strip(), parts[1].strip()]
-    # 분할로도 부족하면 마지막 줄 복제로 채워 정확히 target 개 보장(재실행 줄 수 검증 통과용)
-    while len(middle) < target:
-        middle.append(middle[-1] if middle else "...")
-    middle = middle[:target]
-    final_lines = [FIXED_FIRST] + middle + [FIXED_LAST]
+        base_prompt = (
+            f"아래 슬라이드 {target}개 각각에 대해 한 문장씩, "
+            f"정확히 {target}줄만 작성해줘.\n"
+            f"인트로·아웃트로·번호·설명 없이 본문 {target}줄만 출력. "
+            f"한 줄 = 한 슬라이드, 순서 그대로.\n\n"
+            f"{body_listing}"
+        )
+
+        def _request(extra: str) -> list:
+            try:
+                resp = client.messages.create(
+                    model="claude-haiku-4-5-20251001",
+                    max_tokens=1024,
+                    messages=[{"role": "user", "content": base_prompt + extra}],
+                )
+                txt = "".join(getattr(b, "text", "") for b in resp.content).strip()
+            except Exception as e:  # noqa: BLE001
+                fail("STEP 1.5 검증", f"script.txt 재생성 API 실패: {e}")
+            # Claude 가 붙인 줄 번호("1. ", "2. " 등) 제거
+            return [
+                re.sub(r'^\d+\.\s*', '', ln.strip())
+                for ln in txt.split("\n") if ln.strip()
+            ]
+
+        body = _request("")
+        attempts = 0
+        while len(body) != target and attempts < 2:
+            attempts += 1
+            print(f"[WARNING] script.txt 본문 {len(body)}줄 (필요 {target}줄) — 재요청 {attempts}/2")
+            body = _request(
+                f"\n\n[중요] 정확히 {target}줄이어야 합니다. "
+                f"직전 응답은 {len(body)}줄이었습니다. "
+                f"인트로/아웃트로/번호 없이 본문 {target}줄만 다시 출력하세요."
+            )
+        if len(body) != target:
+            # 조용한 압축·병합 금지 — 명확히 중단
+            fail("STEP 1.5 검증",
+                 f"script.txt 재생성 실패: 본문 {target}줄을 받지 못했습니다"
+                 f"(최종 {len(body)}줄, 재요청 2회 포함). 조용한 압축·병합 없이 중단합니다.")
+
+    final_lines = [FIXED_FIRST] + body + [FIXED_LAST]
     (base / "script.txt").write_text("\n".join(final_lines) + "\n", encoding="utf-8")
     print("[INFO] script.txt 슬라이드 기반으로 자동 재생성됨")
     # voiceover.mp3 삭제 (음성 재생성 트리거)
