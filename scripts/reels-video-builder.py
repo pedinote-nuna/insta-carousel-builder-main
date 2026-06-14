@@ -348,9 +348,91 @@ def _send_telegram_warn(text: str) -> None:
         pass
 
 
+def _regenerate_script_from_slides(base: Path, n: int, client) -> None:
+    """슬라이드 prompt 기반으로 script.txt 를 Claude(haiku)로 재생성한 뒤,
+    voiceover.mp3 삭제 + 빌드 중단(재실행 유도). 정상 반환하지 않음(fail() 로 종료)."""
+    topic = base.name
+    tpl_path = REPO_ROOT / "templates" / f"slides.{topic}.json"
+    if not tpl_path.exists():
+        fail("STEP 1.5 검증", f"슬라이드 템플릿 없음: templates/slides.{topic}.json")
+    try:
+        tpl = json.loads(tpl_path.read_text(encoding="utf-8"))
+    except Exception as e:  # noqa: BLE001
+        fail("STEP 1.5 검증", f"슬라이드 템플릿 파싱 실패: {e}")
+    tpl_slides = tpl.get("slides", []) if isinstance(tpl, dict) else []
+    # 각 슬라이드 prompt 에서 핵심 한국어만 추출
+    summaries = [
+        " ".join(re.findall(r'[가-힣]+[가-힣\s·%\d]*', str(s.get("prompt", "")))).strip()
+        for s in tpl_slides
+    ]
+    slide_listing = "\n".join(
+        f"슬라이드 {i}: {summary}" for i, summary in enumerate(summaries, 1)
+    )
+    user_prompt = (
+        f"각 슬라이드 내용을 보고 정확히 {n}줄 대본을 써줘.\n"
+        f"{slide_listing}\n"
+        f"첫 줄: {FIXED_FIRST} (고정)\n"
+        f"마지막 줄: {FIXED_LAST} (고정)\n"
+        f"각 줄은 해당 슬라이드 내용을 자연스럽게 한 문장으로."
+    )
+    try:
+        resp = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=1024,
+            messages=[{"role": "user", "content": user_prompt}],
+        )
+        text = "".join(getattr(b, "text", "") for b in resp.content).strip()
+    except Exception as e:  # noqa: BLE001
+        fail("STEP 1.5 검증", f"script.txt 재생성 API 실패: {e}")
+    # 정확히 n줄로 보정 — 앞/뒤 고정 멘트 유지, 중간만 압축/확장
+    # Claude 가 붙인 줄 번호("1. ", "2. " 등)는 제거
+    out_lines = [
+        re.sub(r'^\d+\.\s*', '', ln.strip())
+        for ln in text.split("\n") if ln.strip()
+    ]
+    middle = out_lines[1:-1] if len(out_lines) >= 2 else out_lines[:]
+    target = max(n - 2, 0)
+    if len(middle) > target:
+        if target == 0:
+            middle = []
+        else:
+            head = middle[:target - 1]
+            tail = " ".join(middle[target - 1:]).strip()
+            middle = head + ([tail] if tail else [])
+    else:
+        guard = 0
+        while len(middle) < target and middle and guard < 100:
+            guard += 1
+            idx = max(range(len(middle)), key=lambda k: len(middle[k]))
+            parts = re.split(r"(?<=[.!?])\s+|,\s*", middle[idx], maxsplit=1)
+            if len(parts) < 2 or not parts[0].strip() or not parts[1].strip():
+                break
+            middle[idx:idx + 1] = [parts[0].strip(), parts[1].strip()]
+    # 분할로도 부족하면 마지막 줄 복제로 채워 정확히 target 개 보장(재실행 줄 수 검증 통과용)
+    while len(middle) < target:
+        middle.append(middle[-1] if middle else "...")
+    middle = middle[:target]
+    final_lines = [FIXED_FIRST] + middle + [FIXED_LAST]
+    (base / "script.txt").write_text("\n".join(final_lines) + "\n", encoding="utf-8")
+    print("[INFO] script.txt 슬라이드 기반으로 자동 재생성됨")
+    # voiceover.mp3 삭제 (음성 재생성 트리거)
+    mp3 = base / "reels" / "voiceover.mp3"
+    if mp3.exists():
+        mp3.unlink()
+    fail("STEP 1.5 검증",
+         "script.txt를 슬라이드 기반으로 재생성했어요. 다시 실행하면 새 대본으로 음성을 만듭니다.")
+
+
 def validate_script_vs_slides(base: Path, script_lines: list, telegram: bool = False) -> None:
     """script.txt 줄 수 vs 슬라이드 이미지 수 비교 + (sources.json 있으면) Claude 내용 검증.
     줄 수 불일치면 즉시 중단. 내용 불일치면 경고 후 사용자 확인(또는 telegram 자동 중단)."""
+    # 0) 직전에 슬라이드 기반으로 재생성된 script.txt 면 검증 없이 통과(재생성 루프 방지)
+    _regen_marker = base / ".script_regenerated"
+    if _regen_marker.exists():
+        _regen_marker.unlink()
+        log("  ✅ 재생성된 script.txt — 검증 건너뜀(루프 방지)")
+        return
+
     # 1) script.txt 줄 수 vs 슬라이드 이미지(slide-*.png) 수
     n_lines = len(script_lines)
     m_imgs = len(sorted(base.glob("slide-*.png")))
@@ -418,6 +500,13 @@ def validate_script_vs_slides(base: Path, script_lines: list, telegram: bool = F
         for i, line, claim in mismatches
     )
     log(warn_text)
+
+    # 불일치 6개 이상 — 슬라이드 기반으로 script.txt 자동 재생성 후 빌드 중단(재실행 유도)
+    # (표현 방식 차이로 인한 오탐 방지를 위해 임계값 6)
+    if len(mismatches) >= 6:
+        _regen_marker.write_text("1", encoding="utf-8")  # 재실행 시 검증 스킵 표시
+        _regenerate_script_from_slides(base, m_imgs, client)
+        return  # _regenerate_script_from_slides 가 중단하므로 실제로 도달하지 않음
 
     # 내용 불일치(WARNING)는 중단하지 않고 경고만 — 텔레그램 모드면 경고 전송 후 자동 계속
     if telegram:

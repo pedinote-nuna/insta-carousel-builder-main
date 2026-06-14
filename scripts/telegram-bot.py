@@ -1715,7 +1715,8 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         except Exception:  # noqa: BLE001
             payload = None
         if (isinstance(payload, dict) and "topic" in payload
-                and "slide_n" in payload and "prompt" in payload):
+                and "slide_n" in payload
+                and ("prompt" in payload or "reels_prompt" in payload)):
             await _handle_slide_prompt_edit(update, context, payload)
             return
 
@@ -3996,73 +3997,228 @@ def _run_nanobanana_single(topic: str, slide_n: int) -> bool:
         return False
 
 
+# ---- reels-extra 단일 이미지 재생성 ----
+# Gemini 호출은 nanobanana-gen.py 와 동일(model=gemini-3-pro-image-preview, contents=[prompt], 그 외 파라미터 없음).
+# 한국인/동아시아 외모 suffix + 1080×1350 center-crop 은 reels-supplement.py 의 로직을 복제(원본 모듈 무변경).
+_REELS_GEMINI_MODEL = "gemini-3-pro-image-preview"
+_REELS_PERSON_BABY_RE = re.compile(
+    r"\b(baby|babies|infant|infants|newborn|newborns|toddler|toddlers|"
+    r"child|children|kid|kids|boy|boys|girl|girls)\b", re.IGNORECASE)
+_REELS_PERSON_ADULT_RE = re.compile(
+    r"\b(mother|mothers|father|fathers|mom|mum|dad|parent|parents|"
+    r"adult|adults|woman|women|man|men|caregiver|caregivers)\b", re.IGNORECASE)
+_REELS_PERSON_GENERIC_RE = re.compile(
+    r"\b(hand|hands|finger|fingers|face|faces|person|people|"
+    r"arm|arms|cheek|cheeks|skin)\b", re.IGNORECASE)
+_REELS_KOREAN_SUFFIX_BABY = "Korean baby, East Asian facial features, chubby cheeks"
+_REELS_KOREAN_SUFFIX_ADULT = "Korean mother/father, East Asian appearance, Korean parent"
+_REELS_KOREAN_SUFFIX_GENERIC = (
+    "Korean ethnicity, East Asian facial features, Korean baby/parent appearance"
+)
+
+
+def _append_korean_ethnicity_reels(prompt: str) -> str:
+    """reels-supplement.py 의 _append_korean_ethnicity 와 동일 로직(복제)."""
+    if not prompt:
+        return prompt
+    low = prompt.lower()
+    if "korean" in low or "east asian" in low:
+        return prompt
+    pieces = []
+    if _REELS_PERSON_BABY_RE.search(prompt):
+        pieces.append(_REELS_KOREAN_SUFFIX_BABY)
+    if _REELS_PERSON_ADULT_RE.search(prompt):
+        pieces.append(_REELS_KOREAN_SUFFIX_ADULT)
+    if not pieces and _REELS_PERSON_GENERIC_RE.search(prompt):
+        pieces.append(_REELS_KOREAN_SUFFIX_GENERIC)
+    if not pieces:
+        return prompt
+    suffix = "; ".join(pieces)
+    base = prompt.rstrip()
+    sep = "" if base.endswith((".", ",", ";", ":")) else "."
+    return f"{base}{sep} {suffix}"
+
+
+def _resize_reels_to_card(path, target_w: int = 1080, target_h: int = 1350) -> None:
+    """reels-supplement.py 의 _resize_to_card 와 동일(복제). PIL 없으면 원본 유지."""
+    try:
+        from PIL import Image
+    except ImportError:
+        return
+    img = Image.open(path)
+    src_w, src_h = img.size
+    tgt_ratio = target_w / target_h
+    src_ratio = src_w / src_h
+    if src_ratio > tgt_ratio:
+        new_w = int(round(src_h * tgt_ratio))
+        left = (src_w - new_w) // 2
+        img = img.crop((left, 0, left + new_w, src_h))
+    elif src_ratio < tgt_ratio:
+        new_h = int(round(src_w / tgt_ratio))
+        top = (src_h - new_h) // 2
+        img = img.crop((0, top, src_w, top + new_h))
+    img = img.resize((target_w, target_h), Image.LANCZOS)
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+    img.save(path, "PNG", optimize=True)
+
+
+def _run_gemini_reels_image(topic: str, file: str, prompt: str) -> bool:
+    """reels-extra 이미지 1장 재생성 → output/{topic}/reels/{file}. 성공 시 True.
+    nanobanana-gen.py 와 동일한 Gemini 호출 + 한국인 외모 suffix + 1080×1350 리사이즈."""
+    import base64
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        log.error("GEMINI_API_KEY 없음 — reels 이미지 재생성 불가")
+        return False
+    try:
+        from google import genai
+    except ImportError:
+        log.error("google-genai 미설치 — reels 이미지 재생성 불가")
+        return False
+    final_prompt = _append_korean_ethnicity_reels(prompt)
+    out_dir = OUTPUT_DIR / topic / "reels"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path = out_dir / file
+    try:
+        client = genai.Client(api_key=api_key)
+        resp = client.models.generate_content(
+            model=_REELS_GEMINI_MODEL, contents=[final_prompt]
+        )
+        if not resp.candidates:
+            log.error("reels 이미지 생성 실패: no candidates (safety filter?)")
+            return False
+        parts = resp.candidates[0].content.parts if resp.candidates[0].content else []
+        for part in parts:
+            if getattr(part, "inline_data", None) and part.inline_data.data:
+                blob = part.inline_data.data
+                if isinstance(blob, str):
+                    blob = base64.b64decode(blob)
+                out_path.write_bytes(blob)
+                _resize_reels_to_card(out_path)
+                return True
+        log.error("reels 이미지 생성 실패: no image in response")
+        return False
+    except Exception:  # noqa: BLE001
+        log.exception("reels 이미지 재생성 실패")
+        return False
+
+
+def _update_reels_extra_prompt(topic: str, slide_n: int, reels_prompt: str):
+    """slides.{topic}.reels-extra.json 에서 insert_after==slide_n 인 항목 prompt 교체·저장.
+    반환: 갱신된 항목 리스트(없으면 []), 파싱 실패 시 None."""
+    rx_path = TEMPLATES_DIR / f"slides.{topic}.reels-extra.json"
+    if not rx_path.exists():
+        return []
+    try:
+        rx = json.loads(rx_path.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        return None
+    extras = rx.get("extra_slides", []) if isinstance(rx, dict) else []
+    matched = [e for e in extras if e.get("insert_after") == slide_n]
+    if not matched:
+        return []
+    for e in matched:
+        e["prompt"] = reels_prompt
+    rx_path.write_text(json.dumps(rx, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return matched
+
+
 async def _handle_slide_prompt_edit(update: Update, context: ContextTypes.DEFAULT_TYPE,
                                     payload: dict) -> None:
-    """JSON({topic, slide_n, prompt}) → 템플릿 prompt 교체 후 해당 슬라이드만 재생성·전송."""
+    """JSON({topic, slide_n, prompt?, reels_prompt?, script_line?, srt_line?}) →
+    카드 슬라이드 prompt/이미지(prompt 있을 때) + reels-action prompt/이미지(reels_prompt 있을 때)
+    + script.txt/output.srt 갱신. 카드와 reels-action 은 한 세트로 함께 재생성."""
+    chat_id = update.effective_chat.id
     topic = str(payload.get("topic", "")).strip()
-    new_prompt = str(payload.get("prompt", ""))
     try:
         slide_n = int(payload.get("slide_n"))
     except (TypeError, ValueError):
         await update.message.reply_text(f"❌ 슬라이드 {payload.get('slide_n')}번을 찾을 수 없어요.")
         return
-
-    # 1) 템플릿 읽기
-    tpl_path = TEMPLATES_DIR / f"slides.{topic}.json"
-    if not topic or not tpl_path.exists():
-        await update.message.reply_text(f"❌ topic을 찾을 수 없어요: {topic}")
-        return
-    try:
-        data = json.loads(tpl_path.read_text(encoding="utf-8"))
-    except Exception as e:  # noqa: BLE001
-        await update.message.reply_text(f"❌ 템플릿 읽기 실패: {e}")
+    if not topic:
+        await update.message.reply_text("❌ topic이 비어 있어요.")
         return
 
-    # 2) slide_n 항목 찾아 prompt 교체
-    slides = data.get("slides", []) if isinstance(data, dict) else []
-    target = next((s for s in slides if s.get("n") == slide_n), None)
-    if target is None:
-        await update.message.reply_text(f"❌ 슬라이드 {slide_n}번을 찾을 수 없어요.")
+    card_prompt = payload.get("prompt")
+    reels_prompt = payload.get("reels_prompt")
+    do_card = isinstance(card_prompt, str) and card_prompt.strip() != ""
+    do_reels = isinstance(reels_prompt, str) and reels_prompt.strip() != ""
+    if not do_card and not do_reels:
+        await update.message.reply_text("❌ prompt 또는 reels_prompt 중 하나는 필요해요.")
         return
-    target["prompt"] = new_prompt
 
-    # 3) 템플릿 저장
-    tpl_path.write_text(
-        json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-    )
+    msgs = []
 
-    # 3-2) script_line / srt_line (선택) 반영
+    # === 1) 카드 슬라이드 prompt 교체 + 이미지 재생성 (prompt 있을 때만) ===
+    if do_card:
+        tpl_path = TEMPLATES_DIR / f"slides.{topic}.json"
+        if not tpl_path.exists():
+            await update.message.reply_text(f"❌ topic을 찾을 수 없어요: {topic}")
+            return
+        try:
+            data = json.loads(tpl_path.read_text(encoding="utf-8"))
+        except Exception as e:  # noqa: BLE001
+            await update.message.reply_text(f"❌ 템플릿 읽기 실패: {e}")
+            return
+        slides = data.get("slides", []) if isinstance(data, dict) else []
+        target = next((s for s in slides if s.get("n") == slide_n), None)
+        if target is None:
+            await update.message.reply_text(f"❌ 슬라이드 {slide_n}번을 찾을 수 없어요.")
+            return
+        target["prompt"] = card_prompt
+        tpl_path.write_text(
+            json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+        await update.message.reply_text(f"🔄 slide-{slide_n:02d} 재생성 중...")
+        ok = await asyncio.to_thread(_run_nanobanana_single, topic, slide_n)
+        png = OUTPUT_DIR / topic / f"slide-{slide_n:02d}.png"
+        if ok and png.exists():
+            with png.open("rb") as f:
+                await context.bot.send_photo(chat_id=chat_id, photo=f, caption=f"slide-{slide_n:02d}")
+            msgs.append(f"✅ slide-{slide_n:02d} 재생성 완료!")
+        else:
+            msgs.append(f"❌ slide-{slide_n:02d} 이미지 재생성 실패")
+
+    # === 2) reels-extra prompt 교체 + 이미지 재생성 (reels_prompt 있을 때만) ===
+    if do_reels:
+        matched = await asyncio.to_thread(
+            _update_reels_extra_prompt, topic, slide_n, reels_prompt
+        )
+        if matched is None:
+            msgs.append("⚠️ reels-extra.json 읽기 실패")
+        elif not matched:
+            msgs.append(f"ℹ️ 슬라이드 {slide_n}번 연관 reels 없음")
+        else:
+            for e in matched:
+                file = str(e.get("file", "")).strip()
+                if not file:
+                    continue
+                await update.message.reply_text(f"🔄 {file} 재생성 중...")
+                ok = await asyncio.to_thread(_run_gemini_reels_image, topic, file, reels_prompt)
+                rpng = OUTPUT_DIR / topic / "reels" / file
+                if ok and rpng.exists():
+                    with rpng.open("rb") as f:
+                        await context.bot.send_photo(chat_id=chat_id, photo=f, caption=file)
+                    msgs.append(f"✅ {file} 재생성 완료!")
+                else:
+                    msgs.append(f"❌ {file} 재생성 실패")
+
+    # === 3) script.txt / output.srt (선택) 반영 ===
     script_line = payload.get("script_line")
     srt_line = payload.get("srt_line")
-    script_updated = _replace_script_line(topic, slide_n, str(script_line)) if script_line else None
-    srt_updated = _replace_srt_block_text(topic, slide_n, str(srt_line)) if srt_line else None
+    if script_line:
+        if _replace_script_line(topic, slide_n, str(script_line)):
+            msgs.append(f"📝 script.txt {slide_n}번 줄 업데이트 ✅")
+        else:
+            msgs.append("⚠️ script.txt가 없어요. 먼저 영상을 한 번 생성해주세요.")
+    if srt_line:
+        if _replace_srt_block_text(topic, slide_n, str(srt_line)):
+            msgs.append(f"📝 output.srt {slide_n}번 자막 업데이트 ✅")
+        else:
+            msgs.append("⚠️ output.srt가 없어요. 먼저 영상을 한 번 생성해주세요.")
 
-    # 4~5) 재생성
-    await update.message.reply_text(f"🔄 slide-{slide_n:02d} 재생성 중...")
-    success = await asyncio.to_thread(_run_nanobanana_single, topic, slide_n)
-
-    # 6~7) 전송 + 완료 메시지
-    png = OUTPUT_DIR / topic / f"slide-{slide_n:02d}.png"
-    if success and png.exists():
-        with png.open("rb") as f:
-            await context.bot.send_photo(
-                chat_id=update.effective_chat.id, photo=f,
-                caption=f"slide-{slide_n:02d}",
-            )
-        msg = f"✅ slide-{slide_n:02d} 재생성 완료!"
-        if script_line:
-            if script_updated:
-                msg += f"\n📝 script.txt {slide_n}번 줄 업데이트 ✅"
-            else:
-                msg += "\n⚠️ script.txt가 없어요. 먼저 영상을 한 번 생성해주세요."
-        if srt_line:
-            if srt_updated:
-                msg += f"\n📝 output.srt {slide_n}번 자막 업데이트 ✅"
-            else:
-                msg += "\n⚠️ output.srt가 없어요. 먼저 영상을 한 번 생성해주세요."
-        await update.message.reply_text(msg)
-    else:
-        await update.message.reply_text("❌ 이미지 재생성 실패했어요.")
+    await update.message.reply_text("\n".join(msgs) if msgs else "처리할 항목이 없어요.")
 
 
 def run_reels_video_builder(slug: str):

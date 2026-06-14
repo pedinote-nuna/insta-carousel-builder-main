@@ -570,30 +570,14 @@ def generate_voiceover_script(ordered_slides: list[dict], api_key: str,
     """Claude 로 릴스 대본 생성. voiceover.txt 형식(|| 자막형 포함) 반환.
     n_slides 가 주어지면 정확히 그 줄 수로 생성·보정."""
     client = Anthropic(api_key=api_key)
-    lines = []
-    for i, s in enumerate(ordered_slides, 1):
-        # 한국어 요약 추출 — 우선순위대로, 한글이 들어있는 값만 채택
-        summary = str(s.get("korean_overlay", "")).strip()
-        if not summary:
-            cand = str(s.get("topic", "")).strip()
-            if _has_korean(cand):
-                summary = cand
-        if not summary:
-            cand = str(s.get("subtitle", "")).strip()
-            if _has_korean(cand):
-                summary = cand
-        if not summary:
-            cand = str(s.get("description", "")).strip()
-            if _has_korean(cand):
-                summary = cand[:60]
-        if not summary:
-            cand = _extract_korean_summary(str(s.get("prompt", "")))
-            if _has_korean(cand):
-                summary = cand
-        # 한글 요약을 끝내 못 뽑으면 해당 슬라이드는 제외 (영어 prompt 폴백 금지)
-        if not _has_korean(summary):
-            continue
-        lines.append(f"{s['label']} / {s.get('role','?')} / {summary}")
+    # 카드 슬라이드(templates/slides.{topic}.json)의 prompt 에서 핵심 한국어만 추출
+    summaries = []
+    for s in ordered_slides:
+        if not re.match(r"slide-\d+", str(s.get("label", ""))):
+            continue  # 릴스 훅 등 카드 외 슬라이드 제외
+        prompt = str(s.get("prompt", ""))
+        ko = " ".join(re.findall(r'[가-힣]+[가-힣\s·%\d]*', prompt)).strip()
+        summaries.append(ko)
 
     system_prompt = """너는 소아과언니 인스타그램 릴스 대본 작성 전문가야.
 슬라이드 목록이 주어지면 아래 규칙으로 voiceover.txt 형식의 대본을 작성해.
@@ -638,9 +622,16 @@ def generate_voiceover_script(ordered_slides: list[dict], api_key: str,
             f"중간 {n_slides - 2}줄로 내용 구성."
         )
 
+    n = n_slides if n_slides >= 2 else len(summaries)
+    slide_listing = "\n".join(
+        f"슬라이드 {i}: {summary}" for i, summary in enumerate(summaries, 1)
+    )
     user_prompt = (
-        "아래 슬라이드로 voiceover.txt 형식 대본을 작성해줘.\n\n"
-        + "\n".join(lines)
+        f"각 슬라이드 내용을 보고 정확히 {n}줄 대본을 써줘.\n"
+        f"{slide_listing}\n"
+        f"첫 줄: {_FIXED_FIRST_LINE} (고정)\n"
+        f"마지막 줄: {_FIXED_LAST_LINE} (고정)\n"
+        f"각 줄은 해당 슬라이드 내용을 자연스럽게 한 문장으로."
     )
 
     msg = client.messages.create(
