@@ -1,0 +1,40 @@
+{
+  "topic": "outer-ear-infection-prevention",
+  "topic_type": "통념깨기형",
+  "source_template": "slides.outer-ear-infection-prevention.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 오프닝 훅 - 충격적 통념 깨기 메시지로 2초 내 시선 고정",
+      "prompt": "Portrait 1080x1350. Bold typography-focused design. Soft pastel background #FFF8F0. Top-right corner: '소아과언니' in warm brown #3D2B1F, Pretendard SemiBold, small size. Center: Huge bold text '면봉으로 귀 닦으면\n외이도염 걸립니다' in dark brown #3D2B1F, Pretendard ExtraBold 72pt, center-aligned, strong visual impact. Bottom: Small coral #FF6B6B rounded label '통념깨기'. Minimal clean layout, no illustrations, typography hero design, urgency and warning mood.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 4,
+      "role": "reels-action",
+      "purpose": "물놀이 후 귀 말리기 - 아이가 고개 기울이는 실사 클로즈업",
+      "prompt": "Portrait 1080x1350. Realistic close-up photo. Young child (5-7 years old, back of head or side profile, no face) tilting head sideways after swimming, water droplets visible near ear. Parent's hand gently guiding child's head tilt. Soft natural light, bright clean bathroom background slightly blurred. Warm color grading, pastel tones #FFF8F0 ambient. Focus on ear and gentle head-tilt motion. Safe, caring, instructional photography style. No text overlay. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "4-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-action",
+      "purpose": "면봉 사용 금지 - 손이 면봉을 X표시로 거부하는 클로즈업",
+      "prompt": "Portrait 1080x1350. Realistic close-up photo. Adult hand holding cotton swab (Q-tip) in front of camera, another hand making strong 'X' crossing gesture blocking the swab. Soft pastel background #FFF8F0 or light coral #FFE5E5. Dramatic lighting highlighting the 'stop' gesture. Shallow depth of field, swab slightly out of focus. Warning, prohibition mood. Clean minimal composition. No text overlay. Korean mother/father, East Asian appearance, Korean parent",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 6,
+      "role": "reels-action",
+      "purpose": "귀 건조 용액 또는 드라이어 사용 - 헤어드라이어를 귀에서 멀리 두는 클로즈업",
+      "prompt": "Portrait 1080x1350. Realistic close-up photo. Hand holding hairdryer at safe distance (20-30cm away) from child's ear (child's head side profile, no face visible, soft focus). Warm air flow subtly indicated by hair movement. Soft pastel background #FFF8F0, bright clean bathroom setting. Gentle caring hand gesture. Educational, safe demonstration mood. Natural soft lighting. No text overlay. Korean baby, East Asian facial features, chubby cheeks",
+      "file": "6-1.png"
+    }
+  ]
+}

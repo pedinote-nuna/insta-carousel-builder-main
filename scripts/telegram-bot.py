@@ -81,6 +81,19 @@ TONE_DIR_ALT = REPO_ROOT / "knowledge" / "tone"  # 대안 경로
 SESSION_FILE = REPO_ROOT / "data" / "session.json"
 TOPIC_SELECTION_MD = REPO_ROOT / "knowledge" / "topic-selection.md"
 
+# iCloud Drive 백업 — soa-factory/insta-bot 로 결과물 미러
+# 환경변수 ICLOUD_BACKUP_DIR 로 덮어쓸 수 있음.
+ICLOUD_BACKUP_DIR = Path(
+    os.environ.get("ICLOUD_BACKUP_DIR")
+    or (
+        Path.home()
+        / "Library" / "Mobile Documents" / "com~apple~CloudDocs"
+        / "soa-factory" / "insta-bot"
+    )
+)
+# 컨펌 시 iCloud 로 통째로 미러할 폴더 목록
+ICLOUD_BACKUP_FOLDERS = ("output", "templates", "릴스_최종")
+
 # 블로그 봇 연동 — generate-blog.js 위치
 # 환경변수 BLOG_BOT_ROOT 로 덮어쓸 수 있음. 없으면 ../pediatric-blog-bot-main 추정.
 BLOG_BOT_ROOT = Path(
@@ -417,6 +430,12 @@ IDEA_INPUT_SESSION: dict = {}
 
 # 슬라이드 수정 토픽 목록 세션: chat_id → [{"slug","title_kr"}, ...] ('수정' 으로 목록 표시 후)
 SLIDE_EDIT_LIST_SESSION: dict = {}
+
+# 토픽 폐기 목록 세션: chat_id → [{"slug","title_kr"}, ...] ('폐기' 로 목록 표시 후)
+TOPIC_DELETE_SESSION: dict = {}
+
+# 토픽 폐기 확인 대기 세션: chat_id → {"slug","title_kr"} ('N번 폐기' 후 '확인'/'취소' 대기)
+TOPIC_DELETE_CONFIRM_SESSION: dict = {}
 
 
 # ---------------------------------------------------------------- helpers
@@ -1745,6 +1764,73 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
                 )
             return
 
+    # === 토픽 폐기 플로우 ===
+    _del_cid = update.effective_chat.id
+
+    # 폐기 확인 대기 — '확인' / '취소'
+    if _del_cid in TOPIC_DELETE_CONFIRM_SESSION:
+        if text == "확인":
+            import shutil
+            info = TOPIC_DELETE_CONFIRM_SESSION.pop(_del_cid)
+            slug = info["slug"]
+            title_kr = info["title_kr"]
+            # 1. output/{slug}/ 폴더 삭제
+            out_dir = OUTPUT_DIR / slug
+            if out_dir.exists():
+                shutil.rmtree(out_dir, ignore_errors=True)
+            # 2~3. templates 슬라이드 JSON 삭제
+            (TEMPLATES_DIR / f"slides.{slug}.json").unlink(missing_ok=True)
+            (TEMPLATES_DIR / f"slides.{slug}.reels-extra.json").unlink(missing_ok=True)
+            # 4. topics.json 에서 slug 제거
+            _topics = load_topics()
+            for _area in ("this_week", "pending", "done"):
+                _topics[_area] = [t for t in _topics.get(_area, []) if t.get("slug") != slug]
+            save_topics(_topics)
+            # 5. used-topics.json 에서 slug 제거
+            _used = load_used_topics()
+            _used["topics"] = [t for t in _used.get("topics", []) if t.get("slug") != slug]
+            save_used_topics(_used)
+            # 6. 세션 삭제 (목록 세션도 정리)
+            TOPIC_DELETE_SESSION.pop(_del_cid, None)
+            # 7. 완료 메시지
+            await update.message.reply_text(f"✅ '{title_kr}' 폐기 완료!")
+            return
+        if text == "취소":
+            TOPIC_DELETE_CONFIRM_SESSION.pop(_del_cid, None)
+            await update.message.reply_text("취소됐어요.")
+            return
+
+    # '폐기' 단독 → 미완성 토픽 목록 표시
+    if text == "폐기":
+        pending = get_pending_video_topics()
+        if not pending:
+            await update.message.reply_text("✅ 폐기할 미완성 토픽이 없어요.")
+            return
+        TOPIC_DELETE_SESSION[_del_cid] = [
+            {"slug": p["slug"], "title_kr": p["title_kr"]} for p in pending
+        ]
+        lines = [f"{i+1}. {p['title_kr']} ({p['slug']})" for i, p in enumerate(pending)]
+        msg = "🗑️ 폐기할 토픽을 선택하세요:\n" + "\n".join(lines)
+        msg += "\n\n번호로 선택해주세요. 예: '1번 폐기'"
+        await update.message.reply_text(msg)
+        return
+
+    # 'N번 폐기' — 목록에서 토픽 선택 후 확인 요청
+    if _del_cid in TOPIC_DELETE_SESSION and "폐기" in text and re.search(r"\d+", text):
+        _lst = TOPIC_DELETE_SESSION[_del_cid]
+        _idx = int(re.search(r"(\d+)", text).group(1)) - 1
+        if not (0 <= _idx < len(_lst)):
+            await update.message.reply_text(f"❌ 번호를 확인해주세요. (1~{len(_lst)})")
+            return
+        _item = _lst[_idx]
+        TOPIC_DELETE_CONFIRM_SESSION[_del_cid] = {
+            "slug": _item["slug"], "title_kr": _item["title_kr"],
+        }
+        await update.message.reply_text(
+            f"⚠️ '{_item['title_kr']}' 폐기할까요? '확인' 또는 '취소'"
+        )
+        return
+
     # === 슬라이드 수정 준비 (여러 패턴, 자연어 백업) ===
     if (
         "수정 준비" in text
@@ -1967,6 +2053,8 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
 
         del VIDEO_SESSION[chat_id]
         await update.message.reply_text(f"✅ 릴스_최종/{today}_{slug}/ 에 저장했어요!")
+        backup_msg = await asyncio.to_thread(_backup_all_to_icloud)
+        await update.message.reply_text(backup_msg)
         _removed = _auto_remove_matching_idea(_topic_kr_for(slug))
         if _removed:
             await update.message.reply_text(f"💡 릴스 아이디어 목록에서 '{_removed}' 자동 삭제했어요.")
@@ -1996,6 +2084,8 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
             g for g in gen if g["slug"] not in confirmed_slugs
         ]
         await update.message.reply_text(f"✅ {len(confirmed_slugs)}개 저장 완료!")
+        backup_msg = await asyncio.to_thread(_backup_all_to_icloud)
+        await update.message.reply_text(backup_msg)
         for _title in confirmed_titles:
             _removed = _auto_remove_matching_idea(_title)
             if _removed:
@@ -2122,7 +2212,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
             else:
                 await update.message.reply_text(f"❌ 번호를 다시 확인해주세요. (1~{len(cands)})")
             return
-        if text.strip() == "새로 만들어줘":
+        if text.replace(" ", "").strip() in ("새로만들어줘", "새로만들어"):
             info = REGEN_SESSION.pop(chat_id)
             topic_kr = info.get("topic_kr", "")
             forced_tone = info.get("tone", "")
@@ -4141,6 +4231,54 @@ def _save_video_to_final(slug: str, mp4_src: Path) -> str:
     if caption_src.exists():
         shutil.copy2(caption_src, final_dir / f"{today}_{slug}.txt")
     return f"릴스_최종/{today}_{slug}/"
+
+
+# ---------------------------------------------------------------- iCloud 백업
+def _mirror_dir_to_icloud(src: Path, dst: Path) -> int:
+    """src 폴더를 dst 로 증분 미러. 새/변경된 파일만 복사하고 삭제는 하지 않음(백업 안전).
+    .DS_Store·__pycache__ 같은 잡파일은 제외. 복사한 파일 수를 반환."""
+    import shutil
+    if not src.exists():
+        return 0
+    count = 0
+    for root, dirs, files in os.walk(src):
+        dirs[:] = [d for d in dirs if d != "__pycache__"]
+        rel = Path(root).relative_to(src)
+        target_root = dst / rel
+        for f in files:
+            if f == ".DS_Store":
+                continue
+            s = Path(root) / f
+            d = target_root / f
+            # 대상이 없거나 / 원본이 더 최신이거나(1초 여유) / 크기가 다르면 복사
+            if (
+                not d.exists()
+                or s.stat().st_mtime > d.stat().st_mtime + 1
+                or s.stat().st_size != d.stat().st_size
+            ):
+                d.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(s, d)
+                count += 1
+    return count
+
+
+def _backup_all_to_icloud() -> str:
+    """output/·templates/·릴스_최종/ 3개 폴더를 iCloud(insta-bot)로 증분 미러.
+    결과 요약 문자열을 반환(텔레그램 메시지용). 실패해도 예외를 던지지 않음."""
+    try:
+        ICLOUD_BACKUP_DIR.mkdir(parents=True, exist_ok=True)
+        parts = []
+        total = 0
+        for name in ICLOUD_BACKUP_FOLDERS:
+            n = _mirror_dir_to_icloud(REPO_ROOT / name, ICLOUD_BACKUP_DIR / name)
+            total += n
+            parts.append(f"{name} {n}개")
+        if total == 0:
+            return "☁️ iCloud 백업 — 변경된 파일 없음(이미 최신)"
+        return "☁️ iCloud 백업 완료 — " + ", ".join(parts)
+    except Exception as e:  # noqa: BLE001
+        log.warning("iCloud 백업 실패: %s", e)
+        return f"⚠️ iCloud 백업 실패: {e}"
 
 
 # ---------------------------------------------------------------- 릴스 아이디어 저장소

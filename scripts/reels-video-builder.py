@@ -885,6 +885,21 @@ def main() -> int:
     voice_units = voice_script_units(base, reels, voiceover_txt)
     full_script = build_full_script([{"text": s} for s in voice_units])
     # 2) 자막 텍스트: output.srt (기존 유지)
+    # output.srt 없으면 voiceover.txt 로 estimate_srt.py 자동 실행 후 계속 진행
+    if not output_srt.exists():
+        if voiceover_txt.exists():
+            _gen = subprocess.run(
+                ["python3", "scripts/estimate_srt.py",
+                 str(voiceover_txt), "-o", str(output_srt)],
+                cwd=str(REPO_ROOT), capture_output=True, text=True,
+            )
+            if _gen.returncode == 0 and output_srt.exists():
+                log("[INFO] output.srt 자동 생성됨")
+            else:
+                fail("대본 파싱",
+                     f"output.srt 자동 생성 실패: {_gen.stderr.strip() or _gen.stdout.strip()}")
+        else:
+            fail("대본 파싱", f"output.srt 없음 + voiceover.txt 없음: {output_srt}")
     srt_texts = parse_srt_texts(output_srt)
     # 3) 슬라이드 이미지 순서: voiceover.txt **[슬라이드 N]** 1순위, 없으면 script.txt 줄 수 기준
     slide_nums = parse_slide_numbers(voiceover_txt)

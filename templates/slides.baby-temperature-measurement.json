@@ -18,7 +18,7 @@
     {
       "n": 4,
       "role": "body",
-      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 겨드랑이. Headline COMPACT: 겨드랑이 체온 navy, 스크리닝 목적 with 스크리닝 목적 teal underline. Center: large rounded card light gray #F0F4F8 GENEROUS padding. Top icon armpit thermometer teal small. Main value navy bold large: 37.2℃ 이상. Small gray below: (99℉ 이상). Navy text: 직장 체온 재확인 필요. Small teal box at bottom: 직장 체온보다 0.3-0.6℃ 낮게 측정. Right side: simple illustration baby with thermometer under arm, line art navy/teal. Bottom thin teal divider. No pixel text. No quotes."
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: 겨드랑이. Headline COMPACT: 겨드랑이 체온 navy, 스크리닝 목적 teal underline. Center: large rounded card light gray #F0F4F8 GENEROUS padding. Top icon armpit thermometer teal small. Main value navy bold large: 37.2℃ 이상. Small gray below: (99℉ 이상). Navy text SINGLE LINE only: 직장 체온 재확인 필요. Do NOT repeat this line. Small teal box at bottom: 직장 체온보다 0.3-0.6℃ 낮게 측정. Right side: simple illustration baby with thermometer under arm, line art navy/teal. Bottom thin teal divider. No pixel text. No quotes."
     },
     {
       "n": 5,

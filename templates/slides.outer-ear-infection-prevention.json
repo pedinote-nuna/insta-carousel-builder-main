@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 011. Center: large warm brown bold headline two lines — first line 여름 물놀이, second line 귀 건강 지키기 with teal green #2C7A5C underline. Below: small gray subtitle 외이도염 예방 완벽 가이드 · CDC 권장 기준. Bottom center: LARGE cute character illustration showing chubby happy child wearing swim cap and goggles splashing in pool, warm cozy colors, gentle water droplets, smiling expression. No pixel text. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 외이도염이란. Large bold headline: 수영 후 귀가 아픈 이유 warm brown, with 이유 having teal green #2C7A5C underline. Center: large cute illustration of child's ear cross-section showing water droplets trapped inside external ear canal, bacteria illustrated as tiny cute germs with worried expressions, warm colors, educational but friendly style. Below illustration: light cream card #FFF0E0 rounded with warm brown text: 외이도에 물이 오래 남으면 세균이 증식해요. Bottom small gray text: 특히 5-9세 어린이가 가장 많이 걸려요. No pixel text. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 예방 준비. Large bold headline: 물놀이 전 warm brown, 귀 보호하기 with teal green #2C7A5C underline. Center: two large cards in vertical stack, each light cream #FFF0E0 rounded. First card: cute illustration of chubby child wearing pink swim cap and blue ear plugs, smiling, with teal checkmark corner, Korean label below: 귀마개와 수영모 착용. Second card: cute illustration of happy child in clean pool with sparkles, teal checkmark corner, Korean label: 깨끗한 물에서 수영하기. Warm pastel colors throughout. No pixel text. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 물놀이 후. Large bold headline: 귀 warm brown, 완전히 말리기 with teal green #2C7A5C underline. Center: four cards in 2x2 grid, each light cream #FFF0E0 rounded. Card 1: cute child tilting head sideways with water droplet coming out of ear, teal checkmark, label: 머리를 옆으로 기울여 물 빼기. Card 2: gentle hand with soft towel dabbing outside of child's ear, teal checkmark, label: 타월로 바깥쪽만 부드럽게 닦기. Card 3: child jumping gently on one foot with head tilted, happy expression, teal checkmark, label: 한쪽 발로 가볍게 뛰기. Card 4: hair dryer on cool setting far from ear illustration, teal checkmark, label: 찬바람으로 멀리서 말리기. Warm pastel colors. No pixel text. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral rounded label: 절대 금지. Large bold headline: 면봉으로 warm brown, 귀 파지 마세요 with coral #E05C3A underline. Center: large illustration showing cotton swab with big red X mark, cute worried ear character with bandage showing scratch, warm but cautionary colors. Below: light cream card #FFF0E0 rounded with coral text: 외이도 피부에 상처를 내어 감염 위험을 높여요. Bottom area: small illustration of correct gentle external cleaning only with soft cloth. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 건조 용액. Large bold headline: 귀 건조 warm brown, 도움 용액 with teal green #2C7A5C underline. Center top: large light cream card #FFF0E0 rounded with cute illustration of white vinegar bottle and rubbing alcohol bottle with 1:1 ratio icon, warm colors. Below: warm brown text 흰 식초와 소독용 알코올 1대1로 섞기. Bottom card cream rounded: cute illustration showing dropper putting few drops in child's ear, child lying on side with calm expression, teal text: 각 귀에 몇 방울씩 떨어뜨려요. Small coral warning box bottom: 고막 천공이나 환기관 있으면 사용 금지. No pixel text. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small teal rounded label: 일상 관리. Large bold headline: 귀지는 warm brown, 보호막이에요 with teal green #2C7A5C underline. Center: large cute illustration of happy healthy ear character wearing shield with earwax illustrated as protective golden barrier blocking tiny bacteria characters, warm friendly style. Below: two cream cards #FFF0E0 rounded stacked. First: teal checkmark, 귀지는 세균 증식을 억제해요. Second: teal checkmark, 과도하게 제거하지 마세요. Bottom small coral rounded box: 귀를 자주 후비거나 자극하지 않기. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-left small coral rounded label: 병원 방문. Large bold headline: 이런 증상이 있다면 warm brown, 즉시 방문하세요 with coral #E05C3A underline. Center: four cards in 2x2 grid, each light cream #FFF0E0 rounded with coral warning icons. Card 1: cute child holding ear with pain expression, red alert icon, label: 귀 통증. Card 2: child scratching ear with itchy expression, alert icon, label: 심한 가려움. Card 3: ear with yellow discharge droplet, alert icon, label: 진물·분비물. Card 4: child tilting head confused by muffled sounds, alert icon, label: 청력 감소. Bottom cream card: warm brown text 조기 치료가 중요해요 · 방치하면 만성으로 진행될 수 있어요. No pixel text. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0. Top-right: 소아과언니 warm brown small, no quotes. Top-center small gray: SAVE & SHARE. Large headline center: 오늘 확인하고 저장하세요 warm brown, with 저장하세요 having teal green #2C7A5C underline. Source box light cream #FFF0E0 rounded, warm brown heading 출처, gray bullet list: CDC Healthy Swimming 2026, AAP HealthyChildren.org 2024, 질병관리청 국가건강정보포털 2024, Nelson Textbook of Pediatrics 22nd ed. Warm brown thin horizontal divider. Center: 소아과언니 warm brown bold large, NO quotes, NO decoration. Below: small gray DR.SOA UNNIE · 소아청소년과 전문의. Thin divider. @dr.soa_unnie · 매주 새 가이드 warm brown. 소아과수첩 앱 · 성장 기록으로 건강 체크 teal green. Cute small character illustrations around text: swimming child, healthy ear, protective swim cap icons in warm pastel colors. No pixel text. No quotes anywhere."
+    }
+  ],
+  "palette": "A",
+  "tone": "character-illustration",
+  "common_style": "# 캐릭터 일러스트 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 소프트 파스텔 베이지 #FFF8F0\n- 텍스트: 웜 브라운 #3D2B1F\n- 강조: teal green #2C7A5C\n- 경고: coral #E05C3A\n- 카드 배경: 크림 #FFF0E0\n- 일러스트: 따뜻한 수채화풍 아기/엄마/음식 캐릭터 (cute, chubby, warm)\n- 시그니쳐: 우상단 소아과언니 warm brown (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown #3D2B1F Pretendard SemiBold, no decoration, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nCenter: large warm brown bold headline [토픽 핵심어], two lines, [둘째 줄] with teal green #2C7A5C underline.\nBelow: small gray subtitle [부제] · AAP 권장 기준.\nBottom center: LARGE cute character illustration [토픽 관련 귀여운 아기/엄마 장면], warm cozy colors, chubby characters.\nNo pixel text. No quotes.\n\n## 2x2 그리드 패턴\nFour cards in 2x2 grid, each light cream #FFF0E0 rounded.\nEach card: cute character illustration inside + Korean label below.\nSmall teal checkmark corner.\nWarm pastel colors throughout.\n\n## 금지 항목 패턴 (귀여운 X)\nFour forbidden food/item cards in 2x2 grid.\nEach: cute illustrated item with red X overlay + Korean label + reason.\nWarm background maintained (NOT dark).\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Warm character illustration style. Soft pastel background #FFF8F0.\nTop-right: 소아과언니 warm brown small, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge headline: 오늘 확인하고 저장하세요 warm brown, 저장하세요 teal #2C7A5C underline.\nSource box cream #FFF0E0 rounded.\n출처 (warm brown small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nWarm brown divider line.\n소아과언니 warm brown bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nDivider.\n@dr.soa_unnie · 매주 새 가이드 warm brown.\n소아과수첩 앱 · [CTA] teal.\nNo pixel text. No quotes.\nCute character illustrations around brand block (doctor/baby/food icons).\n"
+}

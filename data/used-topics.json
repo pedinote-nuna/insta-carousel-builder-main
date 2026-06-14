@@ -882,6 +882,30 @@
       ],
       "date": "2026-06-12",
       "category": "미분류"
+    },
+    {
+      "slug": "mosquito-bite-relief",
+      "title": "mosquito-bite-relief",
+      "keywords": [
+        "모기물림",
+        "가려움",
+        "붓기",
+        "진정"
+      ],
+      "date": "2026-06-14",
+      "category": "미분류"
+    },
+    {
+      "slug": "outer-ear-infection-prevention",
+      "title": "outer-ear-infection-prevention",
+      "keywords": [
+        "외이도염",
+        "귓병",
+        "예방",
+        "귀감염"
+      ],
+      "date": "2026-06-14",
+      "category": "미분류"
     }
   ]
 }

@@ -71,6 +71,12 @@
       "title_kr": "사두증, 언제 병원 가야 할까? 체크리스트 7가지",
       "category": "질환관리",
       "palette": "B"
+    },
+    {
+      "slug": "mouth-ulcer-stomatitis-hospital-timing",
+      "title_kr": "입속 물집·구내염 병원 가야 할 때",
+      "category": "응급·약물 안전",
+      "palette": "B"
     }
   ],
   "pending": [
@@ -384,6 +390,54 @@
       "slug": "carrier-usage-for-head-shape",
       "title_kr": "사두 악화시키는 아기띠 사용법 vs 올바른 사용법",
       "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "hand-foot-mouth-disease-isolation-guide",
+      "title_kr": "수족구병 격리 기준 완벽 가이드",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "external-otitis-pool-prevention",
+      "title_kr": "물놀이 후 외이도염 예방법",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "summer-hydration-baby-guide",
+      "title_kr": "더운 여름 영아 수분 보충 가이드",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "A"
+    },
+    {
+      "slug": "rainy-season-food-poisoning-prevention",
+      "title_kr": "장마철 식중독 예방 체크리스트",
+      "category": "일상 케어·영양·생활건강",
+      "palette": "B"
+    },
+    {
+      "slug": "drowning-secondary-drowning-symptoms",
+      "title_kr": "물놀이 후 지연성 익수 증상 체크",
+      "category": "응급·약물 안전",
+      "palette": "B"
+    },
+    {
+      "slug": "18-month-language-milestone",
+      "title_kr": "18개월 언어 발달 체크리스트",
+      "category": "성장발달",
+      "palette": "A"
+    },
+    {
+      "slug": "summer-growth-nutrition-guide",
+      "title_kr": "여름철 성장 저하 막는 영양 전략",
+      "category": "성장발달",
+      "palette": "A"
+    },
+    {
+      "slug": "innocent-heart-murmur-vs-pathologic",
+      "title_kr": "무해성 심잡음 vs 병적 심잡음 구별",
+      "category": "소아심장",
       "palette": "A"
     }
   ],
@@ -762,6 +816,16 @@
       "slug": "baby-temperature-measurement",
       "title_kr": "아기 체온 올바르게 재는 방법",
       "done_at": "2026-06-12"
+    },
+    {
+      "slug": "mosquito-bite-relief",
+      "title_kr": "mosquito-bite-relief",
+      "done_at": "2026-06-14"
+    },
+    {
+      "slug": "outer-ear-infection-prevention",
+      "title_kr": "outer-ear-infection-prevention",
+      "done_at": "2026-06-14"
     }
   ]
 }
