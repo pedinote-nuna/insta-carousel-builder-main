@@ -577,24 +577,18 @@ def generate_voiceover_script(ordered_slides: list[dict], api_key: str,
             continue  # 릴스 훅 등 카드 외 슬라이드 제외
         prompt = str(s.get("prompt", ""))
         ko = " ".join(re.findall(r'[가-힣]+[가-힣\s·%\d]*', prompt)).strip()
-        summaries.append(ko)
+        role = str(s.get("role", ""))
+        summaries.append((role, ko))
 
     system_prompt = """너는 소아과언니 인스타그램 릴스 대본 작성 전문가야.
 슬라이드 목록이 주어지면 아래 규칙으로 voiceover.txt 형식의 대본을 작성해.
 
-## 대본 구조
-첫 줄 고정: 소아청소년꽈 전문의가 알려드립니다.
-마지막 줄 고정: 소아꽈언니의 소아꽈수첩입니다.
-슬라이드 순서대로 핵심 내용 한 문장씩. 전체 180~200자(공백 제외), 슬라이드마다 균일, 구어체(~해요).
-
-## 훅 슬라이드 규칙 (role=reels-hook, 대본 두 번째 줄)
-- 부모가 "나도 이거 몰랐는데" 하고 끝까지 보고 싶게 만드는 문장
-- 과도한 공포 조성 금지 (신뢰도 있는 의사 채널 톤 유지)
-- 궁금증·유용함·의외성으로 시선을 잡아야 함
-- 예시: "이거 알면 응급실 안 가도 돼요."
-        "많은 부모님들이 이걸 반대로 알고 있어요."
-        "이 타이밍 놓치면 치료가 훨씬 힘들어져요."
-        "소아과 의사도 자주 받는 질문이에요."
+## 대본 구조 (슬라이드 1:1 엄수)
+첫 줄 고정: 소아청소년꽈 전문의가 알려드립니다. (cover 슬라이드)
+마지막 줄 고정: 소아꽈언니의 소아꽈수첩입니다. (outro 슬라이드)
+중간 줄: body 슬라이드 순서대로 정확히 한 줄씩. 슬라이드 N번 = 대본 N번 줄.
+절대 훅·도입·요약 문장을 새로 끼워넣지 말 것. 슬라이드에 없는 내용 추가 금지.
+각 줄 구어체(~해요), 전체 180~220자.
 
 ## 숫자 → 한글
 6개월→육개월, 9개월→구개월, 18개월→십팔개월, 38℃→삼십팔도, 26℃→이십육도,
@@ -624,14 +618,17 @@ def generate_voiceover_script(ordered_slides: list[dict], api_key: str,
 
     n = n_slides if n_slides >= 2 else len(summaries)
     slide_listing = "\n".join(
-        f"슬라이드 {i}: {summary}" for i, summary in enumerate(summaries, 1)
+        f"슬라이드 {i} [{role}]: {summary}"
+        for i, (role, summary) in enumerate(summaries, 1)
     )
     user_prompt = (
         f"각 슬라이드 내용을 보고 정확히 {n}줄 대본을 써줘.\n"
         f"{slide_listing}\n"
         f"첫 줄: {_FIXED_FIRST_LINE} (고정)\n"
         f"마지막 줄: {_FIXED_LAST_LINE} (고정)\n"
-        f"각 줄은 해당 슬라이드 내용을 자연스럽게 한 문장으로."
+        f"각 줄은 해당 슬라이드 내용을 자연스럽게 한 문장으로.\n"
+        f"cover는 인사말 고정, outro는 마무리 고정, 나머지 body는 순서대로 한 줄씩. "
+        f"줄을 추가하거나 합치지 마."
     )
 
     msg = client.messages.create(
@@ -817,6 +814,14 @@ def main() -> int:
     )
     print(f"[3/6] 추가 프롬프트 저장: {extra_path.relative_to(REPO_ROOT)}")
 
+    # templates → output/{topic}/reels 복사 (프롬프트 확인용)
+    import shutil
+
+    reels_extra_dst = OUTPUT_DIR / args.topic / "reels" / "slides-reels-extra.json"
+    reels_extra_dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(extra_path, reels_extra_dst)
+    print(f"[3/6] reels 복사: {reels_extra_dst.relative_to(REPO_ROOT)}")
+
     if args.dry_run:
         print("[4/6] --dry-run: 이미지 생성·텔레그램 전송 건너뜀")
         print()
@@ -868,20 +873,29 @@ def main() -> int:
             voiceover_path.write_text(script_text + "\n", encoding="utf-8")
             # script.txt: 순수 대본 텍스트 (ElevenLabs용, 한 줄씩)
             script_path = out_dir / "script.txt"
-            # voiceover.txt의 ## [전체 대본 - 이어 읽기] 섹션에서 순수 텍스트 추출
-            lines = []
-            in_section = False
-            for line in script_text.split("\n"):
-                if "## [전체 대본 - 이어 읽기]" in line:
-                    in_section = True
-                    continue
-                if in_section:
-                    if line.startswith("---"):
-                        break
-                    if line.strip():
-                        lines.append(line.strip())
+            # voiceover.txt에서 script.txt 추출 (섹션 포맷 + 평문 포맷 둘 다 처리)
+            vo_text = voiceover_path.read_text(encoding="utf-8").strip()
+
+            section_match = re.search(
+                r"##\s*\[전체 대본.*?\]\s*\n(.*?)(?=\n##|\Z)", vo_text, re.DOTALL
+            )
+            if section_match:
+                lines = [l.split("||")[0].strip()
+                         for l in section_match.group(1).splitlines() if l.strip()]
+            else:
+                # 평문 포맷 — || 왼쪽(발음형)만, 빈 줄 제외
+                lines = []
+                for l in vo_text.splitlines():
+                    l = l.strip()
+                    if not l:
+                        continue
+                    lines.append(l.split("||")[0].strip())
+
             if lines:
                 script_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+                print(f"[대본] script.txt 저장 완료: {script_path}")
+            else:
+                print("[대본] ⚠️ script.txt 추출 실패 — voiceover.txt 포맷 확인 필요")
             print(f"[대본] 저장 완료: {voiceover_path}")
 
             # SRT 자동 생성

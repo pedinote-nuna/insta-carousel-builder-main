@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin on all four sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36 only, no decoration, no quotes. Top-left small gray: PARENTING NOTE · 012. Large breathing whitespace before headline. Headline COMPACT two lines: 여름철 탈수 신호 navy, 체크 기준표 with 체크 기준표 underlined in teal #2C6E63. Small subtitle gray: 단계별 징후와 대처법 · AAP 가이드라인 기준. LARGE minimalist water droplet with child silhouette line illustration in teal, prominently placed center-right. Generous bottom whitespace. No pixel values as text. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray label: CLASSIFICATION. Headline COMPACT no quotes: 탈수는 navy, 3단계로 분류됩니다 with 3단계 teal #2C6E63 underline. Small subtitle gray: AAP 분류 기준. Three stacked cards GENEROUS padding comfortable vertical spacing. Card 1 light teal #E8F4F2 rounded: small teal water droplet icon top-left + 경증 tag teal pill + main bold navy large: 영아 5% 미만 + subtitle gray: 소아 3% 미만 체중 감소. Card 2 light amber #FFF3E0 rounded: amber water droplet icon + 중등도 tag amber pill + main bold navy: 영아 5-10% + subtitle gray: 소아 6% 체중 감소. Card 3 light coral #FFE8E6 rounded: coral water droplet icon + 중증 tag coral pill + main bold navy: 영아 15% 이상 + subtitle gray: 소아 9% 이상 체중 감소. Do NOT add quotation marks anywhere. Do NOT duplicate any Korean character. No pixel values. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: MILD. Headline COMPACT: 경증 탈수 navy, 놓치기 쉬운 신호 with 놓치기 쉬운 신호 teal #2C6E63 underline. Center: large minimalist illustration of baby with subtle indication of decreased urine output, line art teal/navy minimal. Below: single light gray #F0F4F8 card GENEROUS padding, checkmark icon teal: 소변량 감소 bold navy plus 외 뚜렷한 임상 징후가 나타나지 않을 수 있음 gray small. Bottom thin teal horizontal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small amber rounded label: MODERATE. Headline COMPACT: 중등도 탈수 navy, 여러 신호가 함께 나타납니다 with 함께 나타납니다 teal #2C6E63 underline. Grid layout 2x4 small cards light gray #F0F4F8, REDUCED text 20% smaller, GENEROUS padding, comfortable spacing. Each card: small icon top plus symptom name navy bold. Row 1: 눈물 감소 (tear icon) / 앞숫구멍 함몰 (fontanelle icon). Row 2: 눈 함몰 (eye icon) / 피부 탄력 저하 (skin icon). Row 3: 구강 건조 (mouth icon) / 빈맥 (heart icon). Row 4: 모세혈관 재충전 지연 (capillary icon) / 비정상 호흡 (lung icon). Bottom coral warning box rounded padding: ⚠️ 모세혈관 재충전·피부 탄력·호흡 양상이 가장 유용한 지표입니다. No pixel values. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small coral rounded label: SEVERE. Headline COMPACT: 중증 탈수 navy, 응급 신호 with 응급 신호 coral #C44536 underline. Large alert triangle icon coral center-top. Below: stacked cards coral tinted #FFE8E6, GENEROUS padding, comfortable spacing. Card 1: 의식 변화 및 기면 bold navy. Card 2: 과호흡 bold navy. Card 3: 저혈압 bold navy plus 후기 징후 tag small coral. Card 4: 피부 얼룩 bold navy. Bottom coral solid box white text bold: + 앞서 언급한 중등도 징후 모두 동반. No pixel text. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small gray label: RISK FACTORS. Headline COMPACT: 영아는 navy, 특히 취약합니다 with 특히 취약합니다 teal #2C6E63 underline. Center: large minimalist illustration of infant with water droplet symbols, line art teal/navy minimal, prominent placement. Two side-by-side cards equal width light teal #E8F4F2, GENEROUS padding. Left card: small icon water drop plus 높은 기초 수분 요구량 navy bold. Right card: small icon body outline plus 높은 체표면적 대비 체중 비율 navy bold. Bottom thin teal divider. No pixel values. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: TREATMENT. Headline COMPACT: 경증-중등도 탈수 navy, 경구 수분 보충 우선 with 경구 수분 보충 우선 teal #2C6E63 underline. Center: large minimalist illustration of ORS solution bottle and spoon, line art teal/navy minimal. Single large card light gray #F0F4F8, GENEROUS padding: WHO·AAP 권장 치료법 tag small gray plus 경구 수분 보충 요법 Oral Rehydration Therapy bold navy large plus 선호되는 치료법입니다 subtitle gray. Bottom teal box rounded: WHO와 미국소아과학회 공식 권장 white text. No pixel text. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. GENEROUS outer margin all sides. Top-right small: 소아과언니 navy, no quotes. Top-left small teal rounded label: HOME CARE. Headline COMPACT: 탈수 의심되면 navy, 집에서 이렇게 with 집에서 이렇게 teal #2C6E63 underline. Small subtitle gray: AAP·WHO 권장 기준. Two stacked cards GENEROUS padding comfortable vertical spacing. Card 1 light teal #E8F4F2 rounded: small teal checkmark icon top-left + 1단계 tag teal pill + main bold navy large: 시판 경구 수분 보충액 + subtitle gray: 약국에서 구입 가능 (페디안 등). Card 2 light teal #E8F4F2 rounded: small teal checkmark icon + 2단계 tag teal pill + main bold navy large: 5분마다 5ml씩 + subtitle gray: 한 번에 많이 주면 구토 유발. Bottom coral warning box #FFE8E6 rounded GENEROUS padding: ⚠️ 끓인 물 이온음료 과일주스는 적합하지 않아요 · 전해질 당분 농도가 영유아에게 맞지 않습니다. No pixel values. No quotes. Do NOT duplicate any Korean character."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF. VERY GENEROUS outer margin. Top-right: 소아과언니 navy, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT center: 오늘 확인하고 navy, 저장하세요 with 저장하세요 teal #2C6E63 underline. Source box light gray #F0F4F8 rounded GENEROUS padding left-aligned: 출처 navy small bold, · American Academy of Pediatrics Pediatric Care Online 2024, · Daley SF Avva U StatPearls 2024, · Steiner MJ et al American Family Physician 2009, · Merck Manual Professional Edition 2025. Generous spacing plus thin horizontal navy divider. 소아과언니 navy bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray small center. Thin navy divider. @dr.soa_unnie · 매주 새 가이드 navy center. 소아과수첩 앱 · 야간 달빛병원 바로 찾기 teal center. No pixel values. No quotes anywhere."
+    }
+  ],
+  "palette": "B",
+  "tone": "clean-infographic",
+  "common_style": "# 클린 인포그래픽 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 흰색 #FFFFFF\n- 텍스트: deep navy #1A1F36\n- 강조: teal #2C6E63\n- 경고: coral #C44536\n- 카드 배경: light gray #F0F4F8\n- VERY GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 20% 작게 (빽빽함 방지)\n- 시그니쳐: 우상단 소아과언니 (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin on all four sides.\nTop-right small: '소아과언니' Pretendard SemiBold navy only, no decoration, no quotes.\nTop-left small gray: 'PARENTING NOTE · [번호]'.\nLarge breathing whitespace before headline.\nHeadline COMPACT two lines: '[첫 줄]' navy, '[둘째 줄]' with '[핵심 단어]' underlined in teal #2C6E63.\nSmall subtitle gray: '[부제] · AAP 가이드라인 기준'.\nLARGE minimalist [토픽 관련] line illustration in teal, prominently placed.\nGenerous bottom whitespace. No pixel values as text. No quotes on card.\n\n## BODY 데이터 카드 패턴\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nGENEROUS outer margin all sides.\nTop-right small: '소아과언니' navy, no quotes.\nTop-left small gray label: '[섹션명]'.\nHeadline COMPACT: '[앞부분]' navy, '[핵심 단어]' teal or coral underline.\nStacked/grid cards with REDUCED text (20% smaller) + GENEROUS padding + comfortable spacing.\nEach card: age/category icon top-left + tag label + bold number/text + subtitle.\nNo pixel values as text on card.\n\n## 비교 카드 패턴\nTwo side-by-side cards equal width.\nLeft card teal header / Right card navy header.\nBody light gray: label small gray + main value teal/navy large bold + interval/unit navy.\nBottom coral warning box: ⚠️ + warning text.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Clean infographic style. White background #FFFFFF.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' navy, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' navy, '저장하세요' teal underline.\nSource box light gray #F0F4F8 rounded GENEROUS padding, left-aligned.\n출처 (navy small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\nGenerous spacing + thin horizontal divider.\n소아과언니 navy bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray small.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 navy.\n소아과수첩 앱 · [CTA] teal.\nNo pixel values. No quotes.\n"
+}

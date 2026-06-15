@@ -1682,9 +1682,231 @@ async def cmd_help(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
         "💬 자연어도 됩니다:\n"
         "  • '주제 추천해줘' / '수족구병 만들어줘'\n"
         "  • '1 3 5번 만들어줘' (추천 목록 순차 생성)\n"
-        "  • '중단' / '취소' (진행 중 멈춤)"
+        "  • '중단' / '취소' (진행 중 멈춤)\n"
+        "\n"
+        "💡 릴스 아이디어 (말투 자유롭게):\n"
+        "  • 추가 → '아이디어 추가' / '아이디어 저장/등록/메모'\n"
+        "      뒤에 제목을 적거나, 다음 줄에 한 줄씩 (번호 없어도 됨)\n"
+        "  • 목록 → '릴스 아이디어' / '아이디어 보여줘' / '아이디어 목록'\n"
+        "  • 수정 → '아이디어 3번 새 제목으로 수정' (변경/바꿔/고쳐 다 됨)\n"
+        "  • 삭제 → '아이디어 3번 삭제' (지워/제거 다 됨)"
     )
     await update.message.reply_text(text)
+
+
+# --------------------------------------------------------- 릴스 아이디어 의도 분류
+
+# 같은 뜻의 다양한 표현을 인식하기 위한 동의어 (규칙 기반 폴백용)
+_IDEA_ADD_VERBS = ("저장", "추가", "등록", "넣어", "넣을", "적어", "메모", "담아", "기록")
+_IDEA_DEL_VERBS = ("삭제", "지워", "지울", "빼줘", "빼기", "제거", "없애")
+_IDEA_EDIT_VERBS = ("수정", "변경", "바꿔", "바꾸", "고쳐", "고칠")
+_IDEA_LIST_WORDS = ("목록", "보여", "리스트", "조회", "확인", "알려", "보기",
+                    "뭐 있", "뭐있", "뭐가", "몇 개", "몇개", "전체")
+
+_IDEA_INTENT_PROMPT = """사용자가 릴스 아이디어 관리 봇에 보낸 메시지야.
+아래 메시지의 의도를 JSON으로만 반환해. 다른 말은 절대 하지 마.
+
+메시지: "{{MESSAGE}}"
+
+반환 형식:
+{
+  "action": "add" | "list" | "update" | "delete" | "none",
+  "index": null 또는 숫자 (1-based),
+  "titles": [] 또는 ["제목1", "제목2", ...],
+  "title": null 또는 "새 제목 (update용)"
+}
+
+규칙:
+- 아이디어 추가/저장/등록/메모/넣어줘 → action "add", titles 에 제목 목록 (여러 줄이면 각 줄이 하나)
+- 목록/리스트/보여줘/뭐 있어/확인 → action "list"
+- 수정/변경/바꿔/고쳐 + 번호 + 새 제목 → action "update", index 번호, title 새 제목
+- 수정/변경 + 번호만 있고 새 제목 없음 → action "update", index 번호, title null
+- 수정/변경 인데 번호도 없음 → action "update", index null, title null
+- 삭제/지워/제거/없애 + 번호 → action "delete", index 번호
+- 삭제 인데 번호 없음 → action "delete", index null
+- 릴스 아이디어와 관련 없는 메시지 → action "none"
+- title 에서는 '~으로', '~로', '바꿔줘', '수정해줘' 같은 조사·어미는 빼고 순수 제목만 남겨."""
+
+
+def _extract_new_idea_title(first: str) -> str:
+    """수정 문장에서 번호·트리거·동사·조사·어미를 제거하고 순수 새 제목만 추출."""
+    t = re.sub(r"\d+\s*번?\s*(을|를|은|는|이|가)?", "", first, count=1)
+    for ph in ("릴스 아이디어", "아이디어"):
+        t = t.replace(ph, "")
+    for v in _IDEA_EDIT_VERBS:
+        t = t.replace(v, "")
+    t = t.strip().strip(":：-").strip()
+    tail = ("해주세요", "주세요", "해줘", "해 줘", "줘", "요", "좀",
+            "으로", "로", "을", "를")
+    changed = True
+    while changed:
+        changed = False
+        t = t.strip().strip("'\"“”‘’ ").strip()
+        for x in tail:
+            if t.endswith(x):
+                t = t[: -len(x)].strip()
+                changed = True
+    return t.strip("'\"“”‘’ ").strip()
+
+
+def _classify_idea_intent_regex(text: str) -> dict:
+    """LLM 없이/실패 시 규칙 기반으로 릴스 아이디어 의도를 분류. LLM과 같은 형식 반환."""
+    lines = text.split("\n")
+    first = lines[0].strip()
+    rest = [ln for ln in lines[1:] if ln.strip()]
+    has_num = re.search(r"\d+", first)
+
+    # 수정
+    if any(v in first for v in _IDEA_EDIT_VERBS):
+        if not has_num:
+            return {"action": "update", "index": None, "title": None}
+        n = int(re.search(r"(\d+)", first).group(1))
+        title = _extract_new_idea_title(first)
+        return {"action": "update", "index": n, "title": title or None}
+    # 삭제
+    if any(v in first for v in _IDEA_DEL_VERBS):
+        if not has_num:
+            return {"action": "delete", "index": None}
+        return {"action": "delete", "index": int(re.search(r"(\d+)", first).group(1))}
+    # 추가 (추가 동사가 있거나, 다음 줄에 내용이 붙어 있으면)
+    if any(v in first for v in _IDEA_ADD_VERBS) or rest:
+        first_rest = first
+        for ph in ("릴스 아이디어", "아이디어"):
+            first_rest = first_rest.replace(ph, "", 1)
+        for v in _IDEA_ADD_VERBS:
+            first_rest = first_rest.replace(v, "")
+        first_rest = first_rest.strip().strip(":：-").strip()
+        if first_rest in ("줘", "해줘", "해 줘", "좀", "요", "할게", "할래", ""):
+            first_rest = ""
+        titles = _parse_idea_titles(([first_rest] if first_rest else []) + lines[1:])
+        return {"action": "add", "titles": titles}
+    # 목록
+    if (any(w in first for w in _IDEA_LIST_WORDS)
+            or first in ("아이디어", "릴스 아이디어", "릴스 아이디어 목록", "아이디어 목록")):
+        return {"action": "list"}
+    return {"action": "none"}
+
+
+def _classify_idea_intent_sync(message: str, api_key: str) -> dict:
+    """Claude(Haiku)로 릴스 아이디어 의도를 분류 (동기). asyncio.to_thread 로 호출."""
+    client = Anthropic(api_key=api_key)
+    response = client.messages.create(
+        model="claude-haiku-4-5-20251001",  # 분류용 — 저비용 Haiku
+        max_tokens=300,
+        messages=[{"role": "user",
+                   "content": _IDEA_INTENT_PROMPT.replace("{{MESSAGE}}", message)}],
+    )
+    raw = "".join(
+        b.text for b in response.content if getattr(b, "type", None) == "text"
+    ).strip()
+    raw = raw.replace("```json", "").replace("```", "").strip()
+    return json.loads(raw)
+
+
+async def classify_idea_intent(message: str) -> dict:
+    """릴스 아이디어 의도 분류. LLM 우선, 미설정/실패 시 규칙 기반 폴백."""
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    if api_key and Anthropic is not None:
+        try:
+            return await asyncio.to_thread(_classify_idea_intent_sync, message, api_key)
+        except Exception as e:  # noqa: BLE001  (JSON 파싱 실패 포함)
+            log.warning("classify_idea_intent 실패 — 규칙 기반 폴백: %s", e)
+    return _classify_idea_intent_regex(message)
+
+
+async def handle_idea_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
+    """릴스 아이디어 메시지를 처리. 처리했으면 True, 무관한 메시지면 False(다른 핸들러로)."""
+    text = (update.message.text or "").strip()
+    # 값싼 게이트: '아이디어'가 들어간 메시지만 LLM 분류 대상 (오작동·불필요 호출 방지)
+    if "아이디어" not in text.split("\n")[0]:
+        return False
+
+    intent = await classify_idea_intent(text)
+    action = intent.get("action", "none")
+
+    def _idea_to_int(v):
+        try:
+            n = int(v)
+            return n if n >= 1 else None  # 음수·0 은 무효 처리
+        except (TypeError, ValueError):
+            return None
+
+    if action == "add":
+        titles = intent.get("titles") or []
+        if not titles:
+            # 제목 없이 '아이디어 추가'만 → 다음 메시지를 아이디어로 받음
+            IDEA_INPUT_SESSION[update.effective_chat.id] = True
+            await update.message.reply_text(
+                "💡 저장할 아이디어를 적어주세요.\n"
+                "(번호·기호 없이 줄바꿈만 해도 돼요. 한 줄에 하나씩)"
+            )
+            return True
+        total = _append_reels_ideas(titles)
+        await update.message.reply_text(
+            f"✅ {len(titles)}개 릴스 아이디어 저장 완료!\n현재 총 {total}개"
+        )
+        return True
+
+    if action == "list":
+        ideas = _load_reels_ideas()
+        if not ideas:
+            await update.message.reply_text(
+                "💡 저장된 릴스 아이디어가 없어요.\n추가: '아이디어 추가' 후 제목을 적어주세요."
+            )
+            return True
+        lines = [f"{i+1}. {it.get('title','')}" for i, it in enumerate(ideas)]
+        msg = f"💡 릴스 아이디어 목록 ({len(ideas)}개)\n\n" + "\n".join(lines)
+        msg += ("\n\n추가: '아이디어 추가' + 제목\n"
+                "수정: '아이디어 3번 새 제목으로 수정'\n"
+                "삭제: '아이디어 3번 삭제'")
+        await update.message.reply_text(msg)
+        return True
+
+    if action == "update":
+        index = _idea_to_int(intent.get("index"))
+        title = (intent.get("title") or "").strip() or None
+        if index is None:
+            await update.message.reply_text(
+                "✏️ 몇 번 아이디어를 고칠까요?\n예) '아이디어 3번 새 제목으로 수정'"
+            )
+            return True
+        ideas = _load_reels_ideas()
+        if not (1 <= index <= len(ideas)):
+            await update.message.reply_text(f"❌ 번호를 확인해주세요. (1~{len(ideas)})")
+            return True
+        if not title:
+            await update.message.reply_text(
+                f"✏️ {index}번을 어떤 제목으로 바꿀까요?\n예) '아이디어 {index}번 새 제목으로 수정'"
+            )
+            return True
+        old = ideas[index - 1].get("title", "")
+        ideas[index - 1]["title"] = title
+        _save_reels_ideas(ideas)
+        await update.message.reply_text(
+            f"✅ {index}번 수정 완료!\n이전: {old}\n변경: {title}"
+        )
+        return True
+
+    if action == "delete":
+        index = _idea_to_int(intent.get("index"))
+        if index is None:
+            await update.message.reply_text(
+                "🗑 몇 번 아이디어를 지울까요?\n예) '아이디어 3번 삭제'"
+            )
+            return True
+        ideas = _load_reels_ideas()
+        if 1 <= index <= len(ideas):
+            removed = ideas.pop(index - 1)
+            _save_reels_ideas(ideas)
+            await update.message.reply_text(
+                f"✅ '{removed.get('title','')}' 삭제됐어요.\n남은 아이디어: {len(ideas)}개"
+            )
+        else:
+            await update.message.reply_text(f"❌ 번호를 확인해주세요. (1~{len(ideas)})")
+        return True
+
+    # action == "none" → 다른 핸들러가 처리하도록 흐름 유지
+    return False
 
 
 # ---------------------------------------------------------------- handle_text
@@ -1839,73 +2061,13 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         or "수정 자료" in text
         or ("수정해줘" in text and re.search(r"\d+번", text))
         or ("슬라이드" in text and "수정" in text and re.search(r"\d+", text))
-    ):
+    ) and "아이디어" not in text:  # '아이디어 N번 수정'은 릴스 아이디어 핸들러로
         await _handle_slide_edit_prepare(update, context)
         return
 
-    # === 릴스 아이디어 저장 ("아이디어 저장"/"릴스 아이디어"/"아이디어 추가" + 내용) ===
-    _idea_lines = text.split("\n")
-    _idea_first = _idea_lines[0].strip()
-    _idea_kw = next(
-        (k for k in ("아이디어 저장", "릴스 아이디어", "아이디어 추가") if k in _idea_first),
-        None,
-    )
-    if _idea_kw:
-        # 트리거 키워드 뒤 같은 줄 내용 + 다음 줄들을 아이디어로 파싱 (번호/기호/맨줄 모두 허용)
-        # 트리거 문구 전체를 제거(긴 것 먼저) — "릴스 아이디어 저장"에서 "릴스"만 남는 버그 방지
-        first_rest = _idea_first
-        for _ph in ("릴스 아이디어 저장", "릴스 아이디어 추가", "릴스 아이디어",
-                    "아이디어 저장", "아이디어 추가"):
-            first_rest = first_rest.replace(_ph, "", 1)
-        first_rest = first_rest.strip()
-        if first_rest in ("보여줘", "보여 줘", "목록", "해줘", "해 줘", "줘", ""):
-            first_rest = ""
-        content_lines = ([first_rest] if first_rest else []) + _idea_lines[1:]
-        new_titles = _parse_idea_titles(content_lines)
-        if new_titles:
-            total = _append_reels_ideas(new_titles)
-            await update.message.reply_text(
-                f"✅ {len(new_titles)}개 릴스 아이디어 저장 완료!\n현재 총 {total}개"
-            )
-            return
-        # 내용 없음 → '릴스 아이디어' 단독은 목록 조회로 넘기고,
-        # 그 외엔 입력 대기 상태로 두고 다음 메시지를 아이디어로 받음
-        if text.strip() not in ("릴스 아이디어", "아이디어 보여줘", "릴스 아이디어 목록"):
-            IDEA_INPUT_SESSION[update.effective_chat.id] = True
-            await update.message.reply_text(
-                "💡 저장할 아이디어를 적어주세요.\n"
-                "(번호·기호 없이 줄바꿈만 해도 돼요. 한 줄에 하나씩)"
-            )
-            return
-        # else: fall through → 아래 목록 조회 핸들러
-
-    # === 릴스 아이디어 삭제 ("아이디어 N번 삭제") ===
-    _idea_del = re.search(r"아이디어\s*(\d+)번\s*삭제", text)
-    if _idea_del:
-        n = int(_idea_del.group(1))
-        ideas = _load_reels_ideas()
-        if 1 <= n <= len(ideas):
-            removed = ideas.pop(n - 1)
-            _save_reels_ideas(ideas)
-            await update.message.reply_text(
-                f"✅ '{removed.get('title','')}' 삭제됐어요.\n남은 아이디어: {len(ideas)}개"
-            )
-        else:
-            await update.message.reply_text(f"❌ 번호를 확인해주세요. (1~{len(ideas)})")
-        return
-
-    # === 릴스 아이디어 목록 ("릴스 아이디어" / "아이디어 보여줘") ===
-    if text in ("릴스 아이디어", "아이디어 보여줘", "릴스 아이디어 목록"):
-        ideas = _load_reels_ideas()
-        if not ideas:
-            await update.message.reply_text(
-                "💡 저장된 릴스 아이디어가 없어요.\n추가: '릴스 아이디어 저장\\n1. 새 아이디어'"
-            )
-            return
-        lines = [f"{i+1}. {it.get('title','')}" for i, it in enumerate(ideas)]
-        msg = f"💡 릴스 아이디어 목록 ({len(ideas)}개)\n\n" + "\n".join(lines)
-        msg += "\n\n삭제: '아이디어 3번 삭제'\n추가: '릴스 아이디어 저장\\n1. 새 아이디어'"
-        await update.message.reply_text(msg)
+    # === 릴스 아이디어 관리 (추가/목록/삭제/수정) ===
+    # Claude(Haiku) 의도 분류 → 실패 시 규칙 기반 폴백. 처리된 경우 True 반환.
+    if await handle_idea_message(update, context):
         return
 
     # === /batch 진행 상태 인터셉트 (intent_router 보다 먼저) ===
@@ -3841,7 +4003,7 @@ async def _reply_chunks(update: Update, text: str, limit: int = 4000) -> None:
 def _replace_script_line(topic: str, slide_n: int, new_line: str) -> bool:
     """output/{topic}/script.txt 의 slide_n 번째 줄을 new_line 으로 교체.
     줄 수가 교체 전후 동일해야 함(new_line 에 줄바꿈이 섞여 늘어나면 실패). 성공 시 True."""
-    p = OUTPUT_DIR / topic / "script.txt"
+    p = OUTPUT_DIR / topic / "reels" / "script.txt"
     if not p.exists():
         return False
     lines = p.read_text(encoding="utf-8").splitlines()
@@ -3860,7 +4022,7 @@ def _replace_script_line(topic: str, slide_n: int, new_line: str) -> bool:
 
 def _replace_srt_block_text(topic: str, slide_n: int, new_text: str) -> bool:
     """output/{topic}/output.srt 의 slide_n 번째 블록 텍스트만 교체(번호·타임스탬프 유지)."""
-    p = OUTPUT_DIR / topic / "output.srt"
+    p = OUTPUT_DIR / topic / "reels" / "output.srt"
     if not p.exists():
         return False
     raw = p.read_text(encoding="utf-8").strip()
@@ -3905,12 +4067,13 @@ async def _send_slide_edit_context(update: Update, context: ContextTypes.DEFAULT
     common_style = str(data.get("common_style", "")) if isinstance(data, dict) else ""
 
     base = OUTPUT_DIR / topic
+    reels = base / "reels"
     script_txt = ""
-    if (base / "script.txt").exists():
-        script_txt = (base / "script.txt").read_text(encoding="utf-8").strip()
+    if (reels / "script.txt").exists():
+        script_txt = (reels / "script.txt").read_text(encoding="utf-8").strip()
     srt_txt = ""
-    if (base / "output.srt").exists():
-        srt_txt = (base / "output.srt").read_text(encoding="utf-8").strip()
+    if (reels / "output.srt").exists():
+        srt_txt = (reels / "output.srt").read_text(encoding="utf-8").strip()
 
     # 이미지 전송 (매번)
     png = base / f"slide-{slide_n:02d}.png"
@@ -4221,7 +4384,7 @@ async def _handle_slide_prompt_edit(update: Update, context: ContextTypes.DEFAUL
     await update.message.reply_text("\n".join(msgs) if msgs else "처리할 항목이 없어요.")
 
 
-def run_reels_video_builder(slug: str):
+def run_reels_video_builder(slug: str, _allow_retry: bool = True):
     """reels-video-builder.py 실행. (success, error_type, error_msg) 튜플 반환."""
     import subprocess
     script_path = REPO_ROOT / "scripts" / "reels-video-builder.py"
@@ -4237,7 +4400,11 @@ def run_reels_video_builder(slug: str):
     if result.returncode == 0:
         return (True, "", "")
     out = (result.stdout or "") + "\n" + (result.stderr or "")
-    return (False, _classify_video_error(out), _extract_error_cause(out))
+    err_type = _classify_video_error(out)
+    # script.txt 가 슬라이드 기반으로 재생성된 뒤 중단된 경우 → 새 대본으로 1회만 자동 재시도
+    if _allow_retry and "다시 실행하면 새 대본으로" in out:
+        return run_reels_video_builder(slug, _allow_retry=False)
+    return (False, err_type, _extract_error_cause(out))
 
 
 def _fix_script_line_count(slug: str) -> bool:
@@ -4245,9 +4412,7 @@ def _fix_script_line_count(slug: str) -> bool:
     import subprocess
     base = REPO_ROOT / "output" / slug
     reels = base / "reels"
-    script_path = base / "script.txt"
-    if not script_path.exists() and (reels / "script.txt").exists():
-        script_path = reels / "script.txt"
+    script_path = reels / "script.txt"
     if not script_path.exists():
         return False
     lines = [ln.strip() for ln in script_path.read_text(encoding="utf-8").splitlines() if ln.strip()]
@@ -4283,7 +4448,7 @@ def _fix_script_line_count(slug: str) -> bool:
         return False
     script_path.write_text("\n".join(new_lines) + "\n", encoding="utf-8")
     # output.srt 를 수정된 script.txt 기준으로 재생성
-    out_srt = base / "output.srt"
+    out_srt = reels / "output.srt"
     subprocess.run(
         ["python3", str(REPO_ROOT / "scripts" / "estimate_srt.py"),
          str(script_path), "-o", str(out_srt)],
@@ -4302,7 +4467,7 @@ def _auto_fix_error(slug: str, error_type: str) -> bool:
             return _fix_script_line_count(slug)
         if error_type == "srt_missing":
             vo = reels / "voiceover.txt"
-            out_srt = base / "output.srt"
+            out_srt = reels / "output.srt"
             subprocess.run(
                 ["python3", str(REPO_ROOT / "scripts" / "estimate_srt.py"),
                  str(vo), "-o", str(out_srt)],
@@ -4550,6 +4715,16 @@ async def run_generator(slug: str) -> tuple[bool, str]:
         )
         tail = (log_tail + "\n" + detail).strip() if log_tail else detail
         return False, tail
+
+    # 9장 모두 생성 확인됨 → 템플릿을 output 으로 복사 (프롬프트 확인용)
+    if proc.returncode == 0 and not missing:
+        import shutil
+
+        # templates → output 복사 (프롬프트 확인용)
+        src = f"templates/slides.{slug}.json"
+        dst = f"output/{slug}/slides.json"
+        if os.path.exists(src):
+            shutil.copy2(src, dst)
     return proc.returncode == 0, log_tail
 
 

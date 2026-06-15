@@ -153,12 +153,6 @@
       "palette": "B"
     },
     {
-      "slug": "outdoor-play-safety",
-      "title_kr": "안전한 야외놀이 체크리스트",
-      "category": "일상 케어·영양·생활건강",
-      "palette": "A"
-    },
-    {
       "slug": "heart-murmur-exercise",
       "title_kr": "심잡음 아이 운동 가이드",
       "category": "소아심장",
@@ -826,6 +820,21 @@
       "slug": "outer-ear-infection-prevention",
       "title_kr": "outer-ear-infection-prevention",
       "done_at": "2026-06-14"
+    },
+    {
+      "slug": "summer-dehydration-signs",
+      "title_kr": "summer-dehydration-signs",
+      "done_at": "2026-06-15"
+    },
+    {
+      "slug": "baby-eye-foreign-object",
+      "title_kr": "baby-eye-foreign-object",
+      "done_at": "2026-06-15"
+    },
+    {
+      "slug": "nose-ear",
+      "title_kr": "nose-ear",
+      "done_at": "2026-06-15"
     }
   ]
 }

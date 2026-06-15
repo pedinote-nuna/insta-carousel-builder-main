@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Top: bold red #E63946 stripe full width + COMPACT white text '코·귀 이물질 긴급 가이드'. Top-right below stripe: 소아과언니 white Pretendard SemiBold small, no quotes. Headline COMPACT 25% smaller: '절대 파내지 마세요' white bold, '응급 대처법' bright red #E63946. Small white subtitle: 2-5세 호기심 사고 예방 · 이비인후과 전문의 권장. LARGE prominent line illustration child with foreign object in nose/ear white outline on dark background, clean minimal style. Bottom-left small gray: PARENTING NOTE · 011. No pixel values. No quotes."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left red rounded label: 통계 ⚠️. Headline COMPACT: '2-5세에서' white, '가장 흔합니다' red #E63946. Center: SMALL clean icon illustration curious toddler white line art. Below: dark card #1A2B3C rounded GENEROUS padding. 코 이물질 (white bold) 장난감·구슬·스펀지 (gray text). Thin divider. 귀 이물질 (white bold) 구슬·음식물·곤충 (gray text). Bottom thin red accent line. No pixel values. No quotes."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left red rounded label: 절대 하지 마세요 ❌. Headline COMPACT: '집에서 파내면' white, '68.1% 합병증' red #E63946. Center stacked rows GENEROUS spacing: Row 1: SMALL icon illustration tweezers white with red ❌ overlay left + COMPACT white text '핀셋·면봉으로 꺼내기 시도' right. Row 2: SMALL icon hand reaching white with red ❌ overlay left + COMPACT white text '손가락으로 후비기' right. Row 3: SMALL icon syringe white with red ❌ overlay left + COMPACT white text '물이나 오일 함부로 주입' right. Red outlined box around all rows comfortable padding. Bottom small gray: 전문의 제거 시 합병증 15.7%. No pixel values. No quotes."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left red rounded label: 위험 ⚠️. Headline COMPACT: '파내려다가' white, '더 깊이 밀립니다' red #E63946. Center: LARGE illustration airway cross-section showing foreign body moving deeper white line art with red arrow. Below: dark card #1A2B3C rounded GENEROUS padding. 코 이물질 (red bold) → 기도 흡인 위험 (white text). Thin divider. 귀 이물질 (red bold) → 고막 손상 위험 (white text). Thin divider. 반복 시도 (red bold) → 합병증 급증 (white text). Bottom thin red accent line. No pixel values. No quotes."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left: full-width bright red header bar + white bold '즉시 응급실 🚨'. LARGE illustration button battery with chemical burn warning white/red. Numbered items GENEROUS spacing: 1️⃣ 버튼 배터리 (white bold) 15분 내 화학 화상 (red text). 2️⃣ 비중격 천공·고막 손상 (white bold) 영구적 손상 위험 (red text). 3️⃣ 절대 제거 시도 금지 (white bold) 바로 응급실로 (red text). Large red rounded border around all items. Bottom red glow effect. No pixel values. No quotes."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left red rounded label: 주의 물체 ⚠️. Headline COMPACT: '물에 불어나는' white, '폴리머 볼' red #E63946. Center stacked GENEROUS spacing: SMALL icon illustration water-absorbing ball white left + dark card #1A2B3C right: 흡수성 폴리머 (red bold) 전신마취 제거 필요 (white text). SMALL icon bean/corn white left + dark card right: 콩·팝콘 등 유기물 (red bold) 물 절대 금지 (white text). SMALL icon rounded toy white left + dark card right: 장난감 부품 (red bold) 즉시 이비인후과 (white text). Red dashed border around all cards. No pixel values. No quotes."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left mint rounded label: 증상 체크 ✓. Headline COMPACT: '이런 증상이 있나요?' white, '즉시 확인하세요' mint #2EC4B6. Center stacked rows GENEROUS spacing: Row 1: SMALL icon nose discharge white left + COMPACT white text '한쪽 코에서만 악취 나는 분비물' right mint checkmark. Row 2: SMALL icon ear pain white left + COMPACT white text '귀 통증·청력 저하·분비물' right mint checkmark. Row 3: SMALL icon breathing difficulty white left + COMPACT white text '숨쉬기 어려움·코피' right mint checkmark. Mint outlined box around all rows comfortable padding. Bottom small gray: 무증상인 경우도 많습니다. No pixel values. No quotes."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-left mint rounded label: 집에서 시도 가능 ✓. Headline COMPACT: '1-2회만' white, '조심히 시도하세요' mint #2EC4B6. Center stacked rows GENEROUS spacing: Row 1: SMALL icon parent mouth-to-nose technique white left + COMPACT white text '코: 반대편 막고 코풀기 유도' right mint ✓. Row 2: SMALL icon oil drop white left + COMPACT white text '귀: 살아있는 곤충만 미지근한 식용유' right mint ✓. Row 3: SMALL icon doctor referral white left + COMPACT white text '안 되면 즉시 이비인후과 방문' right mint ✓. Mint outlined box around all rows comfortable padding. Bottom mint accent: 최대 1-2회 시도 후 중단. No pixel values. No quotes."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A. VERY GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes. Top-center small gray: SAVE & SHARE. Headline COMPACT: 오늘 확인하고 white, 저장하세요 mint #2EC4B6 underline. Source box dark #1A2B3C rounded GENEROUS padding: 출처 (white small bold) · Bademci G et al. Nigerian J Clin Pract 2015 · Kiger JR et al. Pediatr Emerg Care 2008 · ENT UK Global Guidelines 2020 · Han SH et al. BMC Pediatrics 2021. Thin white divider. 소아과언니 white bold large center NO quotes. DR.SOA UNNIE · 소아청소년과 전문의 gray. Thin divider. @dr.soa_unnie · 매주 새 가이드 white. 소아과수첩 앱 · 야간 응급 병원 바로 찾기 mint. No pixel values. No quotes."
+    }
+  ],
+  "palette": "A",
+  "tone": "emergency-alert",
+  "common_style": "# 경고·긴급 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 짙은 네이비 #0D1B2A\n- 텍스트: 흰색 #FFFFFF\n- 긴급 강조: bright red #E63946\n- 안전/긍정: mint #2EC4B6\n- 카드 배경: #1A2B3C\n- GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 25% 작게\n- 슬라이드마다 아이콘/일러스트 필수\n- 시그니쳐: 우상단 소아과언니 white (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A.\nGENEROUS outer margin all sides.\nTop: bold red #E63946 stripe full width + COMPACT white text '[토픽] 긴급 가이드'.\nTop-right below stripe: '소아과언니' white Pretendard SemiBold small, no quotes.\nHeadline COMPACT (25% smaller): '[첫 줄]' white bold, '[핵심 긴급 표현]' bright red #E63946.\nSmall white subtitle: '[부제] · AAP 가이드라인 기준'.\nLARGE prominent line illustration [토픽 관련 응급 장면] white outline on dark background.\nBottom-left small gray: 'PARENTING NOTE · [번호]'.\nNo pixel values. No quotes.\n\n## 금지 항목 패턴 (❌ 슬라이드)\nDark navy background.\nTop-left red rounded label: '절대 하지 마세요 ❌'.\nHeadline COMPACT: '[내용]' white, '[핵심]' red.\nRows stacked: SMALL LINE ILLUSTRATION ICON left (red ❌ overlay) + COMPACT white text right.\nRed outlined box around all rows, comfortable padding.\nNo pixel values.\n\n## 행동 항목 패턴 (✓ 슬라이드)\nDark navy background.\nTop-left mint rounded label: '[행동] ✓'.\nHeadline COMPACT: '[내용]' white, '[핵심]' mint #2EC4B6.\nRows stacked: SMALL ICON left (mint ✓ overlay) + COMPACT white text right, GENEROUS spacing.\nMint outlined box around all rows.\nNo pixel values.\n\n## 119 패턴\nFull-width bright red header bar + white bold '[긴급 행동]'.\nLARGE relevant illustration center (구급차/응급 아이콘).\nNumbered items: red number + white text, GENEROUS spacing.\nLarge red rounded border around items.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' white small, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' white, '저장하세요' mint underline.\nSource box dark #1A2B3C rounded GENEROUS padding.\n출처 (white small bold)\n· [출처 1]\n· [출처 2]\nThin white divider.\n소아과언니 white bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 white.\n소아과수첩 앱 · [CTA] mint.\nNo pixel values. No quotes.\n"
+}

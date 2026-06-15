@@ -1,0 +1,40 @@
+{
+  "topic": "baby-eye-foreign-object",
+  "topic_type": "응급정보형",
+  "source_template": "slides.baby-eye-foreign-object.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 시선 고정 - 충격적 메시지로 스크롤 멈추게",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: MASSIVE bold white Korean text '아기 눈에\n이물질이\n들어갔다면?' centered, each line separate, huge font size 120px, high contrast. Bottom subtle: small red rounded badge '지금 바로 확인' 16px. Minimalist typography-focused design. No photos, no illustrations. Clean emergency alert aesthetic matching original cardnews style.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 2,
+      "role": "reels-visual",
+      "purpose": "절대 금지 행동 실사 클로즈업 - 눈 비비는 손 동작",
+      "prompt": "Portrait 1080x1350 vertical. Realistic photo closeup. Toddler's face profile, small hands rubbing eyes vigorously with fists. Soft indoor lighting, shallow depth of field focusing on hands and closed eyes. Baby wearing pastel clothing. Genuine documentary style capturing natural motion. High quality photography, natural skin tones, gentle background blur. Conveys 'DO NOT rub eyes' emergency action visually. Korean baby, East Asian facial features, chubby cheeks",
+      "file": "2-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "올바른 처치법 실사 - 물로 세척하는 장면",
+      "prompt": "Portrait 1080x1350 vertical. Realistic photo closeup. Parent's gentle hands cupping clean water, bringing it toward child's open eye. Bathroom sink setting with running faucet visible in background blur. Soft natural light from window. Child's face partially visible, cooperative expression. Clean hands, clear water droplets catching light. Documentary style emergency first aid demonstration. Professional photography quality, natural colors, reassuring composition. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 6,
+      "role": "reels-visual",
+      "purpose": "어린 아이 대처법 실사 - 면봉 사용 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Realistic photo extreme closeup. Parent's steady hand holding sterile cotton swab near baby's lower eyelid, gently approaching to remove particle. Baby's eye partially open, looking up. Soft diffused lighting highlighting the delicate procedure. Clean medical technique visible. Shallow focus on swab tip and eyelid area. Professional medical documentation style. Natural skin tones, calm atmosphere, precision action captured mid-motion. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "6-1.png"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "topic": "summer-dehydration-signs",
+  "topic_type": "비교형",
+  "source_template": "slides.summer-dehydration-signs.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 훅 - 충격적 첫 문구로 스크롤 멈추기",
+      "prompt": "Portrait 1080x1350 vertical. Bold typography-focused hook frame. White background #FFFFFF. VERY GENEROUS outer margin all sides. Top-right small: 소아과언니 Pretendard SemiBold navy #1A1F36, no quotes. Center massive bold headline navy #1A1F36 Pretendard ExtraBold: 우리 아이\n탈수 신호\n놓치지 마세요. Underneath medium coral #FF6B6B text: 여름철 응급상황 구분법. Bottom small gray caption: 경증·중등도·중증 구분. Clean minimalist design. No illustrations. Pure impact typography.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "경증 탈수 실사 - 입술 만지는 손 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Real-life close-up photograph. Child's hand touching own dry lips. Visible chapped texture on lips. Soft natural summer daylight. Slight dehydration visible. Top-right small overlay: 소아과언니 white sans-serif. Top-left small teal #20B2AA rounded label: MILD. Bottom caption white overlay: 입술 마름, 약간의 갈증. Blurred warm background. Cinematic shallow depth of field. Professional healthcare photography style. Korean baby, East Asian facial features, chubby cheeks",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "중등도 탈수 실사 - 피부 탄력 테스트 손동작",
+      "prompt": "Portrait 1080x1350 vertical. Real-life close-up photograph. Adult hand gently pinching child's forearm skin to test turgor. Skin slightly tented, slow recoil visible. Soft clinical lighting. Top-right small overlay: 소아과언니 white sans-serif. Top-left small amber #F59E0B rounded label: MODERATE. Bottom caption white overlay: 피부 탄력 저하, 소변 감소. Clean pediatric examination setting background. Professional medical photography style. Focus on hand gesture and skin. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "치료 실사 - 물 마시는 어린이 손 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Real-life close-up photograph. Small child's hands holding clear glass of water, bringing to mouth. Water droplets visible on glass surface. Bright natural summer light from window. Top-right small overlay: 소아과언니 white sans-serif. Top-left small teal #20B2AA rounded label: TREATMENT. Bottom caption white overlay: 소량씩 자주 수분 보충. Warm home environment blurred background. Soft focus on hands and glass. Reassuring healthcare moment captured naturally. Korean baby, East Asian facial features, chubby cheeks",
+      "file": "7-1.png"
+    }
+  ]
+}

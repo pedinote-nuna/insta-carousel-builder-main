@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Top: bold red #E63946 stripe full width + COMPACT white text '눈 응급 긴급 가이드'. Top-right below stripe: 소아과언니 white Pretendard SemiBold small, no quotes, 4 characters only. Headline COMPACT 25% smaller: 아기 눈에 이물질 white bold, 절대 하지 마세요 bright red #E63946. Small white subtitle: 즉시 처치법 · Mayo Clinic 가이드라인 기준. LARGE prominent line illustration baby face with glowing eye concern, white outline on dark background, clean minimal strokes. Bottom-left small gray: PARENTING NOTE · 015. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red rounded label: 절대 하지 마세요 ❌. Headline COMPACT 25% smaller: 눈 비비는 것 white bold, 절대 금지 bright red #E63946. Center: SMALL LINE ILLUSTRATION icon of hands rubbing eye with red X overlay, white outline minimal. Below illustration: red outlined box with comfortable padding, white COMPACT text inside: 각막 손상 위험 line break 이물질이 눈 표면 긁어 line break 시력 영구 손상 가능. Bottom thin red divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left red rounded label: 절대 하지 마세요 ❌. Headline COMPACT 25% smaller: 손이나 핀셋으로 white bold, 직접 제거 금지 bright red color. Do NOT render any hex codes or color codes as visible text. Center area inside red outlined box comfortable padding: two stacked rows with GENEROUS spacing. Row 1: small line illustration icon of tweezers with large red X overlay on left side, COMPACT white text right two lines: 박힌 이물질 건드리면 / 더 깊이 들어갈 수 있어요. Row 2: small line illustration icon of finger near eye with large red X overlay on left side, COMPACT white text right two lines: 각막·결막 손상 위험 / 전문의 제거가 안전해요. Bottom thin red divider. No pixel values as text. No quotes. Do NOT show any color names with hash symbols or numbers as text."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint rounded label: 즉시 처치 ✓. Headline COMPACT 25% smaller: 깨끗한 물로 white bold, 부드럽게 씻어내기 mint #2EC4B6. Center area: two stacked rows with GENEROUS spacing. Row 1: SMALL LINE ILLUSTRATION icon washing hands with mint check mark left + COMPACT white text right 먼저 손을 line break 깨끗이 씻기. Row 2: SMALL LINE ILLUSTRATION icon water stream over eye with mint check mark left + COMPACT white text right 생리식염수나 깨끗한 물로 line break 눈 부드럽게 씻기. Mint outlined box around all rows comfortable padding. Bottom thin mint divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint rounded label: 처치법 ✓. Headline COMPACT 25% smaller: 위 눈꺼풀 당겨 white bold, 깜빡이기 mint #2EC4B6. Center area: two stacked rows with GENEROUS spacing. Row 1: SMALL LINE ILLUSTRATION icon eyelid pull down gesture with mint check mark left + COMPACT white text right 위 눈꺼풀 아래로 당기고 line break 깜빡여서 이물질 쓸어내기. Row 2: SMALL LINE ILLUSTRATION icon shower head gentle stream with mint check mark left + COMPACT white text right 수돗물이나 샤워기로 line break 부드럽게 씻어내기. Mint outlined box around all rows comfortable padding. Bottom thin mint divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint rounded label: 어린 아이 처치 ✓. Headline COMPACT 25% smaller: 얼굴 물에 담그고 white bold, 눈 뜨고 감기 mint #2EC4B6. Center area: two stacked rows with GENEROUS spacing. Row 1: SMALL LINE ILLUSTRATION icon baby face in water bowl with mint check mark left + COMPACT white text right 깨끗한 물에 얼굴 담그고 line break 눈 뜨고 감기 반복. Row 2: SMALL LINE ILLUSTRATION icon cotton swab gentle touch with mint check mark left + COMPACT white text right 아래 눈꺼풀 안쪽 이물질은 line break 젖은 면봉으로 살짝 터치. Mint outlined box around all rows comfortable padding. Bottom thin mint divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background #0D1B2A. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-center: full-width bright red #E63946 header bar + white bold text 즉시 응급실로. Center: LARGE LINE ILLUSTRATION ambulance or emergency eye icon white outline prominent. Below: numbered items with GENEROUS spacing, red number circles + white COMPACT text. 1 고속 금속·유리 파편 line break 눈에 박힌 경우. 2 이물질이 눈알에 박혔거나 line break 뚫고 들어간 경우. 3 보호안대로 덮고 line break 절대 제거 시도 금지. Large red rounded border around all numbered items comfortable padding. Bottom thin red divider. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy background. GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-left mint rounded label: 특수 상황 ✓. Headline COMPACT 25% smaller two lines: 화학물질·지속 증상 white bold, 병원 필수 mint color. Do NOT render any hex codes or color codes as visible text. Center area: two stacked rows with GENEROUS spacing inside mint outlined box. Row 1: small line illustration icon of chemical splash on eye with mint warning triangle on left side, COMPACT white text right two lines: 화학물질 들어간 경우 / 흐르는 물 15분 이상 즉시 씻기. Row 2: small line illustration icon of clock showing 24hr with mint warning triangle on left side, COMPACT white text right two lines: 24시간 후에도 통증·충혈·이물감 / 지속되면 반드시 병원 진료. Bottom thin mint divider. No pixel values as text. No quotes. Do NOT show any color names with hash symbols or numbers as text."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A. VERY GENEROUS outer margin. Top-right: 소아과언니 white small, no quotes, 4 characters only. Top-center small gray: SAVE & SHARE. Headline COMPACT 25% smaller center: 오늘 확인하고 저장하세요 white bold, 저장하세요 with thin mint #2EC4B6 underline. Source box dark #1A2B3C rounded GENEROUS padding, white small text: 출처 (bold) line break · Mayo Clinic First Aid 2024 line break · Stanford Children's Health 2023 line break · UF Health Adam Medical Encyclopedia 2026 line break · Community Eye Health Journal 2017. Thin white horizontal divider. 소아과언니 white bold large center, NO quotes, 4 characters only. Below: DR.SOA UNNIE · 소아청소년과 전문의 gray small. Thin white divider. @dr.soa_unnie · 매주 새 가이드 white. 소아과수첩 앱 · 야간·달빛병원 바로 찾기 mint #2EC4B6. No pixel values as text on card. No quotes anywhere on card."
+    }
+  ],
+  "palette": "A",
+  "tone": "emergency-alert",
+  "common_style": "# 경고·긴급 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 짙은 네이비 #0D1B2A\n- 텍스트: 흰색 #FFFFFF\n- 긴급 강조: bright red #E63946\n- 안전/긍정: mint #2EC4B6\n- 카드 배경: #1A2B3C\n- GENEROUS outer margin 모든 슬라이드\n- 텍스트 크기 25% 작게\n- 슬라이드마다 아이콘/일러스트 필수\n- 시그니쳐: 우상단 소아과언니 white (따옴표 없이 4글자만)\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A.\nGENEROUS outer margin all sides.\nTop: bold red #E63946 stripe full width + COMPACT white text '[토픽] 긴급 가이드'.\nTop-right below stripe: '소아과언니' white Pretendard SemiBold small, no quotes.\nHeadline COMPACT (25% smaller): '[첫 줄]' white bold, '[핵심 긴급 표현]' bright red #E63946.\nSmall white subtitle: '[부제] · AAP 가이드라인 기준'.\nLARGE prominent line illustration [토픽 관련 응급 장면] white outline on dark background.\nBottom-left small gray: 'PARENTING NOTE · [번호]'.\nNo pixel values. No quotes.\n\n## 금지 항목 패턴 (❌ 슬라이드)\nDark navy background.\nTop-left red rounded label: '절대 하지 마세요 ❌'.\nHeadline COMPACT: '[내용]' white, '[핵심]' red.\nRows stacked: SMALL LINE ILLUSTRATION ICON left (red ❌ overlay) + COMPACT white text right.\nRed outlined box around all rows, comfortable padding.\nNo pixel values.\n\n## 행동 항목 패턴 (✓ 슬라이드)\nDark navy background.\nTop-left mint rounded label: '[행동] ✓'.\nHeadline COMPACT: '[내용]' white, '[핵심]' mint #2EC4B6.\nRows stacked: SMALL ICON left (mint ✓ overlay) + COMPACT white text right, GENEROUS spacing.\nMint outlined box around all rows.\nNo pixel values.\n\n## 119 패턴\nFull-width bright red header bar + white bold '[긴급 행동]'.\nLARGE relevant illustration center (구급차/응급 아이콘).\nNumbered items: red number + white text, GENEROUS spacing.\nLarge red rounded border around items.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350 vertical. Emergency alert style. Dark navy #0D1B2A.\nVERY GENEROUS outer margin.\nTop-right: '소아과언니' white small, no quotes.\nTop-center small gray: 'SAVE & SHARE'.\nHeadline COMPACT: '오늘 확인하고 저장하세요' white, '저장하세요' mint underline.\nSource box dark #1A2B3C rounded GENEROUS padding.\n출처 (white small bold)\n· [출처 1]\n· [출처 2]\nThin white divider.\n소아과언니 white bold large center (NO quotes).\nDR.SOA UNNIE · 소아청소년과 전문의 gray.\nThin divider.\n@dr.soa_unnie · 매주 새 가이드 white.\n소아과수첩 앱 · [CTA] mint.\nNo pixel values. No quotes.\n"
+}

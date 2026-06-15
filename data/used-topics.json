@@ -906,6 +906,43 @@
       ],
       "date": "2026-06-14",
       "category": "미분류"
+    },
+    {
+      "slug": "summer-dehydration-signs",
+      "title": "summer-dehydration-signs",
+      "keywords": [
+        "탈수",
+        "여름",
+        "증상",
+        "수분부족"
+      ],
+      "date": "2026-06-15",
+      "category": "미분류"
+    },
+    {
+      "slug": "baby-eye-foreign-object",
+      "title": "baby-eye-foreign-object",
+      "keywords": [
+        "이물질",
+        "눈",
+        "응급처치",
+        "세척"
+      ],
+      "date": "2026-06-15",
+      "category": "미분류"
+    },
+    {
+      "slug": "nose-ear",
+      "title": "nose-ear",
+      "keywords": [
+        "코",
+        "귀",
+        "이비인후과",
+        "소아",
+        "증상"
+      ],
+      "date": "2026-06-15",
+      "category": "미분류"
     }
   ]
 }

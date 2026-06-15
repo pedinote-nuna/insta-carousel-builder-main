@@ -1,0 +1,40 @@
+{
+  "topic": "nose-ear",
+  "topic_type": "응급정보형",
+  "source_template": "slides.nose-ear.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "첫 2초 훅 - 부모의 공포심 자극",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: ONE giant bold white text line '아이 코에 구슬이?!' + below smaller red text '절대 하지 말아야 할 것'. Typography-focused. No photos. High urgency visual. Emergency vibe matching cardnews cover style.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 4,
+      "role": "reels-visual",
+      "purpose": "코 막기 실사 - 반대쪽 코 막는 손동작 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Close-up photo. Parent's hand gently closing one nostril of young child (3-5 years old) with index finger. Child's face partially visible, calm expression. Soft natural indoor lighting. Clean white or light background. Medical demonstration vibe. Safe, instructional atmosphere. Photorealistic, editorial healthcare photography style. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "4-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 4,
+      "role": "reels-visual",
+      "purpose": "코 풀기 실사 - 아이가 입 벌리고 코 푸는 장면",
+      "prompt": "Portrait 1080x1350 vertical. Close-up photo. Young child (3-5 years old) with mouth wide open, parent's hand gently holding tissue near child's nose. Child blowing out through nose. Calm, instructional moment. Soft natural lighting. Clean modern home setting. Photorealistic, safe medical demonstration style. Focus on technique, not distress. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "4-2.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "위험 물체 실사 - 구슬·배터리·콩 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Overhead flat-lay photo. Small dangerous objects on white surface: button battery, small bead, dried bean, small toy part, all arranged with safety warning vibe. Clean clinical lighting. Red warning tape or circle around objects. Medical safety documentation style. Photorealistic, editorial healthcare photography.",
+      "file": "7-1.png"
+    }
+  ]
+}

@@ -129,7 +129,7 @@ def _err_step_and_hint(stepname: str, msg: str):
     # 2) output.srt 없음
     if "output.srt" in m and ("없" in m or "추출하지" in m):
         cmd = (f"python3 scripts/estimate_srt.py output/{_RUN_TOPIC}/reels/voiceover.txt "
-               f"-o output/{_RUN_TOPIC}/output.srt")
+               f"-o output/{_RUN_TOPIC}/reels/output.srt")
         return step_no, f"estimate_srt.py로 output.srt를 생성해주세요:\n{cmd}"
     # 3) ElevenLabs API 실패
     if "음성 생성" in s or "elevenlabs" in low:
@@ -294,7 +294,7 @@ SCRIPT_SECTION_MARKER = "## [전체 대본 - 이어 읽기]"
 
 def voice_script_units(base: Path, reels: Path, voiceover_txt: Path) -> list:
     """음성 대본 문장 단위 리스트. 에러 없이 빈 리스트까지 폴백.
-    1순위: script.txt(각 줄=문장) — base 우선, reels 보조
+    1순위: script.txt(각 줄=문장) — base(output/{topic}) 우선, reels 보조
     2순위: voiceover.txt 의 '## [전체 대본 - 이어 읽기]' 섹션(문장 분리)."""
     for cand in (base / "script.txt", reels / "script.txt"):
         if cand.exists():
@@ -419,7 +419,7 @@ def _regenerate_script_from_slides(base: Path, n: int, client) -> None:
                  f"(최종 {len(body)}줄, 재요청 2회 포함). 조용한 압축·병합 없이 중단합니다.")
 
     final_lines = [FIXED_FIRST] + body + [FIXED_LAST]
-    (base / "script.txt").write_text("\n".join(final_lines) + "\n", encoding="utf-8")
+    (base / "reels" / "script.txt").write_text("\n".join(final_lines) + "\n", encoding="utf-8")
     print("[INFO] script.txt 슬라이드 기반으로 자동 재생성됨")
     # voiceover.mp3 삭제 (음성 재생성 트리거)
     mp3 = base / "reels" / "voiceover.mp3"
@@ -433,10 +433,10 @@ def validate_script_vs_slides(base: Path, script_lines: list, telegram: bool = F
     """script.txt 줄 수 vs 슬라이드 이미지 수 비교 + (sources.json 있으면) Claude 내용 검증.
     줄 수 불일치면 즉시 중단. 내용 불일치면 경고 후 사용자 확인(또는 telegram 자동 중단)."""
     # 0) 직전에 슬라이드 기반으로 재생성된 script.txt 면 검증 없이 통과(재생성 루프 방지)
-    _regen_marker = base / ".script_regenerated"
-    if _regen_marker.exists():
-        _regen_marker.unlink()
-        log("  ✅ 재생성된 script.txt — 검증 건너뜀(루프 방지)")
+    marker = base / ".script_regenerated"
+    if marker.exists():
+        marker.unlink()
+        log("[INFO] 재생성된 script.txt — 검증 스킵")
         return
 
     # 1) script.txt 줄 수 vs 슬라이드 이미지(slide-*.png) 수
@@ -507,14 +507,9 @@ def validate_script_vs_slides(base: Path, script_lines: list, telegram: bool = F
     )
     log(warn_text)
 
-    # 불일치 6개 이상 — 슬라이드 기반으로 script.txt 자동 재생성 후 빌드 중단(재실행 유도)
-    # (표현 방식 차이로 인한 오탐 방지를 위해 임계값 6)
-    if len(mismatches) >= 6:
-        _regen_marker.write_text("1", encoding="utf-8")  # 재실행 시 검증 스킵 표시
-        _regenerate_script_from_slides(base, m_imgs, client)
-        return  # _regenerate_script_from_slides 가 중단하므로 실제로 도달하지 않음
-
-    # 내용 불일치(WARNING)는 중단하지 않고 경고만 — 텔레그램 모드면 경고 전송 후 자동 계속
+    # 내용 불일치는 몇 개든 경고만 — 슬라이드는 키워드, script.txt는 완성 문장이라
+    # 표현 차이로 인한 오탐이 잦다. 자동 재생성은 무한루프를 유발하므로 하지 않는다.
+    # (줄 수 검증은 위에서 이미 통과 — 줄 수만 맞으면 내용은 경고 후 계속 진행)
     if telegram:
         _send_telegram_warn("⚠️ 내용 검증 불일치(경고) — 계속 진행합니다:\n\n" + warn_text)
     log("  [계속] 내용 불일치 경고 — 중단 없이 진행합니다.")
@@ -936,6 +931,51 @@ def print_timeline(timeline: list, total: float) -> None:
     log("  합계 %.3f s (목표 %.3f s)" % (sum(s["end"] - s["start"] for s in timeline), total))
 
 
+def _sync_canonical_sources(base: Path, reels: Path) -> None:
+    """script.txt·output.srt 가 base/reels 두 곳에 흩어져 옛 파일을 읽는 문제를 영구 차단.
+    각 파일의 정본(mtime 최신)을 골라 두 경로를 동일하게 맞추고, 정본이 음성보다 최신이면
+    음성·자막 캐시를 삭제한다. 파일이 없으면 조용히 넘어가고, 실패해도 빌드는 계속한다."""
+    try:
+        reels.mkdir(parents=True, exist_ok=True)
+        newest_mtime = 0.0  # 정본(script.txt/output.srt) 중 가장 최신 mtime
+
+        def _unify(name: str, unit: str) -> None:
+            nonlocal newest_mtime
+            paths = (base / name, reels / name)
+            cands = [p for p in paths if p.exists()]
+            if not cands:
+                return  # 둘 다 없으면 조용히 넘어감
+            canon = max(cands, key=lambda p: p.stat().st_mtime)
+            canon_mtime = canon.stat().st_mtime  # 덮어쓰기 전 정본 mtime 보존
+            content = canon.read_text(encoding="utf-8")
+            for p in paths:
+                if p != canon:
+                    p.write_text(content, encoding="utf-8")  # 두 경로 동일화
+            if unit == "줄":
+                n = len([ln for ln in content.splitlines() if ln.strip()])
+            else:  # 블록
+                n = len([b for b in re.split(r"\n\s*\n", content.strip()) if b.strip()])
+            log(f"[SYNC] {name} 통일 (정본: {canon.relative_to(base.parent)}, {n}{unit})")
+            newest_mtime = max(newest_mtime, canon_mtime)
+
+        _unify("script.txt", "줄")
+        _unify("output.srt", "블록")
+
+        # 정본 대본/자막이 voiceover.mp3 보다 최신이면 음성·자막 캐시 무효화
+        final_mp3 = reels / "voiceover.mp3"
+        if newest_mtime and final_mp3.exists() and newest_mtime > final_mp3.stat().st_mtime:
+            removed = False
+            for p in (reels / "voiceover_raw.mp3", reels / "voiceover.mp3",
+                      reels / "whisper_segments.json", reels / "final.srt"):
+                if p.exists():
+                    p.unlink()
+                    removed = True
+            if removed:
+                log("[SYNC] 대본/자막 변경 감지 → 음성·자막 캐시 삭제")
+    except Exception as e:  # noqa: BLE001
+        log(f"[SYNC] 단일화 실패(무시): {e}")
+
+
 # ---------------------------------------------------------------- main
 def main() -> int:
     try:
@@ -963,7 +1003,7 @@ def main() -> int:
     reels.mkdir(parents=True, exist_ok=True)
 
     voiceover_txt = reels / "voiceover.txt"
-    output_srt = base / "output.srt"
+    output_srt = reels / "output.srt"
     raw_mp3 = reels / "voiceover_raw.mp3"
     final_mp3 = reels / "voiceover.mp3"
     seg_json = reels / "whisper_segments.json"
@@ -976,6 +1016,8 @@ def main() -> int:
 
     # STEP 1 (공통)
     step(1, "음성 대본(script.txt/voiceover) + 자막(output.srt) + 슬라이드 순서")
+    # 0) 대본/자막 단일화 — 어떤 파일을 읽기 전에 base/reels 정본을 맞춤
+    _sync_canonical_sources(base, reels)
     # 1) 음성 대본: script.txt 1순위, voiceover.txt 전체대본 2순위 → 첫/마지막 문장 고정 + 소아과→소아꽈
     voice_units = voice_script_units(base, reels, voiceover_txt)
     full_script = build_full_script([{"text": s} for s in voice_units])
@@ -1007,9 +1049,9 @@ def main() -> int:
         slide_src = f"script.txt 줄 수({n_lines})"
     log(f"  음성대본 {len(full_script)}자, 자막 {len(srt_texts)}줄, 슬라이드 {len(slides)}개 (순서: {slide_src})")
     log(f"  대본 미리보기: {full_script[:60]}…")
-    # script.txt 줄 목록 (Step5 유사도 매칭용) — output/{topic}/script.txt
+    # script.txt 줄 목록 (Step5 유사도 매칭용) — output/{topic}/reels/script.txt
     # script.txt 없으면 voiceover.txt 로 자동 생성 후 계속 진행
-    _script_txt = base / "script.txt"
+    _script_txt = reels / "script.txt"
     if not _script_txt.exists():
         if voiceover_txt.exists():
             _vo_lines = voiceover_txt.read_text(encoding="utf-8").splitlines()
@@ -1073,6 +1115,17 @@ def main() -> int:
         script_lines = [
             ln.strip() for ln in _script_txt.read_text(encoding="utf-8").splitlines() if ln.strip()
         ]
+
+    # output.srt 블록 수 != script.txt 줄 수 → 초과 블록 자동 삭제 후 계속 진행
+    if script_lines and len(srt_texts) > len(script_lines):
+        _m_blocks = len(srt_texts)
+        _n_script = len(script_lines)
+        _raw_srt = output_srt.read_text(encoding="utf-8").strip()
+        _blocks = re.split(r"\n\s*\n", _raw_srt)
+        output_srt.write_text("\n\n".join(_blocks[:_n_script]) + "\n", encoding="utf-8")
+        srt_texts = parse_srt_texts(output_srt)
+        log(f"[INFO] output.srt {_m_blocks}블록 → {_n_script}블록으로 자동 동기화")
+
     done(1, "Step1 입력 준비")
 
     if args.dry_run:
@@ -1126,10 +1179,16 @@ def main() -> int:
     if _reuse_audio:
         log("[INFO] script.txt 변경 없음 → 기존 음성 재사용 (Step2~4 스킵)")
         total = ffprobe_duration(final_mp3)
-        segments = [
-            {"start": float(s["start"]), "end": float(s["end"]), "text": str(s["text"])}
-            for s in json.loads(seg_json.read_text(encoding="utf-8"))
-        ]
+        if seg_json.stat().st_mtime < final_mp3.stat().st_mtime:
+            # whisper 캐시가 voiceover.mp3 보다 오래됨 → 삭제 후 Whisper 재분석
+            log("[INFO] 음성 변경됨 → Whisper 재분석")
+            seg_json.unlink()
+            segments = whisper_segments(final_mp3, seg_json, len(slides))
+        else:
+            segments = [
+                {"start": float(s["start"]), "end": float(s["end"]), "text": str(s["text"])}
+                for s in json.loads(seg_json.read_text(encoding="utf-8"))
+            ]
         log(f"  재사용: {final_mp3.name} ({total:.1f}s), 세그먼트 {len(segments)}개")
     else:
         # STEP 2
