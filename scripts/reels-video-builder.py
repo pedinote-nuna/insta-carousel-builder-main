@@ -326,8 +326,16 @@ def parse_slide_numbers(voiceover_txt: Path) -> list:
     nums = []
     for ln in voiceover_txt.read_text(encoding="utf-8").splitlines():
         m = _SLIDE_RE.search(ln)
-        if m:
-            nums.append(int(m.group(1)))
+        if not m:
+            continue
+        # 'N-M' 보충 슬라이드 형식(예: 0-1, 3-1)은 제외
+        if re.match(r"\s*-\s*\d", ln[m.end(1):]):
+            continue
+        n = int(m.group(1))
+        # slide_num 은 1 이상 정수만 사용 (0 제외)
+        if n < 1:
+            continue
+        nums.append(n)
     return nums
 
 
@@ -710,6 +718,11 @@ def collect_images(topic: str) -> dict:
         p = base / f"slide-{i:02d}.png"
         if p.exists():
             slides[i] = p
+    # 시작 슬라이드: slide-01.png 우선, 없을 때만 slide-00.png 로 폴백
+    if 1 not in slides:
+        p0 = base / "slide-00.png"
+        if p0.exists():
+            slides[1] = p0
     extras = {}
     if reels.exists():
         for p in sorted(reels.glob("*.png")):

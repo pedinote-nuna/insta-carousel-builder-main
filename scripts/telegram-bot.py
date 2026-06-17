@@ -2009,8 +2009,26 @@ async def _handle_idea_generate(update: Update, context: ContextTypes.DEFAULT_TY
         return False
 
     text = (update.message.text or "").strip()
+
+    # '취소'/'중단' → 세션 종료 후 안내
+    if text in ("취소", "중단"):
+        IDEA_LIST_SESSION.pop(chat_id, None)
+        await update.message.reply_text("아이디어 목록을 닫았어요.")
+        return True
+
+    # '만들어줘'가 포함된 긴 자연어(제목처럼 보임, 숫자 없음, 10자 이상)
+    # → 번호 파싱 대신 세션 종료 후 기존 자연어 intent 라우터로 패스(False 반환)
+    if "만들" in text and len(text) >= 10 and not re.findall(r"\d+", text):
+        IDEA_LIST_SESSION.pop(chat_id, None)
+        return False
+
     # 번호 추출 — re.findall 로 모든 숫자 ("1번 3번 5번" / "1,3,5" 모두 처리)
     nums = sorted({int(n) for n in re.findall(r"\d+", text)})
+    # 숫자 없는 텍스트 → 세션 종료 후 일반 메시지 처리 플로우로 패스(False 반환)
+    if not nums:
+        IDEA_LIST_SESSION.pop(chat_id, None)
+        return False
+
     valid_nums = [n for n in nums if 1 <= n <= len(titles)]
     if not valid_nums:
         await update.message.reply_text(
@@ -2317,10 +2335,10 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
     if await handle_idea_message(update, context):
         return
 
-    # === 릴스 아이디어 목록에서 'N번 만들어줘' → 카드뉴스 생성 ===
+    # === 릴스 아이디어 목록 세션 활성 시 처리 (생성/취소/패스) ===
     # ('릴스 아이디어' 목록 표시 직후 활성. intent_router·영상 플로우보다 먼저 가로챈다.)
-    if (update.effective_chat.id in IDEA_LIST_SESSION
-            and "만들" in text and re.search(r"\d", text)):
+    # 숫자 있으면 생성, '취소'/'중단'이면 닫기, 그 외 숫자 없는 텍스트는 세션을 닫고 일반 플로우로 패스.
+    if update.effective_chat.id in IDEA_LIST_SESSION:
         if await _handle_idea_generate(update, context):
             return
 

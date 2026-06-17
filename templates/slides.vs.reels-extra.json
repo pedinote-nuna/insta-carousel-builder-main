@@ -8,32 +8,32 @@
       "n": 10,
       "insert_after": 0,
       "role": "reels-hook",
-      "purpose": "첫 2초 시선 고정용 충격 훅 - 변비 vs 설사 구분의 중요성 강조",
-      "prompt": "Portrait 1080x1350. Bold typography on clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no decoration. Center: huge bold headline in navy #1A1F36, Pretendard ExtraBold 72pt: '변비인지 설사인지 / 모르겠다고요?' (two lines, centered). Below headline, coral #FF6B58 accent line 4px thick, 120px wide. Bottom third: small coral rounded label: 4가지만 체크하세요. Editorial modern minimalist style, high contrast, designed to stop scroll in first 2 seconds.",
+      "purpose": "첫 2초 시선 고정 - 충격적 질문으로 훅 생성",
+      "prompt": "Portrait 1080x1350. Bold typography-focused design. Clean white background #FAFAF7. Center: massive bold text in deep navy #1A1F36 Pretendard ExtraBold 80pt: '타이레놀 vs 부루펜\n섞어 먹어도 될까?' — 2 lines, center-aligned, dramatic question mark. Bottom subtle teal #2D9B9B accent line. Top-right tiny: 소아과언니 navy 4 characters only. Minimal, high-impact, scroll-stopping design.",
       "file": "0-1.png"
     },
     {
       "n": 11,
       "insert_after": 3,
       "role": "reels-visual",
-      "purpose": "브리스톨 척도 실물 비교 - 딱딱한 변 vs 무른 변 시각화",
-      "prompt": "Portrait 1080x1350. Close-up overhead shot of Bristol Stool Chart visual comparison. Clean white marble surface. Left side: dark brown modeling clay shaped as hard pellets (type 1-2), labeled with small navy tag '변비'. Right side: soft pudding-like brown substance (type 6-7), labeled with coral tag '설사'. Between them: normal banana-shaped brown form (type 4) with green checkmark. Top-right: 소아과언니 navy small watermark. Soft natural window light, editorial food photography style, clinical yet approachable, sharp focus, professional medical educational content.",
+      "purpose": "용량 측정 실사 - 시럽 계량 장면으로 구체성 강화",
+      "prompt": "Portrait 1080x1350. Close-up product photography. Softbox studio lighting. Mother's hand holding medicine measuring syringe (5mL transparent plastic) above two medicine bottles - pink Tylenol syrup and orange-red Brufen syrup on clean white surface. Syringe shows clear measurement markings. Soft shadows. Professional healthcare documentation style. Sharp focus on syringe graduations. Warm natural light from left. Editorial clean aesthetic. Korean mother/father, East Asian appearance, Korean parent",
       "file": "3-1.png"
     },
     {
       "n": 12,
       "insert_after": 5,
       "role": "reels-visual",
-      "purpose": "배변 시 아이 표정/자세 실사 - 변비 고통 vs 설사 급박함 대비",
-      "prompt": "Portrait 1080x1350. Split screen comparison. Left half: toddler sitting on white potty training toilet, straining face (eyes closed, furrowed brow), hands gripping knees, showing effort — constipation sign. Small navy overlay text: '10분 이상 힘주기'. Right half: same toddler rushing to bathroom, urgent expression, parent's hand gently guiding — diarrhea urgency. Small coral overlay text: '급하게 자주'. Both scenes: soft natural home lighting, clean modern bathroom tiles, warm beige tones, documentary parenting photography style. Top-right: 소아과언니 watermark. Faces partially shown (no full face), focus on body language and posture. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "purpose": "교차복용 타이밍 실사 - 시계/타이머로 간격 시각화",
+      "prompt": "Portrait 1080x1350. Lifestyle close-up. Smartphone timer screen showing '3:00:00' (3 hours) on white surface next to medicine bottle and glass of water. Soft afternoon window light. Parent's hand touching phone screen. Clean minimal composition. Shallow depth of field - timer in sharp focus, bottle slightly blurred background. Warm domestic setting. Editorial healthcare photography style. Teal #2D9B9B subtle accent on timer display edge. Korean mother/father, East Asian appearance, Korean parent",
       "file": "5-1.png"
     },
     {
       "n": 13,
       "insert_after": 7,
       "role": "reels-visual",
-      "purpose": "역행성 똥묻힘 실사 재연 - 부모들이 놓치기 쉬운 신호 시각화",
-      "prompt": "Portrait 1080x1350. Close-up of child's white cotton underwear held by parent's hands against clean white background. Small brown smudge stain visible on fabric (simulated with safe brown watercolor). Parent's hand pointing to stain with index finger. Overlay text in mustard #B8860B rounded label top-left: '역행성 똥묻힘'. Below, navy Pretendard Medium 32pt: '4세 이상에서 / 이건 변비 신호' (two lines). Bottom: small coral caption: '속옷 체크 필수'. Soft diffused lighting, clinical documentary style, educational medical content, respectful and informative tone, white linen texture background. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "purpose": "주의 상황 실사 - 아이 컨디션 체크하는 부모 손동작",
+      "prompt": "Portrait 1080x1350. Intimate parenting moment close-up. Parent's gentle hand checking child's forehead temperature - soft caring gesture. Child's face partially visible (focus on parent's hand and gesture, not full face). Warm soft natural light from window. Cozy home bedroom setting with white bedding. Shallow depth of field. Emotional warmth. Documentary-style candid healthcare moment. Skin tones natural and soft. Coral #FF6B6B subtle color grading accent on worry/care emotion. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
       "file": "7-1.png"
     }
   ]

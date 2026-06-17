@@ -1,93 +1,12 @@
 {
   "last_topic": {
-    "slug": "child-drowning-response",
-    "topic_kr": "물놀이 중 아이가 물에 빠졌을 때 즉시 해야 할 것",
-    "sources_path": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/child-drowning-response/sources.json",
-    "template_path": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/templates/slides.child-drowning-response.json",
-    "output_dir": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/child-drowning-response"
+    "slug": "vs",
+    "topic_kr": "타이레놀 vs 부루펜 교차복용 언제 어떻게",
+    "sources_path": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/vs/sources.json",
+    "template_path": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/templates/slides.vs.json",
+    "output_dir": "/Users/simple-is-great-ai-assistant/Assistant/insta-carousel-builder-main/output/vs"
   },
-  "recommendation": [
-    {
-      "slug": "hand-foot-mouth-disease-isolation-guide",
-      "title_kr": "수족구병 격리 기준 완벽 가이드",
-      "category": "질환관리",
-      "palette": "B",
-      "reason": "6월 수족구 정점 시기, 어린이집 격리 기준 문의 급증",
-      "recommended_tone": "clean-infographic"
-    },
-    {
-      "slug": "external-otitis-pool-prevention",
-      "title_kr": "물놀이 후 외이도염 예방법",
-      "category": "질환관리",
-      "palette": "B",
-      "reason": "6월 물놀이 시작, 귓속 물 제거 잘못된 방법 많음",
-      "recommended_tone": "editorial-modern"
-    },
-    {
-      "slug": "summer-hydration-baby-guide",
-      "title_kr": "더운 여름 영아 수분 보충 가이드",
-      "category": "일상 케어·영양·생활건강",
-      "palette": "A",
-      "reason": "여름철 탈수 예방, 물·이온음료 시기별 기준 필요",
-      "recommended_tone": "character-illustration"
-    },
-    {
-      "slug": "rainy-season-food-poisoning-prevention",
-      "title_kr": "장마철 식중독 예방 체크리스트",
-      "category": "일상 케어·영양·생활건강",
-      "palette": "B",
-      "reason": "6월 장마 시작, 이유식·반찬 보관법 질문 증가",
-      "recommended_tone": "clean-infographic"
-    },
-    {
-      "slug": "mouth-ulcer-stomatitis-hospital-timing",
-      "title_kr": "입속 물집·구내염 병원 가야 할 때",
-      "category": "응급·약물 안전",
-      "palette": "B",
-      "reason": "수족구 연관, 헤르페스성 구내염 vs 수족구 구별 필요",
-      "recommended_tone": "emergency-alert"
-    },
-    {
-      "slug": "drowning-secondary-drowning-symptoms",
-      "title_kr": "물놀이 후 지연성 익수 증상 체크",
-      "category": "응급·약물 안전",
-      "palette": "B",
-      "reason": "물놀이 시즌 필수 응급 정보, 귀가 후 관찰 포인트",
-      "recommended_tone": "emergency-alert"
-    },
-    {
-      "slug": "18-month-language-milestone",
-      "title_kr": "18개월 언어 발달 체크리스트",
-      "category": "성장발달",
-      "palette": "A",
-      "reason": "영유아검진 시기, 언어 늦은 아이 부모 불안 높음",
-      "recommended_tone": "character-illustration"
-    },
-    {
-      "slug": "summer-growth-nutrition-guide",
-      "title_kr": "여름철 성장 저하 막는 영양 전략",
-      "category": "성장발달",
-      "palette": "A",
-      "reason": "더위로 식욕 저하, 성장 둔화 우려 시기",
-      "recommended_tone": "editorial-modern"
-    },
-    {
-      "slug": "japanese-encephalitis-vaccine-timing",
-      "title_kr": "일본뇌염 예방접종 완벽 타이밍",
-      "category": "예방접종",
-      "palette": "B",
-      "reason": "6~8월 접종 권장 시기, 생백신 vs 사백신 선택 질문",
-      "recommended_tone": "clean-infographic"
-    },
-    {
-      "slug": "innocent-heart-murmur-vs-pathologic",
-      "title_kr": "무해성 심잡음 vs 병적 심잡음 구별",
-      "category": "소아심장",
-      "palette": "A",
-      "reason": "건강검진 시 심잡음 발견 후 불안, 추가 검사 필요 여부",
-      "recommended_tone": "editorial-modern"
-    }
-  ],
+  "recommendation": null,
   "pending_generation": null,
   "batch": null,
   "duplicate_slug": null
