@@ -1,0 +1,52 @@
+{
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right corner: 소아과언니 in deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes, no decoration. Top-left small gray: PARENTING NOTE · 023. Left side upper area: very large bold Korean headline two lines — first line 타이레놀 vs 부루펜 in deep navy, second line 교차복용 가이드 in medical teal #2C6E63. Below headline: small muted gray subtitle 언제 어떻게 안전하게 · AAP 권장 기준. Right side center-bottom: large clean editorial illustration of two medicine bottles with alternating arrows between them, line art style in teal and navy, minimal clean strokes, one bottle labeled with T icon, other with I icon. Bottom area: thin teal horizontal accent line. No pixel values as text on card. No quotes on card."
+    },
+    {
+      "n": 2,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small teal rounded label: 기본 원칙. Large bold headline: 단일 해열제가 navy, 기본입니다 teal #2C6E63. Center: clean editorial illustration of single medicine bottle with checkmark, line art teal/navy minimal. Below illustration: light gray rounded card with generous padding containing navy text: 아세트아미노펜과 이부프로펜은 소아 발열·통증 치료에 가장 널리 사용되는 약물입니다. 하지만 단일 해열제 사용이 일반적으로 권장되며, 교차복용은 복용량 오류 위험을 증가시킬 수 있습니다. Bottom: small gray source text Pediatrics 2024 Meta-analysis. Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 3,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small teal rounded label: 용량 기준. Large bold headline: 체중 기준으로 navy, 계산하세요 teal #2C6E63. Center area: two side-by-side light gray rounded cards. Left card: bold teal T icon top, 타이레놀 navy bold, 아세트아미노펜 gray small, 10-15mg/kg navy medium, 4-6시간 간격 gray. Right card: bold teal I icon top, 부루펜 navy bold, 이부프로펜 gray small, 5-10mg/kg navy medium, 6-8시간 간격 gray. Below cards: small gray source text Pediatrics 2024. Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 4,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small teal rounded label: 주의사항. Large bold headline: 연령과 복용법 navy, 확인하세요 teal #2C6E63. Center: clean editorial illustration of baby bottle with caution symbol, line art teal/navy minimal. Below: three light gray rounded cards stacked vertically with generous padding. Card 1: bold teal 생후 6개월 미만, navy text 이부프로펜 권장 안 됨, gray small 아세트아미노펜 선호. Card 2: bold teal 타이레놀, navy text 공복 복용 가능. Card 3: bold teal 부루펜, navy text 식후 복용 권장, gray small 위장 자극 최소화. Bottom: small gray source text CHOC Hospital 2025, British J Clin Pharmacol 2015. Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 5,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small teal rounded label: 최신 연구. Large bold headline: 병용·교차요법은 navy, 효과적일 수 있습니다 teal #2C6E63. Center: clean editorial illustration of two medicine bottles with plus symbol between them, line art teal/navy minimal. Below: light gray rounded card generous padding containing navy text: 네트워크 메타분석 결과, 병용요법과 교차요법은 4-6시간 시점에서 아세트아미노펜 단독요법보다 해열 효과가 우수할 수 있습니다. 31개 무작위 대조군 연구, 5,009명 소아 대상. Small teal box below: 고용량 이부프로펜 7.5-10mg/kg은 아세트아미노펜과 유사한 효과. Bottom: small gray source text Pediatrics 2024 Network Meta-analysis. Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 6,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small teal rounded label: 교차복용 규칙. Large bold headline: 의사 지시와 navy, 기록이 필수입니다 teal #2C6E63. Center: clean editorial illustration of clipboard with checklist and pen, line art teal/navy minimal. Below: four light gray rounded cards stacked with generous padding. Card 1: teal ✓ icon, navy bold 의사의 명확한 지시, gray small 서면 투약 일정표 필수. Card 2: teal ✓ icon, navy bold 약물 이름 기록, gray small 용량·투여시간 정확히. Card 3: teal ✓ icon, navy bold 체중 기준 계산, gray small 나이 기준 사용 금지. Card 4: teal ✓ icon, navy bold 정기 사용 지양, gray small AAP 권장사항. Bottom: small gray source text AAP Health in Hand 2026. Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 7,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small coral rounded label: 주의. Large bold headline: 교차복용은 navy, 위험이 있습니다 coral #C44536. Center: clean editorial illustration of warning triangle with medicine bottles, line art coral/navy minimal. Below: coral outline rounded box generous padding containing bold coral ⚠️ 투약 오류 위험 증가, navy text 교차복용과 병용요법은 더 복잡하여 투약 오류 위험이 증가합니다. 아세트아미노펜 4-6시간, 이부프로펜 6-8시간 간격 필수. Below box: light gray card containing navy text: 안전성 미확립: 특히 반복 투여 시 완전히 밝혀지지 않았습니다. 드물지만 간독성, 위장관 출혈, 신장 손상 등 발생 가능. Bottom: small gray source text Pediatrics 2024 Clinical Commentary. Bottom thin coral divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 8,
+      "role": "body",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-left small teal rounded label: 핵심 원칙. Large bold headline: 숫자가 아닌 navy, 아이를 보세요 teal #2C6E63. Center: clean editorial illustration of happy child playing with thermometer in background, line art teal/navy minimal. Below: light gray rounded card generous padding containing navy bold text: 해열제의 목적은 체온계 숫자를 정상화하는 것이 아니라 아이의 불편감을 줄이는 것입니다. 열 자체는 면역 반응의 일부입니다. Below: teal rounded card containing navy text: 아이가 놀고 있고, 수분 섭취가 잘 되며, 행복해 보인다면 해열제를 사용할 필요가 없을 수 있습니다. Bottom: small gray source text AAP Pediatrics 2011, SickKids Hospital 2024. Bottom thin teal divider. No pixel text on card. No quotes on card."
+    },
+    {
+      "n": 9,
+      "role": "outro",
+      "prompt": "Portrait 1080x1350. Editorial modern style. Clean white background #FAFAF7. Top-right: 소아과언니 navy small — 4 characters only, no quotes, no decoration. Top-center small gray: SAVE & SHARE. Large bold headline center: 오늘 확인하고 navy, 저장하세요 teal #2C6E63 with thin teal underline. Source box light gray #F0F0EE rounded generous padding: 출처 navy small bold newline · Pediatrics 2024 Network Meta-analysis (De la Cruz-Mena et al.) newline · AAP Clinical Commentary 2024 (Wade & Mathis) newline · AAP Health in Hand Guideline 2026 newline · AAP Fever Clinical Report 2011, SickKids Hospital 2024. Horizontal thin navy divider. Center: 소아과언니 navy bold large — NO quotes NO decoration. Small gray DR.SOA UNNIE · 소아청소년과 전문의. Thin gray horizontal divider. @dr.soa_unnie · 매주 새 가이드 navy. 소아과수첩 앱 · 약봉투 스캔으로 복용 기록 teal. No pixel text anywhere. No quotes anywhere on card."
+    }
+  ],
+  "palette": "A",
+  "tone": "editorial-modern",
+  "common_style": "# 에디토리얼 모던 톤 — 검증된 prompt 패턴\n\n## 공통 규칙 (전 슬라이드)\n- 배경: 흰색 #FAFAF7\n- 텍스트: deep navy #1A1F36\n- 강조 (팔레트 A): coral #C44536\n- 강조 (팔레트 B): teal #2C6E63\n- 카드 배경: light gray #F0F0EE\n- 일러스트: clean line art editorial style (coral/navy 조합)\n- 시그니쳐: 우상단 소아과언니 navy (따옴표 없이 4글자만)\n\n## 팔레트 결정\n- 팔레트 A (coral): 일반 케어·예방법·여행·생활건강\n- 팔레트 B (teal): 수치·기준·데이터 중심\n\n## COVER 패턴 (slide n:1)\nPortrait 1080x1350. Editorial modern style. Clean white background #FAFAF7.\nTop-right: 소아과언니 deep navy #1A1F36 Pretendard SemiBold — 4 characters only, no quotes.\nTop-left small gray: PARENTING NOTE · [번호].\nLeft upper: very large bold headline two lines — [첫 줄] deep navy, [핵심 단어] coral #C44536.\nBelow: small muted gray subtitle [부제] · AAP 권장 기준.\nRight center-bottom: LARGE clean editorial illustration [토픽 관련], line art coral/teal minimal.\nBottom: thin coral horizontal accent line.\nNo pixel values. No quotes.\n\n## BODY 패턴 (slide n:2-8)\nPortrait 1080x1350. Editorial modern style. White background #FAFAF7.\nTop-right: 소아과언니 navy small — 4 characters only, no quotes.\nTop-left small coral rounded label: [섹션명].\nLarge bold headline: [앞부분] navy, [마지막 핵심 단어] coral #C44536.\nCenter: clean editorial illustration [토픽 관련], line art coral/navy minimal.\nContent: [리스트 or 카드 구조 — 토픽에 맞게].\nBottom thin coral divider.\nNo pixel text. No quotes.\n\n## 비교 카드 패턴\nTwo comparison cards side by side.\nLeft ✓ card light gray: teal checkmark + bold text + small caption.\nRight ✗ card light gray: coral X + bold text + small caption.\nBottom small gray source text.\n\n## 경고 박스 패턴\nCoral outline rounded box.\n⚠️ + bold coral warning text + navy detail text + small gray source.\n\n## OUTRO 패턴 (slide n:9)\nPortrait 1080x1350. Editorial modern style. White background #FAFAF7.\nTop-right: 소아과언니 navy small — 4 characters only, no quotes.\nTop-center small gray: SAVE & SHARE.\nLarge bold headline center: 오늘 확인하고 navy, 저장하세요 coral #C44536 thin underline.\nSource box light gray #F0F0EE rounded generous padding.\n출처 (navy small bold)\n· [출처 1]\n· [출처 2]\n· [출처 3]\n· [출처 4]\nHorizontal thin navy divider.\n소아과언니 navy bold large center — NO quotes, NO decoration.\nDR.SOA UNNIE · 소아청소년과 전문의 gray small.\nThin gray divider.\n@dr.soa_unnie · 매주 새 가이드 navy.\n소아과수첩 앱 · [CTA] coral.\nNo pixel text. No quotes anywhere.\n"
+}
