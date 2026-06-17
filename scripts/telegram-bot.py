@@ -1715,6 +1715,7 @@ async def cmd_cancel(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
     was_running = _task_lock.locked() or _current_proc is not None
     had_batch = bool(session.get("batch"))
     request_cancel()  # 실행 중 서브프로세스가 있으면 즉시 kill
+    IDEA_LIST_SESSION.pop(update.effective_chat.id, None)
     if session.get("recommendation"):
         session["recommendation"] = None
     session["batch"] = None
@@ -2894,6 +2895,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
         # 이미지 생성 서브프로세스가 떠 있으면 즉시 kill 됨
         was_running = _task_lock.locked() or _current_proc is not None
         request_cancel()
+        IDEA_LIST_SESSION.pop(update.effective_chat.id, None)
         if session.get("recommendation"):
             session["recommendation"] = None
         if was_running:
