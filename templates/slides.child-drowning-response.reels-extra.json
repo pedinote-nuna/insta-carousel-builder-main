@@ -1,0 +1,40 @@
+{
+  "topic": "child-drowning-response",
+  "topic_type": "응급정보형",
+  "source_template": "slides.child-drowning-response.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "스크롤을 멈추게 하는 충격적 경고 메시지",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: massive bold white Korean text '익수 사고\n골든타임은\n2분입니다' in ultra-bold sans-serif, very large, center-aligned, line-height 1.3. Text surrounded by pulsing bright red #E63946 thin outline glow effect. Bottom-center: small red label 'EMERGENCY GUIDE'. Minimalist, high-contrast, alarm-like typography. No illustrations, no people, pure text impact. 4:5 ratio.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 2,
+      "role": "reels-action",
+      "purpose": "물 밖으로 꺼내는 실사 동작 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical. Realistic photo close-up. Adult hands urgently lifting small child (3-5 years old, face not visible) out of pool water. Water droplets splashing. Child's torso wet, wearing colorful swimsuit. Hands firm but gentle under armpits. Poolside edge visible. Urgent rescue motion captured mid-action. Natural daylight, shallow depth of field focusing on hands and child's body. Emergency rescue atmosphere. 4:5 ratio. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "2-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-action",
+      "purpose": "CPR 자세 실사 - 가슴압박 위치와 손 모양",
+      "prompt": "Portrait 1080x1350 vertical. Realistic photo close-up overhead view. Adult hands positioned correctly on child CPR mannequin chest (toddler size). Two fingers pressing sternum center, proper hand placement visible. White practice mannequin on flat surface. Hands in correct compression posture - straight arms, shoulders aligned. Clinical lighting, sharp focus on hand position. Medical training atmosphere. Red arrow overlay pointing to compression spot (subtle, non-intrusive). 4:5 ratio. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-action",
+      "purpose": "119 신고 실사 - 긴박한 전화 장면",
+      "prompt": "Portrait 1080x1350 vertical. Realistic photo close-up. Hand holding smartphone with '119' visible on screen, finger pressing call button. Phone screen glowing bright against dark background. Urgent gesture, slightly blurred motion suggesting speed. Water droplets on phone surface. Emergency call interface clearly visible. Dramatic side lighting, high contrast. Sense of urgency and immediate action. 4:5 ratio. Korean ethnicity, East Asian facial features, Korean baby/parent appearance",
+      "file": "7-1.png"
+    }
+  ]
+}

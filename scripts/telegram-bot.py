@@ -40,7 +40,7 @@ import os
 import re
 import sys
 import time
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -428,8 +428,18 @@ SLIDE_CONTEXT_SESSION: dict = {}
 # 릴스 아이디어 입력 대기 세션: chat_id → True (다음 메시지를 아이디어 목록으로 파싱)
 IDEA_INPUT_SESSION: dict = {}
 
+# 릴스 아이디어 목록 세션: chat_id → [title, ...] ('릴스 아이디어' 목록 표시 후 'N번 만들어줘'로 카드뉴스 생성)
+IDEA_LIST_SESSION: dict = {}
+
 # 슬라이드 수정 토픽 목록 세션: chat_id → [{"slug","title_kr"}, ...] ('수정' 으로 목록 표시 후)
 SLIDE_EDIT_LIST_SESSION: dict = {}
+
+# 최근 영상 목록 세션: chat_id → [{"slug","title_kr","mp4_path"}, ...] ('최근 영상' 후 번호로 재생성)
+VIDEO_RECENT_SESSION: dict = {}
+
+# 최근 수정 목록 세션: chat_id → {"topics":[{"slug","title_kr"},...], "selected":{...}|None}
+#   ('최근 수정' 후 (1)토픽 번호 선택 → (2)슬라이드 번호만 입력하면 수정 플로우 연결)
+SLIDE_RECENT_SESSION: dict = {}
 
 # 토픽 폐기 목록 세션: chat_id → [{"slug","title_kr"}, ...] ('폐기' 로 목록 표시 후)
 TOPIC_DELETE_SESSION: dict = {}
@@ -531,6 +541,62 @@ def _topic_kr_for(slug: str) -> str:
         except Exception:  # noqa: BLE001
             pass
     return title_for_slug(slug)
+
+
+def _is_junk_slug(slug: str) -> bool:
+    """테스트·잡 폴더 slug 판별 (최근 목록에서 제외). 숫자만이거나 지정 접두사로 시작."""
+    if slug.isdigit():
+        return True
+    return slug.startswith(("vs", "ml", "irplane", "extrusion", "card-2026"))
+
+
+def _recent_video_topics(days: int = 7) -> list[dict]:
+    """topics.json 전체 토픽 순회 → output/{slug}/reels/output.mp4 mtime 이 최근 days일 이내인 목록.
+    최신순 정렬. 각 항목: {slug, title_kr, mp4_path, mtime}."""
+    cutoff = (datetime.now() - timedelta(days=days)).timestamp()
+    data = load_topics()
+    seen: set = set()
+    out: list[dict] = []
+    for area in ("this_week", "pending", "done"):
+        for item in data.get(area, []):
+            slug = item.get("slug")
+            if not slug or slug in seen or _is_junk_slug(slug):
+                continue
+            seen.add(slug)
+            mp4 = OUTPUT_DIR / slug / "reels" / "output.mp4"
+            if mp4.exists() and mp4.stat().st_mtime >= cutoff:
+                out.append({
+                    "slug": slug,
+                    "title_kr": item.get("title_kr", slug),
+                    "mp4_path": str(mp4),
+                    "mtime": mp4.stat().st_mtime,
+                })
+    out.sort(key=lambda x: x["mtime"], reverse=True)
+    return out
+
+
+def _recent_edited_topics(days: int = 7) -> list[dict]:
+    """output/{slug}/slide-*.png 중 가장 최근 mtime 이 최근 days일 이내인 토픽 목록.
+    최신순 정렬. 각 항목: {slug, title_kr, mtime}."""
+    cutoff = (datetime.now() - timedelta(days=days)).timestamp()
+    out: list[dict] = []
+    if not OUTPUT_DIR.exists():
+        return out
+    for d in sorted(OUTPUT_DIR.iterdir()):
+        if not d.is_dir() or _is_junk_slug(d.name):
+            continue
+        pngs = list(d.glob("slide-*.png"))
+        if not pngs:
+            continue
+        latest = max(p.stat().st_mtime for p in pngs)
+        if latest >= cutoff:
+            out.append({
+                "slug": d.name,
+                "title_kr": _topic_kr_for(d.name),
+                "mtime": latest,
+            })
+    out.sort(key=lambda x: x["mtime"], reverse=True)
+    return out
 
 
 def find_topic_by_query(query: str) -> list[dict]:
@@ -1678,18 +1744,35 @@ async def cmd_help(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
         "  /batch — 여러 주제 한꺼번에 처리\n"
         "  /cancel — 진행 중 작업 즉시 중단\n"
         "  /queue /done /usedtopics /status — 목록·상태 조회\n"
+        "  /help 또는 'ㅇ' — 이 도움말\n"
+        "\n"
+        "🎬 영상 생성:\n"
+        "  • '영상' — 미완성 토픽 목록\n"
+        "  • '최근 영상' — 7일 이내 만든 영상 목록 (재생성 가능)\n"
+        "  • '1번 만들어줘' / '1번 3번 만들어줘' / '전체 만들어줘'\n"
+        "  • '컨펌' / '1번 컨펌' / '전체 컨펌' — 릴스_최종으로 저장\n"
+        "  • '재생성' — 영상 다시 만들기\n"
+        "  • '자동 수정해줘' — 에러 자동 수정 후 재시도\n"
+        "\n"
+        "🖊️ 슬라이드 수정:\n"
+        "  • '수정' — 미완성 토픽 슬라이드 수정 목록\n"
+        "  • '최근 수정' — 7일 이내 수정한 토픽 목록 (재수정 가능)\n"
+        "  • 토픽 선택 후 슬라이드 번호만 입력\n"
+        "  • JSON 붙여넣기 → 이미지·대본·자막 자동 반영\n"
+        "\n"
+        "💡 릴스 아이디어:\n"
+        "  • '아이디어 저장' / '아이디어 추가' — 다음 메시지로 제목 입력\n"
+        "  • '릴스 아이디어' / '아이디어 목록' — 전체 목록\n"
+        "  • '아이디어 3번 새제목으로 수정'\n"
+        "  • '아이디어 3번 삭제'\n"
+        "\n"
+        "🗑️ 토픽 관리:\n"
+        "  • '폐기' — 토픽 폐기 목록\n"
+        "  • '폐기 확인' — 선택한 토픽 완전 삭제\n"
         "\n"
         "💬 자연어도 됩니다:\n"
         "  • '주제 추천해줘' / '수족구병 만들어줘'\n"
-        "  • '1 3 5번 만들어줘' (추천 목록 순차 생성)\n"
         "  • '중단' / '취소' (진행 중 멈춤)\n"
-        "\n"
-        "💡 릴스 아이디어 (말투 자유롭게):\n"
-        "  • 추가 → '아이디어 추가' / '아이디어 저장/등록/메모'\n"
-        "      뒤에 제목을 적거나, 다음 줄에 한 줄씩 (번호 없어도 됨)\n"
-        "  • 목록 → '릴스 아이디어' / '아이디어 보여줘' / '아이디어 목록'\n"
-        "  • 수정 → '아이디어 3번 새 제목으로 수정' (변경/바꿔/고쳐 다 됨)\n"
-        "  • 삭제 → '아이디어 3번 삭제' (지워/제거 다 됨)"
     )
     await update.message.reply_text(text)
 
@@ -1856,9 +1939,12 @@ async def handle_idea_message(update: Update, context: ContextTypes.DEFAULT_TYPE
             return True
         lines = [f"{i+1}. {it.get('title','')}" for i, it in enumerate(ideas)]
         msg = f"💡 릴스 아이디어 목록 ({len(ideas)}개)\n\n" + "\n".join(lines)
-        msg += ("\n\n추가: '아이디어 추가' + 제목\n"
+        msg += ("\n\n생성: '1번 만들어줘' / '1번 3번 만들어줘' / '1,3,5 만들어줘'\n"
+                "추가: '아이디어 추가' + 제목\n"
                 "수정: '아이디어 3번 새 제목으로 수정'\n"
                 "삭제: '아이디어 3번 삭제'")
+        # 목록 표시 직후 'N번 만들어줘' 로 카드뉴스 생성할 수 있도록 제목 스냅샷 저장
+        IDEA_LIST_SESSION[update.effective_chat.id] = [it.get("title", "") for it in ideas]
         await update.message.reply_text(msg)
         return True
 
@@ -1888,25 +1974,75 @@ async def handle_idea_message(update: Update, context: ContextTypes.DEFAULT_TYPE
         return True
 
     if action == "delete":
-        index = _idea_to_int(intent.get("index"))
-        if index is None:
+        # 여러 번호 동시 삭제 지원 — "아이디어 3번 5번 삭제" / "아이디어 3,5,7 삭제"
+        nums = sorted({int(n) for n in re.findall(r"\d+", text)})
+        if not nums:
             await update.message.reply_text(
-                "🗑 몇 번 아이디어를 지울까요?\n예) '아이디어 3번 삭제'"
+                "🗑 몇 번 아이디어를 지울까요?\n예) '아이디어 3번 삭제' / '아이디어 3번 5번 삭제'"
             )
             return True
         ideas = _load_reels_ideas()
-        if 1 <= index <= len(ideas):
-            removed = ideas.pop(index - 1)
-            _save_reels_ideas(ideas)
-            await update.message.reply_text(
-                f"✅ '{removed.get('title','')}' 삭제됐어요.\n남은 아이디어: {len(ideas)}개"
-            )
-        else:
+        valid = [n for n in nums if 1 <= n <= len(ideas)]
+        if not valid:
             await update.message.reply_text(f"❌ 번호를 확인해주세요. (1~{len(ideas)})")
+            return True
+        # 높은 번호부터 역순 삭제 (인덱스 밀림 방지)
+        for n in sorted(valid, reverse=True):
+            ideas.pop(n - 1)
+        _save_reels_ideas(ideas)
+        nums_label = ", ".join(f"{n}번" for n in valid)
+        await update.message.reply_text(
+            f"✅ {nums_label} 아이디어 삭제했어요.\n남은 아이디어: {len(ideas)}개"
+        )
         return True
 
     # action == "none" → 다른 핸들러가 처리하도록 흐름 유지
     return False
+
+
+async def _handle_idea_generate(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
+    """릴스 아이디어 목록 표시 후 'N번 만들어줘' → 해당 아이디어로 카드뉴스 생성.
+    단일/복수 모두 지원. 처리했으면 True."""
+    chat_id = update.effective_chat.id
+    titles = IDEA_LIST_SESSION.get(chat_id)
+    if not titles:
+        return False
+
+    text = (update.message.text or "").strip()
+    # 번호 추출 — re.findall 로 모든 숫자 ("1번 3번 5번" / "1,3,5" 모두 처리)
+    nums = sorted({int(n) for n in re.findall(r"\d+", text)})
+    valid_nums = [n for n in nums if 1 <= n <= len(titles)]
+    if not valid_nums:
+        await update.message.reply_text(
+            f"❌ 유효한 번호가 없습니다 (1-{len(titles)})."
+        )
+        return True
+
+    # 세션 소비 — 재진입(중복 생성) 방지
+    IDEA_LIST_SESSION.pop(chat_id, None)
+    selected = [(n, titles[n - 1]) for n in valid_nums]
+    reset_cancel_flag()
+
+    total = len(selected)
+    for i, (n, title) in enumerate(selected, 1):
+        if not title:
+            continue
+        if is_cancel_requested():
+            await update.message.reply_text(f"🛑 중단됨 — {i-1}/{total} 완료, 나머지 건너뜀")
+            return True
+        await update.message.reply_text(f"📝 {title} 카드뉴스 생성을 시작합니다...")
+        slug = await korean_to_slug(title)
+        if not slug:
+            await update.message.reply_text(f"❌ '{title}' 슬러그 변환 실패 — 건너뜁니다.")
+            continue
+        # 생성 시작한 아이디어는 목록에서 자동 삭제
+        _remove_reels_idea_by_title(title)
+        try:
+            await auto_pipeline(update, title, slug)
+        except Exception as e:  # noqa: BLE001
+            log.exception("아이디어 카드뉴스 생성 실패 (%s)", slug)
+            await update.message.reply_text(f"⚠️ '{title}' 실패 — 다음으로 넘어갑니다: {e}")
+    return True
 
 
 # ---------------------------------------------------------------- handle_text
@@ -1915,6 +2051,11 @@ async def handle_idea_message(update: Update, context: ContextTypes.DEFAULT_TYPE
 async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     text = (update.message.text or "").strip()
     if not text:
+        return
+
+    # === "ㅇ" → 도움말 (cmd_help 와 동일) ===
+    if text == "ㅇ":
+        await cmd_help(update, context)
         return
 
     # === 릴스 아이디어 입력 대기 — 안내 직후 다음 메시지를 아이디어 목록으로 파싱 ===
@@ -1986,6 +2127,112 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
                     update, context, _cid, item["slug"], item["title_kr"], slide_n
                 )
             return
+
+    # === "최근 영상" → 최근 7일 영상 목록 ===
+    if text == "최근 영상":
+        _recents = _recent_video_topics(7)
+        if not _recents:
+            await update.message.reply_text("최근 7일 내 만든 영상이 없어요.")
+            return
+        VIDEO_RECENT_SESSION[update.effective_chat.id] = [
+            {"slug": r["slug"], "title_kr": r["title_kr"], "mp4_path": r["mp4_path"]}
+            for r in _recents
+        ]
+        _lines = [
+            f"{i+1}. {r['title_kr']} ({datetime.fromtimestamp(r['mtime']).strftime('%m/%d')})"
+            for i, r in enumerate(_recents)
+        ]
+        msg = "🎬 최근 7일 영상 목록이에요:\n\n" + "\n".join(_lines)
+        msg += "\n\n번호로 재생성: 예) '1번 만들어줘'"
+        await update.message.reply_text(msg)
+        return
+
+    # === "최근 영상" 목록에서 번호 선택 → 캐시 삭제 후 영상 재생성 ===
+    if update.effective_chat.id in VIDEO_RECENT_SESSION and "만들어줘" in text:
+        _cid = update.effective_chat.id
+        _vlst = VIDEO_RECENT_SESSION[_cid]
+        _nums = [int(x) for x in re.findall(r"\d+", text)]
+        _valid = [n for n in _nums if 1 <= n <= len(_vlst)]
+        if not _valid:
+            await update.message.reply_text(f"❌ 번호를 확인해주세요. (1~{len(_vlst)})")
+            return
+        for n in _valid:
+            _item = _vlst[n - 1]
+            _slug = _item["slug"]
+            _reels = REPO_ROOT / "output" / _slug / "reels"
+            # 재생성 전 영상·음성·자막 캐시 삭제
+            for _fn in ("output.mp4", "whisper_segments.json", "final.srt",
+                        "voiceover.mp3", "voiceover_raw.mp3"):
+                _p = _reels / _fn
+                if _p.exists():
+                    _p.unlink()
+            await update.message.reply_text(f"🔄 {_item['title_kr']} 재생성 시작합니다...")
+            _success, _et, _em = await asyncio.to_thread(run_reels_video_builder, _slug)
+            if _success:
+                _mp4 = _reels / "output.mp4"
+                if _mp4.exists():
+                    await context.bot.send_video(
+                        chat_id=_cid, video=open(_mp4, "rb"),
+                        caption=f"🔄 {_item['title_kr']} 재생성 완료!"
+                    )
+                else:
+                    await update.message.reply_text("⚠️ 영상 파일을 찾을 수 없어요.")
+            else:
+                await update.message.reply_text(f"❌ {_item['title_kr']} 재생성 실패했어요.")
+        VIDEO_RECENT_SESSION.pop(_cid, None)
+        return
+
+    # === "최근 수정" → 최근 7일 슬라이드 수정 토픽 목록 ===
+    if text == "최근 수정":
+        _recents = _recent_edited_topics(7)
+        if not _recents:
+            await update.message.reply_text("최근 7일 내 수정한 토픽이 없어요.")
+            return
+        SLIDE_RECENT_SESSION[update.effective_chat.id] = {
+            "topics": [{"slug": r["slug"], "title_kr": r["title_kr"]} for r in _recents],
+            "selected": None,
+        }
+        _lines = [
+            f"{i+1}. {r['title_kr']} ({datetime.fromtimestamp(r['mtime']).strftime('%m/%d')})"
+            for i, r in enumerate(_recents)
+        ]
+        msg = "🖊️ 최근 7일 수정 목록이에요:\n\n" + "\n".join(_lines)
+        msg += "\n\n번호 선택: 예) '1번'"
+        await update.message.reply_text(msg)
+        return
+
+    # === "최근 수정" 번호 입력 → (1) 토픽 선택 후 슬라이드 번호 안내, (2) 슬라이드 번호만 입력 → 수정 준비 ===
+    if (update.effective_chat.id in SLIDE_RECENT_SESSION
+            and re.search(r"\d", text) and "만들어줘" not in text):
+        _cid = update.effective_chat.id
+        _sess = SLIDE_RECENT_SESSION[_cid]
+        if not _sess.get("selected"):
+            # (1) 토픽 번호 선택 → slug 저장 후 슬라이드 번호 안내
+            _topics = _sess["topics"]
+            _idx = int(re.search(r"(\d+)", text).group(1)) - 1
+            if not (0 <= _idx < len(_topics)):
+                await update.message.reply_text(f"❌ 번호를 확인해주세요. (1~{len(_topics)})")
+                return
+            _sess["selected"] = _topics[_idx]
+            await update.message.reply_text(
+                f"✏️ '{_topics[_idx]['title_kr']}' 선택됐어요.\n"
+                f"몇 번 슬라이드 수정할까요? (예: 3번, 3번 5번)"
+            )
+            return
+        # (2) 슬라이드 번호만 입력 → 기존 슬라이드 수정 플로우 연결
+        _item = _sess["selected"]
+        _slide_ns = [int(x) for x in re.findall(r"(\d+)", text)]
+        if not _slide_ns:
+            await update.message.reply_text("슬라이드 번호를 입력해주세요. (예: 3번)")
+            return
+        SLIDE_RECENT_SESSION.pop(_cid, None)
+        for _i, _slide_n in enumerate(_slide_ns):
+            if _i > 0:
+                await asyncio.sleep(0.3)
+            await _send_slide_edit_context(
+                update, context, _cid, _item["slug"], _item["title_kr"], _slide_n
+            )
+        return
 
     # === 토픽 폐기 플로우 ===
     _del_cid = update.effective_chat.id
@@ -2069,6 +2316,13 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
     # Claude(Haiku) 의도 분류 → 실패 시 규칙 기반 폴백. 처리된 경우 True 반환.
     if await handle_idea_message(update, context):
         return
+
+    # === 릴스 아이디어 목록에서 'N번 만들어줘' → 카드뉴스 생성 ===
+    # ('릴스 아이디어' 목록 표시 직후 활성. intent_router·영상 플로우보다 먼저 가로챈다.)
+    if (update.effective_chat.id in IDEA_LIST_SESSION
+            and "만들" in text and re.search(r"\d", text)):
+        if await _handle_idea_generate(update, context):
+            return
 
     # === /batch 진행 상태 인터셉트 (intent_router 보다 먼저) ===
     # 주제 줄목록·'확인'이 Claude 의도 분류기로 잘못 들어가지 않도록 여기서 가로챈다.
@@ -4638,6 +4892,19 @@ def _auto_remove_matching_idea(title_kr: str):
         _save_reels_ideas(ideas)
         return removed.get("title", "")
     return None
+
+
+def _remove_reels_idea_by_title(title: str) -> bool:
+    """제목이 정확히 일치하는 첫 아이디어를 삭제. 삭제했으면 True."""
+    if not title:
+        return False
+    ideas = _load_reels_ideas()
+    for i, it in enumerate(ideas):
+        if str(it.get("title", "")) == title:
+            ideas.pop(i)
+            _save_reels_ideas(ideas)
+            return True
+    return False
 
 
 def _parse_idea_titles(lines: list) -> list:

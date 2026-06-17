@@ -1,0 +1,40 @@
+{
+  "topic": "emergency-checklist",
+  "topic_type": "응급정보형",
+  "source_template": "slides.emergency-checklist.json",
+  "n_card_slides": 9,
+  "extra_slides": [
+    {
+      "n": 10,
+      "insert_after": 0,
+      "role": "reels-hook",
+      "purpose": "릴스 시작 2초 이내 시선 고정용 충격 훅",
+      "prompt": "Portrait 1080x1350 vertical. ULTRA BOLD typography hook. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: massive bold white text '머리 부딪혔을 때' top line, huge red #E63946 bold text '119? 병원? 집?' bottom line, ultra compact spacing. Top-right small: '소아과언니' white. Bottom: tiny white caption '3초 안에 판단하세요'. Minimal design, maximum impact, emergency alert mood, no illustrations, pure typographic shock.",
+      "file": "0-1.png"
+    },
+    {
+      "n": 11,
+      "insert_after": 3,
+      "role": "reels-visual",
+      "purpose": "즉시 119 상황을 실사로 보여주는 긴박한 장면",
+      "prompt": "Portrait 1080x1350 vertical. REAL PHOTO style closeup. Toddler lying motionless on floor, eyes closed, parent's hand gently checking consciousness, blurred emergency phone 119 visible in background. Urgent mood, shallow depth of field, dramatic natural lighting from side, photorealistic, high detail on hand and child's face, dark navy vignette edges #0D1B2A, no text overlay, pure documentary emergency moment. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "3-1.png"
+    },
+    {
+      "n": 12,
+      "insert_after": 5,
+      "role": "reels-visual",
+      "purpose": "집 관찰 가능 상황의 안심 실사 장면",
+      "prompt": "Portrait 1080x1350 vertical. REAL PHOTO style medium shot. Parent sitting on sofa holding alert smiling toddler on lap, gentle eye contact, parent's hand softly touching child's head checking bump, bright warm afternoon sunlight through window, peaceful home interior background softly blurred, photorealistic, natural colors, calm reassuring mood, mint #2A9D8F subtle color grade, no text, documentary parenting moment. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "5-1.png"
+    },
+    {
+      "n": 13,
+      "insert_after": 7,
+      "role": "reels-visual",
+      "purpose": "CT 촬영 결정 순간의 병원 실사 긴장감",
+      "prompt": "Portrait 1080x1350 vertical. REAL PHOTO style closeup. Medical professional's hands in blue gloves gently examining toddler's head, child lying on white examination table, penlight checking pupils visible, clinical white LED lighting overhead, shallow focus on hands and head, photorealistic medical environment blurred background, serious professional mood, cool blue-white color grade, no text overlay, documentary hospital emergency moment. Korean baby, East Asian facial features, chubby cheeks",
+      "file": "7-1.png"
+    }
+  ]
+}

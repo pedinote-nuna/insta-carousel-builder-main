@@ -77,6 +77,18 @@
       "title_kr": "입속 물집·구내염 병원 가야 할 때",
       "category": "응급·약물 안전",
       "palette": "B"
+    },
+    {
+      "slug": "hand-foot-mouth-disease-isolation-guide",
+      "title_kr": "수족구병 격리 기준 완벽 가이드",
+      "category": "질환관리",
+      "palette": "B"
+    },
+    {
+      "slug": "external-otitis-pool-prevention",
+      "title_kr": "물놀이 후 외이도염 예방법",
+      "category": "질환관리",
+      "palette": "B"
     }
   ],
   "pending": [
@@ -385,18 +397,6 @@
       "title_kr": "사두 악화시키는 아기띠 사용법 vs 올바른 사용법",
       "category": "일상 케어·영양·생활건강",
       "palette": "A"
-    },
-    {
-      "slug": "hand-foot-mouth-disease-isolation-guide",
-      "title_kr": "수족구병 격리 기준 완벽 가이드",
-      "category": "질환관리",
-      "palette": "B"
-    },
-    {
-      "slug": "external-otitis-pool-prevention",
-      "title_kr": "물놀이 후 외이도염 예방법",
-      "category": "질환관리",
-      "palette": "B"
     },
     {
       "slug": "summer-hydration-baby-guide",
@@ -834,6 +834,16 @@
     {
       "slug": "nose-ear",
       "title_kr": "nose-ear",
+      "done_at": "2026-06-15"
+    },
+    {
+      "slug": "emergency-checklist",
+      "title_kr": "emergency-checklist",
+      "done_at": "2026-06-15"
+    },
+    {
+      "slug": "child-drowning-response",
+      "title_kr": "child-drowning-response",
       "done_at": "2026-06-15"
     }
   ]

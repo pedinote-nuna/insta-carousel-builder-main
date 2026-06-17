@@ -34,9 +34,40 @@ except ImportError as e:
     print("        pip install python-dotenv google-genai")
     sys.exit(1)
 
+try:
+    from PIL import Image
+except ImportError as e:
+    print(f"[ERROR] 의존성 누락: {e}")
+    print("        pip install Pillow")
+    sys.exit(1)
+
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SLIDES_JSON = REPO_ROOT / "templates" / "slides.example.json"
+
+TARGET_W = 1080
+TARGET_H = 1350
+
+
+def resize_to_target(out_path: Path) -> None:
+    """이미지를 1080×1350 으로 비율 유지 중앙 크롭 후 덮어쓰기.
+
+    이미 1080×1350 이면 건드리지 않는다.
+    """
+    with Image.open(out_path) as im:
+        orig_w, orig_h = im.size
+        if (orig_w, orig_h) == (TARGET_W, TARGET_H):
+            return
+        # 짧은 쪽을 타깃에 맞추도록 cover 스케일 → 중앙 크롭
+        scale = max(TARGET_W / orig_w, TARGET_H / orig_h)
+        new_w = round(orig_w * scale)
+        new_h = round(orig_h * scale)
+        resized = im.convert("RGB").resize((new_w, new_h), Image.LANCZOS)
+        left = (new_w - TARGET_W) // 2
+        top = (new_h - TARGET_H) // 2
+        cropped = resized.crop((left, top, left + TARGET_W, top + TARGET_H))
+        cropped.save(out_path)
+    print(f"[RESIZE] {out_path.name} {orig_w}×{orig_h} → {TARGET_W}×{TARGET_H}")
 
 
 def load_slides(slides_path: Path) -> list[dict]:
@@ -127,6 +158,7 @@ def main():
                     break
             dt = time.time() - t0
             if image_saved:
+                resize_to_target(out_path)
                 kb = out_path.stat().st_size / 1024
                 print(f"OK ({dt:.1f}s, {kb:.0f}KB) -> {out_path.name}")
                 summary.append((n, "OK", f"{dt:.1f}s", f"{kb:.0f}KB"))

@@ -632,9 +632,14 @@
     },
     {
       "slug": "1",
-      "title": "1",
-      "keywords": [],
-      "date": "2026-06-05",
+      "title": "아이가 뜨거운 물에 손을 댔을 때, 첫 1분이 정말 중요합니다 🚨",
+      "keywords": [
+        "화상",
+        "응급처치",
+        "냉각",
+        "손"
+      ],
+      "date": "2026-06-15",
       "category": "미분류"
     },
     {
@@ -940,6 +945,30 @@
         "이비인후과",
         "소아",
         "증상"
+      ],
+      "date": "2026-06-15",
+      "category": "미분류"
+    },
+    {
+      "slug": "emergency-checklist",
+      "title": "emergency-checklist",
+      "keywords": [
+        "응급상황",
+        "체크리스트",
+        "응급처치",
+        "대응방법"
+      ],
+      "date": "2026-06-15",
+      "category": "미분류"
+    },
+    {
+      "slug": "child-drowning-response",
+      "title": "child-drowning-response",
+      "keywords": [
+        "익수",
+        "응급처치",
+        "심폐소생술",
+        "물놀이사고"
       ],
       "date": "2026-06-15",
       "category": "미분류"

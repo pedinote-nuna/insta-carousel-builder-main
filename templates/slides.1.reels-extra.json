@@ -8,33 +8,33 @@
       "n": 10,
       "insert_after": 0,
       "role": "reels-hook",
-      "purpose": "릴스 시작 2초 안에 시청자를 멈추게 하는 충격적 훅 메시지",
-      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: massive bold white typography '화상 입었을 때' top line, bright red #E63946 bold text '절대 하면 안 되는 것' bottom line, huge font size 72pt+, ultra-bold weight, centered alignment, dramatic spacing between lines. No person, no objects, pure typography impact. High contrast, minimal design, emergency warning mood.",
+      "purpose": "릴스 시작 2초 안에 시청자를 멈추게 하는 충격 훅",
+      "prompt": "Portrait 1080x1350 vertical. Emergency alert style. Very dark navy background #0D1B2A. GENEROUS outer margin all sides. Center: massive bold white Korean text 아이가 화상을 입었다면 (ultra-large font, 80pt+). Below in smaller bright red #E63946 text: 절대 하지 말아야 할 것들. Typography-focused minimalist design. No photos, no illustrations. High contrast emergency poster aesthetic. Clean Pretendard font family.",
       "file": "0-1.png"
     },
     {
       "n": 11,
       "insert_after": 3,
       "role": "reels-visual",
-      "purpose": "찬물로 화상 부위 식히는 실제 행동 클로즈업",
-      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up. Adult hand gently holding child's small burned forearm under running cool tap water in white ceramic sink. Water flowing smoothly over red skin area. Soft bathroom lighting, blurred background, focus on water stream and skin contact. Medical care mood, gentle action, safety demonstration. Clean modern home setting. No face visible, hands and forearm only.",
+      "purpose": "얼음 직접 접촉 금지를 실사로 보여주는 클로즈업",
+      "prompt": "Portrait 1080x1350 vertical photorealistic. Extreme close-up of child's small arm with reddened skin. Adult hand holding ice cube wrapped in thin cloth approaching the burn area. Soft natural lighting. Focus on ice cube texture and red skin contrast. Medical documentary style. Clean background blur. Show proper cloth barrier between ice and skin. Cautionary demonstration shot. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
       "file": "3-1.png"
     },
     {
       "n": 12,
       "insert_after": 5,
       "role": "reels-visual",
-      "purpose": "물집을 터뜨리려는 금지 행동 클로즈업",
-      "prompt": "Portrait 1080x1350 vertical. Photorealistic extreme close-up. Adult hand holding sharp needle approaching clear water-filled blister on child's pink skin. STOP gesture overlay: bold red X mark or red circle-slash symbol over the needle. Dramatic lighting, shallow depth of field, blurred background. Warning mood, prohibited action demonstration. Skin texture visible, medical prohibition concept. No face, hand and blister only.",
+      "purpose": "흐르는 찬물로 냉각하는 올바른 응급처치 실사",
+      "prompt": "Portrait 1080x1350 vertical photorealistic. Close-up of child's hand under running cool tap water. Water flowing gently over reddened skin on forearm. Kitchen or bathroom sink environment. Soft natural lighting. Focus on water stream and skin contact. Show 10-15 minutes timer or clock partially visible in background. Calm reassuring medical demonstration aesthetic. Clean composition. Korean baby, East Asian facial features, chubby cheeks",
       "file": "5-1.png"
     },
     {
       "n": 13,
-      "insert_after": 6,
+      "insert_after": 7,
       "role": "reels-visual",
-      "purpose": "민간요법(된장/감자 등) 금지 행동 실사",
-      "prompt": "Portrait 1080x1350 vertical. Photorealistic close-up. Adult hand holding small bowl of yellow-brown soybean paste (된장) or raw potato slice approaching child's arm with red burn mark. STOP gesture overlay: bold red X mark or prohibition symbol over the bowl. Bright kitchen lighting, clean white background, clear product visibility. Warning mood, folk remedy prohibition concept. No face visible, hands and burn area only, educational safety demonstration.",
-      "file": "6-1.png"
+      "purpose": "화상 연고 바르는 손동작 클로즈업으로 2차 처치 시각화",
+      "prompt": "Portrait 1080x1350 vertical photorealistic. Extreme close-up of adult hand gently applying white burn ointment cream on child's small arm. Soft applicator or clean finger spreading thin layer. Tube of burn cream partially visible. Soft diffused lighting. Medical care documentary style. Focus on gentle application motion. Clean white background or blurred medical environment. Reassuring professional demonstration shot. Korean baby, East Asian facial features, chubby cheeks; Korean mother/father, East Asian appearance, Korean parent",
+      "file": "7-1.png"
     }
   ]
 }
